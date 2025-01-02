@@ -1,0 +1,57 @@
+// mixin 
+//폰트 
+@mixin fontoption($font-tsize, $font-color, $font-weight,$line-height) {
+    font-family: $font-family;
+    font-size: $font-tsize;
+    color: $font-color;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: normal;
+    font-style: normal;
+    font-feature-settings: 'pnum' on, 'lnum' on;                        
+}
+
+//긴 문장 처리
+@mixin ellipsis($line: 1) {
+    @if ($line == 1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+}
+
+@function to-rem($size) {
+    $root-size: 16px;
+    @if string == type-of($size) {
+        @return $size;
+    } @else if 0 == $size {
+        @return 0;
+    } @else {
+        @return calc($size / $root-size * 1rem);
+    }
+}
+@function rem($value) {
+    // @debug type-of($value);
+    @if 0 == str-index(#{$value}, 'px') {
+        @warn "invalid value. use 'px'";
+    } @else {
+        @if list == type-of($value) {
+            $rem: to-rem(list.nth($value, 1));
+            $output: $rem;
+            @for $i from 2 through length($value) {
+                $rem: to-rem(list.nth($value, $i));
+                $output: list.append($output, $rem);
+                // @debug $output;
+            }
+            @return $output;
+        } @else {
+            @return to-rem($value);
+        }
+    }
+}
