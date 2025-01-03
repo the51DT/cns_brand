@@ -1,8 +1,7 @@
 @import 'reset.css';
+@import 'var.css';
 @import 'component.css';
 
-/* //임시 설정 */
-@import 'style.css'; 
 
 @import 'layout.scss';
 @import url("../bundle/tailwindcss/tailwind-all.css");

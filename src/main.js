@@ -10,7 +10,10 @@ async function loadIaData() {
         const response = await fetch('/ia.json');
         const data = await response.json();
         document.title = data.siteName;
-        document.querySelector('#siteTitle').textContent = data.siteName;
+        const pageTitle = document.querySelector('#siteTitle')
+        if(pageTitle) {
+            document.querySelector('#siteTitle').textContent = data.siteName;
+        }        
         return data;  // 데이터를 직접 반환
     } catch (error) {
         console.error('Error loading IA data:', error);
