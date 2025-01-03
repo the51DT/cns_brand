@@ -3,6 +3,24 @@
     "period": "2025.1 ~ 2025.3",
     "IaList": [
         {
+            "id": 0,
+            "Level1": "가이드",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "JS 가이드",
+                    "screenId": "",
+                    "fileName": "/src/guide/js_temple01.html"
+                },
+                {
+                    "name": "ChatGPT3",
+                    "screenId": "",
+                    "fileName": ""
+                }
+            ]
+        },        
+        {
             "id": 1,
             "Level1": "ChatGPT",
             "screenId": "",
