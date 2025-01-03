@@ -1,0 +1,42 @@
+{
+    "siteName": "Fit 템플릿 사이트",
+    "period": "2025.1 ~ 2025.3",
+    "IaList": [
+        {
+            "id": 1,
+            "Level1": "ChatGPT",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "ChatGPT2",
+                    "screenId": "",
+                    "fileName": ""
+                },
+                {
+                    "name": "ChatGPT3",
+                    "screenId": "",
+                    "fileName": ""
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "Level1": "AiList",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "ChatGPT2",
+                    "screenId": "",
+                    "fileName": ""
+                },
+                {
+                    "name": "ChatGPT3",
+                    "screenId": "",
+                    "fileName": ""
+                }
+            ]
+        }
+    ]
+}
