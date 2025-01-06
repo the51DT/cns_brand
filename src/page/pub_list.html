@@ -1,13 +1,124 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vite SCSS Project</title>
-  <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
 </head>
 <body>
-333
-  <script type="module" src="/src/main.js"></script>
+    <div class="guide__wrap">
+        <div data-include-path="/src/guide/header.html"></div>
+        <div class="guide-content">
+            <div class="page-location text-2xl font-bold" id="pagesTitle"></div>
+            <div class="page-cont">
+                <h2 class="font-bold text-2xl mt-10">퍼블리싱 목록</h2>
+                <div class="flex justify-between mt-5">
+                  <div class="">
+                    <select id="quickMove">                        
+                    </select>
+                  </div>
+                </div>
+                <div class="text-base mt-3">
+                    <dl id="menuList"></dl>
+                </div>              
+            </div>
+            
+        </div>
+    </div>  
+    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+    // JSON 파일을 Fetch API로 가져오기
+    fetch('/ia.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('연결 오류: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {                
+            const menuList = document.getElementById('menuList');
+            if (!menuList) {
+                console.error('menuList 요소를 찾을 수 없습니다.');
+                return;
+            }
+
+            const menusLists = data.IaList;  
+            if (!Array.isArray(menusLists)) {
+                console.error('IaList가 배열이 아닙니다.');
+                return;
+            }
+
+            menusLists.forEach(item => {
+                //combobox에 추가
+                const quickMove = document.querySelector('#quickMove');
+                const comboOption = document.createElement('option');
+                const optionName = item.Level1;
+                comboOption.textContent = optionName;
+                comboOption.setAttribute('value', item.id);
+                quickMove.appendChild(comboOption);             
+
+                // <dt> 요소 생성 및 설정
+                const dt = document.createElement('dt');
+                dt.textContent = item.Level1 || '제목 없음'; // Level1이 없을 경우 기본 텍스트
+                dt.setAttribute('id', item.id || ''); // id가 없을 경우 빈 문자열
+                menuList.appendChild(dt);
+
+                const level2Menus = item.Level2;
+                if (!Array.isArray(level2Menus)) {
+                    console.warn(`Level2 데이터가 배열이 아닙니다: ${item.Level2}`);
+                    return;
+                }
+
+                quickMove.addEventListener('change', (event) => {
+                    const selectedValue = event.target.value;
+                    if (selectedValue) {  // Check if selectedValue is not empty
+                        const guideElement = document.querySelector(`#menuList dt[id="${selectedValue}"]`);
+                        if (guideElement) { // Ensure guideElement exists before scrolling
+                            guideElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });   
+
+                level2Menus.forEach((menu, index) => {
+                    // <dd> 요소 생성 및 클래스 추가
+                    const dd = document.createElement('dd');
+                    dd.classList.add(`menu-item-${index}`);
+
+                    // 메뉴 제목 생성
+                    const menuTitle = document.createElement('h3');
+                    const menuLink = document.createElement('a');
+                    menuLink.textContent = menu.name || '이름 없음';
+                    menuLink.setAttribute('href', `${menu.path}${menu.fileName}`);
+                    menuTitle.appendChild(menuLink);
+
+                    // 메뉴 정보 생성
+                    const menuInfo = document.createElement('div');
+                    menuInfo.classList.add('menu-info');
+                    const infoTemplate = `
+                        <span>Screen ID: ${menu.screenId || '-'}</span> | 
+                        <span>File Name: ${menu.fileName || '-'}</span>
+                    `;
+                    menuInfo.innerHTML = infoTemplate;
+
+                    // <dd>에 제목과 정보 추가
+                    dd.appendChild(menuTitle);
+                    dd.appendChild(menuInfo);                    
+                    menuList.appendChild(dd);
+                });
+            });
+        })
+        .catch(error => {
+            console.error('오류:', error);
+            // 사용자에게 오류 메시지 표시
+            const menuList = document.getElementById('menuList');
+            if (menuList) {
+                const errorMsg = document.createElement('p');
+                errorMsg.textContent = '메뉴를 불러오는 중 오류가 발생했습니다.';
+                errorMsg.style.color = 'red';
+                menuList.appendChild(errorMsg);
+            }
+        });
+    </script>
 </body>
 </html>

@@ -43,7 +43,7 @@ async function loadIaData() {
             if (matchedName) {
                 pageCateTitle.textContent = matchedName;
             } else {
-                pageCateTitle.textContent = '이름을 찾을 수 없음';
+                pageCateTitle.textContent = '';
             }
         }
 
