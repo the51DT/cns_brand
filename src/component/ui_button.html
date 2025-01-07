@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/index.css" />
+</head>
+<body>
+    <div class="guide__wrap">
+        <div data-include-path="/src/guide/header.html"></div>
+        <div class="guide-content">
+            <div class="page-location text-2xl font-bold" id="pagesTitle"></div>
+            <div class="page-cont">
+                <h2 class="font-bold text-2xl">Css 가이드</h2>
+                <div class="guide-box text-base mt-3">
+                    <strong>1. 단위 게산</strong>
+                    <p style="margin-top: 3px;margin-left:10px;line-height: 150%;margin-bottom: 15px;">
+                        • calc 함수를 사용하며 다음 공식 한다. calc(32 / 16 * 1rem)
+                    </p>
+                    <strong>2. :root 변수 사용</strong>
+                    <p style="margin-top: 3px;margin-left:10px;line-height: 150%;">
+                        • 디자인 value는 root변수를 사용하며 코드의 재사용성을 높인다.
+                    </p>                  
+                </div>            
+            </div>
+            
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

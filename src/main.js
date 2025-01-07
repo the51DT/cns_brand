@@ -43,7 +43,7 @@ async function loadIaData() {
             if (matchedName) {
                 pageCateTitle.textContent = matchedName;
             } else {
-                pageCateTitle.textContent = '';
+                pageCateTitle.textContent = 'json 파일에 추가해주세요';
             }
         }
 
