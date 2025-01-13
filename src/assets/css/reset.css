@@ -3,8 +3,8 @@
 
 :root {
     --fontMain: 'Noto Sans KR', sans-serif;
+    --color-g-header: #043b72;
 }
-
 /* reset */
 body,
 html {
