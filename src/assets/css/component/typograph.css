@@ -1,0 +1,156 @@
+/* 타이포 그래프 */
+.font-head-xl {
+    font-size: calc(var(--typo-pc-size-head-xl) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-head-xl) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-head-lg {
+    font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-head-md {
+    font-size: calc(var(--typo-pc-size-head-md) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-head-md) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-head-sm {
+    font-size: calc(var(--typo-pc-size-head-sm) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-head-xs {
+    font-size: calc(var(--typo-pc-size-head-xs) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-head-xs) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-body-xl {
+    font-size: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-body-xl) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-body-lg {
+    font-size: calc(var(--typo-pc-size-body-lg) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-body-lg) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-body-md {
+    font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-body-sm {
+    font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-body-sm {
+    font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-caption-xl {
+    font-size: calc(var(--typo-pc-size-caption-xl) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-caption-xl) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-caption-lg {
+    font-size: calc(var(--typo-pc-size-caption-lg) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-caption-lg) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-caption-md {
+    font-size: calc(var(--typo-pc-size-caption-md) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-caption-md) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-caption-xs {
+    font-size: calc(var(--typo-pc-size-caption-xs) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-caption-xs) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-caption-sm {
+    font-size: calc(var(--typo-pc-size-caption-sm) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-caption-sm) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+    .font-head-xl {
+        font-size: calc(var(--typo-mo-size-head-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-head-xl) / 16 * 1rem);
+    }
+    .font-head-lg {
+        font-size: calc(var(--typo-mo-size-head-lg) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-head-lg) / 16 * 1rem);
+    }
+    .font-head-md {
+        font-size: calc(var(--typo-mo-size-head-md) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-head-md) / 16 * 1rem);
+    }
+    .font-head-sm {
+        font-size: calc(var(--typo-mo-size-head-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-head-sm) / 16 * 1rem);
+    }
+    .font-head-xs {
+        font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-head-xs) / 16 * 1rem);
+    }
+    .font-body-xl {
+        font-size: calc(var(--typo-mo-size-body-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-xl) / 16 * 1rem);
+    }
+    .font-body-lg {
+        font-size: calc(var(--typo-mo-size-body-lg) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-lg) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+    }
+    .font-body-md {
+        font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-md) / 16 * 1rem);
+    }
+    .font-body-sm {
+        font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+    }
+    .font-body-sm {
+        font-size: calc(var(--typo-mo-size-body-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-xs) / 16 * 1rem);
+    }
+    .font-caption-xl {
+        font-size: calc(var(--typo-mo-size-caption-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-caption-xl) / 16 * 1rem);
+    }
+    .font-caption-lg {
+        font-size: calc(var(--typo-mo-size-caption-lg) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-caption-lg) / 16 * 1rem);
+    }
+    .font-caption-md {
+        font-size: calc(var(--typo-mo-size-caption-md) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-caption-md) / 16 * 1rem);
+    }
+    .font-caption-xs {
+        font-size: calc(var(--typo-mo-size-caption-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-caption-xs) / 16 * 1rem);
+    }
+    .font-caption-sm {
+        font-size: calc(var(--typo-mo-size-caption-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-caption-sm) / 16 * 1rem);
+    }
+}

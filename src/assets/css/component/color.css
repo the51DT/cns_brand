@@ -1,0 +1,84 @@
+/* 칼라 시스템 */
+.colorcm-primary {
+    color: var(--colorCM-all-primary-primary-enabled);
+}
+.colorcm-primary.is-select,
+.colorcm-primary:hover {
+    color: var(--colorCM-all-primary-primary-pressed);
+}
+.colorcm-primary.is-disabled {
+    color: var(--colorCM-all-primary-primary-disabled);
+}
+.colorcm-sub-primary {
+    color: var(--colorCM-all-primary-primary-sub-enabled);
+}
+.colorcm-sub-primary.is-select,
+.colorcm-sub-primary:hover {
+    color: var(--colorCM-all-primary-primary-sub-pressed);
+}
+.colorcm-sub-primary.is-disabled {
+    color: var(--colorCM-all-primary-primary-sub-disabled);
+}
+
+.bg-colorcm-primary {
+    background: var(--colorCM-all-primary-primary-enabled);
+}
+.bg-colorcm-primary.is-select,
+.bg-colorcm-primary:hover {
+    background: var(--colorCM-all-primary-primary-pressed);
+}
+.bg-colorcm-primary.is-disabled {
+    background: var(--colorCM-all-primary-primary-disabled);
+}
+.bg-colorcm-sub-primary {
+    background: var(--colorCM-all-primary-primary-sub-enabled);
+}
+.bg-colorcm-sub-primary.is-select,
+.bg-colorcm-sub-primary:hover {
+    background: var(--colorCM-all-primary-primary-sub-pressed);
+}
+.bg-colorcm-sub-primary.is-disabled {
+    background: var(--colorCM-all-primary-primary-sub-disabled);
+}
+
+.colorcm-secondary {
+    color: var(--colorCM-all-secondary-secondary-enabled);
+}
+.colorcm-secondary.is-select,
+.colorcm-secondary:hover {
+    color: var(--colorCM-all-secondary-secondary-pressed);
+}
+.colorcm-secondary.is-disabled {
+    color: var(--colorCM-all-secondary-secondary-disabled);
+}
+.colorcm-sub-secondary {
+    color: var(--colorCM-all-secondary-secondary-sub-enabled);
+}
+.colorcm-sub-secondary.is-select,
+.colorcm-sub-secondary:hover {
+    color: var(--colorCM-all-secondary-secondary-sub-pressed);
+}
+.colorcm-sub-secondary.is-disabled {
+    color: var(--colorCM-all-secondary-secondary-sub-disabled);
+}
+
+.bg-colorcm-secondary {
+    background: var(--colorCM-all-secondary-secondary-enabled);
+}
+.bg-colorcm-secondary.is-select,
+.bg-colorcm-secondary:hover {
+    background: var(--colorCM-all-secondary-secondary-pressed);
+}
+.bg-colorcm-secondary.is-disabled {
+    background: var(--colorCM-all-secondary-secondary-disabled);
+}
+.bg-colorcm-sub-secondary {
+    background: var(--colorCM-all-secondary-secondary-sub-enabled);
+}
+.bg-colorcm-sub-secondary.is-select,
+.bg-colorcm-sub-secondary:hover {
+    background: var(--colorCM-all-secondary-secondary-sub-pressed);
+}
+.bg-colorcm-sub-secondary.is-disabled {
+    background: var(--colorCM-all-secondary-secondary-sub-disabled);
+}

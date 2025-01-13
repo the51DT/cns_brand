@@ -15,6 +15,18 @@
                     "fileName": "js_temple01.html"
                 },
                 {
+                    "name": "타이포그래프",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "ui_typo.html"
+                },
+                {
+                    "name": "칼라",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "ui_color.html"
+                },                
+                {
                     "name": "Aem 컴포넌트",
                     "screenId": "",
                     "fileName": ""

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+</head>
+<body>
+    <div class="guide__wrap">
+        <div data-include-path="/src/guide/header.html"></div>
+        <div class="guide-content">
+            <div class="page-location text-2xl font-bold" id="pagesTitle"></div>
+            <div class="flex justify-between">
+                <div data-include-path="/src/_inc/lnb_guide.html"></div>
+                <div class="page-cont flex-1">
+                    <h2 class="font-head-xs font-bold">Color Guide</h2>
+                    <div class="caption-text font-body-xl mt-5">
+                        LG CNS는 Token System으로 구성되어 기본 컬러인 Black, White, Gray 기본 컬러 팔레트와<br>
+Heritage Red(Primary Color), Gray(Secondary Color) 컬러 팔레트로 구분되며 에러, 경고, 성공을 나타내는 Red, Yellow, Green 컬러 팔레트도 사용합니다.
+                    </div>
+                    <h2 class="font-head-xs font-bold mt-10">Primary Color</h2>
+                    <div class="content-box__wrap">
+                        <ul class="color-list">
+                            <li class="bg-colorcm-primary">enabled</li>
+                            <li class="bg-colorcm-primary is-select">select(hover)</li>    
+                            <li class="bg-colorcm-primary is-disabled">disabled</li>                                                    
+                            <li class="bg-colorcm-sub-primary">sub enabled</li>
+                            <li class="bg-colorcm-sub-primary is-select">select(hover)</li>                            
+                            <li class="bg-colorcm-sub-primary is-disabled">sub disabled</li>
+                        </ul>
+                    </div>
+                    <h2 class="font-head-xs font-bold mt-10">Secondary Color</h2>
+                    <div class="content-box__wrap">
+                        <ul class="color-list">
+                            <li class="bg-colorcm-secondary">enabled</li>
+                            <li class="bg-colorcm-secondary is-select">select(hover)</li>    
+                            <li class="bg-colorcm-secondary is-disabled">disabled</li>                                                    
+                            <li class="bg-colorcm-sub-secondary">sub enabled</li>
+                            <li class="bg-colorcm-sub-secondary is-select">select(hover)</li>                            
+                            <li class="bg-colorcm-sub-secondary is-disabled">sub disabled</li>
+                        </ul>
+                    </div>                    
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

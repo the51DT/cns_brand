@@ -1,20 +1,45 @@
 {
-    "siteName": "Fit 템플릿 사이트",
-    "period": "2025.1 ~ 2025.3",
+    "siteName": "LG CNS Renewal",
+    "period": "2025.1 ~ 2025.6",
     "IaList": [
         {
-            "id": 1,
-            "Level1": "ChatGPT",
+            "id": 0,
+            "Level1": "가이드",
             "screenId": "",
             "fileName": "",
             "Level2": [
                 {
-                    "name": "ChatGPT2",
+                    "name": "JS 가이드",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "js_temple01.html"
+                },
+                {
+                    "name": "",
                     "screenId": "",
                     "fileName": ""
                 },
                 {
-                    "name": "ChatGPT3",
+                    "name": "Aem 컴포넌트",
+                    "screenId": "",
+                    "fileName": ""
+                }
+            ]
+        },        
+        {
+            "id": 1,
+            "Level1": "대메뉴1",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "소메뉴1",
+                    "screenId": "1111",
+                    "path": "/src/page/",
+                    "fileName": "menu.html"
+                },
+                {
+                    "name": "소메뉴2",
                     "screenId": "",
                     "fileName": ""
                 }
@@ -22,17 +47,17 @@
         },
         {
             "id": 2,
-            "Level1": "AiList",
+            "Level1": "대메뉴2",
             "screenId": "",
             "fileName": "",
             "Level2": [
                 {
-                    "name": "ChatGPT2",
+                    "name": "소메뉴1",
                     "screenId": "",
                     "fileName": ""
                 },
                 {
-                    "name": "ChatGPT3",
+                    "name": "소메뉴2",
                     "screenId": "",
                     "fileName": ""
                 }
