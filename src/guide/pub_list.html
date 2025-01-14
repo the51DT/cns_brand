@@ -101,6 +101,9 @@
                         <span>Screen ID: ${menu.screenId || '-'}</span> | 
                         <span>File Name: ${menu.fileName || '-'}</span>
                     `;
+                    if(menu.visible === "hidden") {
+                        dd.classList.add('hidden');
+                    }
                     menuInfo.innerHTML = infoTemplate;
 
                     // <dd>에 제목과 정보 추가

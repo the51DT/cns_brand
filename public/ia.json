@@ -43,24 +43,25 @@
                     "name": "퍼블리싱 목록",
                     "screenId": "",
                     "path": "/src/guide/",
+                    "visible": "hidden",
                     "fileName": "pub_list.html"
                 }
             ]
         },        
         {
             "id": 1,
-            "Level1": "대메뉴1",
+            "Level1": "레이아웃",
             "screenId": "",
             "fileName": "",
             "Level2": [
                 {
-                    "name": "소메뉴1",
-                    "screenId": "1111",
+                    "name": "서브 레이아웃",
+                    "screenId": "",
                     "path": "/src/page/",
-                    "fileName": "menu.html"
+                    "fileName": "sub_layout.html"
                 },
                 {
-                    "name": "소메뉴2",
+                    "name": "",
                     "screenId": "",
                     "fileName": ""
                 }
