@@ -75,7 +75,7 @@ const generateCSSVariables = (prefix, data) => {
         cssRoot += `}\n`;
         
         // 7. variables.css 파일로 저장
-        await fs.writeFile('./src/assets/css/variables.css', cssRoot, 'utf8');
+        await fs.writeFile('./src/assets/css/variables.css', cssRoot, 'utf8');        
         console.log('CSS 변수가 variables.css 파일로 성공적으로 생성되었습니다.');
     } catch (error) {
         console.error('오류 발생:', error);

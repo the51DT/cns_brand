@@ -4,24 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link rel="stylesheet" href="/src/assets/css/index.css" />
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
 </head>
 <body>
     <div class="guide__wrap">
         <div data-include-path="/src/guide/header.html"></div>
-        <div class="guide-content">
-            <div class="page-location text-2xl font-bold" id="pagesTitle"></div>
-            <div class="flex justify-between">
-                <div data-include-path="/src/_inc/lnb_guide.html"></div>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <div class="lnb-side__wrap">
+                    <ul class="lnb_list has-chilren">
+                        <li><strong>폼</strong>
+                            <ul>
+                                <li><a href="#">Input</a></li>
+                                <li><a href="#">Select Box</a></li>
+                                <li><a href="#">Radio & Checkbox</a></li>
+                                <li><a href="#">Extends</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>아이콘</strong>
+                            <ul>
+                                <li><a href="#">아이콘</a></li>
+                            </ul>
+                        </li>
+                        <li><strong>컴포넌트</strong>
+                            <ul>
+                                <li><a href="/src/component/ui_button.html">버튼</a></li>
+                                <li><a href="#">모달</a></li>
+                                <li><a href="#">아코디언</a></li>
+                                <li><a href="#">테이블</a></li>
+                                <li><a href="#">탭</a></li>
+                                <li><a href="#">드롭다운</a></li>
+                                <li><a href="#">툴팁</a></li>
+                                <li><a href="#">토스트</a></li>
+                            </ul>
+                        </li>    
+                        <li><strong>유틸리티</strong>
+                            <ul>
+                                <li><a href="#">스와이프</a></li>
+                                <li><a href="#">모션</a></li>
+                            </ul>
+                        </li>                
+                    </ul>
+                </div>                
                 <div class="page-cont flex-1">
-                    <h2 class="font-bold text-2xl">UI 가이드</h2>
-                    <div class="guide-box text-base mt-3">
-                        <strong>1. 마크업</strong>
-                        <p style="margin-top: 3px;margin-left:10px;line-height: 150%;margin-bottom: 15px;">
-                            • 경로는 /src/component 에 있으며 static 페이지는 data-include-path 로 불러온다.
-                        </p>
+                    <p class="guide-title-h3">Input</p>                    
+                    <div class="section_text mt-5">
 
-                    </div>            
+                    </div>
+
                 </div>
             </div>
         </div>
