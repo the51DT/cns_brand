@@ -30,7 +30,7 @@ export const dropdownMenu = (menuSelector) => {
             siblings.classList.toggle('is-active', isActive);
         });
 
-        const optionList = menu.querySelectorAll('.dropdown_list li button');
+        const optionList = menu.querySelectorAll('.dropdown_list li button, .dropdown_list li a');
         optionList.forEach(option => {
             option.addEventListener('click', () => {
                 const selectedValue = option.getAttribute('data-option');

@@ -15,6 +15,8 @@ async function loadIaData() {
         // 사이트 제목 설정
         document.title = data.siteName;
         const pageTitle = document.querySelector('#siteTitle');
+        const pageCateText = document.querySelector('.sub-text');
+        
         if (pageTitle) {
             pageTitle.textContent = data.siteName;
         }
@@ -25,15 +27,20 @@ async function loadIaData() {
 
         // 카테고리 제목 설정
         const pageCateTitle = document.querySelector('#pagesTitle');
-        if (pageCateTitle) {
+        const subTextElement = document.querySelector('.visual-text .sub-text');
+        const h2Element = document.querySelector('.visual-text .font-head-xl');
+
+        if (pageCateTitle && subTextElement && h2Element) {
             // IA 데이터에서 현재 페이지와 매칭되는 Level2 찾기
             let matchedName = null;
+            let matchedSubText = null;
             data.IaList.some((item) => {
                 const matchedItem = item.Level2.find((subItem) => 
                     subItem.fileName.includes(currentPageName) // 현재 페이지 경로와 매칭
                 );
                 if (matchedItem) {
                     matchedName = matchedItem.name; // 매칭된 name 저장
+                    matchedSubText = matchedItem.subText;
                     return true; // 매칭되면 루프 종료
                 }
                 return false; // 다음 항목으로 진행
@@ -41,9 +48,17 @@ async function loadIaData() {
 
             // 매칭된 name을 페이지 제목에 설정
             if (matchedName) {
-                pageCateTitle.textContent = matchedName;
+                pageCateTitle.textContent = matchedName;     
+                if(h2Element) {
+                    subTextElement.textContent = matchedSubText || '기본 서브 텍스트';
+                    h2Element.textContent = matchedName;
+                }           
             } else {
                 pageCateTitle.textContent = 'json 파일에 추가해주세요';
+                if(h2Element) {
+                    subTextElement.textContent = '기본 서브 텍스트';
+                    h2Element.textContent = '기본 제목';
+                }
             }
         }
 
@@ -58,6 +73,5 @@ async function loadIaData() {
 document.addEventListener('DOMContentLoaded', async () => {  
     loadIncludedHTML();
     loadIaData();  // 반환된 데이터를 변수에 할당
-    const data = await loadIaData();
-    console.log('제목', data);
+    const data = await loadIaData();    
 })

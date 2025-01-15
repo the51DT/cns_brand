@@ -1,0 +1,22 @@
+$baseUrl: "/src/assets/image/icon/";
+$fileType: "svg";
+
+@mixin iconFile($wd, $ht, $icoName) {
+    width: calc(#{$wd} / 16 * 1rem); // 수정: $wt -> $wd
+    height: calc(#{$ht} / 16 * 1rem); // 수정: $ht (정의 필요)
+    min-width: calc(#{$wd} / 16 * 1rem); // 수정: $minWd (정의 필요)
+    background: url("#{$baseUrl}#{$icoName}." + $fileType) no-repeat center center; 
+}
+
+/* 아이콘 */
+.ico {
+    display: inline-flex;
+    background-size: contain;
+    vertical-align: middle;
+    &.icon-earth-wt24 {
+        @include iconFile(24,24,'ico_language');
+    }
+    &.icon-search-wt24 {
+        @include iconFile(24,24,'ico_search');
+    }
+}
