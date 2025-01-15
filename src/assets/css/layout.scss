@@ -1,6 +1,50 @@
 // @import url('_mixin.scss');
-
 .wrap {
-    background-color: rebeccapurple;    
-    
+    width: 100%;    
+}
+.inner-wrap {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+//푸터
+.footer__wrap {
+    padding: calc(40 / 16 * 1rem) 0;
+    .footer-info__wrap {
+        display: flex;
+        flex-direction: column;   
+        gap: calc(24 / 16 * 1rem);
+    }
+    .footer-menu {
+        display: flex;
+        align-items: center;
+        gap: calc(20 / 16 * 1rem);  
+        li {
+            a {
+                //color: var();
+                color: #1A1A1A;
+                padding: calc(8 / 16 * 1rem) 0;
+            }
+        }
+    } 
+    .footer-info {
+        p {
+            // color: var();
+            color: #333;
+        } 
+    }
+    .footer-util {
+        display: flex;
+        align-items: flex-end;
+        .footer-sns__wrap {
+            display: flex;
+            align-items: center;
+            gap: calc(4 / 16 * 1rem);Z
+            img {
+                width: 36px;
+                height: 36px;
+            }
+        }
+    }
 }
