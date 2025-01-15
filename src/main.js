@@ -4,7 +4,6 @@ import { generateUniqueId, numComma, dropdownMenu, setModal, openModal, closeMod
 
 let currentPage = null;
 let currentLocation = window.location.href;
-console.log(currentLocation)
 
 // Fetch를 사용한 방법
 async function loadIaData() {
@@ -71,7 +70,7 @@ async function loadIaData() {
 
 // DOM이 로드된 후 실행될 초기화 코드
 document.addEventListener('DOMContentLoaded', async () => {  
-    loadIncludedHTML();
-    loadIaData();  // 반환된 데이터를 변수에 할당
+    await loadIncludedHTML();
+    //loadIaData();  // 반환된 데이터를 변수에 할당
     const data = await loadIaData();    
 })
