@@ -19,8 +19,38 @@
                 <div class="page-cont flex-1">
                     <p class="guide-title-h3">Tab Component</p>                    
                     <div class="cmp-exsample__wrap mt-3">
-
-                        
+                        <div class="cmp-tab basic-type">
+                            <div class="cmp-tab__header">
+                                <ul class="tab__menu tab-item4">
+                                    <li class="is-active">
+                                        <a href="#">탭 메뉴1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">탭 메뉴2</a>
+                                    </li>   
+                                    <li>
+                                        <a href="#">탭 메뉴3</a>
+                                    </li> 
+                                    <li>
+                                        <a href="#">탭 메뉴4</a>
+                                    </li>                                                                                                                                              
+                                </ul>
+                            </div>
+                            <div class="tab-content__wrap">
+                                <div class="tab__content is-active">
+                                    탭 메뉴1
+                                </div>
+                                <div class="tab__content">
+                                    탭 메뉴2
+                                </div>
+                                <div class="tab__content">
+                                    탭 메뉴3
+                                </div>  
+                                <div class="tab__content">
+                                    탭 메뉴4
+                                </div>                                                                 
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -28,5 +58,9 @@
         </div>
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script type="module">
+        import { tabMenu } from "/src/assets/js/ui_common.js"
+        tabMenu('.basic-type', 'tab');
+    </script>
 </body>
 </html>

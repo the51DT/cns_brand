@@ -1,1 +1,24 @@
 /* 탭 */
+.cmp-tab {
+    display: flex;
+    flex-direction: column;
+}
+.cmp-tab .cmp-tab__header ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cmp-tab .cmp-tab__header ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cmp-tab .cmp-tab__header ul.tab-item4 li {
+    width: calc(100% / 4);
+}
+.cmp-tab .cmp-tab__header ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

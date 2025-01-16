@@ -54,4 +54,8 @@ export default defineConfig({
         }
     },
     publicDir: 'public',
+    server: {
+        port: 5001,
+        strictPort: true,
+    },
 });
