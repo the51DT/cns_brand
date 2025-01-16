@@ -57,5 +57,14 @@ export default defineConfig({
     server: {
         port: 5001,
         strictPort: true,
+        onListening: (server) => {
+            const address = server.address();
+            if (address && typeof address === 'object') {
+                const port = address.port;
+                if (port !== 5001) {
+                    console.error(`Error: The server is running on an unexpected port: ${port}. Expected port: 5001.`);
+                }
+            }
+        },
     },
 });
