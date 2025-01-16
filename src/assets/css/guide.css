@@ -115,6 +115,26 @@
     width: calc(100% / 16);
     background-color: #212121;
 }
+.icon-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.icon-list li {
+    width: 180px;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--colorGL-all-black12);
+    background-color: var(--colorGL-all-gray100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.icon-list li:hover {
+    background-color: var(--colorGL-all-gray400);
+    cursor: pointer;
+}
 
 /* 가이드 테이블 */
 .guide-page__table-wrap {
