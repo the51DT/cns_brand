@@ -1,6 +1,5 @@
 @import 'index.css';
 
-/* 레이아웃 */
 .guide-header__wrap {
     background-color: var(--color-g-header);
     position: sticky;

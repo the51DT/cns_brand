@@ -22,3 +22,9 @@
     align-items: center;
     justify-content: space-between;
 }
+.cmp-tab .tab__content {
+    display: none;
+}
+.cmp-tab .tab__content.is-active {
+    display: block;
+}
