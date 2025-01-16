@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <div data-include-path="/src/guide/header.html"></div>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <div data-include-path="./cmp_lnb.html"></div>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3">Icon Component</p>                    
+                    <div class="section_text mt-5">
+                        경로 : src\assets\image\icon
+                    </div>    
+                    <div class="content-box__wrap mt-5">
+                        <ul class="icon-list">
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-earth-wt24"></i>
+                                </div>
+                                <div class="icon-name">ico icon-earth-wt24</div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-search-wt24"></i>
+                                </div>
+                                <div class="icon-name">ico icon-search-wt24</div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="ico"></i>
+                                </div>
+                                <div class="icon-name"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const iconList = document.querySelectorAll('.icon-list li');
+            iconList.forEach(li => {
+                li.addEventListener('click', () => {
+                const iconName = li.querySelector('.icon-name').innerText;
+                navigator.clipboard.writeText(iconName).then(() => {
+                    alert('복사 되었습니다: ' + iconName);
+                }).catch(err => {
+                    console.error('복사 실패:', err);
+                });
+            });
+            })
+        })
+    </script>
+</body>
+</html>
