@@ -2,29 +2,78 @@
 .cmp-tab {
     display: flex;
     flex-direction: column;
+    background: var(--colorGL-all-white100);
+}
+.cmp-tab .cmp-tab__header {
+    border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default6);
 }
 .cmp-tab .cmp-tab__header ul {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;    
 }
 
 .cmp-tab .cmp-tab__header ul li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.cmp-tab .cmp-tab__header ul.tab-item4 li {
-    width: calc(100% / 4);
+    width: calc(100% / var(--tab-count));
+    height: calc(64 / 16 * 1rem);
 }
 .cmp-tab .cmp-tab__header ul li a {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--colorCM-all-text-text-tertiary);     
+    font-size: calc(var(--typo-pc-size-body-lg) / 16 * 1rem);    
+    font-weight: 500;
+    line-height: calc(var(--typo-pc-line-height-body-lg) / 16 * 1rem);
+    letter-spacing: var(--letter-spacing-small);
+    position: relative;
+}
+.cmp-tab .cmp-tab__header ul li.is-active a {
+    color: var(--typo-pc-size-body-lg);
+}
+.cmp-tab .cmp-tab__header ul li a::after {
+    content: '';
+    display: block;
+    height: calc(4 / 16 * 1rem);
+    width: 0%;
+    background: var(--colorCM-all-stroke-stroke-default1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s, background 0.3s;
+}
+.cmp-tab .cmp-tab__header ul li.is-active a::after {
+    width: 100%;
+    background: var(--colorCM-all-stroke-stroke-default2);
+    transition: width 0.3s, background 0.3s;
 }
 .cmp-tab .tab__content {
     display: none;
 }
 .cmp-tab .tab__content.is-active {
     display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .cmp-tab .cmp-tab__header {
+        overflow-x: scroll;
+    }
+    .cmp-tab .cmp-tab__header ul {
+        white-space: nowrap;  
+    }
+    .cmp-tab .cmp-tab__header ul li {
+        height: auto;
+    }
+    .cmp-tab .cmp-tab__header ul li a {    
+        font-size: calc(var(--typo-mo-size-body-xs) / 16 * 1rem);  
+        line-height: calc(var(--typo-mo-line-height-body-xs) / 16 * 1rem);     
+        padding-top: calc(16 / 16 * 1rem);
+        padding-bottom: calc(16 / 16 * 1rem);
+    }
+
 }

@@ -314,6 +314,10 @@ export const tabMenu = (el, type) => {
 
         if (type === 'tab' && tabList.length !== tabContents.length) return;
 
+        let tabItemsCount = tabList.length; 
+        wrap.style.setProperty('--tab-count', tabItemsCount);
+        console.log(tabItemsCount)
+
         tabList.forEach((list, index) => {
             list.addEventListener('click', (event) => {
                 event.preventDefault();
@@ -344,3 +348,28 @@ export const tooltip = (el) => {
         button.appendChild(tooltip);
     });
 }
+
+//아코디언
+export const accordion = (selector) => {
+    if (!selector) {
+        return;
+    }
+
+    const accWraps = document.querySelectorAll(selector);
+    accWraps.forEach(acc => {
+        const accButtons = acc.querySelectorAll('.accordion-title button');
+
+        accButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const currentItem = button.closest('li');
+                const activeItem = acc.querySelector('li.is-active');
+
+                if (activeItem && activeItem !== currentItem) {
+                    activeItem.classList.remove('is-active');
+                }
+
+                currentItem.classList.toggle('is-active');
+            });
+        });
+    });
+};
