@@ -41,9 +41,10 @@
                     "fileName": "cmp_form.html"
                 },                                     
                 {
-                    "name": "Aem 컴포넌트",
+                    "name": "HeroBanes",
                     "screenId": "",
-                    "fileName": ""
+                    "path": "/src/component/",
+                    "fileName": "cmp_hero_banner.html"                    
                 },
                 {
                     "name": "썸네일 유형",

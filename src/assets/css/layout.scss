@@ -83,6 +83,7 @@ $desktop: "screen and (min-width : 1044px)";
 }
 //헤더
 
+// HeroBanner
 .sub-visual__wrap {
     width: 100%;
     height: calc(660 / 16 * 1rem);
@@ -96,9 +97,12 @@ $desktop: "screen and (min-width : 1044px)";
         left:0;        
         top: calc(50% - 40px);
         color: var(--colorGL-all-white100);
+        p + h2 {
+            margin-top: calc(12 / 16 * 1rem);
+        }
     }
 }
-// 서브 비주얼
+// HeroBanner
 
 .footer__wrap {
     padding: calc(40 / 16 * 1rem) 0;

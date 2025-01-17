@@ -29,11 +29,11 @@ async function loadIaData() {
         const subTextElement = document.querySelector('.visual-text .sub-text');
         const h2Element = document.querySelector('.visual-text .font-head-xl');
 
-        if (pageCateTitle && subTextElement && h2Element) {
+        if (pageCateTitle) {
             // IA 데이터에서 현재 페이지와 매칭되는 Level2 찾기
             let matchedName = null;
             let matchedSubText = null;
-            data.IaList.some((item) => {
+            data.IaList.some((item) => {                
                 const matchedItem = item.Level2.find((subItem) => 
                     subItem.fileName.includes(currentPageName) // 현재 페이지 경로와 매칭
                 );
@@ -47,6 +47,7 @@ async function loadIaData() {
 
             // 매칭된 name을 페이지 제목에 설정
             if (matchedName) {
+                console.log('ddd', matchedName);
                 pageCateTitle.textContent = matchedName;     
                 if(h2Element) {
                     subTextElement.textContent = matchedSubText || '기본 서브 텍스트';
@@ -71,6 +72,6 @@ async function loadIaData() {
 // DOM이 로드된 후 실행될 초기화 코드
 document.addEventListener('DOMContentLoaded', async () => {  
     await loadIncludedHTML();
-    //loadIaData();  // 반환된 데이터를 변수에 할당
+    // loadIaData();  // 반환된 데이터를 변수에 할당
     const data = await loadIaData();    
 })
