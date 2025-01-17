@@ -1,0 +1,84 @@
+// content list-thumbnails types
+$gap-margin: 16px;
+$phone: "only screen and (max-width : 768px)";
+$phone480: "only screen and (max-width : 480px)";
+$phone360: "only screen and (max-width : 360px)";
+$phonemini: "only screen and (max-width : 320px)";
+$notebook: "screen and (max-width : 1366px)";
+$tablet: "screen and (max-width : 1043px)";
+$desktop: "screen and (min-width : 1044px)";
+//반응형 *--
+@mixin ellipsis($line: 1) {
+    @if ($line == 1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+}
+
+.content-list__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    @media #{$phone} {
+        flex-direction: column;
+    }
+    &.thumbnail-type {
+        gap: $gap-margin;
+        &.pc-col3 {
+            li {
+                width: calc((100% / 3) - $gap-margin);
+                @media #{$phone} {
+                    width: 100%;
+                }
+            }
+        }
+        &.type-box-line {
+            .content-info {
+                border: 1px solid var(--colorGL-all-gray250);
+                border-top: 0;
+            }
+        }
+        .content-list__inner {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            .thumbnail-wrap {
+                width: 100%;
+                // aspect-ratio: 16 / 9;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .content-info {
+                padding: calc(32 / 16 * 1rem) calc(48 / 16 * 1rem);
+                .chip__wrap {
+                    & + .title {
+                        margin-top: calc(24 / 16 * 1rem);
+                    }
+                    
+                } 
+                .title {
+                    @include ellipsis($line: 2);
+                    font-weight: 700;                   
+                }
+                .description {
+                    color: var(--colorGL-all-gray850);
+                    @include ellipsis($line: 3);
+                    margin-top: calc(14 / 16 * 1rem);                
+                }
+                .date-box {
+                    margin-top: calc(14 / 16 * 1rem); 
+                    color: var(--colorGL-all-gray700);
+                }
+            }
+        }
+    }
+}

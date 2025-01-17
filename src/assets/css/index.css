@@ -4,5 +4,6 @@
 
 
 @import 'layout.scss';
+@import 'content.scss';
 @import 'icon.scss';
 @import url("../bundle/tailwindcss/tailwind-all.css");

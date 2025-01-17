@@ -19,4 +19,10 @@ $fileType: "svg";
     &.icon-search-wt24 {
         @include iconFile(24,24,'ico_search');
     }
+    &.icon-search-bl35 {
+        @include iconFile(35,35,'ico_search_bl35');
+    }      
+    &.icon-remove-bl28 {
+        @include iconFile(28,28,'ico_remove_gray28');
+    }        
 }

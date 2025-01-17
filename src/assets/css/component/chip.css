@@ -1,0 +1,26 @@
+:root {
+    --chip-gap: 8;
+    --chip-height: 28;
+    --chip-padding-top-bottom: 4;
+    --chip-padding-side: 10;
+}
+
+.chip__wrap {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--chip-gap) / 16 * 1rem);
+}
+.chip {
+    display: inline-flex;
+    display: flex;
+    height: calc(var(--chip-height) / 16 * 1rem);
+    padding: calc(var(--chip-padding-top-bottom) / 16 * 1rem) calc(var(--chip-padding-side) / 16 * 1rem);
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    font-weight: 600;
+}
+.chip.bg-basic {
+    background: var(--colorGL-all-gray100);
+    color: var(--colorGL-all-gray700);
+}

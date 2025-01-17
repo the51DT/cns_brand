@@ -66,5 +66,13 @@ export default defineConfig({
                 }
             }
         },
+        middleware: (req, res, next) => {
+            if (req.headers['user-agent'].includes('Live Server')) {
+                res.statusCode = 500;
+                res.end('Error: Live Server는 지원되지 않습니다. 개발을 위해 Vite를 사용하세요.');
+            } else {
+                next();
+            }
+        },
     },
 });

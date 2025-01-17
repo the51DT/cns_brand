@@ -1,0 +1,83 @@
+/* 폼 */
+:root {
+    --gap-padding: 20;
+    --input-border-radius: 47;
+    --input-padding-top: 21; 
+    --input-padding-side: 28;
+    --input-basic-size: 12;
+    --input-height: 81;
+}
+
+.form-element__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(var(--gap-padding) / 16 * 1rem);
+    width: 100%;
+    font-family: var(--typo-pc-family-head);    
+}
+.form-element__wrap .form-element__inner {
+    width: 100%;
+    border-radius: calc(var(--input-border-radius) / 16 * 1rem);
+    display: flex;
+    align-items: center;
+    padding: calc(var(--input-padding-top) / 16 * 1rem) calc(var(--input-padding-side) / 16 * 1rem);
+    background-color: var(--colorCM-all-fill-fill-default0);
+}
+.form-element__wrap .form-element__inner input {
+    width: 100%;
+    border: 0;
+    height: 100%;
+    color: #000;
+    background-color: transparent;
+    font-size:calc(var(--typo-pc-size-body-lg) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-body-lg) / 16 * 1rem);
+    color: var(--colorGL-all-gray750);
+    font-weight:500;
+}
+.form-element__wrap .form-element__inner input::placeholder {
+    color: var(--color-basic7);
+}
+.form-element__wrap .form-element__inner.input-disabled input:disabled {
+    color:  var(--color-basic9);
+}
+.form-element__wrap .form-element__inner.input-disabled {
+    background:  var(--color-basic3);
+}
+.form-element__wrap .input-type {
+    height: calc(var(--input-height) / 16 * 1rem);
+    background-color: var(--colorCM-all-fill-fill-default0);
+    border: 1px solid var(--colorGL-all-gray250);
+}
+.form-element__wrap .input-type.bg-gray {
+    background-color: var(--color-basic2);
+}
+.form-element__wrap .input-type.bg-transparent {
+    background-color: transparent;
+    padding: 0;
+}
+/* search type */
+.form-element__wrap .input-type.search-type-full {
+    height: calc(var(--input-height) / 16 * 1rem);
+    background-color: var(--colorCM-all-fill-fill-default0);
+    border: 1px solid var(--colorGL-all-gray250);
+    gap: calc(var(--gap-padding) / 16 * 1rem);
+}
+.form-element__wrap .input-type.search-type-full .btn.btn-search {
+    width: calc(35 / 16 * 1rem);
+    height: calc(35 / 16 * 1rem);
+}
+.form-element__wrap .input-type.search-type-full .btn.btn-remove {
+    width: calc(24 / 16 * 1rem);
+    height: calc(24 / 16 * 1rem);
+}
+.form-element__wrap .form-element__inner .btn-remove {
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+.form-element__wrap .form-element__inner .btn-remove.is-show {
+    display: block;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
