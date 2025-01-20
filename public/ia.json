@@ -44,8 +44,38 @@
                     "name": "HeroBanes",
                     "screenId": "",
                     "path": "/src/component/",
-                    "fileName": "cmp_hero_banner.html"                    
+                    "fileName": "/cmp_guide_heroBanner.html"                    
                 },
+                {
+                    "name": "Overview",
+                    "screenId": "",
+                    "path": "/src/component/",
+                    "fileName": "/cmp_guide_overView.html"                    
+                },
+                {
+                    "name": "tabs",
+                    "screenId": "",
+                    "path": "/src/component/",
+                    "fileName": "cmp_tab.html"                    
+                },      
+                {
+                    "name": "Title & Teaser Title",
+                    "screenId": "",
+                    "path": "/src/component/",
+                    "fileName": "cmp_guide_title.html"                    
+                },      
+                {
+                    "name": "ImageItem",
+                    "screenId": "",
+                    "path": "/src/component/",
+                    "fileName": "cmp_guide_ImageItem.html"                    
+                },   
+                {
+                    "name": "Itemlist_3Columns",
+                    "screenId": "",
+                    "path": "/src/component/",
+                    "fileName": "cmp_guide_Itemlist_3Columns.html"                    
+                },                                         
                 {
                     "name": "썸네일 유형",
                     "screenId": "",

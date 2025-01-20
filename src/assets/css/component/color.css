@@ -3,7 +3,8 @@
     color: var(--colorCM-all-primary-primary-enabled);
 }
 .colorcm-primary.is-select,
-.colorcm-primary:hover {
+a.colorcm-primary:hover,
+button.colorcm-primary:hover  {
     color: var(--colorCM-all-primary-primary-pressed);
 }
 .colorcm-primary.is-disabled {
@@ -13,7 +14,8 @@
     color: var(--colorCM-all-primary-primary-sub-enabled);
 }
 .colorcm-sub-primary.is-select,
-.colorcm-sub-primary:hover {
+a.colorcm-sub-primary:hover,
+button.colorcm-sub-primary:hover {
     color: var(--colorCM-all-primary-primary-sub-pressed);
 }
 .colorcm-sub-primary.is-disabled {

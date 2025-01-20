@@ -273,3 +273,16 @@
 .type-list p span {
     margin-left: 15px;
 }
+
+/* 모바일 반응형 css */
+@media screen and (max-width: 768px) {
+    .guide-header__wrap .navi {
+        display: none;
+    }
+    .lnb-side__wrap {
+        display: none;
+    }
+    .guide-content {
+        padding: 16px;
+    }
+}

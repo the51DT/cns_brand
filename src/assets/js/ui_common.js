@@ -363,9 +363,10 @@ export const tabMenu = (el, type) => {
 
         if (type === 'tab' && tabList.length !== tabContents.length) return;
 
-        let tabItemsCount = tabList.length; 
-        wrap.style.setProperty('--tab-count', tabItemsCount);
-        console.log(tabItemsCount)
+        if(wrap.classList.contains('align-center')) {
+            let tabItemsCount = tabList.length; 
+            wrap.style.setProperty('--tab-count', tabItemsCount);               
+        }     
 
         tabList.forEach((list, index) => {
             list.addEventListener('click', (event) => {

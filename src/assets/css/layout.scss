@@ -87,7 +87,9 @@ $desktop: "screen and (min-width : 1044px)";
 .sub-visual__wrap {
     width: 100%;
     height: calc(660 / 16 * 1rem);
-    background: url('/src/assets/image/sub/bg_sub_vi01.png') repeat-x center top;
+    background-image: var(--hero-sub-pc-img);
+    background-repeat: repeat-x;
+    background-position: center center;   
     .inner-wrap {
         height: 100%;
         position: relative;
@@ -99,6 +101,14 @@ $desktop: "screen and (min-width : 1044px)";
         color: var(--colorGL-all-white100);
         p + h2 {
             margin-top: calc(12 / 16 * 1rem);
+        }
+    }
+    @media #{$phone} {
+        height: calc(562 / 16 * 1rem);
+        background-image: var(--hero-sub-mo-img);
+        background-size: contain;
+        .visual-text {
+            left: calc(20 / 16 * 1rem);
         }
     }
 }
