@@ -5,17 +5,20 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    height: auto;
+    height: 64px;
     padding: 16px;
 }
 .guide-header__wrap h1 {
     color: #fff;
 }
-.guide-header__wrap .navi {
+.guide-header__wrap .navi ul {
     gap: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.guide-header__wrap .navi button {
+    display: none;
 }
 .guide-header__wrap .navi a {
     color: #fff;
@@ -276,13 +279,55 @@
 
 /* 모바일 반응형 css */
 @media screen and (max-width: 768px) {
-    .guide-header__wrap .navi {
+    .guide-header__wrap .navi button {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-image: url(../image/icon/ico_menu_wt.svg);
+    }
+    .guide-header__wrap .navi ul {
         display: none;
     }
-    .lnb-side__wrap {
-        display: none;
+    .guide-header__wrap .navi.open ul {
+        position: absolute;
+        left: 0;
+        top: 64px;
+        display: block;
+        width: 100%;
+    }
+    .guide-header__wrap .navi.open li {
+        background-color: #fff;
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    .guide-header__wrap .navi.open ul::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        display: block;
+        width: 100vw;
+        height: calc(100vh - 64px);
+        background-color: #00000055;
+        z-index: -1;
+    }
+    .guide-header__wrap .navi a {
+        color: #212121;
+    }
+    .lnb-type {
+        flex-direction: column;
+    }
+    .lnb-type .lnb-side__wrap {
+        display: block;
+        position: static;
+        width: 100%;
+        min-height: 0;
+        padding: 0 20px;
     }
     .guide-content {
         padding: 16px;
+    }
+    .guide-content .page-cont {
+        width: 100%;
     }
 }

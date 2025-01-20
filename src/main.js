@@ -1,5 +1,5 @@
 import { loadIncludedHTML } from './assets/js/pub_include.js'
-import { generateUniqueId, numComma, dropdownMenu, setModal, openModal, closeModal, getNextSibling, openToggleBox, infiniteScroll, openToast, closeToast, tabMenu} from './assets/js/ui_common.js'
+import { generateUniqueId, numComma, dropdownMenu, setModal, openModal, closeModal, getNextSibling, openToggleBox, infiniteScroll, openToast, closeToast, tabMenu, setCls } from './assets/js/ui_common.js';
 
 
 let currentPage = null;
@@ -74,4 +74,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadIncludedHTML();
     // loadIaData();  // 반환된 데이터를 변수에 할당
     const data = await loadIaData();    
+
+    // 가이드 네비
+    const guideNavi = document.querySelector('.guide-header__wrap .navi');
+    const guideNaviBtn = guideNavi.querySelector('button');
+    if(guideNaviBtn) {
+        guideNaviBtn.addEventListener("click", () => {
+            guideNavi.classList.contains("open") ?  setCls(guideNavi, 'open', 'remove') : setCls(guideNavi, 'open')
+        })
+    }
 })
