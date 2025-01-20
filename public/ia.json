@@ -75,7 +75,13 @@
                     "screenId": "",
                     "path": "/src/component/",
                     "fileName": "cmp_guide_Itemlist_3Columns.html"                    
-                },                                         
+                },       
+                {
+                    "name": "SpecList",
+                    "screenId": "",
+                    "path": "/src/component/",
+                    "fileName": "cmp_guide_SpecList.html"                    
+                },                                                     
                 {
                     "name": "썸네일 유형",
                     "screenId": "",
