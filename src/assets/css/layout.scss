@@ -116,6 +116,8 @@ $desktop: "screen and (min-width : 1044px)";
 
 .footer__wrap {
     padding: calc(40 / 16 * 1rem) 0;
+    background-color: var(--background-default);
+    border-top: 1px solid var(--colorCM-all-fill-fill-default4);
     .footer-info__wrap {
         display: flex;
         flex-direction: column;   
@@ -146,9 +148,12 @@ $desktop: "screen and (min-width : 1044px)";
             display: flex;
             align-items: center;
             gap: calc(4 / 16 * 1rem);
-            img {
-                width: 36px;
-                height: 36px;
+            a {
+                width: calc(36 / 16 * 1rem);
+                height: calc(36 / 16 * 1rem);
+                img {
+                    width: 100%;
+                }
             }
         }
         .dropdown-menu {
@@ -161,7 +166,7 @@ $desktop: "screen and (min-width : 1044px)";
                     padding: calc(11 / 16 * 1rem) calc(12 / 16 * 1rem) calc(11 / 16 * 1rem)  calc(20 / 16 * 1rem);
                     justify-content: space-between;
                     align-items: center;
-                    gap: calc(4 / 16 * 1rem);
+                    gap: calc(2 / 16 * 1rem);
                     &::after {
                         content: '';
                         display: inline-flex;
