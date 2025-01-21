@@ -6,6 +6,7 @@ $fileType: "svg";
     height: calc(#{$ht} / 16 * 1rem);
     min-width: calc(#{$wd} / 16 * 1rem); 
     background: url("#{$baseUrl}#{$icoName}." + $fileType) no-repeat center center; 
+    background-size: contain;
 }
 
 /* 아이콘 */
@@ -24,5 +25,8 @@ $fileType: "svg";
     }      
     &.icon-remove-bl28 {
         @include iconFile(28,28,'ico_remove_gray28');
-    }        
+    }   
+    &.icon-arrow-right-wt16 {
+        @include iconFile(16,16,'icon_arrow_wt16');
+    }           
 }

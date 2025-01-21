@@ -69,6 +69,26 @@ async function loadIaData() {
     }
 }
 
+const activateNavItem = (targetUrl) => {
+    const lnbList = document.querySelectorAll(targetUrl);
+    const nowUrl = window.location.href;
+    const fileNameMatch = nowUrl.match(/\/([^\/]+\.html)$/);
+    const fileName = fileNameMatch ? fileNameMatch[1] : null;
+
+    if (fileName) {
+        lnbList.forEach(el => {
+            const elLink = el.href;
+            const urlMatch = elLink.match(/\/([^\/]+\.html)$/);
+            const urlName = urlMatch ? urlMatch[1] : null;
+
+            if (fileName === urlName) {
+                el.parentNode.classList.add('is-active');
+            }
+            
+        });
+    }
+};
+
 // DOM이 로드된 후 실행될 초기화 코드
 document.addEventListener('DOMContentLoaded', async () => {  
     await loadIncludedHTML();
@@ -76,11 +96,29 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await loadIaData();    
 
     // 가이드 네비
-    const guideNavi = document.querySelector('.guide-header__wrap .navi');
-    const guideNaviBtn = guideNavi.querySelector('button');
-    if(guideNaviBtn) {
-        guideNaviBtn.addEventListener("click", () => {
-            guideNavi.classList.contains("open") ?  setCls(guideNavi, 'open', 'remove') : setCls(guideNavi, 'open')
+    const guideNavy = document.querySelector('.guide-header__wrap .navi');
+    const guideNavyBtn = guideNavy.querySelector('button');
+    if(guideNavyBtn) {
+        guideNavyBtn.addEventListener("click", () => {
+            guideNavy.classList.contains("open") ?  setCls(guideNavy, 'open', 'remove') : setCls(guideNavy, 'open')
         })
     }
+        
+    //2depth 메뉴
+    const guideMenu = document.querySelector('.lnb-side__wrap .lnb-trigger');
+    guideMenu && guideMenu.addEventListener('click', () => {
+        guideMenu.classList.toggle('is-active');
+        document.querySelector('.lnb_list').classList.toggle('is-active');
+    })
+
+    
+    activateNavItem('.lnb-side__wrap li a'); 
+
+    const activeMenu = document.querySelector('.lnb-side__wrap > ul li.is-active')
+    if(activeMenu) {
+        const activeMenuName = activeMenu.innerText;
+        guideMenu.innerText = activeMenuName;
+    }
+    
+    
 })

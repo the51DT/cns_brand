@@ -229,6 +229,9 @@
     padding: 16px 0 8px;
     display: block;
 }
+.lnb-type .lnb-side__wrap > ul > li ul li.is-active a {
+    color: #0048c0;
+}
 .lnb_list > li > a {
     display: block;
     font-size: 18px;
@@ -276,7 +279,14 @@
 .type-list p span {
     margin-left: 15px;
 }
-
+.lnb-type .lnb-side__wrap button {
+    display: none;
+    border: 1px solid #c6c6c6;
+    border-radius: 0px;
+    padding: 10px;
+    white-space: nowrap;
+    width: 100%;
+}
 /* 모바일 반응형 css */
 @media screen and (max-width: 768px) {
     .guide-header__wrap .navi button {
@@ -319,10 +329,55 @@
     }
     .lnb-type .lnb-side__wrap {
         display: block;
-        position: static;
+        position: relative;
         width: 100%;
         min-height: 0;
         padding: 0 20px;
+        background: #fff;
+        border: 0;
+        top:0;
+        padding:0;
+        /* z-index: 11;
+        left: -100%;
+        top: 63px;
+        height: calc(100% - 64px);
+        overflow-y: auto;
+        border-radius: 0; */
+    }
+    /* .lnb-type .lnb-side__wrap.is-active {
+        left: 0;
+        top: 63px;
+    } */
+    .lnb-type .lnb-side__wrap button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+    .lnb-type .lnb-side__wrap button::after {
+        content: '';
+        display: inline-flex;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        background: url('/src/assets/image/icon/ico_arrow_down.png') no-repeat center;
+        background-size: contain;
+    }
+    .lnb_list {
+        display: none;
+    }
+    .lnb_list.is-active {
+        display: block;
+        height: 300px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 0 16px;
+        position: absolute;
+        width: 100%;
+        left:0;
+        top: 45px;
+        z-index: 10;
     }
     .guide-content {
         padding: 16px;

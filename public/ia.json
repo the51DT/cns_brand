@@ -43,25 +43,25 @@
                 {
                     "name": "HeroBanes",
                     "screenId": "",
-                    "path": "/src/component/",
+                    "path": "/src/guide/",
                     "fileName": "/cmp_guide_heroBanner.html"                    
                 },
                 {
                     "name": "Overview",
                     "screenId": "",
-                    "path": "/src/component/",
+                    "path": "/src/guide/",
                     "fileName": "/cmp_guide_overView.html"                    
                 },
                 {
                     "name": "tabs",
                     "screenId": "",
-                    "path": "/src/component/",
+                    "path": "/src/guide/",
                     "fileName": "cmp_tab.html"                    
                 },      
                 {
                     "name": "Title & Teaser Title",
                     "screenId": "",
-                    "path": "/src/component/",
+                    "path": "/src/guide/",
                     "fileName": "cmp_guide_title.html"                    
                 },      
                 {
@@ -73,7 +73,7 @@
                 {
                     "name": "Itemlist_3Columns",
                     "screenId": "",
-                    "path": "/src/component/",
+                    "path": "/src/guide/",
                     "fileName": "cmp_guide_Itemlist_3Columns.html"                    
                 },       
                 {
@@ -81,7 +81,25 @@
                     "screenId": "",
                     "path": "/src/component/",
                     "fileName": "cmp_guide_SpecList.html"                    
-                },                                                     
+                },   
+                {
+                    "name": "FAQItem",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_accodien.html"                    
+                },  
+                {
+                    "name": "CustomerCase",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_customer-case.html"                    
+                },                                                                    
+                {
+                    "name": "DataList",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_DataList.html"
+                },
                 {
                     "name": "썸네일 유형",
                     "screenId": "",

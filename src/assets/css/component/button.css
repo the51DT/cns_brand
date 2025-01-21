@@ -1,0 +1,41 @@
+:root {
+    --border-radius: 0; 
+}
+/* 버튼 */
+.button__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.btn {
+    font-family: var(--typo-pc-family-head);
+    align-items: center;
+    border-radius: var(--border-radius-14);
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+}
+.btn.btn-primary {
+    background-color: var(--colorCM-all-primary-primary-enabled);
+    color: var(--colorGL-all-white100);
+    font-size: calc(14 / 16 * 1rem);
+    font-weight: 700;
+    line-height: calc(21 / 16 * 1rem);
+    padding: calc(6 / 16 * 1rem) calc(18 / 16 * 1rem);
+    
+}
+.btn.btn-primary:hover,
+.btn.btn-primary.is-active {
+    background-color: var(--colorCM-all-primary-primary-pressed);
+    color: var(--colorGL-all-white100);
+}
+.btn.btn-primary:disabled,
+.btn.btn-primary.is-disabled {
+    background-color: var(--colorCM-all-primary-primary-disabled);
+    color: var(--colorGL-all-white100);
+    cursor: default;
+    pointer-events: none;
+}
