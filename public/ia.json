@@ -122,16 +122,18 @@
             "fileName": "",
             "Level2": [
                 {
-                    "name": "서브 레이아웃",
+                    "name": "서브 레이아웃(배경타입)",
                     "subText": "Service",
                     "screenId": "",
                     "path": "/src/page/",
                     "fileName": "sub_template.html"
                 },
                 {
-                    "name": "",
+                    "name": "서브 레이아웃",
+                    "subText": "Service",
                     "screenId": "",
-                    "fileName": ""
+                    "path": "/src/page/",
+                    "fileName": "sub_template2.html"
                 }
             ]
         },
