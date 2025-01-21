@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { glob } from 'glob';
+import fg from 'fast-glob';
 import path from 'path';
 
 export default defineConfig({
@@ -46,8 +47,13 @@ export default defineConfig({
         minify: 'esbuild',
         rollupOptions: {
             input: Object.fromEntries(
-                glob.sync('./*.html').map(file => [
-                    path.basename(file, '.html'),
+                fg.sync([
+                    './index.html',
+                    './src/**/*.html'
+                ]).map(file => [
+                    path.relative('.', file)
+                        .replace(/\.html$/, '')
+                        .replace(/\//g, '-'),
                     path.resolve(__dirname, file)
                 ])
             )
