@@ -154,6 +154,26 @@
                     "fileName": ""
                 }
             ]
+        },
+        {
+            "id": 3,
+            "Level1": "Sub - 서비스",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "Service - Enterprise S/W",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "service_enterpriseSW.html"
+                },
+                {
+                    "name": "Service - 디지털AX",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "service_digitalAX.html"
+                }
+            ]
         }
     ]
 }
