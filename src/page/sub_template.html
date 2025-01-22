@@ -14,11 +14,13 @@
         <div data-include-path="/src/component/cmp_heroBanner.html"></div>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
-            <div class="cmp-wrap fixed-width">
-                <div style="height: 500px"></div>
-            </div>
-            <div class="cmp-wrap">
+            <div class="inner-wrap">
+                <div class="cmp-wrap fixed-width">
+                    <div style="height: 500px;background-color: #a2a2a2;"></div>
+                </div>
+                <div class="cmp-wrap">
 
+                </div>
             </div>
         </div>
         <div data-include-path="/src/_inc/footer.html"></div>
@@ -26,7 +28,9 @@
     <script type="module" src="/src/main.js"></script>
     <script type="module">
         import { dropdownMenu } from '/src/assets/js/ui_common.js'
-        dropdownMenu('.dropdown-menu');
+        setTimeout(function(){
+            dropdownMenu('.dropdown-menu');
+        }, 1000);        
     </script>
 </body>
 </html>

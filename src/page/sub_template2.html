@@ -24,7 +24,9 @@
     <script type="module" src="/src/main.js"></script>
     <script type="module">
         import { dropdownMenu } from '/src/assets/js/ui_common.js'
-        dropdownMenu('.dropdown-menu');
+        setTimeout(function(){
+            dropdownMenu('.dropdown-menu');
+        }, 1000);  
     </script>
 </body>
 </html>

@@ -97,6 +97,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // 가이드 네비
     const guideNavy = document.querySelector('.guide-header__wrap .navi');
+    if(!guideNavy) {
+        return;
+    }
     const guideNavyBtn = guideNavy.querySelector('button');
     if(guideNavyBtn) {
         guideNavyBtn.addEventListener("click", () => {

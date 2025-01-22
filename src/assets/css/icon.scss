@@ -34,5 +34,8 @@ $fileType: "svg";
     }    
     &.icon_search_bl24 {
         @include iconFile(24,24,'icon_search_bl24');
-    }               
+    }   
+    &.icon_hamburger_menu {
+        @include iconFile(24,24,'btn_hamburger_menu');
+    }                  
 }
