@@ -46,7 +46,7 @@ $pcWide: "screen and (min-width : 1920px)";
     }
     .header__wrap {
         width: 100%;        
-        border-bottom: 1px solid var(--colorGL-all-white80);
+        border-bottom: 1px solid var(--colorGL-all-gray150);
         z-index: 12;
         display: flex;        
         height: calc(80 / 16 * 1rem);
@@ -111,7 +111,26 @@ $pcWide: "screen and (min-width : 1920px)";
         .icon_search_bl24 {
             display: block;
         }
-    }    
+        &::after {
+            display: none;
+        }
+        &.is-active {
+            background-color: var(--colorGL-all-white100);
+            border-bottom: 1px solid var(--colorGL-all-gray150);
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                left:0;
+                top: calc(81 / 16 * 1rem);
+                height: 500px;
+                background-color: var(--colorGL-all-white100);
+                z-index: 12;
+            }
+        } 
+    }   
+
     &.has-hero {
         .header__wrap {
             border-bottom: 1px solid var(--colorGL-all-white20);
@@ -150,8 +169,70 @@ $pcWide: "screen and (min-width : 1920px)";
             .icon-search-wt24 {
                 display: inline-flex;
             }
+            .gnb-sub__wrap {
+                display: none;
+            }
+            &.is-active {            
+                .gnb-navy {
+                    &.navy-list {
+                        li {
+                            a {
+                                color: var(--colorGL-all-gray950);   
+                                position: relative;                             
+                            }
+                            &.is-active {
+                                & > a {
+                                    &::after {
+                                        content: '';
+                                        display: block;
+                                        position: absolute;
+                                        left:0;
+                                        bottom: -30px;
+                                        width: 100%;
+                                        height: calc(4 / 16 * 1rem);
+                                        background-color: var(--colorGL-all-black100);
+                                    }
+                                }
+                                .gnb-sub__wrap {
+                                    display: flex;
+                                    width: 100%;
+                                    max-width: calc(1354 / 16 * 1rem);
+                                    position: absolute;
+                                    top: 81px;
+                                    z-index: 13;
+                                    left: 50%;
+                                    transform: translateX(-50%);                                    
+                                    .gnb-sub-inner {
+                                        position: relative;
+                                        .gnb-sub-left {
+                                            border-right: 1px solid var(--colorGL-all-gray150);
+                                        }    
+                                        .sub-menu-list {
+                                            li {
+                                                a {
+                                                    color: var(--);
+                                                }
+                                            }
+                                        }                                    
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }                    
+                .logo_bl,
+                .icon_lang_bl24,
+                .icon_search_bl24 {
+                    display: inline-flex;
+                }
+                .logo_wt,
+                .icon-earth-wt24,
+                .icon-search-wt24 {
+                    display: none;
+                }
+            } 
         }
-    }    
+    }   
 }
 //헤더
 
