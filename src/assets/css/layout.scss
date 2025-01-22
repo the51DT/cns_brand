@@ -1,8 +1,11 @@
 // mixin 
 $phone: "only screen and (max-width : 768px)";
-$tabletMini: "screen and (min-width: 768px) and (max-width: 1023px)";
-$tablet: "screen and (min-width: 1024px) and (max-width: 1599px)";
-$pcMiddle: "screen and (min-width: 1600px) and (max-width: 1919px)";
+// $tabletMini: "screen and (min-width: 768px) and (max-width: 1023px)";
+// $tablet: "screen and (min-width: 1024px) and (max-width: 1599px)";
+// $pcMiddle: "screen and (min-width: 1600px) and (max-width: 1919px)";
+$tabletMini: "only screen and (max-width : 1023px)";
+$tablet: "only screen and (max-width : 1099px)";
+$pcMiddle: "only screen and (max-width : 1919px)";
 $pcWide: "screen and (min-width : 1920px)";
 //반응형 *--
 @mixin ellipsis($line: 1) {
@@ -311,18 +314,20 @@ $pcWide: "screen and (min-width : 1920px)";
 //푸터
 .header-inner,
 .inner-wrap {
-    max-width: calc(calc(1910 / 16 * 1rem) - calc(160 / 16 * 1rem));
-    padding: 0 calc(80 / 16 * 1rem);
+    max-width: calc(1910 / 16 * 1rem);
+    padding: 0 calc(80 / 16 * 1rem);    
     @media #{$pcMiddle} {
-        max-width: calc(1520 / 16 * 1rem);
+        max-width: calc(1520 / 16 * 1rem);        
         padding: 0 calc(40 / 16 * 1rem);   
     }
-    @media #{$tablet} {
-        max-width: calc(960 / 16 * 1rem);
+    @media #{$tablet} {        
+        max-width: 960px;    
+        // max-width: calc(calc(960 / 16 * 1rem) - calc(64 / 16 * 1rem));   
         padding: 0 calc(32 / 16 * 1rem);  
     }
     @media #{$tabletMini} {
-        max-width: calc(704 / 16 * 1rem);
+        max-width: 704px;            
+        // max-width: calc(calc(704 / 16 * 1rem) - calc(64 / 16 * 1rem));            
         // padding: 0 calc(32 / 16 * 1rem);  
     }        
     @media #{$phone} {
