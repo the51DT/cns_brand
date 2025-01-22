@@ -1,7 +1,7 @@
 @import 'variables.css';
 @import 'reset.css';
 @import 'component.css';
-
+@import '/src/assets/bundle/swiper.min.css';
 
 @import 'layout.scss';
 @import 'content.scss';

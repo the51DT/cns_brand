@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <div data-include-path="/src/guide/header.html"></div>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <div data-include-path="/src/component/cmp_lnb.html"></div>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3">Swiper basic</p>                    
+                    <div class="cmp-exsample__wrap mt-3">
+                        <!-- Swiper -->
+                        <div class="cmp-swiper__wrap">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="/src/assets/image/temp/full_imag01.png" alt="" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="/src/assets/image/temp/full_imag01.png" alt="" />
+                                    </div>                                    
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <!-- //Swiper -->
+                    </div>
+
+                    <p class="guide-title-h3 mt-10">Swiper type2</p>                    
+                    <div class="cmp-exsample__wrap mt-3">
+                        <!-- Swiper -->
+                        <div class="cmp-swiper__wrap">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="/src/assets/image/temp/full_imag01.png" alt="" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="/src/assets/image/temp/full_imag01.png" alt="" />
+                                    </div>                                    
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <!-- //Swiper -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/src/assets/bundle/swiper-bundle.min.js"></script>
+    <script type="module">
+        import { initializeSwipers } from '/src/assets/js/initializeSwipers.js';        
+        // Swiper 옵션 배열
+        const swiperOptions = [
+            { loop: true, speed: 500 },               // 첫 번째 Swiper 옵션
+            { loop: false, autoplay: { delay: 4000 } } // 두 번째 Swiper 옵션
+        ];
+        // Swiper 초기화
+        initializeSwipers(swiperOptions);        
+    </script>
+</body>
+</html>
