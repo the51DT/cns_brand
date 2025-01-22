@@ -6,12 +6,12 @@
     "IaList": [
         {
             "id": 0,
-            "Level1": "가이드",
+            "Level1": "Publish Guide",
             "screenId": "",
             "fileName": "",
             "Level2": [
                 {
-                    "name": "CSS 가이드",
+                    "name": "기본 정책",
                     "screenId": "",
                     "path": "/src/guide/",
                     "fileName": "css_guide.html"
@@ -40,6 +40,21 @@
                     "path": "/src/component/",
                     "fileName": "cmp_form.html"
                 },                                     
+                {
+                    "name": "퍼블리싱 목록",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "visible": "hidden",
+                    "fileName": "pub_list.html"
+                }
+            ]
+        },      
+        {
+            "id": 1,
+            "Level1": "Component List",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
                 {
                     "name": "HeroBanes",
                     "screenId": "",
@@ -105,18 +120,11 @@
                     "screenId": "",
                     "path": "/src/guide/",
                     "fileName": "cmp_thumbnail_type.html"
-                },
-                {
-                    "name": "퍼블리싱 목록",
-                    "screenId": "",
-                    "path": "/src/guide/",
-                    "visible": "hidden",
-                    "fileName": "pub_list.html"
                 }
             ]
-        },        
+        },
         {
-            "id": 1,
+            "id": 2,
             "Level1": "레이아웃",
             "screenId": "",
             "fileName": "",
@@ -138,7 +146,7 @@
             ]
         },
         {
-            "id": 2,
+            "id": 3,
             "Level1": "플러그인 & 이벤트",
             "screenId": "",
             "fileName": "",
@@ -152,7 +160,7 @@
             ]
         },
         {
-            "id": 3,
+            "id": 4,
             "Level1": "Sub - 서비스",
             "screenId": "",
             "fileName": "",
@@ -172,7 +180,7 @@
             ]
         },
         {
-            "id": 4,
+            "id": 5,
             "Level1": "Sub - 뉴스룸",
             "screenId": "",
             "fileName": "",
