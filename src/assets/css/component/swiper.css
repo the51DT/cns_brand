@@ -1,0 +1,94 @@
+/* 스와이퍼 */
+.cmp-swiper__wrap {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 calc(80 / 16 * 1rem);
+}
+.swiper-thumbnail {
+    display: flex;
+    width: 100%;
+}
+.swiper-thumbnail .thumbnail-wrap {
+    width: 50%;
+    min-height: calc(566 / 16 * 1rem);
+}
+.swiper-thumbnail .thumbnail-wrap img {
+    height: 100%;
+    object-fit: cover;
+}
+.swiper-thumbnail .content-info {
+    box-sizing: border-box;
+    width: 50%;
+    padding: calc(40 / 16 * 1rem) calc(80 / 16 * 1rem);
+}
+.swiper-thumbnail .content-info .chip__wrap + .title {
+    margin-top: calc(32 / 16 * 1rem);
+}
+.swiper-thumbnail .content-info .title {
+    font-weight: 700;
+    color: var(--text-text-default);
+}
+.swiper-thumbnail .content-info .title + .description {
+    margin-top: calc(12 / 16 * 1rem);
+}
+.swiper-thumbnail .content-info .description {
+    color: var(--colorCM-all-text-text-secondary);
+}
+.swiper-thumbnail .content-info .description + .date-box {
+    margin-top: calc(32 / 16 * 1rem);
+}
+.swiper-thumbnail .content-info .date-box {
+    color: var(--text-text-tertiary);
+}
+.cmp-swiper__wrap .swiper-pagination {
+    bottom: 0 !important;
+    left: auto !important;
+    right: calc(80 / 16 * 1rem) !important;
+    display: flex;
+    width: calc(50% - (160 / 16 * 1rem)) !important;
+    column-gap: calc(8 / 16 * 1rem);
+}
+.cmp-swiper__wrap .swiper-pagination-bullet {
+    width: 100%;
+    height: calc(3 / 16 * 1rem);
+    margin: 0 !important;
+    border-radius: 0;
+    background-color: var(--colorCM-all-fill-fill-disabled);
+    opacity: 1;
+}
+.cmp-swiper__wrap .swiper-pagination-bullet-active {
+    background-color: var(--colorCM-all-fill-fill-default12);
+}
+
+@media screen and (max-width: 768px) {
+    .cmp-swiper__wrap {
+        padding: 0 calc(16 / 16 * 1rem);
+    }
+    .swiper-thumbnail {
+        flex-direction: column;
+    }
+    .swiper-thumbnail .thumbnail-wrap {
+        width: 100%;
+        min-height: auto;
+    }
+    .swiper-thumbnail .content-info {
+        width: 100%;
+        padding: calc(24 / 16 * 1rem) 0 calc(40 / 16 * 1rem);
+    }
+    .swiper-thumbnail .content-info .chip__wrap + .title {
+        margin-top: calc(12 / 16 * 1rem);
+    }
+    .swiper-thumbnail .content-info .title + .description {
+        margin-top: calc(6 / 16 * 1rem);
+    }
+    .swiper-thumbnail .content-info .description + .date-box {
+        margin-top: calc(24 / 16 * 1rem);
+    }
+    .cmp-swiper__wrap .swiper-pagination {
+        right: auto !important;
+        display: flex;
+        width: 100% !important;
+        column-gap: calc(8 / 16 * 1rem);
+    }
+}

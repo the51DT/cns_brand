@@ -170,6 +170,20 @@
                     "fileName": "service_digitalAX.html"
                 }
             ]
+        },
+        {
+            "id": 4,
+            "Level1": "Sub - 뉴스룸",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "Newsroom - 메인",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "newsroom_main.html"
+                }
+            ]
         }
     ]
 }

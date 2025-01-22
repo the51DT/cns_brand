@@ -53,7 +53,7 @@
     letter-spacing: calc(0.05 / 16 * 1rem);
     font-weight: 400;
 }
-.font-body-sm {
+.font-body-xs {
     font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
     line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
     letter-spacing: calc(0.05 / 16 * 1rem);
