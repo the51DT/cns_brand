@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link rel="shortcut icon" href="/assets/favicon-DOGc-PPL.ico">
-  <script type="module" crossorigin src="/assets/src-guide-cmp_guide_Itemlist_3Columns-C97cFIMB.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/main-BlIMzNOa.js">
-  <link rel="stylesheet" crossorigin href="/assets/guide-HCVjKQXQ.css">
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
 </head>
 <body>
     <div class="guide__wrap">
@@ -19,17 +17,23 @@
             <div class="flex justify-between lnb-type">
                 <div data-include-path="/src/component/cmp_lnb.html"></div>
                 <div class="page-cont flex-1">
-                    <p class="guide-title-h3">Itemlist_3Columns</p>                    
+                    <p class="guide-title-h3">Pagination</p>                    
                     <div class="cmp-exsample__wrap mt-3">
                         <!-- Title -->
-                        <div data-include-path="/src/component/cmp_teaser_title.html"></div>
+                        <div data-include-path="/src/component/cmp_pagination.html"></div>
                         <!-- //Title -->
-                        <div data-include-path="/src/component/cmp_Itemlist_3Columns.html"></div>
                     </div>
+
+
 
                 </div>
             </div>
         </div>
     </div>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+        import { accordion } from "/src/assets/js/ui_common.js"
+        accordion('.basic-type', 'basic');        
+    </script>
 </body>
 </html>

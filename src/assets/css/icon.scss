@@ -21,7 +21,7 @@ $fileType: "svg";
         @include iconFile(24,24,'ico_search');
     }
     &.icon-search-bl35 {
-        @include iconFile(35,35,'ico_search_bl35');
+        @include iconFile(35,35,'ico_sarch_bl35');
     }      
     &.icon-remove-bl28 {
         @include iconFile(28,28,'ico_remove_gray28');
@@ -37,5 +37,20 @@ $fileType: "svg";
     }   
     &.icon_hamburger_menu {
         @include iconFile(24,24,'btn_hamburger_menu');
-    }                  
+    }   
+    &.icon_more_dot {
+        @include iconFile(16,16,'ico-more');
+    }   
+    &.icon_pagination_first {
+        @include iconFile(16,16,'icon_page_first');
+    }   
+    &.icon_pagination_prev {
+        @include iconFile(16,16,'icon_page_prev');
+    }      
+    &.icon_pagination_next {
+        @include iconFile(16,16,'icon_page_next');
+    } 
+    &.icon_pagination_last {
+        @include iconFile(16,16,'icon_page_last');
+    }                        
 }

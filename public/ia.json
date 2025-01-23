@@ -39,7 +39,13 @@
                     "screenId": "",
                     "path": "/src/component/",
                     "fileName": "cmp_form.html"
-                },                                     
+                },       
+                {
+                    "name": "페이지네이션",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_pagination.html"
+                },                                              
                 {
                     "name": "퍼블리싱 목록",
                     "screenId": "",
@@ -59,13 +65,13 @@
                     "name": "HeroBanes",
                     "screenId": "",
                     "path": "/src/guide/",
-                    "fileName": "/cmp_guide_heroBanner.html"                    
+                    "fileName": "cmp_guide_heroBanner.html"                    
                 },
                 {
                     "name": "Overview",
                     "screenId": "",
                     "path": "/src/guide/",
-                    "fileName": "/cmp_guide_overView.html"                    
+                    "fileName": "cmp_guide_overView.html"                    
                 },
                 {
                     "name": "tabs",
@@ -82,8 +88,8 @@
                 {
                     "name": "ImageItem",
                     "screenId": "",
-                    "path": "/src/component/",
-                    "fileName": "cmp_guide_ImageItem.html"                    
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_imageltem.html"                    
                 },   
                 {
                     "name": "Itemlist_3Columns",
@@ -94,13 +100,13 @@
                 {
                     "name": "SpecList",
                     "screenId": "",
-                    "path": "/src/component/",
+                    "path": "/src/guide/",
                     "fileName": "cmp_guide_SpecList.html"                    
                 },   
                 {
                     "name": "FAQItem",
                     "screenId": "",
-                    "path": "/src/guide/",
+                    "path": "/src/component/",
                     "fileName": "cmp_accodien.html"                    
                 },  
                 {

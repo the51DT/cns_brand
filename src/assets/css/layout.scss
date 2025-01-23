@@ -129,6 +129,9 @@ $pcWide: "screen and (min-width : 1920px)";
                 z-index: 12;
             }
         } 
+        .gnb-sub__wrap {
+            display: none;
+        }
     }   
 
     &.has-hero {
@@ -168,9 +171,6 @@ $pcWide: "screen and (min-width : 1920px)";
             .icon-earth-wt24,
             .icon-search-wt24 {
                 display: inline-flex;
-            }
-            .gnb-sub__wrap {
-                display: none;
             }
             &.is-active {            
                 .gnb-navy {
@@ -276,6 +276,21 @@ $pcWide: "screen and (min-width : 1920px)";
     width: 100%;
     margin: 0 auto;
 }
+// page title area
+.page-location__title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: calc(2 / 16 * 1rem);
+    color: var(--text-text-default);
+    margin: calc(80 / 16 * 1rem) 0;
+    .sub-title {
+        font-weight: 700;        
+    }
+    .sub-text {
+        font-weight: 400;
+    }
+}
+
 .footer__wrap {
     padding: calc(40 / 16 * 1rem) 0;    
     border-top: 1px solid var(--colorGL-all-gray200);
@@ -393,6 +408,7 @@ $pcWide: "screen and (min-width : 1920px)";
     }
 }
 //푸터
+// 레이아웃 Break point
 .header-inner,
 .inner-wrap {
     max-width: calc(1910 / 16 * 1rem);
