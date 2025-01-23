@@ -71,6 +71,25 @@ $pcWide: "screen and (min-width : 1920px)";
                     a {
                         color: var(--colorGL-all-gray950);
                         font-weight: 600;
+                        position: relative;
+                        &::after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            left:50%;
+                            transform: translateX(-50%);
+                            bottom: -30px;
+                            width: 0%;
+                            height: calc(4 / 16 * 1rem);
+                            background-color: var(--colorGL-all-black100);
+                            transition: width 0.3s;
+                        }
+                        &:hover {
+                            &::after {                                
+                                width: 100%;
+                                transition: width 0.3s;
+                            }
+                        }
                     }
                 }
             }
@@ -150,9 +169,12 @@ $pcWide: "screen and (min-width : 1920px)";
                 align-items: center;
                 gap: calc(10 / 16 * 1rem);
                 li {
+                    padding: 0 calc(15 / 16 * 1rem);
                     a {
-                        color: var(--colorGL-all-white100);                        
-                        padding: 0 calc(15 / 16 * 1rem);
+                        color: var(--colorGL-all-white100);                                                
+                        &::after {
+                            background-color: var(--colorGL-all-white100);
+                        }                     
                     }
                     &.lang-select {
                         margin: 0 calc(20 / 16 * 1rem) 0 calc(30 / 16 * 1rem);
@@ -179,18 +201,20 @@ $pcWide: "screen and (min-width : 1920px)";
                             a {
                                 color: var(--colorGL-all-gray950);   
                                 position: relative;                             
-                            }
+                            }                            
                             &.is-active {
                                 & > a {
                                     &::after {
                                         content: '';
                                         display: block;
                                         position: absolute;
-                                        left:0;
+                                        left:50%;
+                                        transform: translateX(-50%);
                                         bottom: -30px;
-                                        width: 100%;
+                                        width: 100%;                                        
                                         height: calc(4 / 16 * 1rem);
                                         background-color: var(--colorGL-all-black100);
+                                        transition: width 0.3s;
                                     }
                                 }
                                 .gnb-sub__wrap {
