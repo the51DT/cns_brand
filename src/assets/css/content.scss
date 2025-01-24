@@ -7,6 +7,29 @@ $phonemini: "only screen and (max-width : 320px)";
 $notebook: "screen and (max-width : 1366px)";
 $tablet: "screen and (max-width : 1043px)";
 $desktop: "screen and (min-width : 1044px)";
+
+:root {
+    --cmp-margin-bottom: 160;
+    --cmp-margin-bottom-overview: 80;
+    --cmp-margin-bottom-title: 64;
+    --cmp-margin-bottom-teaser: 40;
+    --cmp-margin-bottom-itemlist-columns: 64;
+    --cmp-margin-bottom-imageltem: 48;
+    --cmp-margin-bottom-customer: 64;
+    --cmp-margin-bottom-datalist: 64;
+}
+@media #{$phone} {
+    :root {
+        --cmp-margin-bottom: 96;
+        --cmp-margin-bottom-overview: 48;
+        --cmp-margin-bottom-title: 32;
+        --cmp-margin-bottom-teaser: 24;
+        --cmp-margin-bottom-itemlist-columns: 32;
+        --cmp-margin-bottom-imageltem: 16;
+        --cmp-margin-bottom-customer: 32;
+        --cmp-margin-bottom-datalist: 32;
+    }
+}
 //반응형 *--
 @mixin ellipsis($line: 1) {
     @if ($line == 1) {
@@ -104,12 +127,6 @@ $desktop: "screen and (min-width : 1044px)";
     @media #{$phone} {
         flex-direction: column; 
     }
-    &+.cmp_imageltem__wrap {
-        margin-top: calc(64 / 16 * 1rem);
-        @media #{$phone} {
-            margin-top: calc(24 / 16 * 1rem);
-        }
-    }   
     .img-box {
         img {
             width: 100%;
@@ -364,8 +381,33 @@ $desktop: "screen and (min-width : 1044px)";
         }
     }
 }
+
+// 임시 클래스 cmp-container - 각 세션에 패딩 80으로 들어가있어서 디자인 상의 후 수정
+.cmp-container {
+    margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+}
 .cmp-wrap {
+    margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+    &.cmp-overview__wrap {
+        margin-bottom: calc(var(--cmp-margin-bottom-overview) / 16 * 1rem);
+    }
+    &.cmp-title__wrap {
+        margin-bottom: calc(var(--cmp-margin-bottom-title) / 16 * 1rem);
+    }
+    &.cmp_teaser_title__wrap {
+        margin-bottom: calc(var(--cmp-margin-bottom-teaser) / 16 * 1rem);
+    }
+    &.cmp-itemlist_columns__wrap {
+        margin-bottom: calc(var(--cmp-margin-bottom-itemlist-columns) / 16 * 1rem);
+    }
+    &.cmp_imageltem__wrap {
+        margin-bottom: calc(var(--cmp-margin-bottom-imageltem) / 16 * 1rem);
+    }
+    &.cmp-customer-case {
+        margin-bottom: calc(var(--cmp-margin-bottom-customer) / 16 * 1rem);
+    }
     &.dataList {
+        margin-bottom: calc(var(--cmp-margin-bottom-datalist) / 16 * 1rem);
         .description {            
             @include ellipsis($line: 2);                           
             height: calc(48 / 16 * 1rem);
@@ -497,9 +539,6 @@ $desktop: "screen and (min-width : 1044px)";
             margin-top: calc(44 / 16 * 1rem);
         }
     }
-}
-.cmp-wrap + .button__wrap {
-    margin-top: calc(64 / 16 * 1rem);
 }
 
 // 페이지 네이션
