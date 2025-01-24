@@ -1,0 +1,1 @@
+import{t as i,a as e}from"./main-DH5UIH1P.js";/* empty css              */import{i as o}from"./initializeSwipers-BP5ESBKa.js";i(".basic-type");e(".open-type");const t=[{loop:!0,speed:500,slidesPerView:"auto"}];o(t);
