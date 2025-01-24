@@ -6,6 +6,7 @@
 }
 .cmp-tab .cmp-tab__header {
     border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default6);
+    margin-bottom: calc(80 / 16 * 1rem);
 }
 .cmp-tab .cmp-tab__header ul {
     display: flex;
@@ -68,6 +69,7 @@
         overflow: hidden;
         overflow-x: scroll;
         position: relative;
+        margin-bottom: calc(48 / 16 * 1rem);
     }
     .cmp-tab .cmp-tab__header::after {
         content: '';
