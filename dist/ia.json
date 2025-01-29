@@ -1,0 +1,203 @@
+{
+    "siteName": "LG CNS Renewal",
+    "period": "2025.1 ~ 2025.6",    
+    "worker": "홍성호",
+    "email": "hongsh@the-51.com",    
+    "IaList": [
+        {
+            "id": 0,
+            "Level1": "Publish Guide",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "기본 정책",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "css_guide.html"
+                },
+                {
+                    "name": "JS 가이드",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "js_temple01.html"
+                },
+                {
+                    "name": "타이포그래프",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "ui_typo.html"
+                },
+                {
+                    "name": "색상(Color)",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "ui_color.html"
+                },  
+                {
+                    "name": "폼(Form)",
+                    "screenId": "",
+                    "path": "/src/component/",
+                    "fileName": "cmp_form.html"
+                },       
+                {
+                    "name": "페이지네이션",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_pagination.html"
+                },                                              
+                {
+                    "name": "퍼블리싱 목록",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "visible": "hidden",
+                    "fileName": "pub_list.html"
+                }
+            ]
+        },      
+        {
+            "id": 1,
+            "Level1": "Component List",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "HeroBanes",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_heroBanner.html"                    
+                },
+                {
+                    "name": "Overview",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_overView.html"                    
+                },
+                {
+                    "name": "tabs",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_tab.html"                    
+                },      
+                {
+                    "name": "Title & Teaser Title",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_title.html"                    
+                },      
+                {
+                    "name": "ImageItem",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_imageltem.html"                    
+                },   
+                {
+                    "name": "Itemlist_3Columns",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_Itemlist_3Columns.html"                    
+                },       
+                {
+                    "name": "SpecList",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_SpecList.html"                    
+                },   
+                {
+                    "name": "FAQItem",
+                    "screenId": "",
+                    "path": "/src/component/",
+                    "fileName": "cmp_accodien.html"                    
+                },  
+                {
+                    "name": "CustomerCase",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_customer-case.html"                    
+                },                                                                    
+                {
+                    "name": "DataList",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_DataList.html"
+                },
+                {
+                    "name": "썸네일 유형",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_thumbnail_type.html"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "Level1": "레이아웃",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "서브 레이아웃(배경타입)",
+                    "subText": "Service",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "sub_template.html"
+                },
+                {
+                    "name": "서브 레이아웃",
+                    "subText": "Service",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "sub_template2.html"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "Level1": "플러그인 & 이벤트",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "Swiper",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_swiper.html"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "Level1": "Sub - 서비스",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "Service - Enterprise S/W",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "service_enterpriseSW.html"
+                },
+                {
+                    "name": "Service - 디지털AX",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "service_digitalAX.html"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "Level1": "Sub - 뉴스룸",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "Newsroom - 메인",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "newsroom_main.html"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <div data-include-path="/src/guide/header.html"></div>
+      <div class="guide-content">
+        <div class="page-location text-2xl font-bold" id="pagesTitle"></div>
+        <div class="page-cont">
+          <h2 class="font-bold text-2xl">작성 가이드</h2>
+          <div class="guide-box text-base mt-3">
+            <strong>1. 기본 공통 함수 작성 규칙</strong>
+            <p style="margin-top: 3px;margin-left:10px;line-height: 150%;margin-bottom: 15px;">
+              • 공통적으로 사용하는 함수는 ui_common.js 파일에 작성합니다.<br>
+              • 공통 함수는 재사용 가능하고, 특정 컴포넌트에 의존하지 않도록 설계합니다.<br>
+              • 네이밍 규칙은 기능 중심으로 간결하게 작성합니다.<br>
+              • ✅ addClass, removeClass, toggleVisibility<br>
+              • ❌ showButtonVisibility<br>
+              • 코드 주석을 통해 함수의 목적, 파라미터, 반환값을 명확히 기술합니다.
+            </p>
+            <strong>2. 함수는 모듈로 작성</strong>
+            <p style="margin-top: 3px;margin-left:10px;line-height: 150%;">
+              • 특정 컴포넌트나 기능에 독립적으로 동작할 수 있도록 설계해 재사용성이 높인다.<br>
+              • 중복 코드를 줄여 코드 관리 용이성을 높여 유지보수를 쉽게 한다.
+            </p>
+          </div>
+          <h2 class="font-bold text-2xl mt-10">함수 안내</h2>
+          <div class="text-base mt-3">
+            <table class="border-collapse w-full border border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
+              <colgroup>
+                <col width="20%">
+                <col width="">
+              </colgroup>
+              <thead>
+                <tr class="bg-slate-50 dark:bg-slate-700">
+                  <th class="w-1/2 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Function</th>
+                  <th class="w-1/2 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">checkInputFocus</td>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">input의 삭제 버튼 노출시키는 스크립트로 btn-remove 클래스를 가진 버튼이 존재해야 동작함. </td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">tabMenu</td>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">탭메뉴 스크립트</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">accordion</td>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">아코디언 함수 </td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">initializeSwipers.js</td>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+                    스와이프 공통 정의 함수
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

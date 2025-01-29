@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <style>
+      .guide-content {
+        padding: 16px;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <div data-include-path="/src/guide/header.html"></div>
+      <div class="guide-content">
+        <div class="font-body-md font-semibold">개요</div>
+        <div class="guide-page__table-wrap mt-5">
+          <table>
+            <colgroup>
+              <col style="width: 20%;">
+              <col>
+            </colgroup>
+            <tbody id="info-table-body">
+            </tbody>
+          </table>
+        </div>
+        <ul class="description-list">
+          <li>예외사항 퍼블리싱 가이드는 타 프로젝트의 코드 규칙을 담보하지 않는다.</li>
+          <li>당 가이드의 일부 내용은 코드 균일성을 위한 표준 가이드를 제시하나 필요하지 않은 경우 해당 규칙을 사용하지 않는다.</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        fetch('/ia.json')
+          .then(response => response.json())
+          .then(data => {
+            // 테이블 바디 요소를 선택합니다.
+            var tableBody = document.getElementById('info-table-body');
+            // 사이트 이름과 시작일을 테이블에 추가합니다.
+            var siteNameRow = document.createElement('tr');
+            siteNameRow.innerHTML = '<th scope="row">프로젝트</th><td>' + data.siteName + '</td>';
+            tableBody.appendChild(siteNameRow);
+            var startDateRow = document.createElement('tr');
+            startDateRow.innerHTML = '<th scope="row">기간</th><td>' + data.period + '</td>';
+            tableBody.appendChild(startDateRow);
+            var worker = document.createElement('tr');
+            worker.innerHTML = '<th scope="row">가이드 작업자</th><td>' + data.worker + '</td>';
+            tableBody.appendChild(worker);
+            var email = document.createElement('tr');
+            email.innerHTML = '<th scope="row">대표 이메일</th><td>' + data.email + '</td>';
+            tableBody.appendChild(email);
+          })
+          .catch(error => console.error('Error loading JSON:', error));
+      });
+    </script>
+  </body>
+</html>
