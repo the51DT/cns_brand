@@ -1,1 +1,0 @@
-function p(e){document.querySelectorAll(".swiper").forEach((a,t)=>{a.dataset.pagination||`${t}`;const n=a.dataset.autoplay==="true";let i=a.querySelector(".swiper-pagination");i&&i.classList.add(`swiper-pagination-${t}`),new Swiper(a,{pagination:{el:i},autoplay:n?{delay:3e3}:!1,...e[t]})})}export{p as i};
