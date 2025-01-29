@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="wrap">
-        <div data-include-path="/src/_inc/header.html"></div>
+        <%- include('src/_inc/header.html') %> 
         <!-- //헤더 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
@@ -31,14 +31,12 @@
                 </div>
             </div>
         </div>
-        <div data-include-path="/src/_inc/footer.html"></div>
+        <%- include('src/_inc/footer.html') %>    
     </div>
     <script type="module" src="/src/main.js"></script>
     <script type="module">
         import { dropdownMenu } from '/src/assets/js/ui_common.js'
-        setTimeout(function(){
-            dropdownMenu('.dropdown-menu');
-        }, 1000);  
+        dropdownMenu('.dropdown-menu'); 
     </script>
 </body>
 </html>

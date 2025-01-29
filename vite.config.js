@@ -1,63 +1,83 @@
+// vite.config.js
+
 import { defineConfig } from 'vite';
+import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
-import { glob } from 'glob';
 import fg from 'fast-glob';
 import path from 'path';
+import pretty from 'pretty';
+import { readFileSync, writeFileSync } from 'fs';
 
 export default defineConfig({
     plugins: [
-        ViteImageOptimizer({
-            test: /\.(jpe?g|png|gif|webp|svg)$/i,
-            exclude: undefined,
-            include: undefined,
-            includePublic: true,
-            logStats: true,
-            ansiColors: true,
-            svg: {
-                multipass: true,
-                plugins: [
-                    {
-                        name: 'preset-default',
-                        params: {
-                            overrides: {
-                                cleanupNumericValues: false,
-                                removeViewBox: false,
-                            },
-                        },
-                    },
-                ],
-            },
-            png: {
-                quality: 80,
-            },
-            jpeg: {
-                quality: 80,
-            },
-            jpg: {
-                quality: 80,
-            },
-            webp: {
-                lossless: true,
+        ViteEjsPlugin({
+            inject: {
+                title: 'LG CNS',
+                description: 'LG CNS',
             },
         }),
+        ViteImageOptimizer({
+            test: /\.(jpe?g|png|gif|webp|svg)$/i,
+            png: { quality: 80 },
+            jpeg: { quality: 80 },
+            svg: false,
+            webp: false,
+        }),
+        {
+            name: 'html-formatter',
+            apply: 'build', // 빌드 단계에서만 실행
+            writeBundle() {
+                const files = fg.sync(['dist/**/*.html']);
+                files.forEach(file => {
+                    const content = readFileSync(file, 'utf-8');
+                    const formatted = pretty(content, { ocd: true });
+                    writeFileSync(file, formatted, 'utf-8');
+                });
+            },
+        },
     ],
     build: {
         outDir: 'dist',
         emptyOutDir: true,
-        minify: 'esbuild',
+        cssCodeSplit: false, // CSS 코드 분할 비활성화
+        //minify: 'esbuild',
+        minify: false,
+        assetsInlineLimit: 0, // 모든 자산을 파일로 처리 (이미지 인라인 방지)
         rollupOptions: {
+            preserveModules: true, // 모듈 구조 유지
             input: Object.fromEntries(
-                fg.sync([
-                    './index.html',
-                    './src/**/*.html'
-                ]).map(file => [
-                    path.relative('.', file)
-                        .replace(/\.html$/, '')
-                        .replace(/\//g, '-'),
-                    path.resolve(__dirname, file)
+                fg.sync(['./index.html', './src/**/*.html']).map(file => [
+                    path.relative('.', file).replace(/\.html$/, '').replace(/\//g, '-'),
+                    path.resolve(__dirname, file),
                 ])
-            )
-        }
+            ),
+            output: {
+                manualChunks: undefined, // 추가적인 번들링 최적화 방지
+                entryFileNames: (chunkInfo) => {
+                    // 원래 폴더 구조를 유지하여 js 폴더에 저장
+                    const name = chunkInfo.name;
+                    return `assets/js/${name}.js`;
+                },
+                chunkFileNames: (chunkInfo) => {
+                    // 청크 파일도 js 폴더 내에 저장
+                    const name = chunkInfo.name;
+                    return `assets/js/${name}.js`;
+                },
+                assetFileNames: (assetInfo) => {
+                    console.log('Processing asset:', assetInfo.name); // 디버깅용 로그
+                    if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+                        return 'assets/css/index.css'; // 모든 CSS를 assets/css/index.css로 통합
+                    }
+                    if (/\.(png|jpe?g|gif|svg|webp)$/i.test(assetInfo.name)) {
+                        return 'assets/images/[name].[hash][extname]'; // 이미지를 assets/images/ 폴더로 저장
+                    }
+                    if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name)) {
+                        return 'assets/fonts/[name].[hash][extname]'; // 폰트를 assets/fonts/ 폴더로 저장
+                    }
+                    return 'assets/other/[name].[hash][extname]'; // 기타 자산은 assets/other/ 폴더로 저장
+                },
+            },
+        },
     },
     publicDir: 'public',
     server: {
@@ -73,7 +93,7 @@ export default defineConfig({
             }
         },
         middleware: (req, res, next) => {
-            if (req.headers['user-agent'].includes('Live Server')) {
+            if (req.headers['user-agent']?.includes('Live Server')) {
                 res.statusCode = 500;
                 res.end('Error: Live Server는 지원되지 않습니다. 개발을 위해 Vite를 사용하세요.');
             } else {
