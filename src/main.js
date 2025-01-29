@@ -1,3 +1,5 @@
+import './assets/css/index.css';
+
 import { loadIncludedHTML } from './assets/js/pub_include.js'
 import { generateUniqueId, numComma, dropdownMenu, setModal, openModal, closeModal, getNextSibling, openToggleBox, infiniteScroll, openToast, closeToast, tabMenu, setCls } from './assets/js/ui_common.js';
 import { mainNavigation } from './assets/js/navygation.js'
