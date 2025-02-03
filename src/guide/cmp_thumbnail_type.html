@@ -9,13 +9,13 @@
 </head>
 <body>
     <div class="guide__wrap">
-        <div data-include-path="/src/guide/header.html"></div>
+        <%- include('src/guide/header.html') %>
         <div class="page-location text-2xl font-bold">
             <span id="pagesTitle"></span>
         </div>        
         <div class="guide-content">            
             <div class="flex justify-between lnb-type">
-                <div data-include-path="/src/component/cmp_lnb.html"></div>
+                <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
                     <p class="guide-title-h3">썸네일 유형1</p>                    
                     <div class="cmp-exsample__wrap mt-5">
