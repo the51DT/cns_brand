@@ -1,9 +1,9 @@
 @import 'variables.css';
 @import 'reset.css';
 @import 'component.css';
-@import '/bundle/swiper.min.css';
+@import '/assets/bundle/swiper.min.css';
 
 @import 'layout.scss';
 @import 'content.scss';
 @import 'icon.scss';
-@import url("/bundle/tailwindcss/tailwind-all.css");
+@import url("/assets/bundle/tailwindcss/tailwind-all.css");
