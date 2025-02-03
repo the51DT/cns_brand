@@ -10,13 +10,52 @@
   </head>
   <body>
     <div class="guide__wrap">
-      <div data-include-path="/src/guide/header.html"></div>
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/component/cmp_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
       <div class="guide-content">
         <div class="page-location text-2xl font-bold" id="pagesTitle"></div>
         <div class="page-cont">
           <h2 class="font-bold text-2xl">다이얼</h2>
           <div class="guide-box text-base mt-3">
-            <div data-include-path="/src/_inc/cmp-dial.html"></div>
+            <div class="dial__wrap">
+              <div class="dail__wrap--inner">
+                <div class="dail-manage-list">
+                  <table class="">
+                    <colgroup>
+                      <col width="25%" />
+                      <col width="" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th>컴퍼넌트 목록</th>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="dail-button__wrap">
+                  <button type="button">저장</button>
+                  <button type="button">초기화</button>
+                </div>
+              </div>
+              <div class="dail-button">
+                <button type="button">열기</button>
+              </div>
+            </div>
           </div>
           <h2 class="font-bold text-2xl mt-10">컴포넌트 목록</h2>
           <div class="text-base mt-3">

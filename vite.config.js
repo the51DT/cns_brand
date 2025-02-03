@@ -44,7 +44,7 @@ export default defineConfig({
         minify: false,
         assetsInlineLimit: 0, // 모든 자산을 파일로 처리 (이미지 인라인 방지)
         rollupOptions: {
-            //preserveModules: true, // 모듈 구조 유지
+            preserveModules: true, // 모듈 구조 유지
             input: Object.fromEntries(
                 fg.sync(['./index.html', './src/**/*.html']).map(file => [
                     path.relative('.', file).replace(/\.html$/, '').replace(/\//g, '-'),
