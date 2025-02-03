@@ -9,14 +9,14 @@
 </head>
 <body>
     <div class="wrap">
-        <div data-include-path="/src/_inc/header.html"></div>
+        <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
-        <div data-include-path="/src/component/cmp_heroBanner.html"></div>
+        <%- include('src/component/cmp_heroBanner.html') %>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap mt-20">
                 <div class="cmp-area">
-                    <div data-include-path="/src/component/cmp_overView.html"></div>
+                    <%- include('src/component/cmp_overView.html') %>
                     <div class="cmp-tab basic-type align-left">
                         <div class="cmp-tab__header">
                             <ul class="tab__menu">
@@ -36,8 +36,8 @@
                         </div>
                         <div class="tab-content__wrap">
                             <div class="tab__content is-active">
-                                <div data-include-path="/src/component/cmp_title.html"></div>
-                                <div data-include-path="/src/component/cmp_SpecList.html"></div>
+                                <%- include('src/component/cmp_title.html') %>
+                                <%- include('src/component/cmp_SpecList.html') %>
                                 <p class="font-head-xs font-bold mt-12 mb-10">미들웨어 솔루션으로 만드는 최적의 비즈니스</p>
                                 <div class="cmp-container">
                                     <div class="cmp-wrap cmp_imageltem__wrap type-left">
@@ -109,15 +109,15 @@
                                 </div>
 
                                 <div class="cmp-container">
-                                    <div data-include-path="/src/component/cmp_title.html"></div>
-                                    <div data-include-path="/src/component/cmp_teaser_title.html"></div>
-                                    <div data-include-path="/src/component/cmp_Itemlist_3Columns.html"></div>
-                                    <div data-include-path="/src/component/cmp_teaser_title.html"></div>
-                                    <div data-include-path="/src/component/cmp_Itemlist_3Columns.html"></div>
-                                    <div data-include-path="/src/component/cmp_teaser_title.html"></div>
-                                    <div data-include-path="/src/component/cmp_Itemlist_3Columns.html"></div>
-                                    <div data-include-path="/src/component/cmp_teaser_title.html"></div>
-                                    <div data-include-path="/src/component/cmp_Itemlist_3Columns.html"></div>
+                                    <%- include('src/component/cmp_title.html') %>
+                                    <%- include('src/component/cmp_teaser_title.html') %>
+                                    <%- include('src/component/cmp_Itemlist_3Columns.html') %>
+                                    <%- include('src/component/cmp_teaser_title.html') %>
+                                    <%- include('src/component/cmp_Itemlist_3Columns.html') %>
+                                    <%- include('src/component/cmp_teaser_title.html') %>
+                                    <%- include('src/component/cmp_Itemlist_3Columns.html') %>
+                                    <%- include('src/component/cmp_teaser_title.html') %>
+                                    <%- include('src/component/cmp_Itemlist_3Columns.html') %>
                                 </div>
 
                                 <div class="cmp-container">
@@ -330,7 +330,7 @@
                 </div>
             </div>
         </div>
-        <div data-include-path="/src/_inc/footer.html"></div>
+        <%- include('src/_inc/footer.html') %>
     </div>
     <script type="module" src="/src/main.js"></script>
     <script type="module">

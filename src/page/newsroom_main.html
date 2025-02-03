@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="wrap">
-        <div data-include-path="/src/_inc/header.html"></div>
+        <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
-        <!-- <div data-include-path="/src/component/cmp_heroBanner.html"></div> -->
+        <!-- <%- include('src/component/cmp_heroBanner.html') %> -->
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <!-- Swiper -->
@@ -197,7 +197,7 @@
                 
             </div>
         </div>
-        <div data-include-path="/src/_inc/footer.html"></div>
+        <%- include('src/_inc/footer.html') %>
     </div>
     <script type="module" src="/src/main.js"></script>
     <script src="/src/assets/bundle/swiper-bundle.min.js"></script>
