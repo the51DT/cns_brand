@@ -3,19 +3,19 @@
  * UI common function * 
  ***************************/
 // UUID생성
-export const generateUniqueId = () => {
+const generateUniqueId = () => {
     return 'xxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
 }
 //숫자에 콤마
-export const numComma = (num) => {
+const numComma = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 
 // input 포커스 
-export const checkInputFocus = (inputAdditionalFn) => {
+const checkInputFocus = (inputAdditionalFn) => {
     const inputs = document.querySelectorAll('.form-element__inner input[type="text"]');
     const autoComplete = document.querySelector('.autocomplate__wrap')    
     inputs.forEach(input => {
@@ -66,7 +66,7 @@ export const checkInputFocus = (inputAdditionalFn) => {
 
 
 //dropdown menu  
-export const dropdownMenu = (menuSelector) => {   
+const dropdownMenu = (menuSelector) => {   
     const dropdownMenus = document.querySelectorAll(menuSelector); 
 
     dropdownMenus.forEach(menu => {
@@ -109,7 +109,7 @@ export const dropdownMenu = (menuSelector) => {
     });
 };
 // 모달 열기 2.
-export const setModal = (target) => { // target : 모달 아이디
+const setModal = (target) => { // target : 모달 아이디
     target = document.getElementById(target);
     target.style.display = 'block';
     if(target.classList.contains('type-bottom')) {
@@ -128,7 +128,7 @@ export const setModal = (target) => { // target : 모달 아이디
 }
 window.setModal = setModal;
 // 모달 열기 1.
-export const openModal = (event, type) => {
+const openModal = (event, type) => {
     const btn = event.currentTarget;
     const modalId = btn.getAttribute('modal-id');
     const target = document.getElementById(modalId);
@@ -155,7 +155,7 @@ document.addEventListener("click", function(e) {
 });
 
 //모달창 닫기
-export const closeModal = (event, openButton) => {
+const closeModal = (event, openButton) => {
     const btn = event.currentTarget;    
     const activeModal = btn.closest('.modal__wrap--bg');    
     if (activeModal) {
@@ -194,18 +194,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // 클래스 추가/삭제
-export const setCls = (el, cls, type) => {
+const setCls = (el, cls, type) => {
     type !== 'remove' ? el.classList.add(cls) : el.classList.remove(cls);
 };
 
 // 형제 찾기
-export const getNextSibling = (el) => {
+const getNextSibling = (el) => {
     if (!el || !el.parentElement) return null; // 요소가 없거나 부모가 없는 경우 null 반환
     return el.nextElementSibling;
 };
 
 // 토글
-export const openToggleBox = (el) => {
+const openToggleBox = (el) => {
     const _toggles = el.dataset.toggle;
     const _trueText = el.dataset.truetext;
     const _falseText = el.dataset.falsetext;
@@ -223,7 +223,7 @@ export const openToggleBox = (el) => {
 };
 
 //infinite scroll
-export const infiniteScroll = (loadMoreContent, totalLoadedItems, maxItems, ms) => {
+const infiniteScroll = (loadMoreContent, totalLoadedItems, maxItems, ms) => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -249,7 +249,7 @@ export const infiniteScroll = (loadMoreContent, totalLoadedItems, maxItems, ms) 
 
 
 // 토스트 팝업
-export function openToast(id, tostMsg, Case = '') {
+function openToast(id, tostMsg, Case = '') {
     // toast 요소 생성
     let toastContainer = document.querySelector('.toast--wrap');
     let innerContainer = document.querySelector('.toast__inner');
@@ -317,7 +317,7 @@ export function openToast(id, tostMsg, Case = '') {
     }, 2000); 
 }
 
-export function closeToast(id) {
+function closeToast(id) {
     const toast = document.getElementById(id);
     if (!toast) return;
 
@@ -334,7 +334,7 @@ export function closeToast(id) {
     }, 600); // 0.6초 후 강제로 제거
 }
 
-export function adjustToast() {
+function adjustToast() {
     const toasts = document.querySelectorAll(".toast--wrap__msg.show"); // .show 클래스가 있는 토스트만 선택
     let bottom = 10; // 초기 bottom 값 설정 (화면 하단 간격)
 
@@ -348,7 +348,7 @@ export function adjustToast() {
 // tabMenu 
 // tabMenu('.tab__wrap', 'tab') 전환방식;
 // tabMenu('.tab__wrap', 'list') 정렬 방식;
-export const tabMenu = (el, type) => {
+const tabMenu = (el, type) => {
     if (!el || typeof el !== 'string') return;
 
     if (type !== 'tab') {
@@ -387,7 +387,7 @@ export const tabMenu = (el, type) => {
 };
 
 // 툴팁
-export const tooltip = (el) => {
+const tooltip = (el) => {
     if(!el || typeof el !== 'string') return;
 
     const toolTipButtons = document.querySelectorAll(el);
@@ -400,7 +400,7 @@ export const tooltip = (el) => {
 }
 
 //아코디언
-export const accordion = (selector) => {
+const accordion = (selector) => {
     if (!selector) {
         return;
     }
@@ -423,3 +423,8 @@ export const accordion = (selector) => {
         });
     });
 };
+
+checkInputFocus();
+accordion('.basic-type', 'basic');        
+accordion('.open-type', 'basic');   
+dropdownMenu('.dropdown-menu'); 

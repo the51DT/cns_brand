@@ -1,4 +1,4 @@
-export function initializeSwipers(optionsArray) {
+function initializeSwipers(optionsArray) {
     const swipers = document.querySelectorAll('.swiper');
 
     // Swiper 요소를 순회하며 초기화

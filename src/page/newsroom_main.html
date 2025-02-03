@@ -198,14 +198,10 @@
             </div>
         </div>
         <%- include('src/_inc/footer.html') %>
-    </div>
-    <script type="module" src="/src/main.js"></script>
+    </div>    
     <script src="/assets/bundle/swiper-bundle.min.js"></script>
-    <script type="module">
-        import { tabMenu, accordion } from "/src/assets/js/ui_common.js"
-        tabMenu('.basic-type', 'tab');
-        accordion('.open-type', 'basic');
-        import { initializeSwipers } from '/src/assets/js/initializeSwipers.js';        
+    <script src="/src/assets/js/initializeSwipers.js"></script>
+    <script>     
         // Swiper 옵션 배열
         const swiperOptions = [
             { loop: true, speed: 500, slidesPerView: 'auto' },

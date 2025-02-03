@@ -1,4 +1,4 @@
-export const mainNavigation = (selector) => {
+const mainNavigation = (selector) => {
     const navyLists = document.querySelectorAll(selector);
     if(!navyLists) {
         return;
@@ -32,3 +32,4 @@ export const mainNavigation = (selector) => {
     })
 
 }
+mainNavigation('.navy-list > li > a')

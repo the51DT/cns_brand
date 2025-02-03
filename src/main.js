@@ -1,8 +1,4 @@
-import './assets/css/index.css';
-
-import { loadIncludedHTML } from './assets/js/pub_include.js'
-import { generateUniqueId, numComma, dropdownMenu, setModal, openModal, closeModal, getNextSibling, openToggleBox, infiniteScroll, openToast, closeToast, tabMenu, setCls } from './assets/js/ui_common.js';
-import { mainNavigation } from './assets/js/navygation.js'
+// import './assets/css/index.css';
 
 let currentPage = null;
 let currentLocation = window.location.href;
@@ -91,13 +87,9 @@ const activateNavItem = (targetUrl) => {
     }
 };
 
-setTimeout(() => {
-    mainNavigation('.navy-list > li > a')
-}, 100)
-
 // DOM이 로드된 후 실행될 초기화 코드
 document.addEventListener('DOMContentLoaded', async () => {  
-    await loadIncludedHTML();
+    //await loadIncludedHTML();
     // loadIaData();  // 반환된 데이터를 변수에 할당
     const data = await loadIaData();    
 

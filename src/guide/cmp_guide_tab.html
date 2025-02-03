@@ -17,19 +17,19 @@
             <div class="flex justify-between lnb-type">
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
-                    <p class="guide-title-h3">Pagination</p>                    
+                    <p class="guide-title-h3">Tab Component</p>                    
                     <div class="cmp-exsample__wrap mt-3">
-                        <!-- Title -->
-                        <%- include('src/component/cmp_pagination.html') %>
-                        <!-- //Title -->
+                        <%- include('src/component/cmp_tab.html') %>
                     </div>
-
-
 
                 </div>
             </div>
         </div>
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script src="/assets/js/ui_common.js"></script>
+    <script>        
+        tabMenu('.basic-type', 'tab');
+    </script>
 </body>
 </html>

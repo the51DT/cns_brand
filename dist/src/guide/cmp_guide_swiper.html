@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
-    <script type="module" crossorigin src="/assets/js/src-guide-cmp_guide_swiper.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/js/main.js">
-    <link rel="modulepreload" crossorigin href="/assets/js/initializeSwipers.js">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/css/index.css">
   </head>
   <body>
@@ -38,7 +36,7 @@
             <ul class="lnb_list has-chilren">
               <li><strong>UI Guide</strong>
                 <ul>
-                  <li><a href="/src/component/cmp_form.html">Input</a></li>
+                  <li><a href="/src/guide/cmp_guide_form.html">Input</a></li>
                   <li><a href="/src/component/cmp_icon.html">아이콘</a></li>
                   <li><a href="/src/component/cmp_button.html">버튼</a></li>
                   <li><a href="/src/component/cmp_badge.html">뱃지</a></li>
@@ -57,9 +55,9 @@
               </li>
               <li><strong>UI List</strong>
                 <ul>
-                  <li><a href="/src/component/cmp_accodien.html">아코디언</a></li>
+                  <li><a href="/src/guide/cmp_guide_accodion.html">아코디언</a></li>
                   <li><a href="/src/guide/cmp_guide_pagination.html">페이지네이션</a></li>
-                  <li><a href="/src/component/cmp_tab.html">탭</a></li>
+                  <li><a href="/src/guide/cmp_guide_tab.html">탭</a></li>
                   <li><a href="/src/guide/cmp_guide_heroBanner.html">HeroBanner</a></li>
                   <li><a href="/src/guide/cmp_guide_overView.html">Overview</a></li>
                   <li><a href="/src/guide/cmp_guide_title.html">Title & Teaser Title</a></li>
@@ -158,5 +156,23 @@
       </div>
     </div>
     <script src="/assets/bundle/swiper-bundle.min.js"></script>
+    <script src="/assets/js/initializeSwipers.js"></script>
+    <script>
+      // Swiper 옵션 배열
+      const swiperOptions = [{
+          loop: true,
+          speed: 500,
+          slidesPerView: 'auto'
+        }, // 첫 번째 Swiper 옵션
+        {
+          loop: false,
+          autoplay: {
+            delay: 4000
+          }
+        } // 두 번째 Swiper 옵션
+      ];
+      // Swiper 초기화
+      initializeSwipers(swiperOptions);
+    </script>
   </body>
 </html>
