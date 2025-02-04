@@ -2,14 +2,14 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title><%= data.title %></title>
   <meta name="description" content="<%= data.description %>">
   <link rel="stylesheet" href="/src/assets/css/index.css" />
   <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
 </head>
 <body>
-    <div class="wrap">
+    <div class="wrap has-hero">
         <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
         <%- include('src/component/cmp_heroBanner.html') %>
@@ -332,6 +332,10 @@
             </div>
         </div>
         <%- include('src/_inc/footer.html') %>
-    </div>    
+    </div>   
+    <script src="/assets/js/ui_common.js"></script>
+    <script>        
+        tabMenu('.basic-type', 'tab');
+    </script> 
 </body>
 </html>

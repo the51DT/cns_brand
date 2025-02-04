@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title><%= data.title %></title>
   <meta name="description" content="<%= data.description %>">
   <link rel="stylesheet" href="/src/assets/css/index.css" />
@@ -299,5 +299,9 @@
         </div>
         <%- include('src/_inc/footer.html') %>
     </div>    
+    <script src="/assets/js/ui_common.js"></script>
+    <script>        
+        tabMenu('.basic-type', 'tab');
+    </script>
 </body>
 </html>
