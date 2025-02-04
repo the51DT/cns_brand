@@ -48,29 +48,13 @@ const generateCSSVariables = (prefix, data) => {
         // 6. CSS 변수 생성
         let cssRoot = `:root {\n`;
         
-        // Typography - Mobile and Desktop
-        if (outputData.typo) {
-            const typographyKeys = Object.keys(outputData.typo);
-            typographyKeys.forEach(key => {
-                cssRoot += generateCSSVariables(`typo-${key}`, outputData.typo[key]);
-            });
-        }
-        
-        // Color Global
-        if (outputData.colorGL) {
-            const colorGlobalKeys = Object.keys(outputData.colorGL);
-            colorGlobalKeys.forEach(key => {
-                cssRoot += generateCSSVariables(`colorGL-${key}`, outputData.colorGL[key]);
-            });
-        }
-        
-        // Color Common
-        if (outputData.colorCM) {
-            const colorCommonKeys = Object.keys(outputData.colorCM);
-            colorCommonKeys.forEach(key => {
-                cssRoot += generateCSSVariables(`colorCM-${key}`, outputData.colorCM[key]);
-            });
-        }
+        // 자동으로 모든 키에 대해 CSS 변수 생성
+        Object.keys(outputData).forEach(sectionKey => {
+            const sectionData = outputData[sectionKey];
+            if (typeof sectionData === 'object' && sectionData !== null) {
+                cssRoot += generateCSSVariables(sectionKey, sectionData);
+            }
+        });
         
         cssRoot += `}\n`;
         
