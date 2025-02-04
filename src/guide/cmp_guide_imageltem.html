@@ -19,7 +19,10 @@
                 <div class="page-cont flex-1">
                     <p class="guide-title-h3">ImageItem</p>                    
                     <div class="cmp-exsample__wrap mt-3">
-                        <%- include('src/component/cmp_title.html') %>
+                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                            titleText: 'SCM DX 트렌드', 
+                            titlePrimary: '두번째 타이틀' 
+                        })) %>
                         <!-- Title -->
                         <%- include('src/component/cmp_imageltem.html') %>
                         <!-- //Title -->
