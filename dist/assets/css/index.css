@@ -21,7 +21,7 @@
     --typo-pc-size-caption-sm: 11;
     --typo-pc-size-caption-xs: 10;
     --typo-pc-letter-spacing-default: 0;
-    --typo-pc-letter-spacing-small: -0.5;
+    --typo-pc-letter-spacing-small: -0.20000000298023224;
     --typo-pc-weight-medium500: medium;
     --typo-pc-line-height-head-xl: 72;
     --typo-pc-line-height-head-lg: 57.599998474121094;
@@ -38,6 +38,45 @@
     --typo-pc-line-height-caption-md: 18;
     --typo-pc-line-height-caption-xs: 15;
     --typo-pc-line-height-caption-sm: 16.5;
+    --typo-tablet-family-head: Pretendard;
+    --typo-tablet-family-caption: Pretendard;
+    --typo-tablet-family-body: Pretendard;
+    --typo-tablet-weight-bold700: bold;
+    --typo-tablet-weight-semibold600: semibold;
+    --typo-tablet-weight-regular400: regular;
+    --typo-tablet-size-head-xl: 54;
+    --typo-tablet-size-head-lg: 44;
+    --typo-tablet-size-head-md: 36;
+    --typo-tablet-size-head-sm: 32;
+    --typo-tablet-size-head-xs: 28;
+    --typo-tablet-size-body-xl: 24;
+    --typo-tablet-size-body-lg: 22;
+    --typo-tablet-size-body-md: 20;
+    --typo-tablet-size-body-sm: 18;
+    --typo-tablet-size-body-xs: 14;
+    --typo-tablet-size-caption-xl: 13;
+    --typo-tablet-size-caption-lg: 12;
+    --typo-tablet-size-caption-md: 11;
+    --typo-tablet-size-caption-sm: 10;
+    --typo-tablet-size-caption-xs: 9;
+    --typo-tablet-letter-spacing-default: 0;
+    --typo-tablet-letter-spacing-small: -0.20000000298023224;
+    --typo-tablet-weight-medium500: medium;
+    --typo-tablet-line-height-head-xl: 64.80000305175781;
+    --typo-tablet-line-height-head-lg: 52.79999923706055;
+    --typo-tablet-line-height-head-md: 43.20000076293945;
+    --typo-tablet-line-height-head-sm: 38.400001525878906;
+    --typo-tablet-line-height-head-xs: 33.599998474121094;
+    --typo-tablet-line-height-body-xl: 36;
+    --typo-tablet-line-height-body-lg: 33;
+    --typo-tablet-line-height-body-md: 24;
+    --typo-tablet-line-height-body-sm: 24;
+    --typo-tablet-line-height-body-xs: 21;
+    --typo-tablet-line-height-caption-xl: 19.5;
+    --typo-tablet-line-height-caption-lg: 18;
+    --typo-tablet-line-height-caption-md: 16.5;
+    --typo-tablet-line-height-caption-xs: 13.5;
+    --typo-tablet-line-height-caption-sm: 15;
     --typo-mo-family-head: Pretendard;
     --typo-mo-family-caption: Pretendard;
     --typo-mo-family-body: Pretendard;
@@ -60,23 +99,23 @@
     --typo-mo-size-caption-sm: 10;
     --typo-mo-size-caption-xs: 9;
     --typo-mo-letter-spacing-default: 0;
-    --typo-mo-letter-spacing-small: -0.5;
+    --typo-mo-letter-spacing-small: -0.20000000298023224;
     --typo-mo-weight-medium500: medium;
-    --typo-mo-line-height-head-xl: 38.400001525878906;
-    --typo-mo-line-height-head-lg: 38.400001525878906;
-    --typo-mo-line-height-head-md: 28.799999237060547;
-    --typo-mo-line-height-head-sm: 28.799999237060547;
-    --typo-mo-line-height-head-xs: 26.399999618530273;
-    --typo-mo-line-height-body-xl: 30;
-    --typo-mo-line-height-body-lg: 27;
-    --typo-mo-line-height-body-md: 24;
+    --typo-mo-line-height-head-xl: 48;
+    --typo-mo-line-height-head-lg: 43.20000076293945;
+    --typo-mo-line-height-head-md: 38.400001525878906;
+    --typo-mo-line-height-head-sm: 33.599998474121094;
+    --typo-mo-line-height-head-xs: 28.799999237060547;
+    --typo-mo-line-height-body-xl: 33;
+    --typo-mo-line-height-body-lg: 30;
+    --typo-mo-line-height-body-md: 27;
     --typo-mo-line-height-body-sm: 24;
     --typo-mo-line-height-body-xs: 21;
-    --typo-mo-line-height-caption-xl: 21;
-    --typo-mo-line-height-caption-lg: 19.5;
-    --typo-mo-line-height-caption-md: 18;
-    --typo-mo-line-height-caption-xs: 15;
-    --typo-mo-line-height-caption-sm: 16.5;
+    --typo-mo-line-height-caption-xl: 19.5;
+    --typo-mo-line-height-caption-lg: 18;
+    --typo-mo-line-height-caption-md: 16.5;
+    --typo-mo-line-height-caption-xs: 13.5;
+    --typo-mo-line-height-caption-sm: 15;
     --colorGL-all-black100: #000000;
     --colorGL-all-black96: #000000f4;
     --colorGL-all-black88: #000000e0;
@@ -120,7 +159,7 @@
     --colorGL-all-gray850: #333333;
     --colorGL-all-gray800: #3f3f3f;
     --colorGL-all-gray600: #808080;
-    --colorGL-all-gray700: #666666;
+    --colorGL-all-gray700: #6b6b6b;
     --colorGL-all-gray500: #999999;
     --colorGL-all-gray750: #595959;
     --colorGL-all-gray950: #191919;
@@ -166,22 +205,22 @@
     --colorCM-all-secondary-secondary-enabled: #333333;
     --colorCM-all-secondary-secondary-pressed: #191919;
     --colorCM-all-secondary-secondary-sub-enabled: #eaeaea;
-    --colorCM-all-secondary-secondary-disabled: #666666;
+    --colorCM-all-secondary-secondary-disabled: #6b6b6b;
     --colorCM-all-secondary-secondary-sub-pressed: #999999;
     --colorCM-all-secondary-secondary-sub-disabled: #eaeaea;
     --colorCM-all-text-text-default: #191919;
     --colorCM-all-text-text-secondary: #333333;
     --colorCM-all-text-text-disabled: #999999;
-    --colorCM-all-text-text-tertiary: #666666;
+    --colorCM-all-text-text-tertiary: #6b6b6b;
     --colorCM-all-text-text-on-bg: #ffffff;
     --colorCM-all-icon-icon-default: #191919;
     --colorCM-all-icon-icon-secondary: #333333;
     --colorCM-all-icon-icon-disabled: #999999;
-    --colorCM-all-icon-icon-tertiary: #666666;
+    --colorCM-all-icon-icon-tertiary: #6b6b6b;
     --colorCM-all-icon-icon-on-bg: #ffffff;
     --colorCM-all-stroke-stroke-default1: #191919;
     --colorCM-all-stroke-stroke-default2: #333333;
-    --colorCM-all-stroke-stroke-default3: #666666;
+    --colorCM-all-stroke-stroke-default3: #6b6b6b;
     --colorCM-all-stroke-stroke-default4: #999999;
     --colorCM-all-stroke-stroke-default9: #f4f4f4;
     --colorCM-all-stroke-stroke-default6: #d8d8d8;
@@ -195,7 +234,7 @@
     --colorCM-all-fill-fill-default4: #e5e5e5;
     --colorCM-all-fill-fill-default5: #cccccc;
     --colorCM-all-fill-fill-default6: #999999;
-    --colorCM-all-fill-fill-default7: #666666;
+    --colorCM-all-fill-fill-default7: #6b6b6b;
     --colorCM-all-fill-fill-default8: #3f3f3f;
     --colorCM-all-fill-fill-disabled: #e5e5e5;
     --colorCM-all-fill-fill-default12: #000000;
@@ -231,6 +270,66 @@
     --colorCM-all-success-success-sub-enabled: #d7fde4;
     --colorCM-all-success-success-sub-pressed: #92fbb5;
     --colorCM-all-success-success-sub-disabled: #d7fde4;
+    --colorCM-all-stroke-stroke-trans-w4: #ffffff0a;
+    --colorCM-all-stroke-stroke-trans-w8: #ffffff14;
+    --colorCM-all-stroke-stroke-trans-w12: #ffffff1e;
+    --colorCM-all-stroke-stroke-trans-b4: #0000000a;
+    --colorCM-all-stroke-stroke-trans-b8: #00000014;
+    --colorCM-all-stroke-stroke-trans-b12: #0000001e;
+    --colorCM-all-stroke-stroke-trans-w16: #ffffff28;
+    --colorCM-all-stroke-stroke-trans-w20: #ffffff33;
+    --colorCM-all-stroke-stroke-trans-b16: #00000028;
+    --colorCM-all-stroke-stroke-trans-b20: #00000033;
+    --spacing-mode1-vertical-none: 0;
+    --spacing-mode1-vertical2-x-s: 2;
+    --spacing-mode1-vertical-x-s: 4;
+    --spacing-mode1-vertical-s-nudge: 6;
+    --spacing-mode1-vertical-s: 8;
+    --spacing-mode1-vertical-m-nudge: 10;
+    --spacing-mode1-vertical-m: 12;
+    --spacing-mode1-vertical-l: 16;
+    --spacing-mode1-vertical-x-l: 20;
+    --spacing-mode1-vertical2-x-l: 24;
+    --spacing-mode1-vertical2-x-l-nudge: 32;
+    --spacing-mode1-vertical3-x-l: 40;
+    --spacing-mode1-vertical4-x-l: 60;
+    --spacing-mode1-vertical5-x-l: 80;
+    --spacing-mode1-vertical6-x-l: 100;
+    --spacing-mode1-vertical7-x-l: 160;
+    --spacing-mode1-vertical6-x-l-nudge: 120;
+    --spacing-mode1-vertical8-x-l: 180;
+    --spacing-mode1-vertical9-x-l: 200;
+    --spacing-mode1-horizontal-none: 0;
+    --spacing-mode1-horizontal2-x-s: 2;
+    --spacing-mode1-horizontal-x-s: 4;
+    --spacing-mode1-horizontal-s-nudge: 6;
+    --spacing-mode1-horizontal-s: 8;
+    --spacing-mode1-horizontal-m-nudge: 10;
+    --spacing-mode1-horizontal-m: 12;
+    --spacing-mode1-horizontal-l: 16;
+    --spacing-mode1-horizontal-x-l: 20;
+    --spacing-mode1-horizontal2-x-l: 24;
+    --spacing-mode1-horizontal2-x-l-nudge: 32;
+    --spacing-mode1-horizontal3-x-l: 40;
+    --spacing-mode1-horizontal4-x-l: 60;
+    --spacing-mode1-horizontal5-x-l: 80;
+    --spacing-mode1-horizontal6-x-l: 100;
+    --spacing-mode1-horizontal6-x-l-nudge: 120;
+    --spacing-mode1-horizontal7-x-l: 160;
+    --spacing-mode1-horizontal8-x-l: 180;
+    --spacing-mode1-horizontal9-x-l: 200;
+    --radius-mode1-none: 0;
+    --radius-mode1-x-s: 2;
+    --radius-mode1-s: 4;
+    --radius-mode1-m: 8;
+    --radius-mode1-s-nudge: 6;
+    --radius-mode1-m-nudge: 10;
+    --radius-mode1-l: 12;
+    --radius-mode1-x-l: 16;
+    --radius-mode1-2-x-l: 20;
+    --radius-mode1-2-x-l-nudge: 24;
+    --radius-mode1-3-x-l: 28;
+    --radius-mode1-circular: 999;
 }@font-face {
 	font-family: 'Pretendard';
 	font-weight: 900;
@@ -484,6 +583,69 @@ input::-webkit-inner-spin-button {
     line-height: calc(var(--typo-pc-line-height-caption-sm) / 16 * 1rem);
     letter-spacing: calc(0.05 / 16 * 1rem);
     font-weight: 400;
+}/* 태블릿 사이즈 1600 미만 ~ 768 이상 */@media screen and (max-width: 1599px) and (min-width: 768px) {
+    .font-head-xl {
+        font-size: calc(var(--typo-tablet-size-head-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-head-xl) / 16 * 1rem);
+    }
+    .font-head-lg {
+        font-size: calc(var(--typo-tablet-size-head-lg) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-head-lg) / 16 * 1rem);
+    }
+    .font-head-md {
+        font-size: calc(var(--typo-tablet-size-head-md) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-head-md) / 16 * 1rem);
+    }
+    .font-head-sm {
+        font-size: calc(var(--typo-tablet-size-head-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-head-sm) / 16 * 1rem);
+    }
+    .font-head-xs {
+        font-size: calc(var(--typo-tablet-size-head-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-head-xs) / 16 * 1rem);
+    }
+    .font-body-xl {
+        font-size: calc(var(--typo-tablet-size-body-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-body-xl) / 16 * 1rem);
+    }
+    .font-body-lg {
+        font-size: calc(var(--typo-tablet-size-body-lg) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-body-lg) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+    }
+    .font-body-md {
+        font-size: calc(var(--typo-tablet-size-body-md) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-body-md) / 16 * 1rem);
+    }
+    .font-body-sm {
+        font-size: calc(var(--typo-tablet-size-body-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-body-sm) / 16 * 1rem);
+    }
+    .font-body-sm {
+        font-size: calc(var(--typo-tablet-size-body-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-body-xs) / 16 * 1rem);
+    }
+    .font-caption-xl {
+        font-size: calc(var(--typo-tablet-size-caption-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-xl) / 16 * 1rem);
+    }
+    .font-caption-lg {
+        font-size: calc(var(--typo-tablet-size-caption-lg) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-lg) / 16 * 1rem);
+    }
+    .font-caption-md {
+        font-size: calc(var(--typo-tablet-size-caption-md) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-md) / 16 * 1rem);
+    }
+    .font-caption-xs {
+        font-size: calc(var(--typo-tablet-size-caption-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-xs) / 16 * 1rem);
+    }
+    .font-caption-sm {
+        font-size: calc(var(--typo-tablet-size-caption-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-sm) / 16 * 1rem);
+    }
 }@media screen and (max-width: 768px) {
     .font-head-xl {
         font-size: calc(var(--typo-mo-size-head-xl) / 16 * 1rem);
@@ -51223,7 +51385,7 @@ video {
     --typo-pc-size-caption-sm: 11;
     --typo-pc-size-caption-xs: 10;
     --typo-pc-letter-spacing-default: 0;
-    --typo-pc-letter-spacing-small: -0.5;
+    --typo-pc-letter-spacing-small: -0.20000000298023224;
     --typo-pc-weight-medium500: medium;
     --typo-pc-line-height-head-xl: 72;
     --typo-pc-line-height-head-lg: 57.599998474121094;
@@ -51240,6 +51402,45 @@ video {
     --typo-pc-line-height-caption-md: 18;
     --typo-pc-line-height-caption-xs: 15;
     --typo-pc-line-height-caption-sm: 16.5;
+    --typo-tablet-family-head: Pretendard;
+    --typo-tablet-family-caption: Pretendard;
+    --typo-tablet-family-body: Pretendard;
+    --typo-tablet-weight-bold700: bold;
+    --typo-tablet-weight-semibold600: semibold;
+    --typo-tablet-weight-regular400: regular;
+    --typo-tablet-size-head-xl: 54;
+    --typo-tablet-size-head-lg: 44;
+    --typo-tablet-size-head-md: 36;
+    --typo-tablet-size-head-sm: 32;
+    --typo-tablet-size-head-xs: 28;
+    --typo-tablet-size-body-xl: 24;
+    --typo-tablet-size-body-lg: 22;
+    --typo-tablet-size-body-md: 20;
+    --typo-tablet-size-body-sm: 18;
+    --typo-tablet-size-body-xs: 14;
+    --typo-tablet-size-caption-xl: 13;
+    --typo-tablet-size-caption-lg: 12;
+    --typo-tablet-size-caption-md: 11;
+    --typo-tablet-size-caption-sm: 10;
+    --typo-tablet-size-caption-xs: 9;
+    --typo-tablet-letter-spacing-default: 0;
+    --typo-tablet-letter-spacing-small: -0.20000000298023224;
+    --typo-tablet-weight-medium500: medium;
+    --typo-tablet-line-height-head-xl: 64.80000305175781;
+    --typo-tablet-line-height-head-lg: 52.79999923706055;
+    --typo-tablet-line-height-head-md: 43.20000076293945;
+    --typo-tablet-line-height-head-sm: 38.400001525878906;
+    --typo-tablet-line-height-head-xs: 33.599998474121094;
+    --typo-tablet-line-height-body-xl: 36;
+    --typo-tablet-line-height-body-lg: 33;
+    --typo-tablet-line-height-body-md: 24;
+    --typo-tablet-line-height-body-sm: 24;
+    --typo-tablet-line-height-body-xs: 21;
+    --typo-tablet-line-height-caption-xl: 19.5;
+    --typo-tablet-line-height-caption-lg: 18;
+    --typo-tablet-line-height-caption-md: 16.5;
+    --typo-tablet-line-height-caption-xs: 13.5;
+    --typo-tablet-line-height-caption-sm: 15;
     --typo-mo-family-head: Pretendard;
     --typo-mo-family-caption: Pretendard;
     --typo-mo-family-body: Pretendard;
@@ -51262,23 +51463,23 @@ video {
     --typo-mo-size-caption-sm: 10;
     --typo-mo-size-caption-xs: 9;
     --typo-mo-letter-spacing-default: 0;
-    --typo-mo-letter-spacing-small: -0.5;
+    --typo-mo-letter-spacing-small: -0.20000000298023224;
     --typo-mo-weight-medium500: medium;
-    --typo-mo-line-height-head-xl: 38.400001525878906;
-    --typo-mo-line-height-head-lg: 38.400001525878906;
-    --typo-mo-line-height-head-md: 28.799999237060547;
-    --typo-mo-line-height-head-sm: 28.799999237060547;
-    --typo-mo-line-height-head-xs: 26.399999618530273;
-    --typo-mo-line-height-body-xl: 30;
-    --typo-mo-line-height-body-lg: 27;
-    --typo-mo-line-height-body-md: 24;
+    --typo-mo-line-height-head-xl: 48;
+    --typo-mo-line-height-head-lg: 43.20000076293945;
+    --typo-mo-line-height-head-md: 38.400001525878906;
+    --typo-mo-line-height-head-sm: 33.599998474121094;
+    --typo-mo-line-height-head-xs: 28.799999237060547;
+    --typo-mo-line-height-body-xl: 33;
+    --typo-mo-line-height-body-lg: 30;
+    --typo-mo-line-height-body-md: 27;
     --typo-mo-line-height-body-sm: 24;
     --typo-mo-line-height-body-xs: 21;
-    --typo-mo-line-height-caption-xl: 21;
-    --typo-mo-line-height-caption-lg: 19.5;
-    --typo-mo-line-height-caption-md: 18;
-    --typo-mo-line-height-caption-xs: 15;
-    --typo-mo-line-height-caption-sm: 16.5;
+    --typo-mo-line-height-caption-xl: 19.5;
+    --typo-mo-line-height-caption-lg: 18;
+    --typo-mo-line-height-caption-md: 16.5;
+    --typo-mo-line-height-caption-xs: 13.5;
+    --typo-mo-line-height-caption-sm: 15;
     --colorGL-all-black100: #000000;
     --colorGL-all-black96: #000000f4;
     --colorGL-all-black88: #000000e0;
@@ -51322,7 +51523,7 @@ video {
     --colorGL-all-gray850: #333333;
     --colorGL-all-gray800: #3f3f3f;
     --colorGL-all-gray600: #808080;
-    --colorGL-all-gray700: #666666;
+    --colorGL-all-gray700: #6b6b6b;
     --colorGL-all-gray500: #999999;
     --colorGL-all-gray750: #595959;
     --colorGL-all-gray950: #191919;
@@ -51368,22 +51569,22 @@ video {
     --colorCM-all-secondary-secondary-enabled: #333333;
     --colorCM-all-secondary-secondary-pressed: #191919;
     --colorCM-all-secondary-secondary-sub-enabled: #eaeaea;
-    --colorCM-all-secondary-secondary-disabled: #666666;
+    --colorCM-all-secondary-secondary-disabled: #6b6b6b;
     --colorCM-all-secondary-secondary-sub-pressed: #999999;
     --colorCM-all-secondary-secondary-sub-disabled: #eaeaea;
     --colorCM-all-text-text-default: #191919;
     --colorCM-all-text-text-secondary: #333333;
     --colorCM-all-text-text-disabled: #999999;
-    --colorCM-all-text-text-tertiary: #666666;
+    --colorCM-all-text-text-tertiary: #6b6b6b;
     --colorCM-all-text-text-on-bg: #ffffff;
     --colorCM-all-icon-icon-default: #191919;
     --colorCM-all-icon-icon-secondary: #333333;
     --colorCM-all-icon-icon-disabled: #999999;
-    --colorCM-all-icon-icon-tertiary: #666666;
+    --colorCM-all-icon-icon-tertiary: #6b6b6b;
     --colorCM-all-icon-icon-on-bg: #ffffff;
     --colorCM-all-stroke-stroke-default1: #191919;
     --colorCM-all-stroke-stroke-default2: #333333;
-    --colorCM-all-stroke-stroke-default3: #666666;
+    --colorCM-all-stroke-stroke-default3: #6b6b6b;
     --colorCM-all-stroke-stroke-default4: #999999;
     --colorCM-all-stroke-stroke-default9: #f4f4f4;
     --colorCM-all-stroke-stroke-default6: #d8d8d8;
@@ -51397,7 +51598,7 @@ video {
     --colorCM-all-fill-fill-default4: #e5e5e5;
     --colorCM-all-fill-fill-default5: #cccccc;
     --colorCM-all-fill-fill-default6: #999999;
-    --colorCM-all-fill-fill-default7: #666666;
+    --colorCM-all-fill-fill-default7: #6b6b6b;
     --colorCM-all-fill-fill-default8: #3f3f3f;
     --colorCM-all-fill-fill-disabled: #e5e5e5;
     --colorCM-all-fill-fill-default12: #000000;
@@ -51433,6 +51634,66 @@ video {
     --colorCM-all-success-success-sub-enabled: #d7fde4;
     --colorCM-all-success-success-sub-pressed: #92fbb5;
     --colorCM-all-success-success-sub-disabled: #d7fde4;
+    --colorCM-all-stroke-stroke-trans-w4: #ffffff0a;
+    --colorCM-all-stroke-stroke-trans-w8: #ffffff14;
+    --colorCM-all-stroke-stroke-trans-w12: #ffffff1e;
+    --colorCM-all-stroke-stroke-trans-b4: #0000000a;
+    --colorCM-all-stroke-stroke-trans-b8: #00000014;
+    --colorCM-all-stroke-stroke-trans-b12: #0000001e;
+    --colorCM-all-stroke-stroke-trans-w16: #ffffff28;
+    --colorCM-all-stroke-stroke-trans-w20: #ffffff33;
+    --colorCM-all-stroke-stroke-trans-b16: #00000028;
+    --colorCM-all-stroke-stroke-trans-b20: #00000033;
+    --spacing-mode1-vertical-none: 0;
+    --spacing-mode1-vertical2-x-s: 2;
+    --spacing-mode1-vertical-x-s: 4;
+    --spacing-mode1-vertical-s-nudge: 6;
+    --spacing-mode1-vertical-s: 8;
+    --spacing-mode1-vertical-m-nudge: 10;
+    --spacing-mode1-vertical-m: 12;
+    --spacing-mode1-vertical-l: 16;
+    --spacing-mode1-vertical-x-l: 20;
+    --spacing-mode1-vertical2-x-l: 24;
+    --spacing-mode1-vertical2-x-l-nudge: 32;
+    --spacing-mode1-vertical3-x-l: 40;
+    --spacing-mode1-vertical4-x-l: 60;
+    --spacing-mode1-vertical5-x-l: 80;
+    --spacing-mode1-vertical6-x-l: 100;
+    --spacing-mode1-vertical7-x-l: 160;
+    --spacing-mode1-vertical6-x-l-nudge: 120;
+    --spacing-mode1-vertical8-x-l: 180;
+    --spacing-mode1-vertical9-x-l: 200;
+    --spacing-mode1-horizontal-none: 0;
+    --spacing-mode1-horizontal2-x-s: 2;
+    --spacing-mode1-horizontal-x-s: 4;
+    --spacing-mode1-horizontal-s-nudge: 6;
+    --spacing-mode1-horizontal-s: 8;
+    --spacing-mode1-horizontal-m-nudge: 10;
+    --spacing-mode1-horizontal-m: 12;
+    --spacing-mode1-horizontal-l: 16;
+    --spacing-mode1-horizontal-x-l: 20;
+    --spacing-mode1-horizontal2-x-l: 24;
+    --spacing-mode1-horizontal2-x-l-nudge: 32;
+    --spacing-mode1-horizontal3-x-l: 40;
+    --spacing-mode1-horizontal4-x-l: 60;
+    --spacing-mode1-horizontal5-x-l: 80;
+    --spacing-mode1-horizontal6-x-l: 100;
+    --spacing-mode1-horizontal6-x-l-nudge: 120;
+    --spacing-mode1-horizontal7-x-l: 160;
+    --spacing-mode1-horizontal8-x-l: 180;
+    --spacing-mode1-horizontal9-x-l: 200;
+    --radius-mode1-none: 0;
+    --radius-mode1-x-s: 2;
+    --radius-mode1-s: 4;
+    --radius-mode1-m: 8;
+    --radius-mode1-s-nudge: 6;
+    --radius-mode1-m-nudge: 10;
+    --radius-mode1-l: 12;
+    --radius-mode1-x-l: 16;
+    --radius-mode1-2-x-l: 20;
+    --radius-mode1-2-x-l-nudge: 24;
+    --radius-mode1-3-x-l: 28;
+    --radius-mode1-circular: 999;
 }@font-face {
 	font-family: 'Pretendard';
 	font-weight: 900;
@@ -51686,6 +51947,69 @@ input::-webkit-inner-spin-button {
     line-height: calc(var(--typo-pc-line-height-caption-sm) / 16 * 1rem);
     letter-spacing: calc(0.05 / 16 * 1rem);
     font-weight: 400;
+}/* 태블릿 사이즈 1600 미만 ~ 768 이상 */@media screen and (max-width: 1599px) and (min-width: 768px) {
+    .font-head-xl {
+        font-size: calc(var(--typo-tablet-size-head-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-head-xl) / 16 * 1rem);
+    }
+    .font-head-lg {
+        font-size: calc(var(--typo-tablet-size-head-lg) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-head-lg) / 16 * 1rem);
+    }
+    .font-head-md {
+        font-size: calc(var(--typo-tablet-size-head-md) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-head-md) / 16 * 1rem);
+    }
+    .font-head-sm {
+        font-size: calc(var(--typo-tablet-size-head-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-head-sm) / 16 * 1rem);
+    }
+    .font-head-xs {
+        font-size: calc(var(--typo-tablet-size-head-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-head-xs) / 16 * 1rem);
+    }
+    .font-body-xl {
+        font-size: calc(var(--typo-tablet-size-body-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-body-xl) / 16 * 1rem);
+    }
+    .font-body-lg {
+        font-size: calc(var(--typo-tablet-size-body-lg) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-body-lg) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+    }
+    .font-body-md {
+        font-size: calc(var(--typo-tablet-size-body-md) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-body-md) / 16 * 1rem);
+    }
+    .font-body-sm {
+        font-size: calc(var(--typo-tablet-size-body-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-body-sm) / 16 * 1rem);
+    }
+    .font-body-sm {
+        font-size: calc(var(--typo-tablet-size-body-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-body-xs) / 16 * 1rem);
+    }
+    .font-caption-xl {
+        font-size: calc(var(--typo-tablet-size-caption-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-xl) / 16 * 1rem);
+    }
+    .font-caption-lg {
+        font-size: calc(var(--typo-tablet-size-caption-lg) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-lg) / 16 * 1rem);
+    }
+    .font-caption-md {
+        font-size: calc(var(--typo-tablet-size-caption-md) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-md) / 16 * 1rem);
+    }
+    .font-caption-xs {
+        font-size: calc(var(--typo-tablet-size-caption-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-xs) / 16 * 1rem);
+    }
+    .font-caption-sm {
+        font-size: calc(var(--typo-tablet-size-caption-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-sm) / 16 * 1rem);
+    }
 }@media screen and (max-width: 768px) {
     .font-head-xl {
         font-size: calc(var(--typo-mo-size-head-xl) / 16 * 1rem);
