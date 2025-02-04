@@ -11,9 +11,9 @@ import { readFileSync, writeFileSync } from 'fs';
 export default defineConfig({
     plugins: [
         ViteEjsPlugin({
-            inject: {
+            data: {
                 title: 'LG CNS',
-                description: 'LG CNS',
+                description: 'IT신기술로 고객의 DX 경험을 혁신하는 Digital Business Innovator! LG CNS의 공식 홈페이지입니다.',
             },
         }),
         ViteImageOptimizer({
