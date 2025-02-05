@@ -38,6 +38,9 @@ $fileType: "svg";
     &.icon_hamburger_menu {
         @include iconFile(24,24,'btn_hamburger_menu');
     }   
+    &.icon_hamburger_menu_bl {
+        @include iconFile(24,24,'icon_hamburger_bl');
+    }      
     &.icon_more_dot {
         @include iconFile(16,16,'ico-more');
     }   

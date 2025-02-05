@@ -231,6 +231,9 @@ $pcWide: "screen and (min-width : 1920px)";
                 padding: calc(6 / 16 * 1rem) calc(30 / 16 * 1rem);
                 justify-content: center;
                 align-items: center;
+                @media #{$tablet} {
+                    display: none;
+                }
             }            
         }
     
@@ -238,6 +241,15 @@ $pcWide: "screen and (min-width : 1920px)";
             display: none;
             @media #{$tablet} {
                 display: inline-flex;
+                .btn-hamburger-menu {
+                    .icon_hamburger_menu {
+                        display: none;
+                    }
+                    .icon_hamburger_menu_bl {
+                        display: block;
+                    }
+                    
+                }
             }
         }
     
@@ -333,6 +345,19 @@ $pcWide: "screen and (min-width : 1920px)";
                 .icon_lang_bl24,
                 .icon_search_bl24 {
                     display: block;
+                }
+            }
+            .mo-menu {                
+                @media #{$tablet} {                    
+                    .btn-hamburger-menu {
+                        .icon_hamburger_menu {                            
+                            display: block;
+                        }
+                        .icon_hamburger_menu_bl {
+                            display: none;
+                        }
+                        
+                    }
                 }
             }
         }
@@ -451,14 +476,15 @@ $pcWide: "screen and (min-width : 1920px)";
                     display: none;
                     &.is-active {
                         display: block;
-                        border: 1px solid var(--colorGL-all-gray950);
+                        border: 1px solid var(--colorCM-all-stroke-stroke-default7);
                         border-bottom: 0;
                         position: absolute;
                         width: 100%;
                         left:0;
-                        top: -93px;
-                        padding: calc(11 / 16 * 1rem) calc(12 / 16 * 1rem);
-                        background-color: var(--colorGL-all-white100);
+                        top: -239px;
+                        padding: calc(11 / 16 * 1rem) calc(12 / 16 * 1rem);                        
+                        background-color: var(--colorGL-all-gray100);
+                        border-radius: var(--radius-mode1-3-x-l);
                         z-index: 9;                        
                     }
                 }
@@ -534,14 +560,11 @@ $pcWide: "screen and (min-width : 1920px)";
         padding: 0 calc(40 / 16 * 1rem);   
     }
     @media #{$tablet} {        
-        max-width: 960px;    
-        // max-width: calc(calc(960 / 16 * 1rem) - calc(64 / 16 * 1rem));   
-        padding: 0 calc(32 / 16 * 1rem);  
+        max-width: 960px;            
+        padding: 0 calc(0 / 16 * 1rem);  
     }
     @media #{$tabletMini} {
-        max-width: 704px;            
-        // max-width: calc(calc(704 / 16 * 1rem) - calc(64 / 16 * 1rem));            
-        // padding: 0 calc(32 / 16 * 1rem);  
+        max-width: 704px;                    
     }        
     @media #{$phone} {
         max-width: 100%;        
