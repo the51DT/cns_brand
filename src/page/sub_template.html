@@ -11,8 +11,13 @@
 <body>
     <div class="wrap has-hero">        
         <%- include('src/_inc/header.html') %> 
-        <!-- //헤더 영역 -->
-        <%- include('src/component/cmp_heroBanner.html') %>         
+        <!-- //헤더 영역 -->           
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+            pcImg: '/src/assets/image/sub/bg_sub_vi01.png',
+            moImg: '/src/assets/image/sub/bg_sub_mvi01.png',
+            subText: 'Service', 
+            pageTitle: '경영관리' 
+        })) %>    
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
