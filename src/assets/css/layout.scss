@@ -37,6 +37,7 @@ $pcWide: "screen and (min-width : 1920px)";
         align-items: center;
         justify-content: space-between;
         gap: calc(40 / 16 * 1rem);      
+        height: 100%;              
         @media #{$tablet} {
             gap: calc(20 / 16 * 1rem);            
             .logo {
@@ -58,6 +59,7 @@ $pcWide: "screen and (min-width : 1920px)";
             align-items: center;
             flex: 1;
             justify-content: space-between;
+            height: 100%;            
             @media #{$tablet} {
                 display: none;
             }
@@ -66,9 +68,13 @@ $pcWide: "screen and (min-width : 1920px)";
         .gnb-navy {
             &.navy-list {
                 display: flex;
-                align-items: center;                
+                align-items: center;                                       
+                height: 100%;         
                 > li {
                     padding: 0 calc(20 / 16 * 1rem);
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
                     &:first-child {
                         padding-left: 0;
                     }
@@ -76,6 +82,7 @@ $pcWide: "screen and (min-width : 1920px)";
                         color: var(--colorGL-all-gray950);
                         font-weight: 600;
                         position: relative;
+                        display: block;
                         &::after {
                             content: '';
                             display: block;
@@ -129,13 +136,15 @@ $pcWide: "screen and (min-width : 1920px)";
                                 color: var(--text-text-default);
                                 width: calc(324 / 16 * 1rem);
                                 height: calc(52 / 16 * 1rem);
-                                padding-left: calc(24 / 16 * 1rem);
-                                &.is-active,
+                                padding-left: calc(24 / 16 * 1rem);                                
                                 &:hover {
                                     background-color: var(--colorCM-all-fill-fill-default2);
                                 }
                             }
                             &.is-active {
+                                a {
+                                    background-color: var(--colorCM-all-fill-fill-default2);
+                                }
                                 .sub-menu-detail {
                                     position: absolute;
                                     width: calc(996 / 16 * 1rem);
@@ -176,6 +185,16 @@ $pcWide: "screen and (min-width : 1920px)";
                         }
                     }
                     &.is-active {
+                        & > a {
+                            padding: 0 calc(5 / 16 * 1rem);
+                            transition: all 0.3s;
+                            transform: scaleX(1.1);
+                            transform-origin: center;
+                            &::after {
+                                width: 100%;
+                                transition: width 0.3s;
+                            }
+                        }
                         .gnb-sub__wrap--drop {
                             display: block;
                         }
@@ -204,7 +223,12 @@ $pcWide: "screen and (min-width : 1920px)";
                 }
             }
         }
-    
+        .navy-left,
+        .navy-right {
+            height: 100%;
+            display: flex;
+            align-items: center;            
+        }
         .navy-left,
         .navy-right,
         .gnb-util {
@@ -247,8 +271,7 @@ $pcWide: "screen and (min-width : 1920px)";
                     }
                     .icon_hamburger_menu_bl {
                         display: block;
-                    }
-                    
+                    }                    
                 }
             }
         }
