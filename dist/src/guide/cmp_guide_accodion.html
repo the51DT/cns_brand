@@ -34,38 +34,6 @@
           <div class="lnb-side__wrap">
             <button type="button" class="lnb-trigger">아코디언</button>
           </div>
-          <script>
-            document.addEventListener('DOMContentLoaded', () => {
-              fetch('/ia.json')
-                .then(response => response.json())
-                .then(data => {
-                  const lnbWrap = document.querySelector('.lnb-side__wrap');
-                  const ul = document.createElement('ul');
-                  ul.classList.add('lnb_list', 'has-children');
-                  // Filter the data to include only items with IDs 1, 2, and 3
-                  const filteredData = data.IaList.filter(level1Item => [1, 2, 3].includes(level1Item.id));
-                  filteredData.forEach(level1Item => {
-                    const li = document.createElement('li');
-                    const strong = document.createElement('strong');
-                    strong.textContent = level1Item.Level1;
-                    li.appendChild(strong);
-                    const subUl = document.createElement('ul');
-                    level1Item.Level2.forEach(level2Item => {
-                      const subLi = document.createElement('li');
-                      const a = document.createElement('a');
-                      a.href = `${level2Item.path}${level2Item.fileName}`;
-                      a.textContent = level2Item.name;
-                      subLi.appendChild(a);
-                      subUl.appendChild(subLi);
-                    });
-                    li.appendChild(subUl);
-                    ul.appendChild(li);
-                  });
-                  lnbWrap.appendChild(ul);
-                })
-                .catch(error => console.error('Error loading JSON:', error));
-            });
-          </script>
           <div class="page-cont flex-1">
             <p class="guide-title-h3">Accordion Component: basic-type</p>
             <div class="cmp-exsample__wrap mt-3">
@@ -84,7 +52,7 @@
                     </div>
                     <div class="accordion-content">
                       <div class="accordion-text">
-                        상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
+                        LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
                       </div>
                     </div>
                   </li>
@@ -93,13 +61,13 @@
                       <button type="button">
                         <i></i>
                         <div class="tit">
-                          특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
+                          기술 종속 없이 운영할 수 있는 방법은?
                         </div>
                       </button>
                     </div>
                     <div class="accordion-content">
                       <div class="accordion-text">
-                        상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
+                        LENA는 벤더에 종속되지 않고, 자유롭게 선택할 수 있도록 지원합니다.
                       </div>
                     </div>
                   </li>
@@ -108,13 +76,43 @@
                       <button type="button">
                         <i></i>
                         <div class="tit">
-                          특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
+                          LENA를 도입하면 어떤 장점이 있나요?
                         </div>
                       </button>
                     </div>
                     <div class="accordion-content">
                       <div class="accordion-text">
-                        상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
+                        안정적인 서비스 운영과 비용 절감 효과를 기대할 수 있습니다.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item ">
+                    <div class="accordion-title">
+                      <button type="button">
+                        <i></i>
+                        <div class="tit">
+                          LENA를 도입하면 어떤 장점이 있나요?
+                        </div>
+                      </button>
+                    </div>
+                    <div class="accordion-content">
+                      <div class="accordion-text">
+                        안정적인 서비스 운영과 비용 절감 효과를 기대할 수 있습니다.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item ">
+                    <div class="accordion-title">
+                      <button type="button">
+                        <i></i>
+                        <div class="tit">
+                          기술 종속 없이 운영할 수 있는 방법은?
+                        </div>
+                      </button>
+                    </div>
+                    <div class="accordion-content">
+                      <div class="accordion-text">
+                        LENA는 벤더에 종속되지 않고, 자유롭게 선택할 수 있도록 지원합니다.
                       </div>
                     </div>
                   </li>
@@ -138,7 +136,7 @@
                     </div>
                     <div class="accordion-content">
                       <div class="accordion-text">
-                        상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
+                        LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
                       </div>
                     </div>
                   </li>
@@ -147,13 +145,13 @@
                       <button type="button">
                         <i></i>
                         <div class="tit">
-                          특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
+                          기술 종속 없이 운영할 수 있는 방법은?
                         </div>
                       </button>
                     </div>
                     <div class="accordion-content">
                       <div class="accordion-text">
-                        상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
+                        LENA는 벤더에 종속되지 않고, 자유롭게 선택할 수 있도록 지원합니다.
                       </div>
                     </div>
                   </li>
@@ -162,43 +160,13 @@
                       <button type="button">
                         <i></i>
                         <div class="tit">
-                          특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
+                          LENA를 도입하면 어떤 장점이 있나요?
                         </div>
                       </button>
                     </div>
                     <div class="accordion-content">
                       <div class="accordion-text">
-                        상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
-                      </div>
-                    </div>
-                  </li>
-                  <li class="accordion-item ">
-                    <div class="accordion-title">
-                      <button type="button">
-                        <i></i>
-                        <div class="tit">
-                          특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
-                        </div>
-                      </button>
-                    </div>
-                    <div class="accordion-content">
-                      <div class="accordion-text">
-                        상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
-                      </div>
-                    </div>
-                  </li>
-                  <li class="accordion-item ">
-                    <div class="accordion-title">
-                      <button type="button">
-                        <i></i>
-                        <div class="tit">
-                          특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
-                        </div>
-                      </button>
-                    </div>
-                    <div class="accordion-content">
-                      <div class="accordion-text">
-                        상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
+                        안정적인 서비스 운영과 비용 절감 효과를 기대할 수 있습니다.
                       </div>
                     </div>
                   </li>

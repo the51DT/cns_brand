@@ -34,38 +34,6 @@
           <div class="lnb-side__wrap">
             <button type="button" class="lnb-trigger">아코디언</button>
           </div>
-          <script>
-            document.addEventListener('DOMContentLoaded', () => {
-              fetch('/ia.json')
-                .then(response => response.json())
-                .then(data => {
-                  const lnbWrap = document.querySelector('.lnb-side__wrap');
-                  const ul = document.createElement('ul');
-                  ul.classList.add('lnb_list', 'has-children');
-                  // Filter the data to include only items with IDs 1, 2, and 3
-                  const filteredData = data.IaList.filter(level1Item => [1, 2, 3].includes(level1Item.id));
-                  filteredData.forEach(level1Item => {
-                    const li = document.createElement('li');
-                    const strong = document.createElement('strong');
-                    strong.textContent = level1Item.Level1;
-                    li.appendChild(strong);
-                    const subUl = document.createElement('ul');
-                    level1Item.Level2.forEach(level2Item => {
-                      const subLi = document.createElement('li');
-                      const a = document.createElement('a');
-                      a.href = `${level2Item.path}${level2Item.fileName}`;
-                      a.textContent = level2Item.name;
-                      subLi.appendChild(a);
-                      subUl.appendChild(subLi);
-                    });
-                    li.appendChild(subUl);
-                    ul.appendChild(li);
-                  });
-                  lnbWrap.appendChild(ul);
-                })
-                .catch(error => console.error('Error loading JSON:', error));
-            });
-          </script>
           <div class="page-cont flex-1">
             <p class="guide-title-h3">Pagination</p>
             <div class="cmp-exsample__wrap mt-3">
