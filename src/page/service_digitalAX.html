@@ -9,14 +9,14 @@
   <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
 </head>
 <body>
-    <div class="wrap">
+    <div class="wrap has-hero">
         <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
         <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
-            pcImg: '/src/assets/image/sub/bg_sub_vi01.png',
-            moImg: '/src/assets/image/sub/bg_sub_mvi01.png',
+            pcImg: '/src/assets/image/sub/bg_sub_enterprice.png',
+            moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
             subText: 'Service', 
-            pageTitle: '경영관리' 
+            pageTitle: '디지털AX' 
         })) %>   
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
@@ -36,7 +36,10 @@
                         </div>
                         <div class="tab-content__wrap">
                             <div class="tab__content is-active">
-                                <%- include('src/component/cmp_title.html') %>
+                                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                    titleText: 'Rethinking Tomorrow’s Work',
+                                    titlePrimary: '새로운 시대, 새로운 세상, 새로운 업무 환경'
+                                })) %>
                                 <%- include('src/component/cmp_SpecList.html') %>
                                 <p class="font-head-xs font-bold mt-12 mb-10">LG CNS가 제공하는 Modern Workplace</p>
                                 <div class="cmp-container">
@@ -87,14 +90,27 @@
                                 </div>
 
                                 <div class="cmp-container">
-                                    <%- include('src/component/cmp_title.html') %>
-                                    <%- include('src/component/cmp_teaser_title.html') %>
+                                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                        titleText: 'Digital Workplace를 완성하는', 
+                                        titlePrimary: 'LG CNS 솔루션' 
+                                    })) %>
+                                    <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                                        teaserPoint: '',
+                                        teaserTitle: 'DigitalTrans',
+                                        teaserText1: '지털트랜스(DigitalTrans)는 AI 기반의 혁신적인 자동 통번역 IT 서비스입니다. 실시간 음성 및 텍스트 번역을 지원하며, 정확하고 자연스러운 번역 품질로 글로벌 소통을 강화합니다. 오렐로는 머신러닝과 자연어 처리 기술(NLP)을 활용해 다양한 언어와 문화적 맥락을 이해하고 반영합니다. 사용자 친화적인 인터페이스와 높은 정확도로 비즈니스 회의, 국제 컨퍼런스, 교육 등 다양한 환경에서 신속한 커뮤니케이션을 가능하게 합니다. 이제 언어의 장벽 없이 전 세계와 연결되는 스마트한 비즈니스 솔루션, 디지털트랜스와 함께하세요.',
+                                    })) %>   
                                     <%- include('src/component/cmp_Itemlist_3Columns.html') %>
-                                    <%- include('src/component/cmp_teaser_title.html') %>
+                                    <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                                        teaserPoint: '',
+                                        teaserTitle: 'i-KEP(포털)',
+                                        teaserText1: 'i-Kep은 20년 이상 축적된 다양한 기업들의 업무환경에 대한 높은 이해도와 Best Practice를 반영한 임직원 경험 중심의 포털 서비스입니다. 기업내 다양한 업무시스템 및 정보들이 함께 연결되어 통합된 View에서 제공하고, 언제 어디서든 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무환경이 가능합니다. 직관적인 인터페이스를 통해 프로젝트 관리, 결재, 보고서 작성, 일정 관리 등을 빠르게 수행할 수 있으며, 실시간 알림으로 중요한업무를 놓치지 않습니다. i-Kep과 함께라면 사무실 밖에서도 업무의 연속성을 유지하며 효율적인 비즈니스 환경을 만들어 보세요. i-Kep, 스마트한 업무의 시작입니다',
+                                    })) %>
                                     <%- include('src/component/cmp_Itemlist_3Columns.html') %>
-                                    <%- include('src/component/cmp_teaser_title.html') %>
-                                    <%- include('src/component/cmp_Itemlist_3Columns.html') %>
-                                    <%- include('src/component/cmp_teaser_title.html') %>
+                                    <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                                        teaserPoint: '',
+                                        teaserTitle: 'EMS(모바일오피스)',
+                                        teaserText1: '모바일 서비스인 EMS는 언제 어디서나 모바일로 회사 내부 업무를 손쉽게 처리할 수 있는 스마트한 업무 관리 앱으로, 기업에서 필요로 하는 다양한 업무 서비스를 단일 앱으로 제공하고, 개인 별로 최적화된 모바일 서비스를 제공합니다. 직관적인 인터페이스와 모바일 환경에 맞춘 최적화된 UI/UX 설계로, 사용자 경험을 극대화 하여 최고의 효율성을 보장합니다. 또한, 모바일 오피스 내 일정, 메일 요약, 메일 초안 작성 등 업무에 유용한 AI 기능을 접목시켜 제공하고 있으며, 스마트한 비즈니스 파트너로서 더 빠르고 정확한 업무를 가능하게 합니다. 언제 어디서든 일의 한계를 초월하는 LG CNS의 모바일 오피스 서비스를 만나보세요!',
+                                    })) %>
                                     <%- include('src/component/cmp_Itemlist_3Columns.html') %>
                                 </div>
 
@@ -103,55 +119,31 @@
                                         <div class="font-head-md title-text">FAQ</div>
                                     </div>
                                     <div class="cmp-wrap">
-                                        <div class="cmp-accordion open-type">
-                                            <ul class="accordion-list">
-                                                <li class="accordion-item is-active">
-                                                    <div class="accordion-title">
-                                                        <button type="button">
-                                                            <i></i>
-                                                            <div class="tit">
-                                                                특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
-                                                            </div>
-                                                        </button>
-                                                    </div>
-                                                    <div class="accordion-content">
-                                                        <div class="accordion-text">
-                                                            상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="accordion-item">
-                                                    <div class="accordion-title">
-                                                        <button type="button">
-                                                            <i></i>
-                                                            <div class="tit">
-                                                                특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
-                                                            </div>
-                                                        </button>
-                                                    </div>
-                                                    <div class="accordion-content">
-                                                        <div class="accordion-text">
-                                                            상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
-                                                        </div>
-                                                    </div>
-                                                </li> 
-                                                <li class="accordion-item">
-                                                    <div class="accordion-title">
-                                                        <button type="button">
-                                                            <i></i>
-                                                            <div class="tit">
-                                                                특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
-                                                            </div>
-                                                        </button>
-                                                    </div>
-                                                    <div class="accordion-content">
-                                                        <div class="accordion-text">
-                                                            상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
-                                                        </div>
-                                                    </div>
-                                                </li>                                                               
-                                            </ul>
-                                        </div>
+                                        <%
+                                            const faqData = [
+                                                {
+                                                    id: 0,
+                                                    faqTitle: "스마트 워크를 위한 MWP 도입할 때 가장 고려해야 할 사항은 무엇인가요?",
+                                                    faqContent: "가능한 많은 임직원이 잘 사용할 수 있도록 쉽고 간단한 기능 위주로 먼저 임직원이 사용해 볼 수 있도록 오픈하고 사용해본 임직원의 의견을 취합하여 개선하고 수정하여 좀더 많은 임직원이 사용할 수 있도록 하는 것이 중요하며, 필요한 교육과 캠페인은 과하다 싶을 정도로 실행하여 회사 임직원에게 내재화 하는 것이 중요합니다."
+                                                },
+                                                {
+                                                    id: 1,
+                                                    faqTitle: "망분리 환경에서도 MWP 도입이 가능한가요?",
+                                                    faqContent: "2"
+                                                },
+                                                {
+                                                    id: 2,
+                                                    faqTitle: "MWP 도입 시 임직원의 PainPoint 파악과 임직원의 설득은 어떻게 해야 할까요?",
+                                                    faqContent: "3"
+                                                }
+                                            ];
+                                        %>
+                                        <%- include('src/component/cmp_accordion.html', {
+                                            typeClass: 'open-type',
+                                            openIndex: 0,
+                                            itemCount: 3,
+                                            jsonData: faqData
+                                        }) %>
                                     </div>
                                 </div>
                                 <div class="cmp-container">
@@ -305,8 +297,5 @@
         <%- include('src/_inc/footer.html') %>
     </div>    
     <script src="/assets/js/ui_common.js"></script>
-    <script>        
-        tabMenu('.basic-type', 'tab');
-    </script>
 </body>
 </html>

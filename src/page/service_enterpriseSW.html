@@ -42,7 +42,10 @@
                         </div>
                         <div class="tab-content__wrap">
                             <div class="tab__content is-active">
-                                <%- include('src/component/cmp_title.html') %>
+                                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                    titleText: '클라우드 환경에 최적화된', 
+                                    titlePrimary: '미들웨어 솔루션의 새로운 기준' 
+                                })) %>
                                 <%- include('src/component/cmp_SpecList.html') %>
                                 <p class="font-head-xs font-bold mt-12 mb-10">미들웨어 솔루션으로 만드는 최적의 비즈니스</p>
                                 <div class="cmp-container">
@@ -115,14 +118,27 @@
                                 </div>
 
                                 <div class="cmp-container">
-                                    <%- include('src/component/cmp_title.html') %>
-                                    <%- include('src/component/cmp_teaser_title.html') %>
+                                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                        titleText: '급변하는 IT 환경에서도 적용 가능한', 
+                                        titlePrimary: 'LG CNS의 미들웨어솔루션' 
+                                    })) %>
+                                    <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                                        teaserPoint: '',
+                                        teaserTitle: 'LENA',
+                                        teaserText1: 'LENA는 LG CNS의 축적된 운영 노하우를 바탕으로 개발된 클라우드 향 웹 애플리케이션 서버(WAS)입니다. 기존 온프레미스 환경뿐만 아니라 클라우드, 컨테이너 환경 등 다양한 IT 환경에 최적화된 서비스를 제공하며, 안정적인 운영 환경을 통해 금융, 공공, IT, 서비스 등 여러 산업에서 성공적인 구축 사례를 보유하고 있습니다.',
+                                    })) %>   
                                     <%- include('src/component/cmp_Itemlist_3Columns.html') %>
-                                    <%- include('src/component/cmp_teaser_title.html') %>
+                                    <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                                        teaserPoint: '',
+                                        teaserTitle: 'TunA',
+                                        teaserText1: 'TunA는 기업의 IT 시스템을 효과적으로 관리하기 위한 모니터링 기능을 제공하는 통합 모니터링 솔루션입니다. TunA를 활용하면 기업에서 제공하는 IT 서비스 품질에 대한 가시성을 확보할 수 있고, 안정적인 서비스 운영을 통한 고객의 서비스 만족도를 극대화할 수 있습니다.',
+                                    })) %>
                                     <%- include('src/component/cmp_Itemlist_3Columns.html') %>
-                                    <%- include('src/component/cmp_teaser_title.html') %>
-                                    <%- include('src/component/cmp_Itemlist_3Columns.html') %>
-                                    <%- include('src/component/cmp_teaser_title.html') %>
+                                    <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                                        teaserPoint: '',
+                                        teaserTitle: 'J-Jobs',
+                                        teaserText1: 'J-Jobs는 비즈니스 프로세스를 이벤트 기반으로 실시간 스케줄링하고 자동화하는 Workload Automation 제품입니다. 다양한 템플릿을 활용하여 작업을 자동화할 수 있으며, 이벤트와 플랫폼 지원으로 다른 시스템 간의 작업도 자동화합니다. J-Jobs는 고비용과 기술지원 문제 등 기존 외국산 제품의 단점을 해소하였을 뿐 아니라, 클라우드 연계 및 운영을 편리하게 할 수 있게 합니다. 또한 편리한 커스터마이징 기능에, 전사 배치 업무도 효율적으로 할 수 있는 클라우드향(向) 솔루션입니다.',
+                                    })) %>
                                     <%- include('src/component/cmp_Itemlist_3Columns.html') %>
                                 </div>
 
@@ -131,55 +147,51 @@
                                         <div class="font-head-md title-text">FAQ</div>
                                     </div>
                                     <div class="cmp-wrap">
-                                        <div class="cmp-accordion open-type">
-                                            <ul class="accordion-list">
-                                                <li class="accordion-item is-active">
-                                                    <div class="accordion-title">
-                                                        <button type="button">
-                                                            <i></i>
-                                                            <div class="tit">
-                                                                특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
-                                                            </div>
-                                                        </button>
-                                                    </div>
-                                                    <div class="accordion-content">
-                                                        <div class="accordion-text">
-                                                            상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="accordion-item">
-                                                    <div class="accordion-title">
-                                                        <button type="button">
-                                                            <i></i>
-                                                            <div class="tit">
-                                                                특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
-                                                            </div>
-                                                        </button>
-                                                    </div>
-                                                    <div class="accordion-content">
-                                                        <div class="accordion-text">
-                                                            상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
-                                                        </div>
-                                                    </div>
-                                                </li> 
-                                                <li class="accordion-item">
-                                                    <div class="accordion-title">
-                                                        <button type="button">
-                                                            <i></i>
-                                                            <div class="tit">
-                                                                특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?
-                                                            </div>
-                                                        </button>
-                                                    </div>
-                                                    <div class="accordion-content">
-                                                        <div class="accordion-text">
-                                                            상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다.
-                                                        </div>
-                                                    </div>
-                                                </li>                                                               
-                                            </ul>
-                                        </div>
+                                        <%
+                                            const faqData = [
+                                                {
+                                                    id: 0,
+                                                    faqTitle: "특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?",
+                                                    faqContent: "상용 미들웨어를 사용할 때 표준이 아닌 해당 미들웨어가 자체 제공하는 기능을 사용할 수록 기술이 종속되게 되어 어플리케이션의 변경이나 향후 다른 미들웨어로 전환하는 과정에서 많은 리스크가 발생할 수 있습니다. LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다."
+                                                },
+                                                {
+                                                    id: 1,
+                                                    faqTitle: "어플리케이션 서비스 품질을 높은 수준으로 유지하고 싶으신가요?",
+                                                    faqContent: "2"
+                                                },
+                                                {
+                                                    id: 2,
+                                                    faqTitle: "비즈니스 환경 변화에 따라 빠르게 대응하고 싶으신가요?",
+                                                    faqContent: "3"
+                                                },
+                                                {
+                                                    id: 3,
+                                                    faqTitle: "장애 파악 시 확인해야 하는 시스템이 많습니다. TunA로 어느 범위까지 확인 가능할까요?",
+                                                    faqContent: "4"
+                                                },
+                                                {
+                                                    id: 4,
+                                                    faqTitle: "컨테이너 환경으로 시스템을 재구축할 예정입니다. TunA로 모니터링 가능할까요?",
+                                                    faqContent: "5"
+                                                },
+                                                {
+                                                    id: 5,
+                                                    faqTitle: "클라우드 환경이나 컨테이너 환경에서도 업무 관리를 할 수 있나요?",
+                                                    faqContent: "6"
+                                                },
+                                                {
+                                                    id: 6,
+                                                    faqTitle: "장애에 민감한 업무에 대해 별도의 수행환경으로 구성 가능한가요?",
+                                                    faqContent: "7"
+                                                }
+                                            ];
+                                        %>
+                                        <%- include('src/component/cmp_accordion.html', {
+                                            typeClass: 'open-type',
+                                            openIndex: 0,
+                                            itemCount: 7,
+                                            jsonData: faqData
+                                        }) %>
                                     </div>
                                 </div>
                                 <div class="cmp-container">
@@ -338,8 +350,6 @@
         </div>
         <%- include('src/_inc/footer.html') %>
     </div>       
-    <script>        
-        tabMenu('.basic-type', 'tab');
-    </script> 
+    <script src="/assets/js/ui_common.js"></script>
 </body>
 </html>
