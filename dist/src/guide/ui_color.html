@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/guide/cmp_guide_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="page-location text-2xl font-bold">
+        <span id="pagesTitle"></span>
+      </div>
+      <div class="guide-content">
+        <div class="flex justify-between lnb-type">
+          <div class="lnb-side__wrap">
+            <button type="button" class="lnb-trigger">아코디언</button>
+            <ul class="lnb_list">
+              <li><a href="css_guide.html">기본 정책</a></li>
+              <li class="is-active"><a href="ui_color.html">색상(Color)</a></li>
+              <li><a href="ui_typo.html">폰트(Font)</a></li>
+            </ul>
+          </div>
+          <div class="page-cont flex-1">
+            <p class="guide-title-h3">Color Guide</p>
+            <div class="section_text mt-5">
+              LG CNS는 Token System으로 구성되어 기본 컬러인 Black, White, Gray 기본 컬러 팔레트와<br>
+              Heritage Red(Primary Color), Gray(Secondary Color) 컬러 팔레트로 구분되며 에러, 경고, 성공을 나타내는 Red, Yellow, Green 컬러 팔레트도 사용합니다.<br><br>
+              상태에 따라 .is-active, .is-disabled 클래스를 사용합니다.
+            </div>
+            <p class="guide-title-h3 mt-10">Primary Color
+              <span>(colorcm-primary/colorcm-sub-primary/bg-colorcm-primary/bg-colorcm-sub-primary)</span>
+            </p>
+            <div class="content-box__wrap">
+              <ul class="color-list primary">
+                <li class="colorcm-primary">
+                  enabled
+                  <div class="var-name">--colorCM-all-primary-primary-enabled</div>
+                </li>
+                <li class="colorcm-primary is-select">
+                  select(hover)
+                  <div class="var-name">--colorCM-all-primary-primary-pressed</div>
+                </li>
+                <li class="colorcm-primary is-disabled">
+                  disabled
+                  <div class="var-name">--colorCM-all-primary-primary-disabled</div>
+                </li>
+                <li class="colorcm-sub-primary">
+                  sub enabled
+                  <div class="var-name">--colorCM-all-primary-primary-sub-enabled</div>
+                </li>
+                <li class="colorcm-sub-primary is-select">
+                  select(hover)
+                  <div class="var-name">--colorCM-all-primary-primary-sub-pressed</div>
+                </li>
+                <li class="colorcm-sub-primary is-disabled">
+                  sub disabled
+                  <div class="var-name">--colorCM-all-primary-primary-sub-disabled</div>
+                </li>
+              </ul>
+            </div>
+            <div class="content-box__wrap mt-5">
+              <ul class="color-list primary">
+                <li class="bg-colorcm-primary">
+                  enabled
+                  <div class="var-name">--colorCM-all-primary-primary-enabled</div>
+                </li>
+                <li class="bg-colorcm-primary is-select">
+                  select(hover)
+                  <div class="var-name">--colorCM-all-primary-primary-pressed</div>
+                </li>
+                <li class="bg-colorcm-primary is-disabled">
+                  disabled
+                  <div class="var-name">--colorCM-all-primary-primary-disabled</div>
+                </li>
+                <li class="bg-colorcm-sub-primary">
+                  sub enabled
+                  <div class="var-name">--colorCM-all-primary-primary-sub-enabled</div>
+                </li>
+                <li class="bg-colorcm-sub-primary is-select">
+                  select(hover)
+                  <div class="var-name">--colorCM-all-primary-primary-sub-pressed</div>
+                </li>
+                <li class="bg-colorcm-sub-primary is-disabled">
+                  sub disabled
+                  <div class="var-name">--colorCM-all-primary-primary-sub-disabled</div>
+                </li>
+              </ul>
+            </div>
+            <p class="guide-title-h3 mt-10">Secondary Color
+              <span>(colorcm-secondary/colorcm-sub-secondary/bg-colorcm-secondary/bg-colorcm-sub-secondary)</span>
+            </p>
+            <div class="content-box__wrap">
+              <ul class="color-list secondary">
+                <li class="colorcm-secondary">enabled
+                  <div class="var-name">--colorCM-all-secondary-secondary-enabled</div>
+                </li>
+                <li class="colorcm-secondary is-select">select(hover)
+                  <div class="var-name">--colorCM-all-secondary-secondary-pressed</div>
+                </li>
+                <li class="colorcm-secondary is-disabled">disabled
+                  <div class="var-name">--colorCM-all-secondary-secondary-disabled</div>
+                </li>
+                <li class="colorcm-sub-secondary">sub enabled
+                  <div class="var-name">--colorCM-all-secondary-secondary-sub-enabled</div>
+                </li>
+                <li class="colorcm-sub-secondary is-select">select(hover)
+                  <div class="var-name">--colorCM-all-secondary-secondary-sub-pressed</div>
+                </li>
+                <li class="colorcm-sub-secondary is-disabled">sub disabled
+                  <div class="var-name">--colorCM-all-secondary-secondary-sub-disabled</div>
+                </li>
+              </ul>
+            </div>
+            <div class="content-box__wrap mt-5">
+              <ul class="color-list secondary">
+                <li class="bg-colorcm-secondary">enabled
+                  <div class="var-name">--colorCM-all-secondary-secondary-enabled</div>
+                </li>
+                <li class="bg-colorcm-secondary is-select">select(hover)
+                  <div class="var-name">--colorCM-all-secondary-secondary-pressed</div>
+                </li>
+                <li class="bg-colorcm-secondary is-disabled">disabled
+                  <div class="var-name">--colorCM-all-secondary-secondary-disabled</div>
+                </li>
+                <li class="bg-colorcm-sub-secondary">sub enabled
+                  <div class="var-name">--colorCM-all-secondary-secondary-sub-enabled</div>
+                </li>
+                <li class="bg-colorcm-sub-secondary is-select">select(hover)
+                  <div class="var-name">--colorCM-all-secondary-secondary-sub-pressed</div>
+                </li>
+                <li class="bg-colorcm-sub-secondary is-disabled">sub disabled
+                  <div class="var-name">--colorCM-all-secondary-secondary-sub-disabled</div>
+                </li>
+              </ul>
+            </div>
+            <p class="guide-title-h3 mt-10">Fill Color default
+              <span>(fill-color-default(0~12))</span>
+            </p>
+            <div class="content-box__wrap mt-5">
+              <ul class="color-list fill-color">
+                <li class="fill-color-default0">fill-color-default0
+                  <div class="var-name">--colorCM-all-fill-fill-default0</div>
+                </li>
+                <li class="fill-color-default1">fill-color-default1
+                  <div class="var-name">--colorCM-all-fill-fill-default1</div>
+                </li>
+                <li class="fill-color-default2">fill-color-default2
+                  <div class="var-name">--colorCM-all-fill-fill-default2</div>
+                </li>
+                <li class="fill-color-default3">fill-color-default3
+                  <div class="var-name">--colorCM-all-fill-fill-default3</div>
+                </li>
+                <li class="fill-color-default4">fill-color-default4
+                  <div class="var-name">--colorCM-all-fill-fill-default4</div>
+                </li>
+                <li class="fill-color-default5">fill-color-default5
+                  <div class="var-name">--colorCM-all-fill-fill-default5</div>
+                </li>
+                <li class="fill-color-default6">fill-color-default6
+                  <div class="var-name">--colorCM-all-fill-fill-default6</div>
+                </li>
+                <li class="fill-color-default7">fill-color-default7
+                  <div class="var-name">--colorCM-all-fill-fill-default7</div>
+                </li>
+                <li class="fill-color-default8">fill-color-default8
+                  <div class="var-name">--colorCM-all-fill-fill-default8</div>
+                </li>
+                <li class="fill-color-default9">fill-color-default9
+                  <div class="var-name">--colorCM-all-fill-fill-default9</div>
+                </li>
+                <li class="fill-color-default10">fill-color-default10
+                  <div class="var-name">--colorCM-all-fill-fill-default10</div>
+                </li>
+                <li class="fill-color-default11">fill-color-default11
+                  <div class="var-name">--colorCM-all-fill-fill-default11</div>
+                </li>
+                <li class="fill-color-default12">fill-color-default12
+                  <div class="var-name">--colorCM-all-fill-fill-default12</div>
+                </li>
+                <li class="fill-color-default-disabled">fill-color-default-disabled
+                  <div class="var-name">--colorCM-all-fill-fill-default-disabled</div>
+                </li>
+              </ul>
+            </div>
+            <p class="guide-title-h3 mt-10">Black Color
+              <span>(color-gl-black)</span>
+            </p>
+            <div class="content-box__wrap mt-5">
+              <ul class="color-list black-color">
+                <li class="color-gl-black0">color-gl-black0
+                  <div class="var-name">--colorGL-all-black0</div>
+                </li>
+                <li class="color-gl-black4">color-gl-black4
+                  <div class="var-name">--colorGL-all-black4</div>
+                </li>
+                <li class="color-gl-black8">color-gl-black8
+                  <div class="var-name">--colorGL-all-black8</div>
+                </li>
+                <li class="color-gl-black12">color-gl-black12
+                  <div class="var-name">--colorGL-all-black12</div>
+                </li>
+                <li class="color-gl-black16">color-gl-black16
+                  <div class="var-name">--colorGL-all-black16</div>
+                </li>
+                <li class="color-gl-black20">color-gl-black20
+                  <div class="var-name">--colorGL-all-black20</div>
+                </li>
+                <li class="color-gl-black24">color-gl-black24
+                  <div class="var-name">--colorGL-all-black24</div>
+                </li>
+                <li class="color-gl-black32">color-gl-black32
+                  <div class="var-name">--colorGL-all-black32</div>
+                </li>
+                <li class="color-gl-black40">color-gl-black40
+                  <div class="var-name">--colorGL-all-black40</div>
+                </li>
+                <li class="color-gl-black56">color-gl-black56
+                  <div class="var-name">--colorGL-all-black56</div>
+                </li>
+                <li class="color-gl-black60">color-gl-black60
+                  <div class="var-name">--colorGL-all-black60</div>
+                </li>
+                <li class="color-gl-black72">color-gl-black72
+                  <div class="var-name">--colorGL-all-black72</div>
+                </li>
+                <li class="color-gl-black80">color-gl-black80
+                  <div class="var-name">--colorGL-all-black80</div>
+                </li>
+                <li class="color-gl-black88">color-gl-black88
+                  <div class="var-name">--colorGL-all-black88</div>
+                </li>
+                <li class="color-gl-black96">color-gl-black96
+                  <div class="var-name">--colorGL-all-black96</div>
+                </li>
+                <li class="color-gl-black100">color-gl-black100
+                  <div class="var-name">--colorGL-all-black100</div>
+                </li>
+              </ul>
+            </div>
+            <p class="guide-title-h3 mt-10">White Color
+              <span>(color-gl-white)</span>
+            </p>
+            <div class="content-box__wrap mt-5">
+              <ul class="color-list white-color">
+                <li class="color-gl-white0">color-gl-white0
+                  <div class="var-name">--colorGL-all-white0</div>
+                </li>
+                <li class="color-gl-white4">color-gl-white4
+                  <div class="var-name">--colorGL-all-white4</div>
+                </li>
+                <li class="color-gl-white8">color-gl-white8
+                  <div class="var-name">--colorGL-all-white8</div>
+                </li>
+                <li class="color-gl-white12">color-gl-white12
+                  <div class="var-name">--colorGL-all-white12</div>
+                </li>
+                <li class="color-gl-white16">color-gl-white16
+                  <div class="var-name">--colorGL-all-white16</div>
+                </li>
+                <li class="color-gl-white20">color-gl-white20
+                  <div class="var-name">--colorGL-all-white20</div>
+                </li>
+                <li class="color-gl-white24">color-gl-white24
+                  <div class="var-name">--colorGL-all-white24</div>
+                </li>
+                <li class="color-gl-white32">color-gl-white32
+                  <div class="var-name">--colorGL-all-white32</div>
+                </li>
+                <li class="color-gl-white40">color-gl-white40
+                  <div class="var-name">--colorGL-all-white40</div>
+                </li>
+                <li class="color-gl-white56">color-gl-white56
+                  <div class="var-name">--colorGL-all-white56</div>
+                </li>
+                <li class="color-gl-white60">color-gl-white60
+                  <div class="var-name">--colorGL-all-white60</div>
+                </li>
+                <li class="color-gl-white72">color-gl-white72
+                  <div class="var-name">--colorGL-all-white72</div>
+                </li>
+                <li class="color-gl-white80">color-gl-white80
+                  <div class="var-name">--colorGL-all-white80</div>
+                </li>
+                <li class="color-gl-white88">color-gl-white88
+                  <div class="var-name">--colorGL-all-white88</div>
+                </li>
+                <li class="color-gl-white96">color-gl-white96
+                  <div class="var-name">--colorGL-all-white96</div>
+                </li>
+                <li class="color-gl-white100">color-gl-white100
+                  <div class="var-name">--colorGL-all-white100</div>
+                </li>
+              </ul>
+            </div>
+            <p class="guide-title-h3 mt-10">Gray Color
+              <span>(color-gl-gray)</span>
+            </p>
+            <div class="content-box__wrap mt-5">
+              <ul class="color-list gray-color">
+                <li class="color-gl-gray10">color-gl-gray10
+                  <div class="var-name">--colorGL-all-gray10</div>
+                </li>
+                <li class="color-gl-gray50">color-gl-gray50
+                  <div class="var-name">--colorGL-all-gray50</div>
+                </li>
+                <li class="color-gl-gray100">color-gl-gray100
+                  <div class="var-name">--colorGL-all-gray100</div>
+                </li>
+                <li class="color-gl-gray150">color-gl-gray150
+                  <div class="var-name">--colorGL-all-gray150</div>
+                </li>
+                <li class="color-gl-gray200">color-gl-gray200
+                  <div class="var-name">--colorGL-all-gray200</div>
+                </li>
+                <li class="color-gl-gray250">color-gl-gray250
+                  <div class="var-name">--colorGL-all-gray250</div>
+                </li>
+                <li class="color-gl-gray300">color-gl-gray300
+                  <div class="var-name">--colorGL-all-gray300</div>
+                </li>
+                <li class="color-gl-gray400">color-gl-gray400
+                  <div class="var-name">--colorGL-all-gray400</div>
+                </li>
+                <li class="color-gl-gray500">color-gl-gray500
+                  <div class="var-name">--colorGL-all-gray500</div>
+                </li>
+                <li class="color-gl-gray600">color-gl-gray600
+                  <div class="var-name">--colorGL-all-gray600</div>
+                </li>
+                <li class="color-gl-gray700">color-gl-gray700
+                  <div class="var-name">--colorGL-all-gray700</div>
+                </li>
+                <li class="color-gl-gray750">color-gl-gray750
+                  <div class="var-name">--colorGL-all-gray750</div>
+                </li>
+                <li class="color-gl-gray800">color-gl-gray800
+                  <div class="var-name">--colorGL-all-gray800</div>
+                </li>
+                <li class="color-gl-gray850">color-gl-gray850
+                  <div class="var-name">--colorGL-all-gray850</div>
+                </li>
+                <li class="color-gl-gray900">color-gl-gray900
+                  <div class="var-name">--colorGL-all-gray900</div>
+                </li>
+                <li class="color-gl-gray950">color-gl-gray950
+                  <div class="var-name">--colorGL-all-gray950</div>
+                </li>
+              </ul>
+            </div>
+            <p class="guide-title-h3 mt-10">Heritage Red Color
+              <span>(color-gl-heritage-red)</span>
+            </p>
+            <div class="content-box__wrap mt-5">
+              <ul class="color-list heritage-red-color">
+                <li class="color-gl-heritage-red50">color-gl-heritage-red50
+                  <div class="var-name">--colorGL-all-heritage-red50</div>
+                </li>
+                <li class="color-gl-heritage-red100">color-gl-heritage-red100
+                  <div class="var-name">--colorGL-all-heritage-red100</div>
+                </li>
+                <li class="color-gl-heritage-red200">color-gl-heritage-red200
+                  <div class="var-name">--colorGL-all-heritage-red200</div>
+                </li>
+                <li class="color-gl-heritage-red300">color-gl-heritage-red300
+                  <div class="var-name">--colorGL-all-heritage-red300</div>
+                </li>
+                <li class="color-gl-heritage-red400">color-gl-heritage-red400
+                  <div class="var-name">--colorGL-all-heritage-red400</div>
+                </li>
+                <li class="color-gl-heritage-red500">color-gl-heritage-red500
+                  <div class="var-name">--colorGL-all-heritage-red500</div>
+                </li>
+                <li class="color-gl-heritage-red600">color-gl-heritage-red600
+                  <div class="var-name">--colorGL-all-heritage-red600</div>
+                </li>
+                <li class="color-gl-heritage-red700">color-gl-heritage-red700
+                  <div class="var-name">--colorGL-all-heritage-red700</div>
+                </li>
+                <li class="color-gl-heritage-red800">color-gl-heritage-red800
+                  <div class="var-name">--colorGL-all-heritage-red800</div>
+                </li>
+                <li class="color-gl-heritage-red900">color-gl-heritage-red900
+                  <div class="var-name">--colorGL-all-heritage-red900</div>
+                </li>
+                <li class="color-gl-heritage-red950">color-gl-heritage-red950
+                  <div class="var-name">--colorGL-all-heritage-red950</div>
+                </li>
+              </ul>
+            </div>
+            <p class="guide-title-h3 mt-10">Red Color
+              <span>(color-gl-red)</span>
+            </p>
+            <div class="content-box__wrap mt-5">
+              <ul class="color-list red-color">
+                <li class="color-gl-red50">color-gl-red50
+                  <div class="var-name">--colorGL-all-red50</div>
+                </li>
+                <li class="color-gl-red100">color-gl-red100
+                  <div class="var-name">--colorGL-all-red100</div>
+                </li>
+                <li class="color-gl-red200">color-gl-red200
+                  <div class="var-name">--colorGL-all-red200</div>
+                </li>
+                <li class="color-gl-red300">color-gl-red300
+                  <div class="var-name">--colorGL-all-red300</div>
+                </li>
+                <li class="color-gl-red400">color-gl-red400
+                  <div class="var-name">--colorGL-all-red400</div>
+                </li>
+                <li class="color-gl-red500">color-gl-red500
+                  <div class="var-name">--colorGL-all-red500</div>
+                </li>
+                <li class="color-gl-red600">color-gl-red600
+                  <div class="var-name">--colorGL-all-red600</div>
+                </li>
+                <li class="color-gl-red700">color-gl-red700
+                  <div class="var-name">--colorGL-all-red700</div>
+                </li>
+                <li class="color-gl-red800">color-gl-red800
+                  <div class="var-name">--colorGL-all-red800</div>
+                </li>
+                <li class="color-gl-red900">color-gl-red900
+                  <div class="var-name">--colorGL-all-red900</div>
+                </li>
+                <li class="color-gl-red950">color-gl-red950
+                  <div class="var-name">--colorGL-all-red950</div>
+                </li>
+              </ul>
+            </div>
+            <p class="guide-title-h3 mt-10">Green Color
+              <span>(color-gl-green)</span>
+            </p>
+            <div class="content-box__wrap mt-5">
+              <ul class="color-list green-color">
+                <li class="color-gl-green100">color-gl-green100
+                  <div class="var-name">--colorGL-all-green100</div>
+                </li>
+                <li class="color-gl-green200">color-gl-green200
+                  <div class="var-name">--colorGL-all-green200</div>
+                </li>
+                <li class="color-gl-green300">color-gl-green300
+                  <div class="var-name">--colorGL-all-green300</div>
+                </li>
+                <li class="color-gl-green400">color-gl-green400
+                  <div class="var-name">--colorGL-all-green400</div>
+                </li>
+                <li class="color-gl-green500">color-gl-green500
+                  <div class="var-name">--colorGL-all-green500</div>
+                </li>
+              </ul>
+            </div>
+            <p class="guide-title-h3 mt-10">Yellow Color
+              <span>(color-gl-yellow)</span>
+            </p>
+            <div class="content-box__wrap mt-5">
+              <ul class="color-list yellow-color">
+                <li class="color-gl-yellow100">color-gl-yellow100
+                  <div class="var-name">--colorGL-all-yellow100</div>
+                </li>
+                <li class="color-gl-yellow200">color-gl-yellow200
+                  <div class="var-name">--colorGL-all-yellow200</div>
+                </li>
+                <li class="color-gl-yellow300">color-gl-yellow300
+                  <div class="var-name">--colorGL-all-yellow300</div>
+                </li>
+                <li class="color-gl-yellow400">color-gl-yellow400
+                  <div class="var-name">--colorGL-all-yellow400</div>
+                </li>
+                <li class="color-gl-yellow500">color-gl-yellow500
+                  <div class="var-name">--colorGL-all-yellow500</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        const liButtons = document.querySelectorAll('.color-list li');
+        liButtons.forEach(li => {
+          li.addEventListener('click', () => {
+            const varName = li.querySelector('.var-name').innerText;
+            navigator.clipboard.writeText(varName).then(() => {
+              alert('복사 되었습니다: ' + varName);
+            }).catch(err => {
+              console.error('복사 실패:', err);
+            });
+          });
+        });
+      </script>
+  </body>
+</html>

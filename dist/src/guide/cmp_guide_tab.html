@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/guide/cmp_guide_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="page-location text-2xl font-bold">
+        <span id="pagesTitle"></span>
+      </div>
+      <div class="guide-content">
+        <div class="flex justify-between lnb-type">
+          <div class="lnb-side__wrap">
+            <button type="button" class="lnb-trigger">아코디언</button>
+          </div>
+          <div class="page-cont flex-1">
+            <p class="guide-title-h3">Tab Component</p>
+            <div class="cmp-exsample__wrap mt-3">
+
+              <!-- 기본 탭 -->
+              <div class="cmp-tab basic-type align-left">
+                <div class="cmp-tab__header">
+                  <ul class="tab__menu">
+                    <li class="is-active">
+                      <a href="#">탭 메뉴1</a>
+                    </li>
+                    <li>
+                      <a href="#">탭 메뉴2</a>
+                    </li>
+                    <li>
+                      <a href="#">탭 메뉴3</a>
+                    </li>
+                    <li>
+                      <a href="#">탭 메뉴4</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-content__wrap">
+                  <div class="tab__content is-active">
+                    <div style="height: 300px;">탭 메뉴1</div>
+                  </div>
+                  <div class="tab__content">
+                    <div style="height: 300px;">탭 메뉴2</div>
+                  </div>
+                  <div class="tab__content">
+                    <div style="height: 300px;">탭 메뉴3</div>
+                  </div>
+                  <div class="tab__content">
+                    <div style="height: 300px;">탭 메뉴4</div>
+                  </div>
+                </div>
+              </div> <!-- //기본 탭 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/ui_common.js"></script>
+    <script>
+      tabMenu('.basic-type', 'tab');
+    </script>
+  </body>
+</html>
