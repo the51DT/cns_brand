@@ -67,6 +67,46 @@ async function loadIaData() {
     }
 }
 
+
+async function lnbMenuGuide() {
+    fetch('/ia.json')
+        .then(response => response.json())
+        .then(data => {
+            const lnbWrap = document.querySelector('.lnb-side__wrap');
+            const ul = document.createElement('ul');
+            ul.classList.add('lnb_list', 'has-children');
+
+            // Filter the data to include only items with IDs 1, 2, and 3
+            const filteredData = data.IaList.filter(level1Item => 
+                [1, 2, 3].includes(level1Item.id)
+            );
+
+            filteredData.forEach(level1Item => {
+                const li = document.createElement('li');
+                const strong = document.createElement('strong');
+                strong.textContent = level1Item.Level1;
+                li.appendChild(strong);
+
+                const subUl = document.createElement('ul');
+                level1Item.Level2.forEach(level2Item => {
+                    const subLi = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = `${level2Item.path}${level2Item.fileName}`;
+                    a.textContent = level2Item.name;
+                    subLi.appendChild(a);
+                    subUl.appendChild(subLi);
+                });
+
+                li.appendChild(subUl);
+                ul.appendChild(li);
+            });
+
+            lnbWrap.appendChild(ul);
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+}
+
+
 const activateNavItem = (targetUrl) => {
     const lnbList = document.querySelectorAll(targetUrl);
     const nowUrl = window.location.href;
@@ -92,6 +132,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     //await loadIncludedHTML();
     // loadIaData();  // 반환된 데이터를 변수에 할당
     const data = await loadIaData();    
+    const data2 = await lnbMenuGuide();
 
     // 가이드 네비
     const guideNavy = document.querySelector('.guide-header__wrap .navi');

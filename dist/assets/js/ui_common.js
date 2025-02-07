@@ -1,18 +1,6 @@
-// basic html 
 /***************************
  * UI common function * 
  ***************************/
-// UUID생성
-const generateUniqueId = () => {
-    return 'xxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-    });
-}
-//숫자에 콤마
-const numComma = (num) => {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-};
 
 // input 포커스 
 const checkInputFocus = (inputAdditionalFn) => {

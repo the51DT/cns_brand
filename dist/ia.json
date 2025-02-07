@@ -33,19 +33,7 @@
                     "screenId": "",
                     "path": "/src/guide/",
                     "fileName": "ui_color.html"
-                },  
-                {
-                    "name": "폼(Form)",
-                    "screenId": "",
-                    "path": "/src/guide/",
-                    "fileName": "cmp_guide_form.html"
-                },       
-                {
-                    "name": "페이지네이션",
-                    "screenId": "",
-                    "path": "/src/guide/",
-                    "fileName": "cmp_guide_pagination.html"
-                },                                              
+                },                                               
                 {
                     "name": "퍼블리싱 목록",
                     "screenId": "",
@@ -54,13 +42,51 @@
                     "fileName": "pub_list.html"
                 }
             ]
-        },      
+        },   
         {
             "id": 1,
-            "Level1": "Component List",
+            "Level1": "UI Guide",
             "screenId": "",
             "fileName": "",
             "Level2": [
+                {
+                    "name": "폼(Form)",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_form.html"
+                },
+                {
+                    "name": "아이콘",
+                    "screenId": "",
+                    "path": "/src/component/",
+                    "fileName": "cmp_icon.html"
+                },
+                {
+                    "name": "버튼",
+                    "screenId": "",
+                    "path": "/src/component/",
+                    "fileName": "cmp_button.html"
+                },
+                {
+                    "name": "뱃지",
+                    "screenId": "",
+                    "path": "/src/component/",
+                    "fileName": "cmp_badge.html"
+                }
+            ]
+        },   
+        {
+            "id": 2,
+            "Level1": "Component List",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [    
+                {
+                    "name": "페이지네이션",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_pagination.html"
+                }, 
                 {
                     "name": "HeroBanes",
                     "screenId": "",
@@ -107,7 +133,7 @@
                     "name": "FAQItem",
                     "screenId": "",
                     "path": "/src/guide/",
-                    "fileName": "cmp_guide_accordion.html"                    
+                    "fileName": "cmp_guide_accodion.html"                    
                 },  
                 {
                     "name": "CustomerCase",
@@ -130,7 +156,21 @@
             ]
         },
         {
-            "id": 2,
+            "id": 3,
+            "Level1": "플러그인 & 이벤트",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "Swiper",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_swiper.html"
+                }
+            ]
+        },
+        {
+            "id": 4,
             "Level1": "레이아웃",
             "screenId": "",
             "fileName": "",
@@ -152,21 +192,7 @@
             ]
         },
         {
-            "id": 3,
-            "Level1": "플러그인 & 이벤트",
-            "screenId": "",
-            "fileName": "",
-            "Level2": [
-                {
-                    "name": "Swiper",
-                    "screenId": "",
-                    "path": "/src/guide/",
-                    "fileName": "cmp_guide_swiper.html"
-                }
-            ]
-        },
-        {
-            "id": 4,
+            "id": 5,
             "Level1": "Sub - 서비스",
             "screenId": "",
             "fileName": "",
