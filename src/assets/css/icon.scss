@@ -29,31 +29,31 @@ $fileType: "svg";
     &.icon-arrow-right-wt16 {
         @include iconFile(16,16,'icon_arrow_wt16');
     }        
-    &.icon_lang_bl24 {
+    &.icon-lang-bl24 {
         @include iconFile(24,24,'icon_lang_bl24');
     }    
-    &.icon_search_bl24 {
+    &.icon-search-bl24 {
         @include iconFile(24,24,'icon_search_bl24');
     }   
-    &.icon_hamburger_menu {
+    &.icon-hamburger-menu {
         @include iconFile(24,24,'btn_hamburger_menu');
     }   
-    &.icon_hamburger_menu_bl {
+    &.icon-hamburger-menu_bl {
         @include iconFile(24,24,'icon_hamburger_bl');
     }      
-    &.icon_more_dot {
+    &.icon-more-dot {
         @include iconFile(16,16,'ico-more');
     }   
-    &.icon_pagination_first {
+    &.icon-pagination-first {
         @include iconFile(16,16,'icon_page_first');
     }   
-    &.icon_pagination_prev {
+    &.icon-pagination-prev {
         @include iconFile(16,16,'icon_page_prev');
     }      
-    &.icon_pagination_next {
+    &.icon-pagination-next {
         @include iconFile(16,16,'icon_page_next');
     } 
-    &.icon_pagination_last {
+    &.icon-pagination-last {
         @include iconFile(16,16,'icon_page_last');
     }                        
 }

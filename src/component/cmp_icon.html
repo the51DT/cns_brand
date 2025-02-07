@@ -22,8 +22,8 @@
                         경로 : src\assets\image\icon
                     </div>    
                     <div class="content-box__wrap mt-5">
-                        <ul class="icon-list">
-                            <li>
+                        <ul class="icon-list" id="iconList">
+                            <!-- <li>
                                 <div class="icon">
                                     <i class="ico icon-earth-wt24"></i>
                                 </div>
@@ -55,59 +55,59 @@
                             </li>      
                             <li>
                                 <div class="icon">
-                                    <i class="ico icon_lang_bl24"></i>
+                                    <i class="ico icon-lang-bl24"></i>
                                 </div>
-                                <div class="icon-name">ico icon_lang_bl24</div>
+                                <div class="icon-name">ico icon-lang-bl24</div>
                             </li>    
                             <li>
                                 <div class="icon">
-                                    <i class="ico icon_search_bl24"></i>
+                                    <i class="ico icon-search-bl24"></i>
                                 </div>
-                                <div class="icon-name">ico icon_search_bl24</div>
+                                <div class="icon-name">ico icon-search-bl24</div>
                             </li>      
                             <li>
                                 <div class="icon">
-                                    <i class="ico icon_hamburger_menu"></i>
+                                    <i class="ico icon-hamburger-menu"></i>
                                 </div>
-                                <div class="icon-name">ico icon_hamburger_menu</div>
+                                <div class="icon-name">ico icon-hamburger-menu</div>
                             </li>      
                             
                             <li>
                                 <div class="icon">
-                                    <i class="ico icon_more_dot"></i>
+                                    <i class="ico icon-more-dot"></i>
                                 </div>
-                                <div class="icon-name">ico icon_more_dot</div>
+                                <div class="icon-name">ico icon-more-dot</div>
                             </li>  
                             <li>
                                 <div class="icon">
-                                    <i class="ico icon_pagination_first"></i>
+                                    <i class="ico icon-pagination-first"></i>
                                 </div>
-                                <div class="icon-name">ico icon_pagination_first</div>
+                                <div class="icon-name">ico icon-pagination-first</div>
                             </li>  
                             <li>
                                 <div class="icon">
-                                    <i class="ico icon_pagination_prev"></i>
+                                    <i class="ico icon-pagination-prev"></i>
                                 </div>
-                                <div class="icon-name">ico icon_pagination_prev</div>
+                                <div class="icon-name">ico icon-pagination-prev</div>
                             </li>  
                             <li>
                                 <div class="icon">
-                                    <i class="ico icon_pagination_next"></i>
+                                    <i class="ico icon-pagination-next"></i>
                                 </div>
-                                <div class="icon-name">ico icon_pagination_next</div>
+                                <div class="icon-name">ico icon-pagination-next</div>
                             </li>  
                             <li>
                                 <div class="icon">
-                                    <i class="ico icon_pagination_last"></i>
+                                    <i class="ico icon-pagination-last"></i>
                                 </div>
-                                <div class="icon-name">ico icon_pagination_last</div>
+                                <div class="icon-name">ico icon-pagination-last</div>
                             </li>  
                             <li>
                                 <div class="icon">
-                                    <i class="ico icon_hamburger_menu_bl"></i>
+                                    <i class="ico icon-hamburger-menu_bl"></i>
                                 </div>
-                                <div class="icon-name">ico icon_hamburger_menu_bl</div>
-                            </li>                              
+                                <div class="icon-name">ico icon-hamburger-menu_bl</div>
+                            </li>                               -->
                         </ul>
                     </div>
                 </div>
@@ -116,7 +116,26 @@
     </div>
     <script type="module" src="/src/main.js"></script>
     <script>
+        async function loadIcons() {
+        try {
+            const response = await fetch('/icon.json'); // JSON 파일 불러오기
+            const data = await response.json();
+
+            const iconList = document.getElementById('iconList');
+            iconList.innerHTML = data.icons.map(iconClass => `
+            <li>
+                <div class="icon">
+                <i class="ico ${iconClass}"></i>
+                </div>
+                <div class="icon-name">${iconClass}</div>
+            </li>
+            `).join('');
+        } catch (error) {
+            console.error("아이콘 데이터를 불러오는 중 오류 발생:", error);
+        }
+        }        
         document.addEventListener('DOMContentLoaded', function(){
+            loadIcons();
             const iconList = document.querySelectorAll('.icon-list li');
             iconList.forEach(li => {
                 li.addEventListener('click', () => {

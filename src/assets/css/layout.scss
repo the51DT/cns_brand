@@ -266,10 +266,10 @@ $pcWide: "screen and (min-width : 1920px)";
             @media #{$tablet} {
                 display: inline-flex;
                 .btn-hamburger-menu {
-                    .icon_hamburger_menu {
+                    .icon-hamburger-menu {
                         display: none;
                     }
-                    .icon_hamburger_menu_bl {
+                    .icon-hamburger-menu_bl {
                         display: block;
                     }                    
                 }
@@ -283,8 +283,8 @@ $pcWide: "screen and (min-width : 1920px)";
         }
     
         .logo_bl,
-        .icon_lang_bl24,
-        .icon_search_bl24 {
+        .icon-lang-bl24,
+        .icon-search-bl24 {
             display: block;
         }
     
@@ -365,18 +365,18 @@ $pcWide: "screen and (min-width : 1920px)";
                 }
             
                 .logo_bl,
-                .icon_lang_bl24,
-                .icon_search_bl24 {
+                .icon-lang-bl24,
+                .icon-search-bl24 {
                     display: block;
                 }
             }
             .mo-menu {                
                 @media #{$tablet} {                    
                     .btn-hamburger-menu {
-                        .icon_hamburger_menu {                            
+                        .icon-hamburger-menu {                            
                             display: block;
                         }
-                        .icon_hamburger_menu_bl {
+                        .icon-hamburger-menu_bl {
                             display: none;
                         }
                         
@@ -385,8 +385,8 @@ $pcWide: "screen and (min-width : 1920px)";
             }
         }
         .logo_bl,
-        .icon_lang_bl24,
-        .icon_search_bl24 {
+        .icon-lang-bl24,
+        .icon-search-bl24 {
             display: none;
         }
 
