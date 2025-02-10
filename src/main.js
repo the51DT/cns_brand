@@ -72,7 +72,7 @@ async function lnbMenuGuide() {
     fetch('/ia.json')
         .then(response => response.json())
         .then(data => {
-            const lnbWrap = document.querySelector('.lnb-side__wrap');
+            const lnbWrap = document.querySelector('.lnb-side__wrap:not(.basic-guide)');
             const ul = document.createElement('ul');
             ul.classList.add('lnb_list', 'has-children');
 
