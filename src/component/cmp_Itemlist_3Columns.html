@@ -1,57 +1,37 @@
+<!-- cmp_Itemlist_3Columns -->
 <div class="cmp-wrap cmp-itemlist_columns__wrap">
-    <div class="item-wrap">
-        <div class="item-image">
-            <img src="/src/assets/image/temp/Icon_pp.png" alt="" />
+    <% 
+        const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+        const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
+    %>
+    <% if (data.length > 0) { %>
+        <% data.slice(0, itemLimit).forEach((item, i) => { %>
+        <div class="item-wrap">
+            <div class="item-image">
+                <img src="<%- item.itemImg %>" alt="" />
+            </div>
+            <div class="item-info__wrap">
+                <div class="font-body-lg info-title"><%- item.itemTitle %></div>
+                <ul class="info-text">
+                    <li><%- item.itemContent %></li>
+                </ul>
+            </div>
         </div>
-        <div class="item-info__wrap">
-            <div class="font-body-lg info-title">재고 최적화</div>
-            <ul class="info-text">
-                <li>간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출</li>
-            </ul>
-        </div>
-    </div>
-    <div class="item-wrap">
-        <div class="item-image">
-            <img src="/src/assets/image/temp/Icon_pp.png" alt="" />
-        </div>
-        <div class="item-info__wrap">
-            <div class="font-body-lg info-title">재고 최적화</div>
-            <ul class="info-text">
-                <li>간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출</li>
-            </ul>
-        </div>
-    </div>
-    <div class="item-wrap">
-        <div class="item-image">
-            <img src="/src/assets/image/temp/Icon_pp.png" alt="" />
-        </div>
-        <div class="item-info__wrap">
-            <div class="font-body-lg info-title">재고 최적화</div>
-            <ul class="info-text">
-                <li>간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출</li>
-            </ul>
-        </div>
-    </div>   
-    <div class="item-wrap">
-        <div class="item-image">
-            <img src="/src/assets/image/temp/Icon_pp.png" alt="" />
-        </div>
-        <div class="item-info__wrap">
-            <div class="font-body-lg info-title">재고 최적화</div>
-            <ul class="info-text">
-                <li>간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출</li>
-            </ul>
-        </div>
-    </div>
-    <div class="item-wrap">
-        <div class="item-image">
-            <img src="/src/assets/image/temp/Icon_pp.png" alt="" />
-        </div>
-        <div class="item-info__wrap">
-            <div class="font-body-lg info-title">재고 최적화</div>
-            <ul class="info-text font-body-xs">
-                <li>간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출</li>
-            </ul>
-        </div>
-    </div>      
+    <% }) %>
+    <% } else { %>
+        <% for (let i = 0; i < itemLimit; i++) { %>
+            <div class="item-wrap">
+                <div class="item-image">
+                    <img src="/src/assets/image/temp/Icon_pp.png" alt="" />
+                </div>
+                <div class="item-info__wrap">
+                    <div class="font-body-lg info-title">재고 최적화</div>
+                    <ul class="info-text">
+                        <li>간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출</li>
+                    </ul>
+                </div>
+            </div>
+            <% } %>
+        <% } %>  
 </div>
+<!-- cmp_Itemlist_3Columns -->

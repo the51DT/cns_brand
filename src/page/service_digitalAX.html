@@ -42,7 +42,7 @@
                         <div class="tab-content__wrap">
                             <div class="tab__content is-active">
                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                    titleText: 'Rethinking Tomorrow’s Work',
+                                    titleText: 'Rethinking Tomorrow’s Work',ㅔㅍ
                                     titlePrimary: '새로운 시대, 새로운 세상, 새로운 업무 환경'
                                 })) %>
                                 <%- include('src/component/cmp_SpecList.html') %>
@@ -102,7 +102,9 @@
                                         teaserTitle: 'EMS(모바일오피스)',
                                         teaserText1: '모바일 서비스인 EMS는 언제 어디서나 모바일로 회사 내부 업무를 손쉽게 처리할 수 있는 스마트한 업무 관리 앱으로, 기업에서 필요로 하는 다양한 업무 서비스를 단일 앱으로 제공하고, 개인 별로 최적화된 모바일 서비스를 제공합니다. 직관적인 인터페이스와 모바일 환경에 맞춘 최적화된 UI/UX 설계로, 사용자 경험을 극대화 하여 최고의 효율성을 보장합니다. 또한, 모바일 오피스 내 일정, 메일 요약, 메일 초안 작성 등 업무에 유용한 AI 기능을 접목시켜 제공하고 있으며, 스마트한 비즈니스 파트너로서 더 빠르고 정확한 업무를 가능하게 합니다. 언제 어디서든 일의 한계를 초월하는 LG CNS의 모바일 오피스 서비스를 만나보세요!',
                                     })) %>
-                                    <%- include('src/component/cmp_Itemlist_3Columns.html') %>
+                                    <%- include('src/component/cmp_Itemlist_3Columns.html', {
+                                        itemCount: 5                            
+                                    }) %>     
                                 </div>
 
                                 <div class="cmp-container">
