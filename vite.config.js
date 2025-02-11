@@ -16,13 +16,13 @@ export default defineConfig({
                 description: 'IT신기술로 고객의 DX 경험을 혁신하는 Digital Business Innovator! LG CNS의 공식 홈페이지입니다.',
             },
         }),
-        ViteImageOptimizer({
-            test: /\.(jpe?g|png|gif|webp|svg)$/i,
-            png: { quality: 80 },
-            jpeg: { quality: 80 },
-            svg: false,
-            webp: false,
-        }),
+        // ViteImageOptimizer({
+        //     test: /\.(jpe?g|png|gif|webp|svg)$/i,
+        //     png: { quality: 80 },
+        //     jpeg: { quality: 80 },
+        //     svg: false,
+        //     webp: false,
+        // }),
         {
             name: 'html-formatter',
             apply: 'build', // 빌드 단계에서만 실행
@@ -71,9 +71,9 @@ export default defineConfig({
                     if (/\.(png|jpe?g|gif|svg|webp)$/i.test(assetInfo.name)) {
                         return 'assets/images/[name].[extname]'; // 이미지를 assets/images/ 폴더로 저장
                     }
-                    if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name)) {
-                        return 'assets/fonts/[name].[hash][extname]'; // 폰트를 assets/fonts/ 폴더로 저장
-                    }
+                    // if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name)) {
+                    //     return 'assets/fonts/[name].[hash][extname]'; // 폰트를 assets/fonts/ 폴더로 저장
+                    // }
                     return 'assets/other/[name].[hash][extname]'; // 기타 자산은 assets/other/ 폴더로 저장
                 },
             },
