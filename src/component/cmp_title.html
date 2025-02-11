@@ -1,4 +1,9 @@
 <div class="cmp-wrap cmp-title__wrap">
-    <div class="font-head-md title-text"><%= typeof titleText !== 'undefined' ? titleText : '기본 타이틀 문구' %></div>
-    <div class="font-head-md title-text colorcm-primary"><%= typeof titlePrimary !== 'undefined' ? titlePrimary : '강조 문구' %></div>
+    <div class="font-head-md title-text">
+        <%= typeof titleText !== 'undefined' ? titleText : '기본 타이틀 문구' %>
+    </div>
+
+    <% if (typeof titlePrimary !== 'undefined') { %>
+        <div class="font-head-md title-text colorcm-primary"><%- titlePrimary %></div>
+    <% } %>
 </div>

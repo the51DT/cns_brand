@@ -13,20 +13,20 @@
                         <button type="button">
                             <i></i>
                             <div class="tit">
-                                <%= faq.faqTitle %>
+                                <%- faq.faqTitle %>
                             </div>
                         </button>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-text">
-                            <%= faq.faqContent %>
+                            <%- faq.faqContent %>
                         </div>
                     </div>
                 </li>    
             <% }) %>
         <% } else { %>
             <% for (let i = 0; i < itemLimit; i++) { %>
-                <li class="accordion-item">
+                <li class="accordion-item <%= (typeof openIndex !== 'undefined' && i === openIndex) ? 'is-active' : '' %>">
                     <div class="accordion-title">
                         <button type="button">
                             <i></i>

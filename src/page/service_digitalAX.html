@@ -42,7 +42,7 @@
                         <div class="tab-content__wrap">
                             <div class="tab__content is-active">
                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                    titleText: 'Rethinking Tomorrow’s Work',ㅔㅍ
+                                    titleText: 'Rethinking Tomorrow’s Work',
                                     titlePrimary: '새로운 시대, 새로운 세상, 새로운 업무 환경'
                                 })) %>
                                 <%- include('src/component/cmp_SpecList.html') %>
@@ -90,13 +90,23 @@
                                         teaserTitle: 'DigitalTrans',
                                         teaserText1: '지털트랜스(DigitalTrans)는 AI 기반의 혁신적인 자동 통번역 IT 서비스입니다. 실시간 음성 및 텍스트 번역을 지원하며, 정확하고 자연스러운 번역 품질로 글로벌 소통을 강화합니다. 오렐로는 머신러닝과 자연어 처리 기술(NLP)을 활용해 다양한 언어와 문화적 맥락을 이해하고 반영합니다. 사용자 친화적인 인터페이스와 높은 정확도로 비즈니스 회의, 국제 컨퍼런스, 교육 등 다양한 환경에서 신속한 커뮤니케이션을 가능하게 합니다. 이제 언어의 장벽 없이 전 세계와 연결되는 스마트한 비즈니스 솔루션, 디지털트랜스와 함께하세요.',
                                     })) %>   
-                                    <%- include('src/component/cmp_Itemlist_3Columns.html') %>
+
+                                    <%- include('src/component/cmp_Itemlist_3Columns.html', {
+                                        itemCount: 1                            
+                                    }) %>  
+                                    
+
                                     <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
                                         teaserPoint: '',
                                         teaserTitle: 'i-KEP(포털)',
                                         teaserText1: 'i-Kep은 20년 이상 축적된 다양한 기업들의 업무환경에 대한 높은 이해도와 Best Practice를 반영한 임직원 경험 중심의 포털 서비스입니다. 기업내 다양한 업무시스템 및 정보들이 함께 연결되어 통합된 View에서 제공하고, 언제 어디서든 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무환경이 가능합니다. 직관적인 인터페이스를 통해 프로젝트 관리, 결재, 보고서 작성, 일정 관리 등을 빠르게 수행할 수 있으며, 실시간 알림으로 중요한업무를 놓치지 않습니다. i-Kep과 함께라면 사무실 밖에서도 업무의 연속성을 유지하며 효율적인 비즈니스 환경을 만들어 보세요. i-Kep, 스마트한 업무의 시작입니다',
                                     })) %>
-                                    <%- include('src/component/cmp_Itemlist_3Columns.html') %>
+                                                                        
+
+                                    <%- include('src/component/cmp_Itemlist_3Columns.html', {
+                                        itemCount: 5                            
+                                    }) %>  
+
                                     <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
                                         teaserPoint: '',
                                         teaserTitle: 'EMS(모바일오피스)',
@@ -112,30 +122,10 @@
                                         <div class="font-head-md title-text">FAQ</div>
                                     </div>
                                     <div class="cmp-wrap">
-                                        <%
-                                            const faqData = [
-                                                {
-                                                    id: 0,
-                                                    faqTitle: "스마트 워크를 위한 MWP 도입할 때 가장 고려해야 할 사항은 무엇인가요?",
-                                                    faqContent: "가능한 많은 임직원이 잘 사용할 수 있도록 쉽고 간단한 기능 위주로 먼저 임직원이 사용해 볼 수 있도록 오픈하고 사용해본 임직원의 의견을 취합하여 개선하고 수정하여 좀더 많은 임직원이 사용할 수 있도록 하는 것이 중요하며, 필요한 교육과 캠페인은 과하다 싶을 정도로 실행하여 회사 임직원에게 내재화 하는 것이 중요합니다."
-                                                },
-                                                {
-                                                    id: 1,
-                                                    faqTitle: "망분리 환경에서도 MWP 도입이 가능한가요?",
-                                                    faqContent: "2"
-                                                },
-                                                {
-                                                    id: 2,
-                                                    faqTitle: "MWP 도입 시 임직원의 PainPoint 파악과 임직원의 설득은 어떻게 해야 할까요?",
-                                                    faqContent: "3"
-                                                }
-                                            ];
-                                        %>
                                         <%- include('src/component/cmp_accordion.html', {
                                             typeClass: 'open-type',
                                             openIndex: 0,
-                                            itemCount: 3,
-                                            jsonData: faqData
+                                            itemCount: 3                                            
                                         }) %>
                                     </div>
                                 </div>
@@ -219,58 +209,12 @@
                                     <div class="cmp-wrap cmp-title__wrap">
                                         <div class="font-head-md title-text">연관 자료실</div>
                                     </div>
-                                    <div class="cmp-wrap dataList">
-                                        <ul class="content-list__wrap thumbnail-type pc-col3 type-box-line">
-                                            <li>
-                                                <div class="content-list__inner">
-                                                    <div class="thumbnail-wrap">
-                                                        <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
-                                                    </div>
-                                                    <div class="content-info">
-                                                        <div class="font-body-xs category-label">News</div>
-                                                        <div class="title font-body-lg">
-                                                            <a href="#">글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함</a> 
-                                                        </div>
-                                                        <div class="description font-body-sm">
-                                                            현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="content-list__inner">
-                                                    <div class="thumbnail-wrap">
-                                                        <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
-                                                    </div>
-                                                    <div class="content-info">
-                                                        <div class="font-body-xs category-label">News</div>
-                                                        <div class="title font-body-lg">
-                                                            <a href="#">글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함</a> 
-                                                        </div>
-                                                        <div class="description font-body-sm">
-                                                            현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="content-list__inner">
-                                                    <div class="thumbnail-wrap">
-                                                        <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
-                                                    </div>
-                                                    <div class="content-info">
-                                                        <div class="font-body-xs category-label">News</div>
-                                                        <div class="title font-body-lg">
-                                                            <a href="#">글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함</a> 
-                                                        </div>
-                                                        <div class="description font-body-sm">
-                                                            현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    
+                                    <%- include('src/component/cmp_DataList.html', {
+                                        itemClass: 'pc-col3',                            
+                                        itemCount: 3
+                                    }) %>                           
+                                    
                                     <div class="button__wrap">
                                         <a href="#" class="btn btn-primary">
                                             DX 자료실로 이동
@@ -290,6 +234,7 @@
         <%- include('src/_inc/footer.html') %>
         <script>        
             tabMenu('.basic-type', 'tab');
+            accordion('.open-type', 'basic');   
         </script>
     </div>    
 </body>

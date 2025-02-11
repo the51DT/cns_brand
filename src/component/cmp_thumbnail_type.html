@@ -1,0 +1,61 @@
+
+                    <!-- 썸네일 유형 -->
+                    <div class="cmp-wrap dataList">
+                        <ul class="content-list__wrap thumbnail-type type-box-line <%= typeof itemClass !== 'undefined' ? itemClass : 'pc-col3' %>">
+                            <% 
+                                const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+                                const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
+                            %>
+                            
+                            <% if (data.length > 0) { %>
+                                <% data.slice(0, itemLimit).forEach((item, i) => { %>                            
+                            <li>
+                                <div class="content-list__inner">
+                                    <div class="thumbnail-wrap">
+                                        <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
+                                    </div>
+                                    <div class="content-info">
+                                        <div class="chip__wrap">
+                                            <div class="chip bg-basic font-caption-xl"><%- item.category %></div>
+                                        </div>
+                                        <div class="title font-body-lg">
+                                            <a href="<%- item.link %>"><%- item.title %></a> 
+                                        </div>
+                                        <div class="description font-body-sm">
+                                            <%- item.content %>                                            
+                                        </div>
+                                        <div class="date-box font-caption-xs">
+                                            <%- item.data %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>             
+                            <% }) %>
+                            <% } else { %>
+                                <% for (let i = 0; i < itemLimit; i++) { %>                                           
+                            <li>
+                                <div class="content-list__inner">
+                                    <div class="thumbnail-wrap">
+                                        <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
+                                    </div>
+                                    <div class="content-info">
+                                        <div class="chip__wrap">
+                                            <div class="chip bg-basic font-caption-xl">보도자료</div>
+                                        </div>
+                                        <div class="title font-body-lg">
+                                            <a href="#">글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함</a> 
+                                        </div>
+                                        <div class="description font-body-sm">
+                                            현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”
+                                        </div>
+                                        <div class="date-box font-caption-xs">
+                                            2025.01.10
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>    
+                            <% } %>
+                            <% } %>                          
+                        </ul>
+                    <!-- //썸네일 유형 -->   
+                    </div>                   
