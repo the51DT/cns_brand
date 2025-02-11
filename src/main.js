@@ -111,13 +111,13 @@ const activateNavItem = (targetUrl) => {
     const lnbList = document.querySelectorAll(targetUrl);
     const nowUrl = window.location.href;
     const fileNameMatch = nowUrl.match(/\/([^\/]+\.html)$/);
-    const fileName = fileNameMatch ? fileNameMatch[1] : null;
+    const fileName = fileNameMatch ? fileNameMatch[1].toLowerCase() : null;
 
     if (fileName) {
         lnbList.forEach(el => {
             const elLink = el.href;
             const urlMatch = elLink.match(/\/([^\/]+\.html)$/);
-            const urlName = urlMatch ? urlMatch[1] : null;
+            const urlName = urlMatch ? urlMatch[1].toLowerCase() : null;
 
             if (fileName === urlName) {
                 el.parentNode.classList.add('is-active');
