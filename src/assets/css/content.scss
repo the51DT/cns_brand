@@ -61,6 +61,9 @@ $desktop: "screen and (min-width : 1044px)";
             margin-top: calc(32 / 16 * 1rem);
         }
     }
+    &+ .cmp-customer-case {
+        margin-bottom: calc(var(--spacing-mode1-horizontal3-x-l) / 16 * 1rem);
+    } 
     @media #{$phone} {
         .cmp-overview-title {
             &+.cmp-overview-text {
@@ -75,12 +78,14 @@ $desktop: "screen and (min-width : 1044px)";
         }
     }
 }
+.cmp-wrap:has(+ .cmp-wrap.cmp-pagination__wrap) {
+    margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
+}
 //title
 .cmp-title__wrap {
     display: flex;
     flex-direction: column; 
-    color: var(--text-text-default);
-    margin-bottom: calc(40 / 16 * 1rem);
+    color: var(--text-text-default);    
     .title-text {
         font-weight: 700;      
     }   
@@ -401,12 +406,14 @@ $desktop: "screen and (min-width : 1044px)";
 
 // 임시 클래스 cmp-container - 각 세션에 패딩 80으로 들어가있어서 디자인 상의 후 수정
 .cmp-container {
-    margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+    padding: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem) 0;
+    & > div:last-child {
+        margin-bottom: 0;
+    }
 }
-.cmp-wrap {
-    margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+.cmp-wrap {    
     &.cmp-overview__wrap {
-        margin-bottom: calc(var(--cmp-margin-bottom-overview) / 16 * 1rem);
+        margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
     }
     &.cmp-title__wrap {
         margin-bottom: calc(var(--cmp-margin-bottom-title) / 16 * 1rem);
@@ -415,16 +422,24 @@ $desktop: "screen and (min-width : 1044px)";
         margin-bottom: calc(var(--cmp-margin-bottom-teaser) / 16 * 1rem);
     }
     &.cmp-itemlist_columns__wrap {
-        margin-bottom: calc(var(--cmp-margin-bottom-itemlist-columns) / 16 * 1rem);
+        margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
     }
     &.cmp_imageltem__wrap {
-        margin-bottom: calc(var(--cmp-margin-bottom-imageltem) / 16 * 1rem);
+        margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
     }
     &.cmp-customer-case {
-        margin-bottom: calc(var(--cmp-margin-bottom-customer) / 16 * 1rem);
+        margin-bottom: 0;
+        &+.button__wrap {            
+            margin-top: calc(var(--cmp-margin-bottom-itemlist-columns) / 16 * 1rem);
+            margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+        }      
     }
     &.dataList {
-        margin-bottom: calc(var(--cmp-margin-bottom-datalist) / 16 * 1rem);
+        margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+        &+.button__wrap {            
+            margin-top: calc(var(--cmp-margin-bottom-itemlist-columns) / 16 * 1rem);
+            margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+        }  
         .description {            
             @include ellipsis($line: 2);                           
             height: calc(48 / 16 * 1rem);
@@ -432,6 +447,9 @@ $desktop: "screen and (min-width : 1044px)";
     }
 } 
 // specList
+.cmp-wrap:has(+ .button__wrap) {
+    margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
+}
 .cmp-speclist__wrap {
     border-top: 1px solid var(--colorGL-all-gray950);
     display: flex;
@@ -563,7 +581,8 @@ $desktop: "screen and (min-width : 1044px)";
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;   
+    margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);   
     .paging {
         display: flex;
         align-items: center;

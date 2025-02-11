@@ -2,10 +2,12 @@
 .cmp-accordion {
     width: 100%;
     background: var(--colorGL-all-white100);
+    margin-bottom: calc(var(--spacing-mode1-horizontal7-x-l) / 16 * 1rem);
 }
 .cmp-accordion .accordion-list {
     display: flex;
     flex-direction: column;
+    border-top: 1px solid var(--colorCM-all-stroke-stroke-default7);
 }
 .cmp-accordion .accordion-list li {
     border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
