@@ -198,6 +198,12 @@
             "fileName": "",
             "Level2": [
                 {
+                    "name": "Service - SCM DX",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "service_scmDX.html"
+                },
+                {
                     "name": "Service - Enterprise S/W",
                     "screenId": "",
                     "path": "/src/page/",

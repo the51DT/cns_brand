@@ -22,7 +22,10 @@
         <div class="sub-content__wrap">
             <div class="inner-wrap mt-20">
                 <div class="cmp-area">
-                    <%- include('src/component/cmp_overview.html') %>       
+                    <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
+                        overviewTitle: 'Enterprise S/W', 
+                        overviewContent: '<p>DX 신기술이 접목된 엔터프라이즈 솔루션의 필요성이 대두됨에 따라 LG CNS는 테스팅 솔루션, 미들웨어 솔루션, 그리고 Web3 블록체인 솔루션을 통해 고객의 업무 혁신을 편리하게 하고 가속화하고 있습니다. LG CNS의 테스팅 솔루션은 세계 유일의 실거래 자동검증 솔루션과 AI 기반 UI 테스트 자동화 솔루션으로 구성되어 테스트 품질과 속도를 동시에 향상시킵니다. 복잡한 테스트 시나리오를 자동화하고, 고급 분석 기능을 통해 잠재적 문제를 사전에 발견함으로써 고객의 IT 환경에서 안정성과 효율성을 극대화합니다. 단순한 솔루션 제공을 넘어 고객의 비즈니스 성공을 설계하는 동반자로서, 최적의 테스트 전략을 제안하고 새로운 기술의 빠르고 안전한 도입을 지원하여 디지털 전환 가속화를 위한 핵심 도구로 자리 잡았습니다.</p><p>LG CNS의 미들웨어 솔루션은 클라우드 환경 최적화를 위한 새로운 기준을 제시합니다. 복잡한 IT 미들웨어와 인프라 환경에서도 운영 효율성을 극대화할 수 있도록 다수의 서버를 중앙에서 통합 관리함으로써 적은 리소스로도 높은 품질의 서비스를 제공합니다. 또한, 클라우드 전문성을 기반으로 IT 시스템의 서비스 품질을 가시적으로 모니터링할 수 있는 기능을 제공하여 관리의 일관성과 안정성을 보장합니다. 더불어, Web3 블록체인 솔루션은 디지털 전환 생태계를 선도하며, 효율적인 비즈니스 관리 도구로 디지털 자산 서비스를 안정화합니다. 국내 1등 블록체인 솔루션으로 전자지갑, DID 신원증명 서비스를 통해 사용자의 디지털 정보를 안전하게 관리할 수 있도록 지원하며, 고객의 디지털 비즈니스 성공을 위한 강력한 기반을 제공합니다. LG CNS의 엔터프라이즈 솔루션을 도입함으로써 디지털 시대의 경쟁력을 강화하며, 업무 혁신과 IT 시스템 최적화를 실현할 수 있습니다.</p>'
+                    })) %>      
                     <div class="cmp-tab basic-type align-left">
                         <div class="cmp-tab__header">
                             <ul class="tab__menu">
@@ -48,54 +51,54 @@
                                 })) %>
 
                                 <%- include('src/component/cmp_SpecList.html', {
-                                    itemCount: 1
+                                    itemCount: 3
                                 }) %> 
 
-                                <p class="font-head-xs font-bold mt-12 mb-10">미들웨어 솔루션으로 만드는 최적의 비즈니스</p>
-                                <div class="cmp-container">                         
+                                <div class="cmp-container">
+                                    <p class="font-head-xs font-bold mt-12 mb-10">미들웨어 솔루션으로 만드는 최적의 비즈니스</p>
                                     <%
                                         const imageItemData = [
                                             {
                                                 id: 0,
                                                 typeClass: 'type-left',
                                                 imageUrl: '/src/assets/image/temp/temp_img_sr.png',
-                                                title: 'Workforce',
-                                                content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
+                                                title: '운영 중심의 고효율 차세대 미들웨어',
+                                                content: '<p>클라우드 환경에서는 수십 대에서 수백 대에 이르는 서버를 통합 관리해야 하며, 설정 변경과 모니터링이 상시로 이루어져야 합니다. 효율적으로 환경을 관리할 수 있도록 통합 관리 콘솔을 통해 설정 변경, 패치 배포, 실시간 모니터링을 간편하게 수행하고, 서버 중단 없이 변경 사항을 적용할 수 있는 관리 기능을 제공합니다.</p><p>또한, 실시간 장애 대응 기능을 통해 장애를 처리하고, 사용자가 손쉽게 원인을 분석할 수 있도록 지원합니다.</p>'
                                             }, 
                                             {
                                                 id: 1,
                                                 typeClass: 'type-right',
                                                 imageUrl: '/src/assets/image/temp/temp_img_sr.png',
-                                                title: 'Workforce',
-                                                content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
+                                                title: '클라우드 노하우가 담긴 클라우드 향 미들웨어',
+                                                content: '<p>가변적인 클라우드 환경에서 안정적인 서비스 품질을 제공하고 사용자 경험을 향상시켜야 서비스 연속성을 확보할 수 있습니다. LG CNS의 다양한 운영 노하우를 통해 클라우드에 최적화된 방식의 오토스케일링으로 미들웨어를 관리한다면 시스템 운영 역량을 강화하고 비용 최적화까지 해결할 수 있습니다..</p>'
                                             },  
                                             {
                                                 id: 2,
                                                 typeClass: 'type-left',
                                                 imageUrl: '/src/assets/image/temp/temp_img_sr.png',
-                                                title: 'Workforce',
-                                                content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
+                                                title: 'IT 시스템 서비스 품질 가시성 확보',
+                                                content: '<p>기업 IT시스템의 서비스 품질 향상을 위해서는 많은 시간과 노력이 필요합니다. LG CNS가 제공하는 미들웨어 솔루션은 시스템 전체의 요청 현황을 확인할 수 있는 토폴로지 뷰 형태의 대시보드를 제공하여, 서버간 통신 지연 구간 및 병목 구간 파악에 있어 가시성을 제공합니다.</p><p>또한 자세한 원인파악을 위해 애플리케이션 소스레벨까지 확인 가능하여 장애 후 복구시간을 단축할 수 있도록 지원합니다. 즉, 시스템 전체와 세밀한 부분까지 아우를 수 있는 통합 모니터링을 제공합니다.</p>'
                                             }, 
                                             {
                                                 id: 3,
                                                 typeClass: 'type-right',
                                                 imageUrl: '/src/assets/image/temp/temp_img_sr.png',
-                                                title: 'Workforce',
-                                                content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
+                                                title: '사용자 체감 성능관리를 통한 비즈니스 관점 모니터링',
+                                                content: '<p>사용자 중심의 서비스 만족도에 영향을 끼치는 요소를 식별하기 위해서는 WAS, Web Server뿐만 아니라 브라우저에서 발생하는 성능 데이터까지 측정하여 모든 구간의 성능 정보를 확인해야 합니다. LG CNS의 미들웨어 솔루션은 최종 사용자에게 화면으로 보여지는 브라우저까지 모니터링 대상을 확대하여 서비스를 제공합니다.</p>'
                                             },  
                                             {
                                                 id: 4,
                                                 typeClass: 'type-left',
                                                 imageUrl: '/src/assets/image/temp/temp_img_sr.png',
-                                                title: 'Workforce',
-                                                content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
+                                                title: 'Full Container 환경 지원하는 업무 자동화',
+                                                content: '<p>IT시스템 환경은 매우 다양하고 많은 변수도 존재합니다. LG CNS 미들웨어 솔루션은 모든 컴포넌트를 VM 구성 없이 컨테이너 환경에서 구성하여 일괄된 관리 환경을 구축하고 컨테이너 장애 상황에서도 안정적이고 연속적인 업무 자동화를 지원합니다.</p>'
                                             }, 
                                             {
                                                 id: 5,
                                                 typeClass: 'type-right',
                                                 imageUrl: '/src/assets/image/temp/temp_img_sr.png',
-                                                title: 'Workforce',
-                                                content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
+                                                title: '대용량 데이터도 한 번에 처리',
+                                                content: '<p>IT운영 환경의 변화로 어플리케이션이나 인프라환경이 다양해졌을 뿐만 아니라 디지털 프로세스와 데이터의 양도 증가하였습니다. 자동화 솔루션을 도입한다면 이러한 다양한 변화에 신속하게 효과적으로 대응할 수 있습니다. LG CNS 미들웨어 솔루션을 사용하면 병렬 파티셔닝을 통해 가용한 자원을 활용하여 데이터 처리시간을 단축할 수 있습니다. 반대로 미션 크리티컬 한 업무를 위한 격리된 환경을 구성하여 처리할 수도 있습니다.</p>'
                                             }                                                                                                                                                       
                                         ];
                                     %> 
@@ -116,7 +119,7 @@
                                         teaserText1: 'LENA는 LG CNS의 축적된 운영 노하우를 바탕으로 개발된 클라우드 향 웹 애플리케이션 서버(WAS)입니다. 기존 온프레미스 환경뿐만 아니라 클라우드, 컨테이너 환경 등 다양한 IT 환경에 최적화된 서비스를 제공하며, 안정적인 운영 환경을 통해 금융, 공공, IT, 서비스 등 여러 산업에서 성공적인 구축 사례를 보유하고 있습니다.',
                                     })) %>   
                                     <%- include('src/component/cmp_Itemlist_3Columns.html', {
-                                        itemCount: 5                            
+                                        itemCount: 3
                                     }) %>     
                                     <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
                                         teaserPoint: '',
@@ -124,7 +127,7 @@
                                         teaserText1: 'TunA는 기업의 IT 시스템을 효과적으로 관리하기 위한 모니터링 기능을 제공하는 통합 모니터링 솔루션입니다. TunA를 활용하면 기업에서 제공하는 IT 서비스 품질에 대한 가시성을 확보할 수 있고, 안정적인 서비스 운영을 통한 고객의 서비스 만족도를 극대화할 수 있습니다.',
                                     })) %>
                                     <%- include('src/component/cmp_Itemlist_3Columns.html', {
-                                        itemCount: 5                            
+                                        itemCount: 2
                                     }) %>     
                                     <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
                                         teaserPoint: '',
@@ -132,14 +135,14 @@
                                         teaserText1: 'J-Jobs는 비즈니스 프로세스를 이벤트 기반으로 실시간 스케줄링하고 자동화하는 Workload Automation 제품입니다. 다양한 템플릿을 활용하여 작업을 자동화할 수 있으며, 이벤트와 플랫폼 지원으로 다른 시스템 간의 작업도 자동화합니다. J-Jobs는 고비용과 기술지원 문제 등 기존 외국산 제품의 단점을 해소하였을 뿐 아니라, 클라우드 연계 및 운영을 편리하게 할 수 있게 합니다. 또한 편리한 커스터마이징 기능에, 전사 배치 업무도 효율적으로 할 수 있는 클라우드향(向) 솔루션입니다.',
                                     })) %>
                                     <%- include('src/component/cmp_Itemlist_3Columns.html', {
-                                        itemCount: 5                            
+                                        itemCount: 1
                                     }) %>     
                                 </div>
 
                                 <div class="cmp-container">
-                                    <div class="cmp-wrap cmp-title__wrap">
-                                        <div class="font-head-md title-text">FAQ</div>
-                                    </div>
+                                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                        titleText: 'FAQ'
+                                    })) %>
                                     <div class="cmp-wrap">
                                         <%
                                             const faqData = [
@@ -188,10 +191,11 @@
                                         }) %>
                                     </div>
                                 </div>
+
                                 <div class="cmp-container">
-                                    <div class="cmp-wrap cmp-title__wrap">
-                                        <div class="font-head-md title-text">고객 사례</div>
-                                    </div>
+                                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                        titleText: '고객 사례'
+                                    })) %>
                                     <!-- CustomerCase -->
                                     <%- include('src/component/cmp_customer-case.html', {
                                         itemCount: 3
