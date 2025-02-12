@@ -27,6 +27,23 @@
                         <!-- //Title -->
                     </div>
 
+                    <p class="guide-title-h3">Title : 클래스 추가 / 태그 적용 케이스</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <!-- Title -->
+                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                            title: [
+                                {
+                                    content : '급변하는 IT 환경에서도 적용 가능<span class="color-gl-green200">한</span>',
+                                    titleType: 'titlePrimary'
+                                },
+                                {
+                                    content : 'LG CNS의 미들웨어솔루션'
+                                }, 
+                            ]
+                        })) %>
+                            <!-- //Title -->
+                    </div>
+
                     <p class="guide-title-h3 mt-10">Teaser Title</p>                    
                     <div class="cmp-exsample__wrap mt-3">
                         <!-- Teaser Title -->
