@@ -306,18 +306,18 @@ $desktop: "screen and (min-width : 1044px)";
             li {
                 color: var(--colorGL-all-gray950);
                 display: flex;
-                padding-left: calc(12 / 16 * 1rem);
+                padding-left: calc(13 / 16 * 1rem);
                 position: relative;
                 &::before {
                     content: '';
-                    width: 2px;
-                    height: 2px;
+                    width: calc(3 / 16 * 1rem);
+                    height: calc(3 / 16 * 1rem);
                     display: block;
                     border-radius: 50%;
-                    background-color: var(--colorGL-all-gray850);
+                    background-color: var(--colorCM-all-icon-icon-secondary);
                     position: absolute;
                     left:0;
-                    top: 7px;
+                    top: calc(11 / 16 * 1rem);
                 }
                 &:only-child {
                     padding-left: 0;
@@ -325,9 +325,6 @@ $desktop: "screen and (min-width : 1044px)";
                         display: none;
                     }
                 }
-            }
-            &.type-dot {
-                
             }
         }
     }

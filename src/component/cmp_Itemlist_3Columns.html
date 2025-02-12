@@ -12,15 +12,21 @@
                 </div>
                 <div class="item-info__wrap">
                     <div class="font-body-lg info-title"><%- item.title %></div>
-                    <ul class="info-text <%- typeof item.contentClass ? item.contentClass : ''%>">
-                        <li><%- item.content %></li>
+                    <ul class="info-text">
+                        <% if (item.content && Array.isArray(item.content)) {%>
+                            <% item.content.forEach((content) => { %>
+                                <li><%- content %></li>
+                            <%})%>
+                        <% } else {%>
+                            <li><%- item.content %></li>
+                        <% } %>
                     </ul>
                 </div>
             </div>
         <% }) %>
     <% } else { %>
         <% for (let i = 0; i < itemLimit; i++) { %>
-            <div class="item-wrap <%= typeof typeClass !== 'undefined' ? typeClass : 'type-default' %>">
+            <div class="item-wrap">
                 <div class="item-image">
                     <img src="https://placehold.co/78x78" alt="" />
                 </div>

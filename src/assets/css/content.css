@@ -302,19 +302,19 @@
 .cmp-itemlist_columns__wrap .item-wrap .info-text li {
   color: var(--colorGL-all-gray950);
   display: flex;
-  padding-left: 0.75rem;
+  padding-left: 0.8125rem;
   position: relative;
 }
 .cmp-itemlist_columns__wrap .item-wrap .info-text li::before {
   content: "";
-  width: 2px;
-  height: 2px;
+  width: 0.1875rem;
+  height: 0.1875rem;
   display: block;
   border-radius: 50%;
-  background-color: var(--colorGL-all-gray850);
+  background-color: var(--colorCM-all-icon-icon-secondary);
   position: absolute;
   left: 0;
-  top: 7px;
+  top: 0.6875rem;
 }
 .cmp-itemlist_columns__wrap .item-wrap .info-text li:only-child {
   padding-left: 0;
