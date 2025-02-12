@@ -110,8 +110,15 @@
 
                                 <div class="cmp-container">
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                        titleText: '급변하는 IT 환경에서도 적용 가능한', 
-                                        titlePrimary: 'LG CNS의 미들웨어솔루션' 
+                                        title: [
+                                            {
+                                                content : '급변하는 IT 환경에서도 적용 가능<span class="color-text-default">한</span>',
+                                                titleType: 'titlePrimary'
+                                            },
+                                            {
+                                                content : 'LG CNS의 미들웨어솔루션'
+                                            }, 
+                                        ]
                                     })) %>
                                     <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
                                         teaserPoint: '',
