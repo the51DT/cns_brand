@@ -93,9 +93,44 @@
                                         teaserText2: 'SCMable은 별도 시스템 구축 없이 사용한 만큼 부담하는 서비스로 초기 투자 비용이 적어 고객이 활용하기에 큰 부담이 없고, 필요한 경우 특화 서비스 혹은 고객사 자체 시스템 구축이 필요한 경우 맞춤형 구축도 가능합니다.'
                                     })) %>   
 
-                                    <%- include('src/component/cmp_Itemlist_3Columns.html', {
-                                        itemCount: 5
-                                    }) %>
+                                    <%
+                                        const itemList3ColumnsData = [
+                                            {
+                                                id: 0,
+                                                imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                                                title: '재고 최적화',
+                                                content: '간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출',
+                                            },
+                                            {
+                                                id: 1,
+                                                imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                                                title: '구매 최적화',
+                                                content: '다수의 공급사~다수의 공장 간 소싱 물류비를 최소화하는 방안 산출'
+                                            },
+                                            {
+                                                id: 2,
+                                                imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                                                title: '작업자 배치 최적화',
+                                                content: '목표 생산량을 달성하기 위한 설비~작업자 간 최적의 배치계획 산출'
+                                            },
+                                            {
+                                                id: 3,
+                                                imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                                                title: 'Capacity Planning',
+                                                content: '설비 가동율 최대화 및 투자비 최소화를 위한 설비 투자 방안 산출'
+                                            },
+                                            {
+                                                id: 4,
+                                                imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                                                title: 'Cutting Stock',
+                                                content: '개별 주문을 조합하여 Cutting 잔여물을 최소화하는 방안 산출'
+                                            },
+                                        ];
+                                    %>
+                                    <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, { 
+                                        itemCount: 5,
+                                        jsonData: itemList3ColumnsData
+                                    })) %>
                                 </div>
                             </div>
                             <div class="tab__content">

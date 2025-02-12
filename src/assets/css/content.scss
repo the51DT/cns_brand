@@ -205,7 +205,9 @@ $desktop: "screen and (min-width : 1044px)";
                 flex-direction: column;
                 justify-content: center;
                 gap: calc(12 / 16 * 1rem);
-                padding: calc(0 / 16 * 1rem) calc(80 / 16 * 1rem);                                
+                padding: calc(32 / 16 * 1rem) calc(80 / 16 * 1rem);
+                width: 50%;
+                min-width: 50%;                         
                 p {
                     &+p {
                         margin-top: calc(12 / 16 * 1rem);
@@ -214,7 +216,9 @@ $desktop: "screen and (min-width : 1044px)";
                 @media #{$tablet} {      
                     border: 0;
                     margin-top: calc(0 / 16 * 1rem);
-                    padding: calc(32 / 16 * 1rem) calc(40 / 16 * 1rem);  
+                    padding: calc(32 / 16 * 1rem) calc(40 / 16 * 1rem);
+                    width: 100%;
+                    min-width: 100%; 
                 }
                 @media #{$phone} {   
                     padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);  
@@ -247,7 +251,9 @@ $desktop: "screen and (min-width : 1044px)";
                 flex-direction: column;
                 justify-content: center;
                 gap: calc(12 / 16 * 1rem);
-                padding: 0 calc(80 / 16 * 1rem);                                
+                padding: calc(32 / 16 * 1rem) calc(80 / 16 * 1rem);
+                width: 50%;
+                min-width: 50%;                                
                 p {
                     &+p {
                         margin-top: calc(12 / 16 * 1rem);
@@ -256,7 +262,9 @@ $desktop: "screen and (min-width : 1044px)";
                 @media #{$tablet} {      
                     border: 0;
                     margin-top: calc(0 / 16 * 1rem);
-                    padding: calc(32 / 16 * 1rem) calc(40 / 16 * 1rem);  
+                    padding: calc(32 / 16 * 1rem) calc(40 / 16 * 1rem);
+                    width: 100%;
+                    min-width: 100%;  
                 }
                 @media #{$phone} {   
                     padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);  
@@ -283,11 +291,15 @@ $desktop: "screen and (min-width : 1044px)";
         gap: calc(40 / 16 * 1rem);
         padding: calc(47 / 16 * 1rem) calc(32 / 16 * 1rem);
         flex-direction: column;
+        border: 1px solid var(--colorGL-all-gray200);
         .info-title {
             color: var(--text-text-default);
             font-weight: 600; 
-            &.info-text {
+            & + .info-text {
                 margin-top: calc(12 / 16 * 1rem);
+                @media #{$phone} {
+                    margin-top: calc(8 / 16 * 1rem);
+                }
             }
         }    
         .info-text {
@@ -313,6 +325,9 @@ $desktop: "screen and (min-width : 1044px)";
                         display: none;
                     }
                 }
+            }
+            &.type-dot {
+                
             }
         }
     }

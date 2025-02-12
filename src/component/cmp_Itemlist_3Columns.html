@@ -6,21 +6,21 @@
     %>
     <% if (data.length > 0) { %>
         <% data.slice(0, itemLimit).forEach((item, i) => { %>
-        <div class="item-wrap">
-            <div class="item-image">
-                <img src="<%- item.itemImg %>" alt="" />
+            <div class="item-wrap">
+                <div class="item-image">
+                    <img src="<%= item.imageUrl %>" alt="" />
+                </div>
+                <div class="item-info__wrap">
+                    <div class="font-body-lg info-title"><%- item.title %></div>
+                    <ul class="info-text <%- typeof item.contentClass ? item.contentClass : ''%>">
+                        <li><%- item.content %></li>
+                    </ul>
+                </div>
             </div>
-            <div class="item-info__wrap">
-                <div class="font-body-lg info-title"><%- item.itemTitle %></div>
-                <ul class="info-text">
-                    <li><%- item.itemContent %></li>
-                </ul>
-            </div>
-        </div>
-    <% }) %>
+        <% }) %>
     <% } else { %>
         <% for (let i = 0; i < itemLimit; i++) { %>
-            <div class="item-wrap">
+            <div class="item-wrap <%= typeof typeClass !== 'undefined' ? typeClass : 'type-default' %>">
                 <div class="item-image">
                     <img src="https://placehold.co/78x78" alt="" />
                 </div>
