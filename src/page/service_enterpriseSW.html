@@ -117,26 +117,77 @@
                                         teaserPoint: '',
                                         teaserTitle: 'LENA',
                                         teaserText1: 'LENA는 LG CNS의 축적된 운영 노하우를 바탕으로 개발된 클라우드 향 웹 애플리케이션 서버(WAS)입니다. 기존 온프레미스 환경뿐만 아니라 클라우드, 컨테이너 환경 등 다양한 IT 환경에 최적화된 서비스를 제공하며, 안정적인 운영 환경을 통해 금융, 공공, IT, 서비스 등 여러 산업에서 성공적인 구축 사례를 보유하고 있습니다.',
-                                    })) %>   
-                                    <%- include('src/component/cmp_Itemlist_3Columns.html', {
+                                    })) %>
+                                    <%
+                                        const lenaData = [
+                                            {
+                                                id: 0,
+                                                imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                                                title: '토폴로지 뷰',
+                                                content: '토폴로지 뷰를 사용해 시스템 구성 가시성을 확보하여 운영 효율성을 향상시킬 수 있습니다.'
+                                            },
+                                            {
+                                                id: 1,
+                                                imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                                                title: '진단/대응 기능',
+                                                content: '장애 사전 진단 및 대응 기능을 제공하여, 서비스 신뢰성 및 안정성을 제공합니다.'
+                                            },
+                                            {
+                                                id: 2,
+                                                imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                                                title: '클라우드 최적화 기능',
+                                                content: '설정 중앙 관리, 서비스 자동 등록 및 모니터링, 이벤트 추적 기능 등 다양한 기능을 통해 안정적인 서비스 확장이 가능합니다.'
+                                            },
+                                        ];
+                                    %>
+                                    <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
+                                        jsonData: lenaData,
                                         itemCount: 3
-                                    }) %>     
+                                    })) %>     
                                     <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
                                         teaserPoint: '',
                                         teaserTitle: 'TunA',
                                         teaserText1: 'TunA는 기업의 IT 시스템을 효과적으로 관리하기 위한 모니터링 기능을 제공하는 통합 모니터링 솔루션입니다. TunA를 활용하면 기업에서 제공하는 IT 서비스 품질에 대한 가시성을 확보할 수 있고, 안정적인 서비스 운영을 통한 고객의 서비스 만족도를 극대화할 수 있습니다.',
                                     })) %>
-                                    <%- include('src/component/cmp_Itemlist_3Columns.html', {
+                                    <%
+                                        const tunAData = [
+                                            {
+                                                id: 0,
+                                                imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                                                title: '서비스 전구간 토폴로지 뷰',
+                                                content: 'IT 시스템 전구간의 실시간 서비스 품질 모니터링이 가능합니다.'
+                                            },
+                                            {
+                                                id: 1,
+                                                imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                                                title: '분산 서비스 추적',
+                                                content: '서비스 간 호출 관계 및 지연 구간을 실시간으로 파악할 수 있습니다.'
+                                            },
+                                        ];
+                                    %>
+                                    <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
+                                        jsonData: tunAData,
                                         itemCount: 2
-                                    }) %>     
+                                    })) %>     
                                     <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
                                         teaserPoint: '',
                                         teaserTitle: 'J-Jobs',
                                         teaserText1: 'J-Jobs는 비즈니스 프로세스를 이벤트 기반으로 실시간 스케줄링하고 자동화하는 Workload Automation 제품입니다. 다양한 템플릿을 활용하여 작업을 자동화할 수 있으며, 이벤트와 플랫폼 지원으로 다른 시스템 간의 작업도 자동화합니다. J-Jobs는 고비용과 기술지원 문제 등 기존 외국산 제품의 단점을 해소하였을 뿐 아니라, 클라우드 연계 및 운영을 편리하게 할 수 있게 합니다. 또한 편리한 커스터마이징 기능에, 전사 배치 업무도 효율적으로 할 수 있는 클라우드향(向) 솔루션입니다.',
                                     })) %>
-                                    <%- include('src/component/cmp_Itemlist_3Columns.html', {
+                                    <%
+                                        const jJobsData = [
+                                            {
+                                                id: 0,
+                                                imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                                                title: 'Planning',
+                                                content: '업무 단위별로 업무흐름(Planning)을 구성할 수 있습니다. 세분화된 업무(job)별로 담당자를 분리 지정하거나, 수행범위를 분산하여 지정함으로써 보다 안정적인 시스템 구성이 가능합니다.'
+                                            },
+                                        ];
+                                    %>
+                                    <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
+                                        jsonData: jJobsData,
                                         itemCount: 1
-                                    }) %>     
+                                    })) %>     
                                 </div>
 
                                 <div class="cmp-container">
@@ -196,11 +247,35 @@
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         titleText: '고객 사례'
                                     })) %>
-                                    <!-- CustomerCase -->
-                                    <%- include('src/component/cmp_customer-case.html', {
+                                    <%
+                                        const customerData = [
+                                            {
+                                                id: 0,
+                                                category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
+                                                name: 'LG 이노텍',
+                                                content: '임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축 임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축',
+                                                logo: '/src/assets/image/temp/cs_logo.png',
+                                            },
+                                            {
+                                                id: 1,
+                                                category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
+                                                name: '메리츠 화재',
+                                                content: '서비스 다운타임은 확 줄이고, 운영 비용은 70% 절감',
+                                                logo: '/src/assets/image/temp/cs_logo.png',
+                                            },
+                                            {
+                                                id: 2,
+                                                category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
+                                                name: '제주항공',
+                                                content: '확장력이 좋아 서비스 런칭이 쉽고 동시접속자 5만명 넘어도 안정성이 유지돼요',
+                                                logo: '/src/assets/image/temp/cs_logo.png',
+                                            },
+                                        ];
+                                    %>
+                                    <%- include('src/component/cmp_customer-case.html', Object.assign({}, locals, {
+                                        jsonData: customerData,
                                         itemCount: 3
-                                    }) %>  
-                                    <!-- CustomerCase -->
+                                    })) %>  
                                     <div class="button__wrap">
                                         <a href="#" class="btn btn-primary">
                                             고객 사례 더 보기
@@ -213,10 +288,33 @@
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         titleText: '연관 자료실'
                                     })) %>
-                                    <%- include('src/component/cmp_DataList.html', {
-                                        itemClass: 'pc-col3',                            
+                                    <%
+                                        const relatedData = [
+                                            {
+                                                id: 0,
+                                                label: 'LENA 브로슈어',
+                                                title: 'LENA로 효율적인 서비스 운영과 확장성을 확보하세요! LENA로 효율적인 서비스 운영과 확장성을 확보하세요!',
+                                                content: 'LENA로 효율적인 서비스 운영과 확장성을 확보하세요! LENA로 효율적인 서비스 운영과 확장성을 확보하세요!LENA로 효율적인 서비스 운영과 확장성을 확보하세요!LENA로 효율적인 서비스 운영과 확장성을 확보하세요! LENA로 효율적인 서비스 운영과 확장성을 확보하세요!LENA로 효율적인 서비스 운영과 확장성을 확보하세요!LENA로 효율적인 서비스 운영과 확장성을 확보하세요! LENA로 효율적인 서비스 운영과 확장성을 확보하세요!LENA로 효율적인 서비스 운영과 확장성을 확보하세요!',
+                                            },
+                                            {
+                                                id: 1,
+                                                label: 'LENA 브로슈어',
+                                                title: 'TunA로 시스템 안전성과 만족도를 동시에 높이세요!',
+                                                content: 'TunA로 시스템 안전성과 만족도를 동시에 높이세요!',
+                                            },
+                                            {
+                                                id: 2,
+                                                label: 'J-Jobs 브로슈어 ',
+                                                title: 'Workload Automation을 도입해보세요!',
+                                                content: 'Workload Automation을 도입해보세요!',
+                                            },
+                                        ];
+                                    %>
+                                    <%- include('src/component/cmp_DataList.html', Object.assign({}, locals, {
+                                        jsonData: relatedData,
+                                        itemClass: 'pc-col3',
                                         itemCount: 3
-                                    }) %>  
+                                    })) %>  
                                     <div class="button__wrap">
                                         <a href="#" class="btn btn-primary">
                                             DX 자료실로 이동
