@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title><%= data.title %></title>
+  <meta name="description" content="<%= data.description %>">
+  <link rel="stylesheet" href="/src/assets/css/index.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+            pcImg: '/src/assets/image/sub/bg_sub_enterprice.png',
+            moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
+            subText: 'MOA', 
+            pageTitle: '테크로그' 
+        })) %>   
+        <!-- //비주얼 영역 -->
+        <div class="inner-wrap">
+            <!-- 겹치는 썸네일 영역 임시 -->
+            <div class="cmp-container">
+                <%- include('src/component/cmp_thumbnail_type.html', {
+                    itemClass: 'pc-col2-big',                            
+                    itemCount: 2
+                }) %>
+            </div>
+            <!-- // 겹치는 썸네일 영역 임시 -->
+        </div>
+        <div class="sub-content__wrap">
+            <!-- 검색영역 임시 -->
+            <div class="bg-gray-100 px-5 py-20 mb-20">
+                <p class="text-center font-bold font-head-md">LG CNS의 DX기술을 만나 비즈니스 혁신을 경험한<br>고객의 스토리를 살펴보세요.</p>
+                <div class="form-element__wrap mt-10 mx-auto max-w-4xl">
+                    <label class="ir-text">항목명</label>
+                    <span class="form-element__inner input-type input-search search-type-full">
+                        <button type="button" class="btn btn-search">
+                            <i class="ico icon-search-bl35"></i>
+                            <span class="ir-text">검색</span>
+                        </button>
+                        <input type="text" value="" placeholder="검색어를 입력하세요." />
+                        <button type="button" class="btn btn-remove">
+                            <i class="ico icon-remove-bl28"></i>
+                            <span class="ir-text">삭제</span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <!-- // 검색영역 임시 -->
+            <div class="inner-wrap">
+                <div class="cmp-area">
+                    <div class="cmp-container">
+                        <!-- 썸네일영역 임시 -->
+                        <p>총 <strong>883</strong> 건</p>
+                        <%- include('src/component/cmp_thumbnail_type.html', {
+                            itemClass: 'pc-col3',                            
+                            itemCount: 12
+                        }) %> 
+                        <!-- // 썸네일영역 임시 -->
+                    </div>
+                    <%- include('src/component/cmp_pagination.html') %>
+                </div>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+</body>
+</html>

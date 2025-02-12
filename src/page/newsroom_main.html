@@ -107,6 +107,7 @@
                 </div>
             </div>
             <!-- //Swiper -->
+            <!-- 검색영역 임시 -->
             <div class="bg-gray-100 px-5 py-20 mb-20">
                 <p class="text-center font-bold font-head-md">LG CNS의 보도자료를 확인해 보세요.</p>
                 <div class="form-element__wrap mt-10 mx-auto max-w-4xl">
@@ -124,77 +125,17 @@
                     </span>
                 </div>
             </div>
-            <div class="inner-wrap mb-32">
+            <!-- // 검색영역 임시 -->
+            <div class="inner-wrap">
                 <div class="cmp-area">
                     <div class="cmp-container">
-                        <ul class="content-list__wrap thumbnail-type pc-col3 type-box-line">
-                            <li>
-                                <div class="content-list__inner">
-                                    <div class="thumbnail-wrap">
-                                        <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
-                                    </div>
-                                    <div class="content-info">
-                                        <div class="chip__wrap">
-                                            <div class="chip bg-basic font-caption-xl">보도자료</div>
-                                        </div>
-                                        <div class="title font-body-lg">
-                                            <a href="#">글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함</a> 
-                                        </div>
-                                        <div class="description font-body-sm">
-                                            현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”
-                                        </div>
-                                        <div class="date-box font-caption-xs">
-                                            2025.01.10
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="content-list__inner">
-                                    <div class="thumbnail-wrap">
-                                        <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
-                                    </div>
-                                    <div class="content-info">
-                                        <div class="chip__wrap">
-                                            <div class="chip bg-basic font-caption-xl">보도자료</div>
-                                        </div>
-                                        <div class="title font-body-lg">
-                                            <a href="#">글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함</a> 
-                                        </div>
-                                        <div class="description font-body-sm">
-                                            현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”
-                                        </div>
-                                        <div class="date-box font-caption-xs">
-                                            2025.01.10
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>                            
-                            <li>
-                                <div class="content-list__inner">
-                                    <div class="thumbnail-wrap">
-                                        <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
-                                    </div>
-                                    <div class="content-info">
-                                        <div class="chip__wrap">
-                                            <div class="chip bg-basic font-caption-xl">보도자료</div>
-                                        </div>
-                                        <div class="title font-body-lg">
-                                            <a href="#">글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함</a> 
-                                        </div>
-                                        <div class="description font-body-sm">
-                                            현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”
-                                        </div>
-                                        <div class="date-box font-caption-xs">
-                                            2025.01.10
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>                            
-                        </ul>
+                        <%- include('src/component/cmp_thumbnail_type.html', {
+                            itemClass: 'pc-col3',                            
+                            itemCount: 12
+                        }) %> 
                     </div>
+                    <%- include('src/component/cmp_pagination.html') %>
                 </div>
-                
             </div>
         </div>
         <%- include('src/_inc/footer.html') %>

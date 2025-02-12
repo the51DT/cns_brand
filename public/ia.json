@@ -230,6 +230,62 @@
                     "fileName": "newsroom_main.html"
                 }
             ]
+        },
+        {
+            "id": 6,
+            "Level1": "Sub - MOA",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "MOA - 고객스토리",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "moa_customerStory.html"
+                },
+                {
+                    "name": "MOA - 고객스토리 상세",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "moa_customerStory_detail.html"
+                },
+                {
+                    "name": "MOA - 행사/이벤트",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "moa_event.html"
+                },
+                {
+                    "name": "MOA - 행사/이벤트 상세",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "moa_event_detail.html"
+                },
+                {
+                    "name": "MOA - 테크로그",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "moa_techLog.html"
+                },
+                {
+                    "name": "MOA - 테크로그 상세",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "moa_techLog_detail.html"
+                },
+                {
+                    "name": "MOA - 뉴스레터",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "moa_newsletter.html"
+                },
+                {
+                    "name": "MOA - 뉴스레터 상세",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "moa_newsletter_detail.html"
+                }
+            ]
         }
     ]
 }
