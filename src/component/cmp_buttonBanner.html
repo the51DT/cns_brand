@@ -1,0 +1,12 @@
+<div class="cmp-buttonbanner" style="--button-banner-pc-img: url('<%= typeof pcImg !== 'undefined' ? pcImg : '등록된 이미지 없음' %>'); 
+--button-banner-mo-img: url('<%= typeof moImg !== 'undefined' ? moImg : '등록된 이미지 없음' %>');">
+    <div class="inner-wrap">
+        <div class="banner_content">
+            <%- typeof title !== 'undefined' ? `<p>${title}</p>` : `<p>타이틀 문구 길게 들어갈수 있음</p>` %>
+            <button type="button" class="btn btn-trans btn-middle">
+                <%= typeof buttonText !== 'undefined' ? buttonText : '기본 버튼 문구' %>
+                <i class="ico icon-arrow-right-wt16"></i>
+            </button>
+        </div>
+    </div>
+</div>

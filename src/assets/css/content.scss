@@ -650,3 +650,43 @@ $desktop: "screen and (min-width : 1044px)";
         }
     }
 }
+
+// buttonBanner
+.cmp-buttonbanner {
+    width: 100%;
+    height: 100%;
+    background-image: var(--button-banner-pc-img);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .inner-wrap {
+        height: 100%;
+        padding: calc(56 / 16 * 1rem) calc(var(--spacing-mode1-horizontal-x-l) / 16 * 1rem);
+        text-align: center;
+    }
+    .banner_content {
+        p {
+            margin-bottom: calc(40 / 16 * 1rem);
+            font-size: calc(var(--typo-pc-size-head-xs) / 16 * 1rem);
+            font-weight: 600;
+            line-height: 42px;
+            color: var(--colorGL-all-white100);
+        }
+    }
+    @media #{$tablet} {
+        .banner_content {
+            p {
+                font-size: calc(var(--typo-tablet-size-head-xs) / 16 * 1rem);
+            }
+        }
+    }    
+    @media #{$phone} {
+        background-image: var(--button-banner-mo-img);
+        background-position: left top;
+        .banner_content {
+            p {
+                font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
+            }
+        }
+    }
+}

@@ -94,6 +94,12 @@
                     "fileName": "cmp_guide_heroBanner.html"                    
                 },
                 {
+                    "name": "ButtonBanner",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_buttonBanner.html"                    
+                },
+                {
                     "name": "Overview",
                     "screenId": "",
                     "path": "/src/guide/",
