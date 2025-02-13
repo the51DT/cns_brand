@@ -1,11 +1,19 @@
 <div class="cmp-wrap cmp_teaser_title__wrap">
-    <div class="font-head-xs teaser-title">
+    <div class="font-head-xs teaser-title <%= typeof arrowButton !== 'undefined' ? 'type-button-flex' : '' %>">
         <% if(teaserPoint) {%>
             <strong>
                 <%= typeof teaserPoint !== 'undefined' ? teaserPoint : '강조 문구' %>
             </strong>
         <% } %>
         <%= typeof teaserTitle !== 'undefined' ? teaserTitle : '티저 타이틀 기본 문구' %>
+        <% if(typeof arrowButton !== 'undefined' && arrowButton) {%>
+            <div class="button__wrap">
+                <a href="#" class="btn btn-middle btn-text btn-icon">
+                    <%= arrowButton %>
+                    <i class="ico icon-pagination-next"></i>
+                </a>
+            </div>
+        <% } %>
     </div>
     <div class="font-body-sm teaser-text">
         <%- typeof teaserText1 !== 'undefined' ? `<p>${teaserText1}</p>` : `<p>티저 문구 길게 들어갈수 있음</p>` %>
