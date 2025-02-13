@@ -66,6 +66,7 @@
     font-weight: 500;
     line-height: calc(var(--typo-pc-line-height-body-lg) / 16 * 1rem);
     letter-spacing: var(--letter-spacing-small);
+    text-align: left;
 }
 .cmp-accordion .accordion-list li .accordion-content {
     display: none;
