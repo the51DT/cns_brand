@@ -1,5 +1,5 @@
 // content list-thumbnails types
-$gap-margin: 16px;
+$gap-margin: calc(16 / 16 * 1rem);
 $phone: "only screen and (max-width : 767px)";
 $tabletMini: "only screen and (max-width : 1023px)";
 $tablet: "only screen and (max-width : 1599px)";
@@ -290,9 +290,9 @@ $pcWide: "screen and (min-width : 1920px)";
 .cmp-itemlist_columns__wrap {
     display: flex;
     flex-wrap: wrap;
-    gap: calc(16 / 16 * 1rem);
+    gap: $gap-margin;
     .item-wrap {
-        width: calc((100% / 3) - calc(16 / 16 * 1rem));        
+        width: calc((100% / 3) - calc($gap-margin * 2 / 3));        
         display: flex;
         flex-direction: column;
         gap: calc(40 / 16 * 1rem);
@@ -359,7 +359,7 @@ $pcWide: "screen and (min-width : 1920px)";
         gap: $gap-margin;
         &.pc-col3 {
             li {
-                width: calc((100% / 3) - $gap-margin);
+                width: calc((100% / 3) - calc($gap-margin * 2 / 3));
                 @media #{$phone} {
                     width: 100%;
                 }
@@ -367,7 +367,7 @@ $pcWide: "screen and (min-width : 1920px)";
         }
         &.pc-col2-big {
             li {
-                width: calc((100% / 2) - $gap-margin);
+                width: calc((100% / 2) - calc($gap-margin / 2));
                 @media #{$phone} {
                     width: 100%;
                 }
@@ -520,10 +520,10 @@ $pcWide: "screen and (min-width : 1920px)";
 .cmp-customer-case {
     display: flex;
     flex-wrap: wrap;
-    gap: calc(16 / 16 * 1rem);
+    gap: $gap-margin;
     .customer-case-items {
         display: flex;
-        width: calc((100% / 3) - calc(16 / 16 * 1rem));
+        width: calc((100% / 3) - calc($gap-margin * 2 / 3));
         padding: calc(32 / 16 * 1rem);        
         flex-direction: column;
         border: 1px solid var(--colorCM-all-stroke-stroke-default7);
