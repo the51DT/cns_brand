@@ -83,18 +83,10 @@
                                 </div>
 
                                 <div class="cmp-container">
-                                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                        title: [
-                                            {
-                                                content : 'Digital Workplace<span class="color-text-default">를 완성하는</span>',
-                                                titleType: 'titlePrimary'
-                                            },
-                                            {
-                                                content : 'LG CNS 솔루션'
-                                            }, 
-                                        ]
-                                    })) %>
-
+                                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                                        titlePrimary2: 'Digital Workplace<span class="color-text-default">를 완성하는</span>' , 
+                                        titleText2: 'LG CNS 솔루션' 
+                                    }))%>
                                     <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
                                         teaserPoint: '',
                                         teaserTitle: 'DigitalTrans',

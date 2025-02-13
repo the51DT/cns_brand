@@ -1,21 +1,16 @@
 <div class="cmp-wrap cmp-title__wrap">
-    <%
-        const data = (typeof title !== 'undefined' && Array.isArray(title)) ? title : [];
-    %>
-    
-    <% if (data.length > 0) { %>
-        <% data.forEach(function(item) { %>
-            <div class="font-head-md title-text <%- item.titleType == 'titlePrimary' ? 'colorcm-primary' : '' %>">
-                <%- item.content %>
-            </div>
-        <% }); %>
-    <% } else { %>
-        <div class="font-head-md title-text">
-            <%= typeof titleText !== 'undefined' ? titleText : '기본 타이틀 문구' %>
-        </div>
-        
-        <% if (typeof titlePrimary !== 'undefined') { %>
-            <div class="font-head-md title-text colorcm-primary"><%- titlePrimary %></div>
+    <div class="font-head-md">
+        <% if(typeof titleText !== 'undefined') { %>
+            <strong class="title-text"><%- titleText %></strong>
         <% } %>
+        <% if (typeof titlePrimary2 !== 'undefined') {%>
+            <strong class="title-text colorcm-primary"><%- titlePrimary2 %></strong>
+        <% } %>
+    </div>
+    <% if (typeof titleText2 !=='undefined' ) { %>
+        <div class="font-head-md title-text"><%- titleText2 %></div>
+    <% } %>
+    <% if (typeof titlePrimary !=='undefined' ) { %>
+        <div class="font-head-md title-text colorcm-primary"><%- titlePrimary %></div>
     <% } %>
 </div>
