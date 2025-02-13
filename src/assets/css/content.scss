@@ -195,7 +195,7 @@ $pcWide: "screen and (min-width : 1920px)";
             .img-box {
                 width: 50%;
                 min-width: 50%;
-                height: calc(540 / 16 * 1rem);
+                // height: calc(540 / 16 * 1rem);
                 overflow: hidden;
                 @media #{$tablet} {
                     width: 100%;
@@ -241,7 +241,7 @@ $pcWide: "screen and (min-width : 1920px)";
             .img-box {
                 width: 50%;
                 min-width: 50%;
-                height: calc(540 / 16 * 1rem);
+                // height: calc(540 / 16 * 1rem);
                 overflow: hidden;
                 img {
                     width: 100%;
@@ -463,7 +463,7 @@ $pcWide: "screen and (min-width : 1920px)";
         // margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
         &+.button__wrap {            
             margin-top: calc(var(--cmp-margin-bottom-itemlist-columns) / 16 * 1rem);
-            margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+            // margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
         }  
         .description {            
             @include ellipsis($line: 2);                           
