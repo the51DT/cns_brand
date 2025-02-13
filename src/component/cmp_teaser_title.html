@@ -1,11 +1,13 @@
 <div class="cmp-wrap cmp_teaser_title__wrap">
-    <div class="font-head-xs teaser-title <%= typeof arrowButton !== 'undefined' ? 'type-button-flex' : '' %>">
-        <% if(teaserPoint) {%>
-            <strong>
-                <%= typeof teaserPoint !== 'undefined' ? teaserPoint : '강조 문구' %>
-            </strong>
-        <% } %>
-        <%= typeof teaserTitle !== 'undefined' ? teaserTitle : '티저 타이틀 기본 문구' %>
+    <div class="teaser-title <%= typeof arrowButton !== 'undefined' ? 'type-button-flex' : '' %>">
+        <div class="font-head-xs font-semibold">
+            <% if(teaserPoint) {%>
+                <strong>
+                    <%= typeof teaserPoint !== 'undefined' ? teaserPoint : '강조 문구' %>
+                </strong>
+            <% } %>
+            <%= typeof teaserTitle !== 'undefined' ? teaserTitle : '티저 타이틀 기본 문구' %>
+        </div>
         <% if(typeof arrowButton !== 'undefined' && arrowButton) {%>
             <div class="button__wrap">
                 <a href="#" class="btn btn-middle btn-text btn-icon">

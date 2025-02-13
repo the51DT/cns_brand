@@ -95,7 +95,6 @@ $pcWide: "screen and (min-width : 1920px)";
     margin-bottom: calc(40 / 16 * 1rem);
     .teaser-title {
         color: var(--text-text-default);
-        font-weight: 700;
         &.type-button-flex {
             display: flex;
             justify-content: space-between;
