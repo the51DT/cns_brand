@@ -1,12 +1,10 @@
 // content list-thumbnails types
 $gap-margin: 16px;
-$phone: "only screen and (max-width : 768px)";
-$phone480: "only screen and (max-width : 480px)";
-$phone360: "only screen and (max-width : 360px)";
-$phonemini: "only screen and (max-width : 320px)";
-$notebook: "screen and (max-width : 1366px)";
-$tablet: "screen and (max-width : 1043px)";
-$desktop: "screen and (min-width : 1044px)";
+$phone: "only screen and (max-width : 767px)";
+$tabletMini: "only screen and (max-width : 1023px)";
+$tablet: "only screen and (max-width : 1599px)";
+$pcMiddle: "only screen and (max-width : 1919px)";
+$pcWide: "screen and (min-width : 1920px)";
 
 :root {
     --cmp-margin-bottom: 160;

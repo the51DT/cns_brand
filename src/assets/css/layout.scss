@@ -1,10 +1,7 @@
 // mixin 
-$phone: "only screen and (max-width : 768px)";
-// $tabletMini: "screen and (min-width: 768px) and (max-width: 1023px)";
-// $tablet: "screen and (min-width: 1024px) and (max-width: 1599px)";
-// $pcMiddle: "screen and (min-width: 1600px) and (max-width: 1919px)";
+$phone: "only screen and (max-width : 767px)";
 $tabletMini: "only screen and (max-width : 1023px)";
-$tablet: "only screen and (max-width : 1099px)";
+$tablet: "only screen and (max-width : 1599px)";
 $pcMiddle: "only screen and (max-width : 1919px)";
 $pcWide: "screen and (min-width : 1920px)";
 //반응형 *--
