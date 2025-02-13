@@ -51,29 +51,22 @@ $pcWide: "screen and (min-width : 1920px)";
         font-weight: 700;
         &+.cmp-overview-text {
             margin-top: calc(64 / 16 * 1rem);
+            @media #{$phone} {
+                margin-top: calc(32 / 16 * 1rem);
+            }
         }
     }
     .cmp-overview-text {
         color: var(--text-text-default);
         p+p {
             margin-top: calc(32 / 16 * 1rem);
+            @media #{$phone} {
+                margin-top: calc(16 / 16 * 1rem);
+            }
         }
     }
     &+ .cmp-customer-case {
         margin-bottom: calc(var(--spacing-mode1-horizontal3-x-l) / 16 * 1rem);
-    } 
-    @media #{$phone} {
-        .cmp-overview-title {
-            &+.cmp-overview-text {
-                margin-top: calc(32 / 16 * 1rem);
-            }
-        }
-        .cmp-overview-text {
-            color: var(--text-text-default);
-            p+p {
-                margin-top: calc(16 / 16 * 1rem);
-            }
-        }
     }
 }
 .cmp-wrap:has(+ .cmp-wrap.cmp-pagination__wrap) {
@@ -86,7 +79,7 @@ $pcWide: "screen and (min-width : 1920px)";
     color: var(--text-text-default);    
     .title-text {
         font-weight: 700;      
-    }   
+    }
 }
 // Teaser Titles
 .cmp_teaser_title__wrap {
@@ -100,6 +93,9 @@ $pcWide: "screen and (min-width : 1920px)";
             justify-content: space-between;
             align-items: flex-start;
             gap: calc(20 / 16 * 1rem);
+            @media #{$phone} {
+                gap: calc(16 / 16 * 1rem);
+            }
         }
         strong {
             font-weight: 700;
@@ -112,20 +108,7 @@ $pcWide: "screen and (min-width : 1920px)";
         color: var(--text-text-default);
         p+p {
             margin-top: calc(32 / 16 * 1rem);
-        }
-    }
-    @media #{$phone} {
-        .teaser-title {
-            &.type-button-flex {
-                gap: calc(16 / 16 * 1rem);
-            }
-            &+.teaser-text {
-                margin-top: calc(32 / 16 * 1rem);
-            }
-        }
-        .teaser-text {
-            color: var(--text-text-default);
-            p+p {
+            @media #{$phone} {
                 margin-top: calc(16 / 16 * 1rem);
             }
         }
@@ -214,11 +197,6 @@ $pcWide: "screen and (min-width : 1920px)";
                 padding: calc(32 / 16 * 1rem) calc(80 / 16 * 1rem);
                 width: 50%;
                 min-width: 50%;                         
-                p {
-                    &+p {
-                        margin-top: calc(12 / 16 * 1rem);
-                    }
-                }
                 @media #{$tablet} {      
                     border: 0;
                     margin-top: calc(0 / 16 * 1rem);
@@ -228,6 +206,11 @@ $pcWide: "screen and (min-width : 1920px)";
                 }
                 @media #{$phone} {   
                     padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);  
+                }
+                p {
+                    &+p {
+                        margin-top: calc(12 / 16 * 1rem);
+                    }
                 }
             }
         }
@@ -449,9 +432,9 @@ $pcWide: "screen and (min-width : 1920px)";
     &.cmp-itemlist_columns__wrap {
         margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
     }
-    &.cmp_imageltem__wrap {
-        margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
-    }
+    // &.cmp_imageltem__wrap {
+    //     margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+    // }
     &.cmp-customer-case {
         margin-bottom: 0;
         &+.button__wrap {            
@@ -484,10 +467,15 @@ $pcWide: "screen and (min-width : 1920px)";
         align-items: flex-start;
         justify-content: space-between;
         border-bottom: 1px solid var(--colorGL-all-gray200);
-        gap: calc(16 / 16 * 1rem);
+        gap: $gap-margin;
         padding: calc(60 / 16 * 1rem) 0;
         &:last-child {
             border-bottom: 0;
+            padding-bottom: 0;
+        }
+        @media #{$phone} {
+            flex-direction: column;
+            padding: calc(40 / 16 * 1rem) 0;
         }
         .spec-num {
             font-weight: 700;
@@ -495,28 +483,26 @@ $pcWide: "screen and (min-width : 1920px)";
         }
         .spec-title {
             font-weight: 700;
-            width: 100%;
-            max-width: calc(425 / 16 * 1rem);
+            width: calc(50% - calc($gap-margin / 2));
+            // max-width: calc(425 / 16 * 1rem);
             color: var(--colorGL-all-gray950);
             display: flex;
             gap: calc(16 / 16 * 1rem);
+            @media #{$phone} {
+                width: 100%;
+            }
         }
         .spec-text {
+            width: calc(50% - calc($gap-margin / 2));
             color: var(--colorGL-all-gray850);
+            @media #{$phone} {
+                padding-left: calc(45 / 16 * 1rem);
+                width: 100%;
+            }
             p {
                 &+p {
                     margin-top: calc(24 / 16 * 1rem);
                 }
-            }
-        }
-        @media #{$phone} {
-            flex-direction: column;
-            padding: calc(40 / 16 * 1rem) 0;
-            .spec-title {
-                max-width: 100%;
-            }
-            .spec-text {
-                padding-left: calc(45 / 16 * 1rem);
             }
         }
     }    
@@ -656,6 +642,18 @@ $pcWide: "screen and (min-width : 1920px)";
         justify-content: center;
         gap: calc(8 / 16 * 1rem);
         color: var(--text-text-tertiary);
+        &.pc-type {
+            display: inline-flex;
+            @media #{$phone} {
+                display: none;
+            }
+        }
+        &.mo-type {
+            display: none;
+            @media #{$phone} {
+                display: inline-flex;
+            }
+        }
         li {
             a {
                 width: calc(45 / 16 * 1rem);
@@ -671,20 +669,6 @@ $pcWide: "screen and (min-width : 1920px)";
                 }
             }
         }
-        &.pc-type {
-            display: inline-flex;
-        }
-        &.mo-type {
-            display: none;
-        }
-        @media #{$phone} {
-            &.pc-type {
-                display: none;
-            }
-            &.mo-type {
-                display: inline-flex;
-            }
-        }
     }
 }
 
@@ -696,6 +680,10 @@ $pcWide: "screen and (min-width : 1920px)";
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    @media #{$phone} {
+        background-image: var(--button-banner-mo-img);
+        background-position: left top;
+    }
     .inner-wrap {
         height: 100%;
         padding: calc(56 / 16 * 1rem) calc(var(--spacing-mode1-horizontal-x-l) / 16 * 1rem);
@@ -708,20 +696,10 @@ $pcWide: "screen and (min-width : 1920px)";
             font-weight: 600;
             line-height: 42px;
             color: var(--colorGL-all-white100);
-        }
-    }
-    @media #{$tablet} {
-        .banner_content {
-            p {
+            @media #{$tablet} {
                 font-size: calc(var(--typo-tablet-size-head-xs) / 16 * 1rem);
             }
-        }
-    }    
-    @media #{$phone} {
-        background-image: var(--button-banner-mo-img);
-        background-position: left top;
-        .banner_content {
-            p {
+            @media #{$phone} {
                 font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
             }
         }
