@@ -1,8 +1,10 @@
 <div class="cmp-wrap cmp_teaser_title__wrap">
     <div class="teaser-title <%= typeof arrowButton !== 'undefined' ? 'type-button-flex' : '' %>">
-        <div class="font-head-xs font-bold">
-            <%= typeof teaserTitle !== 'undefined' ? teaserTitle : '티저 타이틀 기본 문구' %>
-        </div>
+        <% if(typeof teaserTitle !== 'undefined' && teaserTitle) { %>
+            <div class="font-head-xs font-bold">
+                <%= teaserTitle %>
+            </div>
+        <% } %>
         <% if(typeof arrowButton !== 'undefined' && arrowButton) {%>
             <div class="button__wrap">
                 <a href="#" class="btn btn-middle btn-text btn-icon">
@@ -12,8 +14,10 @@
             </div>
         <% } %>
     </div>
-    <div class="font-body-sm teaser-text">
-        <%- typeof teaserText1 !== 'undefined' ? `<p>${teaserText1}</p>` : `<p>티저 문구 길게 들어갈수 있음</p>` %>
-        <%- typeof teaserText2 !== 'undefined' ? `<p>${teaserText2}</p>` : '' %>
-    </div>
+    <% if(typeof teaserText1 !== 'undefined' && teaserText1 || typeof teaserText2 !== 'undefined' && teaserText2) { %>
+        <div class="font-body-sm teaser-text">
+            <%- typeof teaserText1 !== 'undefined' ? `<p>${teaserText1}</p>` : `<p>티저 문구 길게 들어갈수 있음</p>` %>
+            <%- typeof teaserText2 !== 'undefined' ? `<p>${teaserText2}</p>` : '' %>
+        </div>
+    <% } %>
 </div>
