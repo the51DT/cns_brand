@@ -355,7 +355,7 @@ $pcWide: "screen and (min-width : 1920px)";
     }
 }
 
-//썸네일 유형
+//썸네일 유형 & DataList 공통 사용
 .content-list__util {
     display: flex;
     align-items: center;
@@ -458,12 +458,18 @@ $pcWide: "screen and (min-width : 1920px)";
                 } 
                 .title {
                     @include ellipsis($line: 2);
-                    font-weight: 700;                   
+                    font-weight: 700;
+                    & + .chip__wrap.tag {
+                        margin-top: calc(8 / 16 * 1rem);
+                    }                   
                 }
                 .description {
                     color: var(--colorGL-all-gray850);
                     @include ellipsis($line: 3);
-                    margin-top: calc(6 / 16 * 1rem);                
+                    margin-top: calc(6 / 16 * 1rem);
+                    & + .chip__wrap.tag {
+                        margin-top: calc(24 / 16 * 1rem);
+                    }                
                 }
                 .date-box {
                     margin-top: calc(14 / 16 * 1rem); 
@@ -719,6 +725,34 @@ $pcWide: "screen and (min-width : 1920px)";
             }
             @media #{$phone} {
                 font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
+            }
+        }
+    }
+}
+
+// 썸네일 유형
+.cmp-thumbnail {
+    .content-list__wrap {
+        &.thumbnail-type {
+            .content-list__inner {
+                .content-info {
+                    padding: calc(32 / 16* 1rem) calc(40 / 16* 1rem);
+                    // Newsroom
+                    &.type-news {
+                        @media #{$tablet} {
+                            padding: calc(20 / 16* 1rem) calc(24 / 16* 1rem);
+                        }
+                        .title {
+                            height: calc(77 / 16 * 1rem);
+                            @media #{$tablet} {
+                                height: calc(65 / 16 * 1rem);
+                            }
+                        }
+                        .description {
+                            height: calc(85 / 16 * 1rem);
+                        }
+                    }
+                }
             }
         }
     }

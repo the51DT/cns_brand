@@ -1,5 +1,5 @@
 <!-- 썸네일 유형 -->
-<div class="cmp-wrap dataList">
+<div class="cmp-wrap cmp-thumbnail">
     <% 
         const data=(typeof jsonData !=='undefined' ? jsonData : []); 
         const itemLimit=typeof itemCount !=='undefined' ? itemCount : 1;
@@ -17,21 +17,34 @@
                 <li>
                     <div class="content-list__inner">
                         <div class="thumbnail-wrap">
-                            <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
+                            <img src="https://placehold.co/939x470" alt="" />
                         </div>
-                        <div class="content-info">
-                            <div class="chip__wrap">
-                                <div class="chip bg-basic font-caption-xl"><%- item.category %></div>
-                            </div>
+                        <div class="content-info <%= typeof contentType !== 'undefined' && contentType ? contentType : '' %>">
+                            <% if(item.category) { %>
+                                <div class="chip__wrap">
+                                    <div class="chip bg-basic font-caption-xl"><%- item.category %></div>
+                                </div>
+                            <% } %>
                             <div class="title font-body-lg">
                                 <a href="<%- item.link %>"><%- item.title %></a> 
                             </div>
-                            <div class="description font-body-sm">
-                                <%- item.content %>                                            
-                            </div>
-                            <div class="date-box font-caption-xs">
-                                <%- item.data %>
-                            </div>
+                            <% if(item.content) { %>
+                                <div class="description font-body-sm">
+                                    <%- item.content %>                                            
+                                </div>
+                            <% } %>
+                            <% if(item.tag) { %>
+                                <div class="chip__wrap tag">
+                                    <% item.tag.forEach((tag, i) => { %>
+                                        <div class="chip bg-black font-caption-xl"><%- tag %></div>
+                                    <% }) %>
+                                </div>
+                            <% } %>
+                            <% if(item.date) { %>
+                                <div class="date-box font-caption-xs">
+                                <%- item.date %>
+                                </div>
+                            <% } %>
                         </div>
                     </div>
                 </li>             
