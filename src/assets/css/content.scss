@@ -65,13 +65,15 @@ $pcWide: "screen and (min-width : 1920px)";
             }
         }
     }
-    &+ .cmp-customer-case {
-        margin-bottom: calc(var(--spacing-mode1-horizontal3-x-l) / 16 * 1rem);
-    }
+    // 2025.02.14 - .cmp- 여백/간격 제거
+    // &+ .cmp-customer-case {
+    //     margin-bottom: calc(var(--spacing-mode1-horizontal3-x-l) / 16 * 1rem);
+    // }
 }
-.cmp-wrap:has(+ .cmp-wrap.cmp-pagination__wrap) {
-    margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
-}
+// 2025.02.14 - .cmp- 여백/간격 제거
+// .cmp-wrap:has(+ .cmp-wrap.cmp-pagination__wrap) {
+//     margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
+// }
 //title
 .cmp-title__wrap {
     display: flex;
@@ -413,41 +415,43 @@ $pcWide: "screen and (min-width : 1920px)";
 }
 
 // 임시 클래스 cmp-container - 각 세션에 패딩 80으로 들어가있어서 디자인 상의 후 수정
+// 2025.02.14 컴포넌트 간의 간격은 하단의 간격으로 적용 
 .cmp-container {
-    padding: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem) 0;
+    margin-bottom: calc(var(--spacing-mode1-horizontal7-x-l) / 16 * 1rem);
     & > div:last-child {
         margin-bottom: 0;
     }
 }
 .cmp-wrap {    
-    &.cmp-overview__wrap {
-        margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
-    }
-    &.cmp-title__wrap {
-        margin-bottom: calc(var(--cmp-margin-bottom-title) / 16 * 1rem);
-    }
-    &.cmp_teaser_title__wrap {
-        margin-bottom: calc(var(--cmp-margin-bottom-teaser) / 16 * 1rem);
-    }
-    &.cmp-itemlist_columns__wrap {
-        margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
-    }
+    // 2025.02.14 - .cmp- 여백/간격 제거
+    // &.cmp-overview__wrap {
+    //     margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+    // }
+    // &.cmp-title__wrap {
+    //     margin-bottom: calc(var(--cmp-margin-bottom-title) / 16 * 1rem);
+    // }
+    // &.cmp_teaser_title__wrap {
+    //     margin-bottom: calc(var(--cmp-margin-bottom-teaser) / 16 * 1rem);
+    // }
+    // &.cmp-itemlist_columns__wrap {
+    //     margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+    // }
     // &.cmp_imageltem__wrap {
     //     margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
     // }
-    &.cmp-customer-case {
-        margin-bottom: 0;
-        &+.button__wrap {            
-            margin-top: calc(var(--cmp-margin-bottom-itemlist-columns) / 16 * 1rem);
-            // margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
-        }      
-    }
+    // &.cmp-customer-case {
+    //     margin-bottom: 0;
+    //     &+.button__wrap {            
+    //         margin-top: calc(var(--cmp-margin-bottom-itemlist-columns) / 16 * 1rem);
+    //         margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+    //     }      
+    // }
     &.dataList {
         // margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
-        &+.button__wrap {            
-            margin-top: calc(var(--cmp-margin-bottom-itemlist-columns) / 16 * 1rem);
-            // margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
-        }  
+        // &+.button__wrap {            
+        //     margin-top: calc(var(--cmp-margin-bottom-itemlist-columns) / 16 * 1rem);
+        //     margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+        // }  
         .description {            
             @include ellipsis($line: 2);                           
             height: calc(48 / 16 * 1rem);
@@ -455,6 +459,7 @@ $pcWide: "screen and (min-width : 1920px)";
     }
 } 
 // specList
+// 2025.02.14 - .cmp- 여백/간격 제거
 // .cmp-wrap:has(+ .button__wrap) {
 //     margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
 // }
@@ -617,7 +622,7 @@ $pcWide: "screen and (min-width : 1920px)";
     display: flex;
     align-items: center;
     justify-content: center;   
-    margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);   
+    // margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);   
     .paging {
         display: flex;
         align-items: center;
