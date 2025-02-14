@@ -19,16 +19,14 @@
             pageTitle: '고객스토리' 
         })) %>   
         <!-- //비주얼 영역 -->
-        <div class="inner-wrap">
-            <!-- 겹치는 썸네일 영역 임시 -->
-            <div class="cmp-container">
-                <%- include('src/component/cmp_thumbnail_type.html', {
-                    itemClass: 'pc-col2-big',                            
-                    itemCount: 2
-                }) %>
-            </div>
-            <!-- // 겹치는 썸네일 영역 임시 -->
+        <!-- 겹치는 썸네일 영역 임시 -->
+        <div class="inner-wrap mt-20">
+            <%- include('src/component/cmp_thumbnail_type.html', {
+                itemClass: 'pc-col2-big',                            
+                itemCount: 2
+            }) %>
         </div>
+        <!-- // 겹치는 썸네일 영역 임시 -->
         <div class="sub-content__wrap">
             <!-- 검색영역 임시 -->
             <div class="bg-gray-100 px-5 py-20 mb-20">
@@ -51,15 +49,12 @@
             <!-- // 검색영역 임시 -->
             <div class="inner-wrap">
                 <div class="cmp-area">
-                    <div class="cmp-container">
-                        <!-- 썸네일영역 임시 -->
-                        <p>총 <strong>883</strong> 건</p>
-                        <%- include('src/component/cmp_thumbnail_type.html', {
-                            itemClass: 'pc-col3',                            
-                            itemCount: 12
-                        }) %> 
-                        <!-- // 썸네일영역 임시 -->
-                    </div>
+                    <!-- 썸네일영역 임시 -->
+                    <%- include('src/component/cmp_thumbnail_type.html', {
+                        itemClass: 'pc-col3',                            
+                        itemCount: 12
+                    }) %> 
+                    <!-- // 썸네일영역 임시 -->
                     <%- include('src/component/cmp_pagination.html') %>
                 </div>
             </div>
