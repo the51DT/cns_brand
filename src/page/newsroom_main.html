@@ -15,7 +15,7 @@
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <!-- Swiper -->
-            <div class="cmp-swiper__wrap mt-20 mb-20">
+            <div class="cmp-wrap cmp-swiper__wrap mt-20">
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -128,12 +128,10 @@
             <!-- // 검색영역 임시 -->
             <div class="inner-wrap">
                 <div class="cmp-area">
-                    <div class="cmp-container">
-                        <%- include('src/component/cmp_thumbnail_type.html', {
-                            itemClass: 'pc-col3',                            
-                            itemCount: 12
-                        }) %> 
-                    </div>
+                    <%- include('src/component/cmp_thumbnail_type.html', {
+                        itemClass: 'pc-col3',                            
+                        itemCount: 12
+                    }) %> 
                     <%- include('src/component/cmp_pagination.html') %>
                 </div>
             </div>
