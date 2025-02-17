@@ -287,6 +287,16 @@
     white-space: nowrap;
     width: 100%;
 }
+
+/* BoardDetailInfo 컴포넌트 가이드 스타일 */
+.guide-board-detail {
+    display: flex;
+    justify-content: center;
+}
+
+.guide-board-detail .img-box + .cmp-exsample__wrap {
+    margin-left: calc(40 / 16 * 1rem);
+}
 /* 모바일 반응형 css */
 @media screen and (max-width: 768px) {
     .guide-header__wrap .navi button {
@@ -384,5 +394,12 @@
     }
     .guide-content .page-cont {
         width: 100%;
+    }
+    .guide-board-detail {
+        flex-direction: column;
+    }
+    .guide-board-detail .img-box + .cmp-exsample__wrap {
+        margin-left: 0;
+        margin-top: calc(32 / 16 * 1rem);
     }
 }
