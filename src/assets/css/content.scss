@@ -851,11 +851,11 @@ $pcWide: "screen and (min-width : 1920px)";
                 border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default5);
                 @media #{$tablet} {
                     font-size: calc(var(--typo-tablet-size-head-xs) / 16 * 1rem);
-                    line-height: var(42 / 16 * 1rem);
+                    line-height: calc(42 / 16 * 1rem);
                 }
                 @media #{$phone} {
                     font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
-                    line-height: var(42 / 16 * 1rem);
+                    line-height: calc(42 / 16 * 1rem);
                 }
                 & + .detail-info__desc {
                     margin-top: calc(32 / 16 * 1rem);
