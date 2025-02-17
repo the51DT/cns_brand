@@ -15,7 +15,7 @@
                 </div>
             </div>
         <% } %>
-        <strong class="detail-info__title"><%= title %></strong>
+        <strong class="detail-info__title <%= contentType == 'type-wide' ? 'font-head-sm' : 'font-head-xs' %>"><%= title %></strong>
         <!-- contentType: 'type-wide' 의 경우 tagList 위치 -->
         <% if(tagList.length > 0 && contentType == 'type-wide') {%>
             <div class="chip__wrap detail-info__tag">
@@ -27,8 +27,8 @@
         <% if(data.length > 0) {%>
             <% data.forEach((item)=> { %>
                 <dl class="detail-info__desc">
-                    <dt class="detail-info__desc__tit"><%= item.title %></dt>
-                    <dd class="detail-info__desc__txt"><%= item.text %></dd>
+                    <dt class="detail-info__desc__tit font-body-xs"><%= item.title %></dt>
+                    <dd class="detail-info__desc__txt font-body-xs"><%= item.text %></dd>
                 </dl>
             <% }) %>
         <% } %>
@@ -50,10 +50,10 @@
         <% if(dateValue && likeCountValue) {%>
             <div class="detail-info__util">
                 <% if(dateValue) {%>
-                    <span class="detail-info__util__item detail-info__date"><%= dateValue %></span>
+                    <span class="detail-info__util__item detail-info__date font-body-sm"><%= dateValue %></span>
                 <% } %>
                 <% if(likeCountValue) {%>
-                    <span class="detail-info__util__item detail-info__like">
+                    <span class="detail-info__util__item detail-info__like font-body-sm">
                         <i class="ico icon-heart-line"><!-- 아이콘 변경 필요 --></i>
                         <%= likeCountValue %>
                     </span>

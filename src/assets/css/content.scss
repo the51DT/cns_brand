@@ -784,19 +784,8 @@ $pcWide: "screen and (min-width : 1920px)";
             padding: calc(40 / 16 * 1rem) 0;
             .detail-info__title {
                 color: var(--text-text-default);
-                // font-size: calc(var(--size-head-sm) / 16 * 1rem);
-                font-size: calc(var(--typo-pc-size-head-sm) / 16 * 1rem);
                 font-weight: 700;
-                // line-height: calc(var(--line-height-head-sm) / 16 * 1rem);
                 line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
-                @media #{$tablet} {
-                    font-size: calc(var(--typo-tablet-size-head-sm) / 16 * 1rem);
-                    line-height: calc(var(--typo-tablet-line-height-head-sm) / 16 * 1rem);
-                }
-                @media #{$phone} {
-                    font-size: calc(var(--typo-mo-size-head-md) / 16 * 1rem);
-                    line-height: calc(var(--typo-mo-line-height-head-sm) / 16 * 1rem);
-                }
                 & + .detail-info__tag {
                     margin-top: calc(12 / 16 * 1rem);
                 }
@@ -844,19 +833,8 @@ $pcWide: "screen and (min-width : 1920px)";
                 display: block;
                 padding-bottom: calc(32 / 16 * 1rem);
                 color: var(--text-text-default);
-                font-size: calc(var(--size-head-xs) / 16 * 1rem);
-                font-size: calc(var(--typo-pc-size-head-xs) / 16 * 1rem);
-                line-height: calc(var(--typo-pc-line-height-body-xl) / 16 * 1rem);
                 font-weight: 700;
                 border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default5);
-                @media #{$tablet} {
-                    font-size: calc(var(--typo-tablet-size-head-xs) / 16 * 1rem);
-                    line-height: calc(42 / 16 * 1rem);
-                }
-                @media #{$phone} {
-                    font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
-                    line-height: calc(42 / 16 * 1rem);
-                }
                 & + .detail-info__desc {
                     margin-top: calc(32 / 16 * 1rem);
                 }
@@ -876,23 +854,11 @@ $pcWide: "screen and (min-width : 1920px)";
                     min-width: calc(84 / 16 * 1rem);
                     width: calc(84 / 16 * 1rem);
                     color: var(--colorCM-all-text-text-tertiary);
-                    font-size: calc(var(--size-body-xs) / 16 * 1rem);
                     font-weight: 500;
-                    line-height: calc(var(--line-height-body-xs) / 16 * 1rem);
-                    @media #{$tablet} {
-                        font-size: calc(var(--typo-tablet-size-body-xs) / 16 * 1rem);
-                        line-height: calc(var(--typo-tablet-line-height-body-xs) / 16 * 1rem);
-                    }
                 }
                 &__txt {
                     width: 100%;
-                    font-size: calc(var(--size-body-xs) / 16 * 1rem);
                     font-weight: 600;
-                    line-height: calc(var(--line-height-body-xs) / 16 * 1rem);
-                    @media #{$tablet} {
-                        font-size: calc(var(--typo-tablet-size-body-xs) / 16 * 1rem);
-                        line-height: calc(var(--typo-tablet-line-height-body-xs) / 16 * 1rem);
-                    }
                 }
             }
         }
