@@ -158,6 +158,12 @@
                     "screenId": "",
                     "path": "/src/guide/",
                     "fileName": "cmp_guide_thumbnail_type.html"
+                },
+                {
+                    "name": "BoardDetailInfo",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_boardDetail_Info.html"
                 }
             ]
         },

@@ -11,15 +11,18 @@
             </span>
         </div>
     <% } %>
-    <ul class="content-list__wrap thumbnail-type type-box-line <%= typeof itemClass !== 'undefined' ? itemClass : 'pc-col3' %>">
+    <ul class="content-list__wrap thumbnail-type type-box-line <%= typeof itemClass !== 'undefined' ? itemClass : 'pc-col3' %> <%= typeof contentType !== 'undefined' && contentType ? contentType : '' %>">
         <% if (data.length > 0) { %>
             <% data.slice(0, itemLimit).forEach((item, i) => { %>                            
                 <li>
                     <div class="content-list__inner">
                         <div class="thumbnail-wrap">
                             <img src="https://placehold.co/939x470" alt="" />
+                            <% if(item.floatText) { %>
+                                <span class="float-text"><%- item.floatText %></span>
+                            <% } %>
                         </div>
-                        <div class="content-info <%= typeof contentType !== 'undefined' && contentType ? contentType : '' %>">
+                        <div class="content-info">
                             <% if(item.category) { %>
                                 <div class="chip__wrap">
                                     <div class="chip bg-basic font-caption-xl"><%- item.category %></div>
@@ -41,7 +44,7 @@
                                 </div>
                             <% } %>
                             <% if(item.date) { %>
-                                <div class="date-box font-caption-xs">
+                                <div class="date-box font-body-xs">
                                 <%- item.date %>
                                 </div>
                             <% } %>
@@ -66,7 +69,7 @@
                             <div class="description font-body-sm">
                                 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”
                             </div>
-                            <div class="date-box font-caption-xs">
+                            <div class="date-box font-body-xs">
                                 2025.01.10
                             </div>
                         </div>

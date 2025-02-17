@@ -94,45 +94,11 @@
                             itemClass: 'pc-col3' , 
                             itemCount: 3, 
                             allCountData: '668' ,
+                            contentType : 'type-moa-all',
                             jsonData : thumbnailData2, 
                         }) %>
                     </div>
-                    <p class="guide-title-h3 mt-10">썸네일 > NEWSROOM 컨텐츠 : category, title, content, date</p>
-                    <div class="cmp-exsample__wrap mt-5">
-                        <% 
-                            const thumbnailDataNews=[
-                                {
-                                    id: 0,
-                                    category: '보도자료',
-                                    title: '“글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개(IPO) 기자간담회 개최',
-                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
-                                    date: '2025.01.10',
-                                },
-                                {
-                                    id: 1,
-                                    category: '보도자료',
-                                    title: 'LG CNS, 국내 3대 신용평가에서 신용등급 전망 상향',
-                                    content: '국내 3대 신용평가사 모두 신용등급 전망 ‘AA- 안정적’에서 ‘AA- 긍정적’으로 조정',
-                                    date: '2025.01.10',
-                                },
-                                {
-                                    id: 2,
-                                    category: '보도자료',
-                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
-                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
-                                    date: '2025.01.10',
-                                },
-                            ]
-                        %>
-                        <%- include('src/component/cmp_thumbnail_type.html', { 
-                            itemClass: 'pc-col3' , 
-                            itemCount: 3, 
-                            allCountData: '668' ,
-                            contentType : 'type-news',
-                            jsonData : thumbnailDataNews, 
-                        }) %>
-                    </div>
-                    <p class="guide-title-h3 mt-10">썸네일 > MOA 컨텐츠1 : 고객 스토리 > title, content, tag</p>
+                    <p class="guide-title-h3 mt-10">썸네일 > type-moa-case1 > 고객스토리, 테크로그 > title, content, tag</p>
                     <div class="cmp-exsample__wrap mt-5">
                         <% 
                             const thumbnailData3=[
@@ -160,11 +126,11 @@
                             itemClass: 'pc-col3' , 
                             itemCount: 3, 
                             allCountData: '668' ,
-                            contentType : 'type-case1',
+                            contentType : 'type-moa-case1',
                             jsonData : thumbnailData3, 
                         }) %>
                     </div>
-                    <p class="guide-title-h3 mt-10">썸네일 > MOA 컨텐츠2 : 행사/이벤트 > category, title, tag, date</p>
+                    <p class="guide-title-h3 mt-10">썸네일 > type-moa-case2 : 뉴스레터 > category, title, tag, date</p>
                     <div class="cmp-exsample__wrap mt-5">
                         <% 
                             const thumbnailData4=[
@@ -174,6 +140,7 @@
                                     title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
                                     tag : ['CX','DX', '최적화'],
                                     date: '2025.01.10',
+                                    floatText: 'YYYY년 M월호',
                                 },
                                 {
                                     id: 1,
@@ -181,6 +148,7 @@
                                     title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
                                     tag : ['CX','DX', '최적화'],
                                     date: '2025.01.10',
+                                    floatText: 'YYYY년 M월호',
                                 },
                                 {
                                     id: 2,
@@ -188,6 +156,7 @@
                                     title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
                                     tag : ['CX','DX', '최적화'],
                                     date: '2025.01.10',
+                                    floatText: 'YYYY년 M월호',
                                 },
                             ]
                         %>
@@ -195,40 +164,11 @@
                             itemClass: 'pc-col3' , 
                             itemCount: 3, 
                             allCountData: '668' ,
-                            contentType : 'type-case2',
+                            contentType : 'type-moa-case2',
                             jsonData : thumbnailData4, 
                         }) %>
                     </div>
-                    <p class="guide-title-h3 mt-10">썸네일 > MOA 컨텐츠3 : 테크로그 > title, tag</p>
-                    <div class="cmp-exsample__wrap mt-5">
-                        <% 
-                            const thumbnailData5=[
-                                {
-                                    id: 0,
-                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
-                                    tag : ['CX','DX', '최적화'],
-                                },
-                                {
-                                    id: 1,
-                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
-                                    tag : ['CX','DX', '최적화'],
-                                },
-                                {
-                                    id: 2,
-                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
-                                    tag : ['CX','DX', '최적화'],
-                                },
-                            ]
-                        %>
-                        <%- include('src/component/cmp_thumbnail_type.html', { 
-                            itemClass: 'pc-col3' , 
-                            itemCount: 3, 
-                            allCountData: '668' ,
-                            contentType : 'type-case3',
-                            jsonData : thumbnailData5, 
-                        }) %>
-                    </div>
-                    <p class="guide-title-h3 mt-10">썸네일 > MOA 컨텐츠4 : 뉴스레터 > category, title, tag, date</p>
+                    <p class="guide-title-h3 mt-10">썸네일 > type-moa-case3 : 행사/이벤트 > category, title, tag, date</p>
                     <div class="cmp-exsample__wrap mt-5">
                         <% 
                             const thumbnailData6=[
@@ -259,7 +199,7 @@
                             itemClass: 'pc-col3' , 
                             itemCount: 3, 
                             allCountData: '668' ,
-                            contentType : 'type-case4',
+                            contentType : 'type-moa-case3',
                             jsonData : thumbnailData6, 
                         }) %>
                     </div>

@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     gap: calc(var(--chip-gap) / 16 * 1rem);
+    flex-wrap: wrap;
 }
 .chip {
     display: inline-flex;
