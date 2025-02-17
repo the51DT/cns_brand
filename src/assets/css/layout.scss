@@ -453,6 +453,17 @@ $pcWide: "screen and (min-width : 1920px)";
     }
 }
 
+// MOA 상세
+.board-detail {
+    display: flex;
+    justify-content: center;
+    gap: calc(40 / 16 * 1rem);
+    @media #{$tablet} {
+        flex-direction: column;
+        gap: calc(60 / 16 * 1rem);
+    }
+}
+
 .footer__wrap {
     padding: calc(40 / 16 * 1rem) 0;    
     border-top: 1px solid var(--colorGL-all-gray200);

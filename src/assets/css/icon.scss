@@ -55,5 +55,8 @@ $fileType: "svg";
     } 
     &.icon-pagination-last {
         @include iconFile(16,16,'icon_page_last');
-    }                        
+    }     
+    &.icon-heart-line {
+        @include iconFile(20,20,'icon_heart_line');
+    }                     
 }
