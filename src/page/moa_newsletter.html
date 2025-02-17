@@ -49,12 +49,113 @@
             <!-- // 검색영역 임시 -->
             <div class="inner-wrap">
                 <div class="cmp-area">
-                    <!-- 썸네일영역 임시 -->
-                    <%- include('src/component/cmp_thumbnail_type.html', {
-                        itemClass: 'pc-col3',                            
-                        itemCount: 12
-                    }) %> 
-                    <!-- // 썸네일영역 임시 -->
+                    <% 
+                        const thumbnailDataNewsletter=[
+                            {
+                                id: 0,
+                                category: '웨비나',
+                                title: 'AI 시대의 필수, 데이터센터: 2025년 주목해야 할 주요 전망은?',
+                                tag : ['금융','전자', 'Label'],
+                                date: '2025.01',
+                                floatText: '2025년 1월호',
+                            },
+                            {
+                                id: 1,
+                                category: '컨퍼런스',
+                                title: '&lt;EveryITthing!&gt; 2025년 AI 전망: AI 에이전트로 여는 미래',
+                                tag : ['금융','서비스', '전자'],
+                                date: '2024.12',
+                                floatText: '2024년 12월호',
+                            },
+                            {
+                                id: 2,
+                                category: 'Label',
+                                title: '&lt;EveryITthing!&gt; 온디바이스 AI, 우리의 일상을 바꾸는 내 손 안의 AI',
+                                tag : ['금융','전자', '서비스'],
+                                date: '2024.11',
+                                floatText: '2024년 11월호',
+                            },
+                            {
+                                id: 3,
+                                category: 'Label',
+                                title: '&lt;EveryITthing!&gt; 디지털을 넘어서, 모던 워크플레이스 도입의 시대',
+                                tag : ['금융','전자', '서비스'],
+                                date: '2024.10',
+                                floatText: '2024년 10월호',
+                            },
+                            {
+                                id: 4,
+                                category: 'Label',
+                                title: '로보틱스 혁명, AI 기반 휴머노이드의 부상과 기업의 전략적 대응',
+                                tag : ['금융','전자', '서비스'],
+                                date: '2024.09',
+                                floatText: '2024년 9월호',
+                            },
+                            {
+                                id: 5,
+                                category: 'Label',
+                                title: '&lt;EveryITthing!&gt; 측정할 수 없는 것은 관리할 수 없다',
+                                tag : ['금융','전자', '서비스'],
+                                date: '2024.08',
+                                floatText: '2024년 8월호',
+                            },
+                            {
+                                id: 6,
+                                category: 'Label',
+                                title: '&lt;EveryITthing!&gt; 더 빨리 더 멀리, 올림픽과 네트워크 현대화',
+                                tag : ['금융','서비스', '전자'],
+                                date: '2024.07',
+                                floatText: '2024년 7월호',
+                            },
+                            {
+                                id: 7,
+                                category: 'Label',
+                                title: 'AI 시대, 함께 사용하면 시너지를 일으킬 이 기술!',
+                                tag : ['금융','서비스', '전자'],
+                                date: '2024.06',
+                                floatText: '2024년 6월호',
+                            },
+                            {
+                                id: 8,
+                                category: 'Label',
+                                title: '&lt;EveryITthing!&gt; 생성형 AI 보안 위협? 창도 방패도 모두 생성형 AI!',
+                                tag : ['금융','서비스', '전자'],
+                                date: '2024.05',
+                                floatText: '2024년 5월호',
+                            },
+                            {
+                                id: 9,
+                                category: 'Label',
+                                title: '&lt;EveryITthing!&gt; 새롭지 않은 LLM, 새로운 비즈니스를 만들다',
+                                tag : ['금융','서비스', '전자'],
+                                date: '2024.04',
+                                floatText: '2024년 4월호',
+                            },
+                            {
+                                id: 10,
+                                category: 'Label',
+                                title: '&lt;EveryITthing!&gt; 진화하는 AI, 적응하는 기업! 기업의 생성형 AI 활용법',
+                                tag : ['금융','서비스', '전자'],
+                                date: '2024.03',
+                                floatText: '2024년 3월호',
+                            },
+                            {
+                                id: 11,
+                                category: 'Label',
+                                title: '&lt;EveryITthing!&gt; 내 일을 줄여주고 내일이 기대되는 엔터프라이즈 SW 톺아보기',
+                                tag : ['금융','서비스', '전자'],
+                                date: '2024.02',
+                                floatText: '2024년 2월호',
+                            },
+                        ]
+                    %>
+                    <%- include('src/component/cmp_thumbnail_type.html', { 
+                        itemClass: 'pc-col3' , 
+                        itemCount: 12, 
+                        allCountData: '883' ,
+                        contentType : 'type-moa-case2',
+                        jsonData : thumbnailDataNewsletter, 
+                    }) %>
                     <%- include('src/component/cmp_pagination.html') %>
                 </div>
             </div>
