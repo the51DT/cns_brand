@@ -782,6 +782,7 @@ $pcWide: "screen and (min-width : 1920px)";
         border-top: calc(2 / 16 * 1rem) solid #1A1A1A;
         &.type-wide {
             padding: calc(40 / 16 * 1rem) 0;
+            border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default5);
             .detail-info__title {
                 color: var(--text-text-default);
                 font-weight: 700;
