@@ -1,24 +1,3 @@
-// mixin 
-$phone: "only screen and (max-width : 767px)";
-$tabletMini: "only screen and (max-width : 1023px)";
-$tablet: "only screen and (max-width : 1599px)";
-$pcMiddle: "only screen and (max-width : 1919px)";
-$pcWide: "screen and (min-width : 1920px)";
-//반응형 *--
-@mixin ellipsis($line: 1) {
-    @if ($line == 1) {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    } @else {
-        display: -webkit-box;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: $line;
-    }
-}
-
 .wrap {
     width: 100%;    
 }
