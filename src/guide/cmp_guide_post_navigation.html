@@ -19,9 +19,18 @@
                 <div class="page-cont flex-1">
                     <p class="guide-title-h3">Post Navigation</p>                    
                     <div class="cmp-exsample__wrap mt-3">
-                        <!-- navigation -->
+                        <!-- post navigation -->
                         <%- include('src/component/cmp_post_navigation.html') %>
-                        <!-- //navigation -->
+                        <!-- // post navigation -->
+                    </div>
+                    <p class="guide-title-h3">Post Navigation 2</p>                    
+                    <div class="cmp-exsample__wrap mt-3">
+                        <!-- post navigation -->
+                        <%- include('src/component/cmp_post_navigation.html', Object.assign({}, locals, { 
+                            pagenationPrev :'test1',
+                            pagenationNext : 'test2',
+                        })) %> 
+                        <!-- // post navigation -->
                     </div>
                 </div>
             </div>
