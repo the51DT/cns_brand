@@ -3,6 +3,7 @@
     <% 
         const data=(typeof jsonData !=='undefined' ? jsonData : []); 
         const itemLimit=typeof itemCount !=='undefined' ? itemCount : 1;
+        const contentTypeValue = typeof contentType !=='undefined' ? contentType : '' ; 
     %>
     <% if (typeof allCountData !=='undefined' && allCountData) { %>
         <div class="content-list__util">
@@ -23,24 +24,32 @@
                             <% } %>
                         </div>
                         <div class="content-info">
-                            <% if(item.category) { %>
+                            <% if(item.category || (contentTypeValue == 'type-moa-case2' || contentTypeValue == 'type-moa-case3')) { %>
                                 <div class="chip__wrap">
-                                    <div class="chip bg-basic font-caption-xl"><%- item.category %></div>
+                                    <% if(item.category) { %>
+                                        <div class="chip bg-basic font-caption-xl"><%- item.category %></div>
+                                    <% } %>
                                 </div>
                             <% } %>
                             <div class="title font-body-lg">
                                 <a href="<%- item.link %>"><%- item.title %></a> 
                             </div>
-                            <% if(item.content) { %>
-                                <div class="description font-body-sm">
-                                    <%- item.content %>                                            
+                            <% if(item.content || (contentTypeValue == 'type-moa-case1' || contentTypeValue == 'type-news')) { %>
+                                <div class="description">
+                                    <% if(item.content) { %>
+                                        <p class="font-body-sm">
+                                            <%- item.content %>                                            
+                                        </p>
+                                    <% } %>
                                 </div>
                             <% } %>
-                            <% if(item.tag) { %>
+                            <% if(item.tag || (contentTypeValue == 'type-moa-case1' || contentTypeValue == 'type-moa-case2' || contentTypeValue == 'type-moa-case3')) { %>
                                 <div class="chip__wrap tag">
-                                    <% item.tag.forEach((tag, i) => { %>
-                                        <div class="chip bg-black font-caption-xl"><%- tag %></div>
-                                    <% }) %>
+                                    <% if(item.tag) { %>
+                                        <% item.tag.forEach((tag, i) => { %>
+                                            <div class="chip bg-black font-caption-xl"><%- tag %></div>
+                                        <% }) %>
+                                    <% } %>
                                 </div>
                             <% } %>
                             <% if(item.date) { %>
