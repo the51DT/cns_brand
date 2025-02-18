@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3">Search</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <%- include('src/component/cmp_search.html', Object.assign({}, locals, {
+                            title: 'title 값 미입력 시 미노출',
+                            placeholder: 'placeholder 디폴트 값 = 검색어를 입력하세요.',
+                        })) %>
+                    </div>
+
+                    <p class="guide-title-h3 mt-10">Search + 썸네일</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <%- include('src/component/cmp_search.html', Object.assign({}, locals, { 
+                            title: 'LG CNS의 DX기술을 만나 비즈니스 혁신을 경험한<br>고객의 스토리를 살펴보세요.',
+                            thumbnailType: 'type-moa-case1',
+                            thumbnailData: [
+                                {
+                                    id: 0,
+                                    title: 'SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스',
+                                    content: '회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’',
+                                    tag : ['제조','화학', '서비스', '경영관리', 'Digital Workplace Platform'],
+                                },
+                                {
+                                    id: 1,
+                                    title: 'LG전자',
+                                    content: "고객의 기대를 뛰어넘다, '언어 장벽 제로'를 실현한 DigitalTrans",
+                                    tag : ['전자','제조', '전환 및 구축'],
+                                },
+                            ],
+                        })) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

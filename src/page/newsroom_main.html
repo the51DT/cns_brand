@@ -107,25 +107,9 @@
                 </div>
             </div>
             <!-- //Swiper -->
-            <!-- 검색영역 임시 -->
-            <div class="bg-gray-100 px-5 py-20 mb-20">
-                <p class="text-center font-bold font-head-md">LG CNS의 보도자료를 확인해 보세요.</p>
-                <div class="form-element__wrap mt-10 mx-auto max-w-4xl">
-                    <label class="ir-text">항목명</label>                          
-                    <span class="form-element__inner input-type input-search search-type-full">
-                        <button type="button" class="btn btn-search">
-                            <i class="ico icon-search-bl35"></i>                                
-                            <span class="ir-text">검색</span>
-                        </button>                                  
-                        <input type="text" value="" placeholder="검색어를 입력하세요." />
-                        <button type="button" class="btn btn-remove">
-                            <i class="ico icon-remove-bl28"></i>
-                            <span class="ir-text">삭제</span>
-                        </button>                                
-                    </span>
-                </div>
-            </div>
-            <!-- // 검색영역 임시 -->
+            <%- include('src/component/cmp_search.html', Object.assign({}, locals, {
+                title: 'LG CNS의 보도자료를 확인해 보세요.',
+            })) %>
             <div class="inner-wrap">
                 <div class="cmp-area">
                     <%- include('src/component/cmp_thumbnail_type.html', {
