@@ -128,7 +128,7 @@
     font-weight: 600;
 }
 /* btn-text - 텍스트 버튼 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .btn-round {
         width: 100%;
         padding: calc(13.5 / 16 * 1rem) 0;

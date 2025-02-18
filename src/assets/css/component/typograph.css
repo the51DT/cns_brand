@@ -156,7 +156,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .font-head-xl {
         font-size: calc(var(--typo-mo-size-head-xl) / 16 * 1rem);
         line-height: calc(var(--typo-mo-line-height-head-xl) / 16 * 1rem);

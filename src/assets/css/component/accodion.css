@@ -80,7 +80,7 @@
     line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
     letter-spacing: var(--letter-spacing-small);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .cmp-accordion .accordion-list li {
         padding: calc(14 / 16 * 1rem) 0 calc(14 / 16 * 1rem) calc(20 / 16 * 1rem) ;
     }

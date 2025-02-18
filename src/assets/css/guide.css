@@ -298,7 +298,7 @@
     margin-left: calc(40 / 16 * 1rem);
 }
 /* 모바일 반응형 css */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .guide-header__wrap .navi button {
         display: block;
         width: 24px;

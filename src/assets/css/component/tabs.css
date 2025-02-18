@@ -64,7 +64,7 @@
 .cmp-tab.align-center .cmp-tab__header ul li {
     width: calc(100% / var(--tab-count));
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .cmp-tab {
         position: relative;
     }
