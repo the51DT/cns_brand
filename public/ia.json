@@ -164,6 +164,12 @@
                     "screenId": "",
                     "path": "/src/guide/",
                     "fileName": "cmp_guide_boardDetail_Info.html"
+                },
+                {
+                    "name": "postNavigation",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_post_navigation.html"
                 }
             ]
         },

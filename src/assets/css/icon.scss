@@ -58,5 +58,11 @@ $fileType: "svg";
     }     
     &.icon-heart-line {
         @include iconFile(20,20,'icon_heart_line');
-    }                     
+    }
+    &.icon-arrow-up-w24 {
+        @include iconFile(24,24,'icon_arrow_up_w24');
+    }                       
+    &.icon-arrow-down-w24 {
+        @include iconFile(24,24,'icon_arrow_down_w24');
+    }  
 }
