@@ -1,7 +1,7 @@
 /* 스와이퍼 */
 .cmp-swiper__wrap {
     width: 100%;
-    max-width: 1920px;
+    max-width: calc(1920 / 16 * 1rem);
     margin: 0 auto;
     padding: 0 calc(80 / 16 * 1rem);
 }
@@ -60,13 +60,22 @@
 .cmp-swiper__wrap .swiper-pagination-bullet-active {
     background-color: var(--colorCM-all-fill-fill-default12);
 }
+
 @media screen and (max-width: 1919px) {
     .cmp-swiper__wrap {
+        max-width: calc(1600 / 16 * 1rem);
         padding: 0 calc(40 / 16 * 1rem);
     }
 }
 @media screen and (max-width: 1599px) {
     .cmp-swiper__wrap {
+        max-width: calc(1024 / 16 * 1rem);
+        padding: 0 calc(32 / 16 * 1rem);
+    }
+}
+@media screen and (max-width: 1023px) {
+    .cmp-swiper__wrap {
+        max-width: calc(768 / 16 * 1rem);
         padding: 0 calc(32 / 16 * 1rem);
     }
 }
