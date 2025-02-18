@@ -17,7 +17,7 @@
             moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
             subText: 'MOA', 
             pageTitle: '뉴스레터' 
-        })) %>   
+        })) %>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <% 
@@ -126,16 +126,14 @@
                 thumbnailData: thumbnailDataNewsletter,
             })) %>
             <div class="inner-wrap">
-                <div class="cmp-area">
-                    <%- include('src/component/cmp_thumbnail_type.html', { 
-                        itemClass: 'pc-col3' , 
-                        itemCount: 12, 
-                        allCountData: '883' ,
-                        contentType : 'type-moa-case2',
-                        jsonData : thumbnailDataNewsletter, 
-                    }) %>
-                    <%- include('src/component/cmp_pagination.html') %>
-                </div>
+                <%- include('src/component/cmp_thumbnail_type.html', { 
+                    itemClass: 'pc-col3' , 
+                    itemCount: 12, 
+                    allCountData: '883' ,
+                    contentType : 'type-moa-case2',
+                    jsonData : thumbnailDataNewsletter, 
+                }) %>
+                <%- include('src/component/cmp_pagination.html') %>
             </div>
         </div>
         <%- include('src/_inc/footer.html') %>

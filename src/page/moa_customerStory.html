@@ -17,7 +17,7 @@
             moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
             subText: 'MOA', 
             pageTitle: '고객스토리' 
-        })) %>   
+        })) %>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <% 
@@ -102,16 +102,14 @@
                 thumbnailData: thumbnailDataStory,
             })) %>
             <div class="inner-wrap">
-                <div class="cmp-area">
-                    <%- include('src/component/cmp_thumbnail_type.html', { 
-                        itemClass: 'pc-col3' , 
-                        itemCount: 12, 
-                        allCountData: '883' ,
-                        contentType : 'type-moa-case1',
-                        jsonData : thumbnailDataStory, 
-                    }) %>
-                    <%- include('src/component/cmp_pagination.html') %>
-                </div>
+                <%- include('src/component/cmp_thumbnail_type.html', { 
+                    itemClass: 'pc-col3' , 
+                    itemCount: 12, 
+                    allCountData: '883' ,
+                    contentType : 'type-moa-case1',
+                    jsonData : thumbnailDataStory, 
+                }) %>
+                <%- include('src/component/cmp_pagination.html') %>
             </div>
         </div>
         <%- include('src/_inc/footer.html') %>

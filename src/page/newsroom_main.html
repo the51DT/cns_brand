@@ -33,27 +33,6 @@
                                     <div class="chip__wrap">
                                         <div class="chip bg-basic font-caption-xl">보도자료</div>
                                     </div>
-                                    <div class="title  font-head-xs">
-                                        <a href="#">LG CNS, 유가증권시장 상장 위한 증권신고서 제출</a> 
-                                    </div>
-                                    <div class="description font-body-sm">
-                                        5일 금융위원회에 증권신고서 제출, 내년 2월 상장 목표로 본격 공모절차 돌입
-                                    </div>
-                                    <div class="date-box font-body-xs">
-                                        2024.12.06
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper-thumbnail">
-                                <div class="thumbnail-wrap">
-                                    <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
-                                </div>
-                                <div class="content-info">
-                                    <div class="chip__wrap">
-                                        <div class="chip bg-basic font-caption-xl">보도자료</div>
-                                    </div>
                                     <div class="title font-head-xs">
                                         <a href="#">LG CNS, 유가증권시장 상장 위한 증권신고서 제출</a> 
                                     </div>
@@ -107,7 +86,28 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                                    
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-thumbnail">
+                                <div class="thumbnail-wrap">
+                                    <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
+                                </div>
+                                <div class="content-info">
+                                    <div class="chip__wrap">
+                                        <div class="chip bg-basic font-caption-xl">보도자료</div>
+                                    </div>
+                                    <div class="title font-head-xs">
+                                        <a href="#">LG CNS, 유가증권시장 상장 위한 증권신고서 제출</a> 
+                                    </div>
+                                    <div class="description font-body-sm">
+                                        5일 금융위원회에 증권신고서 제출, 내년 2월 상장 목표로 본격 공모절차 돌입
+                                    </div>
+                                    <div class="date-box font-body-xs">
+                                        2024.12.06
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -117,20 +117,18 @@
                 title: 'LG CNS의 보도자료를 확인해 보세요.',
             })) %>
             <div class="inner-wrap">
-                <div class="cmp-area">
-                    <%- include('src/component/cmp_thumbnail_type.html', {
-                        itemClass: 'pc-col3',                            
-                        itemCount: 12
-                    }) %> 
-                    <%- include('src/component/cmp_pagination.html') %>
-                </div>
+                <%- include('src/component/cmp_thumbnail_type.html', {
+                    itemClass: 'pc-col3',
+                    itemCount: 12
+                }) %> 
+                <%- include('src/component/cmp_pagination.html') %>
             </div>
         </div>
         <%- include('src/_inc/footer.html') %>
-    </div>    
+    </div>
     <script src="/assets/bundle/swiper-bundle.min.js"></script>
     <script src="/assets/js/initializeSwipers.js"></script>
-    <script>     
+    <script>
         // Swiper 옵션 배열
         const swiperOptions = [
             { loop: true, speed: 500, slidesPerView: 'auto' },
