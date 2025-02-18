@@ -37,6 +37,16 @@
                         <!-- //Title -->
                     </div>
 
+                    <p class="guide-title-h3 mt-10">Title : 상단 subTitle 적용</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <!-- Title -->
+                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                            subTitle: '작은 타이틀',
+                            titleText: 'SCM DX 트렌드', 
+                        })) %>
+                        <!-- //Title -->
+                    </div>
+
                     <p class="guide-title-h3 mt-10">Teaser Title</p>                    
                     <div class="cmp-exsample__wrap mt-3">
                         <!-- Teaser Title -->

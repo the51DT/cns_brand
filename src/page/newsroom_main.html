@@ -14,6 +14,12 @@
         <!-- //헤더 영역 -->
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
+            <div class="inner-wrap mt-20">
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    subTitle: '뉴스룸',
+                    titleText: '보도자료', 
+                })) %>
+            </div>
             <!-- Swiper -->
             <div class="cmp-wrap cmp-swiper__wrap mt-20">
                 <div class="swiper">
