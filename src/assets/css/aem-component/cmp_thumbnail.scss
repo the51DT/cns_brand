@@ -10,9 +10,12 @@
                         left: calc(40 / 16 * 1rem);
                         bottom: calc(32 / 16 * 1rem);
                         color: var(--colorGL-all-white100);
-                        font-size: calc(var(--size-body-xl) / 16 * 1rem);
-                        font-weight: 500;
-                        line-height: calc(var(--line-height-body-xl) / 16 * 1rem);
+                        font-size: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
+                        line-height: calc(var(--typo-pc-line-height-body-xl) / 16 * 1rem);
+                        @media #{$phone} {
+                            font-size: calc(var(--typo-mo-size-body-lg) / 16 * 1rem);
+                            line-height: calc(var(--typo-mo-line-height-body-lg) / 16 * 1rem);
+                        }
                     }
                 }
                 .content-info {
