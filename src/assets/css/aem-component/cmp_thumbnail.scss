@@ -1,0 +1,86 @@
+// 썸네일 유형
+.cmp-thumbnail {
+    .content-list__wrap {
+        &.thumbnail-type {
+            .content-list__inner {
+                .thumbnail-wrap {
+                    position: relative;
+                    .float-text {
+                        position: absolute;
+                        left: calc(40 / 16 * 1rem);
+                        bottom: calc(32 / 16 * 1rem);
+                        color: var(--colorGL-all-white100);
+                        font-size: calc(var(--size-body-xl) / 16 * 1rem);
+                        font-weight: 500;
+                        line-height: calc(var(--line-height-body-xl) / 16 * 1rem);
+                    }
+                }
+                .content-info {
+                    padding: calc(32 / 16* 1rem) calc(40 / 16* 1rem);
+                    background-color: var(--colorGL-all-white100);
+                    @media #{$phone} {
+                        padding: calc(24 / 16* 1rem) calc(24 / 16* 1rem);    
+                    }
+                    .title {
+                        height: calc(76.8 / 16 * 1rem);
+                        @media #{$tablet} {
+                            height: calc(59 / 16 * 1rem);
+                        }
+                    }
+                    .description {
+                        @include ellipsis($line: 2);
+                        height: calc(54 / 16 * 1rem);
+                        @media #{$tablet} {
+                            height: calc(48 / 16 * 1rem);
+                        }
+                    }
+                    .chip__wrap.tag {
+                        align-items: flex-start;
+                        height: calc(64 / 16 * 1rem);
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+        // MOA > 고객스토리, 테크
+        &.type-moa-case1 {}
+        // MOA > 뉴스레터
+        &.type-moa-case2 {
+            &.thumbnail-type {
+                .content-list__inner {
+                    .content-info {
+                        .chip__wrap {
+                            min-height: calc(28 / 16 * 1rem);
+                        }
+                    }
+                }
+            }
+        }
+        // MOA > 행사/이벤트
+        &.type-moa-case3 {
+            &.thumbnail-type {
+                .content-list__inner {
+                    .content-info {
+                        .chip__wrap {
+                            min-height: calc(28 / 16 * 1rem);
+                        }
+                    }
+                }
+            }
+        }
+        &.type-news {
+            &.thumbnail-type {
+                .content-list__inner {
+                    .content-info {
+                        @media #{$tabletMini} {
+                            padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);
+                        }
+                        .chip__wrap {
+                            min-height: calc(28 / 16 * 1rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

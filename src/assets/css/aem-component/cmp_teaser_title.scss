@@ -1,0 +1,33 @@
+// Teaser Titles
+.cmp_teaser_title__wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: calc(40 / 16 * 1rem);
+    .teaser-title {
+        color: var(--text-text-default);
+        &.type-button-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: calc(20 / 16 * 1rem);
+            @media #{$phone} {
+                gap: calc(16 / 16 * 1rem);
+            }
+        }
+        strong {
+            font-weight: 700;
+        }
+        &+.teaser-text {
+            margin-top: calc(12 / 16 * 1rem);
+        }
+    }
+    .teaser-text {
+        color: var(--text-text-default);
+        p+p {
+            margin-top: calc(32 / 16 * 1rem);
+            @media #{$phone} {
+                margin-top: calc(16 / 16 * 1rem);
+            }
+        }
+    }
+}

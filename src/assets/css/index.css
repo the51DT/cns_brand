@@ -5,5 +5,22 @@
 
 @import 'layout.scss';
 @import 'content.scss';
+/* aem-component */
+@import 'aem-component/cmp_hero_banner.scss';
+@import 'aem-component/cmp_over_view.scss';
+@import 'aem-component/cmp_title.scss';
+@import 'aem-component/cmp_teaser_title.scss';
+@import 'aem-component/cmp_image_item.scss';
+@import 'aem-component/cmp_item_list_columns.scss';
+@import 'aem-component/cmp_spec_list.scss';
+@import 'aem-component/cmp_customer_case.scss';
+@import 'aem-component/cmp_pagination.scss';
+@import 'aem-component/cmp_button_banner.scss';
+@import 'aem-component/cmp_thumbnail.scss';
+@import 'aem-component/cmp_board_detail_info.scss';
+@import 'aem-component/cmp_post_navigation.scss';
+@import 'aem-component/cmp_search_wrap.scss';
+/* icon */
 @import 'icon.scss';
+/* tailwind */
 @import url("/assets/bundle/tailwindcss/tailwind-all.css");
