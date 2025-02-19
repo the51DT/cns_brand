@@ -166,10 +166,16 @@
                     "fileName": "cmp_guide_boardDetail_Info.html"
                 },
                 {
-                    "name": "postNavigation",
+                    "name": "PostNavigation",
                     "screenId": "",
                     "path": "/src/guide/",
                     "fileName": "cmp_guide_post_navigation.html"
+                },
+                {
+                    "name": "Search",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_search.html"
                 }
             ]
         },
