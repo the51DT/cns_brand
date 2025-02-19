@@ -64,6 +64,14 @@
 .cmp-tab.align-center .cmp-tab__header ul li {
     width: calc(100% / var(--tab-count));
 }
+@media screen and (max-width : 1599px) {
+    .cmp-tab .cmp-tab__header ul li a {
+        font-size: calc(var(--typo-tablet-size-body-md) / 16 * 1rem);    
+        font-weight: 500;
+        line-height: calc(var(--typo-tablet-line-height-body-lg) / 16 * 1rem);
+        letter-spacing: var(--typo-tablet-letter-spacing-default);
+    }
+}
 @media screen and (max-width: 767px) {
     .cmp-tab {
         position: relative;
