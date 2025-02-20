@@ -293,10 +293,29 @@
     display: flex;
     justify-content: center;
 }
-
 .guide-board-detail .img-box + .cmp-exsample__wrap {
     margin-left: calc(40 / 16 * 1rem);
 }
+/* ImageBox 컴포넌트 가이드 스타일*/
+.guide-list.type-dot li {
+    position: relative;
+    padding-left: calc(15 / 16 * 1rem);
+}
+.guide-list.type-dot li + li {
+    margin-top: calc(5 / 16 * 1rem);
+}
+.guide-list.type-dot li::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: calc(10 / 16 * 1rem);
+    left: 0;
+    width: calc(6 / 16 * 1rem);
+    height: calc(6 / 16 * 1rem);
+    background: var(--colorCM-all-background-background-default8);
+    border-radius: 50%;
+}
+
 /* 모바일 반응형 css */
 @media screen and (max-width: 767px) {
     .guide-header__wrap .navi button {

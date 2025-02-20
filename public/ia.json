@@ -176,6 +176,12 @@
                     "screenId": "",
                     "path": "/src/guide/",
                     "fileName": "cmp_guide_search.html"
+                },
+                {
+                    "name": "Image Box",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_image_box.html"
                 }
             ]
         },
