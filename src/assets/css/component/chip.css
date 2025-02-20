@@ -1,5 +1,5 @@
 :root {
-    --chip-gap: 8;
+    --chip-gap: 6;
     --chip-height: 28;
     --chip-padding-top-bottom: 4;
     --chip-padding-side: 10;
@@ -19,7 +19,9 @@
     justify-content: center;
     align-items: center;
     white-space: nowrap;
-    font-weight: 600;
+    font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+    font-weight: 400;
 }
 .chip.bg-basic {
     background: var(--colorGL-all-gray100);
