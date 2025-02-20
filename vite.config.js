@@ -29,7 +29,10 @@ export default defineConfig({
             writeBundle() {
                 const files = fg.sync(['dist/**/*.html']);
                 files.forEach(file => {
-                    const content = readFileSync(file, 'utf-8');
+                    let content = readFileSync(file, 'utf-8');
+                    if (!/<head>/i.test(content)) {
+                        content = content.replace(/<link\s+rel=["']stylesheet["'][^>]*>/gi, '');
+                    }
                     const formatted = pretty(content, { ocd: true });
                     writeFileSync(file, formatted, 'utf-8');
                 });
