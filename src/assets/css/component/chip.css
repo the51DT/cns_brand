@@ -31,3 +31,10 @@
     background: var(--colorCM-all-background-background-default8);
     color: var(--colorCM-all-text-text-on-bg);
 }
+/* ~ $phone */
+@media screen and (max-width: 767px) {
+    .chip {
+        font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+    }
+}
