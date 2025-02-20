@@ -2,10 +2,11 @@
 <div class="cmp-wrap cmp-board-detail-info">
     <% 
         const data=(typeof jsonData !=='undefined' && jsonData ? jsonData : []); 
-        const tagList=tag || [];
+        const tagList=(typeof tag !=='undefined' && tag ? tag : []);
         const categoryValue = typeof category !== 'undefined' ? category : '';
         const dateValue = typeof date !== 'undefined' ? date : '';
         const likeCountValue = typeof likeCount !== 'undefined' ? likeCount : '';
+        const titleValue = typeof title !== 'undefined' ? title : '';
     %>
     <div class="detail-info <%= typeof contentType !== 'undefined' && contentType ? contentType : ''%>">
         <% if(categoryValue) {%>
@@ -15,9 +16,11 @@
                 </div>
             </div>
         <% } %>
-        <strong class="detail-info__title <%= contentType == 'type-wide' ? 'font-head-sm' : 'font-head-xs' %>"><%= title %></strong>
+        <strong class="detail-info__title <%= locals.contentType ? (locals.contentType === 'type-wide' ? 'font-head-sm' : locals.contentType === 'type-card' ? 'font-head-xs' : 'font-head-xs') : 'font-head-xs' %>">
+            <%= titleValue %>
+        </strong>
         <!-- contentType: 'type-wide' 의 경우 tagList 위치 -->
-        <% if(tagList.length > 0 && contentType == 'type-wide') {%>
+        <% if(tagList.length > 0 && (contentType == 'type-wide' || contentType == 'type-card')) {%>
             <div class="chip__wrap detail-info__tag">
                 <% tagList.forEach((tag) => { %>
                     <div class="chip bg-black font-caption-xl"><%= tag %></div>
@@ -60,7 +63,7 @@
                 <% } %>
             </div>
         <% } %>
-        <% if(contentType == 'type-card') { %>
+        <% if(typeof contentType !== 'undefined' && contentType === 'type-card') { %>
             <div class="button__wrap">
                 <button type="button" class="btn btn-round">
                     공유하기
