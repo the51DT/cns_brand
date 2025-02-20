@@ -20,7 +20,7 @@
             <%= titleValue %>
         </strong>
         <!-- contentType: 'type-wide' 의 경우 tagList 위치 -->
-        <% if(tagList.length > 0 && (contentType == 'type-wide' || contentType == 'type-card')) {%>
+        <% if(tagList.length > 0 && contentType == 'type-wide') {%>
             <div class="chip__wrap detail-info__tag">
                 <% tagList.forEach((tag) => { %>
                     <div class="chip bg-black font-caption-xl"><%= tag %></div>
