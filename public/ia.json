@@ -82,6 +82,12 @@
             "fileName": "",
             "Level2": [    
                 {
+                    "name": "Footer",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_footer.html"
+                }, 
+                {
                     "name": "페이지네이션",
                     "screenId": "",
                     "path": "/src/guide/",

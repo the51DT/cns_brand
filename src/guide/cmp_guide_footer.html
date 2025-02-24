@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/src/assets/css/guide.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+            <div class="page-location text-2xl font-bold">
+                <span id="pagesTitle"></span>
+            </div>
+            <div class="guide-content">
+                <div class="flex justify-between lnb-type">
+                    <%- include('src/component/cmp_lnb.html') %>
+                        <div class="page-cont flex-1">
+                            <p class="guide-title-h3">Footer default</p>
+                            <div class="cmp-exsample__wrap mt-5">
+                                <%- include('src/_inc/footer.html') %>
+                            </div>
+                            <br>
+                            <p class="guide-title-h3">Footer dark</p>
+                            <div class="cmp-exsample__wrap mt-5">
+                                <%- include('src/_inc/footer.html', Object.assign({}, locals, {
+                                    type : 'dark',
+                                }))%>
+                            </div>
+                        </div>
+                </div>
+            </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/assets/js/ui_common.js"></script>
+</body>
+
+</html>
