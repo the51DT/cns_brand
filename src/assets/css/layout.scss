@@ -402,11 +402,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: calc(8 / 16 * 1rem);
         width: 100%;
         @media #{$phone} {
             flex-direction: column;
             justify-content: flex-start;
-            align-items: flex-start;      
+            align-items: flex-start;
+            gap: calc(24 / 16 * 1rem);
         }
         .footer-menu {
             display: flex;
@@ -420,6 +422,7 @@
             li {
                 a {                
                     color: var(--colorGL-all-gray950);
+                    font-weight: 500;
                     padding: calc(8 / 16 * 1rem) 0;
                 }
             }
@@ -427,7 +430,6 @@
         .family-site__wrap {
             @media #{$phone} {
                 width: 100%;
-                margin-top: calc(24 / 16 * 1rem);
             }
         } 
         .dropdown-menu {
@@ -482,10 +484,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: calc(8 / 16 * 1rem);
         @media #{$phone} {
             flex-direction: column;
             align-items: flex-start;
             flex-direction: column-reverse;
+            gap: calc(20 / 16 * 1rem);
         }
         .footer-info {
             p {
@@ -496,9 +500,6 @@
             display: flex;
             align-items: center;
             gap: calc(4 / 16 * 1rem);
-            @media #{$phone} {
-                margin-bottom: calc(20 / 16 * 1rem);
-            }
             a {
                 width: calc(36 / 16 * 1rem);
                 height: calc(36 / 16 * 1rem);
