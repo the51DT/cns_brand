@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: calc(6 / 16 * 1rem);
+    gap: calc(12 / 16 * 1rem);
     width: 100%;
 }
 .button__wrap:has(.btn.btn-text) {
@@ -103,6 +103,9 @@
 .btn-round {
     width: 100%;
     padding: calc(13.5 / 16 * 1rem) 0;
+    font-size: calc(var(--typo-pc-size-caption-xl) / 16 * 1rem);
+    font-weight: 600;
+    line-height: calc(var(--typo-pc-line-height-caption-xl) / 16 * 1rem);
     border-radius: calc(50 / 16 * 1rem);
     border: 1px solid var(--colorCM-all-stroke-stroke-default1);
 }
@@ -127,11 +130,28 @@
     line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
     font-weight: 600;
 }
-/* btn-text - 텍스트 버튼 */
+
+/* ~ $tablet */
+@media screen and (max-width: 1599px) {
+    .btn-round {
+        padding: calc(14 / 16 * 1rem) calc(30 / 16 * 1rem);
+        font-size: calc(var(--typo-tablet-size-caption-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-xl) / 16 * 1rem);
+    }
+}
+
+/* ~ $tabletMini */
+@media screen and (max-width: 1023px) {
+    .btn-round {
+        padding: calc(12 / 16 * 1rem) calc(30 / 16 * 1rem);
+    }
+}
+
+/* ~ $phone */
 @media screen and (max-width: 767px) {
     .btn-round {
         width: 100%;
-        padding: calc(13.5 / 16 * 1rem) 0;
+        padding: calc(10 / 16 * 1rem) calc(30 / 16 * 1rem);
         border-radius: calc(50 / 16 * 1rem);
         border: 1px solid var(--colorCM-all-stroke-stroke-default1);
     }

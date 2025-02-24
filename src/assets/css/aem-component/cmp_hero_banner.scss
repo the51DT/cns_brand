@@ -4,21 +4,7 @@
     height: calc(660 / 16 * 1rem);
     background-image: var(--hero-sub-pc-img);
     background-repeat: repeat-x;
-    background-position: center center;       
-    .inner-wrap {
-        height: 100%;
-        position: relative;
-
-    }
-    .visual-text {
-        position: absolute;
-        left: calc(80 / 16 * 1rem);        
-        top: calc(50% - 40px);
-        color: var(--colorGL-all-white100);
-        p + h2 {
-            margin-top: calc(12 / 16 * 1rem);
-        }
-    }
+    background-position: center center;      
     @media #{$tablet} {        
         .visual-text {
             left: calc(32 / 16 * 1rem);
@@ -31,6 +17,20 @@
         background-position: left top;
         .visual-text {
             left: calc(20 / 16 * 1rem);
+        }
+    }
+    .inner-wrap {
+        height: 100%;
+        position: relative;
+
+    }
+    .visual-text {
+        position: absolute;
+        left: calc(80 / 16 * 1rem);        
+        top: calc(50% - 40px);
+        color: var(--colorGL-all-white100);
+        p + h2 {
+            margin-top: calc(12 / 16 * 1rem);
         }
     }
 }

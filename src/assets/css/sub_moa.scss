@@ -1,7 +1,7 @@
 .sub_moa {
     // MOA > 행사/이벤트 상세 페이지
-    &__event-detail {
-        .board-detail {
+    &__board-detail {
+        .board-detail__warp {
             position: relative;
             padding-right: calc(616 / 16 * 1rem);
             @media #{$pcMiddle} {
@@ -10,7 +10,7 @@
             @media #{$tablet} {
                 padding-right: 0;      
             }
-            &__container {
+            .board-detail__container {
                 &.type-float {
                     position: absolute;
                     top: 0;

@@ -403,20 +403,40 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        @media #{$phone} {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;      
+        }
         .footer-menu {
             display: flex;
             align-items: center;
-            gap: calc(20 / 16 * 1rem);  
+            gap: calc(20 / 16 * 1rem);
+            @media #{$phone} {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: calc(20 / 16 * 1rem);  
+            }
             li {
                 a {                
                     color: var(--colorGL-all-gray950);
                     padding: calc(8 / 16 * 1rem) 0;
                 }
             }
+        }
+        .family-site__wrap {
+            @media #{$phone} {
+                width: 100%;
+                margin-top: calc(24 / 16 * 1rem);
+            }
         } 
         .dropdown-menu {
             &.family-site {
                 position: relative;
+                @media #{$phone} {
+                    width: 100%;
+                    position: relative;
+                }
                 button {                    
                     display: flex;
                     width: calc(193 / 16 * 1rem);
@@ -426,6 +446,9 @@
                     gap: calc(2 / 16 * 1rem);
                     border-radius: calc(50 / 16 * 1rem);
                     background-color: var(--colorGL-all-gray100);
+                    @media #{$phone} {
+                        width: 100%;
+                    }
                     &::after {
                         content: '';
                         display: inline-flex;
@@ -459,6 +482,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media #{$phone} {
+            flex-direction: column;
+            align-items: flex-start;
+            flex-direction: column-reverse;
+        }
         .footer-info {
             p {
                 color: var(--colorGL-all-gray850);            
@@ -468,6 +496,9 @@
             display: flex;
             align-items: center;
             gap: calc(4 / 16 * 1rem);
+            @media #{$phone} {
+                margin-bottom: calc(20 / 16 * 1rem);
+            }
             a {
                 width: calc(36 / 16 * 1rem);
                 height: calc(36 / 16 * 1rem);
@@ -477,37 +508,33 @@
             }
         }
     }
-    
-    @media #{$phone} {
+    &.type-dark {
+        background: var(--colorCM-all-background-background-default10);
         .footer-info__top {
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;            
             .footer-menu {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: calc(20 / 16 * 1rem);  
-            }  
-            .family-site__wrap {
-                width: 100%;
-                margin-top: calc(24 / 16 * 1rem);
-                .dropdown-menu {
-                    &.family-site {
-                        width: 100%;
-                        position: relative;
-                        button {  
-                            width: 100%;
+                li {
+                    a {
+                        color: var(--colorGL-all-white100);
+                    }
+                }
+            }
+            .dropdown-menu {
+                &.family-site {
+                    button {
+                        color: var(--colorGL-all-white100);
+                        background: var(--colorCM-all-fill-fill-default10);
+                        &::after {
+                            background: url("/src/assets/image/icon/icon_arrow_down_wh.svg") no-repeat center center
                         }
                     }
                 }
-            }           
+            }
         }
         .footer-info__bottom {
-            flex-direction: column;
-            align-items: flex-start;
-            flex-direction: column-reverse;
-            .footer-sns__wrap {
-                margin-bottom: calc(20 / 16 * 1rem);
+            .footer-info {
+                p {
+                    color: var(--colorGL-all-white100);
+                }
             }
         }
     }
