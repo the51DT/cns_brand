@@ -27,3 +27,4 @@
 @import url("/assets/bundle/tailwindcss/tailwind-all.css");
 /* sub content*/
 @import 'sub_moa.scss';
+@import 'sub_future.scss';
