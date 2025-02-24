@@ -101,6 +101,9 @@ async function lnbMenuGuide() {
                 ul.appendChild(li);
             });
 
+            if(!lnbWrap) {
+                return;
+            }
             lnbWrap.appendChild(ul);
             activateNavItem('.lnb_list a')
         })

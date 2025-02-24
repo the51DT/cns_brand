@@ -563,3 +563,10 @@
         padding: 0 calc(20 / 16 * 1rem);  
     }  
 }
+// full body
+body {
+    &.type-full-dark {
+        // height: 100vh;
+        background-color: var(--colorGL-all-black100);
+    }
+}
