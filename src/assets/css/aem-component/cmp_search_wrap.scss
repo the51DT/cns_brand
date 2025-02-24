@@ -8,7 +8,9 @@
     }
     @media #{$phone} {
         padding: calc(48 / 16 * 1rem) calc(20 / 16 * 1rem);
-        .ico.icon-search-bl35 {
+    }
+    .ico.icon-search-bl35 {
+        @media #{$phone} {
             width: calc(20 / 16 * 1rem);
             height: calc(20 / 16 * 1rem);
             min-width: calc(20 / 16 * 1rem);
@@ -43,40 +45,54 @@
         @media #{$tablet} {
             max-width: 100%;
             overflow: hidden;
-            .cmp-thumbnail {
-                overflow-x: scroll;
-                &::-webkit-scrollbar {
-                    display:none;
-                }
-            }
-            .content-list__wrap.thumbnail-type.pc-col2-big {
-                width: max-content;
-                padding: 0 calc((100% - (960 / 16 * 1rem)) / 2);
-                flex-wrap: nowrap;
-                @media #{$tabletMini} {
-                    padding: 0 calc((100%  - (704 / 16 * 1rem)) / 2);
-                }
-                @media #{$phone} {
-                    padding: 0 calc(20 / 16 * 1rem);
-                    flex-direction: row;
-                }
-                li {
-                    flex-shrink: 0;
-                    width: calc(960 / 16 * 1rem);
-                    @media #{$tabletMini} {
-                        width: calc(704 / 16 * 1rem);
-                    }
-                    @media #{$phone} {
-                        width: calc(100vw - (40 / 16 * 1rem));
-                    }
-                }
-            }
         }
         @media #{$tabletMini} {
             max-width: 100%;
         }
         @media #{$phone} {
             top: calc(-160 / 16 * 1rem);
+        }
+        .cmp-thumbnail {
+            @media #{$tablet} {
+                overflow-x: scroll;
+                 -ms-overflow-style: none; /* for Internet Explorer, Edge */
+                scrollbar-width: none; /* for Firefox */
+            }
+            &::-webkit-scrollbar {
+                @media #{$tablet} {
+                    display:none;
+                }
+            }
+        }
+        .content-list__wrap {
+            &.thumbnail-type {
+                &.pc-col2-big {
+                    @media #{$tablet} {
+                        width: max-content;
+                        padding: 0 calc((100% - (960 / 16 * 1rem)) / 2);
+                        flex-wrap: nowrap;
+                    }
+                    @media #{$tabletMini} {
+                        padding: 0 calc((100%  - (704 / 16 * 1rem)) / 2);
+                    }
+                    @media #{$phone} {
+                        padding: 0 calc(20 / 16 * 1rem);
+                        flex-direction: row;
+                    }
+                    li {
+                        @media #{$tablet} {
+                            flex-shrink: 0;
+                            width: calc(960 / 16 * 1rem);
+                        }
+                        @media #{$tabletMini} {
+                            width: calc(704 / 16 * 1rem);
+                        }
+                        @media #{$phone} {
+                            width: calc(100vw - (40 / 16 * 1rem));
+                        }
+                    }
+                }
+            }
         }
     }
     .text-wrap {
