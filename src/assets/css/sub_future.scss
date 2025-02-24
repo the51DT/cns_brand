@@ -22,6 +22,9 @@
             display: flex;
             flex-direction: column;
             gap: calc(40 / 16 * 1rem);
+            &+.future-content-items {
+                margin-top: calc(80 / 16 * 1rem);
+            }
         }
         .future-text {
             display: flex;
@@ -55,7 +58,7 @@
             max-width: calc(470 / 16 * 1rem);
             background-color: var(--colorGL-all-white100);
             padding: calc(40 / 16 * 1rem);
-            margin-top: calc(200 / 16 * 1rem);
+            margin-top: calc(200 / 16 * 1rem);            
             @media #{$tabletMini} {                               
                 padding: calc(40 / 16 * 1rem);       
                 max-width: calc(484 / 16 * 1rem);         
