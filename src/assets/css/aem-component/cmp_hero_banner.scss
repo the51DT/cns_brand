@@ -19,6 +19,25 @@
             left: calc(20 / 16 * 1rem);
         }
     }
+    &.type-empty {
+        padding: calc(80 / 16 * 1rem) 0;
+        height: auto;
+        background: none;
+        @media #{$phone} {
+            padding: calc(40 / 16 * 1rem) 0;
+        }
+        .visual-text {
+            position: relative;
+            top: initial;
+            left: initial;
+            color: var(--text-text-default);
+            .sub-text {
+                & + h2 {
+                    margin-top: calc(8 / 16 * 1rem);
+                }
+            }
+        }
+    }
     .inner-wrap {
         height: 100%;
         position: relative;

@@ -1,9 +1,9 @@
-<div class="sub-visual__wrap" style="--hero-sub-pc-img: url('<%= typeof pcImg !== 'undefined' ? pcImg : '등록된 이미지 없음' %>'); 
---hero-sub-mo-img: url('<%= typeof moImg !== 'undefined' ? moImg : '등록된 이미지 없음' %>');">
+<div class="sub-visual__wrap <%= pcImg == 'empty' && moImg == 'empty' ? 'type-empty' : '' %>" style="--hero-sub-pc-img: url('<%= typeof pcImg !== 'undefined' && pcImg !== 'empty' ? pcImg : '등록된 이미지 없음' %>'); 
+--hero-sub-mo-img: url('<%= typeof moImg !== 'undefined' && moImg !== 'empty' ? moImg : '등록된 이미지 없음' %>');">
     <div class="inner-wrap">
         <div class="visual-text">
-            <p class="font-body-xl sub-text"><%= typeof subText !== 'undefined' ? subText : '기본 타이틀 문구' %></p>
-            <h2 class="font-head-xl font-semibold"><%= typeof pageTitle !== 'undefined' ? pageTitle : '기본 타이틀 문구' %></h2>
+            <p class="<%= pcImg == 'empty' && moImg == 'empty' ? 'font-body-lg' : 'font-body-xl' %> sub-text"><%= typeof subText !== 'undefined' ? subText : '기본 타이틀 문구' %></p>
+            <h2 class="<%= pcImg == 'empty' && moImg == 'empty' ? 'font-head-lg font-bold' : 'font-head-xl font-semibold' %>"><%= typeof pageTitle !== 'undefined' ? pageTitle : '기본 타이틀 문구' %></h2>
         </div>
     </div>
 </div>

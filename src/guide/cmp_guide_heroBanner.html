@@ -28,7 +28,26 @@
                         })) %>   
                         <!-- //HeroBanner -->
                     </div>
-
+                    
+                    <p class="guide-title-h3 mt-10">HeroBanner bgEmpty > Newsroom</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>pcImg, moImg : 'empty' 가 적용될 경우 background-image 없는 화면으로 노출됩니다.</p>
+                        </li>
+                        <li>
+                            <p>border 는 예시를 위한 스타일 입니다.</p>
+                        </li>
+                    </ul>
+                    <div class="cmp-exsample__wrap mt-3 border-2 border-dashed">
+                        <!-- HeroBanner -->
+                        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+                            pcImg: 'empty',
+                            moImg: 'empty',
+                            subText: 'Service', 
+                            pageTitle: '경영관리' 
+                        })) %>   
+                        <!-- //HeroBanner -->
+                    </div>
                 </div>
             </div>
         </div>
