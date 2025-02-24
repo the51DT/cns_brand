@@ -81,7 +81,9 @@
                 </div>
             </div>
         </div>
-        <%- include('src/_inc/footer.html') %>
+        <%- include('src/_inc/footer.html', Object.assign({}, locals, {
+            type : 'dark',
+        }))%>
     </div>
 </body>
 </html>

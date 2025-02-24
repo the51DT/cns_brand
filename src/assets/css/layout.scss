@@ -567,17 +567,5 @@ body {
     &.type-full-dark {
         // height: 100vh;
         background-color: var(--colorGL-all-black100);
-        .sns-default {
-            display: none;
-        }
-        .sns-wt-icon {
-            display: block;
-        }
     }
-}
-.sns-default {
-    display: block;
-}
-.sns-wt-icon {
-    display: none;
 }
