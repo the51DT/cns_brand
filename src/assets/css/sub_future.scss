@@ -13,6 +13,11 @@
         display: flex;
         justify-content: space-between;        
         position: relative;
+        @media #{$tabletMini} {
+            flex-direction: column;
+            max-width: calc(768 / 16 * 1rem);  
+            padding: 0 calc(32 / 16 * 1rem); 
+        }
         .future-content-items {
             display: flex;
             flex-direction: column;
@@ -28,7 +33,15 @@
             justify-content: center;
             color: var(--colorCM-all-fill-fill-default0);
             position: sticky;
-            top:0;
+            top:0px;
+            @media #{$tabletMini} {
+                position: relative;
+                top: initial;
+                height: auto;
+                padding: calc(80 / 16 * 1rem) 0;       
+                max-width: calc(484 / 16 * 1rem);         
+                margin: calc(80 / 16 * 1rem) auto 0;
+            }
             .sub-title {
                 margin-top: calc(12 / 16 * 1rem);
             }
@@ -43,6 +56,11 @@
             background-color: var(--colorGL-all-white100);
             padding: calc(40 / 16 * 1rem);
             margin-top: calc(200 / 16 * 1rem);
+            @media #{$tabletMini} {                               
+                padding: calc(40 / 16 * 1rem);       
+                max-width: calc(484 / 16 * 1rem);         
+                margin: 0 auto;
+            }
             .item-image {
                 img {
                     width: 100%;
