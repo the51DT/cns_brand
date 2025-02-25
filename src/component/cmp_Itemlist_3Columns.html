@@ -7,35 +7,101 @@
     <% if (data.length > 0) { %>
         <% data.slice(0, itemLimit).forEach((item, i) => { %>
             <div class="item-wrap">
-                <div class="item-image">
-                    <img src="<%= item.imageUrl %>" alt="" />
-                </div>
-                <div class="item-info__wrap">
-                    <div class="font-body-lg info-title"><%- item.title %></div>
-                    <ul class="info-text">
-                        <% if (item.content && Array.isArray(item.content)) {%>
-                            <% item.content.forEach((content) => { %>
-                                <li><%- content %></li>
-                            <%})%>
-                        <% } else {%>
-                            <li><%- item.content %></li>
-                        <% } %>
-                    </ul>
-                </div>
+                <% if(ImageAlign == 'left') {%>
+                    <div class="item-image type-left">
+                        <img src="<%= item.imageUrl %>" alt="" />
+                    </div>
+                <%} else if(ImageAlign == 'right') { %>
+                    <div class="item-image type-right">
+                        <img src="<%= item.imageUrl %>" alt="" />
+                    </div>
+                <% } else { %>
+                    <div class="item-image type-left">
+                        <img src="<%= item.imageUrl %>" alt="" />
+                    </div>
+                <% } %>
+
+                <% if(textAlign =='left') {%>
+                    <div class="item-info__wrap type-left">
+                        <div class="font-body-lg info-title"><%- item.title %></div>
+                        <ul class="info-text">
+                            <% if (item.content && Array.isArray(item.content)) {%>
+                                <% item.content.forEach((content) => { %>
+                                    <li><%- content %></li>
+                                <%})%>
+                            <% } else {%>
+                                <li><%- item.content %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                <%} else if(textAlign =='right') { %>
+                    <div class="item-info__wrap type-right">
+                        <div class="font-body-lg info-title"><%- item.title %></div>
+                        <ul class="info-text">
+                            <% if (item.content && Array.isArray(item.content)) {%>
+                                <% item.content.forEach((content)=> { %>
+                                    <li><%- content %></li>
+                                <%})%>
+                            <% } else {%>
+                                <li><%- item.content %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                <%} else { %>
+                    <div class="item-info__wrap type-left">
+                        <div class="font-body-lg info-title"><%- item.title %></div>
+                        <ul class="info-text">
+                            <% if (item.content && Array.isArray(item.content)) {%>
+                                <% item.content.forEach((content)=> { %>
+                                    <li><%- content %></li>
+                                <%})%>
+                            <% } else {%>
+                                <li><%- item.content %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                <% } %>
             </div>
         <% }) %>
     <% } else { %>
         <% for (let i = 0; i < itemLimit; i++) { %>
             <div class="item-wrap">
-                <div class="item-image">
-                    <img src="https://placehold.co/78x78" alt="" />
-                </div>
-                <div class="item-info__wrap">
-                    <div class="font-body-lg info-title">재고 최적화</div>
-                    <ul class="info-text">
-                        <li>간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출</li>
-                    </ul>
-                </div>
+                <% if(ImageAlign=='left') {%>
+                    <div class="item-image type-left">
+                        <img src="https://placehold.co/78x78" alt="" />
+                    </div>
+                <%} else if(ImageAlign=='right') { %>
+                    <div class="item-image type-right">
+                        <img src="https://placehold.co/78x78" alt="" />
+                    </div>
+                <% } else {%>
+                    <div class="item-image type-left">
+                        <img src="https://placehold.co/78x78" alt="" />
+                    </div>
+                <% } %>
+
+                <% if(textAlign =='left') {%>
+                    <div class="item-info__wrap type-left">
+                        <div class="font-body-lg info-title">재고 최적화</div>
+                        <ul class="info-text">
+                            <li>간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출</li>
+                        </ul>
+                    </div>
+                <%} else if(textAlign =='right') { %>
+                    <div class="item-info__wrap type-right">
+                        <div class="font-body-lg info-title">재고 최적화</div>
+                        <ul class="info-text">
+                            <li>간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출</li>
+                        </ul>
+                    </div>
+                <% } else { %>
+                    <div class="item-info__wrap type-left">
+                        <div class="font-body-lg info-title">재고 최적화</div>
+                        <ul class="info-text">
+                            <li>간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출</li>
+                        </ul>
+                    </div>
+                <% } %>
             </div>
         <% } %>
     <% } %>  

@@ -27,15 +27,34 @@
                         })) %>  
                         <!-- //Title -->
                         <%- include('src/component/cmp_Itemlist_3Columns.html', {
-                            itemCount: 5                            
+                            itemCount: 5,
+                            ImageAlign: 'left',
+                            textAlign: 'left',                            
                         }) %>                            
                     </div>
-                    <p class="guide-title-h3">Itemlist_3Columns : 컨텐츠 배열 타입</p>
+                    <p class="guide-title-h3">Itemlist_3Columns : 컨텐츠 배열 타입 </p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>
+                                기본 스타일 : <b class="font-bold text-red-600">'left'</b>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                ImageAlign: <b class="font-bold text-red-600">'left'</b> / 'right',
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                textAlign: <b class="font-bold text-red-600">'left'</b> / 'right',
+                            </p>
+                        </li>
+                    </ul>
                     <div class="cmp-exsample__wrap mt-3">
                         <% const itemList3ColumnsData = [ 
                             { 
                                 id: 0, 
-                                imageUrl: 'https://placehold.co/78x78' , 
+                                imageUrl: 'https://placehold.co/78x78' ,
                                 title: '재고 최적화' ,
                                 content: [
                                     '간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출',
@@ -69,7 +88,9 @@
                         %>
                         <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, { 
                             itemCount: 5, 
-                            jsonData: itemList3ColumnsData 
+                            jsonData: itemList3ColumnsData,
+                            ImageAlign: 'right',
+                            textAlign: 'left',
                         })) %>
                     </div>
                 </div>
