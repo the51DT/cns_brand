@@ -8,7 +8,7 @@
         <% data.slice(0, itemLimit).forEach((item, i) => { %>    
         <div class="spec-item">        
             <div class="font-body-lg spec-title">
-                <div class="spec-num"><%- (i + 1).toString().padStart(2, '0') %></div>
+                <div class="spec-num"><%- typeof item.subTitle !== 'undefined' ? item.subTitle : (i + 1).toString().padStart(2, '0') %></div>
                 <%- item.title ? item.title : '기본 제목' %>
             </div>
             <div class="font-body-sm spec-text">
