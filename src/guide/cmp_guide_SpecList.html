@@ -26,6 +26,32 @@
                         <!-- //cmp_SpecList -->
                     </div>
 
+                    <p class="guide-title-h3">SpecList subTitle 값 추가</p>                    
+                    <div class="cmp-exsample__wrap mt-3">
+                        <!-- cmp_SpecList -->
+                        <% const specListData = [ 
+                            { 
+                                id: 0,
+                                subTitle: '가',
+                            }, 
+                            { 
+                                id: 1, 
+                                subTitle: 'II',
+                                title: '서브타이틀이 길어져도 타이틀 영역과 텍스트 영역의 비율은 유지',
+                                content: '텍스트 영역'
+                            }, 
+                            { 
+                                id: 2,
+                                title: '서브타이틀 값 없을 시<br>순서에 맞는 순자가 들어감'
+                            },
+                        ]; 
+                        %>
+                        <%- include('src/component/cmp_SpecList.html', {
+                            itemCount: 3,
+                            jsonData: specListData,
+                        }) %>
+                        <!-- //cmp_SpecList -->
+                    </div>
                 </div>
             </div>
         </div>
