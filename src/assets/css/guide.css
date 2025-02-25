@@ -315,6 +315,13 @@
     background: var(--colorCM-all-background-background-default8);
     border-radius: 50%;
 }
+/* ItemList 컴포넌트 가이드 스타일 */
+.cmp-exsample__wrap--item-list .cmp-future-content{
+    border: 3px dashed var(--colorCM-all-stroke-stroke-trans-b16);
+}
+.cmp-exsample__wrap--item-list .future-content-items{
+    border: 1px dashed var(--colorCM-all-stroke-stroke-trans-b20);
+}
 
 /* 모바일 반응형 css */
 @media screen and (max-width: 767px) {

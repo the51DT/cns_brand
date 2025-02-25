@@ -130,6 +130,12 @@
                     "fileName": "cmp_guide_imageltem.html"                    
                 },   
                 {
+                    "name": "Itemlist",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_item_list.html"                    
+                },       
+                {
                     "name": "Itemlist_3Columns",
                     "screenId": "",
                     "path": "/src/guide/",
