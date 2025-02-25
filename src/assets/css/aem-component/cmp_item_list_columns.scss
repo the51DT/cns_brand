@@ -1,24 +1,22 @@
 // cmp itemList
 .cmp-itemlist_columns__wrap {
-    display: flex;
-    flex-wrap: wrap;
     gap: $gap-margin;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    @media #{$tablet} {
+        grid-template-columns: 1fr 1fr;
+    }
     @media #{$phone} {
-        flex-direction: column;         
+        grid-template-columns: 1fr;         
     }
     .item-wrap {
-        width: calc((100% / 3) - calc($gap-margin * 2 / 3));        
         display: flex;
         flex-direction: column;
         gap: calc(40 / 16 * 1rem);
         padding: calc(47 / 16 * 1rem) calc(32 / 16 * 1rem);
-        flex-direction: column;
         border: 1px solid var(--colorGL-all-gray200);
-        @media #{$tablet} {
-            width: calc((100% / 2) - calc($gap-margin / 2));   
-        }
         @media #{$phone} {
-            width: 100%;
             padding: calc(32 / 16 * 1rem) calc(24 / 16 * 1rem);
             gap: calc(36 / 16 * 1rem);
         }
