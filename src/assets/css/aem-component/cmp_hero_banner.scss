@@ -1,0 +1,55 @@
+// HeroBanner
+.sub-visual__wrap {
+    width: 100%;
+    height: calc(660 / 16 * 1rem);
+    background-image: var(--hero-sub-pc-img);
+    background-repeat: repeat-x;
+    background-position: center center;      
+    @media #{$tablet} {        
+        .visual-text {
+            left: calc(32 / 16 * 1rem);
+        }
+    }    
+    @media #{$phone} {        
+        height: calc(562 / 16 * 1rem);
+        background-image: var(--hero-sub-mo-img);
+        background-size: cover;
+        background-position: left top;
+        .visual-text {
+            left: calc(20 / 16 * 1rem);
+        }
+    }
+    &.type-empty {
+        padding: calc(80 / 16 * 1rem) 0;
+        height: auto;
+        background: none;
+        @media #{$phone} {
+            padding: calc(40 / 16 * 1rem) 0;
+        }
+        .visual-text {
+            position: relative;
+            top: initial;
+            left: initial;
+            color: var(--text-text-default);
+            .sub-text {
+                & + h2 {
+                    margin-top: calc(8 / 16 * 1rem);
+                }
+            }
+        }
+    }
+    .inner-wrap {
+        height: 100%;
+        position: relative;
+
+    }
+    .visual-text {
+        position: absolute;
+        left: calc(80 / 16 * 1rem);        
+        top: calc(50% - 40px);
+        color: var(--colorGL-all-white100);
+        p + h2 {
+            margin-top: calc(12 / 16 * 1rem);
+        }
+    }
+}

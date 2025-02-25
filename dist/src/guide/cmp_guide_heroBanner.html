@@ -33,60 +33,40 @@
         <div class="flex justify-between lnb-type">
           <div class="lnb-side__wrap">
             <button type="button" class="lnb-trigger">아코디언</button>
-            <ul class="lnb_list has-chilren">
-              <li><strong>UI Guide</strong>
-                <ul>
-                  <li><a href="/src/guide/cmp_guide_form.html">Input</a></li>
-                  <li><a href="/src/component/cmp_icon.html">아이콘</a></li>
-                  <li><a href="/src/component/cmp_button.html">버튼</a></li>
-                  <li><a href="/src/component/cmp_badge.html">뱃지</a></li>
-
-                  <!-- 
-                                <li><a href="#">드롭다운</a></li>
-                                <li><a href="#">Select Box</a></li>
-                                <li><a href="#">Radio & Checkbox</a></li>
-                                <li><a href="#">Extends</a></li>
-                                <li><a href="#">모달</a></li>
-                                <li><a href="#">툴팁</a></li>
-                                <li><a href="#">테이블</a></li>
-                                <li><a href="#">토스트</a></li>
-                                -->
-                </ul>
-              </li>
-              <li><strong>UI List</strong>
-                <ul>
-                  <li><a href="/src/guide/cmp_guide_accodion.html">아코디언</a></li>
-                  <li><a href="/src/guide/cmp_guide_pagination.html">페이지네이션</a></li>
-                  <li><a href="/src/guide/cmp_guide_tab.html">탭</a></li>
-                  <li><a href="/src/guide/cmp_guide_heroBanner.html">HeroBanner</a></li>
-                  <li><a href="/src/guide/cmp_guide_overView.html">Overview</a></li>
-                  <li><a href="/src/guide/cmp_guide_title.html">Title & Teaser Title</a></li>
-                  <li><a href="/src/guide/cmp_guide_imageltem.html">ImageItem</a></li>
-                  <li><a href="/src/guide/cmp_guide_Itemlist_3Columns.html">Itemlist_3Columns</a></li>
-                  <li><a href="/src/guide/cmp_guide_SpecList.html">SpecList</a></li>
-                  <li><a href="/src/guide/cmp_guide_customer-case.html">CustomerCase</a></li>
-                  <li><a href="/src/guide/cmp_guide_DataList.html">DataList</a></li>
-                  <li><a href="/src/guide/cmp_thumbnail_type.html">썸네일 유형</a></li>
-                </ul>
-              </li>
-              <li><strong>플러그인 & 이벤트</strong>
-                <ul>
-                  <li><a href="/src/guide/cmp_guide_swiper.html">스와이프</a></li>
-                  <li><a href="#">모션</a></li>
-                </ul>
-              </li>
-            </ul>
           </div>
           <div class="page-cont flex-1">
             <p class="guide-title-h3">HeroBanner</p>
             <div class="cmp-exsample__wrap mt-3">
 
               <!-- HeroBanner -->
-              <div class="sub-visual__wrap" style="--hero-sub-pc-img: url('/assets/images/bg_sub_vi01..png');--hero-sub-mo-img: url('/assets/images/bg_sub_mvi01..png');">
+              <div class="sub-visual__wrap " style="--hero-sub-pc-img: url('/assets/images/bg_sub_vi01..png'); 
+--hero-sub-mo-img: url('/assets/images/bg_sub_mvi01..png');">
                 <div class="inner-wrap">
                   <div class="visual-text">
                     <p class="font-body-xl sub-text">Service</p>
                     <h2 class="font-head-xl font-semibold">경영관리</h2>
+                  </div>
+                </div>
+              </div> <!-- //HeroBanner -->
+            </div>
+            <p class="guide-title-h3 mt-10">HeroBanner bgEmpty > Newsroom</p>
+            <ul class="guide-list type-dot mt-3">
+              <li>
+                <p>pcImg, moImg : 'empty' 가 적용될 경우 background-image 없는 화면으로 노출됩니다.</p>
+              </li>
+              <li>
+                <p>border 는 예시를 위한 스타일 입니다.</p>
+              </li>
+            </ul>
+            <div class="cmp-exsample__wrap mt-3 border-2 border-dashed">
+
+              <!-- HeroBanner -->
+              <div class="sub-visual__wrap type-empty" style="--hero-sub-pc-img: url(''); 
+--hero-sub-mo-img: url('');">
+                <div class="inner-wrap">
+                  <div class="visual-text">
+                    <p class="font-body-lg sub-text">Service</p>
+                    <h2 class="font-head-lg font-bold">경영관리</h2>
                   </div>
                 </div>
               </div> <!-- //HeroBanner -->

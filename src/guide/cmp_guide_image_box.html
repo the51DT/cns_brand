@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3">Image Box Component</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>addClass 로 클래스를 이미지를 감싸고 있는 .img-box 에 이중클래스를 부여하여 width 조절할 수 있습니다.</p>                    
+                        </li>
+                        <li>
+                            <p>PC, MO 이미지 url을 따로 넣을 수 있으나, <b class="font-bold text-red-600">PC 이미지 url 입력은 필수 조건</b>입니다. </p>
+                        </li>
+                    </ul>
+                    <p class="guide-title-h3 mt-8">Image Box Component type 1.</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <%- include('src/component/cmp_image_box.html')%>
+                    </div>
+
+                    <p class="guide-title-h3">Image Box Component type 2. pc/mo 이미지가 다른 경우</p>
+                    <div class="cmp-exsample__wrap mt-3">    
+                        <% 
+                            const iamgeData=[{
+                                pc: 'https://placehold.co/1144x643', 
+                                mo: 'https://placehold.co/319x178', 
+                            }] 
+                        %>
+                        <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                            jsonData : iamgeData,
+                            alt : '유통 산업 성장의 Key 최대 효율을 당성하는 성공 DX',
+                            addClass: 'test' 
+                        }))%>
+                    </div>
+
+                    <p class="guide-title-h3">Image Box Component type 3. pc/mo 이미지가 같은 경우</p>
+                    <div class="cmp-exsample__wrap mt-3">    
+                        <% 
+                            const iamgeData2=[{
+                                pc: 'https://placehold.co/1144x643', 
+                                mo: locals.mo || ''
+                            }] 
+                        %>
+                        <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                            jsonData : iamgeData2,
+                            alt : '유통 산업 성장의 Key 최대 효율을 당성하는 성공 DX',
+                            addClass: 'test2' 
+                        }))%>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/assets/js/ui_common.js"></script>
+</body>
+</html>

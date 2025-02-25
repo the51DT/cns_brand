@@ -1,0 +1,21 @@
+/* cmp_image_box */
+.cmp-image-box {
+    .img-box {
+        position: relative;
+        img {
+            width: 100%;
+        }
+        &__item-pc {
+            display: block;
+            @media #{$phone} {
+                display: none;
+            }
+        }
+        &__item-mo {
+            display: none;
+            @media #{$phone} {
+                display: block;
+            }
+        }
+    }
+}

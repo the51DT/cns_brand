@@ -376,3 +376,8 @@ button.colorcm-sub-primary:hover {
 .color-gl-yellow100 {
     color: var(--colorGL-all-yellow100);
 }
+
+/* default */
+.color-text-default {
+    color: var(--text-text-default);
+}

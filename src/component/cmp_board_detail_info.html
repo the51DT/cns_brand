@@ -1,0 +1,77 @@
+<!-- 상세 정보 요약 영역 -->
+<div class="cmp-wrap cmp-board-detail-info">
+    <% 
+        const data=(typeof jsonData !=='undefined' && jsonData ? jsonData : []); 
+        const tagList=(typeof tag !=='undefined' && tag ? tag : []);
+        const categoryValue = typeof category !== 'undefined' ? category : '';
+        const dateValue = typeof date !== 'undefined' ? date : '';
+        const likeCountValue = typeof likeCount !== 'undefined' ? likeCount : '';
+        const titleValue = typeof title !== 'undefined' ? title : '';
+    %>
+    <div class="detail-info <%= typeof contentType !== 'undefined' && contentType ? contentType : ''%>">
+        <% if(categoryValue) {%>
+            <div class="chip__wrap detail-info__category">
+                <div class="chip bg-basic font-caption-xl font-semibold">
+                    <%= categoryValue %>
+                </div>
+            </div>
+        <% } %>
+        <strong class="detail-info__title <%= locals.contentType ? (locals.contentType === 'type-wide' ? 'font-head-sm' : locals.contentType === 'type-card' ? 'font-head-xs' : 'font-head-xs') : 'font-head-xs' %>">
+            <%= titleValue %>
+        </strong>
+        <!-- contentType: 'type-wide' 의 경우 tagList 위치 -->
+        <% if(tagList.length > 0 && contentType == 'type-wide') {%>
+            <div class="chip__wrap detail-info__tag">
+                <% tagList.forEach((tag) => { %>
+                    <div class="chip bg-black font-caption-xl"><%= tag %></div>
+                <% }) %>
+            </div>
+        <% } %>
+        <% if(data.length > 0) {%>
+            <% data.forEach((item)=> { %>
+                <dl class="detail-info__desc">
+                    <dt class="detail-info__desc__tit font-body-xs"><%= item.title %></dt>
+                    <dd class="detail-info__desc__txt font-body-xs"><%= item.text %></dd>
+                </dl>
+            <% }) %>
+        <% } %>
+        <!-- contentType: 'type-card' 의 경우 tagList 위치 -->
+        <% if(tagList.length > 0 && contentType == 'type-card') {%>
+            <dl class="detail-info__desc">
+                <dt class="detail-info__desc__tit">연관 태그</dt>
+                <dd class="detail-info__desc__txt">
+                    <div class="chip__wrap detail-info__tag">
+                        <% tagList.forEach((tag)=> { %>
+                            <div class="chip bg-black font-caption-xl">
+                                <%= tag %>
+                            </div>
+                        <% }) %>
+                    </div>
+                </dd>
+            </dl>
+        <% } %>
+        <% if(dateValue && likeCountValue) {%>
+            <div class="detail-info__util">
+                <% if(dateValue) {%>
+                    <span class="detail-info__util__item detail-info__date font-body-sm"><%= dateValue %></span>
+                <% } %>
+                <% if(likeCountValue) {%>
+                    <span class="detail-info__util__item detail-info__like font-body-sm">
+                        <i class="ico icon-heart-line"><!-- 아이콘 변경 필요 --></i>
+                        <%= likeCountValue %>
+                    </span>
+                <% } %>
+            </div>
+        <% } %>
+        <% if(typeof contentType !== 'undefined' && contentType === 'type-card') { %>
+            <div class="button__wrap">
+                <button type="button" class="btn btn-round">
+                    공유하기
+                </button>
+                <button type="button" class="btn btn-round" disabled="">
+                    문의하기
+                </button>
+            </div>
+        <% } %>
+    </div>
+</div>

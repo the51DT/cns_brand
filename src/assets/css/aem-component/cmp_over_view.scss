@@ -1,0 +1,24 @@
+// overview
+.cmp-overview__wrap {
+    display: flex;
+    flex-direction: column;
+    .cmp-overview-title {
+        color: var(--text-text-default);
+        font-weight: 700;
+        &+.cmp-overview-text {
+            margin-top: calc(64 / 16 * 1rem);
+            @media #{$phone} {
+                margin-top: calc(32 / 16 * 1rem);
+            }
+        }
+    }
+    .cmp-overview-text {
+        color: var(--text-text-default);
+        p+p {
+            margin-top: calc(32 / 16 * 1rem);
+            @media #{$phone} {
+                margin-top: calc(16 / 16 * 1rem);
+            }
+        }
+    }
+}

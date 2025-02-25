@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3">썸네일 유형1</p>                    
+                    <div class="cmp-exsample__wrap mt-5">
+                        <!-- 썸네일 유형 -->
+                        <%- include('src/component/cmp_thumbnail_type.html', {
+                            itemClass: 'pc-col2-big',                            
+                            itemCount: 2                    
+                        }) %>  
+                        <!-- 썸네일 유형 -->
+                    </div>
+                    <p class="guide-title-h3 mt-10">썸네일 유형2</p>                    
+                    <div class="cmp-exsample__wrap mt-5">
+                        <!-- 썸네일 유형 -->
+                        <%
+                            const thumbnailData = [
+                                {
+                                    id: 0,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                                    
+                                },
+                                {
+                                    id: 1,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                                },
+                                {
+                                    id: 2,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                                },
+                            ]
+                        %>
+                        <%- include('src/component/cmp_thumbnail_type.html', {
+                            itemClass: 'pc-col3',                            
+                            itemCount: 3,
+                            allCountData: '668',
+                            jsonData : thumbnailData,
+                        }) %>                           
+                        <!-- 썸네일 유형 -->
+                    </div>
+                    <p class="guide-title-h3 mt-10">썸네일 컨텐츠 > full case : category, title, content, tag, date</p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <% 
+                            const thumbnailData2=[
+                                {
+                                    id: 0,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                },
+                                {
+                                    id: 1,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                },
+                                {
+                                    id: 2,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                },
+                            ]
+                        %>
+                        <%- include('src/component/cmp_thumbnail_type.html', { 
+                            itemClass: 'pc-col3' , 
+                            itemCount: 3, 
+                            allCountData: '668' ,
+                            contentType : 'type-moa-all',
+                            jsonData : thumbnailData2, 
+                        }) %>
+                    </div>
+                    <p class="guide-title-h3 mt-10">썸네일 > type-moa-case1 > 고객스토리, 테크로그 > title, content, tag</p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <% 
+                            const thumbnailData3=[
+                                {
+                                    id: 0,
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                                    tag : ['CX','DX', '최적화'],
+                                },
+                                {
+                                    id: 1,
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                                    tag : ['CX','DX', '최적화'],
+                                },
+                                {
+                                    id: 2,
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                                    tag : ['CX','DX', '최적화'],
+                                },
+                            ]
+                        %>
+                        <%- include('src/component/cmp_thumbnail_type.html', { 
+                            itemClass: 'pc-col3' , 
+                            itemCount: 3, 
+                            allCountData: '668' ,
+                            contentType : 'type-moa-case1',
+                            jsonData : thumbnailData3, 
+                        }) %>
+                    </div>
+                    <p class="guide-title-h3 mt-10">썸네일 > type-moa-case2 : 뉴스레터 > category, title, tag, date</p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <% 
+                            const thumbnailData4=[
+                                {
+                                    id: 0,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                    floatText: 'YYYY년 M월호',
+                                },
+                                {
+                                    id: 1,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                    floatText: 'YYYY년 M월호',
+                                },
+                                {
+                                    id: 2,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                    floatText: 'YYYY년 M월호',
+                                },
+                            ]
+                        %>
+                        <%- include('src/component/cmp_thumbnail_type.html', { 
+                            itemClass: 'pc-col3' , 
+                            itemCount: 3, 
+                            allCountData: '668' ,
+                            contentType : 'type-moa-case2',
+                            jsonData : thumbnailData4, 
+                        }) %>
+                    </div>
+                    <p class="guide-title-h3 mt-10">썸네일 > type-moa-case3 : 행사/이벤트 > category, title, tag, date</p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <% 
+                            const thumbnailData6=[
+                                {
+                                    id: 0,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                },
+                                {
+                                    id: 1,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                },
+                                {
+                                    id: 2,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                },
+                            ]
+                        %>
+                        <%- include('src/component/cmp_thumbnail_type.html', { 
+                            itemClass: 'pc-col3' , 
+                            itemCount: 3, 
+                            allCountData: '668' ,
+                            contentType : 'type-moa-case3',
+                            jsonData : thumbnailData6, 
+                        }) %>
+                    </div>
+                    <p class="guide-title-h3 mt-10">썸네일 > type-news : news </p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <% 
+                            const thumbnailData7=[
+                                {
+                                    id: 0,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                                    date: '2025.01.10',
+                                },
+                                {
+                                    id: 1,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: '국내 3대 신용평가사 모두 신용등급 전망 ‘AA- 안정적’에서 ‘AA- 긍정적’으로 조정',
+                                    date: '2025.01.10',
+                                },
+                                {
+                                    id: 2,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    content: 'test',
+                                    date: '2025.01.10',
+                                },
+                            ]
+                        %>
+                        <%- include('src/component/cmp_thumbnail_type.html', { 
+                            itemClass: 'pc-col3' , 
+                            itemCount: 3, 
+                            allCountData: '668' ,
+                            contentType : 'type-news',
+                            jsonData : thumbnailData7, 
+                        }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

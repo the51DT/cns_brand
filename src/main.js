@@ -67,22 +67,76 @@ async function loadIaData() {
     }
 }
 
-const activateNavItem = (targetUrl) => {
-    const lnbList = document.querySelectorAll(targetUrl);
-    const nowUrl = window.location.href;
-    const fileNameMatch = nowUrl.match(/\/([^\/]+\.html)$/);
+
+async function lnbMenuGuide() {
+    fetch('/ia.json')
+        .then(response => response.json())
+        .then(data => {
+            const lnbWrap = document.querySelector('.lnb-side__wrap:not(.basic-guide)');
+            const ul = document.createElement('ul');
+            ul.classList.add('lnb_list', 'has-children');
+
+            // Filter the data to include only items with IDs 1, 2, and 3
+            const filteredData = data.IaList.filter(level1Item => 
+                [1, 2, 3].includes(level1Item.id)
+            );
+
+            filteredData.forEach(level1Item => {
+                const li = document.createElement('li');
+                const strong = document.createElement('strong');
+                strong.textContent = level1Item.Level1;
+                li.appendChild(strong);
+
+                const subUl = document.createElement('ul');
+                level1Item.Level2.forEach(level2Item => {
+                    const subLi = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = `${level2Item.path}${level2Item.fileName}`;
+                    a.textContent = level2Item.name;
+                    subLi.appendChild(a);
+                    subUl.appendChild(subLi);
+                });
+
+                li.appendChild(subUl);
+                ul.appendChild(li);
+            });
+
+            if(!lnbWrap) {
+                return;
+            }
+            lnbWrap.appendChild(ul);
+            activateNavItem('.lnb_list a')
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+}
+
+
+async function activateNavItem (targetSelector) {
+    const lnbList = document.querySelectorAll(targetSelector);
+    
+    if (!lnbList.length) {        
+        return;
+    }
+
+    const nowUrl = window.location.href.toLowerCase(); // 현재 URL을 소문자로 변환
+    const fileNameMatch = nowUrl.match(/\/([^\/?#]+\.html)/); // 쿼리스트링(#, ?) 제거 후 파일명 추출
     const fileName = fileNameMatch ? fileNameMatch[1] : null;
 
     if (fileName) {
+        console.log('현재 페이지:', fileName);
+
         lnbList.forEach(el => {
-            const elLink = el.href;
-            const urlMatch = elLink.match(/\/([^\/]+\.html)$/);
+            const elLink = el.getAttribute('href')?.toLowerCase(); // href 값 소문자로 변환
+            if (!elLink) return;
+
+            const urlMatch = elLink.match(/\/?([^\/?#]+\.html)/); // 파일명만 추출
             const urlName = urlMatch ? urlMatch[1] : null;
+
+            console.log('비교:', fileName, urlName);
 
             if (fileName === urlName) {
                 el.parentNode.classList.add('is-active');
             }
-            
         });
     }
 };
@@ -92,6 +146,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     //await loadIncludedHTML();
     // loadIaData();  // 반환된 데이터를 변수에 할당
     const data = await loadIaData();    
+    const data2 = await lnbMenuGuide();    
 
     // 가이드 네비
     const guideNavy = document.querySelector('.guide-header__wrap .navi');
@@ -113,12 +168,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     })
 
     
-    activateNavItem('.lnb-side__wrap li a'); 
 
     const activeMenu = document.querySelector('.lnb-side__wrap > ul li.is-active')
     if(activeMenu) {
         const activeMenuName = activeMenu.innerText;
         guideMenu.innerText = activeMenuName;
-    }
+    }    
 
 })

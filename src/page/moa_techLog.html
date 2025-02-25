@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title><%= data.title %></title>
+  <meta name="description" content="<%= data.description %>">
+  <link rel="stylesheet" href="/src/assets/css/index.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+            pcImg: '/src/assets/image/sub/bg_sub_enterprice.png',
+            moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
+            subText: 'MOA', 
+            pageTitle: '테크로그' 
+        })) %>
+        <!-- //비주얼 영역 -->
+        <div class="sub-content__wrap">
+            <% 
+                const thumbnailDataTechLog=[
+                    {
+                        id: 0,
+                        title: '사람을 위한, 사람에 의한, 사람의 ESG 경영',
+                        content: '에이브러햄 링컨은 게티즈버그 연설문(Gettysburg Address)을 통해 ‘국민의, 국민에 의한, 국민을 위한 정부는 이 땅에서 사라지지 않을 것이다',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                    {
+                        id: 1,
+                        title: '보안 강화를 위한 블록체인 기술',
+                        content: '디지털 시대에 정보의 안전한 관리는 필수이며, 블록체인은 이를 해결할 수 있는 혁신적인 기술로 자리매김하고 있습니다.',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                    {
+                        id: 2,
+                        title: 'ESG 공시의 New Trend, 생물다양성과 자연 자본',
+                        content: '지난 시간에 살펴본 ESG 공시와 규제 환경의 변화를 기억하시나요? 변화하는 공시 체계와 함께 본격 시행 예정인 규제들을 알아보며',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                    {
+                        id: 3,
+                        title: 'ESG를 둘러싼 공시와 규제 환경의 변화',
+                        content: '디지털 시대에 정보의 안전한 관리는 필수이며, 블록체인은 이를 해결할 수 있는 혁신적인 기술로 자리매김하고 있습니다.',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                    {
+                        id: 4,
+                        title: '디지털 Product Passport(DPP)의 세계로 오신 것을 환영합니다!',
+                        content: '디지털 Product Passport에 대해 들어본 적 있으신가요? 디지털 Product Passport(Digital Product Passport, 이하 DPP)는 제품에 대한 모든 정보를',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                    {
+                        id: 5,
+                        title: 'LG CNS가 제안하는 진화하는 사이버 공격 대처 방안',
+                        content: '사이버 공격이 갈수록 정교해지고 있습니다. 해커들은 공공기관, 방위산업, 민간기업을 가리지 않고 공격 대상으로 삼고 있으며, 이로 인한 피해도 전 세계적으로 급증하고 있습니다.',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                    {
+                        id: 6,
+                        title: '불가능했던 서비스를 가능하게 만드는 ‘디바이스플랫폼’',
+                        content: '디바이스플랫폼은 다양한 제품을 제어하고 모니터링하는 것을 넘어, 우리가 상상하는 모든 것을 연결하며 새로운 세계를 열어가고 있습니다. 스마트폰이 등장하면서',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                    {
+                        id: 7,
+                        title: '유통산업 혁신의 열쇠 : 핵심 DX 트렌드와 동향',
+                        content: '전통적인 유통산업은 생산되는 상품과 서비스를 소비자에게 연결해 주는 역할을 해왔습니다. 그러나 급변하는 비즈니스 환경에서 전통적인 방식만으로 시장에서 살아남',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                    {
+                        id: 8,
+                        title: '제품 탄소발자국 이해하기: 지구를 위한 첫걸음',
+                        content: '탄소발자국이란 우리가 길을 걸으면 발자국이 남는 것처럼, 사람들이 일상에서 제품이나 서비스를 사용할 때 탄소가 얼마나 많이 배출되는지를 나타낸 것입니다.',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                    {
+                        id: 9,
+                        title: 'ESG 측면의 Controversy와 기업의 위기관리 중요성',
+                        content: '최근 대내외 경영 환경의 주요 관심사를 비추어 볼 때, 지속되는 경기침체를 비롯해 지정학적 측면의 불안으로 인한 Emerging Risk들이 대두되고 있습니다.',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                    {
+                        id: 10,
+                        title: 'ESG 경영관리플랫폼 선택 시 고려해야 할 요소들',
+                        content: '재무에서부터 법무, 고객관리 등 기업 경영에는 사업 목적에 따른 각 영역별 시스템이 존재합니다. 그 중에서, ESG 경영관리플랫폼은 기업이 ESG 경영을 실현할',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                    {
+                        id: 11,
+                        title: 'ESG경영 알쓸신잡 : 일과 삶의 방식에 대한 이야기',
+                        content: '기업의 사회적 책임이라고 불리는 CSR(Corporate Social Responsibility)은 기업 또한 사회의 한 구성원으로 책임을 다해야 한다는 의미를 담고 있으며,',
+                        tag : ['제조','화학', '통신', '경영관리', 'Digtal Workplace Platform'],
+                    },
+                ]
+            %>
+            <%- include('src/component/cmp_search.html', Object.assign({}, locals, { 
+                title: 'LG CNS의 DX기술을 만나 비즈니스 혁신을 경험한<br>고객의 스토리를 살펴보세요.',
+                thumbnailType: 'type-moa-case1',
+                thumbnailData: thumbnailDataTechLog,
+            })) %>
+            <div class="inner-wrap">
+                <%- include('src/component/cmp_thumbnail_type.html', { 
+                    itemClass: 'pc-col3' , 
+                    itemCount: 12, 
+                    allCountData: '883' ,
+                    contentType : 'type-moa-case1',
+                    jsonData : thumbnailDataTechLog, 
+                }) %>
+                <%- include('src/component/cmp_pagination.html') %>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+</body>
+</html>

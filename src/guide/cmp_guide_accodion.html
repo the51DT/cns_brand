@@ -17,8 +17,53 @@
             <div class="flex justify-between lnb-type">
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
-                    <%- include('src/component/cmp_accordion.html') %>  
-
+                    <p class="guide-title-h3">Accordion Component: basic-type</p>                    
+                    <div class="cmp-exsample__wrap mt-3">    
+                        <%
+                            const faqData = [
+                                {
+                                    id: 0,
+                                    faqTitle: "특정 벤더(Vendor)의 기술에 종속되고 싶지 않으신가요?",
+                                    faqContent: "LENA는 글로벌 표준 기반으로 작동하므로 종속되지 않습니다."
+                                },
+                                {
+                                    id: 1,
+                                    faqTitle: "기술 종속 없이 운영할 수 있는 방법은?",
+                                    faqContent: "LENA는 벤더에 종속되지 않고, 자유롭게 선택할 수 있도록 지원합니다."
+                                },
+                                {
+                                    id: 2,
+                                    faqTitle: "LENA를 도입하면 어떤 장점이 있나요?",
+                                    faqContent: "안정적인 서비스 운영과 비용 절감 효과를 기대할 수 있습니다."
+                                },
+                                {
+                                    id: 3,
+                                    faqTitle: "LENA를 도입하면 어떤 장점이 있나요?",
+                                    faqContent: "안정적인 서비스 운영과 비용 절감 효과를 기대할 수 있습니다."
+                                },
+                                {
+                                    id: 4,
+                                    faqTitle: "기술 종속 없이 운영할 수 있는 방법은?",
+                                    faqContent: "LENA는 벤더에 종속되지 않고, 자유롭게 선택할 수 있도록 지원합니다."
+                                }
+                            ];
+                        %>                      
+                        <%- include('src/component/cmp_accordion.html', {
+                            typeClass: 'basic-type',
+                            openIndex: '',
+                            itemCount: 3,
+                            jsonData: faqData
+                        }) %>                                            
+                    </div>
+                    <p class="guide-title-h3 mt-10">Accordion Component: open-type</p>                  
+                    <div class="cmp-exsample__wrap mt-3">
+                        <%- include('src/component/cmp_accordion.html', {
+                            typeClass: 'open-type',
+                            openIndex: 0,
+                            itemCount: 3,
+                            jsonData: faqData
+                        }) %>  
+                    </div>
                 </div>
             </div>
         </div>

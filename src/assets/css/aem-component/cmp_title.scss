@@ -1,0 +1,12 @@
+//title
+.cmp-title__wrap {
+    display: flex;
+    flex-direction: column; 
+    color: var(--text-text-default);    
+    .title-text {
+        font-weight: 700;      
+    }
+    .title-sub {
+        margin-bottom: calc(8 / 16 * 1rem);
+    }
+}

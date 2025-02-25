@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title><%= data.title %></title>
+  <meta name="description" content="<%= data.description %>">
+  <link rel="stylesheet" href="/src/assets/css/index.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+            pcImg: '/src/assets/image/sub/bg_sub_enterprice.png',
+            moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
+            subText: 'MOA', 
+            pageTitle: '고객스토리' 
+        })) %>
+        <!-- //비주얼 영역 -->
+        <div class="sub-content__wrap">
+            <% 
+                const thumbnailDataStory=[
+                    {
+                        id: 0,
+                        title: 'SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스',
+                        content: '회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’',
+                        tag : ['제조','화학', '서비스', '경영관리', 'Digital Workplace Platform'],
+                    },
+                    {
+                        id: 1,
+                        title: 'LG전자',
+                        content: `고객의 기대를 뛰어넘다, '언어 장벽 제로'를 실현한 DigitalTrans`,
+                        tag : ['전자','제조', '전환 및 구축'],
+                    },
+                    {
+                        id: 2,
+                        title: '대한제강',
+                        content: 'Vision AI로 철스크랩 판정의 정확성과 효율성을 모두 잡다',
+                        tag : ['전자','제조', 'AI', 'Vision AI'],
+                    },
+                    {
+                        id: 3,
+                        title: 'Vitesco Technologies',
+                        content: '업계 최초 AutoStore 도입으로 최대 저장 공간과 물류 효율 달성',
+                        tag : ['전자','제조', '물류로봇'],
+                    },
+                    {
+                        id: 4,
+                        title: 'LG화학',
+                        content: '탄소발자국 관리 시스템 구축으로 ESG 목표에 한 걸음 더 다가선, LG화학의 탄소배출량 추적 사례를 확인해보세요.',
+                        tag : ['전자','제조', '물류로봇'],
+                    },
+                    {
+                        id: 5,
+                        title: 'KT&G',
+                        content: '수학적최적화로 재고관리 및 운송 효율을 극대화하는 답을 찾다',
+                        tag : ['전자','제조', '물류로봇'],
+                    },
+                    {
+                        id: 6,
+                        title: 'LG이노텍',
+                        content: '일하는 방식을 바꾸는 LG이노텍의 모바일 오피스 도입 사례를 소개합니다.',
+                        tag : ['전자','제조', '경영관리', 'Digital Workplace Platform'],
+                    },
+                    {
+                        id: 7,
+                        title: '한국거래소',
+                        content: '업무 효율과 협업의 새로운 패러다임, ‘스마트워크 환경 구축’',
+                        tag : ['금융','경영관리', 'Digital Workplace Platform'],
+                    },
+                    {
+                        id: 8,
+                        title: 'KB손해보험',
+                        content: 'AI 솔루션이 보여주는 보험의 미래',
+                        tag : ['금융','경영관리', 'AICC'],
+                    },
+                    {
+                        id: 9,
+                        title: 'NCSOFT',
+                        content: '글로벌 게임서비스를 보다 안정적으로, 엔씨소프트 Google Cloud MSP',
+                        tag : ['통신','서비스', 'Cloud', '컨설팅'],
+                    },
+                    {
+                        id: 10,
+                        title: 'LG전자',
+                        content: '맞춤형 스마트홈 서비스 ‘LG ThinQ’로 더욱 풍성해진 가전 경험',
+                        tag : ['전자','AI', '경영관리', 'Digital Workplace Platform'],
+                    },
+                    {
+                        id: 11,
+                        title: 'LX판토스',
+                        content: '물류 혁신의 시작, LX판토스 BigData Platform',
+                        tag : ['유통','물류', '유통물류'],
+                    },
+                ]
+            %>
+            <%- include('src/component/cmp_search.html', Object.assign({}, locals, { 
+                title: 'LG CNS의 DX기술을 만나 비즈니스 혁신을 경험한<br>고객의 스토리를 살펴보세요.',
+                thumbnailType: 'type-moa-case1',
+                thumbnailData: thumbnailDataStory,
+            })) %>
+            <div class="inner-wrap">
+                <%- include('src/component/cmp_thumbnail_type.html', { 
+                    itemClass: 'pc-col3' , 
+                    itemCount: 12, 
+                    allCountData: '883' ,
+                    contentType : 'type-moa-case1',
+                    jsonData : thumbnailDataStory, 
+                }) %>
+                <%- include('src/component/cmp_pagination.html') %>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+</body>
+</html>

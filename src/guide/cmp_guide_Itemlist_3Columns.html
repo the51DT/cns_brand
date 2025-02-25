@@ -21,15 +21,57 @@
                     <div class="cmp-exsample__wrap mt-3">
                         <!-- Title -->
                         <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                            teaserPoint: 'Supply Chain Strategy', 
-                            teaserTitle: '를 지원하는', 
+                            teaserTitle: 'Supply Chain Strategy 를 지원하는', 
                             teaserText1: '효율적인 공급망 운영을 위해서는 산업의 특성과 고객의 니즈, Supply Chain Network 구성, 각종 회사 정책 및 제약조건 등을 고려하여 최적의 운영체계를 수립하는 것부터 시작합니다. 현재의 공급망 운영 수준을 파악하고, 개선이 필요한 부분에 대한 우선순위를 정하여 체계적으로 수행하는 것이 필요합니다. 또한, 공급망 운영 전략 및 체계가 갖추어져 있더라도 지속적인 운영 혁신을 위해 전략을 재점검하고 정책을 Update 하며 환경의 변화에 맞도록 지속적으로 운영 체계를 변화시킬 필요가 있습니다.',
                             teaserText2: 'Supply Chain Strategy는 컨설팅 및 최적화 기법을 활용하여 고객 맞춤형 공급망 체계 수립 및 지속적인 혁신을 핵심가치로 설정하고 고객의 공급망 운영 환경에 적합한 서비스를 제공합니다.',
                         })) %>  
                         <!-- //Title -->
-                        <%- include('src/component/cmp_Itemlist_3Columns.html') %>
+                        <%- include('src/component/cmp_Itemlist_3Columns.html', {
+                            itemCount: 5                            
+                        }) %>                            
                     </div>
-
+                    <p class="guide-title-h3">Itemlist_3Columns : 컨텐츠 배열 타입</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <% const itemList3ColumnsData = [ 
+                            { 
+                                id: 0, 
+                                imageUrl: 'https://placehold.co/78x78' , 
+                                title: '재고 최적화' ,
+                                content: [
+                                    '간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출',
+                                    '간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출'
+                                ],
+                            }, 
+                            { 
+                                id: 1, 
+                                imageUrl: 'https://placehold.co/78x78' ,
+                                title: '구매 최적화' , 
+                                content: '다수의 공급사~다수의 공장 간 소싱 물류비를 최소화하는 방안 산출' 
+                            }, 
+                            { 
+                                id: 2,
+                                imageUrl: 'https://placehold.co/78x78' , 
+                                title: '작업자 배치 최적화' ,
+                                content: '목표 생산량을 달성하기 위한 설비~작업자 간 최적의 배치계획 산출' 
+                            }, 
+                            { 
+                                id: 3, imageUrl: 'https://placehold.co/78x78' ,
+                                title: 'Capacity Planning' , 
+                                content: '설비 가동율 최대화 및 투자비 최소화를 위한 설비 투자 방안 산출' 
+                            }, 
+                            { 
+                                id: 4,
+                                imageUrl: 'https://placehold.co/78x78' , 
+                                title: 'Cutting Stock' ,
+                                content: '개별 주문을 조합하여 Cutting 잔여물을 최소화하는 방안 산출' 
+                            }, 
+                        ]; 
+                        %>
+                        <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, { 
+                            itemCount: 5, 
+                            jsonData: itemList3ColumnsData 
+                        })) %>
+                    </div>
                 </div>
             </div>
         </div>

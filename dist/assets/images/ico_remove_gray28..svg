@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" fill="none"><g filter="url(#a)"><circle cx="14" cy="14.5" r="14" fill="#E5E5E5"/></g><path fill="#999" fill-rule="evenodd" d="m14.001 15.355-5.228 5.228-.856-.857 5.227-5.228-5.227-5.227.857-.857 5.227 5.227 5.227-5.227.857.857-5.227 5.227 5.228 5.228-.857.857z" clip-rule="evenodd"/><defs><filter id="a" width="63" height="63" x="-17.5" y="-17" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feGaussianBlur in="BackgroundImageFix" stdDeviation="8.75"/><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_212_40567"/><feBlend in="SourceGraphic" in2="effect1_backgroundBlur_212_40567" result="shape"/></filter></defs></svg>
+<svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_b_212_40567)">
+<circle cx="14" cy="14.5" r="14" fill="#E5E5E5"/>
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.0011 15.3551L8.77349 20.5827L7.9165 19.7258L13.1441 14.4981L7.91713 9.27105L8.77411 8.41406L14.0011 13.6411L19.2281 8.41406L20.0851 9.27105L14.8581 14.4981L20.0857 19.7258L19.2287 20.5827L14.0011 15.3551Z" fill="#999999"/>
+<defs>
+<filter id="filter0_b_212_40567" x="-17.5" y="-17" width="63" height="63" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="8.75"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_212_40567"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_212_40567" result="shape"/>
+</filter>
+</defs>
+</svg>

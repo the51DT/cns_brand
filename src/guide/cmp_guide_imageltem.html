@@ -23,9 +23,36 @@
                             titleText: 'SCM DX 트렌드', 
                             titlePrimary: '두번째 타이틀' 
                         })) %>
-                        <!-- Title -->
-                        <%- include('src/component/cmp_imageltem.html') %>
-                        <!-- //Title -->
+                        <!-- Title -->  
+                        <%
+                            const imageItemData = [
+                                {
+                                    id: 0,
+                                    typeClass: 'type-default',
+                                    imageUrl: '/src/assets/image/temp/full_imag01.png',
+                                    title: 'Workforce',
+                                    content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
+                                },
+                                {
+                                    id: 1,
+                                    typeClass: 'type-left',
+                                    imageUrl: '/src/assets/image/temp/temp_img_sr.png',
+                                    title: 'Workforce',
+                                    content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
+                                }, 
+                                {
+                                    id: 2,
+                                    typeClass: 'type-right',
+                                    imageUrl: '/src/assets/image/temp/temp_img_sr.png',
+                                    title: 'Workforce',
+                                    content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p><p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
+                                }                                                               
+                            ];
+                        %> 
+                        <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {                             
+                            itemCount: 3,
+                            jsonData: imageItemData
+                        })) %>
                     </div>
 
                 </div>
@@ -33,7 +60,7 @@
         </div>
     </div>
     <script type="module" src="/src/main.js"></script>
-    <script>            
+    <!-- <script>            
         setTimeout(() => {                
             const imageItems = document.querySelectorAll('.cmp_imageltem__wrap');
             const title = document.querySelector('.cmp-title__wrap');
@@ -50,6 +77,6 @@
                 rightImageItem.classList.add('type-right');                
             }
         }, 1000);
-    </script>
+    </script> -->
 </body>
 </html>

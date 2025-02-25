@@ -1,0 +1,53 @@
+// specList
+// .cmp-wrap:has(+ .button__wrap) {
+//     margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
+// }
+.cmp-speclist__wrap {
+    border-top: 1px solid var(--colorGL-all-gray950);
+    display: flex;
+    flex-direction: column;
+    .spec-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--colorGL-all-gray200);
+        gap: $gap-margin;
+        padding: calc(60 / 16 * 1rem) 0;
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+        @media #{$phone} {
+            flex-direction: column;
+            padding: calc(40 / 16 * 1rem) 0;
+        }
+        .spec-num {
+            font-weight: 700;
+            color: var(--colorCM-all-primary-primary-enabled);
+        }
+        .spec-title {
+            font-weight: 700;
+            width: calc(50% - calc($gap-margin / 2));
+            // max-width: calc(425 / 16 * 1rem);
+            color: var(--colorGL-all-gray950);
+            display: flex;
+            gap: calc(16 / 16 * 1rem);
+            @media #{$phone} {
+                width: 100%;
+            }
+        }
+        .spec-text {
+            width: calc(50% - calc($gap-margin / 2));
+            color: var(--colorGL-all-gray850);
+            @media #{$phone} {
+                padding-left: calc(45 / 16 * 1rem);
+                width: 100%;
+            }
+            p {
+                &+p {
+                    margin-top: calc(24 / 16 * 1rem);
+                }
+            }
+        }
+    }    
+}
