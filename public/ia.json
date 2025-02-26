@@ -128,7 +128,13 @@
                     "screenId": "",
                     "path": "/src/guide/",
                     "fileName": "cmp_guide_imageltem.html"                    
-                },   
+                },
+                {
+                    "name": "ImageItemColumn",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_image_item_column.html"                    
+                },    
                 {
                     "name": "Itemlist",
                     "screenId": "",
