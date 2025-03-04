@@ -1,0 +1,21 @@
+<!-- cmp-dash-list -->
+<div class="cmp-wrap cmp-dash-list">
+    <% 
+        const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+    %>
+    <% if(utilText) { %>
+        <div class="cmp-dash-list__util">
+            <span class="font-body-xs"><%- utilText %></span>
+        </div>
+    <% } %>
+    <ul class="cmp-dash-list__wrap">
+        <% data.forEach((item) => { %>
+            <li class="dash-list__item <%- typeof itemType !== 'undefined' && itemType ? itemType : '' %>">
+                <div class="dash-list__text-box">
+                    <span class="dash-list__small-text font-body-md"><%- item.smallText %></span>
+                    <span class="dash-list__big-text font-head-xs"><%- item.bigText %></span>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+</div>

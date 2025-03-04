@@ -148,6 +148,12 @@
                     "fileName": "cmp_guide_Itemlist_3Columns.html"                    
                 },       
                 {
+                    "name": "DashList",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_dash_list.html"                    
+                },       
+                {
                     "name": "SpecList",
                     "screenId": "",
                     "path": "/src/guide/",

@@ -23,6 +23,7 @@
 @import 'aem-component/cmp_search_wrap.scss';
 @import 'aem-component/cmp_item_list.scss';
 @import 'aem-component/cmp_image_item_column.scss';
+@import 'aem-component/cmp_dash_list.scss';
 /* icon */
 @import 'icon.scss';
 /* tailwind */
