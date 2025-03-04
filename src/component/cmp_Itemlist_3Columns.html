@@ -6,7 +6,7 @@
     %>
     <% if (data.length > 0) { %>
         <% data.slice(0, itemLimit).forEach((item, i) => { %>
-            <div class="item-wrap">
+            <div class="item-wrap <%- typeof itemType !== 'undefined' && itemType ? itemType : '' %>">
                 <% if(typeof ImageAlign !== 'undefined' && ImageAlign) {%>
                     <% if(ImageAlign == 'left') {%>
                         <div class="item-image type-left">
@@ -86,7 +86,7 @@
         <% }) %>
     <% } else { %>
         <% for (let i = 0; i < itemLimit; i++) { %>
-            <div class="item-wrap">
+            <div class="item-wrap <%- typeof itemType !== 'undefined' && itemType ? itemType : '' %>">
                 <% if(typeof ImageAlign !== 'undefined' && ImageAlign) {%>
                     <% if(ImageAlign=='left') {%>
                         <div class="item-image type-left">

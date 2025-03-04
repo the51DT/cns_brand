@@ -4,7 +4,7 @@
         const data=(typeof jsonData !=='undefined' ? jsonData : []); 
     %>
     <% if (data.length> 0) { %>
-        <div class="img-box <%- addClass %>">
+        <div class="img-box <%- typeof addClass !== 'undefined' && addClass ? addClass : '' %>">
             <% data.forEach((item)=> { %>
                 <img src="<%- item.pc %>" alt="<%- alt %>" class="<%- item.mo && typeof item.mo !== 'undefined' ? 'img-box__item-pc' : ''%>">
                 <% if(item.mo && typeof item.mo !== 'undefined') {%>
