@@ -49,9 +49,25 @@
                             <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                 titleText: '환경경영시스템, <br>안전보건경영시스템 「ISO」 인증', 
                             })) %>
-                            <!-- 임시영역 -->
-                            <div class="mb-48" style="height: 300px; background-color: lightblue;">임시영역</div>
-                            <!-- // 임시영역 -->
+                            <%
+                                const itemList2Col = [
+                                    {
+                                        imageUrl: 'https://placehold.co/872x490',
+                                        imageAlt: 'ISO 14001',
+                                        title: '환경경영시스템(ISO 14001)',   
+                                        text: 'LG CNS는 환경경영시스템 인증을 취득해 유지하고 있습니다. 모든 기업 활동과정에서 환경에 영향을 미치는 요인을 파악하고 환경성과를 개선하는 환경경영시스템이 국제표준화기구(ISO) 요건을 준수하는지 평가하는 인증입니다.',    
+                                    },
+                                    {
+                                        imageUrl: 'https://placehold.co/872x490',
+                                        imageAlt: 'ISO 45001',
+                                        title: '안전보건경영시스템(ISO 45001)',   
+                                        text: 'LG CNS는 안전보건경영시스템을 인증도 취득해 유지하고 있습니다. 안전보건 정책의 수립, 실행, 점검 ,시정, 검토 등을 통해 안전보건성과를 개선하는 시스템이 ISO의 국제적 기준을 갖췄는지 인증합니다.',    
+                                    },
+                                ]
+                            %>
+                            <%- include('src/component/cmp_image_item_2columns.html', {
+                                jsonData: itemList2Col
+                            }) %>               
                             <%
                                 const imageItemColumnDataPremier = [
                                     {

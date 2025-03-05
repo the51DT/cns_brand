@@ -28,7 +28,21 @@
     }
     // .bizInfo_enviroMgmt
     &enviroMgmt {
-    
+        .cmp_image-item-2col {
+            margin-bottom: calc(200 / 16 * 1rem);
+            @media #{$pcMiddle} {
+                margin-bottom: calc(160 / 16 * 1rem);
+            }
+            @media #{$tablet} {
+                margin-bottom: calc(120 / 16 * 1rem);
+            }
+            @media #{$tabletMini} {
+                margin-bottom: calc(100 / 16 * 1rem);
+            }
+            @media #{$phone} {
+                margin-bottom: calc(80 / 16 * 1rem);
+            }
+        }
     }
     // .bizInfo_ceo
     &ceo {
