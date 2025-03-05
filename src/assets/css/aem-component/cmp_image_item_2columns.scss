@@ -1,0 +1,40 @@
+// cmp_Itemlist_2Columns
+.cmp_image-item-2col {
+    .image-item-2col {
+        display: flex;
+        justify-content: center;
+        gap: $gap-margin;
+        @media #{$phone} {
+            flex-direction: column;
+            gap: calc(32 / 16 * 1rem);
+        }
+        li {
+            width: calc(50% - calc($gap-margin / 2));
+            @media #{$phone} {
+                width: 100%;
+            }
+        }
+        .img-box {
+            border: calc(1 / 16 * 1rem) solid var(--colorGL-all-gray200);
+            & + .text-box {
+                margin-top: calc(40 / 16 * 1rem);
+                @media #{$phone} {
+                    margin-top: calc(32 / 16 * 1rem);
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+        &__title {
+            display: block;
+            color: #281D1B;
+            & + .itemlist_2col__text {
+                margin-top: calc(12 / 16 * 1rem);
+            }
+        }
+        &__text {
+            color: #281D1B;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3">ImageItem2Column</p>                    
+                    <div class="cmp-exsample__wrap mt-3">
+                        <%
+                            const itemList2Col = [
+                                {
+                                    imageUrl: 'https://placehold.co/872x490',
+                                    imageAlt: 'ISO 14001',
+                                    title: '환경경영시스템(ISO 14001)',   
+                                    text: 'LG CNS는 환경경영시스템 인증을 취득해 유지하고 있습니다. 모든 기업 활동과정에서 환경에 영향을 미치는 요인을 파악하고 환경성과를 개선하는 환경경영시스템이 국제표준화기구(ISO) 요건을 준수하는지 평가하는 인증입니다.',    
+                                },
+                                {
+                                    imageUrl: 'https://placehold.co/872x490',
+                                    imageAlt: 'ISO 45001',
+                                    title: '안전보건경영시스템(ISO 45001)',   
+                                    text: 'LG CNS는 안전보건경영시스템을 인증도 취득해 유지하고 있습니다. 안전보건 정책의 수립, 실행, 점검 ,시정, 검토 등을 통해 안전보건성과를 개선하는 시스템이 ISO의 국제적 기준을 갖췄는지 인증합니다.',    
+                                },
+                            ]
+                        %>
+                        <%- include('src/component/cmp_image_item_2columns.html', {
+                            jsonData: itemList2Col               
+                        }) %>                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/assets/js/ui_common.js"></script>
+</body>
+</html>

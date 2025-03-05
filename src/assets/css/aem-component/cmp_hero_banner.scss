@@ -38,6 +38,25 @@
             }
         }
     }
+    &.type-wide {
+        height: calc(480 / 16 * 1rem);
+        @media #{$phone} {    
+            height: calc(240 / 16 * 1rem);
+        }
+        .visual-text {
+            left: calc(80 / 16 * 1rem);
+            @media #{$pcMiddle} {
+                left: calc(40 / 16 * 1rem);
+            }
+            @media #{$tablet} {
+                left: calc(32 / 16 * 1rem);
+            }
+            @media #{$phone} {
+                top: calc(24 / 16 * 1rem);
+                left: calc(20 / 16 * 1rem);
+            }
+        }
+    }
     .inner-wrap {
         height: 100%;
         position: relative;
