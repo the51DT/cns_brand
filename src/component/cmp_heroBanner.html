@@ -1,9 +1,25 @@
 <div class="sub-visual__wrap <%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'type-empty' : '' %>" style="--hero-sub-pc-img: url('<%= typeof pcImg !== 'undefined' && pcImg !== 'empty' ? pcImg : '' %>'); 
 --hero-sub-mo-img: url('<%= typeof moImg !== 'undefined' && moImg !== 'empty' ? moImg : '' %>');">
     <div class="inner-wrap">
-        <div class="visual-text">
-            <p class="<%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'font-body-lg' : 'font-body-xl' %> sub-text"><%= typeof subText !== 'undefined' ? subText : '기본 타이틀 문구' %></p>
-            <h2 class="<%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'font-head-lg font-bold' : 'font-head-xl font-semibold' %>"><%= typeof pageTitle !== 'undefined' ? pageTitle : '기본 타이틀 문구' %></h2>
-        </div>
+        <% if(typeof rightDesc !== 'undefined' && rightDesc) { %>
+            <div class="sub-visual__container">
+                <div class="visual-text">
+                    <p class="<%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'font-body-lg' : 'font-body-xl' %> sub-text"><%= typeof subText !== 'undefined' ? subText : '기본 타이틀 문구' %></p>
+                    <h2 class="<%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'font-head-lg font-bold' : 'font-head-xl font-semibold' %>"><%= typeof pageTitle !== 'undefined' ? pageTitle : '기본 타이틀 문구' %></h2>
+                </div>
+                <div class="visual-text">
+                    <p class="desc font-body-xl"><%- typeof rightDesc !=='undefined' ? rightDesc : '기본 타이틀 문구' %></p>
+                </div>
+            </div>
+        <% } else {%>
+            <div class="visual-text">
+                <p class="<%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'font-body-lg' : 'font-body-xl' %> sub-text">
+                    <%= typeof subText !=='undefined' ? subText : '기본 타이틀 문구' %>
+                </p>
+                <h2 class="<%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'font-head-lg font-bold' : 'font-head-xl font-semibold' %>">
+                    <%= typeof pageTitle !=='undefined' ? pageTitle : '기본 타이틀 문구' %>
+                </h2>
+            </div>
+        <% } %>
     </div>
 </div>

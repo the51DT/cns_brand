@@ -41,7 +41,34 @@
     .inner-wrap {
         height: 100%;
         position: relative;
-
+        
+    }
+    .sub-visual__container {
+        display: flex;
+        gap: $gap-margin;
+        @media #{$phone} {
+            flex-direction: column;
+            gap: calc(32 / 16 * 1rem);
+        }
+        .visual-text {
+            width: calc(50% - calc($gap-margin / 2));
+            @media #{$phone} {
+                width: 100%;
+            }
+            .desc {
+                color: #281D1B;
+                text-align: right;
+                @media #{$tablet} {
+                    font-size: calc(var(--typo-tablet-size-body-xl) / 16 * 1rem);
+                    line-height: calc(var(--typo-tablet-line-height-body-xl) / 16 * 1rem);
+                }
+                @media #{$phone} {
+                    font-size: calc(var(--typo-mo-size-body-xl) / 16 * 1rem);
+                    line-height: calc(var(--typo-mo-line-height-body-xl) / 16 * 1rem);
+                    text-align: left;
+                }
+            }
+        }
     }
     .visual-text {
         position: absolute;

@@ -3,7 +3,7 @@
     <% 
         const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
     %>
-    <% if(utilText) { %>
+    <% if(typeof utilText !=='undefined' && utilText) { %>
         <div class="cmp-dash-list__util">
             <span class="font-body-xs"><%- utilText %></span>
         </div>

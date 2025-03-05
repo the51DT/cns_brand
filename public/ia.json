@@ -94,7 +94,7 @@
                     "fileName": "cmp_guide_pagination.html"
                 }, 
                 {
-                    "name": "HeroBanes",
+                    "name": "HeroBanner",
                     "screenId": "",
                     "path": "/src/guide/",
                     "fileName": "cmp_guide_heroBanner.html"                    
