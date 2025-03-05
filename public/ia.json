@@ -258,6 +258,12 @@
                     "fileName": "bizInfo_compOvw.html"
                 },
                 {
+                    "name": "기업정보 - CEO",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "bizInfo_ceo.html"
+                },
+                {
                     "name": "기업정보 - 기업소개 copy",
                     "screenId": "",
                     "path": "/src/page/",
@@ -268,6 +274,12 @@
                     "screenId": "",
                     "path": "/src/page/",
                     "fileName": "bizInfo_enviroMgmt.html"
+                },
+                {
+                    "name": "기업정보 - 준법경영",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "bizInfo_compliance.html"
                 }
             ]
         },
