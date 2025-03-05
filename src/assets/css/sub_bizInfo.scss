@@ -1,41 +1,67 @@
 .bizInfo_ {
-    // .bizInfo_compOvw
-    &compOvw {
-        .cmp-dash-list {
-            margin-bottom: calc(200 / 16 * 1rem);
-            @media #{$tablet} {
-                margin-bottom: calc(160 / 16 * 1rem);
-            }
-            @media #{$tabletMini} {
-                margin-bottom: calc(120 / 16 * 1rem);
-            }
-            @media #{$phone} {
-                margin-bottom: calc(80 / 16 * 1rem);
-            }
-        }
-        .cmp_image-item-column {
-            margin-bottom: calc(160 / 16 * 1rem);
-            @media #{$tablet} {
-                margin-bottom: calc(120 / 16 * 1rem);
-            }
-            @media #{$tabletMini} {
-                margin-bottom: calc(100 / 16 * 1rem);
-            }
-            @media #{$phone} {
-                margin-bottom: calc(80 / 16 * 1rem);
-            }
-        }
+  // .bizInfo_compOvw
+  &compOvw {
+    .cmp-dash-list {
+      margin-bottom: calc(200 / 16 * 1rem);
+      @media #{$tablet} {
+        margin-bottom: calc(160 / 16 * 1rem);
+      }
+      @media #{$tabletMini} {
+        margin-bottom: calc(120 / 16 * 1rem);
+      }
+      @media #{$phone} {
+        margin-bottom: calc(80 / 16 * 1rem);
+      }
     }
-    // .bizInfo_enviroMgmt
-    &enviroMgmt {
-    
+    .cmp_image-item-column {
+      margin-bottom: calc(160 / 16 * 1rem);
+      @media #{$tablet} {
+        margin-bottom: calc(120 / 16 * 1rem);
+      }
+      @media #{$tabletMini} {
+        margin-bottom: calc(100 / 16 * 1rem);
+      }
+      @media #{$phone} {
+        margin-bottom: calc(80 / 16 * 1rem);
+      }
     }
-    // .bizInfo_ceo
-    &ceo {
+  }
+  // .bizInfo_enviroMgmt
+  &enviroMgmt {
+  }
+  // .bizInfo_ceo
+  &ceo {
+  }
+  // .bizInfo_compliance
+  &compliance {
+    .compliance-preface {
+      color: var(--colorGL-all-gray700);
+      font-weight: var(--typo-pc-weight-bold700);
+      margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
 
+      @media #{$phone} {
+        margin-bottom: calc(32 / 16 * 1rem);
+      }
     }
-    // .bizInfo_compliance
-    &compliance {
 
+    .compliance-text p {
+      margin-bottom: 1.5rem;
     }
+
+    .compliance-ceo {
+      margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+
+      .compiliance-ceo-text {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
+      }
+
+      .compliance-ceo-name {
+        font-weight: 600;
+      }
+    }
+  }
 }
