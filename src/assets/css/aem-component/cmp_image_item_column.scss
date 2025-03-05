@@ -35,6 +35,23 @@
         }
         &--image-container {
             flex-direction: column;
+            .img-box {
+                height: calc(480 / 16 * 1rem);
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                @media #{$phone} {
+                    height: calc(240 / 16 * 1rem);
+                }
+            }
+            .img-box__desc {
+                text-align: right;
+                @media #{$phone} {
+                    text-align: left;
+                }
+            }
         }
     }
     .image-item-column__text-box {
