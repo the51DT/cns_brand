@@ -46,10 +46,65 @@
                             <div style="height: 300px;">탭 메뉴1</div>
                         </div>
                         <div class="tab__content">
-                            <div style="height: 300px;">탭 메뉴2</div>
+                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                titleText: '환경경영시스템, <br>안전보건경영시스템 「ISO」 인증', 
+                            })) %>
+                            <!-- 임시영역 -->
+                            <div class="mb-48" style="height: 300px; background-color: lightblue;">임시영역</div>
+                            <!-- // 임시영역 -->
+                            <%
+                                const imageItemColumnDataPremier = [
+                                    {
+                                        id: 0,
+                                        type: 'type-default',
+                                        imageUrl: '/src/assets/image/temp/full_imag01.png',
+                                        imageAlt: 'test',
+                                        title: '브릴어워즈(Brill Awards) 수상',
+                                        content: [
+                                            'LG CNS 부산 데이터센터는 ‘업타임인스티튜트(Uptime Institute)’가 매년 선정하는 데이터센터 업계 최고 권위상인 브릴어워즈(Brill Awards) 디자인분야 우수 데이터센터로 선정됐습니다. 디자인 단계부터 에너지 효율과 안전을 고려한 점을 높이 평가받았습니다. 부산 데이터센터는 당시 국제 유일의 데이터센터 굴뚝 ‘풍도’, 세계최초로 특허 출원한 ‘빌트업 외기냉방 시스템’을 적용했습니다. 국내최초로 면진 설비도 도입해 리히터 규모 8.0 지진에도 고객사에게 무중단 서비스를 제공할 수 있습니다.',
+                                        ],
+                                        imgDesc: '2014년 브릴어워즈 디자인분야 우수 센터로 선정된 LG CNS 부산 데이터센터 전경'
+                                    },                                                       
+                                ]
+                            %> 
+                            <%- include('src/component/cmp_image_item_column.html', Object.assign({}, locals, {                             
+                                jsonData: imageItemColumnDataPremier
+                            })) %>
                         </div>
                         <div class="tab__content">
-                            <div style="height: 300px;">탭 메뉴3</div>
+                            <%
+                                const imageItemColumnDataChange = [
+                                    {
+                                        id: 0,
+                                        type: 'type-default',
+                                        imageUrl: '/src/assets/image/temp/full_imag01.png',
+                                        imageAlt: 'test',
+                                        title: '온실가스 감축',
+                                        subTitle: '혁신(革新, Innovation)은 아주 작은 변화에서 시작됩니다.',
+                                        content: [
+                                            '온실가스 배출권거래제는 저탄소녹생성장기본법에 의거, 정부가 기업에 온실가스를 배출할 수 있는 총량을 사전에 할당하고, 기업은 자체적인 온실가스 감축 및 배출권 거래를 통해 온실가스 감축 목표를 달성할 수 있도록 하는 제도입니다.',
+                                            'LG CNS는 이러한 에너지 제도에 효율적으로 대응하기 위해 데이터센터 소비전력을 자동 측정하고 온실가스 배출량을 실시간 집계 할 수 있는 온실가스 인벤토리 시스템을 구축하여 운영중입니다. 환경 관련 국제 인증인 CDP(Carbon Disclosure Project)에 맞춰 외부의 친환경 강화 요구에 적극적으로 대응하고 있습니다.',
+                                        ],
+                                        imgDesc: '온실가스 배출권 거래제 대상 사업장으로 지정된 LG CNS 상암데이터 센터 전경'
+                                    },
+                                    {
+                                        id: 1,
+                                        type: 'type-default',
+                                        imageAlt: 'test',
+                                        title: '친환경 그린데이터 센터',
+                                        content: [
+                                            'LG CNS는 전력사용량이 높은 데이터센터의 에너지 절감을 위해 다양한 솔루션을 개발·적용하여 데이터센터를 운영하고 있습니다. 또한 신재생 및 에너지 효율향상 설비 도입을 통한 건물 내 소비 효율화도 진행하고 있습니다. LG CNS는 온실가스 배출량 감소를 위한 솔루션을 개발·적용하여 친환경 데이터센터를 운영하고 있으며, 데이터센터의 기반설비 통합운영을 위해 친환경 IT 시스템을 개발해 구축/운영하고 있습니다.',
+                                            '친환경 IT 시스템은 기반설비(전기, 기계, 온/습도, 조명 등) 및 보안설비를 통합 모니터링해 장애 감지, 분석, 제어 등을 통해 전산실 에너지를 효율적으로 관리함으로써 온실가스 배출량 절감에 기여합니다. 또한, 자연외기를 이용한 친환경 제품인 빌트업 외기 냉방시스템을 세계 최초로 특허출원하여 전 센터에 적용하고 있으며, 서버 집중 냉각 장치인 집중공조시스템 개발 및 고효율UPS, LED 조명등을 전 센터에 적용하여 온실가스 배출량 감소에 기여하고 있습니다.',
+                                        ],
+                                    },                                                            
+                                ]
+                            %> 
+                            <%- include('src/component/cmp_image_item_column.html', Object.assign({}, locals, {                             
+                                jsonData: imageItemColumnDataChange
+                            })) %>
+                            <!-- 임시영역 -->
+                            <div class="mb-20" style="height: 600px; background-color: lightblue;">테이블 임시영역</div>
+                            <!-- // 임시영역 -->
                         </div>  
                         <div class="tab__content">
                             <% 
