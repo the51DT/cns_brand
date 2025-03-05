@@ -134,13 +134,19 @@
                     "screenId": "",
                     "path": "/src/guide/",
                     "fileName": "cmp_guide_image_item_column.html"                    
-                },    
+                },
+                {
+                    "name": "ImageItem2Column",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_image_item_2columns.html"                    
+                },     
                 {
                     "name": "Itemlist",
                     "screenId": "",
                     "path": "/src/guide/",
                     "fileName": "cmp_guide_item_list.html"                    
-                },       
+                }, 
                 {
                     "name": "Itemlist_3Columns",
                     "screenId": "",

@@ -12,6 +12,7 @@
 @import 'aem-component/cmp_title.scss';
 @import 'aem-component/cmp_teaser_title.scss';
 @import 'aem-component/cmp_image_item.scss';
+@import 'aem-component/cmp_image_item_2columns.scss';
 @import 'aem-component/cmp_item_list_columns.scss';
 @import 'aem-component/cmp_spec_list.scss';
 @import 'aem-component/cmp_customer_case.scss';

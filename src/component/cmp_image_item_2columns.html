@@ -1,0 +1,37 @@
+<!-- cmp_Itemlist_2Columns -->
+<div class="cmp-wrap cmp_image-item-2col">
+    <% 
+        const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+        const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
+    %>
+    <% if (data.length > 0) { %>
+        <ul class="image-item-2col">
+            <% data.forEach((item) => { %>
+                <li>
+                    <% if(item.imageUrl) { %>
+                        <div class="img-box">
+                            <img src="<%- item.imageUrl %>" alt="<%- item.imageAlt %>">
+                        </div>
+                    <% } %>
+                    <% if(item.title && item.text) { %>
+                        <div class="text-box">
+                            <% if(item.title) { %>
+                                <span class="image-item-2col__title font-body-lg font-bold">
+                                    <%- item.title %>
+                                </span>
+                            <% } %>
+                            <% if(item.text) {%>
+                                <p class="image-item-2col__text font-body-sm">
+                                    <%- item.text %>
+                                </p>
+                            <% } %>
+                        </div>
+                    <% } %>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        
+    <% } %>  
+</div>
+<!-- cmp_Itemlist_3Columns -->
