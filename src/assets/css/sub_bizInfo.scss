@@ -1,7 +1,30 @@
 .bizInfo_ {
     // .bizInfo_compOvw
     &compOvw {
-
+        .cmp-dash-list {
+            margin-bottom: calc(200 / 16 * 1rem);
+            @media #{$tablet} {
+                margin-bottom: calc(160 / 16 * 1rem);
+            }
+            @media #{$tabletMini} {
+                margin-bottom: calc(120 / 16 * 1rem);
+            }
+            @media #{$phone} {
+                margin-bottom: calc(80 / 16 * 1rem);
+            }
+        }
+        .cmp_image-item-column {
+            margin-bottom: calc(160 / 16 * 1rem);
+            @media #{$tablet} {
+                margin-bottom: calc(120 / 16 * 1rem);
+            }
+            @media #{$tabletMini} {
+                margin-bottom: calc(100 / 16 * 1rem);
+            }
+            @media #{$phone} {
+                margin-bottom: calc(80 / 16 * 1rem);
+            }
+        }
     }
     // .bizInfo_enviroMgmt
     &enviroMgmt {

@@ -14,6 +14,15 @@
         }
         & + .image-item-column__wrap {
             margin-top: calc(200 / 16 * 1rem);
+            @media #{$tablet} {
+                margin-top: calc(160 / 16 * 1rem);
+            }
+            @media #{$tabletMini} {
+                margin-top: calc(120 / 16 * 1rem);
+            }
+            @media #{$phone} {
+                margin-top: calc(80 / 16 * 1rem);
+            }
         }
     }
     .image-item-column__container {
