@@ -258,6 +258,12 @@
                     "fileName": "bizInfo_compOvw.html"
                 },
                 {
+                    "name": "기업정보 - 기업소개 copy",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "bizInfo_compOvw_copy.html"
+                },
+                {
                     "name": "기업정보 - 환경경영",
                     "screenId": "",
                     "path": "/src/page/",

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>
+        <%= data.title %>
+    </title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+
+<body>
+    <div class="wrap">
+        <%- include('src/_inc/header.html') %>
+            <!-- //헤더 영역 -->
+            <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {
+                pcImg: '/src/assets/image/sub/bg_sub_enterprice.png' ,
+                moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png' , subText: 'MOA' , pageTitle: '고객스토리' })) 
+            %>
+            <!-- //비주얼 영역 -->
+            <div class="sub-content__wrap">
+            </div>
+            <%- include('src/_inc/footer.html') %>
+    </div>
+</body>
+
+</html>
