@@ -34,6 +34,12 @@
   }
   // .bizInfo_compliance
   &compliance {
+    .sub-content__wrap {
+      .inner-wrap {
+        padding-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+      }
+    }
+
     .compliance-preface {
       color: var(--colorGL-all-gray700);
       font-weight: var(--typo-pc-weight-bold700);
@@ -50,7 +56,6 @@
 
     .compliance-ceo {
       margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
-      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
 
       .compiliance-ceo-text {
         display: flex;
