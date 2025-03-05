@@ -21,9 +21,12 @@
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
-                <!-- 임시영역 -->
-                <div class="mb-10" style="height: 300px; background-color: lightblue;">IT 서비스 전문기업에서 DX NO.1 기업으로</div>
-                <!-- // 임시영역 -->
+                <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+                    pcImg: 'https://placehold.co/1760x480',
+                    moImg: 'https://placehold.co/320x240',
+                    pageTitle: 'IT 서비스 전문기업에서 <br>DX NO.1 기업으로',
+                    bannerSize : 'wide'
+                })) %>
                 <%
                     const dashListData = [
                         {
