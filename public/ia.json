@@ -247,6 +247,26 @@
         },
         {
             "id": 5,
+            "Level1": "Sub - 기업정보",
+            "screenId": "",
+            "fileName": "",
+            "Level2": [
+                {
+                    "name": "기업정보 - 기업소개",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "bizInfo_compOvw.html"
+                },
+                {
+                    "name": "기업정보 - 환경경영",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "bizInfo_enviroMgmt.html"
+                }
+            ]
+        },
+        {
+            "id": 6,
             "Level1": "Sub - 서비스",
             "screenId": "",
             "fileName": "",
@@ -272,7 +292,7 @@
             ]
         },
         {
-            "id": 5,
+            "id": 7,
             "Level1": "Sub - 뉴스룸",
             "screenId": "",
             "fileName": "",
@@ -286,7 +306,7 @@
             ]
         },
         {
-            "id": 6,
+            "id": 8,
             "Level1": "Sub - MOA",
             "screenId": "",
             "fileName": "",
@@ -342,7 +362,7 @@
             ]
         },
         {
-            "id": 6,
+            "id": 9,
             "Level1": "Sub - The Future",
             "screenId": "",
             "fileName": "",
