@@ -1,6 +1,9 @@
 .bizInfo_ {
     // .bizInfo_compOvw
     &compOvw {
+        .sub-visual__wrap {
+            margin-bottom: calc(40 / 16 * 1rem);
+        }
         .cmp-dash-list {
             margin-bottom: calc(200 / 16 * 1rem);
             @media #{$tablet} {
