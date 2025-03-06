@@ -199,6 +199,10 @@
     .button__wrap.align-center .btn {
         width: 100%;
     }
+    .button__wrap.align-left .btn:only-of-type, 
+    .button__wrap.align-right .btn:only-of-type {
+        width: 100%;
+    }
     .btn-round {
         width: 100%;
         padding: calc(10 / 16 * 1rem) calc(30 / 16 * 1rem);
