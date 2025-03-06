@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title><%= data.title %></title>
+  <meta name="description" content="<%= data.description %>">
+  <link rel="stylesheet" href="/src/assets/css/index.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap bizInfo_enviroMgmt">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {
+            pcImg: 'empty',
+            moImg: 'empty',
+            subText: '기업정보',
+            pageTitle: '공시정보',
+        })) %>
+
+
+        <!-- //비주얼 영역 -->
+        <div class="sub-content__wrap">
+            <div class="inner-wrap">
+                <div class="cmp-wrap cmp-tab basic-type align-left">
+                    <div class="cmp-tab__header">
+                        <ul class="tab__menu">
+                            <li class="is-active">
+                                <a href="#">전자공고</a>
+                            </li>
+                            <li>
+                                <a href="#">공시자료</a>
+                            </li> 
+                        </ul>
+                    </div>
+                    <div class="tab-content__wrap">
+                        <div class="tab__content is-active">
+                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                titleText: '전자공고' ,
+                            })) %>
+                        </div>
+                        <div class="tab__content">
+                            공시자료 content
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+    <script>
+        tabMenu('.basic-type', 'tab');
+    </script>
+</body>
+</html>
