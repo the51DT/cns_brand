@@ -12,11 +12,18 @@
 .button__wrap:has(.btn.btn-text) {
     width: fit-content;
 }
-.button__wrap.button__wrap--horizontal {
-    flex-direction: column;
+.button__wrap.align-left:has(.btn.btn-line), 
+.button__wrap.align-right:has(.btn.btn-line) {
+    gap: calc(8 / 16 * 1rem);
 }
-.button__wrap.button__wrap--horizontal .btn {
-    width: 100%;
+.button__wrap.align-left {
+    justify-content: flex-start;
+}
+.button__wrap.align-right {
+    justify-content: flex-end;
+}
+.button__wrap.align-center {
+    justify-content: center;
 }
 
 .btn {
@@ -27,7 +34,7 @@
     font-family: var(--typo-pc-family-head);
     align-items: center;
     border-radius: var(--border-radius-14);
-    margin: 0 auto;
+    /* margin: 0 auto; */
     text-align: center;
     cursor: pointer;
     white-space: nowrap;
@@ -126,9 +133,6 @@
     padding: calc(13 / 16 * 1rem) calc(28 / 16 * 1rem);
     width: calc(240 / 16 * 1rem);
 }
-.btn.btn-maxwidth {
-    width: 100%;
-}
 /* btn-text - 텍스트 버튼 */
 .btn.btn-text {
     margin: 0;
@@ -182,10 +186,17 @@
 
 /* ~ $phone */
 @media screen and (max-width: 767px) {
-    .button__wrap.button__wrap--horizontal--mo {
-        flex-direction: column;
+    .button__wrap.align-left, 
+    .button__wrap.align-right,
+    .button__wrap.align-center {
+        flex-wrap: wrap;
+        gap: calc(16 / 16 * 1rem);
     }
-    .button__wrap.button__wrap--horizontal--mo .btn {
+    .button__wrap.align-left .btn, 
+    .button__wrap.align-right .btn {
+        width: calc(50% - calc(8 / 16 * 1rem));
+    }
+    .button__wrap.align-center .btn {
         width: 100%;
     }
     .btn-round {
