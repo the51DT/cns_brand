@@ -42,12 +42,12 @@
                         </li>
                         <li>
                             <p>
-                                ImageAlign: <b class="font-bold text-red-600">'left'</b> / 'right',
+                                ImageAlign: <b class="font-bold text-red-600">'left'</b> / 'right / center',
                             </p>
                         </li>
                         <li>
                             <p>
-                                textAlign: <b class="font-bold text-red-600">'left'</b> / 'right',
+                                textAlign: <b class="font-bold text-red-600">'left'</b> / 'right/ center',
                             </p>
                         </li>
                     </ul>
@@ -94,6 +94,50 @@
                             textAlign: 'left',
                         })) %>
                     </div>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <% const test = [ 
+                            { 
+                                id: 0, 
+                                imageUrl: 'https://placehold.co/78x78' ,
+                                title: '재고 최적화' ,
+                                content: [
+                                    '간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출',
+                                    '간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출'
+                                ],
+                            }, 
+                            { 
+                                id: 1, 
+                                imageUrl: 'https://placehold.co/78x78' ,
+                                title: '구매 최적화' , 
+                                content: '다수의 공급사~다수의 공장 간 소싱 물류비를 최소화하는 방안 산출' 
+                            }, 
+                            { 
+                                id: 2,
+                                imageUrl: 'https://placehold.co/78x78' , 
+                                title: '작업자 배치 최적화' ,
+                                content: '목표 생산량을 달성하기 위한 설비~작업자 간 최적의 배치계획 산출' 
+                            }, 
+                            { 
+                                id: 3, imageUrl: 'https://placehold.co/78x78' ,
+                                title: 'Capacity Planning' , 
+                                content: '설비 가동율 최대화 및 투자비 최소화를 위한 설비 투자 방안 산출' 
+                            }, 
+                            { 
+                                id: 4,
+                                imageUrl: 'https://placehold.co/78x78' , 
+                                title: 'Cutting Stock' ,
+                                content: '개별 주문을 조합하여 Cutting 잔여물을 최소화하는 방안 산출' 
+                            }, 
+                        ]; 
+                        %>
+                        <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, { 
+                            itemCount: 5, 
+                            jsonData: test,
+                            ImageAlign: 'center',
+                            textAlign: 'center',
+                        })) %>
+                    </div>
+                    
                     <p class="guide-title-h3 mt-10">Itemlist_3Columns : 박스 스타일</p>
                     <ul class="guide-list type-dot mt-3">
                         <li>

@@ -34,6 +34,9 @@
             &.type-right {
                 justify-content: flex-end;
             }
+            &.type-center {
+                justify-content: center;
+            }
         }
         .item-info__wrap {
             display: flex;
@@ -48,6 +51,12 @@
             }
             &.type-right {
                 align-items: flex-end;
+            }
+            &.type-center {
+                align-items: center;
+                .info-text {
+                    text-align: center;
+                }
             }
         }
         .info-title {

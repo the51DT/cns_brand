@@ -142,6 +142,12 @@
           "fileName": "cmp_guide_image_item_2columns.html"
         },
         {
+          "name": "ImageItem3Column",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_image_item_3columns_box.html"
+        },
+        {
           "name": "Itemlist",
           "screenId": "",
           "path": "/src/guide/",

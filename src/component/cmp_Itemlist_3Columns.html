@@ -12,8 +12,12 @@
                         <div class="item-image type-left">
                             <img src="<%= item.imageUrl %>" alt="" />
                         </div>
-                    <%} else if(ImageAlign == 'right') { %>
+                    <% } else if(ImageAlign == 'right') { %>
                         <div class="item-image type-right">
+                            <img src="<%= item.imageUrl %>" alt="" />
+                        </div>
+                    <% } else if(ImageAlign=='center' ) { %>
+                        <div class="item-image type-center">
                             <img src="<%= item.imageUrl %>" alt="" />
                         </div>
                     <% } else { %>
@@ -41,7 +45,7 @@
                                 <% } %>
                             </ul>
                         </div>
-                    <%} else if(textAlign =='right') { %>
+                    <% } else if(textAlign =='right') { %>
                         <div class="item-info__wrap type-right">
                             <div class="font-body-lg info-title"><%- item.title %></div>
                             <ul class="info-text">
@@ -54,7 +58,20 @@
                                 <% } %>
                             </ul>
                         </div>
-                    <%} else { %>
+                    <% } else if(textAlign=='center' ) { %>
+                        <div class="item-info__wrap type-center">
+                            <div class="font-body-lg info-title"><%- item.title %></div>
+                            <ul class="info-text">
+                                <% if (item.content && Array.isArray(item.content)) {%>
+                                    <% item.content.forEach((content)=> { %>
+                                        <li><%- content %></li>
+                                    <%})%>
+                                <% } else {%>
+                                    <li><%- item.content %></li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    <% } else { %>
                         <div class="item-info__wrap type-left">
                             <div class="font-body-lg info-title"><%- item.title %></div>
                             <ul class="info-text">
