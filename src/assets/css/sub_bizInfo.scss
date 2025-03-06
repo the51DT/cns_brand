@@ -1,189 +1,178 @@
 .bizInfo_ {
-  // .bizInfo_compOvw
   &compOvw {
     .sub-visual__wrap {
-      margin-bottom: calc(40 / 16 * 1rem);
+        margin-bottom: calc(40 / 16 * 1rem);
     }
     .cmp-dash-list {
-      margin-bottom: calc(200 / 16 * 1rem);
-      @media #{$tablet} {
-        margin-bottom: calc(160 / 16 * 1rem);
-      }
-      @media #{$tabletMini} {
-        margin-bottom: calc(120 / 16 * 1rem);
-      }
-      @media #{$phone} {
-        margin-bottom: calc(80 / 16 * 1rem);
-      }
+        margin-bottom: calc(200 / 16 * 1rem);
+        @media #{$tablet} {
+          margin-bottom: calc(160 / 16 * 1rem);
+        }
+        @media #{$tabletMini} {
+          margin-bottom: calc(120 / 16 * 1rem);
+        }
+        @media #{$phone} {
+          margin-bottom: calc(80 / 16 * 1rem);
+        }
     }
     .cmp_image-item-column {
-      margin-bottom: calc(160 / 16 * 1rem);
-      @media #{$tablet} {
-        margin-bottom: calc(120 / 16 * 1rem);
-      }
-      @media #{$tabletMini} {
-        margin-bottom: calc(100 / 16 * 1rem);
-      }
-      @media #{$phone} {
-        margin-bottom: calc(80 / 16 * 1rem);
-      }
+        margin-bottom: calc(160 / 16 * 1rem);
+        @media #{$tablet} {
+          margin-bottom: calc(120 / 16 * 1rem);
+        }
+        @media #{$tabletMini} {
+          margin-bottom: calc(100 / 16 * 1rem);
+        }
+        @media #{$phone} {
+          margin-bottom: calc(80 / 16 * 1rem);
+        }
     }
   }
   // .bizInfo_enviroMgmt
   &enviroMgmt {
     .cmp_image-item-2col {
-      margin-bottom: calc(200 / 16 * 1rem);
-      @media #{$pcMiddle} {
-        margin-bottom: calc(160 / 16 * 1rem);
-      }
-      @media #{$tablet} {
-        margin-bottom: calc(120 / 16 * 1rem);
-      }
-      @media #{$tabletMini} {
-        margin-bottom: calc(100 / 16 * 1rem);
-      }
-      @media #{$phone} {
-        margin-bottom: calc(80 / 16 * 1rem);
-      }
+        margin-bottom: calc(200 / 16 * 1rem);
+        @media #{$pcMiddle} {
+          margin-bottom: calc(160 / 16 * 1rem);
+        }
+        @media #{$tablet} {
+          margin-bottom: calc(120 / 16 * 1rem);
+        }
+        @media #{$tabletMini} {
+          margin-bottom: calc(100 / 16 * 1rem);
+        }
+        @media #{$phone} {
+          margin-bottom: calc(80 / 16 * 1rem);
+        }
     }
   }
   // .bizInfo_ceo
   &ceo {
     &__container {
-      // border: solid 1px red;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: calc(61 / 16 * 1rem);
-      /*PC화면 기준 대략적 반응형 작업만 진행. 피그마 모바일 반응형 나오면 재작업*/
-      max-width: calc(1600 / 16 * 1rem);
-      // height: calc(999 / 16 * 1rem);
-      margin: 0 auto;
-      padding: calc(140.5 / 16 * 1rem) calc(40 / 16 * 1rem);
-      color: #1a1a1a;
-      @media #{$tabletMini} {
-        flex-direction: column;
-      }
+        // border: solid 1px red;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: calc(61 / 16 * 1rem);
+        /*PC화면 기준 대략적 반응형 작업만 진행. 피그마 모바일 반응형 나오면 재작업*/
+        max-width: calc(1600 / 16 * 1rem);
+        // height: calc(999 / 16 * 1rem);
+        margin: 0 auto;
+        padding: calc(140.5 / 16 * 1rem) calc(40 / 16 * 1rem);
+        color: #1a1a1a;
+        @media #{$tabletMini} {
+          flex-direction: column;
+        }
     }
     &__title {
-      // border: solid 1px blue;
-      margin-bottom: calc(40 / 16 * 1rem);
-      .ceo-text {
-        margin-bottom: calc(12 / 16 * 1rem);
-      }
+        // border: solid 1px blue;
+        margin-bottom: calc(40 / 16 * 1rem);
+        .ceo-text {
+          margin-bottom: calc(12 / 16 * 1rem);
+        }
     }
     &__description {
-      margin-bottom: calc(40 / 16 * 1rem);
-      color: var(--colorCM-all-text-text-secondary);
-      p {
         margin-bottom: calc(40 / 16 * 1rem);
-      }
+        color: var(--colorCM-all-text-text-secondary);
+        p {
+          margin-bottom: calc(40 / 16 * 1rem);
+        }
     }
     &__signature {
-      // border: solid 1px red;
-      display: flex;
-      align-items: center;
-      .margin {
-        margin-right: calc(20 / 16 * 1rem);
-      }
+        // border: solid 1px red;
+        display: flex;
+        align-items: center;
+        .margin {
+          margin-right: calc(20 / 16 * 1rem);
+        }
     }
     //컴포넌트화 예정
     .image-container {
-      .pc-image {
-        display: block;
-      }
-      .mo-image {
-        display: none;
-      }
-      @media #{$tabletMini} {
-        order: -1;
         .pc-image {
-          display: none;
-        }
-        .mo-image {
           display: block;
         }
-      }
+        .mo-image {
+          display: none;
+        }
+        @media #{$tabletMini} {
+          order: -1;
+          .pc-image {
+            display: none;
+          }
+          .mo-image {
+            display: block;
+          }
+        }
     }
   }
   // .bizInfo_compliance
   &compliance {
     .sub-content__wrap {
-      .inner-wrap {
-        padding-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-      }
+        .inner-wrap {
+          padding-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+        }
     }
 
     .compliance-preface {
-      color: var(--colorGL-all-gray700);
-      font-weight: var(--typo-pc-weight-bold700);
-      margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
+        color: var(--colorGL-all-gray700);
+        font-weight: var(--typo-pc-weight-bold700);
+        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
 
-      @media #{$phone} {
-        margin-bottom: calc(32 / 16 * 1rem);
-      }
+        @media #{$phone} {
+          margin-bottom: calc(32 / 16 * 1rem);
+        }
     }
 
     .compliance-text p {
-      margin-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .compliance-ceo {
-      margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+        margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
 
-      .compiliance-ceo-text {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
-      }
+        .compiliance-ceo-text {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
+        }
 
-      .compliance-ceo-name {
-        font-weight: 600;
-      }
+        .compliance-ceo-name {
+          font-weight: 600;
+        }
     }
   }
+
   //.bizInfo_financial
   &financial {
-    .none {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      border: 0;
-    }
-
     .data-table {
-      color: var(--text-text-default, #1a1a1a);
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+        color: var(--text-text-default, #1a1a1a);
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
 
-      th {
-        font-weight: 700;
-      }
-
-      thead {
-        border-top: 2px solid var(--colorCM-all-stroke-stroke-default1);
-        border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default1);
-      }
-
-      th,
-      td {
-        padding: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-      }
-      td {
-        border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
-      }
-
-      @media #{$phone} {
-        .mobile-none {
-          display: none;
+        th {
+          font-weight: 700;
         }
-      }
+
+        thead {
+          border-top: 2px solid var(--colorCM-all-stroke-stroke-default1);
+          border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default1);
+        }
+
+        th,
+        td {
+          padding: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+        }
+        td {
+          border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
+        }
+
+        @media #{$phone} {
+          .mobile-none {
+            display: none;
+          }
+        }
     }
   }
 }
