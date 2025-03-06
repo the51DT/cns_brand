@@ -12,6 +12,12 @@
 .button__wrap:has(.btn.btn-text) {
     width: fit-content;
 }
+.button__wrap.button__wrap--horizontal {
+    flex-direction: column;
+}
+.button__wrap.button__wrap--horizontal .btn {
+    width: 100%;
+}
 
 .btn {
     display: flex;
@@ -120,6 +126,9 @@
     padding: calc(13 / 16 * 1rem) calc(28 / 16 * 1rem);
     width: calc(240 / 16 * 1rem);
 }
+.btn.btn-maxwidth {
+    width: 100%;
+}
 /* btn-text - 텍스트 버튼 */
 .btn.btn-text {
     margin: 0;
@@ -131,12 +140,36 @@
     font-weight: 600;
 }
 
+/* btn-line - 선 타입 버튼 */
+.btn.btn-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc(10 / 16 * 1rem);
+    padding: calc(12 / 16 * 1rem) calc(16 / 16 * 1rem);
+    width: fit-content;
+    height: calc(48 / 16 * 1rem);
+    white-space: nowrap;
+    font-weight: 500;
+    border: calc(1 / 16 * 1rem) solid var(--colorCM-all-fill-fill-default12);
+}
+
 /* ~ $tablet */
 @media screen and (max-width: 1599px) {
     .btn-round {
         padding: calc(14 / 16 * 1rem) calc(30 / 16 * 1rem);
         font-size: calc(var(--typo-tablet-size-caption-xl) / 16 * 1rem);
         line-height: calc(var(--typo-tablet-line-height-caption-xl) / 16 * 1rem);
+    }
+    /* btn-line - 선 타입 버튼 */
+    .btn.btn-line {
+        padding: calc(13.5 / 16 * 1rem) calc(16 / 16 * 1rem);
+        font-size: calc(var(--typo-tablet-size-body-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-caption-xl) / 16 * 1rem);
+    }
+    .btn.btn-line .ico {
+        min-width: calc(19.2 / 16 * 1rem);
+        width: calc(19.2 / 16 * 1rem);
     }
 }
 
@@ -149,6 +182,12 @@
 
 /* ~ $phone */
 @media screen and (max-width: 767px) {
+    .button__wrap.button__wrap--horizontal--mo {
+        flex-direction: column;
+    }
+    .button__wrap.button__wrap--horizontal--mo .btn {
+        width: 100%;
+    }
     .btn-round {
         width: 100%;
         padding: calc(10 / 16 * 1rem) calc(30 / 16 * 1rem);
@@ -173,5 +212,10 @@
         width: fit-content;
         font-size: calc(var(--typo-mo-size-body-xs) / 16 * 1rem);
         line-height: calc(var(--typo-mo-line-height-body-xs) / 16 * 1rem);
+    }
+    /* btn-line - 선 타입 버튼 */
+    .btn.btn-line {
+        padding: calc(9.5 / 16 * 1rem) calc(16 / 16 * 1rem);
+        height: calc(40 / 16 * 1rem);
     }
 }
