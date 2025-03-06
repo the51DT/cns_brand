@@ -12,9 +12,6 @@
     @media #{$phone} {
         grid-template-columns: 1fr;
     }
-    
-
-
     .cmp_button_item {
         background-color: #FAFAFA;
         padding: calc(32 / 16 * 1rem);
@@ -25,7 +22,6 @@
                 font-weight: 700;
             }
         }
-
         .button__wrap {
             display: flex;
             justify-content: flex-end;
@@ -35,7 +31,6 @@
                     width: 100%;
                 }
             }
-
         }
     }
 }
