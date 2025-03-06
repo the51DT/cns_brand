@@ -52,6 +52,42 @@
                         }) %>
                         <!-- //cmp_SpecList -->
                     </div>
+
+                    <p class="guide-title-h3 mt-10">SpecList styleType : type-column : 기업정보 > 사회공헌</p>                    
+                    <div class="cmp-exsample__wrap mt-10">
+                        <!-- cmp_SpecList -->
+                        <% const specListData2 = [ 
+                            { 
+                                id: 0,
+                                subTitle: '가',
+                            }, 
+                            { 
+                                id: 1, 
+                                subTitle: '01',
+                                title: '신고/접수',
+                                content: [
+                                    '다양한 신고채널을 통해 신고 접수(사내 익명 신고 게시판, 임직원 상담 프로그램, 설문조사, 고충상담센터 등)', 
+                                    '정식 조사대항 여부 검토',
+                                ]
+                            }, 
+                            { 
+                                id: 02,
+                                title: '초동조치',
+                                content: [
+                                    '신고인 요청사항 확인',
+                                    '신고인 보호조치',
+                                    '(필요 시) 피신고인 인사조치',
+                                ]
+                            },
+                        ]; 
+                        %>
+                        <%- include('src/component/cmp_SpecList.html', {
+                            itemCount: 4,
+                            jsonData: specListData2,
+                            styleType: 'type-column',
+                        }) %>
+                        <!-- //cmp_SpecList -->
+                    </div>
                 </div>
             </div>
         </div>
