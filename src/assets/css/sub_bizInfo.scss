@@ -156,23 +156,14 @@
       border: 0;
     }
 
-    .credit_rating {
+    .data-table {
       color: var(--text-text-default, #1a1a1a);
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
 
-      .left,
-      .weight-text,
       th {
         font-weight: 700;
-      }
-
-      .left {
-        text-align: left;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
       }
 
       thead {
@@ -183,7 +174,6 @@
       th,
       td {
         padding: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-        text-align: center;
       }
       td {
         border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
