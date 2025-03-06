@@ -218,6 +218,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_image_box.html"
+        },
+        {
+            "name": "ButtonItemList",
+            "screenId": "",
+            "path": "/src/guide/",
+            "fileName": "cmp_guide_button_item_list.html"
         }
       ]
     },
