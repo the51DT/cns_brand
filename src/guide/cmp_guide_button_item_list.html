@@ -19,8 +19,14 @@
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
                     <p class="guide-title-h3">Button_item_list: 기업정보 > 지속가능경영보고서</p>
-                        <!-- Component -->
+
                         <div class="cmp-exsample__wrap mt-3">
+                            <!-- Title -->
+                            <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                                teaserText1: 'buttonName 배열로 최대 2개 생성할 수 있으며 미정의 시 기본 다운로드 버튼 한 개만 생성됩니다.'
+                            })) %>  
+                            <!-- //Title -->
+                                <!-- Component -->
                             <% 
                                 const buttonItemListData = [
                                     {
@@ -33,23 +39,40 @@
                                     },
                                     {
                                         id: 2,
-                                        title: '다음과 같이<br>텍스트가 들어갑니다'
+                                        title: '2022~2023<br>지속가능경영보고서'
                                     },
                                     {
                                         id: 3,
-                                        title: '다음과 같이<br>텍스트가 들어갑니다'
+                                        title: '2020년<br>감사보고서',
+                                        buttonName: [
+                                            '연결 PDF',
+                                            '별도 PDF'
+                                        ]
                                     },
                                     {
                                         id: 4,
-                                        title: '다음과 같이<br>텍스트가 들어갑니다'
+                                        title: '2021년<br>감사보고서',
+                                        buttonName: [
+                                            '연결 PDF',
+                                            '별도 PDF'
+                                        ]
                                     },
                                     {
                                         id: 5,
-                                        title: '다음과 같이<br>텍스트가 들어갑니다'
+                                        title: '2022년<br>감사보고서',
+                                        buttonName: [
+                                            '연결 PDF',
+                                            '별도 PDF'
+                                        ]
                                     },
                                     {
                                         id: 6,
-                                        title: '다음과 같이<br>텍스트가 들어갑니다'
+                                        title: '2023년<br>감사보고서',
+                                        buttonName: [
+                                            '연결 PDF',
+                                            '별도 PDF',
+                                            '2개 초과시 생성X'
+                                        ]
                                     }
                                 ]
 
@@ -58,8 +81,9 @@
                                 itemCount: 7,
                                 jsonData: buttonItemListData
                             })) %>
+                            <!-- //Component -->
                         </div>
-                        <!-- //Component -->
+
                 </div>
             </div>
         </div>
