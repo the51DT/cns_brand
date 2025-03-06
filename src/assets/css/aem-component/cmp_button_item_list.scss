@@ -1,0 +1,41 @@
+// cmp button item list
+.cmp_button_item_list__wrap {
+    display: grid;
+    gap: $gap-margin;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    margin: 0 auto;
+
+    @media #{$tablet} {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media #{$phone} {
+        grid-template-columns: 1fr;
+    }
+    
+
+
+    .cmp_button_item {
+        background-color: #FAFAFA;
+        padding: calc(32 / 16 * 1rem);
+
+        &__text-box {
+            margin-bottom: calc(60 / 16 * 1rem);
+            .title {
+                font-weight: 700;
+            }
+        }
+
+        .button__wrap {
+            display: flex;
+            justify-content: flex-end;
+            
+            .btn-line {
+                @media #{$phone} {
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+}
