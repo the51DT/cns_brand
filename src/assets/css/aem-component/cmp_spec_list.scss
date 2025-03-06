@@ -9,6 +9,17 @@
     &:has(.spec-item.type-column) {
         border-top: 0;
     }
+    &:has(.spec-item.type-box) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $gap-margin;
+        border-top: 0;
+        @media #{$phone} {
+            grid-template-columns: 1fr;
+        }
+        // flex-direction: row;
+        // flex-wrap: wrap;
+    }
     .spec-item {
         display: flex;
         align-items: flex-start;
@@ -36,6 +47,37 @@
             }
             .spec-text {
                 width: 100%;
+            }
+        }
+        &.type-box {
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: calc(24 / 16 * 1rem) 0;
+            .spec-item__list {
+                li {
+                    position: relative;
+                    padding-left: calc(26 / 16 * 1rem);
+                    &:before {
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        top: calc(14 / 16 * 1rem);
+                        left: calc(11 / 16 * 1rem);
+                        width: calc(4 / 16 * 1rem);
+                        height: calc(4 / 16 * 1rem);
+                        border-radius: 50%;
+                        background: var(--colorCM-all-fill-fill-default9);
+                    }
+                    &:only-of-type {
+                        padding-left: 0;
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+                .spec-text {
+                    width: 100%;
+                }
             }
         }
         .spec-num {

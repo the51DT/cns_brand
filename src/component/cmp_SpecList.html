@@ -9,21 +9,23 @@
             <div class="spec-item <%- typeof styleType !=='undefined' && styleType ? styleType : '' %>">        
                 <div class="font-body-lg spec-title">
                     <div class="spec-num"><%- typeof item.subTitle !== 'undefined' ? item.subTitle : (i + 1).toString().padStart(2, '0') %></div>
-                    <%- item.title ? item.title : '기본 제목' %>
+                    <%- item.title ? item.title : ' ' %>
                 </div>
-                <% if(typeof styleType !=='undefined' && styleType == 'type-sub' && item.content) { %>
-                    <ul>
+                <% if(typeof styleType !=='undefined' && styleType == 'type-box' && item.content) { %>
+                    <ul class="spec-item__list">
                         <% item.content.forEach((content) => { %>
-                            <li>
+                            <li class="font-body-lg spec-text">
                                 <%- content %>
                             </li>
                         <% }) %>
                     </ul>
                 <% } else { %>
                     <div class="font-body-sm spec-text">
-                        <p>
-                            <%- item.content ? item.content : '기본 설명이 들어갑니다.' %>
-                        </p>
+                        <% if(item.content) {%>
+                            <p>
+                                <%- item.content %>
+                            </p>
+                        <% } %>
                     </div>
                 <% } %>
             </div>
