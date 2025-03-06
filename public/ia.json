@@ -184,6 +184,12 @@
                     "fileName": "cmp_guide_DataList.html"
                 },
                 {
+                    "name": "NumberList",
+                    "screenId": "",
+                    "path": "/src/guide/",
+                    "fileName": "cmp_guide_number_list.html"
+                },
+                {
                     "name": "썸네일 유형",
                     "screenId": "",
                     "path": "/src/guide/",
@@ -274,6 +280,12 @@
                     "screenId": "",
                     "path": "/src/page/",
                     "fileName": "bizInfo_enviroMgmt.html"
+                },
+                {
+                    "name": "기업정보 - 정도경영",
+                    "screenId": "",
+                    "path": "/src/page/",
+                    "fileName": "bizInfo_jungdoMgmt.html"
                 },
                 {
                     "name": "기업정보 - 준법경영",
