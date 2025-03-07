@@ -49,145 +49,37 @@
 
   // .bizInfo_ceo
   &ceo {
-    &__container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: calc(61 / 16 * 1rem);
-        max-width: calc(1600 / 16 * 1rem);
-        margin: 0 auto;
-        padding: calc(140.5 / 16 * 1rem) calc(40 / 16 * 1rem);
-        color: #1a1a1a;
-        
-        @media #{$tabletMini} {
-          flex-direction: column;
-          padding: calc(60 / 16 * 1rem) calc(20 / 16 * 1rem);
-        }
-    }
-    
-    &__title {
-        margin-bottom: calc(40 / 16 * 1rem);
-        .ceo-text {
-          margin-bottom: calc(12 / 16 * 1rem);
-        }
-        
-        @media #{$tabletMini} {
-          margin-bottom: calc(20 / 16 * 1rem);
-        }
-    }
-    
-    &__description {
-        margin-bottom: calc(40 / 16 * 1rem);
-        color: var(--colorCM-all-text-text-secondary);
-        p {
-          margin-bottom: calc(40 / 16 * 1rem);
-        }
-        
-        @media #{$tabletMini} {
-          p {
-            margin-bottom: calc(20 / 16 * 1rem);
-          }
-        }
-    }
-    
-    &__signature {
-        display: flex;
-        align-items: center;
-        .margin {
-          margin-right: calc(20 / 16 * 1rem);
-        }
-    }
-    
-    // 반응형
-    .mobile-content {
-        display: none;
-        
-        @media #{$tabletMini} {
-          display: block;
-          margin-bottom: calc(30 / 16 * 1rem);
-          
-          .subtitle {
-            margin-bottom: calc(24 / 16 * 1rem);
-          }
-        }
-    }
-    
-    .mobile-image-container {
-        margin: calc(20 / 16 * 1rem) 0;
-        text-align: center;
-        
-        img {
-          max-width: 100%;
-          height: auto;
-        }
-    }
-    
-    .pc-subtitle {
-        @media #{$tabletMini} {
-          display: none;
-        }
-    }
-    
-    .pc-image-container {
-        @media #{$tabletMini} {
-          display: none;
-        }
-        
-        img {
-          display: block;
-          max-width: 100%;
-          height: auto;
-        }
-    }
-  }
-  // .bizInfo_compliance
-  &compliance {
-    .sub-content__wrap {
-        .inner-wrap {
-          padding-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-        }
+    .mobile-content{
+      display: none;
     }
 
-    .compliance-preface {
-        color: var(--colorGL-all-gray700);
-        font-weight: var(--typo-pc-weight-bold700);
-        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
+    &__container{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: calc(61 / 16 * 1rem);
+      max-width: calc(1600 / 16 * 1rem);
+      margin: 0 auto;
 
-        @media #{$phone} {
-          margin-bottom: calc(32 / 16 * 1rem);
-        }
+      padding-top: calc(198/16*1rem);
+      padding-bottom: calc(198/16*1rem);
+
     }
 
-    .compliance-text p {
-        margin-bottom: 1.5rem;
+    &__title{
+      margin-bottom: calc(var( --spacing-mode1-vertical-m)/16*1rem);
     }
 
-    .compliance-ceo {
-        margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
-
-        .compiliance-ceo-text {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
-        }
-
-        .compliance-ceo-name {
-          font-weight: 600;
-        }
+    .subtitle, &__description{
+      margin-bottom: calc(var(--spacing-mode1-vertical3-x-l)/16*1rem);
     }
-  }
 
-  //.bizInfo_financial
-  &financial {
-    // 임시 스타일, 추후 그래프 컴포넌트화 예정
-    .graph-container {
-      background-color: #aaaaaa;
-      height: calc(437 / 16 * 1rem);
-      margin-bottom: calc(53 / 16 * 1rem);
+    &__signature{
+      margin-right: calc(var(--typo-pc-size-body-md)/16*1rem);
     }
-    .unit-text {
-      margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) /16 * 1rem);
+
+    p{
+      margin-bottom: 2rem;
     }
   }
 
