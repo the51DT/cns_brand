@@ -180,7 +180,6 @@
 
   //.bizInfo_financial
   &financial {
-
   }
 
   // .bizInfo_ir
@@ -211,6 +210,7 @@
       // 스크롤 필요할시 아래 두 개 활성화
       table-layout: fixed; 
       min-width: 630px;  
+      margin-bottom: calc(var(--spacing-mode1-vertical5-x-l)16*1rem);
       
 
       th {
