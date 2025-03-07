@@ -154,11 +154,11 @@
     
     .data-table {
       width: 100%;
-      min-width: 800px;
       color: var(--text-text-default, #1a1a1a);
       border-collapse: collapse;
+      // 스크롤 필요할시 아래 두 개 활성화
       table-layout: fixed; 
-  
+      min-width: 630px;  
 
       th {
         font-weight: 700;
