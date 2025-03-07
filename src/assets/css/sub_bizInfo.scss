@@ -179,18 +179,18 @@
   // .bizInfo_ir
   &ir {
     .sub-content__wrap {
-      margin-bottom: calc(200 / 16 * 1rem);
+      margin-bottom: calc(var(--spacing-mode1-vertical9-x-l) / 16 * 1rem);
       @media #{$pcMiddle} {
-        margin-bottom: calc(160 / 16 * 1rem);
+        margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
       }
       @media #{$tablet} {
-        margin-bottom: calc(120 / 16 * 1rem);
+        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
       }
       @media #{$tabletMini} {
-        margin-bottom: calc(100 / 16 * 1rem);
+        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
       }
       @media #{$phone} {
-        margin-bottom: calc(80 / 16 * 1rem);
+        margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
       }
     }
   }
