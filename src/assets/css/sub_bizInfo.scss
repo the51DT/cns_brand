@@ -180,8 +180,14 @@
 
   //.bizInfo_financial
   &financial {
-    .table-container {
-      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+    // 임시 스타일, 추후 그래프 컴포넌트화 예정
+    .graph-container {
+      background-color: #aaaaaa;
+      height: calc(437 / 16 * 1rem);
+      margin-bottom: calc(53 / 16 * 1rem);
+    }
+    .unit-text {
+      margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) /16 * 1rem);
     }
   }
 
