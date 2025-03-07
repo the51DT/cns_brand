@@ -58,12 +58,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: calc(61 / 16 * 1rem);
-      max-width: calc(1600 / 16 * 1rem);
       margin: 0 auto;
-
-      padding-top: calc(198/16*1rem);
-      padding-bottom: calc(198/16*1rem);
+      padding: calc(197 / 16 * 1rem) calc(80 / 16 * 1rem);
 
     }
 
@@ -81,6 +77,10 @@
 
     p{
       margin-bottom: 2rem;
+    }
+
+    @media #{$pcMiddle}{
+      &__container{}
     }
   }
 
