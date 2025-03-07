@@ -180,38 +180,7 @@
 
   //.bizInfo_financial
   &financial {
-    .table-container {
-      overflow-x: auto;
-      width: 100%;
-      display: block; 
-      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-    }
-    
-    .data-table {
-      width: 100%;
-      color: var(--text-text-default, #1a1a1a);
-      border-collapse: collapse;
-      // 스크롤 필요할시 아래 두 개 활성화
-      table-layout: fixed; 
-      min-width: 630px;  
 
-      th {
-        font-weight: 700;
-      }
-  
-      thead {
-        border-top: 2px solid var(--colorCM-all-stroke-stroke-default1);
-        border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default1);
-      }
-  
-      th,
-      td {
-        padding: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-      }
-      td {
-        border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
-      }
-    }
   }
 
   // .bizInfo_ir
