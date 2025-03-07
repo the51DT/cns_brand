@@ -145,34 +145,37 @@
 
   //.bizInfo_financial
   &financial {
+    .table-container {
+      overflow-x: auto;
+      width: 100%;
+      display: block; 
+      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+    }
+    
     .data-table {
-        color: var(--text-text-default, #1a1a1a);
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+      width: 100%;
+      min-width: 800px;
+      color: var(--text-text-default, #1a1a1a);
+      border-collapse: collapse;
+      table-layout: fixed; 
+  
 
-        th {
-          font-weight: 700;
-        }
-
-        thead {
-          border-top: 2px solid var(--colorCM-all-stroke-stroke-default1);
-          border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default1);
-        }
-
-        th,
-        td {
-          padding: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-        }
-        td {
-          border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
-        }
-
-        @media #{$phone} {
-          .mobile-none {
-            display: none;
-          }
-        }
+      th {
+        font-weight: 700;
+      }
+  
+      thead {
+        border-top: 2px solid var(--colorCM-all-stroke-stroke-default1);
+        border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default1);
+      }
+  
+      th,
+      td {
+        padding: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+      }
+      td {
+        border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
+      }
     }
   }
 
