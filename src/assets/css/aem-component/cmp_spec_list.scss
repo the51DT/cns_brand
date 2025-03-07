@@ -19,6 +19,9 @@
         }
         // flex-direction: row;
         // flex-wrap: wrap;
+        .spec-text {
+            width: 100%;
+        }
     }
     .spec-item {
         display: flex;
@@ -31,7 +34,7 @@
             flex-direction: column;
             padding: calc(40 / 16 * 1rem) 0;
         }
-        &:last-child {
+        &:last-child:not(.type-box) {
             border-bottom: 0;
             padding-bottom: 0;
         }

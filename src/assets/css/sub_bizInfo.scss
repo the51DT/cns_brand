@@ -30,7 +30,8 @@
   }
   // .bizInfo_enviroMgmt
   &enviroMgmt {
-    .cmp_image-item-2col {
+    .cmp_image-item-2col,
+    .cmp_image-item-column:not(:last-child) {
         margin-bottom: calc(200 / 16 * 1rem);
         @media #{$pcMiddle} {
           margin-bottom: calc(160 / 16 * 1rem);
@@ -324,5 +325,8 @@
         }
       }
     }
+  }
+  &humanRights {
+    
   }
 }
