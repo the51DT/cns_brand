@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data.title %></title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap bizInfo_ir">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {
+            pcImg: 'empty',
+            moImg: 'empty',
+            subText: '기업정보',
+            pageTitle: 'IR자료',
+        })) %>
+        <!-- //비주얼 영역 -->
+        <div class="sub-content__wrap">
+            <div class="inner-wrap">
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    titleText: '감사보고서' ,
+                })) %>
+                <% 
+                    const buttonItemListData = [
+                        {
+                            id: 0,
+                            title: '2023년<br>감사보고서',
+                            buttonName: [
+                                '연결 PDF',
+                                '별도 PDF'
+                            ]
+                        },
+                        {
+                            id: 1,
+                            title: '2022년<br>감사보고서',
+                            buttonName: [
+                                '연결 PDF',
+                                '별도 PDF'
+                            ]
+                        },
+                        {
+                            id: 2,
+                            title: '2021년<br>감사보고서',
+                            buttonName: [
+                                '연결 PDF',
+                                '별도 PDF'
+                            ]
+                        },
+                        {
+                            id: 3,
+                            title: '2020년<br>감사보고서',
+                            buttonName: [
+                                '연결 PDF',
+                                '별도 PDF'
+                            ]
+                        },
+                        {
+                            id: 4,
+                            title: '2019년<br>감사보고서',
+                            buttonName: [
+                                '연결 PDF',
+                                '별도 PDF'
+                            ]
+                        },
+                        {
+                            id: 5,
+                            title: '2018년<br>감사보고서',
+                            buttonName: [
+                                '연결 PDF',
+                                '별도 PDF'
+                            ]
+                        },
+                        {
+                            id: 6,
+                            title: '2017년<br>감사보고서',
+                            buttonName: [
+                                '연결 PDF',
+                                '별도 PDF'
+                            ]
+                        },
+                    ]
+                %>
+                <%- include('src/component/cmp_button_item_list.html', Object.assign({}, locals, {
+                    itemCount: 7,
+                    jsonData: buttonItemListData
+                })) %>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+</body>
+</html>
