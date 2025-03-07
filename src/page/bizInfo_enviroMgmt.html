@@ -43,7 +43,177 @@
                     </div>
                     <div class="tab-content__wrap">
                         <div class="tab__content is-active">
-                            <div style="height: 300px;">탭 메뉴1</div>
+                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
+                                overviewTitle: '안전보건방침', 
+                                overviewContent: 'LG CNS는 “임직원 및 협력사 직원의 건강과 공동체 안전”을 최우선 가치로 인식하며, 안전보건 성과의 지속적인 개선을 통해 안전하고 건강한 일터를 조성한다.'
+                            })) %>
+
+                            <% const specListData1 = [ 
+                                { 
+                                    id: 0,
+                                    title: '타협 불가한 제1의 가치',
+                                    content: [
+                                        '안전보건을 경영의 최우선 가치로 한다.', 
+                                    ]
+                                }, 
+                                { 
+                                    id: 1, 
+                                    title: '원칙 준수',
+                                    content: [
+                                        '안전보건에 관한 법규 및 이해관계자의 요구사항을 준수하고 기본과 원칙에 의한 안전보건경영 시스템을 운영한다.',
+                                    ]
+                                }, 
+                                { 
+                                    id: 2,
+                                    title: '참여와 공개',
+                                    content: [
+                                        '구성원은 안전보건 활동에 능동적으로 참여하며 안전보건성과는 이해관계자들에게 투명하게 공개한다.',
+                                    ]
+                                },
+                                { 
+                                    id: 3,
+                                    title: '지속적 개선',
+                                    content: [
+                                        '안전보건을 확보하기 위한 내부 및 외부의 피드백을 통해 안전보건 관리체계의 지속적인 개선을 추구한다.',
+                                    ]
+                                },
+                            ]; 
+                            %>
+                            <%- include('src/component/cmp_SpecList.html', {
+                                itemCount: 4,
+                                jsonData: specListData1,
+                                styleType: 'type-box',
+                            }) %>
+
+                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                titleText: '안전보건목표', 
+                            })) %>
+
+                            <% const specListData2 = [ 
+                                { 
+                                    id: 0,
+                                    content: [
+                                        '경영진은 사업장의 안전보건 활동을 위해 정기적으로 검하며 구성원의 의견을 청취하고 개선한다.', 
+                                    ]
+                                }, 
+                                { 
+                                    id: 1, 
+                                    content: [
+                                        '구성원은 규정된 안전보건 활동에 주도적으로 참여하고 실행한다.',
+                                    ]
+                                }, 
+                                { 
+                                    id: 2,
+                                    content: [
+                                        '산업재해를 예방하기 위한 예산을 수립하고, 집행의 적정성을 점검한다.',
+                                    ]
+                                },
+                                { 
+                                    id: 3,
+                                    content: [
+                                        '유해위험요인에 대한 사전발굴 및 사후대책을 적기 이행한다.',
+                                    ]
+                                },
+                                { 
+                                    id: 4,
+                                    content: [
+                                        '정기적으로 안전보건 경영성과를 평가하여 투명하게 정보를 공개하고 경영진에게 보고한다.',
+                                    ]
+                                },
+                            ]; 
+                            %>
+                            <%- include('src/component/cmp_SpecList.html', {
+                                itemCount: 5,
+                                jsonData: specListData2,
+                                styleType: 'type-box',
+                            }) %>
+
+                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
+                                overviewTitle: '환경방침', 
+                                overviewContent: 'LG CNS는 인간존중의 경영 이념 아래, 안전보건환경을 회사의 지속 가능한 경영 요소로 인식하여 경영활동 전과정(Life Cycle)에서 적극 실천한다.'
+                            })) %>
+
+                            <% const specListData3 = [ 
+                                { 
+                                    id: 0,
+                                    content: [
+                                        '모든 경영활동으로 인한 환경오염을 최소화하고 환경보호에 적극 동참한다.', 
+                                    ]
+                                }, 
+                                { 
+                                    id: 1, 
+                                    title: '원칙 준수',
+                                    content: [
+                                        '국내 · 외 환경법규 및 이해관계자의 요구사항을 준수하고 글로벌 수준의 환경경영 시스템을 운영한다.',
+                                    ]
+                                }, 
+                                { 
+                                    id: 2,
+                                    title: '참여와 공개',
+                                    content: [
+                                        '모든 구성원은 기후변화에 대응하고 환경경영성과를 평가하여 투명하게 정보를 공개하고, 이해관계자들과 성실히 소통한다.',
+                                    ]
+                                },
+                                { 
+                                    id: 3,
+                                    title: '지속적 개선',
+                                    content: [
+                                        '환경변화 등 외부위험요인에 대해 Risk관리체계를 정착하고, 지속적인 개선을 추구한다.',
+                                    ]
+                                },
+                            ]; 
+                            %>
+                            <%- include('src/component/cmp_SpecList.html', {
+                                itemCount: 4,
+                                jsonData: specListData3,
+                                styleType: 'type-box',
+                            }) %>
+
+                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                titleText: '환경목표', 
+                            })) %>
+
+                            <% const specListData4 = [ 
+                                { 
+                                    id: 0,
+                                    content: [
+                                        '경영진은 사업장의 환경오염을 예방하기 위해 정기적으로 점검하며 구성원의 의견을 청취하고 개선한다.', 
+                                    ]
+                                }, 
+                                { 
+                                    id: 1, 
+                                    content: [
+                                        '구성원은 기후변화 대응을 위해 저탄소 · 친환경 · 자원절약에 적극 참여한다.',
+                                    ]
+                                }, 
+                                { 
+                                    id: 2,
+                                    content: [
+                                        '대 · 내외 환경적 요인 등 모든 Risk를 사전에 검토하고 대책을 수립한다.',
+                                    ]
+                                },
+                                { 
+                                    id: 3,
+                                    content: [
+                                        '환경경영성과를 평가하여 투명하게 정보를 공개하고 경영진에게 보고한다.',
+                                    ]
+                                },
+                            ]; 
+                            %>
+                            <%- include('src/component/cmp_SpecList.html', {
+                                itemCount: 4,
+                                jsonData: specListData4,
+                                styleType: 'type-box',
+                            }) %>
+
+                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
+                                overviewTitle: '안전보건환경 관리체계', 
+                                overviewContent: 'LG CNS는 회사의 발전과 임직원을 안전보건환경을 위해 전사 차원의 관리조직을 운영하고 있습니다.'
+                            })) %>
+
+                            <!-- 임시 영역 -->
+                            <div style="height: 600px; background-color: aliceblue;">그래픽 영역</div>
+                            <!-- // 임시 영역 -->
                         </div>
                         <div class="tab__content">
                             <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
@@ -118,9 +288,108 @@
                             <%- include('src/component/cmp_image_item_column.html', Object.assign({}, locals, {                             
                                 jsonData: imageItemColumnDataChange
                             })) %>
-                            <!-- 임시영역 -->
-                            <div class="mb-20" style="height: 600px; background-color: lightblue;">테이블 임시영역</div>
-                            <!-- // 임시영역 -->
+
+                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                titleText: '친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과 (상암IT센터)', 
+                            })) %>
+                            <div class="cmp-wrap table-container font-body-sm">
+                                <p class="font-bold text-right mb-8">[ 절감량 / 단위 : tCO2eq ]</p>
+                                <table class="text-center data-table">
+                                    <caption>친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과</caption>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2"></th>
+                                            <th scope="col">2014</th>
+                                            <th scope="col">2015</th>
+                                            <th scope="col">2016</th>
+                                            <th scope="col">2017</th>
+                                            <th scope="col">2018</th>
+                                            <th scope="col">2019</th>
+                                            <th scope="col">2020</th>
+                                            <th scope="col">누계</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-left font-bold" colspan="2">LED 조명등 (전층) 교체</td>
+                                            <td>223</td>
+                                            <td>446</td>
+                                            <td>446</td>
+                                            <td>446</td>
+                                            <td>446</td>
+                                            <td>446</td>
+                                            <td>446</td>
+                                            <td>2,899</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-bold" colspan="2">기계실(B3-4층) 외기 공조</td>
+                                            <td>150</td>
+                                            <td>404</td>
+                                            <td>404</td>
+                                            <td>404</td>
+                                            <td>404</td>
+                                            <td>404</td>
+                                            <td>404</td>
+                                            <td>2,574</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-bold" colspan="2">전산실(2-9층) 외기 공조</td>
+                                            <td>AA</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>560</td>
+                                            <td>1,366</td>
+                                            <td>1,366</td>
+                                            <td>1,366</td>
+                                            <td>6,024</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-bold" colspan="2">고효율 UPS(2-9층) 교체</td>
+                                            <td>-</td>
+                                            <td>69</td>
+                                            <td>278</td>
+                                            <td>278</td>
+                                            <td>278</td>
+                                            <td>278</td>
+                                            <td>278</td>
+                                            <td>1,461</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-bold" colspan="2">태양광 설치</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>6</td>
+                                            <td>6</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-bold" colspan="2">전산실(2-9층) 고효율 항온기 교체</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>49</td>
+                                            <td>256</td>
+                                            <td>305</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left font-bold" colspan="2">총계</td>
+                                            <td>373</td>
+                                            <td>919</td>
+                                            <td>1,688</td>
+                                            <td>2,494</td>
+                                            <td>2,494</td>
+                                            <td>2,494</td>
+                                            <td>2,494</td>
+                                            <td>13,276</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>  
                         <div class="tab__content">
                             <% 
