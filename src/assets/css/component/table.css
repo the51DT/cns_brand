@@ -3,7 +3,6 @@
     overflow-x: auto;
     width: 100%;
     display: block; 
-    margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
 }
 .table-container .data-table {
     width: 100%;

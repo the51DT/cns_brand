@@ -180,7 +180,9 @@
 
   //.bizInfo_financial
   &financial {
-
+    .table-container {
+      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+    }
   }
 
   // .bizInfo_ir
