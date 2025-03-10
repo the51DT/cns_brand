@@ -1,1 +1,31 @@
 /* 테이블 */
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+    display: block; 
+}
+.table-container .data-table {
+    width: 100%;
+    color: var(--text-text-default, #1a1a1a);
+    border-collapse: collapse;
+    /* 스크롤 필요할시 아래 두 개 활성화 */
+    table-layout: fixed; 
+    min-width: 630px;
+}
+
+.table-container .data-table th {
+    font-weight: 700;
+}
+
+.table-container .data-table thead {
+    border-top: 2px solid var(--colorCM-all-stroke-stroke-default1);
+    border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default1);
+}
+
+.table-container .data-table th,
+.table-container .data-table td {
+    padding: calc(22.5 / 16 * 1rem) calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+}
+.table-container .data-table td {
+    border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
+}

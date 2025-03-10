@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data.title %></title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap bizInfo_humanRights">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {
+            pcImg: 'empty',
+            moImg: 'empty',
+            subText: '기업정보',
+            pageTitle: '인권경영',
+            rightDesc: 'LG CNS는 <br>인권경영을 실천하고 있습니다.'
+        })) %>
+        <!-- //비주얼 영역 -->
+        <div class="sub-content__wrap">
+            <div class="inner-wrap">
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    titleText: '인권정책',
+                })) %>
+
+                <% const itemList3ColumnsData1 = [ 
+                    { 
+                        id: 0, 
+                        imageUrl: 'https://placehold.co/48x48' ,
+                        title: '인간존중' ,
+                        content: [
+                            '모든 근로자를 인간으로 존중하며, 근로자에 대한 성희롱이나 성적 학대, 체벌, 정신적이거나 육체적인 강압, 폭언, 직장에서의 불합리한 제한 등 가혹하거나 비인도적 대우가 없도록 한다.'
+                        ],
+                    }, 
+                    { 
+                        id: 1, 
+                        imageUrl: 'https://placehold.co/48x48' ,
+                        title: '차별금지' , 
+                        content: '임직원의 채용, 승진, 보상, 훈련 기회 제공 등 인사제도 운영과 제품 및 서비스 제공에 있어 국적, 인종, 연령, 성별, 성적 취향, 장애, 임신, 종교, 정치단체 가입, 노동조합 가입, 결혼 여부 등의 이유로 차별을 받지 않도록 한다.' 
+                    }, 
+                    { 
+                        id: 2,
+                        imageUrl: 'https://placehold.co/48x48' , 
+                        title: '강제노동 금지' ,
+                        content: '폭행, 협박, 감금 등 정신적 또는 신체적인 자유를 부당하게 구속해 개인의 자유의사에 어긋나는 근로를 강요하지 않는다. 모든 근로는 자발적으로 이루어져야 하며, 고용을 조건으로 근로자에게 정부가 발행하는 신분증이나 여권, 근로 허가증의 양도를 요구하지 않는다.' 
+                    }, 
+                    { 
+                        id: 3, imageUrl: 'https://placehold.co/48x48' ,
+                        title: '아동노동 금지' , 
+                        content: '어떠한 직무에도 아동 근로자를 고용하지 않는다. ‘아동’은 일정한 최소 연령에 미달하는 자를 의미하며, 이러한 최소 근로 연령은 각 국가 및 지역의 법규에 따라 결정된다. 법정 최소 고용 연령 이상의 연소근로자를 고용하는 경우 법정 근로시간을 준수하고, 건강 · 안전 · 도덕상 또는 보건상 유해 · 위험한 직무에 배정하지 않는다.' 
+                    }, 
+                    { 
+                        id: 4,
+                        imageUrl: 'https://placehold.co/48x48' , 
+                        title: '근로시간' ,
+                        content: '각 국가 및 지역의 법규에서 지정한 정규, 초과 근로시간 및 휴무 관련 규정을 준수한다.' 
+                    }, 
+                    { 
+                        id: 5,
+                        imageUrl: 'https://placehold.co/48x48' , 
+                        title: '임금과 복리후생' ,
+                        content: '모든 근로자에게 지급되는 대가는 최저 임금, 초과 근로시간, 법정복리후생 등을 포함해 해당되는 모든 각 국가 및 지역의 노동관계 법령을 준수한다.' 
+                    }, 
+                    { 
+                        id: 6,
+                        imageUrl: 'https://placehold.co/48x48' , 
+                        title: '결사의 자유' ,
+                        content: '각 국가 및 지역의 노동관련 법규에 따라 보장된 결사의 자유와 권리를 인정하고, 근로자가 차별이나 보복, 협박, 괴롭힘에 대한 두려움 없이 근로조건에 대해 경영진과 의사소통할 수 있는 환경을 조성한다.' 
+                    }, 
+                    { 
+                        id: 7,
+                        imageUrl: 'https://placehold.co/48x48' , 
+                        title: '개인정보의 보호' ,
+                        content: '이해관계자의 개인정보는 철저히 보호하고, 이해관계자의 사전 승인 없이 정보를 누설하거나 타 용도에 사용하지 않는다. 또한 진실한 정보를 전하며 허위사실 및 정보를 제공하지 않고, 약속을 반드시 지킨다.' 
+                    }, 
+                    { 
+                        id: 8,
+                        imageUrl: 'https://placehold.co/48x48' , 
+                        title: '안전 및 보건' ,
+                        content: '임직원, 협력회사를 포함한 모든 근로자의 안전하고 위생적인 작업환경을 조성한다. 재해 예방을 위한 안전 · 보건 관리 체계를 구축하고, 안전 · 보건 관련 법률을 준수한다.' 
+                    },
+                ]; 
+                %>
+                <%- include('src/component/cmp_Itemlist_3Columns.html', {
+                    itemCount: 9,
+                    jsonData: itemList3ColumnsData1,
+                    ImageAlign: 'left',
+                    textAlign: 'left', 
+                    itemType: 'type-border-bottom',
+                }) %>
+
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    titleText: '수상내역',
+                })) %>
+
+                <%
+                    const itemList3Col = [
+                        {
+                            imageUrl: 'https://placehold.co/360x360',
+                            imageAlt: '일자리 우수사업주 선정 (2020,2023)',
+                            title: '일자리 <br>우수사업주 선정 <br>(2020,2023)',   
+                        },
+                        {
+                            imageUrl: 'https://placehold.co/360x360',
+                            imageAlt: '장애인 고용 촉진대회 고용노동부 장관 표창 수상 (2018,2022)',
+                            title: '장애인 고용 촉진대회 <br>고용노동부 장관 표창 수상<br>(2018,2022)',
+                        },
+                        {
+                            imageUrl: 'https://placehold.co/360x360',
+                            imageAlt: '장애인 고용 우수사업주 선정 (2021)',
+                            title: '장애인 고용 <br>우수사업주 선정 <br>(2021)',
+                        },
+                    ]
+                %>
+                <%- include('src/component/cmp_image_item_3columns_box.html', {
+                    jsonData: itemList3Col
+                }) %>
+
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    titleText: '인권침해 구제 프로세스',
+                })) %>
+
+                <% const specListData = [ 
+                    { 
+                        id: 0,
+                        title: '신고/접수',
+                        content: [
+                            '다양한 신고채널을 통해 신고 접수(사내 익명 신고 게시판, 임직원 상담 프로그램, 설문조사, 고충상담센터 등)',
+                            '정식 조사대항 여부 검토',
+                        ]
+                    }, 
+                    { 
+                        id: 1, 
+                        title: '초동조치',
+                        content: [
+                            '신고인 요청사항 확인',
+                            '신고인 보호조치',
+                            '(필요 시) 피신고인 인사조치',
+                        ]
+                    }, 
+                    { 
+                        id: 2,
+                        title: '조사',
+                        content: [
+                            '현장 조사, 자료 분석, 심층 인터뷰 진행',
+                            '괴롭힘/성희롱 등 인권침해 인정여부 판단',
+                        ]
+                    },
+                    { 
+                        id: 3,
+                        title: '사후 조치',
+                        content: [
+                            '신고인 후속 보호조치',
+                            '(필요 시) 피신고인 인사조치',
+                            '개선방안 마련 및 후속조치 이행점검',
+                        ]
+                    },
+                ]; 
+                %>
+                <%- include('src/component/cmp_SpecList.html', {
+                    itemCount: 4,
+                    jsonData: specListData,
+                    styleType: 'type-box',
+                }) %>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+</body>
+</html>

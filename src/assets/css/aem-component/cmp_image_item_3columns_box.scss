@@ -1,0 +1,38 @@
+.cmp_image-item-3col-box {
+    .image-item-3col {
+        display: flex;
+        gap: $gap-margin;
+        @media #{$tablet} {
+            flex-direction: column;
+        }
+        li {
+            padding: calc(60 / 16 * 1rem) calc(32 / 16 * 1rem);
+            width: calc(33.33% - calc(($gap-margin * 2) / 3));
+            background: #FAFAFA;
+            @media #{$tablet} {
+                padding: calc(32 / 16 * 1rem);
+                width: 100%;
+            }
+        }
+        .img-box {
+            margin: 0 auto;
+            text-align: center;
+            img {
+                margin: 0 auto;
+            }
+            & + .text-box {
+                margin-top: calc(12 / 16 * 1rem);
+            }
+        }
+        &__title {
+            display: block;
+            text-align: center;
+            & + .image-item-3col__text {
+                margin-top: calc(12 / 16 * 1rem);
+            }
+        }
+        &__text {
+            text-align: center;
+        }
+    }
+}

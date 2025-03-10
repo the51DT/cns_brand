@@ -12,6 +12,8 @@
 @import 'aem-component/cmp_title.scss';
 @import 'aem-component/cmp_teaser_title.scss';
 @import 'aem-component/cmp_image_item.scss';
+@import 'aem-component/cmp_image_item_2columns.scss';
+@import 'aem-component/cmp_image_item_3columns_box.scss';
 @import 'aem-component/cmp_item_list_columns.scss';
 @import 'aem-component/cmp_spec_list.scss';
 @import 'aem-component/cmp_customer_case.scss';
@@ -21,6 +23,11 @@
 @import 'aem-component/cmp_board_detail_info.scss';
 @import 'aem-component/cmp_post_navigation.scss';
 @import 'aem-component/cmp_search_wrap.scss';
+@import 'aem-component/cmp_item_list.scss';
+@import 'aem-component/cmp_image_item_column.scss';
+@import 'aem-component/cmp_dash_list.scss';
+@import 'aem-component/cmp_button_item_list.scss';
+@import 'aem-component/cmp_multi_item_list.scss';
 /* icon */
 @import 'icon.scss';
 /* tailwind */
@@ -28,3 +35,4 @@
 /* sub content*/
 @import 'sub_moa.scss';
 @import 'sub_future.scss';
+@import 'sub_bizInfo.scss';

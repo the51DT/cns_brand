@@ -1,0 +1,30 @@
+
+.cmp-future-content {
+    .future-content-items {
+        display: flex;
+        flex-direction: column;
+        gap: calc(40 / 16 * 1rem);
+        padding: calc(40 / 16 * 1rem);
+        background-color: var(--colorGL-all-white100);
+        @media #{$phone} {
+            padding: calc(24 / 16 * 1rem);   
+        }
+        & + .future-content-items {
+            margin-top: calc(16 / 16 * 1rem);
+        }
+        .item-image {
+            img {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        .item-content-list {
+            display: flex;
+            flex-direction: column;
+            gap: calc(40 / 16 * 1rem);
+            li {
+                gap: calc(12 / 16 * 1rem);
+            }
+        }
+    }
+}

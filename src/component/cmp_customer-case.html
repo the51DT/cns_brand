@@ -8,7 +8,7 @@
                             
                             <% if (data.length > 0) { %>
                                 <% data.slice(0, itemLimit).forEach((item, i) => { %>                            
-                                    <div class="customer-case-items">
+                                    <a href="#" class="customer-case-items">
                                         <ul class="cs-category-list">
                                             <% if (item.category && Array.isArray(item.category)) { %>
                                                 <% item.category.forEach((cate) => { %>
@@ -24,21 +24,15 @@
                                             <img src="<%- item.logoPC %>" alt="" class="type-pc"/>
                                             <img src="<%- item.logoMO %>" alt="" class="type-mo"/>
                                         </div>
-                                    </div>  
-                            <% }) %>
+                                    </a>  
+                                <% }) %>
                             <% } else { %>
                                 <% for (let i = 0; i < itemLimit; i++) { %>
-                                    <div class="customer-case-items">
+                                    <a href="#" class="customer-case-items">
                                         <ul class="cs-category-list">
-                                            <li>
-                                                <a href="#">제조</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">경영관리</a>
-                                            </li>     
-                                            <li>
-                                                <a href="#">DWP</a>
-                                            </li>                                                                     
+                                            <li>제조</li>
+                                            <li>경영관리</li>     
+                                            <li>DWP</li>                                                                     
                                         </ul>
                                         <div class="font-body-xl customer-case-title">LG 이노텍</div>
                                         <div class="font-body-xs customer-case-text">
@@ -47,7 +41,7 @@
                                         <div class="customer-case-cf">
                                             <img src="https://placehold.co/198x96" alt="" />
                                         </div>
-                                    </div>  
+                                    </a>  
                                 <% } %>
                             <% } %>                     
                         </div>
