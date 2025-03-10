@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title><%= data.title %></title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap bizInfo_ceo">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <!-- //비주얼 영역 -->
+        <div class="sub-content__wrap">
+            <div class="inner-wrap">
+                <div class="bizInfo_history__container">
+                  <div class="text-area">
+                     <h1>History</h1>
+                     <p>
+                        LG CNS는 1987년 설립 후<br/>
+                        30년 넘게 대한민국 IT산업의<br/>
+                        발전을 이끌어왔습니다.
+                     </p>
+                  </div>
+                  <div class="bizInfo_history__scroll">
+                     <div class="left-section">
+                        <div class="left-section-item">
+                           <h2>디지털 혁신 선도</h2>
+                           <span>LG CNS,<br>디지털 혁신을 선도하다.</span>
+                           <p>현재부터 2016년까지</p>
+                        </div>
+                        <div class="left-section-item">
+                           <h2>도약과 발전</h2>
+                           <span>LG CNS,<br>도약과 발전의 시기</span>
+                           <p>2022년부터 2015년까지</p>
+                        </div>
+                        <div class="left-section-item">
+                           <h2>성장과 도전</h2>
+                           <span>LG CNS,<br>성장과 도전의 시기</span>
+                           <p>1995년부터 2001년까지</p>
+                        </div>
+                        <div class="left-section-item">
+                           <h2>탄생과 개척</h2>
+                           <span>LG CNS,<br>탄생과 개척의 시기</span>
+                           <p>1987년부터 1994년까지</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+</body>
+</html>
