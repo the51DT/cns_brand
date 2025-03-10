@@ -284,9 +284,33 @@
   &financial {
     // 임시 스타일, 추후 그래프 컴포넌트화 예정
     .graph-container {
-      background-color: #aaaaaa;
-      height: calc(437 / 16 * 1rem);
-      margin-bottom: calc(53 / 16 * 1rem);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: center;
+      gap: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
+      margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
+      @media #{$tablet} {
+        grid-template-columns: 1fr 1fr;
+        row-gap: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+      }
+      @media #{$tabletMini} {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+      }
+      @media #{$phone} {
+        row-gap: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+      }
+
+      &__wrap {
+        // border: solid 1px red;
+        padding: calc(16 / 16 * 1rem);
+        .graph-title {
+          margin-bottom: calc(var(--spacing-mode1-vertical-m-nudge) / 16 * 1rem);
+        }
+        .graph-image {
+          width: 100%;
+        }
+      }
     }
     .unit-text {
       margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) /16 * 1rem);
