@@ -190,12 +190,6 @@
           "fileName": "cmp_guide_DataList.html"
         },
         {
-          "name": "NumberList",
-          "screenId": "",
-          "path": "/src/guide/",
-          "fileName": "cmp_guide_number_list.html"
-        },
-        {
           "name": "썸네일 유형",
           "screenId": "",
           "path": "/src/guide/",
