@@ -319,4 +319,10 @@
       margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) /16 * 1rem);
     }
   }
+
+  &history{
+    &__scroll{
+      display: flex;
+    }
+  }
 }
