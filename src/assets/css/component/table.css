@@ -24,7 +24,8 @@
 
 .table-container .data-table th,
 .table-container .data-table td {
-    padding: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+    padding: 0 calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+    height: calc(72 / 16 * 1rem);
 }
 .table-container .data-table td {
     border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
