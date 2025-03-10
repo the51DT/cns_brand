@@ -16,7 +16,7 @@
         <% if (data.length > 0) { %>
             <% data.slice(0, itemLimit).forEach((item, i) => { %>                            
                 <li>
-                    <div class="content-list__inner">
+                    <a href="#" class="content-list__inner">
                         <div class="thumbnail-wrap">
                             <img src="https://placehold.co/939x470" alt="" />
                             <% if(item.floatText) { %>
@@ -32,7 +32,7 @@
                                 </div>
                             <% } %>
                             <div class="title font-body-lg">
-                                <a href="<%- item.link %>"><%- item.title %></a> 
+                                <%- item.title %>
                             </div>
                             <% if(item.content || (contentTypeValue == 'type-moa-case1' || contentTypeValue == 'type-news')) { %>
                                 <div class="description">
@@ -58,13 +58,13 @@
                                 </div>
                             <% } %>
                         </div>
-                    </div>
+                    </a>
                 </li>             
             <% }) %>
         <% } else { %>
             <% for (let i = 0; i < itemLimit; i++) { %>                                           
                 <li>
-                    <div class="content-list__inner">
+                    <a href="#" class="content-list__inner">
                         <div class="thumbnail-wrap">
                             <img src="https://placehold.co/939x470" alt="" />
                         </div>
@@ -73,7 +73,7 @@
                                 <div class="chip bg-basic font-caption-xl">보도자료</div>
                             </div>
                             <div class="title font-body-lg">
-                                <a href="#">글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함</a> 
+                                글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함
                             </div>
                             <div class="description font-body-sm">
                                 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”
@@ -82,7 +82,7 @@
                                 2025.01.10
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </li>    
             <% } %>
         <% } %>                          
