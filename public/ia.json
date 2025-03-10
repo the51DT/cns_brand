@@ -220,10 +220,10 @@
           "fileName": "cmp_guide_image_box.html"
         },
         {
-            "name": "ButtonItemList",
-            "screenId": "",
-            "path": "/src/guide/",
-            "fileName": "cmp_guide_button_item_list.html"
+          "name": "ButtonItemList",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_button_item_list.html"
         },
         {
           "name": "MultiItemList",
@@ -328,6 +328,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "bizInfo_compliance.html"
+        },
+        {
+          "name": "기업정보 - History",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_history.html"
         }
       ]
     },
