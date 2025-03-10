@@ -79,8 +79,30 @@
       margin-bottom: 2rem;
     }
 
-    @media #{$pcMiddle}{
-      &__container{}
+    .mobile-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 2rem 0;
+    }
+
+    @media #{$tablet}{
+      &__container{
+        flex-direction: column;
+        padding: calc(80 / 16 * 1rem) calc(32 / 16 * 1rem);
+      }
+
+
+      .pc-image-container, .pc-subtitle{
+        display: none;
+      }
+
+      .mobile-content{
+        display: block;
+      }
+
+      
     }
   }
 
