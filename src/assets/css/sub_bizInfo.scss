@@ -369,11 +369,22 @@
       height: auto; 
 
       .progress-bar{
-        // position: sticky;
+        margin-top: 65px;
         top: 180px;
-        height: 37000px;
+        height: 36350px;
         width: 4px;
         background-color: var(--colorGL-all-gray900);
+
+        .bar{
+          width: 4px;
+          height: 100%;
+          background: linear-gradient(to bottom, 
+          #F729C1 0%, 
+          #E156E2 35%, 
+          #C19DF4 65%, 
+          #A9D7E6 100%);
+                  border-radius: calc(var(--radius-mode1-x-s)/16*1rem);
+        }
 
         .circle-container {
           display: flex;
@@ -408,15 +419,6 @@
             background-color: #F729C1;
             border-radius: 50%;
           }
-        }
-        
-        
-
-        .bar{
-          width: 4px;
-          height: 455px;
-          background-color: #F729C1;
-          border-radius: calc(var(--radius-mode1-x-s)/16*1rem);
         }
       }
       &__item{
