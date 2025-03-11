@@ -17,8 +17,8 @@
             <div class="inner-wrap">
                 <div class="bizInfo_history__container">
                   <div class="bizInfo_history__textarea">
-                     <h2>History</h2>
-                     <p>
+                     <h2 class="font-bold">History</h2>
+                     <p class="font-medium">
                         LG CNS는 1987년 설립 후<br/>
                         30년 넘게 대한민국 IT산업의<br/>
                         발전을 이끌어왔습니다.
@@ -28,7 +28,7 @@
                      <div class="left-section">
                         <div class="left-section__item">
                            <h3>디지털 혁신 선도</h3>
-                           <span>LG CNS,<br>디지털 혁신을 선도하다.</span>
+                           <span>LG CNS,<br>디지털 혁신을 선도하다</span>
                            <p>현재부터 2016년까지</p>
                         </div>
                         <div class="left-section__item">
@@ -48,7 +48,7 @@
                         </div>
                      </div>
                      <div class="right-section">
-                        <div class="timeline-container" id="timeline-container">
+                        <div class="right-section__item" id="right-section__item">
                            <!-- 데이터 여기에 추가됨 -->
                        </div>
                      </div>
@@ -64,9 +64,9 @@
           fetch('/assets/data/timeline.json')
               .then(response => response.json())
               .then(data => {
-                  const timelineContainer = document.getElementById('timeline-container');
+                  const timelineContainer = document.getElementById('right-section__item');
 
-                  const sortedData = [...data.timelineData2020s, ...data.timelineData2010s].sort((a, b) => b.year - a.year);
+                  const sortedData = [...data.timelineData2020s, ...data.timelineData2010s, ...data.timelineData2000s, ...data.timelineData1900s].sort((a, b) => b.year - a.year);
 
                   sortedData.forEach(yearItem => {
                       const yearDiv = document.createElement('div');
@@ -77,8 +77,10 @@
                               ${yearItem.events.map(event => `
                                   <li class="event-item">
                                       <div class="event-month">${event.month}</div>
-                                      <div class="event-desc">${event.description}</div>
-                                      ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>` : ''}
+                                      <div class="event-desc-container">
+                                         <div class="event-desc">${event.description}</div>
+                                         ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>
+                                      </div>` : ''}
                                   </li>
                               `).join('')}
                           </ul>
