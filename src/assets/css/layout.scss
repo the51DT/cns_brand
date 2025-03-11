@@ -571,3 +571,43 @@ body {
         background-color: var(--colorGL-all-black100);
     }
 }
+
+.layout_ {
+    &col2 {
+        display: grid;
+        grid-template-columns: calc(576 / 16 * 1rem) auto;
+        gap: #{$gap-margin};
+        @media #{$pcMiddle} {
+            grid-template-columns: calc(496 / 16 * 1rem) auto;
+        }
+        @media #{$tablet} {
+            grid-template-columns: calc(350 / 16 * 1rem) auto;
+        }
+        @media #{$tabletMini} {
+            grid-template-columns: calc(254 / 16 * 1rem) auto;
+        }
+        @media #{$phone} {
+            grid-template-columns: auto;
+            gap: calc(32 / 16 * 1rem);
+        }
+        &.smallTitle {
+            grid-template-columns: calc(428 / 16 * 1rem) auto;
+            gap: #{$gap-margin};
+            @media #{$pcMiddle} {
+                grid-template-columns: calc(368 / 16 * 1rem) auto;
+            }
+            @media #{$tablet} {
+                grid-template-columns: calc(228 / 16 * 1rem) auto;
+            }
+            @media #{$tabletMini} {
+                grid-template-columns: auto;
+                gap: calc(32 / 16 * 1rem);
+            }
+        }
+        .cmp-title__wrap {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
