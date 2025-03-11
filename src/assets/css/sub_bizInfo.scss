@@ -321,6 +321,9 @@
   }
 
   &history{
+    &__textarea{
+      max-height: 100%;
+    }
     &__scroll{
       display: flex;
     }
