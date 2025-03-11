@@ -292,104 +292,107 @@
                             <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                 titleText: '친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과 (상암IT센터)', 
                             })) %>
-                            <div class="cmp-wrap table-container font-body-sm">
-                                <p class="font-bold text-right mb-8">[ 절감량 / 단위 : tCO2eq ]</p>
-                                <table class="text-center data-table">
-                                    <caption>친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과</caption>
-                                    <thead>
-                                        <tr>
-                                            <th colspan="2"></th>
-                                            <th scope="col">2014</th>
-                                            <th scope="col">2015</th>
-                                            <th scope="col">2016</th>
-                                            <th scope="col">2017</th>
-                                            <th scope="col">2018</th>
-                                            <th scope="col">2019</th>
-                                            <th scope="col">2020</th>
-                                            <th scope="col">누계</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-left font-bold" colspan="2">LED 조명등 (전층) 교체</td>
-                                            <td>223</td>
-                                            <td>446</td>
-                                            <td>446</td>
-                                            <td>446</td>
-                                            <td>446</td>
-                                            <td>446</td>
-                                            <td>446</td>
-                                            <td>2,899</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left font-bold" colspan="2">기계실(B3-4층) 외기 공조</td>
-                                            <td>150</td>
-                                            <td>404</td>
-                                            <td>404</td>
-                                            <td>404</td>
-                                            <td>404</td>
-                                            <td>404</td>
-                                            <td>404</td>
-                                            <td>2,574</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left font-bold" colspan="2">전산실(2-9층) 외기 공조</td>
-                                            <td>AA</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td>560</td>
-                                            <td>1,366</td>
-                                            <td>1,366</td>
-                                            <td>1,366</td>
-                                            <td>6,024</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left font-bold" colspan="2">고효율 UPS(2-9층) 교체</td>
-                                            <td>-</td>
-                                            <td>69</td>
-                                            <td>278</td>
-                                            <td>278</td>
-                                            <td>278</td>
-                                            <td>278</td>
-                                            <td>278</td>
-                                            <td>1,461</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left font-bold" colspan="2">태양광 설치</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td>6</td>
-                                            <td>6</td>
-                                            <td>12</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left font-bold" colspan="2">전산실(2-9층) 고효율 항온기 교체</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td>49</td>
-                                            <td>256</td>
-                                            <td>305</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left font-bold" colspan="2">총계</td>
-                                            <td>373</td>
-                                            <td>919</td>
-                                            <td>1,688</td>
-                                            <td>2,494</td>
-                                            <td>2,494</td>
-                                            <td>2,494</td>
-                                            <td>2,494</td>
-                                            <td>13,276</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="cmp-wrap cmp-table__wrap">
+                                <span class="unit-text font-body-sm font-bold">[ 절감량 / 단위 : tCO2eq ]</span>
+                                <div class="cmp-wrap table-container font-body-sm">
+                                    <table class="text-center data-table">
+                                        <caption>친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과</caption>
+                                        <thead>
+                                            <tr>
+                                                <th width="428"></th>
+                                                <th scope="col" width="126.5">2014</th>
+                                                <th scope="col" width="126.5">2015</th>
+                                                <th scope="col" width="126.5">2016</th>
+                                                <th scope="col" width="126.5">2017</th>
+                                                <th scope="col" width="126.5">2018</th>
+                                                <th scope="col" width="126.5">2019</th>
+                                                <th scope="col" width="126.5">2020</th>
+                                                <th scope="col" width="126.5">누계</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-left font-bold">LED 조명등 (전층) 교체</td>
+                                                <td>223</td>
+                                                <td>446</td>
+                                                <td>446</td>
+                                                <td>446</td>
+                                                <td>446</td>
+                                                <td>446</td>
+                                                <td>446</td>
+                                                <td>2,899</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left font-bold">기계실(B3-4층) 외기 공조</td>
+                                                <td>150</td>
+                                                <td>404</td>
+                                                <td>404</td>
+                                                <td>404</td>
+                                                <td>404</td>
+                                                <td>404</td>
+                                                <td>404</td>
+                                                <td>2,574</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left font-bold">전산실(2-9층) 외기 공조</td>
+                                                <td>AA</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>560</td>
+                                                <td>1,366</td>
+                                                <td>1,366</td>
+                                                <td>1,366</td>
+                                                <td>6,024</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left font-bold">고효율 UPS(2-9층) 교체</td>
+                                                <td>-</td>
+                                                <td>69</td>
+                                                <td>278</td>
+                                                <td>278</td>
+                                                <td>278</td>
+                                                <td>278</td>
+                                                <td>278</td>
+                                                <td>1,461</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left font-bold">태양광 설치</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>6</td>
+                                                <td>6</td>
+                                                <td>12</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left font-bold">전산실(2-9층) 고효율 항온기 교체</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>49</td>
+                                                <td>256</td>
+                                                <td>305</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left font-bold">총계</td>
+                                                <td>373</td>
+                                                <td>919</td>
+                                                <td>1,688</td>
+                                                <td>2,494</td>
+                                                <td>2,494</td>
+                                                <td>2,494</td>
+                                                <td>2,494</td>
+                                                <td>13,276</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
+
                         </div>  
                         <div class="tab__content">
                             <% 

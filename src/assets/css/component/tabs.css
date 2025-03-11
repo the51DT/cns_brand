@@ -91,11 +91,13 @@
         right: 0;        
         top:0;
         background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 95%);
+        pointer-events: none;
     }
 
     .cmp-tab .cmp-tab__header ul {
         white-space: nowrap;  
         gap: calc(10 / 16 * 1rem);
+        float: left;
     }
     .cmp-tab .cmp-tab__header ul li {
         height: auto;
@@ -110,6 +112,7 @@
     .cmp-tab .cmp-tab__header {
         -ms-overflow-style:none;
         scrollbar-width:none;
+        padding-right: calc(40 / 16 * 1rem);
     }
     
     .cmp-tab .cmp-tab__header::-webkit-scrollbar {
