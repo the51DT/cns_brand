@@ -59,8 +59,7 @@
       align-items: center;
       justify-content: space-between;
       margin: 0 auto;
-      padding: calc(197 / 16 * 1rem) calc(80 / 16 * 1rem);
-
+      padding: calc(197 / 16 * 1rem) 0;
     }
 
     &__title{
@@ -90,9 +89,14 @@
     @media #{$tablet}{
       &__container{
         flex-direction: column;
-        padding: calc(80 / 16 * 1rem) calc(32 / 16 * 1rem);
+        padding: calc(80 / 16 * 1rem) 0;
+        .text-area {
+          width: 100%;
+          .subtitle {
+            word-break: keep-all;
+          }
+        }
       }
-
 
       .pc-image-container, .pc-subtitle{
         display: none;
