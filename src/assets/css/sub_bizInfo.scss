@@ -163,33 +163,14 @@
 
   // bizInfo_disclosureInfo
   &disclosureInfo {
-    .table-container {
-      margin-bottom: calc(var(--spacing-mode1-vertical5-x-l)/16*1rem);
-    }
+    // .table-container {
+    //   margin-bottom: calc(var(--spacing-mode1-vertical5-x-l)/16*1rem);
+    // }
     
     .data-table {
-      width: 100%;
-      color: var(--text-text-default, #1a1a1a);
-      border-collapse: collapse;
-      // 스크롤 필요할시 아래 두 개 활성화
-      table-layout: fixed;
-      min-width: 630px;
-      
-      th {
-        font-weight: 700;
-      }
-      
-      thead {
-        border-top: 2px solid var(--colorCM-all-stroke-stroke-default1);
-        border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default1);
-      }
-      
-      th, td {
-        padding: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-      }
-      
+      table-layout: auto;
       td {
-        border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
+        padding: calc(28.5 / 16 * 1rem) calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
       }
       
       td:nth-child(2) {
@@ -201,6 +182,7 @@
       }
       
       td:nth-child(4) {
+        position: relative;
         text-align: center;
         
         a {
@@ -208,7 +190,7 @@
           text-align: center;
         }
         
-        img {
+        button {
           vertical-align: middle;
           display: inline-block;
         }
@@ -313,10 +295,6 @@
           height: calc(317 / 16 * 1rem);
         }
       }
-    }
-    .unit-text {
-      float: right;
-      margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) /16 * 1rem);
     }
   }
 
