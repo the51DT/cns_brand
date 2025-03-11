@@ -21,7 +21,9 @@
                 <!-- //비주얼 영역 -->
                 <div class="sub-content__wrap">
                     <div class="inner-wrap">
-                        <p class="compliance-preface font-head-lg">LG CNS의 전 구성원은 업무를 수행함에 있어<br>관련 법령을 준수하고 있습니다.</p>
+                        <%- include('src/component/cmp_contents_title.html', Object.assign({}, locals, { 
+                            contentsTitle: 'LG CNS의 전 구성원은 업무를 수행함에 있어<br>관련 법령을 준수하고 있습니다.',
+                        })) %>                        
                         <div class="compliance-text font-body-md">
                             <p> LG CNS 임직원 여러분, 대표이사 현신균 사장입니다.</p>
 
