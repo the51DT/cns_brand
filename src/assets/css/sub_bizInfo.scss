@@ -167,10 +167,6 @@
 
   // bizInfo_disclosureInfo
   &disclosureInfo {
-    // .table-container {
-    //   margin-bottom: calc(var(--spacing-mode1-vertical5-x-l)/16*1rem);
-    // }
-    
     .data-table {
       table-layout: auto;
       td {
@@ -205,7 +201,7 @@
       }
     }
     
-      @media #{$phone} {
+      @media #{$tabletMini} {
         .table-container {
           overflow-x: hidden; 
         }
