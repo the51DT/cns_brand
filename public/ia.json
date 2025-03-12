@@ -232,10 +232,10 @@
           "fileName": "cmp_guide_button_item_list.html"
         },
         {
-          "name": "MultiItemList",
+          "name": "ProfileCardList",
           "screenId": "",
           "path": "/src/guide/",
-          "fileName": "cmp_guide_multi_item_list.html"
+          "fileName": "cmp_guide_profile_card_list.html"
         }
       ]
     },
@@ -292,6 +292,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "bizInfo_ceo.html"
+        },
+        {
+          "name": "기업정보 - 경영정보",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_mgmtInfo.html"
         },
         {
           "name": "기업정보 - 재무정보",

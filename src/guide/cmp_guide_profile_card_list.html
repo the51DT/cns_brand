@@ -17,14 +17,14 @@
             <div class="flex justify-between lnb-type">
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
-                    <p class="guide-title-h3">multi_item_list__wrap: 기업정보 > 경영정보 / 데이터 없을 시</p>
+                    <p class="guide-title-h3">profile_card_list__wrap: 기업정보 > 경영정보 / 데이터 없을 시</p>
                     <div class="cmp-exsample__wrap mt-3">
-                        <%- include('src/component/cmp_multi_item_list.html', Object.assign({}, locals, { 
+                        <%- include('src/component/cmp_profile_card_list.html', Object.assign({}, locals, { 
                             itemCount: 4,
                         })) %> 
                     </div>
 
-                    <p class="guide-title-h3">multi_item_list__wrap: 기업정보 > 경영정보 / 데이터 적용</p>
+                    <p class="guide-title-h3">profile_card_list__wrap: 기업정보 > 경영정보 / 데이터 적용</p>
                     <div class="cmp-exsample__wrap mt-3">
                         <%
                             const multiItemListData = [
@@ -73,7 +73,7 @@
                                 }
                             ]
                         %>
-                        <%- include('src/component/cmp_multi_item_list.html', Object.assign({}, locals, { 
+                        <%- include('src/component/cmp_profile_card_list.html', Object.assign({}, locals, { 
                             itemCount: 7,
                             jsonData: multiItemListData,
                         })) %> 

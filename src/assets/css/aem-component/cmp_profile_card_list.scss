@@ -1,4 +1,4 @@
-.cmp-multi_item_list__wrap {
+.cmp-profile_card_list__wrap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: $gap-margin;
@@ -8,11 +8,11 @@
   @media #{$phone} {
     grid-template-columns: repeat(1, 1fr);
   }
-  .cmp-multi_item {
+  .cmp-profile_card {
     position: relative;
     width: 100%;
     padding: calc(40 / 16 * 1rem);
-    background-image: url('/src/assets/image/sub/bg_multi_item_list.png');
+    background-image: url('/src/assets/image/sub/bg_profile_card_list.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

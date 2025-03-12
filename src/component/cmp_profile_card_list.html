@@ -1,5 +1,5 @@
 <!-- cmp_button_item_list -->
-<div class="cmp-wrap cmp-multi_item_list__wrap">
+<div class="cmp-wrap cmp-profile_card_list__wrap">
     <% 
         const data = (typeof jsonData !== 'undefined' ? jsonData : []);
         const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
@@ -7,7 +7,7 @@
     %>
     <% if(data.length > 0) { %>
         <% data.slice(0, itemLimit).forEach((item, i) => { %>
-            <div class="cmp-multi_item">
+            <div class="cmp-profile_card">
                 <div class="item_text_wrap">
                     <div class="item_text_title_wrap">
                         <p class="item_text_title font-body-xl"><%- item.title %></p>
@@ -28,7 +28,7 @@
         <% }) %>
     <% } else { %>
         <% for(let i = 0; i < itemLimit; i++) { %>
-            <div class="cmp-multi_item">
+            <div class="cmp-profile_card">
                 <div class="item_text_wrap">
                     <div class="item_text_title_wrap">
                         <p class="item_text_title font-body-xl">현신균 이사</p>

@@ -472,4 +472,18 @@
       }
     }
   }
+
+  &mgmtInfo{
+    .cmp-accordion {
+      .accordion-list {
+        .terms_orderList {
+          li {
+            margin-left: calc(28 / 16 * 1rem);
+            padding: 0;
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
 }
