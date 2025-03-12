@@ -2,8 +2,48 @@
     .image-item-3col {
         display: flex;
         gap: $gap-margin;
+        flex-wrap: wrap;
         @media #{$tablet} {
             flex-direction: column;
+        }
+        &.type-bg-none {
+            @media #{$tablet} {
+                flex-direction: row;
+            }
+            li {
+                padding: 0;
+                background: none;
+                @media #{$tablet} {
+                    padding: 0;
+                    width: calc(33.33% - calc(($gap-margin * 2) / 3));
+                }
+                @media #{$phone} {
+                    width: calc(50% - calc(($gap-margin) / 2));
+                }
+            }
+            .img-box {
+                img {
+                    width: 100%;
+                }
+                & + .text-box {
+                    margin-top: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
+                }
+            }
+            .text-box {
+                color: #281D1B;
+                &.type-left {
+                    .image-item-3col__title,
+                    .image-item-3col__text {
+                        text-align: left;
+                    }
+                }
+                &.type-right {
+                    .image-item-3col__title,
+                    .image-item-3col__text {
+                        text-align: right;
+                    }
+                }
+            }
         }
         li {
             padding: calc(60 / 16 * 1rem) calc(32 / 16 * 1rem);
