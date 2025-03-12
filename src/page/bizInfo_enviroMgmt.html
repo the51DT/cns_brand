@@ -211,9 +211,16 @@
                                 overviewContent: 'LG CNS는 회사의 발전과 임직원을 안전보건환경을 위해 전사 차원의 관리조직을 운영하고 있습니다.'
                             })) %>
 
-                            <!-- 임시 영역 -->
-                            <div style="height: 600px; background-color: aliceblue;">그래픽 영역</div>
-                            <!-- // 임시 영역 -->
+                            <% 
+                            const iamgeData=[{
+                                pc: 'https://placehold.co/1760x1210', 
+                                mo: 'https://placehold.co/296x377', 
+                            }] 
+                            %>
+                            <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                                jsonData : iamgeData,
+                                alt : '안전보건환경 관리체계 콘텐츠'
+                            }))%>
                         </div>
                         <div class="tab__content">
                             <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
