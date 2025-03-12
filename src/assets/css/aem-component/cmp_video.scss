@@ -1,0 +1,22 @@
+.cmp-video__wrap {
+    .cmp-video__iframe {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .cmp-video__link {
+        .img-box {
+            img {
+                width: 100%;
+            }
+        }
+
+    }
+}

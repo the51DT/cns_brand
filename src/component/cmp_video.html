@@ -1,0 +1,13 @@
+<div class="cmp-wrap cmp-video__wrap <%- typeof addClass !== 'undefined' && addClass ? addClass : '' %>">
+    <% if(type == 'iframe' && typeof videoUrl !== 'undefined' && videoUrl) { %>
+        <div class="cmp-video__iframe">
+            <iframe src="<%- videoUrl %>" width="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen title="<%- videoTitle %>"></iframe>
+        </div>
+    <% } else if (type == 'link' && typeof videoThumbUrl !== 'undefined' && videoThumbUrl) { %>
+        <a href="<%- videoUrl %>" class="cmp-video__link" target="_blank">
+            <div class="img-box">
+                <img src="<%- videoThumbUrl %>" alt="<%- videoTitle %>">
+            </div>
+        </a>
+    <% } %>
+</div>

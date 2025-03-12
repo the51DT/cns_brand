@@ -29,6 +29,7 @@
 @import 'aem-component/cmp_button_item_list.scss';
 @import 'aem-component/cmp_multi_item_list.scss';
 @import 'aem-component/cmp_contents_title.scss';
+@import 'aem-component/cmp_video.scss';
 /* icon */
 @import 'icon.scss';
 /* tailwind */

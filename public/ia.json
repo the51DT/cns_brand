@@ -220,6 +220,12 @@
           "fileName": "cmp_guide_image_box.html"
         },
         {
+          "name": "Video Box",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_video.html"
+        },
+        {
           "name": "ButtonItemList",
           "screenId": "",
           "path": "/src/guide/",
