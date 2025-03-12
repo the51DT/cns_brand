@@ -11,6 +11,12 @@
                 margin-top: calc(32 / 16 * 1rem);
             }
         }
+        &+.cmp-overview-text2 {
+            margin-top: calc(16 / 16 * 1rem);
+            @media #{$phone} {
+                margin-top: calc(16 / 16 * 1rem);
+            }
+        }
     }
     .cmp-overview-text {
         color: var(--text-text-default);

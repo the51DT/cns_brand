@@ -72,6 +72,12 @@
           "screenId": "",
           "path": "/src/component/",
           "fileName": "cmp_badge.html"
+        },
+        {
+          "name": "테이블(Table)",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_table.html"
         }
       ]
     },
@@ -220,16 +226,22 @@
           "fileName": "cmp_guide_image_box.html"
         },
         {
+          "name": "Video Box",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_video.html"
+        },
+        {
           "name": "ButtonItemList",
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_button_item_list.html"
         },
         {
-          "name": "MultiItemList",
+          "name": "ProfileCardList",
           "screenId": "",
           "path": "/src/guide/",
-          "fileName": "cmp_guide_multi_item_list.html"
+          "fileName": "cmp_guide_profile_card_list.html"
         }
       ]
     },
@@ -288,6 +300,12 @@
           "fileName": "bizInfo_ceo.html"
         },
         {
+          "name": "기업정보 - 경영정보",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_mgmtInfo.html"
+        },
+        {
           "name": "기업정보 - 재무정보",
           "screenId": "",
           "path": "/src/page/",
@@ -318,6 +336,12 @@
           "fileName": "bizInfo_humanRights.html"
         },
         {
+          "name": "기업정보 - 사회공헌",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_socContrib.html"
+        },
+        {
           "name": "기업정보 - 정도경영",
           "screenId": "",
           "path": "/src/page/",
@@ -334,6 +358,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "bizInfo_history.html"
+        },
+        {
+          "name": "기업정보 - 추진방향",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_direction.html"
         }
       ]
     },

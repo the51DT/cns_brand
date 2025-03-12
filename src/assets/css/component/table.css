@@ -4,38 +4,6 @@
     width: 100%;
     display: block;
 }
-/* pcMiddle */
-@media only screen and (max-width: 1919px) {
-    .table-container {
-        width: calc((1520 / 16 * 1rem) + ((100vw - (1520 / 16 * 1rem)) / 2));
-        margin-right: calc((100vw - (1520 / 16 * 1rem)) / 2);
-        padding-right: calc((100vw - (1520 / 16 * 1rem)) / 2);
-    }
-}
-/* tablet */
-@media only screen and (max-width: 1599px) {
-    .table-container {
-        width: calc((960 / 16 * 1rem) + ((100vw - (960 / 16 * 1rem)) / 2));
-        margin-right: calc((100vw - (960 / 16 * 1rem)) / 2);
-        padding-right: calc((100vw - (960 / 16 * 1rem)) / 2);
-    }
-}
-/* tabletMini */
-@media only screen and (max-width: 1023px) {
-    .table-container {
-        width: calc((704 / 16 * 1rem) + ((100vw - (704 / 16 * 1rem)) / 2));
-        margin-right: calc((100vw - (704 / 16 * 1rem)) / 2);
-        padding-right: calc((100vw - (704 / 16 * 1rem)) / 2);
-    }
-}
-/* phone */
-@media only screen and (max-width: 767px) {
-    .table-container {
-        width: calc(100vw - var(--spacing-mode1-horizontal-x-l) / 16 * 1rem);
-        margin-right: calc(var(--spacing-mode1-horizontal-x-l) / 16 * 1rem);
-        padding-right: calc(var(--spacing-mode1-horizontal-x-l) / 16 * 1rem);
-    }
-}
 .table-container .data-table {
     width: 100%;
     color: var(--text-text-default, #1a1a1a);
@@ -60,6 +28,12 @@
 }
 .table-container .data-table td {
     border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
+}
+.table-container .data-table td[rowspan] {
+    border-right: 1px solid var(--colorCM-all-stroke-stroke-default7);
+}
+.table-container .data-table tr td[rowspan]:last-child {
+    border-right: none;
 }
 .unit-text {
     float: right;
