@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!-- <link rel="stylesheet" href="/src/assets/css/index.css"> -->
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<style>
+
+</style>
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3 mt-10">기본 테이블 형식</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>각 열의 너비는 Figma PC2(없다면 PC1) 기준으로 마크업 th에 작성합니다(ex. width="368")</p>
+                        </li>
+                        <li>
+                            <p>예외 경우를 제외하고 모든 테이블의 열 너비는 고정값입니다.</p>
+                        </li>
+                    </ul>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <div class="cmp-wrap cmp-table__wrap">
+                            <div class="table-container">
+                                <table class="data-table">
+                                    <caption>LG CNS 요약 연결재무상태표</caption>
+                                    <thead>
+                                        <tr class="text-right">
+                                           <th scope="col" width="368" class="text-left">요약 연결재무상태표</th>
+                                           <th scope="col" width="230.4">2019년</th>
+                                           <th scope="col" width="230.4">2020년</th>
+                                           <th scope="col" width="230.4">2021년</th>
+                                           <th scope="col" width="230.4">2022년</th>
+                                           <th scope="col" width="230.4">2023년</th>
+                                        </tr>
+                                     </thead>
+                                     <tbody>
+                                        <tr class="text-right">
+                                            <td class="text-left font-bold">자산총계</td>
+                                            <td>2,615,308</td>
+                                            <td>2,883,415</td>
+                                            <td>3,324,672</td>
+                                            <td>3,865,135</td>
+                                            <td>4,040,680</td>
+                                         </tr>
+                                         <tr class="text-right">
+                                            <td class="text-left font-bold">유동자산</td>
+                                            <td>1,670,395</td>
+                                            <td>1,973,939</td>
+                                            <td>2,330,449</td>
+                                            <td>2,847,939</td>
+                                            <td>3,037,232</td>
+                                         </tr>
+                                         <tr class="text-right">
+                                            <td class="text-left font-bold">비유동자산</td>
+                                            <td>1,670,395</td>
+                                            <td>909,476</td>
+                                            <td>994,223</td>
+                                            <td>1,017,196</td>
+                                            <td>1,003,448</td>
+                                         </tr>
+                                         <tr class="text-right">
+                                            <td class="text-left font-bold">부채총계</td>
+                                            <td>1,392,470</td>
+                                            <td>1,596,092</td>
+                                            <td>1,862,695</td>
+                                            <td>2,234,346</td>
+                                            <td>2,172,423</td>
+                                         </tr>
+                                         <tr class="text-right">
+                                            <td class="text-left font-bold">유동부채</td>
+                                            <td>1,033,222</td>
+                                            <td>1,033,043</td>
+                                            <td>1,382,441</td>
+                                            <td>2,005,334</td>
+                                            <td>1,543,113</td>
+                                         </tr>
+                                     </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="guide-title-h3 mt-10">rowspan 테이블 형식</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>td에 rowspan 속성이 포함되면 자동으로 border-right 스타일이 추가됩니다. (마지막 td는 제외)</p>
+                        </li>
+                    </ul>
+                    <div class="cmp-exsample__wrap mt-5 w-full">
+                        <div class="cmp-wrap cmp-table__wrap">
+                            <div class="table-container">
+                                <table class="data-table">
+                                    <caption>LG CNS 신용등급 평가 정보</caption>
+                                    <thead>
+                                        <tr>
+                                           <th scope="col" width="724" class="text-left" colspan="2">평가기관</th>
+                                           <th scope="col" width="345.3">신용등급</th>
+                                           <th scope="col" width="345.3">Outlook</th>
+                                           <th scope="col" width="345.3">평가년도</th>
+                                        </tr>
+                                     </thead>
+                                     <tbody>
+                                        <tr>
+                                           <td rowspan="3" class="font-bold">국내</td>
+                                           <td class="text-left font-bold">한국신용평가</td>
+                                           <td>AA-</td>
+                                           <td>안정적</td>
+                                           <td>2024</td>
+                                        </tr>
+                                        <tr>
+                                           <td class="text-left font-bold">NICE신용평가</td>
+                                           <td>AA-</td>
+                                           <td>안정적</td>
+                                           <td>2024</td>
+                                        </tr>
+                                        <tr>
+                                           <td class="text-left font-bold">한국기업평가</td>
+                                           <td>AA-</td>
+                                           <td>안정적</td>
+                                           <td>2024</td>
+                                        </tr>
+                                     </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="guide-title-h3 mt-10">기타 테이블 형식</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>기본 스타일 양식과 다르게 적용해야 하는 경우 해당 페이지 스타일시트에 중첩으로 작성합니다.</p>
+                        </li>
+                    </ul>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <div class="wrap bizInfo_disclosureInfo">
+                            <div class="cmp-wrap cmp-table__wrap">
+                                <div class="table-container">
+                                    <table class="data-table text-center">
+                                        <caption>LG CNS 공시정보 전자공고</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" width="112">번호</th>
+                                                <th scope="col" width="928">공고명</th>
+                                                <th scope="col" width="240">등록일</th>
+                                                <th scope="col" width="240">자료 다운로드</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

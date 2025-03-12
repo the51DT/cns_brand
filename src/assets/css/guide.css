@@ -322,6 +322,9 @@
 .cmp-exsample__wrap--item-list .future-content-items{
     border: 1px dashed var(--colorCM-all-stroke-stroke-trans-b20);
 }
+.cmp-exsample__wrap {
+    max-width: calc(100vw - (280 / 16 * 1rem));
+}
 
 /* 모바일 반응형 css */
 @media screen and (max-width: 767px) {
@@ -427,5 +430,8 @@
     .guide-board-detail .img-box + .cmp-exsample__wrap {
         margin-left: 0;
         margin-top: calc(32 / 16 * 1rem);
+    }
+    .cmp-exsample__wrap {
+        max-width: 100%;
     }
 }
