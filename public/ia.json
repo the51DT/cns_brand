@@ -336,6 +336,12 @@
           "fileName": "bizInfo_humanRights.html"
         },
         {
+          "name": "기업정보 - 사회공헌",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_socContrib.html"
+        },
+        {
           "name": "기업정보 - 정도경영",
           "screenId": "",
           "path": "/src/page/",
