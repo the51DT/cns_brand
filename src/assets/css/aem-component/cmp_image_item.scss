@@ -97,6 +97,7 @@
                     padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);  
                 }
                 &:has(.info-list) {
+                    padding: calc(24 / 16 * 1rem);
                     gap: calc(8 / 16 * 1rem);
                 }
                 p {
@@ -151,6 +152,7 @@
                     padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);  
                 }
                 &:has(.info-list) {
+                    padding: calc(24 / 16 * 1rem);
                     gap: calc(8 / 16 * 1rem);
                 }
             }
