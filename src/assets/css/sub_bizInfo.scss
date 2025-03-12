@@ -331,7 +331,6 @@
       padding: 180px 0;
       align-items: flex-start; 
       overflow: visible; 
-      height: auto; 
 
       .left-section{
         position: sticky;
@@ -345,11 +344,20 @@
             font-weight: 600;
             opacity: 0.4;
             line-height: calc(var(--typo-pc-line-height-head-xl) / 16 * 1rem);
+
+            
+            @media #{$tablet}{
+            font-size: calc(var(--typo-pc-size-head-xs)/16*1rem);
+            }
           }
           span{
             font-size: calc(var(--typo-pc-size-head-lg)/16*1rem);
             font-weight: 700;
             line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
+
+            @media #{$tablet}{
+              font-size: calc(var(--typo-mo-size-head-lg)/16*1rem);
+            }
           }
           p{
             font-size: calc(var(    --typo-pc-size-body-xl)/16*1rem);
@@ -368,28 +376,42 @@
       height: auto; 
       gap: calc(var(--spacing-mode1-horizontal6-x-l)/16*1rem);
 
+      @media #{$tablet}{
+        gap: calc(var(--spacing-mode1-horizontal4-x-l)/16*1rem);
+      }
+
 
       .progress-bar{
         margin-top: 65px;
         top: 180px;
-        height: 36350px;
         width: 4px;
-        background-color: var(--colorGL-all-gray900);
+        background: linear-gradient(to bottom, 
+        #F729C1 0%, 
+        #E156E2 35%, 
+        #C19DF4 65%, 
+        #A9D7E6 100%);
+
+        @media #{$tablet}{
+          height: 40020px;
+        }
 
         .bar{
           width: 4px;
-          height: 100%;
-          background: linear-gradient(to bottom, 
-          #F729C1 0%, 
-          #E156E2 35%, 
-          #C19DF4 65%, 
-          #A9D7E6 100%);
-                  border-radius: calc(var(--radius-mode1-x-s)/16*1rem);
+          // height: 100%;
+          background: var(--colorGL-all-gray900);
+
+          border-radius: calc(var(--radius-mode1-x-s)/16*1rem);
+
         }
       }
       &__item{
         width: calc(600/16*1rem);
         letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+        // overflow-y: auto;
+
+        @media #{$tablet}{
+          width: calc(385/16*1rem);
+        }
 
         .events{
           margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge)/16*1rem);
@@ -425,8 +447,11 @@
           align-items: center;
           position: relative;
           margin-left: calc(var(--spacing-mode1-horizontal6-x-l)/-16*1rem);
-          margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l)/16*1rem);
+          margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l)/16*1rem);
 
+          @media #{$tablet}{
+            margin-left: calc(var(--spacing-mode1-horizontal4-x-l)/-16*1rem);
+          }
           
           span{
             display:contents;
@@ -440,6 +465,11 @@
             align-items: center;
             justify-content: center;
             margin-right: calc(var(--spacing-mode1-horizontal6-x-l) / 16* 1rem);
+
+            @media #{$tablet}{
+            margin-right: calc(var(--spacing-mode1-horizontal4-x-l) / 16* 1rem);
+            }
+
 
             .outer-glow {
               width: 36px;
@@ -482,4 +512,5 @@
       }
     }
   }
+
 }

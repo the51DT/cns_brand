@@ -62,48 +62,103 @@
          type : 'dark',
      }))%>
     </div>
-    <!-- 컴포넌트 데이터 불러오기 -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-    fetch('/assets/data/timeline.json')
-        .then(response => response.json())
-        .then(data => {
-            const timelineContainer = document.getElementById('right-section__item');
+document.addEventListener("DOMContentLoaded", function () {
+   // 타임라인 데이터 로드
+   fetch('/assets/data/timeline.json')
+       .then(response => response.json())
+       .then(data => {
+           const timelineContainer = document.getElementById('right-section__item');
 
-            const sortedData = [...data.timelineData2020s, ...data.timelineData2010s, ...data.timelineData2000s, ...data.timelineData1900s].sort((a, b) => b.year - a.year);
+           const sortedData = [...data.timelineData2020s, ...data.timelineData2010s, ...data.timelineData2000s, ...data.timelineData1900s].sort((a, b) => b.year - a.year);
 
-            sortedData.forEach(yearItem => {
-                const yearDiv = document.createElement('div');
-                yearDiv.classList.add('timeline-year');
+           sortedData.forEach(yearItem => {
+               const yearDiv = document.createElement('div');
+               yearDiv.classList.add('timeline-year');
 
-                yearDiv.innerHTML = `
-                    <div class="year-container">
-                       <div class="circle-container">
-                           <div class="outer-glow"></div>
-                           <div class="outer-circle">
-                               <div class="inner-circle"></div>
-                           </div>
-                        </div>
-                        <span class="year-title">${yearItem.year}</span>
-                    </div>
-                    <ul class="events">
-                        ${yearItem.events.map(event => `
-                            <li class="event-item">
-                                <div class="event-month">${event.month}</div>
-                                <div class="event-desc-container">
-                                    <div class="event-desc">${event.description}</div>
-                                    ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>` : ''}
-                                </div>
-                            </li>
-                        `).join('')}
-                    </ul>
-                `;
-                timelineContainer.appendChild(yearDiv);
-            });
-        })
-        .catch(error => console.error("데이터 로딩 오류:", error));
+               yearDiv.innerHTML = `
+                   <div class="year-container">
+                      <div class="circle-container">
+                          <div class="outer-glow"></div>
+                          <div class="outer-circle">
+                              <div class="inner-circle"></div>
+                          </div>
+                       </div>
+                       <span class="year-title">${yearItem.year}</span>
+                   </div>
+                   <ul class="events">
+                       ${yearItem.events.map(event => `
+                           <li class="event-item">
+                               <div class="event-month">${event.month}</div>
+                               <div class="event-desc-container">
+                                   <div class="event-desc">${event.description}</div>
+                                   ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>` : ''}
+                               </div>
+                           </li>
+                       `).join('')}
+                   </ul>
+               `;
+               timelineContainer.appendChild(yearDiv);
+           });
+       })
+       .catch(error => console.error("데이터 로딩 오류:", error));
 });
 
-  </script>
+function scrollAnimation() {
+    const wrap = document.querySelector('.bizInfo_history__scroll');
+    const scrollArea = wrap.querySelector('.right-section');
+    const progress = wrap.querySelector('.progress-bar');
+    const progressBar = wrap.querySelector('.progress-bar .bar');
+    const timelineContents = wrap.querySelectorAll('.right-section__item .timeline-year');
+    const circles = document.querySelectorAll('.circle-container');
+
+    let top2025 = null;
+    let top1987 = null;
+
+    circles.forEach(circle => {
+        const year = circle.nextElementSibling?.textContent.trim();
+        if (year === "2025") {
+            top2025 = circle.getBoundingClientRect().top + window.scrollY;
+        }
+        if (year === "1987") {
+            top1987 = circle.getBoundingClientRect().top + window.scrollY;
+        }
+    });
+
+    if (top2025 !== null && top1987 !== null) {
+        const totalHeight = top1987 - top2025;
+        progress.style.height = `${totalHeight}px`;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    function updateProgressBar() {
+        const wrap = document.querySelector('.bizInfo_history__scroll');
+        const progressBar = wrap.querySelector('.progress-bar .bar');
+        const rightSection = wrap.querySelector('.right-section');
+
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const sectionTop = rightSection.offsetTop;
+        const sectionHeight = rightSection.scrollHeight;
+        const windowHeight = window.innerHeight;
+
+        const maxScroll = sectionHeight - windowHeight;
+        const scrollProgress = Math.min(Math.max((scrollTop - sectionTop) / maxScroll, 0), 1);
+
+        progressBar.style.height = `${scrollProgress * 100}%`;
+    }
+
+    document.addEventListener("scroll", updateProgressBar);
+    updateProgressBar(); 
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        scrollAnimation();
+    }, 100);
+});
+    </script>  
 </body>
 </html>
