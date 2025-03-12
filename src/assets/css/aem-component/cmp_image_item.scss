@@ -163,5 +163,8 @@
                 margin-top: calc(16 / 16 * 1rem);
             }
         }
+        &:has(.info-list) + .cmp_imageitem:has(.info-list) {
+            margin-top: calc(16 / 16 * 1rem);
+        }
     }
 }
