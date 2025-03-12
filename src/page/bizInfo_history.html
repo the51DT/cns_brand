@@ -49,56 +49,61 @@
                      </div>
                      <div class="right-section">
                         <div class="progress-bar">
-                           <div class="circle-container">
-                              <div class="outer-glow"></div>
-                              <div class="outer-circle">
-                                <div class="inner-circle"></div>
-                              </div>
-                            </div>
-                           <div class="bar"></div>
+                            <div class="bar"></div>
                         </div>
                         <div class="right-section__item" id="right-section__item">
-                           <!-- 데이터 여기에 추가됨 -->
-                       </div>
-                     </div>
+                        </div>
+                    </div>
                   </div>
                </div>
             </div>
         </div>
-        <%- include('src/_inc/footer.html') %>
+        <%- include('src/_inc/footer.html', Object.assign({}, locals, {
+         type : 'dark',
+     }))%>
     </div>
     <!-- 컴포넌트 데이터 불러오기 -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-          fetch('/assets/data/timeline.json')
-              .then(response => response.json())
-              .then(data => {
-                  const timelineContainer = document.getElementById('right-section__item');
+    fetch('/assets/data/timeline.json')
+        .then(response => response.json())
+        .then(data => {
+            const timelineContainer = document.getElementById('right-section__item');
 
-                  const sortedData = [...data.timelineData2020s, ...data.timelineData2010s, ...data.timelineData2000s, ...data.timelineData1900s].sort((a, b) => b.year - a.year);
+            const sortedData = [...data.timelineData2020s, ...data.timelineData2010s, ...data.timelineData2000s, ...data.timelineData1900s].sort((a, b) => b.year - a.year);
 
-                  sortedData.forEach(yearItem => {
-                      const yearDiv = document.createElement('div');
-                      yearDiv.classList.add('timeline-year');
-                      yearDiv.innerHTML = `
-                          <span class="year-title">${yearItem.year}</span>
-                          <ul class="events">
-                              ${yearItem.events.map(event => `
-                                  <li class="event-item">
-                                      <div class="event-month">${event.month}</div>
-                                      <div class="event-desc-container">
-                                         <div class="event-desc">${event.description}</div>
-                                         ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>
-                                      </div>` : ''}
-                                  </li>
-                              `).join('')}
-                          </ul>
-                      `;
-                      timelineContainer.appendChild(yearDiv);
-                  });
-              })
-              .catch(error => console.error("데이터 로딩 오류:", error));
-      });
+            sortedData.forEach(yearItem => {
+                const yearDiv = document.createElement('div');
+                yearDiv.classList.add('timeline-year');
+
+                yearDiv.innerHTML = `
+                    <div class="year-container">
+                       <div class="circle-container">
+                           <div class="outer-glow"></div>
+                           <div class="outer-circle">
+                               <div class="inner-circle"></div>
+                           </div>
+                        </div>
+                        <span class="year-title">${yearItem.year}</span>
+                    </div>
+                    <ul class="events">
+                        ${yearItem.events.map(event => `
+                            <li class="event-item">
+                                <div class="event-month">${event.month}</div>
+                                <div class="event-desc-container">
+                                    <div class="event-desc">${event.description}</div>
+                                    ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>` : ''}
+                                </div>
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+                timelineContainer.appendChild(yearDiv);
+            });
+        })
+        .catch(error => console.error("데이터 로딩 오류:", error));
+});
+
   </script>
 </body>
 </html>
