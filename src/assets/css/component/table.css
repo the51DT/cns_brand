@@ -37,5 +37,5 @@
 }
 .unit-text {
     float: right;
-    margin-right: calc(var(--spacing-mode1-vertical2-x-l-nudge) /16 * 1rem);
+    margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) /16 * 1rem);
 }
