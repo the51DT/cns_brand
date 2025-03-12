@@ -12,9 +12,17 @@
                 </div>
                 <div class="text-info">
                     <h3 class="info-title font-body-lg"><%- item.title %></h3>
-                    <div class="info-text font-body-lg">
-                        <%- item.content %>
-                    </div>
+                    <% if (item.content && Array.isArray(item.content)) {%>
+                        <ul class="info-list">
+                            <% item.content.forEach((content)=> { %>
+                                <li class="font-body-lg"><%- content %></li>
+                            <%})%>
+                        </ul>
+                    <% } else {%>
+                        <div class="info-text font-body-lg">
+                            <%- item.content %>
+                        </div>
+                    <% } %>
                 </div>
             </div>
         <% }) %>

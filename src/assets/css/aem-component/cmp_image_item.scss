@@ -26,6 +26,11 @@
                 margin-top: calc(0 / 16 * 1rem);
             }
         }
+        .info-list {
+            // 리스트 앞 마커 디자인 없어서 임의로 적용
+            list-style: disc;
+            margin-left: calc(24 / 16 * 1rem);
+        }
     }
     .cmp_imageitem {
         display: flex;
@@ -91,6 +96,9 @@
                 @media #{$phone} {   
                     padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);  
                 }
+                &:has(.info-list) {
+                    gap: calc(8 / 16 * 1rem);
+                }
                 p {
                     &+p {
                         margin-top: calc(12 / 16 * 1rem);
@@ -141,6 +149,9 @@
                 }
                 @media #{$phone} {   
                     padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);  
+                }
+                &:has(.info-list) {
+                    gap: calc(8 / 16 * 1rem);
                 }
             }
         }    
