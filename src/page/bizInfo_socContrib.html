@@ -290,11 +290,11 @@
                                  })) %>
                               </div>
                               <div>
-                                 <% const specListData2 = [ 
+                                 <% const specListData = [ 
                                     { 
                                        id: 0, 
                                        title: '전문가 진로 멘토링',
-                                       content: [
+                                       smallContent: [
                                              'LG CNS 임직원, 인공지능 교육 전문가, 자율주행, 로보틱스 전문가 등의 멘토링을 통해 학생들에게 미래 진로 가이드와 전문가 경험을 제공합니다.',
                                        ]
                                     }, 
@@ -308,7 +308,7 @@
                                     { 
                                        id: 2,
                                        title: '챌린지데이',
-                                       content: [
+                                       smallContent: [
                                              '최종 프로젝트 결과물을 공유하는 챌린지데이를 개최합니다. 학생들에게 실패를 통한 배움, 과정을 통한 성장, 성취감을 느낄 수 있는 기회를 제공하고, 서로를 격려하며 더 큰 미래를 준비할 수 있도록 지원합니다.',
                                        ]
                                     },
@@ -316,7 +316,7 @@
                                  %>
                                  <%- include('src/component/cmp_SpecList.html', {
                                     itemCount: 4,
-                                    jsonData: specListData2,
+                                    jsonData: specListData,
                                     styleType: 'type-column',
                                  }) %>
                               </div>
