@@ -242,6 +242,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_profile_card_list.html"
+        },
+        {
+          "name": "Chart",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_chart.html"
         }
       ]
     },
