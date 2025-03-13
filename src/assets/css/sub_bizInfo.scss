@@ -379,7 +379,7 @@
 
       .progress-bar{
         position: relative;
-        margin-top: 65px;
+        // margin-top: 65px;
         width: 4px;
         height: 100%;
         background: linear-gradient(to bottom, 
@@ -387,22 +387,11 @@
         #E156E2 35%, 
         #C19DF4 65%, 
         #A9D7E6 100%);
+        overflow: hidden;
 
         @media #{$tablet}{
-          height: 40020px;
+          // height: 40020px;
         }
-
-        .dot {
-          position: absolute;
-          top: 0;
-          width: 4px;
-          height: 100px;
-          background-repeat: no-repeat;
-          background-size: contain;
-          display: block;
-          transform: rotate(180deg);
-          background-image: url('data:image/svg+xml,<svg width="2" height="1" viewBox="0 0 2 1" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 0C1.55225 0 2 0.447754 2 1V0H1ZM0 1C0 0.447754 0.447754 0 1 0H0V1Z" fill="rgb(38,38,38)"/></svg>');
-       }
 
         .bar{
           position: absolute;
@@ -410,11 +399,24 @@
           width: 4px;
           background: var(--colorGL-all-gray900);
           // border-radius: calc(var(--radius-mode1-x-s)/16*1rem);
-          transform: scaleY(0.1);
-          transform-origin: bottom;
-          margin-top: 15rem;
+          // transform: scaleY(0.1);
+          // transform-origin: bottom;
+          // margin-top: 15rem;
+          position: absolute;
+          bottom: 0;
         }
 
+        .bar::before {
+          content: '';
+          position: absolute;
+          top: -2px;
+          width: 4px;
+          height: 10px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          display: block;
+          background-image: url('data:image/svg+xml,<svg width="2" height="1" viewBox="0 0 2 1" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 1C0.447754 1 0 0.552246 0 0V1H1ZM2 0C2 0.552246 1.55225 1 1 1H2V0Z" fill="%23262626"/></svg>');
+       }
       }
 
       &__item{
