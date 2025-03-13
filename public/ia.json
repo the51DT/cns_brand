@@ -342,6 +342,12 @@
           "fileName": "bizInfo_socContrib.html"
         },
         {
+          "name": "기업정보 - 동반성장/공정거래",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_growFair.html"
+        },
+        {
           "name": "기업정보 - 정도경영",
           "screenId": "",
           "path": "/src/page/",

@@ -553,4 +553,24 @@
       }
     }
   }
+  &growFair {
+    .layout_col2 {
+      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+      @media #{$tablet} {
+        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
+      }
+      .detail_text {
+        margin-bottom: calc(60 / 16 * 1rem);
+        @media #{$tabletMini} {
+          margin-bottom: calc(32 / 16 * 1rem);
+        }
+      }
+      .cmp-wrap {
+        margin-bottom: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
