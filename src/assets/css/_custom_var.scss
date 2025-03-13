@@ -33,7 +33,8 @@ $pcWide: "screen and (min-width : 1920px)";
     @if ($line == 1) {
         overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
     } @else {
         display: -webkit-box;
         overflow: hidden;

@@ -1,0 +1,184 @@
+.main {
+  &-visual {
+    &__wrap {
+      width: 100%;
+      height: calc(1080 / 16 * 1rem); // 메인 페이지 디자인이 미완료라서 영역확인을 위해 임시 height 지정
+      background-image: url(../image/main/bg_main_hero_pc.png);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: repeat-x;
+      @media #{$phone} {
+        height: calc(1182 / 16 * 1rem);
+        background-image: url(../image/main/bg_main_hero_mo.png);
+        background-position: center center;
+      }
+    }
+  }
+
+  &-search {
+    display: flex;
+    flex-direction: column;
+    padding: calc(80 / 16 * 1rem) calc(40 / 16 * 1rem);
+    &__wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: calc(1080 / 16 * 1rem);
+      background-color: var(--colorCM-all-background-background-default2);
+      @media #{$phone} {
+        height: auto;
+      }
+    }
+    & > .font-bold {
+      margin-bottom: calc(60 / 16 * 1rem);
+      @media #{$phone} {
+        margin-bottom: calc(24 / 16 * 1rem);
+      }
+    }
+    & > .form-element__wrap {
+      margin-bottom: calc(20 / 16 * 1rem);
+      @media #{$phone} {
+        height: auto;
+      }
+    }
+    &__result {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: calc(27 / 16 * 1rem) calc(20 / 16 * 1rem);
+      background-color: var(--colorCM-all-background-background-default0);
+      @media #{$phone} {
+        padding: calc(6 / 16 * 1rem) calc(8 / 16 * 1rem);
+      }
+      &-wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: #{$gap-margin};
+        margin-top: calc(20 / 16 * 1rem);
+        @media #{$phone} {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+
+  // 검토중인 영역이라 임시로 높이값 + 배경색만 적용
+  // 메인 페이지 디자인이 미완료라서 영역확인을 위해 임시 스타일 지정
+  &-service {
+    &__wrap {
+      width: 100%;
+      height: calc(1080 / 16 * 1rem);
+      background-color: var(--colorCM-all-fill-fill-default10);
+      @media #{$phone} {
+        height: calc(332 / 16 * 1rem);
+      }
+    }
+  }
+
+  &-now {
+    &__wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: calc(150 / 16 * 1rem);
+      background-color: var(--colorCM-all-background-background-default2);
+      @media #{$phone} {
+        height: auto;
+        padding: calc(32 / 16 * 1rem) 0;
+      }
+      .cmp-wrap {
+        margin-bottom: 0;
+        &.dataList {
+          .content-list__wrap.thumbnail-type .content-list__inner .content-info {
+            background-color: var(--colorCM-all-background-background-default0);
+            .title {
+              @include ellipsis(1);
+              height: calc(39 / 16 * 1rem);
+              @media #{$phone} {
+                height: calc(36 / 16 * 1rem);
+              }
+            }
+          }
+        }
+      }
+      .inner-wrap {
+        @media #{$phone} {
+          padding: 0;
+        }
+      }
+    }
+    &-swiper {
+      max-width: none;
+      padding: 0;
+      @media #{$pcMiddle} {
+        max-width: none;
+        padding: 0;
+      }
+      @media #{$tablet} {
+        max-width: none;
+        padding: 0;
+      }
+      @media #{$tabletMini} {
+        max-width: none;
+        padding: 0;
+      }
+      @media #{$phone} {
+        max-width: none;
+        padding: 0;
+      }
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        gap: calc(24 / 16 * 1rem);
+        align-items: center;
+        margin-bottom: calc(40 / 16 * 1rem);
+        @media #{$phone} {
+          margin-bottom: calc(20 / 16 * 1rem);
+          padding: 0 calc(20 / 16 * 1rem);
+        }
+      }
+      .swiper {
+        &-wrapper {
+          
+        }
+        &-slide {
+          @media #{$phone} {
+            width: 69.16666666667%;
+          }
+        }
+        &-button {
+          &-wrap {  
+            display: flex;
+            gap: calc(8 / 16 * 1rem);
+            height: fit-content;
+          }
+          &-prev, &-next {
+            position: static;
+            width: calc(64 / 16 * 1rem);
+            height: calc(64 / 16 * 1rem);
+            margin-top: 0;
+            background-image: url(../image/icon/btn_swiper_on.svg);
+            &::after {
+              content: none;
+            }
+          }
+          &-prev {
+            transform: rotate(180deg);
+            &.swiper-button-disabled {
+              transform: rotate(0deg);
+            }
+          }
+          &-disabled {
+            background-image: url(../image/icon/btn_swiper_off.svg);
+            opacity: 1;
+            &.swiper-button-next {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
