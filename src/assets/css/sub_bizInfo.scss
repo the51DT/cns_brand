@@ -378,9 +378,10 @@
 
 
       .progress-bar{
+        position: relative;
         margin-top: 65px;
-        top: 180px;
         width: 4px;
+        height: 100%;
         background: linear-gradient(to bottom, 
         #F729C1 0%, 
         #E156E2 35%, 
@@ -391,15 +392,31 @@
           height: 40020px;
         }
 
-        .bar{
+        .dot {
+          position: absolute;
+          top: 0;
           width: 4px;
-          // height: 100%;
+          height: 100px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          display: block;
+          transform: rotate(180deg);
+          background-image: url('data:image/svg+xml,<svg width="2" height="1" viewBox="0 0 2 1" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 0C1.55225 0 2 0.447754 2 1V0H1ZM0 1C0 0.447754 0.447754 0 1 0H0V1Z" fill="rgb(38,38,38)"/></svg>');
+       }
+
+        .bar{
+          position: absolute;
+          height: 100%;
+          width: 4px;
           background: var(--colorGL-all-gray900);
-
-          border-radius: calc(var(--radius-mode1-x-s)/16*1rem);
-
+          // border-radius: calc(var(--radius-mode1-x-s)/16*1rem);
+          transform: scaleY(0.1);
+          transform-origin: bottom;
+          margin-top: 15rem;
         }
+
       }
+
       &__item{
         width: calc(600/16*1rem);
         letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);

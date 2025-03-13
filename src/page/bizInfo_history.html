@@ -7,158 +7,137 @@
     <meta name="description" content="<%= data.description %>">
     <link rel="stylesheet" href="/src/assets/css/index.css" />
     <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
-   </head>
+</head>
 <body>
     <div class="wrap bizInfo_history">
         <%- include('src/_inc/header.html') %>
-        <!-- //헤더 영역 -->
-        <!-- //비주얼 영역 -->
+
         <div class="sub-content__wrap">
             <div class="inner-wrap">
                 <div class="bizInfo_history__container">
-                  <div class="bizInfo_history__textarea">
-                     <h2 class="font-bold">History</h2>
-                     <p class="font-medium">
-                        LG CNS는 1987년 설립 후<br/>
-                        30년 넘게 대한민국 IT산업의<br/>
-                        발전을 이끌어왔습니다.
-                     </p>
-                  </div>
-                  <div class="bizInfo_history__scroll">
-                     <div class="left-section">
-                        <div class="left-section__item">
-                           <h3>디지털 혁신 선도</h3>
-                           <span>LG CNS,<br>디지털 혁신을 선도하다</span>
-                           <p>현재부터 2016년까지</p>
+                    <div class="bizInfo_history__textarea">
+                        <h2 class="font-bold">History</h2>
+                        <p class="font-medium">
+                            LG CNS는 1987년 설립 후<br/>
+                            30년 넘게 대한민국 IT산업의<br/>
+                            발전을 이끌어왔습니다.
+                        </p>
+                    </div>
+
+                    <div class="bizInfo_history__scroll">
+                        <!-- 왼쪽 섹션 -->
+                        <div class="left-section">
+                            <div class="left-section__item">
+                                <h3>디지털 혁신 선도</h3>
+                                <span>LG CNS,<br>디지털 혁신을 선도하다</span>
+                                <p>현재부터 2016년까지</p>
+                            </div>
+                            <div class="left-section__item">
+                                <h3>도약과 발전</h3>
+                                <span>LG CNS,<br>도약과 발전의 시기</span>
+                                <p>2022년부터 2015년까지</p>
+                            </div>
+                            <div class="left-section__item">
+                                <h3>성장과 도전</h3>
+                                <span>LG CNS,<br>성장과 도전의 시기</span>
+                                <p>1995년부터 2001년까지</p>
+                            </div>
+                            <div class="left-section__item">
+                                <h3>탄생과 개척</h3>
+                                <span>LG CNS,<br>탄생과 개척의 시기</span>
+                                <p>1987년부터 1994년까지</p>
+                            </div>
                         </div>
-                        <div class="left-section__item">
-                           <h3>도약과 발전</h3>
-                           <span>LG CNS,<br>도약과 발전의 시기</span>
-                           <p>2022년부터 2015년까지</p>
-                        </div>
-                        <div class="left-section__item">
-                           <h3>성장과 도전</h3>
-                           <span>LG CNS,<br>성장과 도전의 시기</span>
-                           <p>1995년부터 2001년까지</p>
-                        </div>
-                        <div class="left-section__item">
-                           <h3>탄생과 개척</h3>
-                           <span>LG CNS,<br>탄생과 개척의 시기</span>
-                           <p>1987년부터 1994년까지</p>
-                        </div>
-                     </div>
-                     <div class="right-section">
-                        <div class="progress-bar">
-                            <div class="bar"></div>
-                        </div>
-                        <div class="right-section__item" id="right-section__item">
+
+                        <!-- 오른쪽 섹션 -->
+                        <div class="right-section">
+                            <div class="progress-bar">
+                                <div class="dot"></div><div class="bar"></div></div>
+                            <div class="right-section__item" id="right-section__item"></div>
                         </div>
                     </div>
-                  </div>
-               </div>
+                </div>
             </div>
         </div>
-        <%- include('src/_inc/footer.html', Object.assign({}, locals, {
-         type : 'dark',
-     }))%>
+
+        <%- include('src/_inc/footer.html', { type: 'dark' }) %>
     </div>
+
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-   // 타임라인 데이터 로드
-   fetch('/assets/data/timeline.json')
-       .then(response => response.json())
-       .then(data => {
-           const timelineContainer = document.getElementById('right-section__item');
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('/assets/data/timeline.json')
+                .then(res => res.json())
+                .then(data => {
+                    const timelineContainer = document.getElementById('right-section__item');
+                    const sortedData = [
+                        ...data.timelineData2020s, 
+                        ...data.timelineData2010s, 
+                        ...data.timelineData2000s, 
+                        ...data.timelineData1900s
+                    ].sort((a, b) => b.year - a.year);
 
-           const sortedData = [...data.timelineData2020s, ...data.timelineData2010s, ...data.timelineData2000s, ...data.timelineData1900s].sort((a, b) => b.year - a.year);
+                    timelineContainer.innerHTML = sortedData.map(yearItem => `
+                        <div class="timeline-year">
+                            <div class="year-container">
+                                <div class="circle-container">
+                                    <div class="outer-glow"></div>
+                                    <div class="outer-circle"><div class="inner-circle"></div></div>
+                                </div>
+                                <span class="year-title">${yearItem.year}</span>
+                            </div>
+                            <ul class="events">
+                                ${yearItem.events.map(event => `
+                                    <li class="event-item">
+                                        <div class="event-month">${event.month}</div>
+                                        <div class="event-desc-container">
+                                            <div class="event-desc">${event.description}</div>
+                                            ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>` : ''}
+                                        </div>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    `).join('');
+                })
+                .catch(err => console.error("데이터 로딩 오류:", err));
+        });
 
-           sortedData.forEach(yearItem => {
-               const yearDiv = document.createElement('div');
-               yearDiv.classList.add('timeline-year');
+        function scrollAnimation() {
+            const progressBar = document.querySelector('.progress-bar');
+            const circles = document.querySelectorAll('.circle-container');
 
-               yearDiv.innerHTML = `
-                   <div class="year-container">
-                      <div class="circle-container">
-                          <div class="outer-glow"></div>
-                          <div class="outer-circle">
-                              <div class="inner-circle"></div>
-                          </div>
-                       </div>
-                       <span class="year-title">${yearItem.year}</span>
-                   </div>
-                   <ul class="events">
-                       ${yearItem.events.map(event => `
-                           <li class="event-item">
-                               <div class="event-month">${event.month}</div>
-                               <div class="event-desc-container">
-                                   <div class="event-desc">${event.description}</div>
-                                   ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>` : ''}
-                               </div>
-                           </li>
-                       `).join('')}
-                   </ul>
-               `;
-               timelineContainer.appendChild(yearDiv);
-           });
-       })
-       .catch(error => console.error("데이터 로딩 오류:", error));
-});
+            let top2025, top1987;
+            circles.forEach(circle => {
+                const year = circle.nextElementSibling?.textContent.trim();
+                if (year === "2025") top2025 = circle.getBoundingClientRect().top + window.scrollY;
+                if (year === "1987") top1987 = circle.getBoundingClientRect().top + window.scrollY;
+            });
 
-function scrollAnimation() {
-    const wrap = document.querySelector('.bizInfo_history__scroll');
-    const scrollArea = wrap.querySelector('.right-section');
-    const progress = wrap.querySelector('.progress-bar');
-    const progressBar = wrap.querySelector('.progress-bar .bar');
-    const timelineContents = wrap.querySelectorAll('.right-section__item .timeline-year');
-    const circles = document.querySelectorAll('.circle-container');
-
-    let top2025 = null;
-    let top1987 = null;
-
-    circles.forEach(circle => {
-        const year = circle.nextElementSibling?.textContent.trim();
-        if (year === "2025") {
-            top2025 = circle.getBoundingClientRect().top + window.scrollY;
+            if (top2025 !== undefined && top1987 !== undefined) {
+                progressBar.style.height = `${top1987 - top2025}px`;
+            }
         }
-        if (year === "1987") {
-            top1987 = circle.getBoundingClientRect().top + window.scrollY;
+
+        function updateProgressBar() {
+            const progressBar = document.querySelector('.progress-bar .bar');
+            const rightSection = document.querySelector('.right-section');
+            if (!progressBar || !rightSection) return;
+
+            const sectionTop = rightSection.offsetTop;
+            const sectionHeight = rightSection.scrollHeight;
+            const scrollY = window.scrollY;
+
+            let progress = Math.max(0, Math.min(1, (scrollY - sectionTop) / (sectionHeight - window.innerHeight)));
+            progressBar.style.transform = `scaleY(${1 - progress})`;
+
+            requestAnimationFrame(updateProgressBar);
         }
-    });
 
-    if (top2025 !== null && top1987 !== null) {
-        const totalHeight = top1987 - top2025;
-        progress.style.height = `${totalHeight}px`;
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    function updateProgressBar() {
-        const wrap = document.querySelector('.bizInfo_history__scroll');
-        const progressBar = wrap.querySelector('.progress-bar .bar');
-        const rightSection = wrap.querySelector('.right-section');
-
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const sectionTop = rightSection.offsetTop;
-        const sectionHeight = rightSection.scrollHeight;
-        const windowHeight = window.innerHeight;
-
-        const maxScroll = sectionHeight - windowHeight;
-        const scrollProgress = Math.min(Math.max((scrollTop - sectionTop) / maxScroll, 0), 1);
-
-        progressBar.style.height = `${scrollProgress * 100}%`;
-    }
-
-    document.addEventListener("scroll", updateProgressBar);
-    updateProgressBar(); 
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(() => {
-        scrollAnimation();
-    }, 100);
-});
-    </script>  
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(scrollAnimation, 100);
+            updateProgressBar();
+            document.addEventListener("scroll", updateProgressBar);
+        });
+    </script>
 </body>
 </html>
