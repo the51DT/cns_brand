@@ -102,42 +102,77 @@
                 .catch(err => console.error("데이터 로딩 오류:", err));
         });
 
-        function scrollAnimation() {
-            const progressBar = document.querySelector('.progress-bar');
-            const circles = document.querySelectorAll('.circle-container');
+        function scrollEventTest () {
+            //element
+            const scrollWrap = document.querySelector('.right-section')
+            const progressEl = scrollWrap.querySelector('.progress-bar')
+            const progressBar = scrollWrap.querySelector('.bar')
+            const timelineElements = document.querySelectorAll('.timeline-year')
 
-            let top2025, top1987;
-            circles.forEach(circle => {
-                const year = circle.nextElementSibling?.textContent.trim();
-                if (year === "2025") top2025 = circle.getBoundingClientRect().top + window.scrollY;
-                if (year === "1987") top1987 = circle.getBoundingClientRect().top + window.scrollY;
-            });
+            //value
+            let scrollWrapTop, scrollWrapEndPoint, scrollY, viewport, triggerPoint
+            let previousStates = new Map() //리스트별 이전 상태 저장
 
-            if (top2025 !== undefined && top1987 !== undefined) {
-                progressBar.style.height = `${top1987 - top2025}px`;
+            // const 
+            // const 
+
+            const init = () => {
+                scrollWrapTop = scrollWrap.offsetTop
+                scrollWrapEndPoint = scrollWrapTop + scrollWrap.offsetHeight
+
+                const lastTimelineHeight = timelineElements[timelineElements.length - 1].offsetHeight
+
+                progressEl.style.height = `${ scrollWrap.offsetHeight -lastTimelineHeight}px`
+                progressBar.style.height = `${ scrollWrap.offsetHeight -lastTimelineHeight }px`
             }
+
+            const scrollValue = () => {
+                scrollY = window.scrollY
+                viewport = scrollY + window.innerHeight // 현재 표시되는 화면
+                triggerPoint = scrollY + (window.innerHeight * 0.5) // 이벤트를 줄 viewport의 지점
+            }
+            
+            window.addEventListener('scroll', () => {
+				scrollValue()
+                
+                const progress = scrollWrapEndPoint - triggerPoint
+
+                if(triggerPoint > scrollWrapTop && scrollWrapEndPoint > triggerPoint) {
+                    progressBar.style.height = `${progress}px`
+                } else {
+                    progressBar.style.height = scrollWrapTop > scrollY ? `${ scrollWrap.offsetHeight }px` : '0px'
+                }
+
+                //각 타임라인의 top 값이 이벤트를 줄 viewport의 지점을 넘었는지
+                timelineElements.forEach((el, idx) => {
+                    const timelineStart = el.offsetTop
+                    const state = timelineStart < triggerPoint
+
+                    if(previousStates.get(idx) !== state) {
+                        previousStates.set(idx, state)
+                        el.classList.toggle('active', state)
+
+                    }
+
+                    // if(triggerPoint > timelineStart && triggerPoint < timelineEnd) {
+                    //     // console.log('지금은 화면 중앙의 높이가 해당 요소의 내에 있어요', idx)
+                    //     el.style.border = "1px dashed red"
+                    // } else if(triggerPoint < timelineStart) {
+                    //     el.style.border = "none"
+                    // }
+                })
+            })
+
+
+            init()
         }
 
-        function updateProgressBar() {
-            const progressBar = document.querySelector('.progress-bar .bar');
-            const rightSection = document.querySelector('.right-section');
-            if (!progressBar || !rightSection) return;
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                scrollEventTest()
+            }, 100);
+        })
 
-            const sectionTop = rightSection.offsetTop;
-            const sectionHeight = rightSection.scrollHeight;
-            const scrollY = window.scrollY;
-
-            let progress = Math.max(0, Math.min(1, (scrollY - sectionTop) / (sectionHeight - window.innerHeight)));
-            progressBar.style.transform = `scaleY(${1 - progress})`;
-
-            requestAnimationFrame(updateProgressBar);
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            setTimeout(scrollAnimation, 100);
-            updateProgressBar();
-            document.addEventListener("scroll", updateProgressBar);
-        });
     </script>
 </body>
 </html>
