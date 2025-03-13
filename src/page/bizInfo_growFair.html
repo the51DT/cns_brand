@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+   <title>
+      <%= data.title %>
+   </title>
+   <meta name="description" content="<%= data.description %>">
+   <link rel="stylesheet" href="/src/assets/css/index.css" />
+   <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+
+<body>
+   <div class="wrap bizInfo_growFair">
+      <%- include('src/_inc/header.html') %>
+         <!-- //헤더 영역 -->
+         <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { pcImg: 'empty' , moImg: 'empty' ,
+            subText: '기업정보' , pageTitle: '동반성장/공정거래' , rightDesc: 'LG CNS는 신뢰를 바탕으로<br>협력사와 함께 성장합니다.' })) %>
+            <!-- //비주얼 영역 -->
+            <div class="sub-content__wrap">
+               <div class="inner-wrap">
+                  <div class="cmp-wrap cmp-tab basic-type align-left">
+                     <div class="cmp-tab__header">
+                        <ul class="tab__menu">
+                           <li class="is-active">
+                              <a href="#">핵심성과</a>
+                           </li>
+                           <li>
+                              <a href="#">열린 소통</a>
+                           </li>
+                           <li>
+                              <a href="#">성장지원</a>
+                           </li>
+                           <li>
+                              <a href="#">공정거래</a>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="tab-content__wrap">
+                        <div class="tab__content is-active">
+                           <div class="layout_col2">
+                              <div>
+                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                                    titleText: '협력사 소통 채널 「파트너 플러스」',
+                                 })) %>
+                              </div>
+                              <div>
+                                 <p class="detail_text__open font-body-sm">LG CNS는 협력사 포털 파트너플러스를 운영하고 있습니다.<br>또한, 포털 내에 파트너사 소통마당을 개설해 항상 협력사 의견(VOS, Voice of Supplier)을 경청하고 건전한 협업문화 정착을 위해 노력하고 있습니다.</p>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="tab__content">
+                           <div class="layout_col2">
+                              <div>
+                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                                    titleText: '협력사 소통 채널 「파트너 플러스」',
+                                 })) %>
+                              </div>
+                              <div>
+                                 <p class="detail_text__open font-body-sm">LG CNS는 협력사 포털 파트너플러스를 운영하고 있습니다.<br>또한, 포털 내에 파트너사 소통마당을 개설해 항상 협력사 의견(VOS, Voice of Supplier)을 경청하고 건전한 협업문화 정착을 위해 노력하고 있습니다.</p>
+                                 <button type="button" class="btn btn-black btn-middle open-btn">
+                                    <p class="font-normal">파트너플러스 바로가기LG Way 자세히 보기</p>
+                                    <i class="ico icon-arrow-right-wt16"></i>
+                                </button>
+                                <%
+                                 const openImageData=[
+                                    {
+                                       pc: 'https://placehold.co/1168x412', 
+                                       mo: 'https://placehold.co/321x840', 
+                                    }
+                                 ]
+                                %>
+                                <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                                    jsonData : openImageData,
+                                    alt : '협력사 소통 채널 「파트너 플러스」',
+                                 }))%>
+                              </div>
+                           </div>
+
+                           <div class="layout_col2">
+                              <div>
+                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                                    titleText: '협력회사 사장단 워크숍 및 간담회',
+                                 })) %>
+                              </div>
+                              <div>
+                                 <p class="detail_text font-body-sm">협력회사와의 주기적인 워크숍 및 간담회를 통해 사업현황 및 방향성을 공유하고 협력회사 운영에 필요한 제반법규(정보보안/개인정보보호 외) 등을 안내함으로써,<br>
+                                    상호 이해도 증진 및 실질적인 동반성장 기반을 강화합니다.</p>
+                              </div>
+                           </div>
+
+                           <div class="layout_col2">
+                              <div>
+                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                                    titleText: '대·중소기업 간 협력상담회 참여',
+                                 })) %>
+                              </div>
+                              <div>
+                                 <p class="detail_text font-body-sm">LG CNS와 협업기회를 갖고자 하는 중소기업과의 상담회를 통해 LG CNS의 협업정책과 협력회사의 보유기술 및 사업 강점을 상호 소개함으로써<br>
+                                    시너지를 창출할 수 있는 협력관계를 만들어 가고 있습니다.</p>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="tab__content">
+                           <div class="layout_col2">
+                              <div>
+                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                    titleText: '협력사 IT인재 육성 프로그램 「U-Camp」', 
+                                 })) %>
+                              </div>
+                              <div>
+                                 <p class="font-body-sm detail_text">LG CNS는 2006년부터 협력사 입사 대상자들에게 약 10주간의 전문 개발자 양성 과정인 ‘U-Camp’를 제공하고 있습니다. AI, 클라우드, 블록체인 등 IT 신기술 교육을 실시하며, U-Camp를 수료하면 실제 프로젝트에 투입될 수 있는 전문 개발자로 성장할 수 있습니다. 2021년까지 협력사 신입사원 1,000여명이 교육 혜택을 받았습니다. 또한, LG CNS는 인력채용에 어려움을 겪는 협력사를 위해 수시로 온라인 채용관을 운영합니다.</p>
+                                 <% 
+                                    const iamgeData=[{
+                                       pc: 'https://placehold.co/1168x525', 
+                                       mo: 'https://placehold.co/320x144', 
+                                    }] 
+                                 %>
+                                 <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                                    jsonData : iamgeData,
+                                    alt : '협력사 IT인재 육성 프로그램 「U-Camp」',
+                                 }))%>
+                              </div>
+                           </div>
+
+                           <div class="layout_col2">
+                              <div>
+                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                    titleText: '협력회사 On/Off line 교육현황', 
+                                 })) %>
+                              </div>
+                              <div>
+                                 <div class="cmp-wrap cmp-table__wrap">
+                                    <p class="unit-text font-body-sm font-bold">[ 단위 : 명 ]</p>
+                                    <div class="table-container">
+                                          <table class="data-table text-center">
+                                             <caption>LG CNS 공시정보 전자공고</caption>
+                                             <thead>
+                                                <tr>
+                                                      <th scope="col" class="text-left">구분</th>
+                                                      <th scope="col">On line 교육</th>
+                                                      <th scope="col">Off line 교육</th>
+                                                </tr>
+                                             </thead>
+                                             <tbody>
+                                                <tr>
+                                                   <td class="font-bold text-left">개설 과정 수</td>
+                                                   <td>30개</td>
+                                                   <td>2개 (코로나19로 축소)</td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="font-bold text-left">과정 이수자 (명)</td>
+                                                   <td>19,000여명</td>
+                                                   <td>160여명</td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="font-bold text-left">주요내용</td>
+                                                   <td>기술, 정책, 업무소양</td>
+                                                   <td>기술, 채용지원 교육</td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="layout_col2">
+                              <div>
+                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                                    titleText: '사외벤처 육성 프로그램<br>「스타트업 몬스터」',
+                                 })) %>
+                              </div>
+                              <div>
+                                 <p class="font-body-sm detail_text">LG CNS는 사외 벤처를 지원하는 스타트업몬스터를 운영하고 있습니다.<br>금전적 지원과 전문가 멘토링은 물론 LG계열사와 협업 기회를 제공하고 있습니다. 이를 통해 LG CNS와 스타트업이 IT신기술을 기반으로 새로운 사업을 발굴하며, 성과도 공유하고 있습니다.</p>
+                                 <% 
+                                 const iamgeData2=[{
+                                    pc: 'https://placehold.co/1168x525', 
+                                    mo: 'https://placehold.co/320x144', 
+                                 }] 
+                                 %>
+                                 <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                                    jsonData : iamgeData2,
+                                    alt : '사외벤처 육성 프로그램 「스타트업 몬스터」',
+                                 }))%>
+                              </div>
+                           </div>
+
+                           <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                              titleText: '전문조직 운영', 
+                           })) %>
+                          <p class="detail_text__specialist font-body-sm">LG CNS는 협력회사와 비전을 공유하고, 기술역량을 보유한 협력회사와의 공동연구 개발/공동마케팅/공동사업을 추진하고 있습니다.<br>특히 해외 사업에서 협력회사와의 공동진출을 통해 미래 성장동력을 확보하고 지속 가능한 동반 성장 체계 구축을 위해 노력하고 있습니다.</p>
+                          <% 
+                          const growImageData=[{
+                              pc: 'https://placehold.co/1760x625', 
+                              mo: 'https://placehold.co/320x218', 
+                          }] 
+                          %>
+                              <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                                  jsonData : growImageData,
+                                  alt : '전문조직 운영',
+                              }))%>
+                        </div>
+
+                        <div class="tab__content">
+                           <%- include('src/component/cmp_contents_title.html', Object.assign({}, locals, { 
+                              contentsTitle: '공정거래 문화 정착은<br>LG CNS의 지속적인 성장과 사회적 책임의 필수적인 핵심요소입니다.',
+                           })) %>
+
+                           <div class="layout_col2">
+                              <div>
+                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                    titleText: '공정거래 문화 정착', 
+                                 })) %>
+                              </div>
+                              <div>
+                                 <p class="font-body-sm detail_text">LG CNS는 임직원의 사고와 행동의 기반인 ‘LG WAY’를 실천하기 위해 공정한 경쟁과 거래문화를 지향하고 있습니다. 특히 공정거래 관련 법령 준수를 위해 교육, 법 개정 모니터링, 업무프로세스 개선 등 관련 활동을 진행하고 있으며, 공정거래 문화가 정착될 수 있도록 최선의 노력을 다하고 있습니다.</p>
+                                 <% const specListData4tab = [ 
+                                    { 
+                                       id: 0,
+                                       title: '사전관리',
+                                       smallContent: [
+                                             '법률/규제 등 변경 사항 확인',
+                                       ]
+                                    }, 
+                                    { 
+                                       id: 1, 
+                                       title: '교육 및 프로세스 개선',
+                                       smallContent: [
+                                             '임직원 교육/홍보, 업무프로세스 개선',
+                                       ]
+                                    }, 
+                                    { 
+                                       id: 2, 
+                                       title: '점검 활동',
+                                       smallContent: [
+                                             '자가진단, 현장점검',
+                                       ]
+                                    }, 
+                                    { 
+                                       id: 3,
+                                       title: '사후관리',
+                                       smallContent: [
+                                             '문제 발생시 원인파악 및 재발방지 대책 수립',
+                                       ]
+                                    },
+                                 ]; 
+                                 %>
+                                 <%- include('src/component/cmp_SpecList.html', {
+                                    itemCount: 4,
+                                    jsonData: specListData4tab,
+                                    styleType: 'type-column',
+                                 }) %>
+                              </div>
+                           </div>
+
+                           <div class="layout_col2">
+                              <div>
+                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                    titleText: 'FAIR TRADE', 
+                                 })) %>
+                              </div>
+                              <div>
+                                 <p class="font-body-sm detail_text">
+                                    LG CNS의 사업영역과 관련 있는 공정거래 법률 및 규정 준수를 위해,<br>
+                                    공정거래 관련 법령ㆍ제도ㆍ정책의 변경사항들을 임직원에게 공유하고 있습니다.<br>
+                                    <br>
+                                    임직원의 공정거래 인식 함양을 위해 주기적인 교육을 실시하고 있으며, 자가점검 및 현장점검을 진행하고 있습니다.<br>
+                                    점검활동을 통해 도출된 개선사항에 대해 임직원 교육을 지속적으로 실시하고 있습니다.
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%- include('src/_inc/footer.html') %>
+   </div>
+   <script>
+      tabMenu('.basic-type', 'tab');
+      accordion('.open-type', 'basic');
+   </script>
+</body>
+
+</html>

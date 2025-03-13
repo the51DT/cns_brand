@@ -1,0 +1,45 @@
+<!-- chart -->
+<div class="cmp-wrap cmp-chart">
+    <% if(typeof type !== 'undefine' && type && type == 'columnChart' && valueMax) { %>
+        <div class="chart-wrap chart-wrap--column-chart">
+            <div class="chart-wrap__xAxis-area">
+                <span class="chart-wrap__xAxis-area__line"></span>
+                <span class="chart-wrap__xAxis-area__line"></span>
+            </div>
+            <div class="chart-wrap__yAxis-area">
+                <% if(series) {%>
+                    <ul class="chart-wrap__yAxis-series">
+                        <% series.forEach((series, index)=> { %>
+                            <% if(typeof categoryBarColor === 'string') { %>
+                                <li>
+                                    <span class="chart-wrap__yAxis-series__text font-body-sm font-bold">
+                                        <%- series %>
+                                    </span>
+                                    <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor %>;--yAxis-series-target-val: <%- series %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
+                                </li>
+                            <% } else if (typeof categoryBarColor === 'object') { %>
+                                <li>
+                                    <span class="chart-wrap__yAxis-series__text font-body-sm font-bold">
+                                        <%- series %>
+                                    </span>
+                                    <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor[index] %>;--yAxis-series-target-val: <%- series %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
+                                </li>
+                            <% } %>
+                        <% }) %>
+                    </ul>
+                <% } %>
+                <% if(categories) {%>
+                    <ul class="chart-wrap__yAxis-categories">
+                        <% categories.forEach((categories) => { %>
+                            <li>
+                                <span class="font-body-sm font-bold">
+                                    <%- categories %>
+                                </span>
+                            </li>
+                        <% }) %>
+                    </ul>
+                <% } %>
+            </div>
+        </div>
+    <% } %>
+</div>

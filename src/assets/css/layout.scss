@@ -588,7 +588,10 @@ body {
         }
         @media #{$phone} {
             grid-template-columns: auto;
-            gap: calc(32 / 16 * 1rem);
+            gap: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
+            & > div:last-child .cmp-wrap:first-child:not(.cmp-table__wrap) {
+                margin-top: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
+            }
         }
         &.smallTitle {
             grid-template-columns: calc(428 / 16 * 1rem) auto;
