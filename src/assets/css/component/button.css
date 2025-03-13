@@ -128,7 +128,7 @@
     font-size: calc(16 / 16 * 1rem);
     line-height: calc(24 / 16 * 1rem);
     padding: calc(13 / 16 * 1rem) calc(28 / 16 * 1rem);
-    width: calc(240 / 16 * 1rem);
+    min-width: calc(240 / 16 * 1rem);
 }
 /* btn-text - 텍스트 버튼 */
 .btn.btn-text {
