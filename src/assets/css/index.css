@@ -35,6 +35,8 @@
 @import 'icon.scss';
 /* tailwind */
 @import url("/assets/bundle/tailwindcss/tailwind-all.css");
+/* main content*/
+@import 'main.scss';
 /* sub content*/
 @import 'sub_moa.scss';
 @import 'sub_future.scss';

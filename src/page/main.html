@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title><%= data.title %></title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap has-hero .main">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+
+        <div class="main-visual__wrap">
+
+        </div>
+        <!-- //비주얼 영역 -->
+
+        <div class="main-search__wrap">
+            <div class="main-search">
+                <p class="font-head-lg font-bold text-center">무엇을 알아보고 싶으신가요?</p>
+
+                <div class="form-element__wrap">
+                    <label class="ir-text">검색창</label>                          
+                    <span class="form-element__inner input-type input-search search-type-full">
+                        <button type="button" class="btn btn-search">
+                            <i class="ico icon-search-bl35"></i>                                
+                            <span class="ir-text">검색</span>
+                        </button>                                  
+                        <input type="text" value="" placeholder="무엇이 궁금하세요?" />
+                        <button type="button" class="btn btn-remove">
+                            <i class="ico icon-remove-bl28"></i>
+                            <span class="ir-text">삭제</span>
+                        </button>                                
+                    </span>
+                </div>
+
+                <div class="main-search__result-wrap">
+                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 클라우드 알아보기</sapn></a>
+                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 클라우드보안은 어떻게 하나요?</sapn></a>
+                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 현재 채용 중인 직군은?</sapn></a>
+                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 물류 창고에 자동화 도입하기</sapn></a>
+                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 투자를 위한 기업 정보</sapn></a>
+                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 운송 계획 최적화를 위한 솔루션</sapn></a>
+                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 운송 계획 최적화를 위한 솔루션</sapn></a>
+                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 클라우드 알아보기</sapn></a>
+                </div>
+            </div>
+        </div>
+        <!-- //검색 영역 -->
+
+        <div class="main-service__wrap">
+            <p class="text-white">Sevice 영역</p>
+        </div>
+        <!-- //서비스 영역 -->
+
+        <div class="main-now__wrap">
+            <div class="inner-wrap">
+                <div class="cmp-wrap cmp-swiper__wrap main-now-swiper dataList">
+                    <div class="main-now-swiper__top">
+                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                            titleText: 'LG CNS Now', 
+                        })) %>
+                        <div class="swiper-button-wrap">
+                            <button class="swiper-button-prev"></button>
+                            <button class="swiper-button-next"></button>
+                        </div>
+                    </div>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <ul class="content-list__wrap thumbnail-type type-box-line">
+                                    <li>
+                                        <a href="#" class="content-list__inner">
+                                            <div class="thumbnail-wrap">
+                                                <img src="https://placehold.co/576x288" alt="" />
+                                            </div>
+                                            <div class="content-info">
+                                                <div class="font-body-xs category-label">News</div>
+                                                <div class="title font-body-lg">
+                                                    Awards 수상
+                                                </div>
+                                                <div class="description font-body-sm">
+                                                    MWP에 대한 내용을 5분만에 퀵하게 살펴볼 수 있는 필수 자료!
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="swiper-slide">
+                                <ul class="content-list__wrap thumbnail-type type-box-line">
+                                    <li>
+                                        <a href="#" class="content-list__inner">
+                                            <div class="thumbnail-wrap">
+                                                <img src="https://placehold.co/576x288" alt="" />
+                                            </div>
+                                            <div class="content-info">
+                                                <div class="font-body-xs category-label">동영상</div>
+                                                <div class="title font-body-lg">
+                                                    어떻게 DWP를 도입할 것인가?
+                                                </div>
+                                                <div class="description font-body-sm">
+                                                    24년 10월 웨비나 세션 자료
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="swiper-slide">
+                                <ul class="content-list__wrap thumbnail-type type-box-line">
+                                    <li>
+                                        <a href="#" class="content-list__inner">
+                                            <div class="thumbnail-wrap">
+                                                <img src="https://placehold.co/576x288" alt="" />
+                                            </div>
+                                            <div class="content-info">
+                                                <div class="font-body-xs category-label">아티클</div>
+                                                <div class="title font-body-lg">
+                                                    DWP 꼭 지금 도입해야하는가?
+                                                </div>
+                                                <div class="description font-body-sm">
+                                                    DWP 도입으로 기업의 생산성이 어떻게 좋아졌는지 글을 통해 살펴보세요.
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="swiper-slide">
+                                <ul class="content-list__wrap thumbnail-type type-box-line">
+                                    <li>
+                                        <a href="#" class="content-list__inner">
+                                            <div class="thumbnail-wrap">
+                                                <img src="https://placehold.co/576x288" alt="" />
+                                            </div>
+                                            <div class="content-info">
+                                                <div class="font-body-xs category-label">아티클</div>
+                                                <div class="title font-body-lg">
+                                                    DWP를 사용하는 고객의 소리
+                                                </div>
+                                                <div class="description font-body-sm">
+                                                    고객들은 DWP를 어떻게 사용하고 있을까요
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="swiper-slide">
+                                <ul class="content-list__wrap thumbnail-type type-box-line">
+                                    <li>
+                                        <a href="#" class="content-list__inner">
+                                            <div class="thumbnail-wrap">
+                                                <img src="https://placehold.co/576x288" alt="" />
+                                            </div>
+                                            <div class="content-info">
+                                                <div class="font-body-xs category-label">News</div>
+                                                <div class="title font-body-lg">
+                                                    Awards 수상
+                                                </div>
+                                                <div class="description font-body-sm">
+                                                    MWP에 대한 내용을 5분만에 퀵하게 살펴볼 수 있는 필수 자료!
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //LG CNS Now 영역 -->
+        <%- include('src/_inc/footer.html') %>
+    </div>
+    <script src="/assets/bundle/swiper-bundle.min.js"></script>
+    <script src="/assets/js/initializeSwipers.js"></script>
+    <script>
+        // Swiper 옵션 배열
+        const swiperOptions = [
+            {
+                speed: 500,
+                slidesPerView: "auto",
+                spaceBetween: 8,
+                slidesOffsetBefore: 20,
+                slidesOffsetAfter: 20,
+                navigation: { 
+                    prevEl: ".main-now-swiper .swiper-button-prev",
+                    nextEl: ".main-now-swiper .swiper-button-next",
+                },
+                breakpoints: {
+                    768: { //브라우저가 768보다 클 때
+                        slidesPerView: 3,  
+                        spaceBetween: 16,
+                        slidesOffsetBefore: 0,
+                        slidesOffsetAfter: 0,
+                    },
+                },
+            }
+        ];
+        // Swiper 초기화
+        initializeSwipers(swiperOptions); 
+    </script>
+</body>
+</html>
