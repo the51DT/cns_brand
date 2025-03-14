@@ -288,12 +288,6 @@
           display: block;
           margin-bottom: calc(var(--spacing-mode1-vertical-m-nudge) / 16 * 1rem);
         }
-        // 그래프 박스 임시처리
-        .graph-box {
-          background-color: #f0f0f0;
-          width: 100%;
-          height: calc(317 / 16 * 1rem);
-        }
       }
     }
   }
