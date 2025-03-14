@@ -1,5 +1,12 @@
 // TextImageCluster
 .cmp-text-image-cluster {
+    margin-bottom: calc(var(--spacing-mode1-horizontal7-x-l) / 16* 1rem);
+    @media #{$tablet} {
+        margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l-nudge) / 16* 1rem);
+    }
+    @media #{$phone} {
+        margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16* 1rem);
+    }
     .TIC-container {
         width: 100%;
         display: flex;
@@ -22,6 +29,28 @@
                 margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
                 @media #{$phone} {
                  margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+                }
+                .pc {
+                    @extend .cluster__image;
+                    display: block;
+                    @media #{$tabletMini} {
+                        display: none;
+                    }
+                    &_only {
+                        @media #{$tabletMini} {
+                            display: block;
+                        }
+                    }
+                }
+                .mo {
+                    @extend .cluster__image;
+                    display: none;
+                    @media #{$tabletMini} {
+                        display: block;
+                        img {
+                            width: 100%;
+                        }
+                    }
                 }
                 &_bottom {
                     order: 2;
