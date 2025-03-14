@@ -111,7 +111,8 @@
                             }
                         }
                     }
-                    &.no-bottom {
+                    &.no-bottom,
+                    &__flex.no-bottom {
                         margin-bottom: 0;
                     }
                 }

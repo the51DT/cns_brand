@@ -320,6 +320,12 @@
           "fileName": "bizInfo_compOvw.html"
         },
         {
+          "name": "기업정보 - LG Way",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_LGway.html"
+        },
+        {
           "name": "기업정보 - CEO",
           "screenId": "",
           "path": "/src/page/",
@@ -398,17 +404,10 @@
           "fileName": "bizInfo_direction.html"
         },
         {
-<<<<<<< HEAD
-          "name": "기업정보 - LG Way",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "bizInfo_LGway.html"
-=======
           "name": "기업정보 - 지속가능경영보고서",
           "screenId": "",
           "path": "/src/page/",
           "fileName": "bizInfo_esg.html"
->>>>>>> b0149385225cb4c0a109ef77b5f3ba07b0f510e6
         }
       ]
     },

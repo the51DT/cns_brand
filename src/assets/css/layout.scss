@@ -587,7 +587,7 @@ body {
             grid-template-columns: calc(254 / 16 * 1rem) auto;
         }
         @media #{$phone} {
-            grid-template-columns: auto;
+            grid-template-columns: repeat(1, 100%);
             gap: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
             & > div:last-child .cmp-wrap:first-child:not(.cmp-table__wrap) {
                 margin-top: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
