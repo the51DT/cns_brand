@@ -64,43 +64,76 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            fetch('/assets/data/timeline.json')
-                .then(res => res.json())
-                .then(data => {
-                    const timelineContainer = document.getElementById('right-section__item');
-                    const sortedData = [
-                        ...data.timelineData2020s, 
-                        ...data.timelineData2010s, 
-                        ...data.timelineData2000s, 
-                        ...data.timelineData1900s
-                    ].sort((a, b) => b.year - a.year);
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch('/assets/data/timeline.json')
+        .then(res => res.json())
+        .then(data => {
+            const timelineContainer = document.getElementById('right-section__item');
 
-                    timelineContainer.innerHTML = sortedData.map(yearItem => `
-                        <div class="timeline-year">
-                            <div class="year-container">
-                                <div class="circle-container">
-                                    <div class="outer-glow"></div>
-                                    <div class="outer-circle"><div class="inner-circle"></div></div>
-                                </div>
-                                <span class="year-title">${yearItem.year}</span>
-                            </div>
-                            <ul class="events">
-                                ${yearItem.events.map(event => `
-                                    <li class="event-item">
-                                        <div class="event-month">${event.month}</div>
-                                        <div class="event-desc-container">
-                                            <div class="event-desc">${event.description}</div>
-                                            ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>` : ''}
+            const colorRanges = {
+                "data-2020s": ["#F729C1", "#E54DDC"], 
+                "data-2010s": ["#E156E2", "#C19DF4"], 
+                "data-2000s": ["#C19DF4", "#B2C0EC"],  
+                "data-1900s": ["#B2C0EC", "#A9D7E6"], 
+            };
+
+            const sortedData = [
+                { className: "data-2020s", items: data.timelineData2020s },
+                { className: "data-2010s", items: data.timelineData2010s },
+                { className: "data-2000s", items: data.timelineData2000s },
+                { className: "data-1900s", items: data.timelineData1900s }
+            ];
+
+            const interpolateColor = (color1, color2, factor) => {
+                let result = color1.slice(1).match(/.{2}/g).map((hex, index) => {
+                    return Math.round(parseInt(hex, 16) + (parseInt(color2.slice(1).match(/.{2}/g)[index], 16) - parseInt(hex, 16)) * factor)
+                        .toString(16).padStart(2, '0');
+                });
+                return `#${result.join('')}`;
+            };
+
+            timelineContainer.innerHTML = sortedData.map(({ className, items }) => {
+                let [startColor, endColor] = colorRanges[className]; 
+                let totalCircles = items.length;
+
+                return `
+                    <div class="timeline-group ${className}">
+                        ${items.map((yearItem, index) => {
+                            let colorFactor = index / (totalCircles - 1);
+                            let currentColor = interpolateColor(startColor, endColor, colorFactor);
+
+                            return `
+                                <div class="timeline-year">
+                                    <div class="year-container">
+                                        <div class="circle-container">
+                                            <div class="outer-glow" style="background-color: ${currentColor};"></div>
+                                            <div class="outer-circle" style="border: 2px solid ${currentColor};">
+                                                <div class="inner-circle" style="background-color: ${currentColor};"></div>
+                                            </div>
                                         </div>
-                                    </li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                    `).join('');
-                })
-                .catch(err => console.error("데이터 로딩 오류:", err));
-        });
+                                        <span class="year-title" style="color: ${currentColor};">${yearItem.year}</span>
+                                    </div>
+                                    <ul class="events">
+                                        ${yearItem.events.map(event => `
+                                            <li class="event-item">
+                                                <div class="event-month">${event.month}</div>
+                                                <div class="event-desc-container">
+                                                    <div class="event-desc">${event.description}</div>
+                                                    ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>` : ''}
+                                                </div>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            }).join('');
+        })
+        .catch(err => console.error("데이터 로딩 오류:", err));
+});
+
 
         function scrollEventTest() {
     const scrollWrap = document.querySelector('.right-section');
