@@ -1,0 +1,129 @@
+<div class="cmp-wrap cmp-text-image-cluster">
+    <%
+        const data = (typeof jsonData !== 'undefined' ? jsonData : []);
+        const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
+        <!-- const textTop = (typeof textTop !== 'undefined' ? textTop : 'false'); -->
+    %>
+    <% if(data.length > 0) { %>
+        <% data.slice(0, itemLimit).forEach((item, i) => { %>
+            <div class="container">
+                <% if(typeof item.pcImg !== 'undefined' && item.pcImg) { %>
+                    <!-- 이미지 클러스터 -->
+                    <div class="cluster__image<%- item.textTop === 'true' ? '_bottom' : '' %>">
+                        <div class="pc<%- item.moImg === 'true' ? '_only' : '' %>">
+                            <img src="<%- item.pcImg %>" alt="<%- item.imgAlt %>">
+                        </div>
+                        <% if(typeof item.moImg !== 'undefined' && item.moImg) { %>
+                            <div class="mo">
+                                <img src="<%- item.moImg %>" alt="<%- item.imgAlt %>">
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+    
+                <% if(typeof item.titleText || typeof item.descText !== 'undefined' && item.titleText || item.descText) { %>
+                    <!-- 텍스트 클러스터 -->
+                    <div class="cluster__text">
+                    <% if(typeof item.titleText !== 'undefined' && item.titleText) { %>
+                        <p class="cluster__text-title font-body-lg font-bold"><%- item.titleText %></p>
+                    <% } %>
+                    <% if(typeof item.descText !== 'undefined' && item.descText) { %>
+                        <p class="cluster__text-desc font-body-sm"><%- item.descText %></p>
+                    <% } %>
+    
+                    <% if(typeof item.button1Name !== 'undefined' && item.button1Name) { %>
+                        <div class="button__wrap<%- item.buttonFlex === 'true' ? '__flex' : '' %> <%- (typeof item.textTop === 'undefined' || item.textTop === false) ? 'no-bottom' : '' %>
+                            ">
+                            <button type="button" class="btn btn-black btn-middle">
+                                <p class="font-normal"><%- item.button1Name %></p>
+                            </button>
+                            <% if(typeof item.button2Name !== 'undefined' && item.button2Name) { %>
+                                <button type="button" class="btn btn-black btn-middle">
+                                    <p class="font-normal"><%- item.button2Name %></p>
+                                </button>
+                            <% } %>
+                            <% if(typeof item.button2NameArrow !== 'undefined' && item.button2NameArrow) { %>
+                                    <button type="button" class="btn btn-black btn-middle">
+                                        <p class="font-normal"><%- item.button2NameArrow %></p>
+                                        <i class="ico icon-arrow-right-wt16"></i>
+                                    </button>
+                            <% } %>
+                        </div>
+                    <% } %>
+                    <% if(typeof item.button1NameArrow !== 'undefined' && item.button1NameArrow) { %>
+                        <div class="button__wrap<%- item.buttonFlex === 'true' ? '__flex' : '' %> <%- (typeof item.textTop === 'undefined' || item.textTop === false) ? 'no-bottom' : '' %>
+                            ">
+                            <button type="button" class="btn btn-black btn-middle">
+                                <p class="font-normal"><%- item.button1NameArrow %></p>
+                                <i class="ico icon-arrow-right-wt16"></i>
+                            </button>
+                            <% if(typeof item.button2Name !== 'undefined' && item.button2Name) { %>
+                                    <button type="button" class="btn btn-black btn-middle">
+                                        <p class="font-normal"><%- item.button2Name %></p>
+                                    </button>
+                            <% } %>
+                            <% if(typeof item.button2NameArrow !== 'undefined' && item.button2NameArrow) { %>
+                                    <button type="button" class="btn btn-black btn-middle">
+                                        <p class="font-normal"><%- item.button2NameArrow %></p>
+                                        <i class="ico icon-arrow-right-wt16"></i>
+                                    </button>
+                            <% } %>
+                        </div>
+                    <% } %>
+                    </div>
+                <% } %>
+
+            </div>
+
+        <% }) %>
+    <% } else { %>
+        <!-- 이미지 클러스터 -->
+        <div class="cluster__image_bottom">
+            <img src="https://placehold.co/1168x492" alt="LG Way">
+        </div>
+
+        <!-- 텍스트 클러스터 -->
+        <div class="cluster__text">
+            <p class="cluster__text-title font-body-lg font-bold">LG Way</p>
+            <p class="cluster__text-desc font-body-sm">LG 고유의 기업문화로서 우리가 추구하는 ‘고객을 위한 가치창조’ 와 ‘인간존중의 경영’이라는 경영이념을 ‘정도경영’으로 실천해<br>궁극적으로 ‘일등 LG’를 달성하자는 것입니다.</p>
+            <!-- 버튼 컨테이너 -->
+            <div class="button-wrap">
+                <button type="button" class="btn btn-black btn-middle">
+                    <p class="font-normal">LG Way 자세히 보기</p>
+                    <i class="ico icon-arrow-right-wt16"></i>
+                </button>
+                <button type="button" class="btn btn-black btn-middle">
+                    <p class="font-normal">LG Way 자세히 보기</p>
+                    <!-- <i class="ico icon-arrow-right-wt16"></i> -->
+                </button>
+            </div>
+            <div class="button__wrap__flex">
+                <button type="button" class="btn btn-black btn-middle">
+                    <p class="font-normal">LG Way 자세히 보기</p>
+                    <i class="ico icon-arrow-right-wt16"></i>
+                </button>
+                <button type="button" class="btn btn-black btn-middle">
+                    <p class="font-normal">LG Way 자세히 보기</p>
+                </button>
+            </div>
+        </div>
+    <% }%>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
