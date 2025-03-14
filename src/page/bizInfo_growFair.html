@@ -43,11 +43,112 @@
                            <div class="layout_col2">
                               <div>
                                  <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
-                                    titleText: '협력사 소통 채널 「파트너 플러스」',
+                                    titleText: '동반성장<br>「최우수 명예기업 LG CNS」',
                                  })) %>
                               </div>
                               <div>
-                                 <p class="detail_text__open font-body-sm">LG CNS는 협력사 포털 파트너플러스를 운영하고 있습니다.<br>또한, 포털 내에 파트너사 소통마당을 개설해 항상 협력사 의견(VOS, Voice of Supplier)을 경청하고 건전한 협업문화 정착을 위해 노력하고 있습니다.</p>
+                                 <%
+                                 const coreData1 = [
+                                     {
+                                         id: 0,
+                                         pcImg: 'https://placehold.co/1168x525',
+                                         titleText: 'LG CNS는 2022년 동반성장위원회의 동반성장지수 평가에서 최우수 등급을 받았습니다.<br>5년 연속 수상하며, ‘최우수 명예기업’으로 선정됐습니다.',
+                                         descText: 'LG CNS는 협력회사와의 신뢰를 바탕으로 공정하고 투명한 거래문화를 조성하고 있으며, 협력회사가 경쟁력을 강화할 수 있도록 다방면으로 지원함으로써 지속가능한 동반성장 생태계를 만들어 나가고 있습니다.',
+                                         textTop: 'true',
+                                     }
+                                 ]
+                             %>
+                             <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                 itemCount: 1,
+                                 jsonData: coreData1,
+                             })) %>
+                              </div>
+                           </div>
+
+                           <div class="layout_col2">
+                              <div>
+                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                                    titleText: '핵심성과',
+                                 })) %>
+                              </div>
+                              <div>
+                                 <% 
+                                    const coreImageData =[{
+                                       pc: 'https://placehold.co/1168x412', 
+                                       mo: 'https://placehold.co/320x840', 
+                                    }] 
+                                 %>
+                                 <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, {
+                                    jsonData: coreImageData,
+                                    alt: '핵심성과',
+                                 })) %>
+                              </div>
+                           </div>
+
+                           <div class="layout_col2">
+                              <div>
+                                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                                    titleText: '성과요약',
+                                 })) %>
+                              </div>
+                              <div>
+                                 <div class="cmp-wrap cmp-table__wrap">
+                                    <div class="table-container">
+                                       <table class="data-table mo-fix">
+                                          <caption>성과요약</caption>
+                                          <thead>
+                                             <tr class="text-center">
+                                                <th width="159" scope="col" class="text-left">핵심관리이슈</th>
+                                                <th width="119" scope="col">시기</th>
+                                                <th width="426" scope="col">주요 활동</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr>
+                                                <td class="text-left font-bold">협력회사 소통 및 커뮤니케이션 강화</td>
+                                                <td class="text-center">연중</td>
+                                                <td>
+                                                   <ul style="list-style-type: disc;">
+                                                      <li>협력회사 사장단 워크숍 개최</li>
+                                                      <li>외주 협력회(협력회사 협의회) 운영</li>
+                                                      <li>상시 VOS(Voice Of Supplier) 운영</li>
+                                                   </ul>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td class="text-left font-bold">협력회사 경쟁력 강화 활동</td>
+                                                <td class="text-center">수시</td>
+                                                <td>
+                                                   <ul style="list-style-type: disc;">
+                                                      <li>기술자료 임치제도 지원</li>
+                                                      <li>영업비밀 원본증명서비스 지원</li>
+                                                      <li>해외 공동진출</li>
+                                                   </ul>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td class="text-left font-bold">협력회사 재무지원 확대</td>
+                                                <td class="text-center">수시</td>
+                                                <td>
+                                                   <ul style="list-style-type: disc;">
+                                                      <li>협력회사 금융지원(직접지원, 상생펀드, 네트워크론)</li>
+                                                      <li>현금 100% 대금지급</li>
+                                                   </ul>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td class="text-left font-bold">공정성과 투명성 강화</td>
+                                                <td class="text-center">5~8월</td>
+                                                <td>
+                                                   <ul style="list-style-type: disc;">
+                                                      <li>주요 협력회사 CSR 진단</li>
+                                                   </ul>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
                               </div>
                            </div>
                         </div>
@@ -60,23 +161,22 @@
                                  })) %>
                               </div>
                               <div>
-                                 <p class="detail_text__open font-body-sm">LG CNS는 협력사 포털 파트너플러스를 운영하고 있습니다.<br>또한, 포털 내에 파트너사 소통마당을 개설해 항상 협력사 의견(VOS, Voice of Supplier)을 경청하고 건전한 협업문화 정착을 위해 노력하고 있습니다.</p>
-                                 <button type="button" class="btn btn-black btn-middle open-btn">
-                                    <p class="font-normal">파트너플러스 바로가기LG Way 자세히 보기</p>
-                                    <i class="ico icon-arrow-right-wt16"></i>
-                                </button>
-                                <%
-                                 const openImageData=[
-                                    {
-                                       pc: 'https://placehold.co/1168x412', 
-                                       mo: 'https://placehold.co/321x840', 
-                                    }
+                                 <%
+                                 const openData1 = [
+                                     {
+                                         id: 0,
+                                         pcImg: 'https://placehold.co/1168x412',
+                                         moImg: 'https://placehold.co/320x840',
+                                         descText: 'LG CNS는 사외 벤처를 지원하는 스타트업몬스터를 운영하고 있습니다.<br>금전적 지원과 전문가 멘토링은 물론 LG계열사와 협업 기회를 제공하고 있습니다. 이를 통해 LG CNS와 스타트업이 IT신기술을 기반으로 새로운 사업을 발굴하며, 성과도 공유하고 있습니다.',
+                                         button1NameArrow: '파트너플러스 바로가기',
+                                         textTop: 'true',
+                                     }
                                  ]
-                                %>
-                                <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
-                                    jsonData : openImageData,
-                                    alt : '협력사 소통 채널 「파트너 플러스」',
-                                 }))%>
+                                 %>
+                                 <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                       itemCount: 1,
+                                       jsonData: openData1,
+                                 })) %>
                               </div>
                            </div>
 
@@ -87,8 +187,18 @@
                                  })) %>
                               </div>
                               <div>
-                                 <p class="detail_text font-body-sm">협력회사와의 주기적인 워크숍 및 간담회를 통해 사업현황 및 방향성을 공유하고 협력회사 운영에 필요한 제반법규(정보보안/개인정보보호 외) 등을 안내함으로써,<br>
-                                    상호 이해도 증진 및 실질적인 동반성장 기반을 강화합니다.</p>
+                                 <%
+                                 const openData2 = [
+                                     {
+                                         id: 0,
+                                         descText: '협력회사와의 주기적인 워크숍 및 간담회를 통해 사업현황 및 방향성을 공유하고 협력회사 운영에 필요한 제반법규(정보보안/개인정보보호 외) 등을 안내함으로써,<br>상호 이해도 증진 및 실질적인 동반성장 기반을 강화합니다.',
+                                     }
+                                 ]
+                                 %>
+                                 <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                       itemCount: 1,
+                                       jsonData: openData2,
+                                 })) %>
                               </div>
                            </div>
 
@@ -99,8 +209,18 @@
                                  })) %>
                               </div>
                               <div>
-                                 <p class="detail_text font-body-sm">LG CNS와 협업기회를 갖고자 하는 중소기업과의 상담회를 통해 LG CNS의 협업정책과 협력회사의 보유기술 및 사업 강점을 상호 소개함으로써<br>
-                                    시너지를 창출할 수 있는 협력관계를 만들어 가고 있습니다.</p>
+                                 <%
+                                 const openData3 = [
+                                     {
+                                         id: 0,
+                                         descText: 'LG CNS와 협업기회를 갖고자 하는 중소기업과의 상담회를 통해 LG CNS의 협업정책과 협력회사의 보유기술 및 사업 강점을 상호 소개함으로써<br>시너지를 창출할 수 있는 협력관계를 만들어 가고 있습니다.',
+                                     }
+                                 ]
+                                 %>
+                                 <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                       itemCount: 1,
+                                       jsonData: openData3,
+                                 })) %>
                               </div>
                            </div>
                         </div>
@@ -191,7 +311,7 @@
                            </div>
 
                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                              titleText: '전문조직 운영', 
+                              titleText: '공동연구개발, 공동마케팅, 공동사업 추진', 
                            })) %>
                           <p class="detail_text__specialist font-body-sm">LG CNS는 협력회사와 비전을 공유하고, 기술역량을 보유한 협력회사와의 공동연구 개발/공동마케팅/공동사업을 추진하고 있습니다.<br>특히 해외 사업에서 협력회사와의 공동진출을 통해 미래 성장동력을 확보하고 지속 가능한 동반 성장 체계 구축을 위해 노력하고 있습니다.</p>
                           <% 
@@ -218,7 +338,18 @@
                                  })) %>
                               </div>
                               <div>
-                                 <p class="font-body-sm detail_text">LG CNS는 임직원의 사고와 행동의 기반인 ‘LG WAY’를 실천하기 위해 공정한 경쟁과 거래문화를 지향하고 있습니다. 특히 공정거래 관련 법령 준수를 위해 교육, 법 개정 모니터링, 업무프로세스 개선 등 관련 활동을 진행하고 있으며, 공정거래 문화가 정착될 수 있도록 최선의 노력을 다하고 있습니다.</p>
+                                 <%
+                                    const justiceData = [
+                                       {
+                                          id: 0,
+                                          descText: 'LG CNS는 임직원의 사고와 행동의 기반인 ‘LG WAY’를 실천하기 위해 공정한 경쟁과 거래문화를 지향하고 있습니다. 특히 공정거래 관련 법령 준수를 위해 교육, 법 개정 모니터링, 업무프로세스 개선 등 관련 활동을 진행하고 있으며, 공정거래 문화가 정착될 수 있도록 최선의 노력을 다하고 있습니다.'
+                                       }
+                                    ]
+                                 %>
+                                 <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                       itemCount: 1,
+                                       jsonData: justiceData,
+                                 })) %>
                                  <% const specListData4tab = [ 
                                     { 
                                        id: 0,
@@ -265,13 +396,20 @@
                                  })) %>
                               </div>
                               <div>
-                                 <p class="font-body-sm detail_text">
-                                    LG CNS의 사업영역과 관련 있는 공정거래 법률 및 규정 준수를 위해,<br>
-                                    공정거래 관련 법령ㆍ제도ㆍ정책의 변경사항들을 임직원에게 공유하고 있습니다.<br>
-                                    <br>
-                                    임직원의 공정거래 인식 함양을 위해 주기적인 교육을 실시하고 있으며, 자가점검 및 현장점검을 진행하고 있습니다.<br>
-                                    점검활동을 통해 도출된 개선사항에 대해 임직원 교육을 지속적으로 실시하고 있습니다.
-                                 </p>
+                                 <%
+                                    const justiceData2 = [
+                                       {
+                                          id: 0,
+                                          descText: `LG CNS의 사업영역과 관련 있는 공정거래 법률 및 규정 준수를 위해,<br>공정거래 관련 법령ㆍ제도ㆍ정책의 변경사항들을 임직원에게 공유하고 있습니다.<br>
+                                          <br>
+                                          임직원의 공정거래 인식 함양을 위해 주기적인 교육을 실시하고 있으며, 자가점검 및 현장점검을 진행하고 있습니다.<br>점검활동을 통해 도출된 개선사항에 대해 임직원 교육을 지속적으로 실시하고 있습니다.`
+                                       }
+                                    ]
+                                 %>
+                                 <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                       itemCount: 1,
+                                       jsonData: justiceData2,
+                                 })) %>
                               </div>
                            </div>
                         </div>

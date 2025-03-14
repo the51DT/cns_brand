@@ -12,6 +12,10 @@
     table-layout: fixed; 
     min-width: 630px;
 }
+.table-container .data-table.mo-fix {
+    table-layout: auto;
+    min-width: auto;
+}
 
 .table-container .data-table th {
     font-weight: 700;
@@ -38,4 +42,10 @@
 .unit-text {
     float: right;
     margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) /16 * 1rem);
+}
+
+@media only screen and (max-width : 767px) {
+    .table-container .data-table.mo-fix {
+        table-layout: fixed;
+    }
 }
