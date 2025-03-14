@@ -6,11 +6,11 @@
     %>
     <% if(data.length > 0) { %>
         <% data.slice(0, itemLimit).forEach((item, i) => { %>
-            <div class="container">
+            <div class="TIC-container">
                 <% if(typeof item.pcImg !== 'undefined' && item.pcImg) { %>
                     <!-- 이미지 클러스터 -->
                     <div class="cluster__image<%- item.textTop === 'true' ? '_bottom' : '' %>">
-                        <div class="pc<%- item.moImg === 'true' ? '_only' : '' %>">
+                        <div class="pc<%- item.moImg  === undefined ? '_only' : '' %>">
                             <img src="<%- item.pcImg %>" alt="<%- item.imgAlt %>">
                         </div>
                         <% if(typeof item.moImg !== 'undefined' && item.moImg) { %>

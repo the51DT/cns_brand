@@ -1,6 +1,7 @@
 // TextImageCluster
 .cmp-text-image-cluster {
-    .container {
+    .TIC-container {
+        width: 100%;
         display: flex;
         flex-direction: column;
         margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
@@ -20,7 +21,7 @@
                 }
                 margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
                 @media #{$phone} {
-                 margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+                 margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
                 }
                 &_bottom {
                     order: 2;
