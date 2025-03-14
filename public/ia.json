@@ -396,6 +396,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "bizInfo_direction.html"
+        },
+        {
+          "name": "기업정보 - 지속가능경영보고서",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_esg.html"
         }
       ]
     },
