@@ -66,16 +66,21 @@
                                  })) %>
                               </div>
                               <div>
-                                 <p class="font-body-sm detail_text">AI튜터는 LG CNS가 AI 기술로 만든 외국어 학습 애플리케이션입니다. AI 기반 영어교육 프로그램으로는 국내 최초로 한국영어교육학회(KATE)의 인증을 받으며 우수성을 입증했습니다. LG CNS는 서울, 경기, 인천, 대구, 전남 등 12개 교육청 산하 초중고 약 300만명의 학생들에게 LG CNS AI튜터 앱 ‘스피킹클래스’를 무상으로 제공하고 있습니다. 2022년부터는 교과서 출판사 8곳과 제휴를 맺고 LG CNS AI튜터 앱 ‘스피킹클래스’에 영어 교과서 80권을 탑재해, 전국 초·중·고교생이 스마트폰 앱에서 무료로 학습할 수 있는 서비스도 지원하고 있습니다.</p>
-                                 <div class="button__wrap align-left">
-                                    <a href="#" class="btn btn-black btn-small">
-                                       AI튜터 만나보기
-                                       <i class="ico icon-arrow-right-wt16"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-black btn-small">
-                                       소개페이지
-                                    </a>
-                                 </div>
+                                 <%
+                                 const DXData1 = [
+                                     {
+                                         id: 0,
+                                         descText: 'AI튜터는 LG CNS가 AI 기술로 만든 외국어 학습 애플리케이션입니다. AI 기반 영어교육 프로그램으로는 국내 최초로 한국영어교육학회(KATE)의 인증을 받으며 우수성을 입증했습니다. LG CNS는 서울, 경기, 인천, 대구, 전남 등 12개 교육청 산하 초중고 약 300만명의 학생들에게 LG CNS AI튜터 앱 ‘스피킹클래스’를 무상으로 제공하고 있습니다. 2022년부터는 교과서 출판사 8곳과 제휴를 맺고 LG CNS AI튜터 앱 ‘스피킹클래스’에 영어 교과서 80권을 탑재해, 전국 초·중·고교생이 스마트폰 앱에서 무료로 학습할 수 있는 서비스도 지원하고 있습니다.',
+                                         button1NameArrow: 'AI튜터 만나보기',
+                                         button2Name: '소개페이지',
+                                         buttonFlex: 'true',
+                                     }
+                                 ]
+                                 %>
+                                 <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                       itemCount: 1,
+                                       jsonData: DXData1,
+                                 })) %>
                               </div>
                            </div>
 
@@ -86,16 +91,21 @@
                                  })) %>
                               </div>
                               <div>
-                                 <p class="font-body-sm detail_text">LG CNS는 코딩 없이도 프로그램 개발이 가능한 데브온 NCD(No Coding Development)를 무료로 공개했습니다. 일반인들도 소정의 교육을 받으면, 전문가 수준의 프로그램을 개발할 수 있습니다.</p>
-                                 <div class="button__wrap align-left">
-                                    <a href="#" class="btn btn-black btn-small">
-                                       AI튜터 만나보기
-                                       <i class="ico icon-arrow-right-wt16"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-black btn-small">
-                                       소개페이지
-                                    </a>
-                                 </div>
+                                 <%
+                                 const DXData2 = [
+                                     {
+                                         id: 0,
+                                         descText: 'LG CNS는 코딩 없이도 프로그램 개발이 가능한 데브온 NCD(No Coding Development)를 무료로 공개했습니다. 일반인들도 소정의 교육을 받으면, 전문가 수준의 프로그램을 개발할 수 있습니다.',
+                                         button1NameArrow: 'AI튜터 만나보기',
+                                         button2Name: '소개페이지',
+                                         buttonFlex: 'true',
+                                     }
+                                 ]
+                                 %>
+                                 <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                       itemCount: 1,
+                                       jsonData: DXData2,
+                                 })) %>
                               </div>
                            </div>
 
@@ -106,16 +116,21 @@
                                  })) %>
                               </div>
                               <div>
-                                 <p class="font-body-sm detail_text">코쿼드(KorQuAD, Korea Question Answering Dataset)는 AI 스피커, AI 챗봇 등 다양한 AI 서비스를 만드는데 필수적인 학습데이터입니다. LG CNS는 코쿼드를 누구나 무료로 활용할 수 있도록 질의응답 세트 10만개로 구성된 학습데이터를 무료로 개방하며, AI기술 발전과 개방형 생태계 조성에 기여하고 있습니다.</p>
-                                 <div class="button__wrap align-left">
-                                    <a href="#" class="btn btn-black btn-small">
-                                       AI튜터 만나보기
-                                       <i class="ico icon-arrow-right-wt16"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-black btn-small">
-                                       소개페이지
-                                    </a>
-                                 </div>
+                                 <%
+                                 const DXData3 = [
+                                     {
+                                         id: 0,
+                                         descText: '코쿼드(KorQuAD, Korea Question Answering Dataset)는 AI 스피커, AI 챗봇 등 다양한 AI 서비스를 만드는데 필수적인 학습데이터입니다. LG CNS는 코쿼드를 누구나 무료로 활용할 수 있도록 질의응답 세트 10만개로 구성된 학습데이터를 무료로 개방하며, AI기술 발전과 개방형 생태계 조성에 기여하고 있습니다.',
+                                         button1NameArrow: 'AI튜터 만나보기',
+                                         button2Name: '소개페이지',
+                                         buttonFlex: 'true',
+                                     }
+                                 ]
+                                 %>
+                                 <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                       itemCount: 1,
+                                       jsonData: DXData3,
+                                 })) %>
                               </div>
                            </div>
                         </div>
@@ -246,16 +261,20 @@
                                  })) %>
                               </div>
                               <div>
-                                 <p class="font-body-sm detail_text">LG CNS의 대표 사회공헌 활동인 ‘AI지니어스’는 4차 산업혁명시대의 주축이 될 청소년을 대상으로 SW 및 인공지능을 경험하게 하며, 다양한 경험과 자극을 통해 학생들의 꿈과 끼를 탐색하게 하는 무료교육 프로그램입니다.</p>
-                                 <div class="button__wrap align-left mo-100">
-                                    <a href="#" class="btn btn-black btn-small">
-                                       AI지니어스 유튜브 채널 바로가기
-                                       <i class="ico icon-arrow-right-wt16"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-black btn-small">
-                                       AI지니어스 블로그 바로가기
-                                    </a>
-                                 </div>
+                                 <%
+                                 const AIData1 = [
+                                     {
+                                         id: 0,
+                                         descText: 'LG CNS의 대표 사회공헌 활동인 ‘AI지니어스’는 4차 산업혁명시대의 주축이 될 청소년을 대상으로 SW 및 인공지능을 경험하게 하며, 다양한 경험과 자극을 통해 학생들의 꿈과 끼를 탐색하게 하는 무료교육 프로그램입니다.',
+                                         button1NameArrow: 'AI지니어스 유튜브 채널 바로가기',
+                                         button2Name: 'AI지니어스 블로그 바로가기',
+                                     }
+                                 ]
+                                 %>
+                                 <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                       itemCount: 1,
+                                       jsonData: AIData1,
+                                 })) %>
                               </div>
                            </div>
                         </div>

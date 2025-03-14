@@ -102,7 +102,18 @@
                                     })) %>
                                 </div>
                                 <div>
-                                    <p class="subtitle-biz__justice font-body-lg">윤리규범은 국문,영문, 중문 핸드북으로 제작하여 임직원에게 배포·공유되며,<br>LG CNS 공식 홈페이지의 정도경영 메뉴 및 내부 정도경영 게시판에 게재하여 모든 이해관계자가 열람할 수 있도록 하고 있습니다.</p>
+                                    <%
+                                        const justiceData2 = [
+                                            {
+                                                id: 0,
+                                                descText: '윤리규범은 국문,영문, 중문 핸드북으로 제작하여 임직원에게 배포·공유되며,<br>LG CNS 공식 홈페이지의 정도경영 메뉴 및 내부 정도경영 게시판에 게재하여 모든 이해관계자가 열람할 수 있도록 하고 있습니다.'
+                                            }
+                                        ]
+                                    %>
+                                    <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                        itemCount: 1,
+                                        jsonData: justiceData2,
+                                    })) %>
 
                                     <%
                                     const justiceData = [
