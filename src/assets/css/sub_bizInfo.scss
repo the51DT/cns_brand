@@ -326,27 +326,48 @@
       align-items: flex-start; 
       overflow: visible; 
 
+      @media #{$phone}{
+        flex-direction: column;
+        // align-items: center;
+        padding: 0;
+      }
+
       .left-section{
         position: sticky;
         top: calc(var(--spacing-mode1-vertical5-x-l)/16*1rem);
 
         
         @media #{$phone}{
-          display: none;
+          width: 100%;
+          border-bottom: 1px solid #f5f5f5;
+          display: flex;
+          gap: 40px;
+          background-color: #000000;
+          z-index: 1;
+          top: 0;
         }
 
         &__item{
           letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
           margin-bottom: calc(var(--spacing-mode1-vertical3-x-l)/16*1rem);
+
+          @media #{$phone}{
+            margin-bottom: 0;
+          }
           h3{
+            display: block;
             font-size: calc(var(    --typo-pc-size-head-sm)/16*1rem);
             font-weight: 600;
             opacity: 0.4;
             line-height: calc(var(--typo-pc-line-height-head-xl) / 16 * 1rem);
-
+            cursor: pointer;
             
             @media #{$tablet}{
             font-size: calc(var(--typo-pc-size-head-xs)/16*1rem);
+            }
+
+            @media #{$phone}{
+              font-size: calc(var(--typo-mo-size-body-lg)/16*1rem);
             }
           }
           span{
@@ -364,6 +385,32 @@
             opacity: 0.6;
             line-height: calc(var(--typo-pc-line-height-head-xl) / 16 * 1rem);
           }
+
+          span, p{
+            display: none;
+          }
+
+          &.active {
+            h3 {
+              display: none; 
+
+              @media #{$phone}{
+                display: block;
+                font-weight: 700;
+                opacity: 1;
+                border-bottom: 4px solid #fff;
+              }
+            }
+         
+            span, p {
+              display: block;
+              // opacity: 1;
+
+              @media #{$phone}{
+                display: none;
+              }
+            }
+          }
         }
       }
     }
@@ -377,6 +424,10 @@
 
       @media #{$tablet}{
         gap: calc(var(--spacing-mode1-horizontal4-x-l)/16*1rem);
+      }
+
+      @media #{$phone}{
+        padding-top: calc(var(--spacing-mode1-horizontal5-x-l)/16*1rem);
       }
 
 
