@@ -339,6 +339,7 @@
           letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
           margin-bottom: calc(var(--spacing-mode1-vertical3-x-l)/16*1rem);
           h3{
+            display: block;
             font-size: calc(var(    --typo-pc-size-head-sm)/16*1rem);
             font-weight: 600;
             opacity: 0.4;
@@ -363,6 +364,21 @@
             font-weight: 400;
             opacity: 0.6;
             line-height: calc(var(--typo-pc-line-height-head-xl) / 16 * 1rem);
+          }
+
+          span, p{
+            display: none;
+          }
+
+          &.active {
+            h3 {
+              display: none; 
+            }
+         
+            span, p {
+              display: block;
+              // opacity: 1;
+            }
           }
         }
       }

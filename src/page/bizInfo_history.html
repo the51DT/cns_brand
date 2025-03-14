@@ -135,7 +135,7 @@
 });
 
 
-        function scrollEventTest() {
+function scrollEventTest() {
     const scrollWrap = document.querySelector('.right-section');
     const progressEl = scrollWrap.querySelector('.progress-bar');
     const progressBar = scrollWrap.querySelector('.bar');
@@ -202,6 +202,27 @@ window.addEventListener('load', function () {
     }, 100);
 });
 
+function handleScrollActivation() {
+    const progressEl = document.querySelector('.progress-bar');
+    const leftItems = document.querySelectorAll('.left-section__item');
+    const rightSections = document.querySelectorAll('.timeline-group'); // sortedData 그룹
+
+    let scrollTop = window.scrollY + window.innerHeight / 2; // 화면 중간 위치 기준으로 감지
+
+    rightSections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollTop >= sectionTop && scrollTop <= sectionBottom) {
+            // 해당하는 left-section__item만 active 적용
+            leftItems.forEach(item => item.classList.remove('active'));
+            leftItems[index].classList.add('active');
+        }
+    });
+}
+
+// 스크롤 이벤트 추가
+window.addEventListener('scroll', handleScrollActivation);
 
 
     </script>
