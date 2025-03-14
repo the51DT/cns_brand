@@ -130,6 +130,7 @@
                     </div>
                 `;
             }).join('');
+            attachH3ClickEvents();
         })
         .catch(err => console.error("데이터 로딩 오류:", err));
 });
@@ -223,6 +224,22 @@ function handleScrollActivation() {
 
 // 스크롤 이벤트 추가
 window.addEventListener('scroll', handleScrollActivation);
+
+function attachH3ClickEvents() {
+    const leftItems = document.querySelectorAll('.left-section__item h3'); // 모든 h3 요소
+    const rightSections = document.querySelectorAll('.timeline-group'); // sortedData 그룹
+
+    leftItems.forEach((h3, index) => {
+        h3.addEventListener("click", () => {
+            if (rightSections[index]) {
+                rightSections[index].scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        });
+    });
+}
 
 
     </script>
