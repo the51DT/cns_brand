@@ -396,6 +396,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "bizInfo_direction.html"
+        },
+        {
+          "name": "기업정보 - LG Way",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_LGway.html"
         }
       ]
     },
