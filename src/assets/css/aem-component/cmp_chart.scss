@@ -3,11 +3,21 @@
         &--column-chart {
             position: relative;
             height: calc(273 / 16 * 1rem);
-            padding:0 calc(38.5 / 16 * 1rem);
+            padding:0 calc(54.5 / 16 * 1rem);
             border-top: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default7);
             border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default7);
             box-sizing: border-box;
+            @media #{$pcMiddle} {
+                padding:0 calc(14.5 / 16 * 1rem);
+            }
+            @media #{$tablet} {
+                padding:0 calc(2.5 / 16 * 1rem);
+            }
+            @media #{$tabletMini} {
+                padding:0 calc(49 / 16 * 1rem);
+            }
             @media #{$phone} {
+                padding:0 calc(19 / 16 * 1rem);
                 height: calc(150 / 16 * 1rem);
             }
         }

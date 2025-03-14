@@ -40,29 +40,42 @@
                      </div>
                      <div class="tab-content__wrap">
                         <div class="tab__content is-active">
-                           <!-- 추후 그래프 컴포넌트화 예정 -->
                            <span class="unit-text font-body-sm font-bold text-right">[ 단위 : 십억원 ]</span>
                            <div class="graph-container">
                               <div class="graph-container__wrap">
                                  <span class="graph-title font-bold text-center font-body-lg">자산</span>
-                                 <div class="graph-box">
-                                    그래프 들어갈 자리
-                                 </div>
+                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                       id: 0,
+                                       type: 'columnChart',
+                                       categories: ['2019', '2020', '2021', '2022', '2023'],
+                                       series: ['212', '246', '328', '385', '464'],
+                                       categoryBarColor : '#AC0202',
+                                       valueMax: '600',
+                                 })) %>
                               </div>
                               <div class="graph-container__wrap">
                                  <span class="graph-title font-bold text-center font-body-lg">부채</span>
-                                 <div class="graph-box">
-                                    그래프 들어갈 자리
-                                 </div>
+                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 1,
+                                    type: 'columnChart',
+                                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                                    series: ['212', '246', '328', '385', '464'],
+                                    categoryBarColor : '#850000',
+                                    valueMax: '600',
+                                 })) %>
                               </div>
                               <div class="graph-container__wrap">
                                  <span class="graph-title font-bold text-center font-body-lg">자본</span>
-                                 <div class="graph-box">
-                                    그래프 들어갈 자리
-                                 </div>
+                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 2,
+                                    type: 'columnChart',
+                                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                                    series: ['212', '246', '328', '385', '464'],
+                                    categoryBarColor : '#640202',
+                                    valueMax: '600',
+                                 })) %>
                               </div>
                            </div>
-                           <!-- //추후 그래프 컴포넌트화 예정 -->
                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
                               titleText: '재무상태표',
                            })) %>
@@ -199,24 +212,33 @@
                               </div>
                            </div>
                         </div>
+
                         <div class="tab__content">
-                           <!-- 추후 그래프 컴포넌트화 예정 -->
                            <span class="unit-text font-body-sm font-bold text-right">[ 단위 : 십억원 ]</span>
                            <div class="graph-container">
                               <div class="graph-container__wrap">
                                  <span class="graph-title font-bold text-center font-body-lg">매출액</span>
-                                 <div class="graph-box">
-                                    그래프 들어갈 자리
-                                 </div>
+                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 3,
+                                    type: 'columnChart',
+                                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                                    series: ['212', '246', '328', '385', '464'],
+                                    categoryBarColor : '#AC0202',
+                                    valueMax: '600',
+                                 })) %>
                               </div>
                               <div class="graph-container__wrap">
                                  <span class="graph-title font-bold text-center font-body-lg">영업이익</span>
-                                 <div class="graph-box">
-                                    그래프 들어갈 자리
-                                 </div>
+                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 4,
+                                    type: 'columnChart',
+                                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                                    series: ['212', '246', '328', '385', '464'],
+                                    categoryBarColor : '#850000',
+                                    valueMax: '600',
+                                 })) %>
                               </div>
                            </div>
-                           <!-- //추후 그래프 컴포넌트화 예정 -->
                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
                               titleText: '손익계산서',
                            })) %>
@@ -273,30 +295,44 @@
                               </div>
                            </div>
                         </div>
+
                         <div class="tab__content">
-                           <!-- 추후 그래프 컴포넌트화 예정 -->
                            <span class="unit-text font-body-sm font-bold text-right">[ 단위 : 십억원 ]</span>
                            <div class="graph-container">
                               <div class="graph-container__wrap">
                                  <span class="graph-title font-bold text-center font-body-lg">영업활동 현금흐름</span>
-                                 <div class="graph-box">
-                                    그래프 들어갈 자리
-                                 </div>
+                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 5,
+                                    type: 'columnChart',
+                                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                                    series: ['212', '246', '328', '385', '464'],
+                                    categoryBarColor : '#AC0202',
+                                    valueMax: '600',
+                                 })) %>
                               </div>
                               <div class="graph-container__wrap">
                                  <span class="graph-title font-bold text-center font-body-lg">투자활동 현금흐름</span>
-                                 <div class="graph-box">
-                                    그래프 들어갈 자리
-                                 </div>
+                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 5,
+                                    type: 'columnChart',
+                                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                                    series: ['212', '246', '328', '385', '464'],
+                                    categoryBarColor : '#850000',
+                                    valueMax: '600',
+                                 })) %>
                               </div>
                               <div class="graph-container__wrap">
                                  <span class="graph-title font-bold text-center font-body-lg">재무활동 현금흐름</span>
-                                 <div class="graph-box">
-                                    그래프 들어갈 자리
-                                 </div>
+                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 6,
+                                    type: 'columnChart',
+                                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                                    series: ['212', '246', '328', '385', '464'],
+                                    categoryBarColor : '#640202',
+                                    valueMax: '600',
+                                 })) %>
                               </div>
                            </div>
-                           <!-- //추후 그래프 컴포넌트화 예정 -->
                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
                               titleText: '현금흐름표',
                            })) %>
@@ -433,6 +469,7 @@
                               </div>
                            </div>
                         </div>
+
                         <div class="tab__content font-body-sm">
                            <div class="cmp-wrap cmp-table__wrap">
                               <div class="table-container">
