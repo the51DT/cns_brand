@@ -102,76 +102,74 @@
                 .catch(err => console.error("데이터 로딩 오류:", err));
         });
 
-        function scrollEventTest () {
-            //element
-            const scrollWrap = document.querySelector('.right-section')
-            const progressEl = scrollWrap.querySelector('.progress-bar')
-            const progressBar = scrollWrap.querySelector('.bar')
-            const timelineElements = document.querySelectorAll('.timeline-year')
+        function scrollEventTest() {
+    const scrollWrap = document.querySelector('.right-section');
+    const progressEl = scrollWrap.querySelector('.progress-bar');
+    const progressBar = scrollWrap.querySelector('.bar');
+    const timelineElements = document.querySelectorAll('.circle-container');
 
-            //value
-            let scrollWrapTop, scrollWrapEndPoint, scrollY, viewport, triggerPoint
-            let previousStates = new Map() //리스트별 이전 상태 저장
+    if (timelineElements.length === 0) return;
 
-            // const 
-            // const 
+    const firstCircle = timelineElements[0];
+    const lastCircle = timelineElements[timelineElements.length - 1];
 
-            const init = () => {
-                scrollWrapTop = scrollWrap.offsetTop
-                scrollWrapEndPoint = scrollWrapTop + scrollWrap.offsetHeight
+    let scrollWrapTop, scrollWrapEndPoint, scrollY, viewport, triggerPoint;
+    let previousStates = new Map();
 
-                const lastTimelineHeight = timelineElements[timelineElements.length - 1].offsetHeight
+    const init = () => {
+        setTimeout(() => {
+            scrollWrapTop = scrollWrap.offsetTop;
+            scrollWrapEndPoint = scrollWrapTop + scrollWrap.offsetHeight;
 
-                progressEl.style.height = `${ scrollWrap.offsetHeight -lastTimelineHeight}px`
-                progressBar.style.height = `${ scrollWrap.offsetHeight -lastTimelineHeight }px`
-            }
+            const firstCircleTop = firstCircle.getBoundingClientRect().top + window.scrollY + firstCircle.offsetHeight / 2;
+            const lastCircleTop = lastCircle.getBoundingClientRect().top + window.scrollY + lastCircle.offsetHeight / 2;
 
-            const scrollValue = () => {
-                scrollY = window.scrollY
-                viewport = scrollY + window.innerHeight // 현재 표시되는 화면
-                triggerPoint = scrollY + (window.innerHeight * 0.6) // 이벤트를 줄 viewport의 지점
-            }
-            
-            window.addEventListener('scroll', () => {
-				scrollValue()
-                
-                const progress = scrollWrapEndPoint - triggerPoint
+            progressEl.style.top = `${firstCircleTop - scrollWrapTop}px`;
+            const progressHeight = lastCircleTop - firstCircleTop;
+            progressEl.style.height = `${progressHeight}px`;
+            progressBar.style.height = `${progressHeight}px`; 
+        }, 300);
+    };
 
-                if(triggerPoint > scrollWrapTop && scrollWrapEndPoint > triggerPoint) {
-                    progressBar.style.height = `${progress}px`
-                } else {
-                    progressBar.style.height = scrollWrapTop > scrollY ? `${ scrollWrap.offsetHeight }px` : '0px'
-                }
+    const scrollValue = () => {
+        scrollY = window.scrollY;
+        viewport = scrollY + window.innerHeight;
+        triggerPoint = viewport; 
+    };
 
-                //각 타임라인의 top 값이 이벤트를 줄 viewport의 지점을 넘었는지
-                timelineElements.forEach((el, idx) => {
-                    const timelineStart = el.offsetTop
-                    const state = timelineStart < triggerPoint
+    window.addEventListener('scroll', () => {
+        scrollValue();
 
-                    if(previousStates.get(idx) !== state) {
-                        previousStates.set(idx, state)
-                        el.classList.toggle('active', state)
-
-                    }
-
-                    // if(triggerPoint > timelineStart && triggerPoint < timelineEnd) {
-                    //     // console.log('지금은 화면 중앙의 높이가 해당 요소의 내에 있어요', idx)
-                    //     el.style.border = "1px dashed red"
-                    // } else if(triggerPoint < timelineStart) {
-                    //     el.style.border = "none"
-                    // }
-                })
-            })
-
-
-            init()
+        const progress = scrollWrapEndPoint - triggerPoint;
+        if (triggerPoint > scrollWrapTop && scrollWrapEndPoint > triggerPoint) {
+            progressBar.style.height = `${progress}px`;
+        } else if (triggerPoint > scrollWrapEndPoint) {
+            progressBar.style.height = '0px';
+        } else {
+            progressBar.style.height = `${progressEl.offsetHeight}px`;
         }
 
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                scrollEventTest()
-            }, 100);
-        })
+        timelineElements.forEach((el, idx) => {
+            const timelineStart = el.offsetTop;
+            const state = timelineStart < triggerPoint;
+
+            if (previousStates.get(idx) !== state) {
+                previousStates.set(idx, state);
+                el.classList.toggle('active', state);
+            }
+        });
+    });
+
+    init();
+}
+
+window.addEventListener('load', function () {
+    setTimeout(() => {
+        scrollEventTest();
+    }, 100);
+});
+
+
 
     </script>
 </body>
