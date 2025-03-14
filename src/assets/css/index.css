@@ -31,6 +31,7 @@
 @import 'aem-component/cmp_contents_title.scss';
 @import 'aem-component/cmp_video.scss';
 @import 'aem-component/cmp_chart.scss';
+@import 'aem-component/cmp_text_image_cluster.scss';
 /* icon */
 @import 'icon.scss';
 /* tailwind */

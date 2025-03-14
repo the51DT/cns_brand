@@ -248,6 +248,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_chart.html"
+        },
+        {
+          "name": "TextImageCluster",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_text_image_cluster.html"
         }
       ]
     },
