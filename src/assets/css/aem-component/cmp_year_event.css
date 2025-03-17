@@ -1,0 +1,38 @@
+.cmp-yearevent__wrap .cmp-yearevent-month {
+  margin-bottom: 5rem;
+  color: #E5E5E5;
+}
+.cmp-yearevent__wrap .cmp-yearevent-month:active {
+  color: #A50034;
+}
+.cmp-yearevent__wrap .cmp-yearevent-item {
+  padding-bottom: 2.5rem;
+}
+.cmp-yearevent__wrap .cmp-yearevent-item:last-child {
+  padding-bottom: 0;
+}
+.cmp-yearevent__wrap .cmp-yearevent-item .cmp-yearevent-title {
+  position: relative;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.cmp-yearevent__wrap .cmp-yearevent-item .cmp-yearevent-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1.25rem;
+  border-bottom: 2px solid #E5E5E5;
+}
+.cmp-yearevent__wrap .cmp-yearevent-item .cmp-event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cmp-yearevent__wrap .cmp-yearevent-item .cmp-event-details li {
+  color: #6B6B6B;
+}
+.cmp-yearevent__wrap .cmp-yearevent-item .cmp-event-details li strong {
+  color: black;
+  margin-right: 1.25rem;
+}
