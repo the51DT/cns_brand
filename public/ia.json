@@ -256,6 +256,12 @@
           "fileName": "cmp_guide_text_image_cluster.html"
         },
         {
+          "name": "Year Event",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_yearEvent.html"
+        },
+        {
           "name": "Seperator",
           "screenId": "",
           "path": "/src/guide/",

@@ -68,4 +68,10 @@ $fileType: "svg";
     &.icon-download-bl24 {
         @include iconFile(24,24,'icon_download_bl24');
     }  
+    &.icon-arrow-down-wh48{
+        @include iconFile(48,48,'icon-arrow-down-wh48');
+    }  
+    &.icon-plus-wh24 {
+        @include iconFile(24,24,'icon-plus-wh24');
+    }  
 }

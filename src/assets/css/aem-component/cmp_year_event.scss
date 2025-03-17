@@ -1,0 +1,49 @@
+.cmp-yearevent {
+    &__month {
+      margin-bottom: calc(80 / 16 * 1rem);
+      color: #E5E5E5;
+  
+      &:active {
+        color: #A50034;
+      }
+    }
+
+    &__item {
+      padding-bottom: calc(40 / 16 * 1rem);
+  
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  
+    &__title {
+      position: relative;
+      padding-bottom: calc(20 / 16 * 1rem);
+      margin-bottom: calc(20 / 16 * 1rem);
+  
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: calc(20 / 16 * 1rem);
+        border-bottom: 2px solid #E5E5E5;
+      }
+    }
+  
+    &__details {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      strong {
+        color: black;
+        margin-right: calc(20 / 16 * 1rem);
+      }
+      
+      span {
+        color: #6B6B6B;
+      }
+    }
+  }
+  
