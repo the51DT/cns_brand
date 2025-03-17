@@ -511,7 +511,38 @@
     }
     &.type-dark {
         background: var(--colorCM-all-background-background-default10);
-        border-top: 1px solid var(--colorGL-all-white20);
+        border-top: calc(1 / 16 * 1rem) solid rgba(255, 255, 255, 0.20);
+        .footer-info__top {
+            .footer-menu {
+                li {
+                    a {
+                        color: var(--colorGL-all-white100);
+                    }
+                }
+            }
+            .dropdown-menu {
+                &.family-site {
+                    button {
+                        color: var(--colorGL-all-white100);
+                        background: var(--colorCM-all-fill-fill-default10);
+                        &::after {
+                            background: url("/src/assets/image/icon/icon_arrow_down_wh.svg") no-repeat center center
+                        }
+                    }
+                }
+            }
+        }
+        .footer-info__bottom {
+            .footer-info {
+                p {
+                    color: var(--colorGL-all-white100);
+                }
+            }
+        }
+    }
+    &.type-transparent-wh {
+        background: transparent;
+        border-top: calc(1 / 16 * 1rem) solid rgba(255, 255, 255, 0.20);
         .footer-info__top {
             .footer-menu {
                 li {
