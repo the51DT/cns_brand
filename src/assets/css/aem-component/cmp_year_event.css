@@ -14,7 +14,6 @@
 .cmp-yearevent__title {
   position: relative;
   padding-bottom: 1.25rem;
-  margin-bottom: 1.25rem;
 }
 .cmp-yearevent__title::before {
   content: "";
@@ -28,11 +27,13 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  margin-top: 1.25rem;
 }
-.cmp-yearevent__details strong {
+.cmp-yearevent__label {
   color: black;
   margin-right: 1.25rem;
+  font-weight: 600;
 }
-.cmp-yearevent__details span {
+.cmp-yearevent__value {
   color: #6B6B6B;
 }
