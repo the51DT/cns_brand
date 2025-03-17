@@ -788,6 +788,18 @@
         margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
       }
     }
+    .detail_text {
+      margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
+      @media #{$tabletMini} {
+        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
+      }
+      @media #{$phone} {
+        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+      }
+      &_small-margin {
+        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+      }
+    }
   }
 
   &growFair {
@@ -827,6 +839,25 @@
         margin-bottom: 0;
       }
     }
+    .data-table td {
+      position: relative;
+      ul li {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          width: calc(3.5 / 16 * 1rem);
+          height: calc(3.5 / 16 * 1rem);
+          background-color: #1A1A1A;
+          border-radius: calc(50 / 16 * 1rem);
+          top: 50%; 
+          left: 0;
+          transform: translateY(-50%);
+          margin-left: calc(-12 / 16 * 1rem);
+        }
+      }
+    }
+
   }
 
   // LGWay 페이지 마크업을 위한 임시 스타일 적용
@@ -982,6 +1013,20 @@
             padding: calc(12 / 16 * 1rem);
           }
         }
+      }
+    }
+  }
+  &esg {
+    .layout_col2 {
+      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+      @media #{$tablet} {
+        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
+      }
+      @media #{$phone} {
+        margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
+      }
+      .cmp-wrap {
+        margin-bottom: 0;
       }
     }
   }
