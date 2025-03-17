@@ -28,33 +28,39 @@
     }
     .info-list {
       li {
-        display: flex;
-        align-items: flex-start;
-        gap: calc(15.75 / 16 * 1rem);
+        position: relative;
+        padding-left: calc(36.5 / 16 * 1rem);
 
         @media #{$tablet} {
-          gap: calc(14.25 / 16 * 1rem);
+          padding-left: calc(32.5 / 16 * 1rem);
         }
         @media #{$phone} {
-          gap: calc(13 / 16 * 1rem);
+          padding-left: calc(29 / 16 * 1rem);
         }
-      }
 
-      li::before {
-        content: '•';
-        font-size: calc(24 / 16 * 1rem);
-        color: black;
-        display: inline-block;
-        flex-shrink: 0;
-        margin-left: calc(15.75 / 16 * 1rem);
+        &::before {
+          content: '';
+          position: absolute;
+          width: calc(5 / 16 * 1rem);
+          height: calc(5 / 16 * 1rem);
+          background-color: #281d1b;
+          border-radius: 50%;
+          top: calc(17.5 / 16 * 1rem);
+          left: calc(17.5 / 16 * 1rem);
+          transform: translateY(-50%);
 
-        @media #{$tablet} {
-          font-size: calc(22 / 16 * 1rem);
-          margin-left: calc(14.25 / 16 * 1rem);
-        }
-        @media #{$phone} {
-          font-size: calc(20 / 16 * 1rem);
-          margin-left: calc(13 / 16 * 1rem);
+          @media #{$tablet} {
+            width: calc(4 / 16 * 1rem);
+            height: calc(4 / 16 * 1rem);
+            top: calc(14.25 / 16 * 1rem);
+            left: calc(14.25 / 16 * 1rem);
+          }
+          @media #{$phone} {
+            width: calc(3 / 16 * 1rem);
+            height: calc(3 / 16 * 1rem);
+            top: calc(13 / 16 * 1rem);
+            left: calc(13 / 16 * 1rem);
+          }
         }
       }
     }
