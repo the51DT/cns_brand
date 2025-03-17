@@ -189,6 +189,9 @@
         flex-wrap: wrap;
         gap: calc(16 / 16 * 1rem);
     }
+    .button__wrap.align-right {
+        justify-content: flex-start;
+    }
     .button__wrap.align-left .btn, 
     .button__wrap.align-right .btn {
         width: calc(50% - calc(8 / 16 * 1rem));
