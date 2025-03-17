@@ -478,8 +478,6 @@
 
     .right-section{
       position: relative;
-      // display: flex;
-      // align-items: flex-start;
       width: 38%;
 
       // width: 724px;
@@ -541,7 +539,7 @@
       }
 
       &__item{
-        padding-left: 90px; //수치 수정 해주세요
+        padding-left: calc(77/16*1rem); //수치 수정 해주세요
         width: calc(600/16*1rem);
         letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
         // overflow-y: auto;
