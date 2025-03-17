@@ -260,6 +260,18 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_yearEvent.html"
+        },
+        {
+          "name": "Seperator",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_seperator.html"
+        },
+        {
+          "name": "Sidebar",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_sidebar.html"
         }
       ]
     },

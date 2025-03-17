@@ -1,0 +1,11 @@
+<div class="cmp-wrap cmp-sidebar">
+    <ul>
+        <% if (typeof anchors !== 'undefined' && anchors.length > 0) { %>
+            <% anchors.forEach((anchor, index) => { %>
+                <li class="<%= activeSection === anchor.id ? 'is-active' : '' %>">
+                    <a href="#<%= anchor.id %>"><%= anchor.name %></a>
+                </li>
+            <% }); %>
+        <% } %>
+    </ul>
+</div>
