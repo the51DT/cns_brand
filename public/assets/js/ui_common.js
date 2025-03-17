@@ -412,6 +412,72 @@ const accordion = (selector) => {
     });
 };
 
+const sidebarCmp = () => {
+    const sidebarEl = document.querySelector('.cmp-sidebar')
+    if(!sidebarEl) {
+        return;
+    }
+
+    // 섹션 아이디 부여
+    const sections = document.querySelectorAll('.cmp-wrap:not(.cmp-sidebar):not(.cmp-seperator)');
+    const offset = 150;
+
+    sections.forEach((section, index) => {
+        section.setAttribute('id','section0' + (index+1))
+    })
+
+    const sideNavy = sidebarEl.querySelectorAll('li a')
+    sideNavy.forEach(nav => {
+        nav.addEventListener('click', function(e) {
+            e.preventDefault();
+
+
+            const targetId = this.getAttribute('href').replace('#', ''); // 대상 ID 가져오기
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: targetPosition, behavior: "smooth" }); // 부드러운 스크롤 적용
+            }
+
+            const activeItem = document.querySelector('li.is-active');
+            activeItem.classList.remove('is-active');
+            if (activeItem) {
+                activeItem.classList.remove('is-active');
+            }
+            nav.parentElement.classList.add('is-active');
+        })
+        
+    })
+
+    // 스크롤 
+    const handleScroll = () => {
+        let currentSection = null;
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 100 && rect.bottom >= 100) { 
+                currentSection = section;
+            }
+        });
+
+        if (currentSection) {
+            const currentId = currentSection.getAttribute('id');
+            sideNavy.forEach(nav => {
+                const targetId = nav.getAttribute('href').replace('#', '');
+                if (targetId === currentId) {
+                    document.querySelectorAll('.cmp-sidebar li').forEach(item => item.classList.remove('is-active'));
+                    nav.parentElement.classList.add('is-active');
+                }
+            });
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+}
+
+document.addEventListener("DOMContentLoaded", sidebarCmp);
 checkInputFocus();
 accordion('.basic-type', 'basic');        
 accordion('.open-type', 'basic');   

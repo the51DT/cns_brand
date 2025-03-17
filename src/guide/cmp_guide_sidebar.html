@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="sub-content__wrap">
+            <div class="inner-wrap">
+                <div class="cmp-container">
+                    <%- include('src/component/cmp_sidebar.html', Object.assign({}, locals, { 
+                        anchors: [
+                            { id: 'section01', name: '서비스 소개' },
+                            { id: 'section02', name: 'FAQ' },
+                            { id: 'section03', name: '고객사례' },
+                            { id: 'section04', name: '연관 자료실' }
+                        ],
+                        activeSection: 'section01' // 현재 활성화된 섹션
+                    })) %>
+            </div>
+            <!-- overview -->
+            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
+                overviewTitle: '디지털AX 트렌드', 
+                overviewContent: '<p>임직원들의 업무 환경과 일하는 방식의 급격한 변화 속에서, 디지털 전환을 넘어 AI 중심의 기업 혁신(AX, AI Transformation)을 새로운 패러다임으로 받아들이고 있습니다. 이러한 변화 속에서 AI 기술/서비스를 활용한 일하는 방식 및 비즈니스 혁신까지 이어질 수 있게 하기 위해서 많은 기업에서도 AI 도입을 통해 임직원 일하는 방식 혁신 및 비즈니스 경쟁력 강화 전략을 추진하고 있습니다. AI 기술/서비스를 활용한 일하는 방식 및 비즈니스 혁신까지 이어질 수 있게 하기 위해서는, 무엇보다도 임직원 경험(EX, Employee Experience) 제고 관점에서 임직원 업무의 전반적인 변화가 필요합니다.</p><p>그렇다면, 기업의 일하는 방식은 어떻게 변화할까요?<br>앞으로의 일하는 방식은 임직원 경험을 혁신의 중심에 두고, AI를 활용하여 근본적으로 변화가 이루어질 것입니다. 사람이 출근해서 퇴근할 때까지 업무를 하는 전 과정에서 DX/AX 기술 기반으로 업무 방식이 재설계되며, 간단한 요청만해도 AI가 명령을 이해하고 기업 내부와 외부의 정보를 스스로 분석하여, 최적의 방안을 제시하게 될 것입니다.</p><p>출근부터 퇴근까지... 임직원이 업무에 집중할 수 있는 임직원경험(EX)기반, ‘DX/AX’ 기술 기반 자동화/지능화된 업무환경을 제공합니다.</p><p>임직원들의 업무 환경과 일하는 방식의 급격한 변화 속에서, 디지털 전환을 넘어 AI 중심의 기업 혁신(AX, AI Transformation)을 새로운 패러다임으로 받아들이고 있습니다. 이러한 변화 속에서 AI 기술/서비스를 활용한 일하는 방식 및 비즈니스 혁신까지 이어질 수 있게 하기 위해서 많은 기업에서도 AI 도입을 통해 임직원 일하는 방식 혁신 및 비즈니스 경쟁력 강화 전략을 추진하고 있습니다. AI 기술/서비스를 활용한 일하는 방식 및 비즈니스 혁신까지 이어질 수 있게 하기 위해서는, 무엇보다도 임직원 경험(EX, Employee Experience) 제고 관점에서 임직원 업무의 전반적인 변화가 필요합니다.</p><p>그렇다면, 기업의 일하는 방식은 어떻게 변화할까요?<br>앞으로의 일하는 방식은 임직원 경험을 혁신의 중심에 두고, AI를 활용하여 근본적으로 변화가 이루어질 것입니다. 사람이 출근해서 퇴근할 때까지 업무를 하는 전 과정에서 DX/AX 기술 기반으로 업무 방식이 재설계되며, 간단한 요청만해도 AI가 명령을 이해하고 기업 내부와 외부의 정보를 스스로 분석하여, 최적의 방안을 제시하게 될 것입니다.</p><p>출근부터 퇴근까지... 임직원이 업무에 집중할 수 있는 임직원경험(EX)기반, ‘DX/AX’ 기술 기반 자동화/지능화된 업무환경을 제공합니다.</p>'
+            })) %> 
+            <!-- //overview -->
+            <!-- cmp_seperator -->
+            <%- include('src/component/cmp_seperator.html') %>
+            <!-- //cmp_seperator -->
+            <!-- accordion component -->
+            <%- include('src/component/cmp_accordion.html', {
+                typeClass: 'basic-type',
+                openIndex: '',
+                itemCount: 10
+            }) %>
+            <!-- //accordion component -->
+            <!-- cmp_seperator -->
+            <%- include('src/component/cmp_seperator.html') %>
+            <!-- //cmp_seperator -->
+            <!-- CustomerCase -->
+            <%- include('src/component/cmp_customer-case.html', {
+                itemCount: 5
+            }) %>  
+            <!-- CustomerCase -->
+            <!-- cmp_seperator -->
+            <%- include('src/component/cmp_seperator.html') %>
+            <!-- //cmp_seperator -->
+            <!-- datalist -->
+            <%- include('src/component/cmp_DataList.html', {
+                itemClass: 'pc-col3',                            
+                itemCount: 3
+            }) %>  
+            <!-- //datalist -->
+            <!-- button -->
+            <div class="button__wrap">
+                <a href="#" class="btn btn-primary">
+                    DX 자료실로 이동
+                    <i class="ico icon-arrow-right-wt16"></i>
+                </a>
+            </div>     
+            <!-- //button -->
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/assets/js/ui_common.js"></script>
+</body>
+</html>

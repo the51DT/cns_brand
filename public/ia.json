@@ -254,6 +254,18 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_text_image_cluster.html"
+        },
+        {
+          "name": "Seperator",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_seperator.html"
+        },
+        {
+          "name": "Sidebar",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_sidebar.html"
         }
       ]
     },
