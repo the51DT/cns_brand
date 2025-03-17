@@ -1,0 +1,16 @@
+// Content Title
+.cmp-contents-title__wrap {
+    display: flex;
+    flex-direction: column; 
+    color: var(--text-text-default);
+    margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
+    @media #{$tablet} {
+        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
+    }
+    @media #{$tabletMini} {
+        margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
+    }
+    @media #{$phone} {
+        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+    }
+}

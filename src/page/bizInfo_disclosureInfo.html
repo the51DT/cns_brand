@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title><%= data.title %></title>
-  <meta name="description" content="<%= data.description %>">
-  <link rel="stylesheet" href="/src/assets/css/index.css" />
-  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title><%= data.title %></title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
 </head>
 <body>
     <div class="wrap bizInfo_disclosureInfo">
@@ -39,82 +39,135 @@
                             <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                 titleText: '전자공고' ,
                             })) %>
-                            <div class="table-container">
-                                <table class="text-center data-table">
-                                   <caption>LG CNS 공시정보 전자공고</caption>
-                                   <thead>
-                                      <tr>
-                                         <th scope="col" class="w-24">번호</th>
-                                         <th scope="col" class="w-3/6">공고명</th>
-                                         <th scope="col">등록일</th>
-                                         <th scope="col">자료 다운로드</th>
-                                      </tr>
-                                   </thead>
-                                   <tbody>
-                                      <tr>
-                                         <td>1</td>
-                                         <td>외부감사인 선임 공고</td>
-                                         <td>2024.12.31</td>
-                                         <td><a href="#"><img src="/src/assets/image/icon/icon_download_bl24.svg" alt=""></a></td>
-                                      </tr>
-                                      <tr>
-                                        <td>2</td>
-                                        <td>외부감사인 선임 공고</td>
-                                        <td>2024.12.31</td>
-                                        <td><a href="#"><img src="/src/assets/image/icon/icon_download_bl24.svg" alt=""></a></td>
-                                     </tr>
-                                     <tr>
-                                        <td>3</td>
-                                        <td>외부감사인 선임 공고</td>
-                                        <td>2024.12.31</td>
-                                        <td><a href="#"><img src="/src/assets/image/icon/icon_download_bl24.svg" alt=""></a></td>
-                                     </tr>
-                                     <tr>
-                                        <td>4</td>
-                                        <td>외부감사인 선임 공고</td>
-                                        <td>2024.12.31</td>
-                                        <td><a href="#"><img src="/src/assets/image/icon/icon_download_bl24.svg" alt=""></a></td>
-                                     </tr>
-                                     <tr>
-                                        <td>5</td>
-                                        <td>외부감사인 선임 공고</td>
-                                        <td>2024.12.31</td>
-                                        <td><a href="#"><img src="/src/assets/image/icon/icon_download_bl24.svg" alt=""></a></td>
-                                     </tr>
-                                     <tr>
-                                        <td>6</td>
-                                        <td>외부감사인 선임 공고</td>
-                                        <td>2024.12.31</td>
-                                        <td><a href="#"><img src="/src/assets/image/icon/icon_download_bl24.svg" alt=""></a></td>
-                                     </tr>
-                                     <tr>
-                                        <td>7</td>
-                                        <td>외부감사인 선임 공고</td>
-                                        <td>2024.12.31</td>
-                                        <td><a href="#"><img src="/src/assets/image/icon/icon_download_bl24.svg" alt=""></a></td>
-                                     </tr>
-                                     <tr>
-                                        <td>8</td>
-                                        <td>외부감사인 선임 공고</td>
-                                        <td>2024.12.31</td>
-                                        <td><a href="#"><img src="/src/assets/image/icon/icon_download_bl24.svg" alt=""></a></td>
-                                     </tr>
-                                     <tr>
-                                        <td>9</td>
-                                        <td>외부감사인 선임 공고</td>
-                                        <td>2024.12.31</td>
-                                        <td><a href="#"><img src="/src/assets/image/icon/icon_download_bl24.svg" alt=""></a></td>
-                                     </tr>
-                                     <tr>
-                                        <td>10</td>
-                                        <td>외부감사인 선임 공고</td>
-                                        <td>2024.12.31</td>
-                                        <td><a href="#"><img src="/src/assets/image/icon/icon_download_bl24.svg" alt=""></a></td>
-                                     </tr>
-                                   </tbody>
-                                </table>
-                             </div>
-                             <div class="cmp-exsample__wrap mt-3">
+                            <div class="cmp-wrap cmp-table__wrap">
+                                <div class="table-container">
+                                    <table class="data-table text-center">
+                                        <caption>LG CNS 공시정보 전자공고</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" width="112">번호</th>
+                                                <th scope="col" width="928">공고명</th>
+                                                <th scope="col" width="240">등록일</th>
+                                                <th scope="col" width="240">자료 다운로드</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>외부감사인 선임 공고</td>
+                                                <td>2024.12.31</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-icon">
+                                                        <i class="ico icon-download-bl24"></i>
+                                                        <span class="ir-text">다운로드</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="cmp-exsample__wrap mt-3">
                                 <!-- pagination -->
                                 <%- include('src/component/cmp_pagination.html') %>
                                 <!-- //pagination -->

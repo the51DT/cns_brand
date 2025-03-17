@@ -1,0 +1,4 @@
+/* 약관 관련 */
+.terms_orderList li {
+  list-style: decimal;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/src/assets/css/guide.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+            <div class="page-location text-2xl font-bold">
+                <span id="pagesTitle"></span>
+            </div>
+            <div class="guide-content">
+                <div class="flex justify-between lnb-type">
+                    <%- include('src/component/cmp_lnb.html') %>
+                        <div class="page-cont flex-1">
+                            <p class="guide-title-h3">Chart</p>
+                            <p class="guide-title-h3 mt-10">Chart > type: columnChart</p>
+                            <ul class="guide-list type-dot mt-3">
+                                <li>
+                                    <p>기업정보 > 재무정보</p>
+                                </li>
+                                <li>
+                                    <p>막대그래프 최대 5개 노출 (가운데 정렬)</p>
+                                </li>
+                                <li>
+                                    <p>막대바 높이값 계산을 위한 임의 최대값(valueMax) 입력 필수</p>
+                                </li>
+                            </ul>
+                            <p class="guide-title-h3 mt-10">막대그래프(column)</p>
+                            <div class="cmp-exsample__wrap mt-3">
+                                <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 1,
+                                    type: 'columnChart',
+                                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                                    series: ['212', '246', '328', '385', '464'],
+                                    categoryBarColor : '#640202',
+                                    valueMax: '600',
+                                })) %>
+                                <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 2,
+                                    type: 'columnChart',
+                                    categories: ['2019', '2020', '2021', '2022'],
+                                    series: ['212', '246', '328', '385',],
+                                    categoryBarColor : ['#640202', '#850000', '#AC0202', '#ff0000'],
+                                    valueMax: '1000',
+                                })) %>
+                            </div>
+                        </div>
+                </div>
+            </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        const cmpChart = document.querySelectorAll('.cmp-chart');
+        cmpChart.forEach(chart => {
+            const chartColumn = chart.querySelector('.chart-wrap--column-chart');
+            const chartColumnBar = chartColumn.querySelectorAll('.chart-wrap__yAxis-series li');
+
+            // rem으로 높이값 계산
+            // const cmpChartHeight = (chartColumn.clientHeight + 2) / 16;
+            const cmpChartHeight = chartColumn.clientHeight;
+
+            chartColumnBar.forEach(bar => {
+                const chartBarVal = bar.getAttribute('data-yaxis-value');
+                console.log(chartBarVal);
+            });
+        });
+    </script>
+</body>
+
+</html>

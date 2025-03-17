@@ -11,7 +11,14 @@
                     <div class="spec-num"><%- typeof item.subTitle !== 'undefined' ? item.subTitle : (i + 1).toString().padStart(2, '0') %></div>
                     <%- item.title ? item.title : ' ' %>
                 </div>
-                <% if(typeof styleType !=='undefined' && styleType == 'type-box' && item.content.length > 1) { %>
+                <% if(typeof styleType !=='undefined' && typeof item.smallContent !== 'undefined' && item.smallContent) { %>
+                    <div class="font-body-sm spec-text">
+                        <p>
+                            <%- item.smallContent %>
+                        </p>
+                    </div>
+                <% } %>
+                <% if(typeof styleType !=='undefined' && styleType == 'type-box' && item.content && item.content.length > 1) { %>
                     <ul class="spec-item__list">
                         <% item.content.forEach((content) => { %>
                             <li class="font-body-sm spec-text">

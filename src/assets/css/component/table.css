@@ -2,7 +2,7 @@
 .table-container {
     overflow-x: auto;
     width: 100%;
-    display: block; 
+    display: block;
 }
 .table-container .data-table {
     width: 100%;
@@ -11,6 +11,10 @@
     /* 스크롤 필요할시 아래 두 개 활성화 */
     table-layout: fixed; 
     min-width: 630px;
+}
+.table-container .data-table.mo-fix {
+    table-layout: auto;
+    min-width: auto;
 }
 
 .table-container .data-table th {
@@ -28,4 +32,20 @@
 }
 .table-container .data-table td {
     border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
+}
+.table-container .data-table td[rowspan] {
+    border-right: 1px solid var(--colorCM-all-stroke-stroke-default7);
+}
+.table-container .data-table tr td[rowspan]:last-child {
+    border-right: none;
+}
+.unit-text {
+    float: right;
+    margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) /16 * 1rem);
+}
+
+@media only screen and (max-width : 767px) {
+    .table-container .data-table.mo-fix {
+        table-layout: fixed;
+    }
 }

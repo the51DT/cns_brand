@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title><%= data.title %></title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap bizInfo_history">
+        <%- include('src/_inc/header.html') %>
+
+        <div class="sub-content__wrap">
+            <div class="inner-wrap">
+                <div class="bizInfo_history__container">
+                    <div class="bizInfo_history__textarea">
+                        <h2 class="font-bold">History</h2>
+                        <p class="font-medium">
+                            LG CNS는 1987년 설립 후<br/>
+                            30년 넘게 대한민국 IT산업의<br/>
+                            발전을 이끌어왔습니다.
+                        </p>
+                    </div>
+
+                    <div class="bizInfo_history__scroll">
+                        <!-- 왼쪽 섹션 -->
+                        <div class="left-section">
+                            <div class="left-section__item">
+                                <h3>디지털 혁신 선도</h3>
+                                <span>LG CNS,<br>디지털 혁신을 선도하다</span>
+                                <p>현재부터 2016년까지</p>
+                            </div>
+                            <div class="left-section__item">
+                                <h3>도약과 발전</h3>
+                                <span>LG CNS,<br>도약과 발전의 시기</span>
+                                <p>2022년부터 2015년까지</p>
+                            </div>
+                            <div class="left-section__item">
+                                <h3>성장과 도전</h3>
+                                <span>LG CNS,<br>성장과 도전의 시기</span>
+                                <p>1995년부터 2001년까지</p>
+                            </div>
+                            <div class="left-section__item">
+                                <h3>탄생과 개척</h3>
+                                <span>LG CNS,<br>탄생과 개척의 시기</span>
+                                <p>1987년부터 1994년까지</p>
+                            </div>
+                        </div>
+
+                        <!-- 오른쪽 섹션 -->
+                        <div class="right-section">
+                            <div class="progress-bar">
+                                <div class="bar"></div></div>
+                            <div class="right-section__item" id="right-section__item"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('src/_inc/footer.html', { type: 'dark' }) %>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('/assets/data/timeline.json')
+                .then(res => res.json())
+                .then(data => {
+                    const timelineContainer = document.getElementById('right-section__item');
+                    const sortedData = [
+                        ...data.timelineData2020s, 
+                        ...data.timelineData2010s, 
+                        ...data.timelineData2000s, 
+                        ...data.timelineData1900s
+                    ].sort((a, b) => b.year - a.year);
+
+                    timelineContainer.innerHTML = sortedData.map(yearItem => `
+                        <div class="timeline-year">
+                            <div class="year-container">
+                                <div class="circle-container">
+                                    <div class="outer-glow"></div>
+                                    <div class="outer-circle"><div class="inner-circle"></div></div>
+                                </div>
+                                <span class="year-title">${yearItem.year}</span>
+                            </div>
+                            <ul class="events">
+                                ${yearItem.events.map(event => `
+                                    <li class="event-item">
+                                        <div class="event-month">${event.month}</div>
+                                        <div class="event-desc-container">
+                                            <div class="event-desc">${event.description}</div>
+                                            ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>` : ''}
+                                        </div>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    `).join('');
+                })
+                .catch(err => console.error("데이터 로딩 오류:", err));
+        });
+
+        function scrollEventTest () {
+            //element
+            const scrollWrap = document.querySelector('.right-section')
+            const progressEl = scrollWrap.querySelector('.progress-bar')
+            const progressBar = scrollWrap.querySelector('.bar')
+            const timelineElements = document.querySelectorAll('.timeline-year')
+
+            //value
+            let scrollWrapTop, scrollWrapEndPoint, scrollY, viewport, triggerPoint
+            let previousStates = new Map() //리스트별 이전 상태 저장
+
+            // const 
+            // const 
+
+            const init = () => {
+                scrollWrapTop = scrollWrap.offsetTop
+                scrollWrapEndPoint = scrollWrapTop + scrollWrap.offsetHeight
+
+                const lastTimelineHeight = timelineElements[timelineElements.length - 1].offsetHeight
+
+                progressEl.style.height = `${ scrollWrap.offsetHeight -lastTimelineHeight}px`
+                progressBar.style.height = `${ scrollWrap.offsetHeight -lastTimelineHeight }px`
+            }
+
+            const scrollValue = () => {
+                scrollY = window.scrollY
+                viewport = scrollY + window.innerHeight // 현재 표시되는 화면
+                triggerPoint = scrollY + (window.innerHeight * 0.5) // 이벤트를 줄 viewport의 지점
+            }
+            
+            window.addEventListener('scroll', () => {
+				scrollValue()
+                
+                const progress = scrollWrapEndPoint - triggerPoint
+
+                if(triggerPoint > scrollWrapTop && scrollWrapEndPoint > triggerPoint) {
+                    progressBar.style.height = `${progress}px`
+                } else {
+                    progressBar.style.height = scrollWrapTop > scrollY ? `${ scrollWrap.offsetHeight }px` : '0px'
+                }
+
+                //각 타임라인의 top 값이 이벤트를 줄 viewport의 지점을 넘었는지
+                timelineElements.forEach((el, idx) => {
+                    const timelineStart = el.offsetTop
+                    const state = timelineStart < triggerPoint
+
+                    if(previousStates.get(idx) !== state) {
+                        previousStates.set(idx, state)
+                        el.classList.toggle('active', state)
+
+                    }
+
+                    // if(triggerPoint > timelineStart && triggerPoint < timelineEnd) {
+                    //     // console.log('지금은 화면 중앙의 높이가 해당 요소의 내에 있어요', idx)
+                    //     el.style.border = "1px dashed red"
+                    // } else if(triggerPoint < timelineStart) {
+                    //     el.style.border = "none"
+                    // }
+                })
+            })
+
+
+            init()
+        }
+
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                scrollEventTest()
+            }, 100);
+        })
+
+    </script>
+</body>
+</html>
