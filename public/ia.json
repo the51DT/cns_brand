@@ -272,6 +272,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_sidebar.html"
+        },
+        {
+          "name": "Richtext",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_richtext.html"
         }
       ]
     },
