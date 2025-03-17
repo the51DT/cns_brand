@@ -257,6 +257,13 @@
         }
       }
     }
+
+    .api-container {
+      width: 100%;
+      height: 1000px;
+      background-color: lightgray;
+      margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
+    }
   }
   &humanRights {
     
@@ -857,7 +864,7 @@
       }
     }
   }
-  
+
   // LGWay 페이지 마크업을 위한 임시 스타일 적용
   &LGWay {
     background-color: #000000;
