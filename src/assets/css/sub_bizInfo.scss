@@ -840,11 +840,21 @@
       }
     }
     .data-table td {
-      position: s;
-      .result_activity::before {
-        content: '•';
-        position: absolute;
-        transform: translateX(-$gap-margin);
+      position: relative;
+      ul li {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          width: calc(3.5 / 16 * 1rem);
+          height: calc(3.5 / 16 * 1rem);
+          background-color: #1A1A1A;
+          border-radius: calc(50 / 16 * 1rem);
+          top: 50%; 
+          left: 0;
+          transform: translateY(-50%);
+          margin-left: calc(-12 / 16 * 1rem);
+        }
       }
     }
 
