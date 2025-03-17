@@ -1,0 +1,48 @@
+.cmp-yearevent__wrap {
+   .cmp-yearevent-month {
+       margin-bottom: calc(80 / 16 * 1rem);
+       color: #E5E5E5;
+
+       &:active {
+           color: #A50034;
+       }
+   }
+
+   .cmp-yearevent-item {
+       padding-bottom: calc(40 / 16 * 1rem);
+
+       &:last-child {
+           padding-bottom: 0;
+       }
+
+       .cmp-yearevent-title {
+           position: relative;
+           padding-bottom: calc(20 / 16 * 1rem);
+           margin-bottom: calc(20 / 16 * 1rem);
+
+           &::before {
+               content: "";
+               position: absolute;
+               left: 0;
+               bottom: 0;
+               width: calc(20 / 16 * 1rem);
+               border-bottom: 2px solid #E5E5E5;
+           }
+       }
+
+       .cmp-event-details {
+           display: flex;
+           flex-direction: column;
+           gap: 6px;
+
+           li {
+               color: #6B6B6B;
+
+               strong {
+                   color: black;
+                   margin-right: calc(20 / 16 * 1rem);
+               }
+           }
+       }
+   }
+}

@@ -478,9 +478,9 @@
 
     .right-section{
       position: relative;
-      // display: flex;
-      // align-items: flex-start;
-      width: 724px;
+      width: 38%;
+
+      // width: 724px;
       overflow: visible; 
       height: auto; 
       gap: calc(var(--spacing-mode1-horizontal6-x-l)/16*1rem);
@@ -539,6 +539,7 @@
       }
 
       &__item{
+        padding-left: calc(77/16*1rem); //수치 수정 해주세요
         width: calc(600/16*1rem);
         letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
         // overflow-y: auto;
@@ -599,45 +600,76 @@
           }
 
           .circle-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: absolute;
+            left: -90px; //수치 수정해주세요
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid var(--colorCM-all-fill-fill-default10);
+
+            &::before {
+              content: "";
+              position: absolute;
+              display: block;
+              width: 16px;
+              height: 16px;
+              background: var(--colorCM-all-fill-fill-default10);
+              border-radius: 50%;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+
+            &.active {
+              border-color: #E156E2;
+              box-shadow:  0 0 8px;
+              &::before {
+                background-color: #E156E2;
+              }
+            }
+
+
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
             margin-right: calc(var(--spacing-mode1-horizontal6-x-l) / 16* 1rem);
 
             @media #{$tablet}{
             margin-right: calc(var(--spacing-mode1-horizontal4-x-l) / 16* 1rem);
             }
 
-
-            .outer-glow {
-              width: 36px;
-              height: 36px;
-              // background-color: #F729C1;
-              opacity: 0.5;
-              border-radius: 50%;
-              position: absolute;
-              filter: blur(12px); 
-            }
+            //엘리먼트 제거 ㅜㅠ
+            // .outer-glow {
+            //   // width: 36px;
+            //   // height: 36px;
+            //   // background-color: #F729C1;
+            //   opacity: 0.5;
+            //   border-radius: 50%;
+            //   position: absolute;
+            //   // filter: blur(12px); 
+            // }
             
-            .outer-circle {
-              width: 26px;
-              height: 26px;
-              background-color: black;
-              // border: 2px solid #F729C1;
-              border-radius: 50%;
-              position: absolute;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
+            // .outer-circle {
+            //   width: 26px;
+            //   height: 26px;
+            //   background-color: black;
+            //   // border: 2px solid #F729C1;
+            //   border-radius: 50%;
+            //   position: absolute;
+            //   display: flex;
+            //   align-items: center;
+            //   justify-content: center;
+            // }
 
             
-            .inner-circle {
-              width: 15px; /* 7.5(radius) * 2 */
-              height: 15px;
-              // background-color: #F729C1;
-              border-radius: 50%;
-            }
+            // .inner-circle {
+            //   width: 15px; /* 7.5(radius) * 2 */
+            //   height: 15px;
+            //   // background-color: #F729C1;
+            //   border-radius: 50%;
+            // }
           }
         }
 
