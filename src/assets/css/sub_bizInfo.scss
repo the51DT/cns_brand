@@ -839,6 +839,15 @@
         margin-bottom: 0;
       }
     }
+    .data-table td {
+      position: s;
+      .result_activity::before {
+        content: '•';
+        position: absolute;
+        transform: translateX(-$gap-margin);
+      }
+    }
+
   }
 
   // LGWay 페이지 마크업을 위한 임시 스타일 적용
