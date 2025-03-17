@@ -1,6 +1,6 @@
 <!-- chart -->
 <div class="cmp-wrap cmp-chart">
-    <% if(typeof type !== 'undefine' && type && type == 'columnChart' && valueMax) { %>
+    <% if (typeof type !== 'undefined' && type && type === 'columnChart' && typeof valueMax !== 'undefined') { %>
         <div class="chart-wrap chart-wrap--column-chart">
             <div class="chart-wrap__xAxis-area">
                 <span class="chart-wrap__xAxis-area__line"></span>
