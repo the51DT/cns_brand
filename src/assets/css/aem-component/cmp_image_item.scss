@@ -47,7 +47,6 @@
           border-radius: 50%;
           top: calc(17.5 / 16 * 1rem);
           left: calc(17.5 / 16 * 1rem);
-          transform: translateY(-50%);
 
           @media #{$tablet} {
             width: calc(4 / 16 * 1rem);
