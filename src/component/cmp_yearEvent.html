@@ -1,6 +1,9 @@
 <div class="cmp-yearevent">
     <div class="cmp-yearevent__month font-head-xl font-extrabold">
-      <%= typeof month !== 'undefined' ? month : '10월' %>
+      <% 
+        var month = typeof month !=='undefined' ? month : '10월' ; 
+        var events = typeof events !=='undefined' ? events : []; 
+      %>
     </div>
   
     <ol class="cmp-yearevent__list">
