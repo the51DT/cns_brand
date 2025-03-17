@@ -843,17 +843,17 @@
       position: relative;
       ul li {
         position: relative;
+        padding-left: calc(27 / 16 * 1rem);
         &::before {
           content: '';
           position: absolute;
-          width: calc(3.5 / 16 * 1rem);
-          height: calc(3.5 / 16 * 1rem);
+          width: calc(4 / 16 * 1rem);
+          height: calc(4 / 16 * 1rem);
           background-color: #1A1A1A;
-          border-radius: calc(50 / 16 * 1rem);
+          border-radius: 50%;
           top: calc(12.5 / 16 * 1rem);
-          left: 0;
+          left: calc(12.5 / 16 * 1rem);
           transform: translateY(-50%);
-          margin-left: calc(-12 / 16 * 1rem);
         }
       }
     }
