@@ -788,6 +788,18 @@
         margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
       }
     }
+    .detail_text {
+      margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
+      @media #{$tabletMini} {
+        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
+      }
+      @media #{$phone} {
+        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+      }
+      &_small-margin {
+        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+      }
+    }
   }
 
   &growFair {
@@ -984,5 +996,8 @@
         }
       }
     }
+  }
+  &esg {
+    
   }
 }
