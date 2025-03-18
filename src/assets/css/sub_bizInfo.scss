@@ -1030,14 +1030,15 @@
     &__event-container {
       // display: flex;
       // justify-content: space-between;
-      gap: 16px;
+      gap: calc(16/16*1rem);
+      grid-template-columns: auto calc(724 / 16 * 1rem);
 
       @media #{$phone} {
         // justify-content: none;
         display: flex;
         flex-direction: column;
       }
-        grid-template-columns: auto calc(724/16*1rem);
+
 
       .event-text{
         .event-period {
