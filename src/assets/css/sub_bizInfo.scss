@@ -1028,20 +1028,26 @@
     }
     
     &__event-container {
-      display: flex;
-      justify-content: space-between;
+      // display: flex;
+      // justify-content: space-between;
+      gap: 16px;
 
       @media #{$phone} {
         // justify-content: none;
+        display: flex;
         flex-direction: column;
       }
-      .event-period {
-        font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
-        line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
-      }
+        grid-template-columns: auto calc(724/16*1rem);
 
-      select{
-        margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l)/16*1rem);
+      .event-text{
+        .event-period {
+          font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
+          line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
+        }
+  
+        select{
+          margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l)/16*1rem);
+        }
       }
       .events {
         display: flex;
