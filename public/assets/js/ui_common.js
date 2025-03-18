@@ -73,6 +73,11 @@ const dropdownMenu = (menuSelector) => {
                 const selectedValue = option.getAttribute('data-option');
                 trigger.textContent = selectedValue;
 
+                if(!selectedValue) {
+                    const selectText = option.innerText;
+                    trigger.textContent = selectText;
+                }
+
                 menu.querySelectorAll('.dropdown_list li').forEach(item => {
                     item.classList.remove('is-active');
                 });
@@ -473,8 +478,7 @@ const sidebarCmp = () => {
         }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    
+    window.addEventListener('scroll', handleScroll);    
 }
 
 document.addEventListener("DOMContentLoaded", sidebarCmp);
