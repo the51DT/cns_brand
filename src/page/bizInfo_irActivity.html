@@ -13,56 +13,83 @@
 </head>
 
 <body>
-   <div class="wrap bizInfo_ceo">
+   <div class="wrap bizInfo_irActivity">
       <%- include('src/_inc/header.html') %>
          <!-- //헤더 영역 -->
          <!-- //비주얼 영역 -->
          <div class="sub-content__wrap">
             <div class="inner-wrap">
-               <div class="bizInfo_ceo__container">
-                  <div class="text-area">
-                     <div class="bizInfo_ceo__title">
-                        <p class="bizInfo_ceo__title ceo-text font-head-xl font-bold">CEO</p>
-                     </div>
-
-                     <!-- 모바일에서만 보이는 부제목과 이미지 컨테이너 -->
-                     <div class="mobile-content">
-                        <p class="subtitle font-head-md font-bold">고객이 있기에 우리가 있습니다.<br>고객과 함께 성장하는 최고의 DX 파트너가 되겠습니다.
-                        </p>
-                        <div class="mobile-image-container">
-                           <img src="https://placehold.co/512x705" alt="CEO 현신균">
+               <div class="bizInfo_irActivity__container">
+                  <div class="cmp-exsample__wrap mt-3">
+                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { subTitle: 'IR' ,
+                        titleText: 'IR 활동' , })) %>
+                        <div class="cmp-wrap cmp-tab basic-type align-left">
+                           <div class="cmp-tab__header">
+                              <ul class="tab__menu">
+                                 <li class="is-active">
+                                    <a href="#">IR 행사</a>
+                                 </li>
+                                 <li>
+                                    <a href="#">실적발표</a>
+                                 </li>
+                                 <li>
+                                    <a href="#">주주총회</a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="tab-content__wrap">
+                              <div class="tab__content is-active">
+                                 <div class="bizInfo_irActivity__event">
+                                    <div>
+                                       <span class="bizInfo_irActivity__event-period font-bold">기간별 IR 행사를<br />
+                                          확인해 보세요.</span>
+                                       <select name="IR" id="">
+                                          <option value="">2024년</option>
+                                       </select>
+                                    </div>
+                                    <div class="bizInfo_irActivity__event-year">
+                                       <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
+                                          month: '11월' , events: [ { title: 'Google Cloud Partner of the Year 2년 연속 수상'
+                                          , date: '2024.11.12' , location: '뉴욕' }] })) %>
+                                          <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
+                                             month: '10월' , events: [ {
+                                             title: 'Google Cloud Partner of the Year 2년 연속 수상' , date: '2024.11.12' ,
+                                             location: '뉴욕' }, { title: 'Google Cloud Partner of the Year 2년 연속 수상' ,
+                                             date: '2024.11.12' , location: '뉴욕' } ] })) %>
+                                             <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
+                                                month: '9월' , events: [ {
+                                                title: 'Google Cloud Partner of the Year 2년 연속 수상' , date: '2024.11.12'
+                                                , location: '뉴욕' },{ title: 'Google Cloud Partner of the Year 2년 연속 수상'
+                                                , date: '2024.11.12' , location: '뉴욕' },{
+                                                title: 'Google Cloud Partner of the Year 2년 연속 수상' , date: '2024.11.12'
+                                                , location: '뉴욕' }] })) %>
+                                                <%- include('src/component/cmp_yearEvent.html', Object.assign({},
+                                                   locals, { month: '08월' , events: [ {
+                                                   title: 'Google Cloud Partner of the Year 2년 연속 수상' ,
+                                                   date: '2024.11.12' , location: '뉴욕' }, {
+                                                   title: 'Google Cloud Partner of the Year 2년 연속 수상' ,
+                                                   date: '2024.11.12' , location: '뉴욕' } ] })) %>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="tab__content">
+                                 <div>탭 메뉴2</div>
+                              </div>
+                              <div class="tab__content">
+                                 <div>탭 메뉴3</div>
+                              </div>
+                           </div>
                         </div>
-                     </div>
-
-                     <!-- PC에서만 보이는 부제목 -->
-                     <div class="pc-subtitle">
-                        <p class="subtitle font-head-md font-bold">고객이 있기에 우리가 있습니다.<br>고객과 함께 성장하는 최고의 DX 파트너가 되겠습니다.
-                        </p>
-                     </div>
-
-                     <div class="bizInfo_ceo__description font-body-md">
-                        <p>IT 신기술을 통한 디지털전환(DX)은 기업 생존의 필수 수단이 됐습니다.<br>LG CNS는 기술 리더십에 기반한 DX전문 서비스로 고객 비즈니스의 성공을 돕고
-                           있습니다.</p>
-                        <p>또한, LG CNS는 고객도 미처 몰랐던 비즈니스 가치를 먼저 고객에게 제안하는<br>비즈니스 컨설턴시 역량을 지속적으로 강화하며 고객경험 혁신에 앞장서고 있습니다.
-                        </p>
-                        <p>LG CNS 사업의 중추는 고객의 비즈니스 가치를 실현하는 '프로젝트 현장'이라고 생각합니다.<br>고객의 소리에 귀 기울이며, 차별화된 고객경험을 제공할 수 있도록
-                           최선을 다하겠습니다.</p>
-                        <p>LG CNS의 도전에 많은 관심과 응원 부탁드립니다.</p>
-                     </div>
-                     <div class="bizInfo_ceo__signature">
-                        <span class="bizInfo_ceo__signature font-body-lg">대표이사</span>
-                        <span class="font-head-sm font-medium">현 신 균</span>
-                     </div>
-                  </div>
-                  <!-- PC에서만 보이는 이미지 컨테이너 -->
-                  <div class="pc-image-container">
-                     <img src="https://placehold.co/512x705" alt="CEO 현신균">
+                        <!-- //기본 탭 -->
                   </div>
                </div>
             </div>
+            <%- include('src/_inc/footer.html') %>
          </div>
-         <%- include('src/_inc/footer.html') %>
-   </div>
+
+         <script>
+            tabMenu('.basic-type', 'tab');
+         </script>
 </body>
 
 </html>

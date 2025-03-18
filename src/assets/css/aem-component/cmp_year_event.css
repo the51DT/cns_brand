@@ -1,9 +1,9 @@
 .cmp-yearevent__month {
   margin-bottom: 5rem;
-  color: #E5E5E5;
+  color: #e5e5e5;
 }
 .cmp-yearevent__month:active {
-  color: #A50034;
+  color: #a50034;
 }
 .cmp-yearevent__item {
   padding-bottom: 2.5rem;
@@ -21,7 +21,7 @@
   left: 0;
   bottom: 0;
   width: 1.25rem;
-  border-bottom: 2px solid #E5E5E5;
+  border-bottom: 2px solid #e5e5e5;
 }
 .cmp-yearevent__details {
   display: flex;
@@ -35,5 +35,5 @@
   font-weight: 600;
 }
 .cmp-yearevent__value {
-  color: #6B6B6B;
+  color: #6b6b6b;
 }
