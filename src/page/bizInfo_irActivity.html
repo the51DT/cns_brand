@@ -73,10 +73,35 @@
                                  </div>
                               </div>
                               <div class="tab__content">
-                                 <div>탭 메뉴2</div>
+                                 <div>
+                                    <div class="bizInfo_irActivity__year-container">
+                                       <span class="font-bold">2024년</span>
+                                       <select name="IR" id="">
+                                          <option value="">연도선택</option>
+                                       </select>
+                                    </div>
+                                    <div class="cmp-exsample__wrap mt-3">
+                                       <% const buttonItemListData=[ { id: 0, title: '2024년<br>4분기 실적설명회' ,buttonName:
+                                          [ '자막' , '별도 PDF' , '방송듣기' ] }, { id: 1, title: '2024년<br>3분기 실적설명회'
+                                          ,buttonName: [ '자막' , '별도 PDF' , '방송듣기' ] }, { id: 2,
+                                          title: '2024년<br>2분기 실적설명회' ,buttonName: [ '자막' , '별도 PDF' , '방송듣기' ] }, { id:
+                                          1, title: '2024년<br>1분기 실적설명회' ,buttonName: [ '자막' , '별도 PDF' , '방송듣기' ] } ]
+                                          %>
+                                          <%- include('src/component/cmp_button_item_list.html', Object.assign({},
+                                             locals, { itemCount: 7, jsonData: buttonItemListData })) %>
+                                    </div>
+                                 </div>
                               </div>
                               <div class="tab__content">
-                                 <div>탭 메뉴3</div>
+                                 <div>
+                                    <div class="bizInfo_irActivity__year-container">
+                                       <span class="font-bold">2024년</span>
+                                       <select name="IR" id="">
+                                          <option value="">연도선택</option>
+                                       </select>
+                                    </div>
+
+                                 </div>
                               </div>
                            </div>
                         </div>

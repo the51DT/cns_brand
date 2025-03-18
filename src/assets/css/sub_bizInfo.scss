@@ -1025,8 +1025,32 @@
 
   &irActivity {
     color: #1a1a1a;
+
+    select {
+      display: block;
+      font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
+      border: 1px solid #1a1a1a;
+      padding: 13px 16px 13px 20px;
+      border-radius: 50px;
+      margin-top: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
+    }
+
     .cmp-title__wrap {
       margin-top: calc(80 / 16 * 1rem);
+    }
+
+    &__year-container {
+      display: flex;
+      margin-bottom: calc(80 / 16 * 1rem);
+      // gap: calc(var(--spacing-mode1-horizontal2-x-l) / 16 * 1rem);
+
+      span {
+        font-size: calc(var(--typo-pc-size-head-md) / 16 * 1rem);
+      }
+      select {
+        margin: auto;
+        margin-left: calc(var(--spacing-mode1-horizontal2-x-l) / 16 * 1rem);
+      }
     }
     &__event {
       display: flex;
@@ -1034,14 +1058,6 @@
       &-period {
         font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
         line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
-      }
-      select {
-        display: block;
-        font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
-        border: 1px solid #1a1a1a;
-        padding: 13px 16px 13px 20px;
-        border-radius: 50px;
-        margin-top: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
       }
       &-year {
         display: flex;
