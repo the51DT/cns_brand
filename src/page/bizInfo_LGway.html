@@ -37,7 +37,13 @@
                         </button>
                     </div>
                 </div>
-
+                <!-- 내비 -->
+                <div class="full-sec__pagination">
+                    <div class="full-sec__pagination--item font-caption-xl is-active">LG 비전</div>
+                    <div class="full-sec__pagination--item font-caption-xl">행동방식</div>
+                    <div class="full-sec__pagination--item font-caption-xl">경영이념</div>
+                </div>
+                <!-- //내비 -->
                 <div class="bizInfo_LGWay__section full-sec bizInfo_LGWay__section--02">
                     <div class="inner-wrap">
                         <div class="bizInfo_LGWay__textarea">
@@ -55,11 +61,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="full-sec__pagination">
+                    <!-- <div class="full-sec__pagination">
                         <div class="full-sec__pagination--item font-caption-xl on">LG 비전</div>
                         <div class="full-sec__pagination--item font-caption-xl">행동방식</div>
                         <div class="full-sec__pagination--item font-caption-xl">경영이념</div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="bizInfo_LGWay__section full-sec bizInfo_LGWay__section--03">
@@ -79,11 +85,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="full-sec__pagination">
+                    <!-- <div class="full-sec__pagination">
                         <div class="full-sec__pagination--item font-caption-xl">LG 비전</div>
                         <div class="full-sec__pagination--item font-caption-xl on">행동방식</div>
                         <div class="full-sec__pagination--item font-caption-xl">경영이념</div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="bizInfo_LGWay__section full-sec bizInfo_LGWay__section--04">
@@ -101,11 +107,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="full-sec__pagination">
+                    <!-- <div class="full-sec__pagination">
                         <div class="full-sec__pagination--item font-caption-xl">LG 비전</div>
                         <div class="full-sec__pagination--item font-caption-xl">행동방식</div>
                         <div class="full-sec__pagination--item font-caption-xl on">경영이념</div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="bizInfo_LGWay__section last-sec">
@@ -118,10 +124,10 @@
                             </p>
                         </div>
                         <div class="button__wrap align-left">
-                            <button type="button" class="btn btn-trans btn-small"> <!-- 버튼패딩 다름 -->
+                            <a href="#" class="btn btn-trans btn-small"> <!-- 버튼패딩 다름 -->
                                 사이버 신문고 바로가기
                                 <i class="ico icon-arrow-right-wt16"></i>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -131,5 +137,49 @@
             type : 'transparent-color-wh',
         }))%>
     </div>
+    <script>
+        const sections = document.querySelectorAll('.bizInfo_LGWay__section');
+        const goNextButton = document.querySelector('.button__wrap--scroll-down');
+        const navigation = document.querySelector('.full-sec__pagination');
+
+        goNextButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            
+            const secondSection = sections[1]; // 두 번째 섹션 선택
+            secondSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+
+        const handleScroll = () => {
+            let currentSection = null;
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                
+                // 첫 번째 섹션을 지나갔는지 체크
+                if (index === 0 && rect.bottom <= 0) {
+                    navigation.classList.add('is-active');
+                } else if (index === 0 && rect.bottom > 0) {
+                    navigation.classList.remove('is-active');
+                }
+
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section;
+                    // navigation의 아이템들 활성화 상태 업데이트
+                    const navItems = navigation.querySelectorAll('.full-sec__pagination--item');
+                    navItems.forEach((item, i) => {
+                        if (i === (index - 1)) {
+                            item.classList.add('is-active');
+                        } else {
+                            item.classList.remove('is-active');
+                        }
+                    });
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
 </body>
 </html>

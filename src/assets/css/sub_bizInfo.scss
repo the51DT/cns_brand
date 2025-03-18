@@ -924,6 +924,7 @@
           background: url('/src/assets/image/sub/img_history_sec04_mo.png') no-repeat center 100% / contain;
         }
       }
+      
       &.full-sec {
         position: relative;
         height: 100vh;
@@ -984,6 +985,35 @@
           }
         }
       }
+    }
+    .full-sec__pagination {
+      position: fixed;
+      right: calc(60 / 16 * 1rem); // 분기점마다 다름
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      gap: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+      opacity: 0;
+      z-index: 12;
+      &.is-active {
+        opacity: 1;
+      }
+      &--item { // 선이 이미지로 들어가있음..
+        padding: calc(5 / 16 * 1rem) calc(19 / 16 * 1rem);
+        border: calc(1 / 16 * 1rem) solid var(--colorGL-all-white100);
+        border-radius: calc(50 / 16 * 1rem);
+        &:not(.is-active) {
+          font-size: 0;
+          width: calc(10 / 16 * 1rem);
+          height: calc(10 / 16 * 1rem);
+          padding: 0;
+        }
+      }
+      @media #{$phone} {
+        display: none;
+    }
     }
     &__textarea { // 텍스트 간 간격 임시 잡기
       .font-head-lg {
