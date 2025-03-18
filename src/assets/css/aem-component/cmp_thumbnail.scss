@@ -73,6 +73,12 @@
                 }
             }
         }
+        // MOa > 자료실
+        &.type-moa-case4 {
+            .content-info {
+                border-top: calc(1 / 16 * 1rem) solid var(--colorGL-all-gray250);
+            }
+        }
         &.type-news {
             &.thumbnail-type {
                 .content-list__inner {

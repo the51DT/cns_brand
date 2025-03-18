@@ -203,10 +203,45 @@
                             jsonData : thumbnailData6, 
                         }) %>
                     </div>
-                    <p class="guide-title-h3 mt-10">썸네일 > type-news : news </p>
+                    <p class="guide-title-h3 mt-10">썸네일 > type-moa-case4 : 자료실 > category, title, tag</p>
                     <div class="cmp-exsample__wrap mt-5">
                         <% 
                             const thumbnailData7=[
+                                {
+                                    id: 0,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                },
+                                {
+                                    id: 1,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                },
+                                {
+                                    id: 2,
+                                    category: '보도자료',
+                                    title: '글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함',
+                                    tag : ['CX','DX', '최적화'],
+                                    date: '2025.01.10',
+                                },
+                            ]
+                        %>
+                        <%- include('src/component/cmp_thumbnail_type.html', { 
+                            itemClass: 'pc-col3' , 
+                            itemCount: 3, 
+                            allCountData: '668' ,
+                            contentType : 'type-moa-case4',
+                            jsonData : thumbnailData7, 
+                        }) %>
+                    </div>
+                    <p class="guide-title-h3 mt-10">썸네일 > type-news : news </p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <% 
+                            const thumbnailData8=[
                                 {
                                     id: 0,
                                     category: '보도자료',
@@ -235,7 +270,7 @@
                             itemCount: 3, 
                             allCountData: '668' ,
                             contentType : 'type-news',
-                            jsonData : thumbnailData7, 
+                            jsonData : thumbnailData8, 
                         }) %>
                     </div>
                 </div>

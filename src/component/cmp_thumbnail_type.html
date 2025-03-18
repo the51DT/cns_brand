@@ -18,7 +18,9 @@
                 <li>
                     <a href="#" class="content-list__inner">
                         <div class="thumbnail-wrap">
-                            <img src="https://placehold.co/939x470" alt="" />
+                            <% if(!contentTypeValue || contentTypeValue !== 'type-moa-case4') { %>
+                                <img src="https://placehold.co/939x470" alt="" />
+                            <% } %>
                             <% if(item.floatText) { %>
                                 <span class="float-text"><%- item.floatText %></span>
                             <% } %>
