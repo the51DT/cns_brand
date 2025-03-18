@@ -1,8 +1,9 @@
 <!-- chart -->
 <div class="cmp-wrap cmp-chart">
     <% const chartType = typeof type !=='undefined' ? type : '' ; %>
+    <div class="chart-wrap">
     <% if(chartType && chartType == 'columnChart' && valueMax) { %>
-        <div class="chart-wrap chart-wrap--column-chart">
+        <div class="chart-wrap__column-chart">
             <div class="chart-wrap__xAxis-area">
                 <span class="chart-wrap__xAxis-area__line"></span>
                 <span class="chart-wrap__xAxis-area__line"></span>
@@ -39,8 +40,9 @@
                             </li>
                         <% }) %>
                     </ul>
-                <% } %>
-            </div>
+                    <% } %>
+                </div>
+            <% } %>
         </div>
-    <% } %>
+    </div>
 </div>
