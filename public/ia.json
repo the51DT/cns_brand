@@ -424,6 +424,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_newsletter_detail.html"
+        },
+        {
+          "name": "MOA - 자료실",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "moa_resources.html"
         }
       ]
     },
