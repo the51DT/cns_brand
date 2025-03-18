@@ -174,7 +174,13 @@
                             </div>
                         </div>
                         <div class="tab__content">
-                            공시자료 content
+                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                titleText: 'LG CNS의 사업 성과를 공개합니다' ,
+                            })) %>
+                            <div class="api-container" style="width: 100%; height: 1000px; background-color: lightgray; margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);">
+                                API 연동 예정 (table)
+                            </div>
+                            <%- include('src/component/cmp_pagination.html') %>
                         </div>
                     </div>
                 </div>

@@ -732,48 +732,12 @@
         }
       }
     }
-    .jungdo-container {
-      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-      @media #{$phone} {
-        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-      }
-      &__image {
-        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-        @media #{$phone} {
-          margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-        }
-      }
-      &__title {
-        margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-      }
-      &__subtitle {
-        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-        @media #{$phone} {
-          margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-        }
-      }
-    }
-
-    .subtitle-biz {
-      &__jungdo {
-        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
-        @media #{$tabletMini} {
-          margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
-        }
-        @media #{$phone} {
-          margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-        }
-      }
-      &__justice {
-        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-      }
-    }
     .layout_col2 {
       @media #{$phone} {
         margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
       }
     }
-    .detail_text {
+    .detail-text {
       margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
       @media #{$tabletMini} {
         margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
@@ -781,22 +745,19 @@
       @media #{$phone} {
         margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
       }
-      &_small-margin {
+      &-small-margin {
         margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
       }
     }
   }
 
   &growFair {
-    .detail_text {
+    .detail-text {
       margin-bottom: calc(60 / 16 * 1rem);
       @media #{$tabletMini} {
         margin-bottom: calc(32 / 16 * 1rem);
       }
-      &__open {
-        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-      }
-      &__specialist {
+      &-specialist {
         margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
       }
     }
@@ -1024,6 +985,7 @@
   }
 
   &irActivity {
+    
     color: #1a1a1a;
 
     select {
@@ -1063,6 +1025,15 @@
         display: flex;
         flex-direction: column;
         gap: calc(120 / 16 * 1rem);
+      }
+    }
+
+    &__accodion{
+      all: unset !important;
+      font-size: calc(var(--typo-pc-size-body-sm)/16*1rem) !important;
+      
+      span{
+        color: calc(var(--colorGL-all-heritage-red600)) !important;
       }
     }
   }

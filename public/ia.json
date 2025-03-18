@@ -272,6 +272,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_sidebar.html"
+        },
+        {
+          "name": "Richtext",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_richtext.html"
         }
       ]
     },
@@ -418,6 +424,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_newsletter_detail.html"
+        },
+        {
+          "name": "MOA - 자료실",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "moa_resources.html"
         }
       ]
     },
