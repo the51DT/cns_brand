@@ -1,0 +1,39 @@
+<!-- cmp-input -->
+<div class="cmp-wrap cmp-input">
+    <% 
+        const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+    %>
+    <% data.forEach((item)=> { %>
+      <div class="cmp-input__item">
+        <% 
+          const title = (typeof item.title !== 'undefined' ? item.title : []);
+          const inputData = (typeof item.inputData !== 'undefined' ? item.inputData : []);
+        %>
+        <% if(typeof title !=='undefined' && title) { %>
+          <div class="cmp-input__title">
+            <p class="font-body-xs <%- title.required !== 'false' && title.required ? 'required' : '' %>"><%- title.text %></p>
+          </div>
+        <% } %>
+        <% if(typeof inputData !=='undefined' && inputData) { %>
+          <div class="cmp-input__area">
+            <% inputData.forEach((input)=> { %>
+              <% if(input.type === 'select') { %>
+                <select class="cmp-input__input cmp-input__input--select">
+                  <% input.option.forEach((option)=> { %>
+                    <option><%- option %></option>
+                  <% }) %>
+                </select>
+              <% } else { %>
+                <input
+                  class="cmp-input__input cmp-input__input--<%- input.type %>"
+                  type="<%- input.type %>"
+                  placeholder="<%- input.placeholder %>"
+                  value="<%- input.value %>"
+                >
+              <% } %>
+            <% }) %>
+          </div>
+        <% } %>
+      </div>
+    <% }) %>
+</div>

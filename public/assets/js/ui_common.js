@@ -399,8 +399,8 @@ const accordion = (selector) => {
 
         accButtons.forEach(button => {
             button.addEventListener('click', () => {
-                const currentItem = button.closest('li');
-                const activeItem = acc.querySelector('li.is-active');
+                const currentItem = button.closest('.accordion-item');
+                const activeItem = acc.querySelector('.accordion-item.is-active');
 
                 if (activeItem && activeItem !== currentItem) {
                     activeItem.classList.remove('is-active');
