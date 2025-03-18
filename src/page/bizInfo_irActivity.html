@@ -35,9 +35,9 @@
                      <div class="tab-content__wrap">
                         <!-- IR 행사 탭 -->
                         <div class="tab__content is-active">
-                           <div class="bizInfo_irActivity__event">
+                           <div class="bizInfo_irActivity__event-container">
                               <div>
-                                 <span class="bizInfo_irActivity__event-period font-bold">
+                                 <span class="event-period font-bold">
                                     기간별 IR 행사를<br />확인해 보세요.
                                  </span>
                                  <select name="IR">
@@ -45,7 +45,7 @@
                                  </select>
                               </div>
 
-                              <div class="bizInfo_irActivity__event-year">
+                              <div class="events">
                                  <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
                                     month: '11월', events: [
                                        { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
@@ -130,6 +130,7 @@
                                           </button>
                                           <button type="button" class="btn btn-line" disabled>
                                              소집결과
+                                             <i class="ico icon-pagination-next"></i>
                                           </button>
                                        </div>
                                        
@@ -148,6 +149,7 @@
                                           </button>
                                           <button type="button" class="btn btn-line" disabled>
                                              소집결과
+                                             <i class="ico icon-pagination-next"></i>
                                           </button>
                                        </div>` },
                                     { id: 2, faqTitle: '제 3회 정기 주주총회', faqContent: `                                       
@@ -164,6 +166,7 @@
                                           </button>
                                           <button type="button" class="btn btn-line" disabled>
                                              소집결과
+                                             <i class="ico icon-pagination-next"></i>
                                           </button>
                                        </div>` },
                                     { id: 3, faqTitle: '제 2회 정기 주주총회', faqContent: `                                       
@@ -180,6 +183,7 @@
                                           </button>
                                           <button type="button" class="btn btn-line" disabled>
                                              소집결과
+                                             <i class="ico icon-pagination-next"></i>
                                           </button>
                                        </div>` },
                                     { id: 4, faqTitle: '제 1회 정기 주주총회', faqContent: `                                       
@@ -196,6 +200,7 @@
                                           </button>
                                           <button type="button" class="btn btn-line" disabled>
                                              소집결과
+                                             <i class="ico icon-pagination-next"></i>
                                           </button>
                                        </div>` }
                                  ]; %>

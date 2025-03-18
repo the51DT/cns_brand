@@ -1,6 +1,7 @@
 .cmp-yearevent__month {
   margin-bottom: 5rem;
   color: #e5e5e5;
+  font-size: calc(var(--typo-pc-size-head-2xl) / 16 * 1rem);
 }
 .cmp-yearevent__month:active {
   color: #a50034;

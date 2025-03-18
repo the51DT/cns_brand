@@ -1,47 +1,54 @@
 <!-- cmp_button_item_list -->
 <div class="cmp-wrap cmp_button_item_list__wrap">
-    <% const data=(typeof jsonData !=='undefined' ? jsonData : []); const itemLimit=typeof itemCount !=='undefined' ?
-        itemCount : 1; %>
-        <% if(data.length> 0) { %>
-            <% data.slice(0, itemLimit).forEach((item, i)=> { %>
-                <div class="cmp_button_item">
-                    <div class="cmp_button_item__text-box">
-                        <p class="title font-body-xl"><%- item.title %></p>
-                    </div>
-                    <% if(typeof item.buttonName !=='undefined' && item.buttonName) { %>
-                        <div class="button__wrap">
-                            <% if(item.buttonName && Array.isArray(item.buttonName)) { %>
-                                <% item.buttonName.slice(0, 3).forEach((name)=> { %>
-                                    <button type="button" class="btn btn-line">
-                                        <%= name %>
-                                            <i class="ico icon-download-bl24"></i>
-                                    </button>
-                                    <% }) %>
-                                        <% } %>
-                        </div>
-                        <% } else { %>
-                            <div class="button__wrap">
-                                <button type="button" class="btn btn-line">
-                                    다운로드
-                                    <i class="ico icon-download-bl24"></i>
-                                </button>
-                            </div>
-                            <% } %>
+    <% 
+        const data = (typeof jsonData !== 'undefined' ? jsonData : []);
+        const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
+    %>
+    <% if(data.length > 0) { %>
+        <% data.slice(0, itemLimit).forEach((item, i) => { %>
+            <div class="cmp_button_item">
+                <div class="cmp_button_item__text-box">
+                    <p class="title font-body-xl"><%- item.title %></p>
                 </div>
-                <% }) %>
-                    <% } else { %>
-                        <% for(let i=0; i < itemLimit; i++) { %>
-                            <div class="cmp_button_item">
-                                <div class="cmp_button_item__text-box">
-                                    <p class="title font-body-xl">2022~2023<br>지속가능경영보고서</p>
-                                </div>
-                                <div class="button__wrap">
-                                    <button type="button" class="btn btn-line">
-                                        다운로드
-                                        <i class="ico icon-download-bl24"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <% } %>
-                                <% } %>
+                <% if(typeof item.buttonName !== 'undefined' && item.buttonName) { %>
+                    <div class="button__wrap">
+                        <% if(item.buttonName && Array.isArray(item.buttonName)) { %>
+                            <% item.buttonName.slice(0, 3).forEach((name, index) => { %>
+                                <button type="button" class="btn btn-line">
+                                    <%= name %>
+                                    <% if (index >= 2) { %> <!-- 3번째 버튼부터 다른 아이콘 적용 -->
+                                        <i class="ico icon-pagination-next"></i> 
+                                    <% } else { %>
+                                        <i class="ico icon-download-bl24"></i> 
+                                    <% } %>
+                                </button>
+                            <% }) %>
+                            
+                        <% } %>
+                    </div>
+                <% } else { %>
+                    <div class="button__wrap">
+                        <button type="button" class="btn btn-line">
+                            다운로드
+                            <i class="ico icon-download-bl24"></i>
+                        </button>
+                    </div>
+                <% } %>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <% for(let i = 0; i < itemLimit; i++) { %>
+            <div class="cmp_button_item">
+                <div class="cmp_button_item__text-box">
+                    <p class="title font-body-xl">2022~2023<br>지속가능경영보고서</p>
+                </div>
+                <div class="button__wrap">
+                    <button type="button" class="btn btn-line">
+                        다운로드
+                        <i class="ico icon-download-bl24"></i>
+                    </button>
+                </div>
+            </div>
+        <% } %>
+    <% } %>
 </div>
