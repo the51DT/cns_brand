@@ -3,6 +3,8 @@
     <% 
         const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
         const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
+        const size = typeof iconSize !== 'undefined' ? iconSize : 'default';
+        
     %>
     <% if (data.length > 0) { %>
         <% data.slice(0, itemLimit).forEach((item, i) => { %>
@@ -10,24 +12,24 @@
                 <% if(typeof ImageAlign !== 'undefined' && ImageAlign) {%>
                     <% if(ImageAlign == 'left') {%>
                         <div class="item-image type-left">
-                            <img src="<%= item.imageUrl %>" alt="" />
+                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('<%- item.imageUrl %>');"></i>
                         </div>
                     <% } else if(ImageAlign == 'right') { %>
                         <div class="item-image type-right">
-                            <img src="<%= item.imageUrl %>" alt="" />
+                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('<%- item.imageUrl %>');"></i>
                         </div>
                     <% } else if(ImageAlign=='center' ) { %>
                         <div class="item-image type-center">
-                            <img src="<%= item.imageUrl %>" alt="" />
+                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('<%- item.imageUrl %>');"></i>
                         </div>
                     <% } else { %>
                         <div class="item-image type-left">
-                            <img src="<%= item.imageUrl %>" alt="" />
+                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('<%- item.imageUrl %>');"></i>
                         </div>
                     <% } %>
                 <% } else {%>
                     <div class="item-image type-left">
-                        <img src="<%= item.imageUrl %>" alt="" />
+                        <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('<%- item.imageUrl %>');"></i>
                     </div>
                 <% }%>
 
@@ -107,20 +109,20 @@
                 <% if(typeof ImageAlign !== 'undefined' && ImageAlign) {%>
                     <% if(ImageAlign=='left') {%>
                         <div class="item-image type-left">
-                            <img src="https://placehold.co/78x78" alt="" />
+                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('https://placehold.co/60x60');"></i>
                         </div>
                     <%} else if(ImageAlign=='right') { %>
                         <div class="item-image type-right">
-                            <img src="https://placehold.co/78x78" alt="" />
+                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('https://placehold.co/60x60');"></i>
                         </div>
                     <% } else {%>
                         <div class="item-image type-left">
-                            <img src="https://placehold.co/78x78" alt="" />
+                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('https://placehold.co/60x60');"></i>
                         </div>
                     <% } %>
                 <% } else {%>
                     <div class="item-image type-left">
-                        <img src="https://placehold.co/78x78" alt="" />
+                        <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('https://placehold.co/60x60');"></i>
                     </div>
                 <% } %>
 
