@@ -87,7 +87,6 @@
                                  </select>
                               </div>
 
-                              <div class="cmp-exsample__wrap mt-3">
                                  <% const buttonItemListData = [
                                     { id: 0, title: '2024년<br>4분기 실적설명회', buttonName: ['자막', '별도 PDF', '방송듣기'] },
                                     { id: 1, title: '2024년<br>3분기 실적설명회', buttonName: ['자막', '별도 PDF', '방송듣기'] },
@@ -96,9 +95,8 @@
                                  ]; %>
 
                                  <%- include('src/component/cmp_button_item_list.html', Object.assign({}, locals, {
-                                    itemCount: 7, jsonData: buttonItemListData 
+                                    itemCount: 7, jsonData: buttonItemListData, itemType: '3buttons'
                                  })) %>
-                              </div>
                            </div>
                         </div>
 
