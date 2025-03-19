@@ -299,8 +299,22 @@
 
       &__visual{
         // background-color: #000000;
+        height: 100vh;
         background: no-repeat url(/src/assets/image/sub/bg_history_pc01.png);
         background-size: cover;
+
+        .cns-logo{
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 60%;
+          margin-top: calc(200/16*1rem);
+
+
+          &::before{
+            
+          }
+        }
       }
       
       &__sub-container{
@@ -311,33 +325,32 @@
           background-position: top left;
           background-attachment: fixed; // ✅ 이 부분 추가
         }
-
-
-      &__textarea {
-        background-color: transparent;
-        // position: relative;
-        // background-image: url(/src/assets/image/sub/bg_history_pc01.png);
-        height: 100vh;
-        letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
-        gap: calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
-      
-        display: flex;
-        flex-direction: column;
-        justify-content: center; 
-
-        @media #{$phone}{
-          display: none;
+        &__textarea {
+          z-index: 3;
+          background-color: transparent;
+          // position: relative;
+          // background-image: url(/src/assets/image/sub/bg_history_pc01.png);
+          height: 100vh;
+          letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+          gap: calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
+        
+          display: flex;
+          flex-direction: column;
+          justify-content: center; 
+  
+          @media #{$phone}{
+            display: none;
+          }
+        
+          h2 {
+            font-size: calc(var(--typo-pc-size-head-xl) / 16 * 1rem);
+          }
+        
+          p {
+            font-size: calc(var(--typo-pc-size-head-sm) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
+          }
         }
-      
-        h2 {
-          font-size: calc(var(--typo-pc-size-head-xl) / 16 * 1rem);
-        }
-      
-        p {
-          font-size: calc(var(--typo-pc-size-head-sm) / 16 * 1rem);
-          line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
-        }
-      }
 
       .scroll-dim {
         position: sticky; 
