@@ -154,12 +154,24 @@ function initScrollEvents() {
         const rightSectionRect = rightSection.getBoundingClientRect();
         const progressBarTop = viewportHeight / 2;  // 프로그레스바 위치 뷰포트 고정
 
+
+        const firstCircle = circles[0];
+        const lastCircle = circles[circles.length - 1];
+
+        const firstCircleRect = firstCircle.getBoundingClientRect();
+        const lastCircleRect = lastCircle.getBoundingClientRect();
+
+        const progressBarStart = firstCircleRect.top - rightSectionRect.top;
+        const progressBarHeight = lastCircleRect.bottom - firstCircleRect.top;
+
+        document.querySelector('.progress-bar').style.top = `${progressBarStart}px`;
+        document.querySelector('.progress-bar').style.height = `${progressBarHeight}px`;
+
         
-        // 프로그레스바 높이 설정
-        // 전체 프로그래스바의 높이 설정 = - 첫번째 timeline-year 의 top + circle-container 의 높이 / 2
-        // rightSection.offsetHeight 에서 마지막 rightSection.offsetHeight 의 높이값
         const totalHeight = rightSection.offsetHeight;
-        const scrolledDistance = viewportHeight / 2 - rightSectionRect.top;
+        const scrolledDistance = viewportHeight / 1.2 - rightSectionRect.top;
+
+
         
         const progressHeight = Math.min(Math.max(totalHeight - scrolledDistance, 0), totalHeight);
         progressBar.style.height = `${progressHeight}px`;
