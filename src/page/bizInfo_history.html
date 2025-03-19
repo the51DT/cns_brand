@@ -30,7 +30,7 @@
                 </div>
 
             </div>
-            <div class="bizInfo_history__history">
+            <div class="bizInfo_history__sub-container">
                 <div class="inner-wrap">
                     <div class="bizInfo_history__scroll">
                         <div class="left-section">
@@ -56,9 +56,9 @@
                             </div>
                         </div>
                         <div class="right-section">
-                            <div class="progress-bar">
-                                <div class="bar"></div>
-                            </div>
+                                <div class="progress-bar">
+                                    <div class="bar"></div>
+                                </div>
                             <div class="right-section__item" id="right-section__item"></div>
                         </div>
                     </div>
@@ -111,11 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             return `
                                 <div class="timeline-year">
                                     <div class="year-container">
-                                            <div class="circle-container" data-color="${currentColor}"></div>
-                                    <span class="year-title" data-color="${currentColor}">${yearItem.year}</span>
-                                            </div>
-                                            
-                                        </div>
+                                        <div class="circle-container" data-color="${currentColor}"></div>
+                                        <span class="year-title" data-color="${currentColor}">${yearItem.year}</span>
+                                    </div>            
                                     <ul class="events">
                                         ${yearItem.events.map(event => `
                                             <li class="event-item">
@@ -139,30 +137,41 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(err => console.error("데이터 로딩 오류:", err));
 });
-
 function initScrollEvents() {
     const progressBar = document.querySelector('.progress-bar .bar');
     const circles = document.querySelectorAll('.circle-container');
+    const rightSection = document.querySelector('.right-section');
 
     const updateProgressBar = () => {
-        const progressBarTop = progressBar.getBoundingClientRect().top;
+        const viewportHeight = window.innerHeight;
+        const rightSectionRect = rightSection.getBoundingClientRect();
+        const progressBarTop = viewportHeight / 2;  // 프로그레스바 위치 뷰포트 고정
 
+        
+        // 프로그레스바 높이 설정
+        // 전체 프로그래스바의 높이 설정 = - 첫번째 timeline-year 의 top + circle-container 의 높이 / 2
+        // rightSection.offsetHeight 에서 마지막 rightSection.offsetHeight 의 높이값
+        const totalHeight = rightSection.offsetHeight;
+        const scrolledDistance = viewportHeight / 2 - rightSectionRect.top;
+        
+        const progressHeight = Math.min(Math.max(totalHeight - scrolledDistance, 0), totalHeight);
+        progressBar.style.height = `${progressHeight}px`;
+
+        // Circle 활성화 처리
         circles.forEach(circle => {
             const currentColor = circle.dataset.color;
             const circleRect = circle.getBoundingClientRect();
-            const circleBottom = circleRect.bottom; // circle의 하단 기준
+            const circleTop = circleRect.top;
 
             const yearContainer = circle.closest('.year-container');
             const yearTitle = yearContainer ? yearContainer.querySelector('.year-title') : null;
 
-            if (progressBarTop <= circleBottom) {
-                // 프로그레스바가 circle에 아직 닿아 있거나 덮고 있을 때 (비활성화: 회색)
+            if (progressBarTop <= circleTop) {
                 circle.classList.remove('active');
                 circle.style.borderColor = '#262626';
                 circle.style.color = '#262626';
                 if (yearTitle) yearTitle.style.color = '#262626';
             } else {
-                // 프로그레스바가 circle에서 완전히 벗어난 후 (활성화)
                 circle.classList.add('active');
                 circle.style.borderColor = currentColor;
                 circle.style.color = currentColor;
@@ -170,82 +179,9 @@ function initScrollEvents() {
             }
         });
 
-        // 프로그레스바 높이 업데이트 (기존 유지)
-        const rightSection = document.querySelector('.right-section');
-        const sectionRect = rightSection.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-
-        const totalScrollHeight = document.body.scrollHeight - viewportHeight;
-        const currentScroll = window.scrollY;
-        const scrollPercentage = currentScroll / totalScrollHeight;
-
-        progressBar.style.height = `${(1 - scrollPercentage) * sectionRect.height}px`;
-
-        // left-section 활성화 처리 (기존 유지)
         const leftItems = document.querySelectorAll('.left-section__item');
         const rightSections = document.querySelectorAll('.timeline-group');
-        const viewportTrigger = window.scrollY + viewportHeight * 0.2;
-
-        rightSections.forEach((section, index) => {
-            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-            const sectionBottom = sectionTop + section.offsetHeight;
-
-            if (viewportTrigger >= sectionTop && viewportTrigger <= sectionBottom) {
-                leftItems.forEach(item => item.classList.remove('active'));
-                leftItems[index].classList.add('active');
-            }
-        });
-    };
-
-    window.addEventListener('scroll', updateProgressBar);
-    window.addEventListener('resize', updateProgressBar);
-    setTimeout(updateProgressBar, 200);
-}
-function initScrollEvents() {
-    const progressBar = document.querySelector('.progress-bar .bar');
-    const circles = document.querySelectorAll('.circle-container');
-
-    const updateProgressBar = () => {
-        const progressBarTop = progressBar.getBoundingClientRect().top;
-
-        circles.forEach(circle => {
-            const currentColor = circle.dataset.color;
-            const circleRect = circle.getBoundingClientRect();
-            const circleCenter = circleRect.top + (circleRect.height / 2);
-
-            const yearContainer = circle.closest('.year-container');
-            const yearTitle = yearContainer ? yearContainer.querySelector('.year-title') : null;
-
-            if (progressBarTop <= circleCenter) {
-                // 프로그레스바(.bar)가 circle의 중심보다 위에 있을 때: 활성화
-                circle.classList.add('active');
-                circle.style.borderColor = currentColor;
-                circle.style.color = currentColor;
-                if (yearTitle) yearTitle.style.color = currentColor;
-            } else {
-                // 프로그레스바(.bar)가 circle의 중심 아래 있을 때: 비활성화(회색)
-                circle.classList.remove('active');
-                circle.style.borderColor = '#262626';
-                circle.style.color = '#262626';
-                if (yearTitle) yearTitle.style.color = '#262626';
-            }
-        });
-
-        // 프로그레스바 높이 업데이트 (안정적 계산법)
-        const rightSection = document.querySelector('.right-section');
-        const sectionRect = rightSection.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-
-        const totalScrollHeight = document.body.scrollHeight - viewportHeight;
-        const currentScroll = window.scrollY;
-        const scrollPercentage = currentScroll / totalScrollHeight;
-
-        progressBar.style.height = `${(1 - scrollPercentage) * sectionRect.height}px`;
-
-        // left-section 활성화 처리 (기존 유지)
-        const leftItems = document.querySelectorAll('.left-section__item');
-        const rightSections = document.querySelectorAll('.timeline-group');
-        const viewportTrigger = window.scrollY + viewportHeight * 0.9;
+        const viewportTrigger = window.scrollY + viewportHeight * 0.5;
 
         rightSections.forEach((section, index) => {
             const sectionTop = section.getBoundingClientRect().top + window.scrollY;
@@ -264,7 +200,7 @@ function initScrollEvents() {
 }
 
 
-// 좌측 h3 클릭 시 오른쪽 섹션 이동
+// 섹션 이동
 function attachH3ClickEvents() {
     const leftItems = document.querySelectorAll('.left-section__item');
     const rightSections = document.querySelectorAll('.timeline-group');
