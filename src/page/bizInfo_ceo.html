@@ -20,26 +20,26 @@
             <div class="sub-content__wrap">
                 <div class="inner-wrap">
                     <div class="bizInfo_ceo__container">
+                        <% 
+                        const ImageData=[{
+                            pc: 'https://placehold.co/512x705',
+                            mo: 'https://placehold.co/319x210',
+                        }] 
+                        %>
                         <div class="text-area">
                             <div class="bizInfo_ceo__title">
-                                <p class="bizInfo_ceo__title ceo-text font-head-xl font-bold">CEO</p>
+                                <p class="title font-head-xl font-bold">CEO</p>
                             </div>
-
-                            <!-- 모바일에서만 보이는 부제목과 이미지 컨테이너 -->
-                            <div class="mobile-content">
-                                <p class="subtitle font-head-md font-bold">고객이 있기에 우리가 있습니다.<br>고객과 함께 성장하는 최고의 DX 파트너가
-                                    되겠습니다.</p>
-                                <div class="mobile-image-container">
-                                    <img src="https://placehold.co/512x705" alt="CEO 현신균">
-                                </div>
+                            <p class="subtitle font-head-md font-bold">고객이 있기에 우리가 있습니다.<br>고객과 함께 성장하는 최고의 DX 파트너가 되겠습니다.</p>
+                    
+                            <div class="mobile-image">
+                                <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                                    jsonData : ImageData,
+                                    alt : '유통 산업 성장의 Key 최대 효율을 당성하는 성공 DX',
+                                    addClass: 'mobile-ceo-image' 
+                                }))%>
                             </div>
-
-                            <!-- PC에서만 보이는 부제목 -->
-                            <div class="pc-subtitle">
-                                <p class="subtitle font-head-md font-bold">고객이 있기에 우리가 있습니다.<br>고객과 함께 성장하는 최고의 DX 파트너가
-                                    되겠습니다.</p>
-                            </div>
-
+                    
                             <div class="bizInfo_ceo__description font-body-md">
                                 <p>IT 신기술을 통한 디지털전환(DX)은 기업 생존의 필수 수단이 됐습니다.<br>LG CNS는 기술 리더십에 기반한 DX전문 서비스로 고객 비즈니스의
                                     성공을 돕고 있습니다.</p>
@@ -50,13 +50,16 @@
                                 <p>LG CNS의 도전에 많은 관심과 응원 부탁드립니다.</p>
                             </div>
                             <div class="bizInfo_ceo__signature">
-                                <span class="bizInfo_ceo__signature font-body-lg">대표이사</span>
+                                <span class="role margin-right font-body-lg">대표이사</span>
                                 <span class="font-head-sm font-medium">현 신 균</span>
                             </div>
                         </div>
-                        <!-- PC에서만 보이는 이미지 컨테이너 -->
-                        <div class="pc-image-container">
-                            <img src="https://placehold.co/512x705" alt="CEO 현신균">
+                        <div class="pc-image">
+                            <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                                jsonData : ImageData,
+                                alt : '유통 산업 성장의 Key 최대 효율을 당성하는 성공 DX',
+                                addClass: 'pc-ceo-image' 
+                            }))%>
                         </div>
                     </div>
                 </div>

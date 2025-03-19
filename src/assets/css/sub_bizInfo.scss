@@ -48,12 +48,7 @@
     }
   }
 
-  // .bizInfo_ceo
   &ceo {
-    .mobile-content {
-      display: none;
-    }
-
     &__container {
       display: flex;
       align-items: center;
@@ -61,51 +56,51 @@
       margin: 0 auto;
       padding: calc(197 / 16 * 1rem) 0;
     }
-
-    &__title {
+  
+    .mobile-image {
+      display: none; /* PC에서는 숨김 */
+    }
+  
+    .title {
       margin-bottom: calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
     }
-
+  
     .subtitle,
     &__description {
       margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
     }
-
+  
     &__signature {
-      margin-right: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
+      display: flex;
+      align-items: center;
+      .role {
+        margin-right: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
+      }
     }
-
+  
     p {
       margin-bottom: 2rem;
     }
-
-    .mobile-image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin: 2rem 0;
-    }
-
+  
     @media #{$tablet} {
       &__container {
         flex-direction: column;
         padding: calc(80 / 16 * 1rem) 0;
-        .text-area {
-          width: 100%;
-          .subtitle {
-            word-break: keep-all;
-          }
-        }
       }
-
-      .pc-image-container,
-      .pc-subtitle {
-        display: none;
+      
+      .text-area {
+        width: 100%;
       }
-
-      .mobile-content {
-        display: block;
+      
+      .pc-image {
+        display: none; /* 모바일에서는 PC 이미지 숨김 */
+      }
+      
+      .mobile-image {
+        display: block; /* 모바일에서는 모바일 이미지 표시 */
+        width: 100%;
+        margin: 2rem 0;
+        text-align: center;
       }
     }
   }
