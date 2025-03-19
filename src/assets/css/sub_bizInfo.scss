@@ -295,6 +295,7 @@
   &history{
       // background-color: #000000;
       color: #fff;
+      // overflow: hidden;
 
       &__visual{
         // background-color: #000000;
@@ -303,23 +304,13 @@
       }
       
       &__sub-container{
-        position: relative;
-        background-color: #000000;
-
-        &::before{
-          content: "";
-          position: absolute;
-          top:0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: url(/src/assets/image/sub/bg_history_pc02.png); 
+          position: relative;
+          background-image: url(/src/assets/image/sub/bg_history_pc02.png);
           background-size: cover;
           background-repeat: no-repeat;
-          z-index: -2;
-          bottom: 0;
+          background-position: top left;
+          background-attachment: fixed; // ✅ 이 부분 추가
         }
-      }
 
 
       &__textarea {
@@ -348,8 +339,21 @@
         }
       }
 
+      .scroll-dim {
+        position: sticky; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 3; 
+        background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 15%, rgba(0, 0, 0, 0.00) 49.6%, rgba(0, 0, 0, 0.00) 75.5%, #000 100%);
+        
+        pointer-events: none; 
+    }
+
       
     &__scroll{
+      margin-top: -100vh;
       display: flex;
       gap: 16px;
       // justify-content: space-between;
@@ -364,10 +368,15 @@
         padding: 0;
       }
 
+
+
+
       .left-section{
         flex: 1 1 calc(400/16*1rem);
         position: sticky;
         top: calc(var(--spacing-mode1-vertical5-x-l)/16*1rem);
+        z-index: 4; 
+
         
         @media #{$phone}{
           width: 100%;
@@ -468,6 +477,7 @@
 
 
       .progress-bar{
+        // z-index: 4; 
         position: absolute;
         left: -1px;
         width: 4px;
@@ -479,28 +489,6 @@
         #A9D7E6 100%);
         overflow: hidden;
 
-        // .hide-bar{
-        //   position: absolute; 
-        //   background: #000;
-        //   z-index: 1;
-          
-        //   &:first-child{
-        //     top: 0;
-        //     left: 0;
-        //     width: 4px;
-        //     height: calc(50/16*1rem);
-        //   }
-        // }
-
-        // .hide-bar2{
-        //   position: absolute; 
-        //   background: #000;
-        //   z-index: 1;
-        //   bottom: 0;
-        //   left: -1;
-        //   width: 10px;
-        //   height: calc(333/16*1rem);
-        // }
 
         .bar{
           position: absolute;
