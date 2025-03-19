@@ -334,19 +334,6 @@
         flex-direction: column;
         justify-content: center; 
 
-        // ::before{
-        //   content: "";
-        //   position: absolute;
-        //   top: 0;
-        //   left: 0;
-        //   width: 100%;
-        //   height: 100%;
-        //   background-image: url(/src/assets/image/sub/bg_history_pc01.png); 
-        //   background-size: cover;
-        //   background-repeat: no-repeat;
-        //   z-index: -1;
-        // }
-
         @media #{$phone}{
           display: none;
         }
@@ -361,22 +348,6 @@
         }
       }
 
-
-      // &__scroll::before{
-      //   content: "";
-      //   position: fixed;
-      //   top:0;
-      //   left: 0;
-      //   width: 100%;
-      //   height: 100%;
-      //   background-image: url(/src/assets/image/sub/bg_history_pc02.png); 
-      //   background-size: cover;
-      //   background-repeat: no-repeat;
-      //   z-index: -2;
-      //   bottom: 0;
-      // }
-
-  
       
     &__scroll{
       display: flex;
@@ -503,8 +474,8 @@
         height: 100%;
         background: linear-gradient(to bottom, 
         #F729C1 0%, 
-        #E156E2 35%, 
-        #C19DF4 65%, 
+        #E54DDC 35%, 
+        #C591F7 65%, 
         #A9D7E6 100%);
         overflow: hidden;
 
@@ -582,17 +553,14 @@
         }
 
         .year-container{
-          // display: flex;
-          // align-items: center;
           position: relative;
-          // margin-left: calc(var(--spacing-mode1-horizontal6-x-l)/-16*1rem);
-          // margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l)/16*1rem);
+
 
           @media #{$tablet}{
             // margin-left: calc(var(--spacing-mode1-horizontal4-x-l)/-16*1rem);
           }
           
-          span{
+          .year-title{
             display:contents;
             // color: #F729C1;
             font-size: calc(var(--typo-pc-size-head-2xl)/16*1rem);
@@ -607,7 +575,8 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            border: 2px solid var(--colorCM-all-fill-fill-default10);
+            border: 2.5px solid  #262626;
+
 
             &::before {
               content: "";
@@ -615,18 +584,21 @@
               display: block;
               width: 16px;
               height: 16px;
-              background: var(--colorCM-all-fill-fill-default10);
+              background:  #262626;
               border-radius: 50%;
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
+
             }
 
             &.active {
-              border-color: #E156E2;
+              border-color:  currentColor;
               box-shadow:  0 0 8px;
+              box-shadow:  currentColor 0 0 20px 3px;
+
               &::before {
-                background-color: #E156E2;
+                background-color: currentColor;
               }
             }
 
@@ -639,37 +611,6 @@
             @media #{$tablet}{
             margin-right: calc(var(--spacing-mode1-horizontal4-x-l) / 16* 1rem);
             }
-
-            //엘리먼트 제거 ㅜㅠ
-            // .outer-glow {
-            //   // width: 36px;
-            //   // height: 36px;
-            //   // background-color: #F729C1;
-            //   opacity: 0.5;
-            //   border-radius: 50%;
-            //   position: absolute;
-            //   // filter: blur(12px); 
-            // }
-            
-            // .outer-circle {
-            //   width: 26px;
-            //   height: 26px;
-            //   background-color: black;
-            //   // border: 2px solid #F729C1;
-            //   border-radius: 50%;
-            //   position: absolute;
-            //   display: flex;
-            //   align-items: center;
-            //   justify-content: center;
-            // }
-
-            
-            // .inner-circle {
-            //   width: 15px; /* 7.5(radius) * 2 */
-            //   height: 15px;
-            //   // background-color: #F729C1;
-            //   border-radius: 50%;
-            // }
           }
         }
 

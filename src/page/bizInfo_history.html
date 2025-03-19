@@ -71,17 +71,17 @@
     </div>
 
     <script>
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     fetch('/assets/data/timeline.json')
         .then(res => res.json())
         .then(data => {
             const timelineContainer = document.getElementById('right-section__item');
 
             const colorRanges = {
-                "data-2020s": ["#F729C1", "#E156E2"],
-                "data-2010s": ["#E156E2", "#C19DF4"],
-                "data-2000s": ["#C19DF4", "#B2C0EC"],
-                "data-1900s": ["#B2C0EC", "#A9D7E6"],
+                "data-2020s": ["#F729C1", "#E54DDC"],
+                "data-2010s": ["#E54DDC", "#C591F7"],
+                "data-2000s": ["#C591F7", "#B7B4EF"],
+                "data-1900s": ["#B7B4EF", "#A9D7E6"],
             };
 
             const sortedData = [
@@ -111,10 +111,11 @@
                             return `
                                 <div class="timeline-year">
                                     <div class="year-container">
-                                        <div class="circle-container">
+                                            <div class="circle-container" data-color="${currentColor}"></div>
+                                    <span class="year-title" data-color="${currentColor}">${yearItem.year}</span>
+                                            </div>
+                                            
                                         </div>
-                                        <span class="year-title" style="color: ${currentColor};">${yearItem.year}</span>
-                                    </div>
                                     <ul class="events">
                                         ${yearItem.events.map(event => `
                                             <li class="event-item">
@@ -139,46 +140,57 @@
         .catch(err => console.error("데이터 로딩 오류:", err));
 });
 
-// 스크롤 이벤트 함수
 function initScrollEvents() {
-    const scrollWrap = document.querySelector('.right-section');
     const progressBar = document.querySelector('.progress-bar .bar');
     const circles = document.querySelectorAll('.circle-container');
-    const leftItems = document.querySelectorAll('.left-section__item');
-    const rightSections = document.querySelectorAll('.timeline-group');
 
     const updateProgressBar = () => {
-        const scrollY = window.scrollY;
-        const viewportHeight = window.innerHeight;
-
-        const scrollWrapTop = scrollWrap.offsetTop;
-        const scrollWrapBottom = scrollWrapTop + scrollWrap.offsetHeight;
-        const scrollPosition = scrollY + viewportHeight / 2;
+        const progressBarTop = progressBar.getBoundingClientRect().top;
 
         circles.forEach(circle => {
-            const circleTop = circle.getBoundingClientRect().top + scrollY;
-            circle.classList.toggle('active', scrollPosition >= circleTop);
+            const currentColor = circle.dataset.color;
+            const circleRect = circle.getBoundingClientRect();
+            const circleBottom = circleRect.bottom; // circle의 하단 기준
+
+            const yearContainer = circle.closest('.year-container');
+            const yearTitle = yearContainer ? yearContainer.querySelector('.year-title') : null;
+
+            if (progressBarTop <= circleBottom) {
+                // 프로그레스바가 circle에 아직 닿아 있거나 덮고 있을 때 (비활성화: 회색)
+                circle.classList.remove('active');
+                circle.style.borderColor = '#262626';
+                circle.style.color = '#262626';
+                if (yearTitle) yearTitle.style.color = '#262626';
+            } else {
+                // 프로그레스바가 circle에서 완전히 벗어난 후 (활성화)
+                circle.classList.add('active');
+                circle.style.borderColor = currentColor;
+                circle.style.color = currentColor;
+                if (yearTitle) yearTitle.style.color = currentColor;
+            }
         });
 
-        // 프로그레스바 높이 업데이트
-        const firstCircleTop = circles[0].getBoundingClientRect().top + scrollY;
-        const lastCircleTop = circles[circles.length - 1].getBoundingClientRect().top + scrollY;
-        const totalHeight = lastCircleTop - firstCircleTop;
+        // 프로그레스바 높이 업데이트 (기존 유지)
+        const rightSection = document.querySelector('.right-section');
+        const sectionRect = rightSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
 
-        if (scrollPosition >= firstCircleTop && scrollPosition <= lastCircleTop) {
-            progressBar.style.height = `${lastCircleTop - scrollPosition}px`;
-        } else if (scrollPosition > lastCircleTop) {
-            progressBar.style.height = '0px';
-        } else {
-            progressBar.style.height = `${totalHeight}px`;
-        }
+        const totalScrollHeight = document.body.scrollHeight - viewportHeight;
+        const currentScroll = window.scrollY;
+        const scrollPercentage = currentScroll / totalScrollHeight;
 
-        // left-section__item 활성화 업데이트
+        progressBar.style.height = `${(1 - scrollPercentage) * sectionRect.height}px`;
+
+        // left-section 활성화 처리 (기존 유지)
+        const leftItems = document.querySelectorAll('.left-section__item');
+        const rightSections = document.querySelectorAll('.timeline-group');
+        const viewportTrigger = window.scrollY + viewportHeight * 0.2;
+
         rightSections.forEach((section, index) => {
-            const sectionTop = section.getBoundingClientRect().top + scrollY;
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
             const sectionBottom = sectionTop + section.offsetHeight;
 
-            if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+            if (viewportTrigger >= sectionTop && viewportTrigger <= sectionBottom) {
                 leftItems.forEach(item => item.classList.remove('active'));
                 leftItems[index].classList.add('active');
             }
@@ -187,8 +199,70 @@ function initScrollEvents() {
 
     window.addEventListener('scroll', updateProgressBar);
     window.addEventListener('resize', updateProgressBar);
-    setTimeout(updateProgressBar, 200); // 초기 실행
+    setTimeout(updateProgressBar, 200);
 }
+function initScrollEvents() {
+    const progressBar = document.querySelector('.progress-bar .bar');
+    const circles = document.querySelectorAll('.circle-container');
+
+    const updateProgressBar = () => {
+        const progressBarTop = progressBar.getBoundingClientRect().top;
+
+        circles.forEach(circle => {
+            const currentColor = circle.dataset.color;
+            const circleRect = circle.getBoundingClientRect();
+            const circleCenter = circleRect.top + (circleRect.height / 2);
+
+            const yearContainer = circle.closest('.year-container');
+            const yearTitle = yearContainer ? yearContainer.querySelector('.year-title') : null;
+
+            if (progressBarTop <= circleCenter) {
+                // 프로그레스바(.bar)가 circle의 중심보다 위에 있을 때: 활성화
+                circle.classList.add('active');
+                circle.style.borderColor = currentColor;
+                circle.style.color = currentColor;
+                if (yearTitle) yearTitle.style.color = currentColor;
+            } else {
+                // 프로그레스바(.bar)가 circle의 중심 아래 있을 때: 비활성화(회색)
+                circle.classList.remove('active');
+                circle.style.borderColor = '#262626';
+                circle.style.color = '#262626';
+                if (yearTitle) yearTitle.style.color = '#262626';
+            }
+        });
+
+        // 프로그레스바 높이 업데이트 (안정적 계산법)
+        const rightSection = document.querySelector('.right-section');
+        const sectionRect = rightSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        const totalScrollHeight = document.body.scrollHeight - viewportHeight;
+        const currentScroll = window.scrollY;
+        const scrollPercentage = currentScroll / totalScrollHeight;
+
+        progressBar.style.height = `${(1 - scrollPercentage) * sectionRect.height}px`;
+
+        // left-section 활성화 처리 (기존 유지)
+        const leftItems = document.querySelectorAll('.left-section__item');
+        const rightSections = document.querySelectorAll('.timeline-group');
+        const viewportTrigger = window.scrollY + viewportHeight * 0.9;
+
+        rightSections.forEach((section, index) => {
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (viewportTrigger >= sectionTop && viewportTrigger <= sectionBottom) {
+                leftItems.forEach(item => item.classList.remove('active'));
+                leftItems[index].classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', updateProgressBar);
+    window.addEventListener('resize', updateProgressBar);
+    setTimeout(updateProgressBar, 200);
+}
+
 
 // 좌측 h3 클릭 시 오른쪽 섹션 이동
 function attachH3ClickEvents() {
