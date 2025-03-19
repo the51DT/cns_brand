@@ -469,7 +469,7 @@
 
       .progress-bar{
         position: absolute;
-        left: 0;
+        left: -1px;
         width: 4px;
         height: 100%;
         background: linear-gradient(to bottom, 
@@ -479,9 +479,28 @@
         #A9D7E6 100%);
         overflow: hidden;
 
-        @media #{$tablet}{
-          // height: 40020px;
-        }
+        // .hide-bar{
+        //   position: absolute; 
+        //   background: #000;
+        //   z-index: 1;
+          
+        //   &:first-child{
+        //     top: 0;
+        //     left: 0;
+        //     width: 4px;
+        //     height: calc(50/16*1rem);
+        //   }
+        // }
+
+        // .hide-bar2{
+        //   position: absolute; 
+        //   background: #000;
+        //   z-index: 1;
+        //   bottom: 0;
+        //   left: -1;
+        //   width: 10px;
+        //   height: calc(333/16*1rem);
+        // }
 
         .bar{
           position: absolute;
@@ -490,19 +509,20 @@
           background: var(--colorGL-all-gray900);
           position: absolute;
           bottom: 0;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            width: 4px;
+            height: 10px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            background-image: url('data:image/svg+xml,<svg width="2" height="1" viewBox="0 0 2 1" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 1C0.447754 1 0 0.552246 0 0V1H1ZM2 0C2 0.552246 1.55225 1 1 1H2V0Z" fill="%23262626"/></svg>');
+         }
         }
 
-        .bar::before {
-          content: '';
-          position: absolute;
-          top: -2px;
-          width: 4px;
-          height: 10px;
-          background-repeat: no-repeat;
-          background-size: contain;
-          display: block;
-          background-image: url('data:image/svg+xml,<svg width="2" height="1" viewBox="0 0 2 1" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 1C0.447754 1 0 0.552246 0 0V1H1ZM2 0C2 0.552246 1.55225 1 1 1H2V0Z" fill="%23262626"/></svg>');
-       }
       }
 
       &__item{

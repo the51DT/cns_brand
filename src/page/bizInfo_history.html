@@ -57,6 +57,8 @@
                         </div>
                         <div class="right-section">
                                 <div class="progress-bar">
+                                    <!-- <div class="hide-bar"></div>
+                                    <div class="hide-bar2"></div> -->
                                     <div class="bar"></div>
                                 </div>
                             <div class="right-section__item" id="right-section__item"></div>
@@ -80,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const colorRanges = {
                 "data-2020s": ["#F729C1", "#E54DDC"],
                 "data-2010s": ["#E54DDC", "#C591F7"],
-                "data-2000s": ["#C591F7", "#B7B4EF"],
+                "data-2000s": ["#C591F7", "#B7B4EF"], 
                 "data-1900s": ["#B7B4EF", "#A9D7E6"],
             };
 
@@ -137,10 +139,15 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(err => console.error("데이터 로딩 오류:", err));
 });
+
+
+
 function initScrollEvents() {
     const progressBar = document.querySelector('.progress-bar .bar');
     const circles = document.querySelectorAll('.circle-container');
     const rightSection = document.querySelector('.right-section');
+
+    
 
     const updateProgressBar = () => {
         const viewportHeight = window.innerHeight;
@@ -196,6 +203,7 @@ function initScrollEvents() {
 
     window.addEventListener('scroll', updateProgressBar);
     window.addEventListener('resize', updateProgressBar);
+    document.addEventListener('DOMContentLoaded', updateProgressBar);
     setTimeout(updateProgressBar, 200);
 }
 
