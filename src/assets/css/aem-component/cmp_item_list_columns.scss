@@ -37,6 +37,27 @@
             &.type-center {
                 justify-content: center;
             }
+            .item-list-icon {
+                background-image: var(--item-list-icon);
+                background-repeat: no-repeat;
+                background-position: center;
+                &.default {
+                    width: calc(48 / 16 * 1rem);
+                    height: calc(48 / 16 * 1rem);
+                }
+                &.large {
+                    width: calc(60 / 16 * 1rem);
+                    height: calc(60 / 16 * 1rem);
+                    @media #{$phone} {
+                        width: calc(48 / 16 * 1rem);
+                        height: calc(48 / 16 * 1rem);
+                    }
+                }
+                &.x-large {
+                    width: calc(78 / 16 * 1rem);
+                    height: calc(78 / 16 * 1rem);
+                }
+            }
         }
         .item-info__wrap {
             display: flex;

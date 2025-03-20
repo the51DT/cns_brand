@@ -21,75 +21,77 @@
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
-                <div class="layout_col2">
-                    <div>
-                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
-                            titleText: '2023~2024 지속가능경영보고서',
-                        })) %>
-                    </div>
-                    <div>
-                        <%
-                            const esgData = [
-                                {
-                                    id: 0,
-                                    pcImg: 'https://placehold.co/1168x876',
-                                    descText: `LG CNS는 2017년부터 매년 지속가능경영보고서를 발간해 2024년이 여덟 번째입니다.<br>
-                                    <br>
-                                    이번 보고서는 LG CNS가 고객의 Digital Business Innovator로서, IT기술 리더십과 전문 역량을 기반으로 어떻게 고객의 디지털 전환(DX, Digital Transformation)을 선도하고 있는지와 ESG 영역에서의 지속가능경영 활동과 성과를 소개하고자 했습니다.<br>
-                                    <br>
-                                    LG CNS는 DX 전문기업으로서 실력으로 정정당당하게 경쟁하는 정도경영과 기업의 사회적 책임에도 소홀함이 없도록 최선을 다하겠습니다.`,
-                                    button1NameArrow: '다운로드',
-                                }
-                            ]
-                        %>
-                        <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
-                            itemCount: 1,
-                            jsonData: esgData,
-                        })) %>
-                    </div>
+                <div class="bizInfo_esg__container">
+                    <div class="layout_col2">
+                        <div>
+                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                                titleText: '2023~2024 지속가능경영보고서',
+                            })) %>
+                        </div>
+                        <div>
+                            <%
+                                const esgData = [
+                                    {
+                                        id: 0,
+                                        pcImg: 'https://placehold.co/1168x876',
+                                        descText: `LG CNS는 2017년부터 매년 지속가능경영보고서를 발간해 2024년이 여덟 번째입니다.<br>
+                                        <br>
+                                        이번 보고서는 LG CNS가 고객의 Digital Business Innovator로서, IT기술 리더십과 전문 역량을 기반으로 어떻게 고객의 디지털 전환(DX, Digital Transformation)을 선도하고 있는지와 ESG 영역에서의 지속가능경영 활동과 성과를 소개하고자 했습니다.<br>
+                                        <br>
+                                        LG CNS는 DX 전문기업으로서 실력으로 정정당당하게 경쟁하는 정도경영과 기업의 사회적 책임에도 소홀함이 없도록 최선을 다하겠습니다.`,
+                                        button1NameArrow: '다운로드',
+                                    }
+                                ]
+                            %>
+                            <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
+                                itemCount: 1,
+                                jsonData: esgData,
+                            })) %>
+                        </div>
+                    </div>  
+                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                        titleText: '2023~2024 지속가능경영보고서',
+                    })) %>
+                    <% 
+                    const buttonItemListData = [
+                        {
+                            id: 0,
+                            title: '2022~2023<br>지속가능경영보고서'
+                        },
+                        {
+                            id: 1,
+                            title: '2022~2023<br>지속가능경영보고서'
+                        },
+                        {
+                            id: 2,
+                            title: '2022~2023<br>지속가능경영보고서'
+                        },
+                        {
+                            id: 3,
+                            title: '2022~2023<br>지속가능경영보고서'
+                        },
+                        {
+                            id: 4,
+                            title: '2022~2023<br>지속가능경영보고서'
+                        },
+                        {
+                            id: 5,
+                            title: '2022~2023<br>지속가능경영보고서'
+                        },
+                        {
+                            id: 6,
+                            title: '2022~2023<br>지속가능경영보고서'
+                        },
+                    ]
+                    %>
+                    <%- include('src/component/cmp_button_item_list.html', Object.assign({}, locals, {
+                        itemCount: 7,
+                        jsonData: buttonItemListData
+                    })) %>
                 </div>
-
-                <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
-                    titleText: '2023~2024 지속가능경영보고서',
-                })) %>
-                <% 
-                const buttonItemListData = [
-                    {
-                        id: 0,
-                        title: '2022~2023<br>지속가능경영보고서'
-                    },
-                    {
-                        id: 1,
-                        title: '2022~2023<br>지속가능경영보고서'
-                    },
-                    {
-                        id: 2,
-                        title: '2022~2023<br>지속가능경영보고서'
-                    },
-                    {
-                        id: 3,
-                        title: '2022~2023<br>지속가능경영보고서'
-                    },
-                    {
-                        id: 4,
-                        title: '2022~2023<br>지속가능경영보고서'
-                    },
-                    {
-                        id: 5,
-                        title: '2022~2023<br>지속가능경영보고서'
-                    },
-                    {
-                        id: 6,
-                        title: '2022~2023<br>지속가능경영보고서'
-                    },
-                ]
-            %>
-            <%- include('src/component/cmp_button_item_list.html', Object.assign({}, locals, {
-                itemCount: 7,
-                jsonData: buttonItemListData
-            })) %>
             </div>
         </div>
+        <%- include('src/_inc/footer.html') %>
     </div>
 </body>
 </html>

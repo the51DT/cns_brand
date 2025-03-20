@@ -18,7 +18,42 @@
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
                     <%- include('src/component/cmp_form.html') %>  
-
+                    <p class="guide-title-h3 mt-10">cmp-input</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <%
+                            const inputData = [
+                                {
+                                    title: { text: "타이틀", required: "true" },
+                                    inputData: [
+                                        {
+                                            type: "text",
+                                            placeholder: "플레이스홀더1",
+                                            value: "기본값"
+                                        },
+                                        {
+                                            type: "tel",
+                                            placeholder: "플레이스홀더2",
+                                        },
+                                    ]
+                                },
+                                {
+                                    title: { text: "셀렉트" },
+                                    inputData: [
+                                        {
+                                            type: "select",
+                                            option: [
+                                                "옵션1",
+                                                "옵션2"
+                                            ]
+                                        },
+                                    ]
+                                },
+                            ]
+                        %>
+                        <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                            jsonData: inputData,
+                        })) %>
+                    </div>
                 </div>
             </div>
         </div>

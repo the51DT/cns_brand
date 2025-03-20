@@ -1,109 +1,106 @@
 .bizInfo_ {
   &compOvw {
     .sub-visual__wrap {
-        margin-bottom: calc(40 / 16 * 1rem);
+      margin-bottom: calc(40 / 16 * 1rem);
     }
     .cmp-dash-list {
-        margin-bottom: calc(200 / 16 * 1rem);
-        @media #{$tablet} {
-          margin-bottom: calc(160 / 16 * 1rem);
-        }
-        @media #{$tabletMini} {
-          margin-bottom: calc(120 / 16 * 1rem);
-        }
-        @media #{$phone} {
-          margin-bottom: calc(80 / 16 * 1rem);
-        }
+      margin-bottom: calc(200 / 16 * 1rem);
+      @media #{$tablet} {
+        margin-bottom: calc(160 / 16 * 1rem);
+      }
+      @media #{$tabletMini} {
+        margin-bottom: calc(120 / 16 * 1rem);
+      }
+      @media #{$phone} {
+        margin-bottom: calc(80 / 16 * 1rem);
+      }
     }
     .cmp_image-item-column {
-        margin-bottom: calc(160 / 16 * 1rem);
-        @media #{$tablet} {
-          margin-bottom: calc(120 / 16 * 1rem);
-        }
-        @media #{$tabletMini} {
-          margin-bottom: calc(100 / 16 * 1rem);
-        }
-        @media #{$phone} {
-          margin-bottom: calc(80 / 16 * 1rem);
-        }
+      margin-bottom: calc(160 / 16 * 1rem);
+      @media #{$tablet} {
+        margin-bottom: calc(120 / 16 * 1rem);
+      }
+      @media #{$tabletMini} {
+        margin-bottom: calc(100 / 16 * 1rem);
+      }
+      @media #{$phone} {
+        margin-bottom: calc(80 / 16 * 1rem);
+      }
     }
   }
   // .bizInfo_enviroMgmt
   &enviroMgmt {
     .cmp_image-item-2col,
     .cmp_image-item-column:not(:last-child) {
-        margin-bottom: calc(200 / 16 * 1rem);
-        @media #{$pcMiddle} {
-          margin-bottom: calc(160 / 16 * 1rem);
-        }
-        @media #{$tablet} {
-          margin-bottom: calc(120 / 16 * 1rem);
-        }
-        @media #{$tabletMini} {
-          margin-bottom: calc(100 / 16 * 1rem);
-        }
-        @media #{$phone} {
-          margin-bottom: calc(80 / 16 * 1rem);
-        }
+      margin-bottom: calc(200 / 16 * 1rem);
+      @media #{$pcMiddle} {
+        margin-bottom: calc(160 / 16 * 1rem);
+      }
+      @media #{$tablet} {
+        margin-bottom: calc(120 / 16 * 1rem);
+      }
+      @media #{$tabletMini} {
+        margin-bottom: calc(100 / 16 * 1rem);
+      }
+      @media #{$phone} {
+        margin-bottom: calc(80 / 16 * 1rem);
+      }
     }
   }
 
-  // .bizInfo_ceo
   &ceo {
-    .mobile-content{
-      display: none;
-    }
-
-    &__container{
+    &__container {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin: 0 auto;
       padding: calc(197 / 16 * 1rem) 0;
     }
-
-    &__title{
-      margin-bottom: calc(var( --spacing-mode1-vertical-m)/16*1rem);
+  
+    .mobile-image {
+      display: none; /* PC에서는 숨김 */
     }
-
-    .subtitle, &__description{
-      margin-bottom: calc(var(--spacing-mode1-vertical3-x-l)/16*1rem);
+  
+    .title {
+      margin-bottom: calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
     }
-
-    &__signature{
-      margin-right: calc(var(--typo-pc-size-body-md)/16*1rem);
+  
+    .subtitle,
+    &__description {
+      margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
     }
-
-    p{
+  
+    &__signature {
+      display: flex;
+      align-items: center;
+      .role {
+        margin-right: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
+      }
+    }
+  
+    p {
       margin-bottom: 2rem;
     }
-
-    .mobile-image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin: 2rem 0;
-    }
-
-    @media #{$tablet}{
-      &__container{
+  
+    @media #{$tablet} {
+      &__container {
         flex-direction: column;
         padding: calc(80 / 16 * 1rem) 0;
-        .text-area {
-          width: 100%;
-          .subtitle {
-            word-break: keep-all;
-          }
-        }
       }
-
-      .pc-image-container, .pc-subtitle{
-        display: none;
+      
+      .text-area {
+        width: 100%;
       }
-
-      .mobile-content{
-        display: block;
+      
+      .pc-image {
+        display: none; /* 모바일에서는 PC 이미지 숨김 */
+      }
+      
+      .mobile-image {
+        display: block; /* 모바일에서는 모바일 이미지 표시 */
+        width: 100%;
+        margin: 2rem 0;
+        text-align: center;
       }
     }
   }
@@ -111,38 +108,38 @@
   // .bizInfo_compliance
   &compliance {
     .sub-content__wrap {
-        .inner-wrap {
-          padding-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-        }
+      .inner-wrap {
+        padding-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+      }
     }
 
     .compliance-preface {
-        color: var(--colorGL-all-gray700);
-        font-weight: var(--typo-pc-weight-bold700);
-        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
+      color: var(--colorGL-all-gray700);
+      font-weight: var(--typo-pc-weight-bold700);
+      margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
 
-        @media #{$phone} {
-          margin-bottom: calc(32 / 16 * 1rem);
-        }
+      @media #{$phone} {
+        margin-bottom: calc(32 / 16 * 1rem);
+      }
     }
 
     .compliance-text p {
-        margin-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .compliance-ceo {
-        margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+      margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
 
-        .compiliance-ceo-text {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
-        }
+      .compiliance-ceo-text {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
+      }
 
-        .compliance-ceo-name {
-          font-weight: 600;
-        }
+      .compliance-ceo-name {
+        font-weight: 600;
+      }
     }
   }
 
@@ -172,94 +169,89 @@
       td {
         padding: calc(28.5 / 16 * 1rem) calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
       }
-      
+
       td:nth-child(2) {
         text-align: left;
       }
-      
+
       td:nth-child(3) {
-        color: var(--text-text-tertiary, #6B6B6B);
+        color: var(--text-text-tertiary, #6b6b6b);
       }
-      
+
       td:nth-child(4) {
         position: relative;
         text-align: center;
-        
+
         a {
           display: inline-block;
           text-align: center;
         }
-        
+
         button {
           vertical-align: middle;
           display: inline-block;
         }
       }
-      
+
       tr:last-child td {
-        border-bottom: 1px solid var(--stroke-stroke-default-1, #1A1A1A);
+        border-bottom: 1px solid var(--stroke-stroke-default-1, #1a1a1a);
       }
     }
-    
-      @media #{$tabletMini} {
-        .table-container {
-          overflow-x: hidden; 
+
+    @media #{$tabletMini} {
+      .table-container {
+        overflow-x: hidden;
+      }
+
+      .data-table {
+        min-width: auto;
+        display: block;
+        border-top: 2px solid var(--colorCM-all-stroke-stroke-default1);
+
+        thead {
+          display: none;
         }
-        
-        .data-table {
-          min-width: auto; 
+
+        tbody,
+        tr {
           display: block;
-          border-top: 2px solid var(--colorCM-all-stroke-stroke-default1);
+          width: 100%;
+        }
 
-          thead {
-            display: none;
-          }
-          
+        tr {
+          border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
+          padding: 16px;
+        }
 
-          tbody, tr {
-            display: block;
-            width: 100%;
-          }
-          
+        tr:last-child {
+          border-bottom: 1px solid var(--stroke-stroke-default-1, #1a1a1a);
+        }
 
-          tr {
-            border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
-            padding: 16px;
-          }
-          
-          tr:last-child {
-            border-bottom: 1px solid var(--stroke-stroke-default-1, #1A1A1A);
-          }
-          
+        td {
+          display: block;
+          border: none;
+          text-align: left !important;
+          padding: 0;
+          padding-bottom: 8px;
+        }
 
-          td {
-            display: block;
-            border: none;
-            text-align: left !important;
-            padding: 0;
-            padding-bottom: 8px;
-          }
-          
-          td:first-child {
-            display: none;
-          }
-          
+        td:first-child {
+          display: none;
+        }
 
-          td:nth-child(4) {
-            text-align: left !important;
-            padding-bottom: 0;
-            padding-top: 8px;
-          }
+        td:nth-child(4) {
+          text-align: left !important;
+          padding-bottom: 0;
+          padding-top: 8px;
+        }
 
-          tr:last-child td {
-            border-bottom: none;
-
+        tr:last-child td {
+          border-bottom: none;
         }
       }
     }
   }
   &humanRights {
-    
   }
 
   //.bizInfo_financial
@@ -354,6 +346,11 @@
         z-index: 3;
         font-size: calc(var(--typo-pc-size-head-sm) / 16 * 1rem);
         line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
+      }
+
+      i{
+        position: absolute;
+        z-index: 4;
       }
     }
   
@@ -641,7 +638,7 @@
   }
 
 
-  &mgmtInfo{
+  &mgmtInfo {
     .cmp-accordion {
       .accordion-list {
         .terms_orderList {
@@ -676,8 +673,8 @@
         }
         @media #{$phone} {
           .btn {
-              width: 100%;
-            }
+            width: 100%;
+          }
         }
       }
       &:last-child {
@@ -697,66 +694,37 @@
         }
         @media #{$phone} {
           .btn {
-              width: 100%;
-            }
+            width: 100%;
+          }
         }
       }
-    }
-    .jungdo-container {
-      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-      @media #{$phone} {
-        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-      }
-      &__image {
-        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-        @media #{$phone} {
-          margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-        }
-      }
-      &__title {
-        margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-      }
-      &__subtitle {
-        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-        @media #{$phone} {
-          margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-        }
-      }
-    }
-
-    .subtitle-biz {
-      &__jungdo {
-        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
-        @media #{$tabletMini} {
-          margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
-        }
-        @media #{$phone} {
-          margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-        }
-      }
-      &__justice {
-        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-      }
-
-
     }
     .layout_col2 {
       @media #{$phone} {
         margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
       }
     }
+    .detail-text {
+      margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
+      @media #{$tabletMini} {
+        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
+      }
+      @media #{$phone} {
+        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+      }
+      &-small-margin {
+        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+      }
+    }
   }
 
   &growFair {
-    .detail_text {
+    .detail-text {
       margin-bottom: calc(60 / 16 * 1rem);
       @media #{$tabletMini} {
         margin-bottom: calc(32 / 16 * 1rem);
       }
-      &__open {
-        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);;
-      }
-      &__specialist {
+      &-specialist {
         margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
       }
     }
@@ -784,6 +752,23 @@
         margin-bottom: 0;
       }
     }
+    .data-table td {
+      position: relative;
+      ul li {
+        position: relative;
+        padding-left: calc(27 / 16 * 1rem);
+        &::before {
+          content: '';
+          position: absolute;
+          width: calc(4 / 16 * 1rem);
+          height: calc(4 / 16 * 1rem);
+          background-color: #1a1a1a;
+          border-radius: 50%;
+          top: calc(10.5 / 16 * 1rem);
+          left: calc(12.5 / 16 * 1rem);
+        }
+      }
+    }
   }
 
   // LGWay 페이지 마크업을 위한 임시 스타일 적용
@@ -795,31 +780,50 @@
       align-items: center;
       border-bottom: #fff solid 1px; // 영역구분 확인용
       padding: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem) 0;
+      @media #{$tabletMini} {
+        padding-top: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+        align-items: flex-start;
+      }
+      @media #{$phone} {
+        padding-top: calc((var(--spacing-mode1-vertical5-x-l)) / 16 * 1rem);
+      }
+      &--01 {
+        // bg를 위한 임시 클래스 및 스타일
+        @media #{$tabletMini} {
+          overflow: hidden;
+          padding-top: calc(calc(var(--spacing-mode1-vertical7-x-l) + 80) / 16 * 1rem);
+        }
+        @media #{$phone} {
+          padding-top: calc(calc(var(--spacing-mode1-vertical5-x-l) + 80) / 16 * 1rem);
+        }
+        &:before {
+          display: block;
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: calc(2241 / 16 * 1rem);
+          height: calc(1250 / 16 * 1rem);
+          background: url('/src/assets/image/sub/bg_lgway_sec01_pc.png') no-repeat center / cover;
+          @media #{$tabletMini} {
+            top: initial;
+            left: 50%;
+            right: initial;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: calc(702.9 / 16 * 1rem);
+            height: calc(392 / 16 * 1rem);
+            background: url('/src/assets/image/sub/bg_lgway_sec01_mo.png') no-repeat center / cover;
+          }
+        }
+        .inner-wrap {
+          z-index: 1;
+        }
+      }
+      
       &.full-sec {
         position: relative;
         height: 100vh;
-        .full-sec__pagination {
-          position: absolute;
-          right: calc(60 / 16 * 1rem); // 분기점마다 다름
-          display: flex;
-          align-items: flex-end;
-          flex-direction: column;
-          gap: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
-          &--item { // 선이 이미지로 들어가있음..
-            padding: calc(5 / 16 * 1rem) calc(19 / 16 * 1rem);
-            border: calc(1 / 16 * 1rem) solid var(--colorGL-all-white100);
-            border-radius: calc(50 / 16 * 1rem);
-            &:not(.on) {
-              font-size: 0;
-              width: calc(10 / 16 * 1rem);
-              height: calc(10 / 16 * 1rem);
-              padding: 0;
-            }
-          }
-          @media #{$phone} {
-            display: none;
-        }
-        }
       }
       &.last-sec {
         margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
@@ -837,6 +841,119 @@
           width: fit-content;
         }
       }
+      .button__wrap {
+        &--scroll-down {
+          position: absolute;
+          left: 50%;
+          bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+          transform: translateX(-50%);
+          @media #{$phone} {
+            bottom: calc(40 / 16 * 1rem);
+          }
+          .ico {
+            @media #{$phone} {
+              width: calc(40 / 16 * 1rem);
+              min-width: calc(40 / 16 * 1rem);
+              height: calc(40 / 16 * 1rem);
+            }
+          }
+        }
+      }
+    }
+    &__container {
+      position: relative;
+    }
+    .full-sec__pagination {
+      position: fixed;
+      right: calc(60 / 16 * 1rem); // 분기점마다 다름
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      gap: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+      opacity: 0;
+      z-index: 12;
+      &.is-active {
+        opacity: 1;
+      }
+      &.is-last {
+        position: absolute;
+        top: auto;
+        bottom: calc(100vh / 2);
+        opacity: 1;
+        transform: translateY(0);
+      }
+      &--item { // 선이 이미지로 들어가있음..
+        padding: calc(5 / 16 * 1rem) calc(19 / 16 * 1rem);
+        border: calc(1 / 16 * 1rem) solid var(--colorGL-all-white100);
+        border-radius: calc(50 / 16 * 1rem);
+        &:not(.is-active) {
+          font-size: 0;
+          width: calc(10 / 16 * 1rem);
+          height: calc(10 / 16 * 1rem);
+          padding: 0;
+        }
+      }
+      @media #{$phone} {
+        display: none;
+      }
+    }
+    .full-sec__img {
+      position: fixed;
+      top: 0;
+      right: calc(57 / 16 * 1rem);
+      z-index: 0;
+      width: 64.453125%;
+      height: 100%;
+      will-change: transform, opacity;
+      opacity: 0;
+      transition: transform 0.3s ease-out;
+      &.is-active {
+        opacity: 1;
+        transition: transform 0.3s ease-out, opacity 0.5s ease-in-out;
+      }
+      &.is-last {
+        position: absolute;
+        bottom: 0;
+        top: auto;
+        // & > div {
+        //   top: auto;
+        //   bottom: 0;
+        // }
+      }
+      & > div {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1652 / 2030;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+        &.is-active {
+          opacity: 1;
+          transition-delay: 0s;
+        }
+      }
+      &--01 {
+        background: url('/src/assets/image/sub/img_history_sec02_pc.png') no-repeat 100% center / contain;
+        @media #{$tabletMini} {
+          background: url('/src/assets/image/sub/img_history_sec02_mo.png') no-repeat center 100% / contain;
+        }
+      }
+      &--02 {
+        background: url('/src/assets/image/sub/img_history_sec03_pc.png') no-repeat 100% center / contain;
+        @media #{$tabletMini} {
+          background: url('/src/assets/image/sub/img_history_sec03_mo.png') no-repeat center 100% / contain;
+        }
+      }
+      &--03 {
+        background: url('/src/assets/image/sub/img_history_sec04_pc.png') no-repeat 100% center / contain;
+        @media #{$tabletMini} {
+          background: url('/src/assets/image/sub/img_history_sec04_mo.png') no-repeat center 100% / contain;
+        }
+      }
     }
     &__textarea { // 텍스트 간 간격 임시 잡기
       .font-head-lg {
@@ -848,6 +965,130 @@
       }
       .font-head-sm.font-medium {
         margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+      }
+      .button__wrap {
+        margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+        width: fit-content;
+        @media #{$phone} {
+          margin-top: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
+        }
+        .popupBtn {
+          padding: calc(20 / 16 * 1rem);
+          border-radius: 50%;
+          overflow: hidden;
+          border: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default3);
+          @media #{$phone} {
+            padding: calc(12 / 16 * 1rem);
+          }
+        }
+      }
+    }
+  }
+  &esg {
+    .layout_col2 {
+      margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+      @media #{$tablet} {
+        margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
+      }
+      @media #{$phone} {
+        margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
+      }
+      .cmp-wrap {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &irActivity {
+    
+    color: #1a1a1a;
+
+    select {
+      display: block;
+      font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
+      border: 1px solid #1a1a1a;
+      padding: 13px 16px 13px 20px;
+      border-radius: 50px;
+      margin-top: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
+    }
+    
+    &__event-container {
+      // display: flex;
+      // justify-content: space-between;
+      gap: calc(16/16*1rem);
+      grid-template-columns: auto calc(724 / 16 * 1rem);
+
+      @media #{$phone} {
+        // justify-content: none;
+        display: flex;
+        flex-direction: column;
+      }
+
+
+      .event-text{
+        .event-period {
+          font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
+          line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
+        }
+  
+        select{
+          margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l)/16*1rem);
+        }
+      }
+      .events {
+        display: flex;
+        flex-direction: column;
+        gap: calc(120 / 16 * 1rem);
+
+        @media #{$phone}{
+          margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge)/16*1rem);
+        }
+      }
+    }
+
+    .cmp-title__wrap {
+      margin-top: calc(80 / 16 * 1rem);
+    }
+
+    &__year-container {
+      display: flex;
+      margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+      // gap: calc(var(--spacing-mode1-horizontal2-x-l) / 16 * 1rem);
+
+      span {
+        font-size: calc(var(--typo-pc-size-head-md) / 16 * 1rem);
+      }
+      select {
+        margin: auto;
+        margin-left: calc(var(--spacing-mode1-horizontal2-x-l) / 16 * 1rem);
+      }
+    }
+
+    &__accodion{
+      .cmp-accordion .accordion-list li.is-active .accordion-content {
+        all: unset !important;
+        display: block !important;
+
+        padding: calc(20 / 16 * 1rem) calc(28 / 16 * 1rem) 0 calc(40 / 16 * 1rem) !important;
+        font-size: calc(var(--typo-pc-size-body-sm)/16*1rem);
+
+        span{
+          color: var(--colorGL-all-heritage-red600);
+          font-weight: bold;
+          margin-right: calc(8/16*1rem);
+        }
+        
+        strong{
+          margin-right: calc(12/16*1rem);
+        }
+
+        div:first-child{
+          margin-bottom: calc(8/16*1rem);
+        }
+
+        .button__wrap{
+          margin-top: calc(16/16*1rem);
+        }
       }
     }
   }

@@ -1,0 +1,40 @@
+.cmp-yearevent__month {
+  margin-bottom: 5rem;
+  color: #e5e5e5;
+  font-size: calc(var(--typo-pc-size-head-2xl) / 16 * 1rem);
+}
+.cmp-yearevent__month:active {
+  color: #a50034;
+}
+.cmp-yearevent__item {
+  padding-bottom: 2.5rem;
+}
+.cmp-yearevent__item:last-child {
+  padding-bottom: 0;
+}
+.cmp-yearevent__title {
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+.cmp-yearevent__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1.25rem;
+  border-bottom: 2px solid #e5e5e5;
+}
+.cmp-yearevent__details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 1.25rem;
+}
+.cmp-yearevent__label {
+  color: black;
+  margin-right: 1.25rem;
+  font-weight: 600;
+}
+.cmp-yearevent__value {
+  color: #6b6b6b;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <div class="cmp-wrap cmp-richtext">
+                        <b>b 태그 스타일</b> <br>
+                        <i>i 태그 스타일</i><br>
+                        <sup>sup 태그 스타일</sup><br>
+                        <sub>sub 태그 스타일</sub><br>
+                        <a href="#">a 태그 스타일</a><br>
+                        <h1>h1 태그 스타일</h1>
+                        <h2>h2 태그 스타일</h2>
+                        <h3>h3 태그 스타일</h3>
+                        <h4>h4 태그 스타일</h4>
+                        <h5>h5 태그 스타일</h5>
+                        <h6>h6 태그 스타일</h6>
+                        <p>p 태그 스타일</p>
+                        <blockquote>blockquote 태그 스타일</blockquote>
+                        <ul>
+                            <li>ul li 태그 스타일</li>
+                        </ul>
+                        <ol>
+                            <li>ol li 태그 스타일</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/assets/js/ui_common.js"></script>
+</body>
+</html>

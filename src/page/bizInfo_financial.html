@@ -238,6 +238,17 @@
                                     valueMax: '600',
                                  })) %>
                               </div>
+                              <div class="graph-container__wrap">
+                                 <span class="graph-title font-bold text-center font-body-lg">당기순이익</span>
+                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 4,
+                                    type: 'columnChart',
+                                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                                    series: ['212', '246', '328', '385', '464'],
+                                    categoryBarColor : '#850000',
+                                    valueMax: '600',
+                                 })) %>
+                              </div>
                            </div>
                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
                               titleText: '손익계산서',

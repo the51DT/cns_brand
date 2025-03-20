@@ -1,0 +1,36 @@
+<div class="cmp-yearevent">
+  <div class="cmp-yearevent__month font-extrabold">
+    <%- typeof month !=='undefined' ? month : '10월' %>
+  </div>
+
+  <ol class="cmp-yearevent__list">
+    <% const eventData=(typeof events !=='undefined' ? events : []); %>
+    <% if (Array.isArray(eventData) && eventData.length> 0) { %>
+      <% eventData.forEach(function(event){ %>
+        <li class="cmp-yearevent__item">
+          <div class="cmp-yearevent__title font-body-lg font-semibold">
+            <%= event.title %>
+          </div>
+          <ul class="cmp-yearevent__details">
+            <li class="font-body-md">
+              <strong class="cmp-yearevent__label">일정</strong>
+              <span class="cmp-yearevent__value">
+                <%= event.date %>
+              </span>
+            </li>
+            <li class="font-body-md">
+              <strong class="cmp-yearevent__label">장소</strong>
+              <span class="cmp-yearevent__value">
+                <%= event.location %>
+              </span>
+            </li>
+          </ul>
+        </li>
+        <% }); %>
+          <% } else { %>
+            <li class="font-body-sm">
+              등록된 이벤트가 없습니다.
+            </li>
+            <% } %>
+  </ol>
+</div>

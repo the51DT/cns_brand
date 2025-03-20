@@ -32,6 +32,12 @@
 @import 'aem-component/cmp_video.scss';
 @import 'aem-component/cmp_chart.scss';
 @import 'aem-component/cmp_text_image_cluster.scss';
+@import 'aem-component/cmp_year_event.scss';
+@import 'aem-component/cmp_seperator.scss';
+@import 'aem-component/cmp_sidebar.scss';
+@import 'aem-component/cmp_richitext.scss';
+@import 'aem-component/cmp_input.scss';
+
 /* icon */
 @import 'icon.scss';
 /* tailwind */

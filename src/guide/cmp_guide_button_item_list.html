@@ -21,7 +21,8 @@
                         <div class="cmp-exsample__wrap mt-3">
                             <!-- Title -->
                             <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                                teaserText1: 'buttonName 배열로 최대 2개 생성할 수 있으며 미정의 시 기본 다운로드 버튼 한 개만 생성됩니다.'
+                                teaserText1: `buttonName 배열로 최대 3개 생성할 수 있으며 미정의 시 기본 다운로드 버튼 한 개만 생성됩니다.<br>
+                                버튼이 3개일 시 itemType: 3buttons를 추가해야 tabletMini 분기에서 레이아웃이 정상적으로 표시됩니다.`
                             })) %>  
                             <!-- //Title -->
                                 <!-- Component -->
@@ -69,14 +70,15 @@
                                         buttonName: [
                                             '연결 PDF',
                                             '별도 PDF',
-                                            '2개 초과시 생성X'
+                                            '다운로드'
                                         ]
                                     }
                                 ]
                             %>
                             <%- include('src/component/cmp_button_item_list.html', Object.assign({}, locals, {
                                 itemCount: 7,
-                                jsonData: buttonItemListData
+                                jsonData: buttonItemListData,
+                                itemType: '3buttons'
                             })) %>
                             <!-- //Component -->
                         </div>

@@ -254,6 +254,30 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_text_image_cluster.html"
+        },
+        {
+          "name": "Year Event",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_yearEvent.html"
+        },
+        {
+          "name": "Seperator",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_seperator.html"
+        },
+        {
+          "name": "Sidebar",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_sidebar.html"
+        },
+        {
+          "name": "Richtext",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_richtext.html"
         }
       ]
     },
@@ -400,6 +424,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_newsletter_detail.html"
+        },
+        {
+          "name": "MOA - 자료실",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "moa_resources.html"
         }
       ]
     },
@@ -504,6 +534,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "bizInfo_esg.html"
+        },
+        {
+          "name": "기업정보 - IR 활동",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_irActivity.html"
         }
       ]
     },

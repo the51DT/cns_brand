@@ -142,6 +142,55 @@
                         }) %>
                         <!-- //cmp_SpecList -->
                     </div>
+
+                    <p class="guide-title-h3 mt-10">SpecList styleType : type-num-sub : 기업정보 > IR 활동</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>SpecList styleType : type-num-sub 의 경우 margin-bottom:0 적용 (content.scss)</p>
+                        </li>
+                    </ul>
+                    <div class="cmp-exsample__wrap mt-10">
+                        <!-- cmp_SpecList -->
+                        <% const specListData4 = [ 
+                            { 
+                                id: 0,
+                                subTitle: '01',
+                                smallTitle: '일시',
+                                smallContent: [
+                                    '2025년 03월 20일 (목) 오전 09시 00분',
+                                ]
+                            },
+                            { 
+                                id: 1,
+                                subTitle: '02',
+                                smallTitle: '장소',
+                                smallContent: [
+                                    '서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀',
+                                ]
+                            },
+                        ]; 
+                        %>
+                        <%- include('src/component/cmp_SpecList.html', {
+                            itemCount: 4,
+                            jsonData: specListData4,
+                            styleType: 'type-num-sub',
+                        }) %>
+                        <!-- //cmp_SpecList -->
+                        <div class="button__wrap align-left mt-4">
+                            <button type="button" class="btn btn-line">
+                                다운로드
+                                <i class="ico icon-download-bl24"></i>
+                            </button>
+                            <button type="button" class="btn btn-line">
+                                다운로드
+                                <i class="ico icon-download-bl24"></i>
+                            </button>
+                            <button type="button" class="btn btn-line">
+                                다운로드
+                                <i class="ico icon-download-bl24"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

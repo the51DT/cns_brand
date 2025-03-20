@@ -48,6 +48,9 @@
             }
         }
     }
+    &.cmp-speclist__wrap:has(.spec-item.type-num-sub) {
+        margin-bottom: 0;
+    }
     & > div:last-child {
         margin-bottom: 0;
     }
