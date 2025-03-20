@@ -16,7 +16,7 @@
             pcImg: 'empty',
             moImg: 'empty',
             subText: '회사소개',
-            pageTitle: '기업소개',
+            pageTitle: 'LG CNS',
         })) %>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
@@ -129,12 +129,6 @@
                     jsonData: imageItemColumnData
                 })) %>
             </div>
-            <%- include('src/component/cmp_buttonBanner.html', Object.assign({}, locals, {
-                pcImg: '/src/assets/image/sub/bg_sub_enterprice.png',
-                moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
-                title: 'IR 정보와 관련하여 궁금하신 사항이 있으시면<br>유선전화 또는 온라인 문의로 연락주시기 바랍니다.',
-                buttonText: '바로가기',
-            })) %>
         </div>
         <%- include('src/_inc/footer.html') %>
     </div>
