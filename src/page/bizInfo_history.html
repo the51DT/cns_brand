@@ -151,7 +151,7 @@ function updateProgressBar() {
 
     const viewportHeight = window.innerHeight;
     const rightSectionRect = rightSection.getBoundingClientRect();
-    const progressBarTop = rightSectionRect.top + window.scrollY; // ProgressBar 시작 위치
+    const progressBarTop = rightSectionRect.top + window.scrollY; 
 
     const firstCircle = circles[0];
     const lastCircle = circles[circles.length - 1];
@@ -165,8 +165,7 @@ function updateProgressBar() {
     document.querySelector('.progress-bar').style.top = `${progressBarStart - progressBarTop}px`;
     document.querySelector('.progress-bar').style.height = `${progressBarEnd - progressBarStart}px`;
 
-    // 현재 스크롤 위치를 기준으로 ProgressBar가 얼마나 채워졌는지 계산 (방향 수정)
-    const scrollPosition = window.scrollY + viewportHeight / 2;
+    const scrollPosition = window.scrollY + viewportHeight / 1.8;
     const progress = 1 - (scrollPosition - progressBarStart) / (progressBarEnd - progressBarStart);
 
     progressBar.style.height = `${Math.min(Math.max(progress * 100, 0), 100)}%`;
