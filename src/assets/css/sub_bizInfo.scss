@@ -311,7 +311,7 @@
   
       .cns-logo {
         position: absolute;
-        width: calc(1650/16*1rem);
+        width: 70%;
         top: 50%;
         transform: translateY(-50%);
         right: calc(-58/16*1rem);
@@ -350,7 +350,10 @@
 
       i{
         position: absolute;
+        bottom: 0;
         z-index: 4;
+        left: 50%;
+        margin-bottom: calc(var(--typo-pc-size-head-xl)/16*1rem);
       }
     }
   
