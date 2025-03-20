@@ -293,19 +293,19 @@
   }
 
   &history{
-      // background-color: #000000;
       color: #fff;
-      // overflow: hidden;
-
-
 
       &__visual{
-        // background-color: #000000;
-        height: 100vh;
+        // height: 100vh;
         background: no-repeat url(/src/assets/image/sub/bg_history_pc01.png);
         background-size: cover;
         position: relative;
         overflow: hidden;
+
+        @media #{$phone}{
+          background: no-repeat center fixed url(/src/assets/image/sub/bg_history_mo01.png);
+          background-size: cover;
+        }
 
         .img-dim{
           position: absolute;
@@ -317,6 +317,7 @@
           background: linear-gradient(90deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.00) 100%);
           background-blend-mode: plus-darker;
         }
+
         .cns-logo{
           position: absolute;
           width: calc(1650/16*1rem);
@@ -325,6 +326,9 @@
           right: calc(-58/16*1rem);
           z-index: 1;
 
+          @media #{$tablet}{
+            width: calc(1100/16*1rem);
+          }
         }
       }
       
@@ -335,7 +339,12 @@
           background-repeat: no-repeat;
           background-position: top left;
           background-attachment: fixed; 
+
+          @media #{$phone}{
+            background-image: url(/src/assets/image/sub/bg_history_mo02.png);
+          }
         }
+
         &__textarea {
           background-color: transparent;
           height: 100vh;
@@ -347,7 +356,8 @@
           justify-content: center; 
   
           @media #{$phone}{
-            display: none;
+            justify-content:flex-start;
+            margin-top: calc(var(--spacing-mode1-horizontal7-x-l)/16*1rem);
           }
         
           h2 {
@@ -379,7 +389,6 @@
       margin-top: -100vh;
       display: flex;
       gap: 16px;
-      // justify-content: space-between;
       padding: calc(var(--spacing-mode1-vertical6-x-l)/16*1rem) 0;
       align-items: flex-start; 
       overflow: visible; 
@@ -387,11 +396,8 @@
 
       @media #{$phone}{
         flex-direction: column;
-        // align-items: center;
         padding: 0;
       }
-
-
 
 
       .left-section{
@@ -405,9 +411,9 @@
           width: 100%;
           flex: none;
           border-bottom: 1px solid #f5f5f5;
-          display: flex;
+         display: flex;
           gap: 40px;
-          background-color: #000000;
+          background: #000000;
           z-index: 3;
           top: 0;
         }
@@ -433,7 +439,6 @@
 
             @media #{$phone}{
               font-size: calc(var(--typo-mo-size-body-lg)/16*1rem);
-              // line-height: normal;
             }
           }
           span{
@@ -500,7 +505,6 @@
 
 
       .progress-bar{
-        // z-index: 4; 
         position: absolute;
         left: -1px;
         width: 4px;
@@ -538,9 +542,7 @@
 
       &__item{
         padding-left: calc(77/16*1rem); //수치 수정 해주세요
-        // width: calc(600/16*1rem);
         letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
-        // overflow-y: auto;
 
         @media #{$tablet}{
           // width: calc(385/16*1rem);
@@ -589,7 +591,6 @@
           
           .year-title{
             display:contents;
-            // color: #F729C1;
             font-size: calc(var(--typo-pc-size-head-2xl)/16*1rem);
             font-weight: 800;
           }
@@ -633,9 +634,6 @@
             }
 
 
-            // display: flex;
-            // align-items: center;
-            // justify-content: center;
             margin-right: calc(var(--spacing-mode1-horizontal6-x-l) / 16* 1rem);
 
             @media #{$tablet}{
