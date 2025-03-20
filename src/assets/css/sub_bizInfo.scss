@@ -848,57 +848,10 @@
           z-index: 1;
         }
       }
-      &--02 {
-        background: url('/src/assets/image/sub/img_history_sec02_pc.png') no-repeat 100% center /
-          contain;
-        @media #{$tabletMini} {
-          background: url('/src/assets/image/sub/img_history_sec02_mo.png') no-repeat center 100% /
-            contain;
-        }
-      }
-      &--03 {
-        background: url('/src/assets/image/sub/img_history_sec03_pc.png') no-repeat 100% center /
-          contain;
-        @media #{$tabletMini} {
-          background: url('/src/assets/image/sub/img_history_sec03_mo.png') no-repeat center 100% /
-            contain;
-        }
-      }
-      &--04 {
-        background: url('/src/assets/image/sub/img_history_sec04_pc.png') no-repeat 100% center /
-          contain;
-        @media #{$tabletMini} {
-          background: url('/src/assets/image/sub/img_history_sec04_mo.png') no-repeat center 100% /
-            contain;
-        }
-      }
       
       &.full-sec {
         position: relative;
         height: 100vh;
-        .full-sec__pagination {
-          position: absolute;
-          right: calc(60 / 16 * 1rem); // 분기점마다 다름
-          display: flex;
-          align-items: flex-end;
-          flex-direction: column;
-          gap: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
-          &--item {
-            // 선이 이미지로 들어가있음..
-            padding: calc(5 / 16 * 1rem) calc(19 / 16 * 1rem);
-            border: calc(1 / 16 * 1rem) solid var(--colorGL-all-white100);
-            border-radius: calc(50 / 16 * 1rem);
-            &:not(.on) {
-              font-size: 0;
-              width: calc(10 / 16 * 1rem);
-              height: calc(10 / 16 * 1rem);
-              padding: 0;
-            }
-          }
-          @media #{$phone} {
-            display: none;
-          }
-        }
       }
       &.last-sec {
         margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
@@ -935,6 +888,9 @@
         }
       }
     }
+    &__container {
+      position: relative;
+    }
     .full-sec__pagination {
       position: fixed;
       right: calc(60 / 16 * 1rem); // 분기점마다 다름
@@ -949,6 +905,13 @@
       &.is-active {
         opacity: 1;
       }
+      &.is-last {
+        position: absolute;
+        top: auto;
+        bottom: calc(100vh / 2);
+        opacity: 1;
+        transform: translateY(0);
+      }
       &--item { // 선이 이미지로 들어가있음..
         padding: calc(5 / 16 * 1rem) calc(19 / 16 * 1rem);
         border: calc(1 / 16 * 1rem) solid var(--colorGL-all-white100);
@@ -962,10 +925,65 @@
       }
       @media #{$phone} {
         display: none;
+      }
     }
+    .full-sec__img {
+      position: fixed;
+      top: 0;
+      right: calc(57 / 16 * 1rem);
+      z-index: 0;
+      width: 64.453125%;
+      height: 100%;
+      will-change: transform, opacity;
+      opacity: 0;
+      transition: transform 0.3s ease-out;
+      &.is-active {
+        opacity: 1;
+        transition: transform 0.3s ease-out, opacity 0.5s ease-in-out;
+      }
+      &.is-last {
+        position: absolute;
+        bottom: 0;
+        top: auto;
+        // & > div {
+        //   top: auto;
+        //   bottom: 0;
+        // }
+      }
+      & > div {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1652 / 2030;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+        &.is-active {
+          opacity: 1;
+          transition-delay: 0s;
+        }
+      }
+      &--01 {
+        background: url('/src/assets/image/sub/img_history_sec02_pc.png') no-repeat 100% center / contain;
+        @media #{$tabletMini} {
+          background: url('/src/assets/image/sub/img_history_sec02_mo.png') no-repeat center 100% / contain;
+        }
+      }
+      &--02 {
+        background: url('/src/assets/image/sub/img_history_sec03_pc.png') no-repeat 100% center / contain;
+        @media #{$tabletMini} {
+          background: url('/src/assets/image/sub/img_history_sec03_mo.png') no-repeat center 100% / contain;
+        }
+      }
+      &--03 {
+        background: url('/src/assets/image/sub/img_history_sec04_pc.png') no-repeat 100% center / contain;
+        @media #{$tabletMini} {
+          background: url('/src/assets/image/sub/img_history_sec04_mo.png') no-repeat center 100% / contain;
+        }
+      }
     }
-    &__textarea {
-      // 텍스트 간 간격 임시 잡기
+    &__textarea { // 텍스트 간 간격 임시 잡기
       .font-head-lg {
         margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
       }

@@ -15,6 +15,21 @@
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="bizInfo_LGWay__container">
+                <!-- 내비 -->
+                <div class="full-sec__pagination">
+                    <div class="full-sec__pagination--item font-caption-xl is-active">LG 비전</div>
+                    <div class="full-sec__pagination--item font-caption-xl">행동방식</div>
+                    <div class="full-sec__pagination--item font-caption-xl">경영이념</div>
+                </div>
+                <!-- //내비 -->
+                <!-- 이미지 -->
+                <div class="full-sec__img">
+                    <div class="full-sec__img--01"></div>
+                    <div class="full-sec__img--02"></div>
+                    <div class="full-sec__img--03 is-active"></div>
+                </div>
+                <!-- //이미지 -->
+
                 <div class="bizInfo_LGWay__section full-sec bizInfo_LGWay__section--01">
                     <div class="inner-wrap">
                         <div class="bizInfo_LGWay__textarea">
@@ -37,13 +52,7 @@
                         </button>
                     </div>
                 </div>
-                <!-- 내비 -->
-                <div class="full-sec__pagination">
-                    <div class="full-sec__pagination--item font-caption-xl is-active">LG 비전</div>
-                    <div class="full-sec__pagination--item font-caption-xl">행동방식</div>
-                    <div class="full-sec__pagination--item font-caption-xl">경영이념</div>
-                </div>
-                <!-- //내비 -->
+
                 <div class="bizInfo_LGWay__section full-sec bizInfo_LGWay__section--02">
                     <div class="inner-wrap">
                         <div class="bizInfo_LGWay__textarea">
@@ -61,11 +70,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="full-sec__pagination">
-                        <div class="full-sec__pagination--item font-caption-xl on">LG 비전</div>
-                        <div class="full-sec__pagination--item font-caption-xl">행동방식</div>
-                        <div class="full-sec__pagination--item font-caption-xl">경영이념</div>
-                    </div> -->
                 </div>
 
                 <div class="bizInfo_LGWay__section full-sec bizInfo_LGWay__section--03">
@@ -85,11 +89,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="full-sec__pagination">
-                        <div class="full-sec__pagination--item font-caption-xl">LG 비전</div>
-                        <div class="full-sec__pagination--item font-caption-xl on">행동방식</div>
-                        <div class="full-sec__pagination--item font-caption-xl">경영이념</div>
-                    </div> -->
                 </div>
 
                 <div class="bizInfo_LGWay__section full-sec bizInfo_LGWay__section--04">
@@ -107,28 +106,22 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="full-sec__pagination">
-                        <div class="full-sec__pagination--item font-caption-xl">LG 비전</div>
-                        <div class="full-sec__pagination--item font-caption-xl">행동방식</div>
-                        <div class="full-sec__pagination--item font-caption-xl on">경영이념</div>
-                    </div> -->
                 </div>
-
-                <div class="bizInfo_LGWay__section last-sec">
-                    <div class="inner-wrap">
-                        <div class="bizInfo_LGWay__textarea">
-                            <h2 class="font-head-sm font-bold">LG 임직원의 부당한 요구,</h2>
-                            <p class="font-body-lg font-medium">
-                                또는 불공정 업무처리로 불편함을 겪고있다면, 사이버 신문고를 두드려 보세요!<br>
-                                고객님의 소중한 한마디가 새로운 기업문화의 밑거름이 됩니다.
-                            </p>
-                        </div>
-                        <div class="button__wrap align-left">
-                            <a href="#" class="btn btn-trans btn-small"> <!-- 버튼패딩 다름 -->
-                                사이버 신문고 바로가기
-                                <i class="ico icon-arrow-right-wt16"></i>
-                            </a>
-                        </div>
+            </div>
+            <div class="bizInfo_LGWay__section last-sec">
+                <div class="inner-wrap">
+                    <div class="bizInfo_LGWay__textarea">
+                        <h2 class="font-head-sm font-bold">LG 임직원의 부당한 요구,</h2>
+                        <p class="font-body-lg font-medium">
+                            또는 불공정 업무처리로 불편함을 겪고있다면, 사이버 신문고를 두드려 보세요!<br>
+                            고객님의 소중한 한마디가 새로운 기업문화의 밑거름이 됩니다.
+                        </p>
+                    </div>
+                    <div class="button__wrap align-left">
+                        <a href="#" class="btn btn-trans btn-small"> <!-- 버튼패딩 다름 -->
+                            사이버 신문고 바로가기
+                            <i class="ico icon-arrow-right-wt16"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -139,29 +132,105 @@
     </div>
     <script>
         const sections = document.querySelectorAll('.bizInfo_LGWay__section');
+        const fullSecList = document.querySelectorAll('.bizInfo_LGWay__section.full-sec');
+        const lastSection = document.querySelector('.last-sec');
         const goNextButton = document.querySelector('.button__wrap--scroll-down');
         const navigation = document.querySelector('.full-sec__pagination');
+        const visualImgWrap = document.querySelector('.full-sec__img');
+        const visualImg = visualImgWrap.querySelectorAll('div');
+        const container = document.querySelector('.bizInfo_LGWay__container');
 
-        goNextButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            
-            const secondSection = sections[1]; // 두 번째 섹션 선택
-            secondSection.scrollIntoView({ 
+        let prevScrollTop = 0;
+        let fullSecNum = 0;
+        let scrollState = "none";
+
+        const fullSecMove = (el) => {
+            el.scrollIntoView({ 
                 behavior: 'smooth',
                 block: 'start'
             });
-        });
+        }
+
+        const fullNumChange = (num) => {
+            fullSecNum = num
+        }
+
+        const pyramidAnim = () => {
+            const scrollTop = window.scrollY;
+            let moveAmount = (scrollTop - sections[1].offsetTop) * -0.2; // 02번부터 패럴랙스 시작
+
+            // 현재 활성화된 섹션 찾기
+            let activeSection = null;
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    activeSection = section;
+                }
+            });
+
+            // 패럴랙스 적용 구간: 02~04번 섹션만
+            if (scrollTop < sections[1].offsetTop) {
+                visualImgWrap.style.transform = "translateY(0)"; // 02번에서는 제자리 유지
+            } else {
+                visualImgWrap.style.transform = `translateY(${moveAmount}px)`; // 이후부터 패럴랙스 적용
+            }
+            if (
+                activeSection &&
+                (activeSection.classList.contains("bizInfo_LGWay__section--02") ||
+                activeSection.classList.contains("bizInfo_LGWay__section--03") ||
+                activeSection.classList.contains("bizInfo_LGWay__section--04"))
+            ) {
+                visualImgWrap.classList.add("is-active"); // 패럴랙스 구간에서는 is-active 유지
+            } 
+            // 01번 섹션에서는 숨김
+            else {
+                visualImgWrap.style.transform = "translateY(0)";
+            }
+        }
 
         const handleScroll = () => {
+            let nextScrollTop = window.scrollY;
+            if (prevScrollTop < nextScrollTop) {
+                // console.log("스크롤다운 조건")
+                scrollState = "down";
+            } else if (prevScrollTop > nextScrollTop) {
+                // console.log("스크롤업 조건")
+                scrollState = "up";
+            }
+            prevScrollTop = nextScrollTop;
+            // fullSecList.forEach((el, index) => {
+            //     if (prevScrollTop < nextScrollTop && el.classList.contains("showing")) {
+            //         console.log("스크롤다운 조건")
+            //         if (fullSecNum < fullSecList.length) {
+            //             fullSecMove(fullSecList[fullSecNum + 1])
+            //             setTimeout(fullNumChange(index + 1), 2000)
+            //         } else {
+            //             console.log("마지막섹션임")
+            //         }
+            //     } else if (prevScrollTop > nextScrollTop && el.classList.contains("showing")) {
+            //         console.log("스크롤업 조건")
+            //         if (fullSecNum > 0) {
+            //             fullSecMove(fullSecList[fullSecNum - 1])
+            //             setTimeout(fullNumChange(index - 1), 2000)
+            //         } else {
+            //             console.log("첫번째섹션임")
+            //         }
+            //     }
+            // })
+
+            pyramidAnim();
+
             let currentSection = null;
             sections.forEach((section, index) => {
                 const rect = section.getBoundingClientRect();
-                
+
                 // 첫 번째 섹션을 지나갔는지 체크
                 if (index === 0 && rect.bottom <= 0) {
                     navigation.classList.add('is-active');
+                    visualImgWrap.classList.add('is-active');
                 } else if (index === 0 && rect.bottom > 0) {
                     navigation.classList.remove('is-active');
+                    visualImgWrap.classList.remove('is-active');
                 }
 
                 if (rect.top <= 100 && rect.bottom >= 100) {
@@ -175,9 +244,101 @@
                             item.classList.remove('is-active');
                         }
                     });
+                    visualImg.forEach((imgDiv, imgIndex) => {
+                        imgDiv.classList.remove("is-active");
+                        if (index === imgIndex+1) {
+                            visualImg[imgIndex].classList.add("is-active")
+                        }
+                    })
                 }
             });
         };
+
+        let isScrolling = false; // 스크롤 중인지 체크
+
+        // 스크롤 방지 함수
+        function disableScroll() {
+            window.addEventListener("wheel", preventScroll, { passive: false });
+            window.addEventListener("touchmove", preventScroll, { passive: false });
+        }
+
+        // 스크롤 허용 함수
+        function enableScroll() {
+            window.removeEventListener("wheel", preventScroll);
+            window.removeEventListener("touchmove", preventScroll);
+        }
+
+        // 이벤트 실행 차단
+        function preventScroll(e) {
+            e.preventDefault();
+        }
+
+        const secIo = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                let targetEl = entry.target;
+                if (entry.intersectionRatio > 0 && !isScrolling) {
+                    console.log(scrollState);
+
+                    // 모든 fullSecList에서 'showing' 제거 후, 현재 target에 추가
+                    fullSecList.forEach(sec => sec.classList.remove("showing"));
+                    targetEl.classList.add("showing");
+
+                    let targetIndex = [...fullSecList].indexOf(targetEl);
+
+                    if (scrollState === "down" && targetIndex < fullSecList.length - 1) {
+                        isScrolling = true; // 추가 스크롤 방지
+                        disableScroll(); // 스크롤 막기
+
+                        fullSecMove(fullSecList[targetIndex + 1]);
+
+                        // scrollIntoView() 애니메이션이 끝나면 다시 스크롤 가능
+                        setTimeout(() => {
+                            fullNumChange(targetIndex + 1);
+                            isScrolling = false; // 스크롤 다시 활성화
+                            enableScroll(); // 스크롤 해제
+                        }, 1000); // 애니메이션 시간에 맞춰 조절
+                    } 
+                    else if (scrollState === "up" && targetIndex > 0) {
+                        isScrolling = true; // 추가 스크롤 방지
+                        disableScroll(); // 스크롤 막기
+
+                        fullSecMove(fullSecList[targetIndex - 1]);
+
+                        setTimeout(() => {
+                            fullNumChange(targetIndex - 1);
+                            isScrolling = false; // 스크롤 다시 활성화
+                            enableScroll(); // 스크롤 해제
+                        }, 1000); // 애니메이션 시간에 맞춰 조절
+                    }
+                }
+            });
+        }, { threshold: 0.8 });
+
+        fullSecList.forEach(sec => {
+            secIo.observe(sec);
+        });
+
+
+
+
+        const lastIo = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navigation.classList.add('is-last');
+                    navigation.classList.remove('is-active');
+
+                    visualImgWrap.classList.add('is-last');
+                    visualImgWrap.classList.remove('is-active');
+                } else {
+                    navigation.classList.remove('is-last');
+                    navigation.classList.add('is-active');
+
+                    visualImgWrap.classList.remove('is-last');
+                    visualImgWrap.classList.add('is-active');
+                }
+            });
+        }, { threshold: 0.1 });
+        lastIo.observe(lastSection);
 
         window.addEventListener('scroll', handleScroll);
     </script>
