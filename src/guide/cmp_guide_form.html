@@ -23,30 +23,189 @@
                         <%
                             const inputData = [
                                 {
-                                    title: { text: "타이틀", required: "true" },
+                                    id: 0,
+                                    title: { text: "타이틀" },
                                     inputData: [
                                         {
                                             type: "text",
-                                            placeholder: "플레이스홀더1",
-                                            value: "기본값"
-                                        },
-                                        {
-                                            type: "tel",
-                                            placeholder: "플레이스홀더2",
+                                            placeholder: "플레이스홀더",
                                         },
                                     ]
                                 },
                                 {
+                                    id: 1,
+                                    title: { text: "required", required: true },
+                                    inputData: [
+                                        {
+                                            type: "text",
+                                            placeholder: "플레이스홀더",
+                                            value: "기본값"
+                                        },
+                                        {
+                                            type: "text",
+                                            placeholder: "disabled",
+                                            state: "disabled"
+                                        },
+                                        {
+                                            type: "text",
+                                            placeholder: "readonly",
+                                            state: "readonly"
+                                        },
+                                        {
+                                            type: "text",
+                                            placeholder: "error",
+                                            state: "error",
+                                        },
+                                    ],
+                                    info: "에러 메시지를 입력하세요"
+                                },
+                                {
+                                    id: 2,
                                     title: { text: "셀렉트" },
                                     inputData: [
                                         {
                                             type: "select",
+                                            placeholder: "select placeholder",
                                             option: [
-                                                "옵션1",
-                                                "옵션2"
-                                            ]
+                                                {
+                                                    value: "옵션1",
+                                                },
+                                                {
+                                                    value: "옵션2",
+                                                }
+                                            ],
                                         },
-                                    ]
+                                        {
+                                            type: "select",
+                                            placeholder: "select placeholder",
+                                            option: [
+                                                {
+                                                    value: "옵션1",
+                                                },
+                                                {
+                                                    value: "옵션2",
+                                                }
+                                            ],
+                                            state: "disabled"
+                                        },
+                                        {
+                                            type: "select",
+                                            placeholder: "select placeholder",
+                                            option: [
+                                                {
+                                                    value: "옵션1",
+                                                },
+                                                {
+                                                    value: "옵션2",
+                                                }
+                                            ],
+                                            state: "readonly"
+                                        },
+                                        {
+                                            type: "select",
+                                            placeholder: "select placeholder select placeholder",
+                                            option: [
+                                                {
+                                                    value: "옵션1",
+                                                    selected: true
+                                                },
+                                                {
+                                                    value: "옵션2",
+                                                }
+                                            ],
+                                            state: "error",
+                                        },
+                                    ],
+                                    info: "에러 메시지를 입력하세요"
+                                },
+                                {
+                                    id: 3,
+                                    title: { text: "서치" },
+                                    inputData: [
+                                        {
+                                            type: "search",
+                                            placeholder: "플레이스홀더",
+                                        },
+                                        {
+                                            type: "search",
+                                            placeholder: "disabled",
+                                            state: "disabled"
+                                        },
+                                        {
+                                            type: "search",
+                                            placeholder: "readonly",
+                                            state: "readonly"
+                                        },
+                                        {
+                                            type: "search",
+                                            placeholder: "error",
+                                            state: "error",
+                                            value: "기본값"
+                                        },
+                                    ],
+                                    info: "에러 메시지를 입력하세요"
+                                },
+                                {
+                                    id: 4,
+                                    title: { text: "이메일" },
+                                    inputData: [
+                                        {
+                                            type: "multi",
+                                            placeholder: "firstData",
+                                            option: [
+                                                {
+                                                    value: "직접 입력",
+                                                },
+                                                {
+                                                    value: "naver.com",
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 5,
+                                    title: { text: "이메일" },
+                                    inputData: [
+                                        {
+                                            type: "multi",
+                                            placeholder: "firstData",
+                                            state: "disabled",
+                                            option: [
+                                                {
+                                                    value: "직접 입력",
+                                                },
+                                                {
+                                                    value: "naver.com",
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 6,
+                                    title: { text: "textarea" },
+                                    inputData: [
+                                        {
+                                            type: "textarea",
+                                            placeholder: "플레이스홀더",
+                                            value: "기본값",
+                                            countMax: "1,000"
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 7,
+                                    title: { text: "textarea" },
+                                    inputData: [
+                                        {
+                                            type: "textarea",
+                                            placeholder: "countMax 와 info가 동시에 있을 경우\ncountMax 미노출 info만 노출",
+                                            state: "error",
+                                            countMax: "1,000",
+                                        },
+                                    ],
+                                    info: "에러 메시지를 입력하세요"
                                 },
                             ]
                         %>
