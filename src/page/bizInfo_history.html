@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('/assets/data/timeline.json')
         .then(res => res.json())
         .then(data => {
+
             const timelineContainer = document.getElementById('right-section__item');
 
             const colorRanges = {
@@ -142,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }).join('');
 
             attachH3ClickEvents();
-            initScrollEvents();
+            // initScrollEvents();
         })
         .catch(err => console.error("데이터 로딩 오류:", err));
 });
@@ -151,6 +152,11 @@ function updateProgressBar() {
     const progressBar = document.querySelector('.progress-bar .bar');
     const circles = document.querySelectorAll('.circle-container');
     const rightSection = document.querySelector('.right-section');
+
+    if (!rightSection || circles.length === 0) {
+        console.warn("circles을 찾을 수 없음.");
+        return;
+    }
 
     const viewportHeight = window.innerHeight;
     const rightSectionRect = rightSection.getBoundingClientRect();
