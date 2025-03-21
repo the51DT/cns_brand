@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -15,6 +14,7 @@
         <%- include('src/_inc/header.html') %>
 
         <div class="sub-content__wrap">
+            <!-- 메인 비주얼 영역 -->
             <div class="bizInfo_history__visual">
                 <div class="inner-wrap">
                     <div class="bizInfo_history__text-container">
@@ -25,23 +25,21 @@
                                 30년 넘게 대한민국 IT산업의<br />
                                 발전을 이끌어왔습니다.
                             </p>
-                        <i class="ico icon-arrow-down-wh48" style="cursor:pointer;"></i>
-
+                            <i class="ico icon-arrow-down-wh48" style="cursor:pointer;"></i>
                         </div>
-
                         <div class="img-dim"></div>
-                        <img class="cns-logo" src="/src/assets/image/sub/logo_history_pc.png" alt="">
+                        <img class="cns-logo" src="/src/assets/image/sub/logo_history_pc.png" alt="LG CNS 로고">
                     </div>
                 </div>
-
             </div>
-            <div class="scroll-dim">
-            </div>
+            
+            <div class="scroll-dim"></div>
+            
+            <!-- 연혁 컨텐츠 영역 -->
             <div class="bizInfo_history__sub-container">
                 <div class="inner-wrap">
-
                     <div class="bizInfo_history__scroll">
-
+                        <!-- 좌측 타임라인 카테고리 -->
                         <div class="left-section">
                             <div class="left-section__item">
                                 <h3>디지털 혁신 선도</h3>
@@ -64,239 +62,269 @@
                                 <p>1987년부터 1994년까지</p>
                             </div>
                         </div>
+                        
+                        <!-- 우측 타임라인 세부 내용 -->
                         <div class="right-section">
-                                <div class="progress-bar">
-                                    <div class="bar"></div>
-                                </div>
+                            <div class="progress-bar">
+                                <div class="bar"></div>
+                            </div>
                             <div class="right-section__item" id="right-section__item"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <%- include('src/_inc/footer.html', { type: 'dark' }) %>
+        <%- include('src/_inc/footer.html', { type: 'dark' }) %>
     </div>
 
     <script>
-document.addEventListener("DOMContentLoaded", () => {
-    fetch('/assets/data/timeline.json')
-        .then(res => res.json())
-        .then(data => {
+    document.addEventListener("DOMContentLoaded", () => {
+        // 타임라인 데이터 로드 및 렌더링
+        loadTimelineData();
+        
+        // 스크롤 이벤트 및 클릭 이벤트 연결
+        setupScrollEvents();
+        setupVisualSectionEvents();
+        
+        // 초기 로딩 후 업데이트
+        setTimeout(updateProgressBar, 200);
+    });
 
-            const timelineContainer = document.getElementById('right-section__item');
-
-            const colorRanges = {
-                "data-2020s": ["#F729C1", "#E54DDC"],
-                "data-2010s": ["#E54DDC", "#C591F7"], 
-                "data-2000s": ["#C591F7", "#B7B4EF"], 
-                "data-1900s": ["#B7B4EF", "#A9D7E6"],
-            };
-
-            const sortedData = [
-                { className: "data-2020s", items: data.timelineData2020s },
-                { className: "data-2010s", items: data.timelineData2010s },
-                { className: "data-2000s", items: data.timelineData2000s },
-                { className: "data-1900s", items: data.timelineData1900s }
-            ];
-
-            const interpolateColor = (color1, color2, factor) => {
-                let result = color1.slice(1).match(/.{2}/g).map((hex, index) => {
-                    return Math.round(parseInt(hex, 16) + (parseInt(color2.slice(1).match(/.{2}/g)[index], 16) - parseInt(hex, 16)) * factor)
-                        .toString(16).padStart(2, '0');
-                });
-                return `#${result.join('')}`;
-            };
-
-            timelineContainer.innerHTML = sortedData.map(({ className, items }) => {
-                const [startColor, endColor] = colorRanges[className];
-
-                return `
-                    <div class="timeline-group ${className}">
-                        ${items.map((yearItem, index) => {
-                            const colorFactor = index / (items.length - 1);
-                            const currentColor = interpolateColor(startColor, endColor, colorFactor);
-
-                            return `
-                                <div class="timeline-year">
-                                    <div class="year-container">
-                                        <div class="circle-container" data-color="${currentColor}"></div>
-                                        <span class="year-title" data-color="${currentColor}">${yearItem.year}</span>
-                                    </div>            
-                                    <ul class="events">
-                                        ${yearItem.events.map(event => `
-                                            <li class="event-item">
-                                                <div class="event-month">${event.month}</div>
-                                                <div class="event-desc-container">
-                                                    <div class="event-desc">${event.description}</div>
-                                                    ${event.image ? `<img src="${event.image}" alt="Event Image" class="event-image"/>` : ''}
-                                                </div>
-                                            </li>
-                                        `).join('')}
-                                    </ul>
-                                </div>
-                            `;
-                        }).join('')}
-                    </div>
-                `;
-            }).join('');
-
-            attachH3ClickEvents();
-            // initScrollEvents();
-        })
-        .catch(err => console.error("데이터 로딩 오류:", err));
-});
-
-function updateProgressBar() {
-    const progressBar = document.querySelector('.progress-bar .bar');
-    const circles = document.querySelectorAll('.circle-container');
-    const rightSection = document.querySelector('.right-section');
-
-    if (!rightSection || circles.length === 0) {
-        console.warn("circles을 찾을 수 없음.");
-        return;
+    // 타임라인 데이터 로드 및 렌더링 함수
+    function loadTimelineData() {
+        fetch('/assets/data/timeline.json')
+            .then(res => res.json())
+            .then(data => {
+                renderTimelineData(data);
+                attachH3ClickEvents();
+            })
+            .catch(err => console.error("데이터 로딩 오류:", err));
     }
 
-    const viewportHeight = window.innerHeight;
-    const rightSectionRect = rightSection.getBoundingClientRect();
-    const progressBarTop = rightSectionRect.top + window.scrollY; 
+    // 타임라인 데이터 렌더링 함수
+    function renderTimelineData(data) {
+        const timelineContainer = document.getElementById('right-section__item');
+        
+        // 색상 그라데이션 범위 정의
+        const colorRanges = {
+            "data-2020s": ["#F729C1", "#E54DDC"],
+            "data-2010s": ["#E54DDC", "#C591F7"], 
+            "data-2000s": ["#C591F7", "#B7B4EF"], 
+            "data-1900s": ["#B7B4EF", "#A9D7E6"]
+        };
 
-    const firstCircle = circles[0];
-    const lastCircle = circles[circles.length - 1];
+        // 데이터 정렬
+        const sortedData = [
+            { className: "data-2020s", items: data.timelineData2020s },
+            { className: "data-2010s", items: data.timelineData2010s },
+            { className: "data-2000s", items: data.timelineData2000s },
+            { className: "data-1900s", items: data.timelineData1900s }
+        ];
 
-    const firstCircleRect = firstCircle.getBoundingClientRect();
-    const lastCircleRect = lastCircle.getBoundingClientRect();
+        // HTML 생성
+        timelineContainer.innerHTML = sortedData.map(({ className, items }) => {
+            const [startColor, endColor] = colorRanges[className];
 
-    const progressBarStart = firstCircleRect.top + window.scrollY; 
-    const progressBarEnd = lastCircleRect.bottom + window.scrollY; 
-    // ProgressBar 길이 조정
-    document.querySelector('.progress-bar').style.top = `${progressBarStart - progressBarTop}px`;
-    document.querySelector('.progress-bar').style.height = `${progressBarEnd - progressBarStart}px`;
+            return `
+                <div class="timeline-group ${className}">
+                    ${items.map((yearItem, index) => {
+                        const colorFactor = index / (items.length - 1);
+                        const currentColor = interpolateColor(startColor, endColor, colorFactor);
 
-    const scrollPosition = window.scrollY + viewportHeight / 1.8;
-    const progress = 1 - (scrollPosition - progressBarStart) / (progressBarEnd - progressBarStart);
+                        return `
+                            <div class="timeline-year">
+                                <div class="year-container">
+                                    <div class="circle-container" data-color="${currentColor}"></div>
+                                    <span class="year-title" data-color="${currentColor}">${yearItem.year}</span>
+                                </div>            
+                                <ul class="events">
+                                    ${yearItem.events.map(event => `
+                                        <li class="event-item">
+                                            <div class="event-month">${event.month}</div>
+                                            <div class="event-desc-container">
+                                                <div class="event-desc">${event.description}</div>
+                                                ${event.image ? `<img src="${event.image}" alt="이벤트 이미지" class="event-image"/>` : ''}
+                                            </div>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }).join('');
+    }
 
-    progressBar.style.height = `${Math.min(Math.max(progress * 100, 0), 100)}%`;
-
-    // Circle 활성화 처리
-    circles.forEach(circle => {
-        const currentColor = circle.dataset.color;
-        const circleTop = circle.getBoundingClientRect().top + window.scrollY;
-
-        const yearContainer = circle.closest('.year-container');
-        const yearTitle = yearContainer ? yearContainer.querySelector('.year-title') : null;
-
-        if (scrollPosition >= circleTop) {
-            circle.classList.add('active');
-            circle.style.borderColor = currentColor;
-            circle.style.color = currentColor;
-            if (yearTitle) yearTitle.style.color = currentColor;
-        } else {
-            circle.classList.remove('active');
-            circle.style.borderColor = '#262626';
-            circle.style.color = '#262626';
-            if (yearTitle) yearTitle.style.color = '#262626';
-        }
-    });
-
-    // Left Section 활성화
-    const leftItems = document.querySelectorAll('.left-section__item');
-    const rightSections = document.querySelectorAll('.timeline-group');
-
-    rightSections.forEach((section, index) => {
-        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-        const sectionBottom = sectionTop + section.offsetHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
-            leftItems.forEach(item => item.classList.remove('active'));
-            leftItems[index].classList.add('active');
-        }
-    });
-}
-
-// 이벤트 리스너 등록
-window.addEventListener('scroll', updateProgressBar);
-window.addEventListener('resize', updateProgressBar);
-document.addEventListener('DOMContentLoaded', updateProgressBar);
-setTimeout(updateProgressBar, 200);
-
-
-
-// 섹션 이동
-function attachH3ClickEvents() {
-    const leftItems = document.querySelectorAll('.left-section__item');
-    const rightSections = document.querySelectorAll('.timeline-group');
-
-    leftItems.forEach((item, index) => {
-        const h3 = item.querySelector('h3');
-        h3.addEventListener('click', () => {
-            rightSections[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // 색상 보간(interpolation) 함수
+    function interpolateColor(color1, color2, factor) {
+        let result = color1.slice(1).match(/.{2}/g).map((hex, index) => {
+            return Math.round(parseInt(hex, 16) + (parseInt(color2.slice(1).match(/.{2}/g)[index], 16) - parseInt(hex, 16)) * factor)
+                .toString(16).padStart(2, '0');
         });
-    });
-}
+        return `#${result.join('')}`;
+    }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const visualSection = document.querySelector(".bizInfo_history__visual");
-    const nextSection = document.querySelector(".bizInfo_history__sub-container");
-    const arrowIcon = document.querySelector(".icon-arrow-down-wh48");
+    // 프로그레스 바 업데이트 함수
+    function updateProgressBar() {
+        const progressBar = document.querySelector('.progress-bar .bar');
+        const circles = document.querySelectorAll('.circle-container');
+        const rightSection = document.querySelector('.right-section');
 
-    let isScrolling = false;
-    let scrollTimeout;
-
-    const isInVisualView = () => {
-        const rect = visualSection.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom > 0;
-    };
-
-    const scrollToSection = (direction) => {
-        if (isScrolling) return;
-
-        isScrolling = true;
-
-        if (direction === 'down') {
-            nextSection.scrollIntoView({ behavior: "smooth" });
-        } else if (direction === 'up') {
-            visualSection.scrollIntoView({ behavior: "smooth" });
+        if (!rightSection || circles.length === 0) {
+            return;
         }
 
-        scrollTimeout = setTimeout(() => {
-            isScrolling = false;
-        }, 1000);
-    };
+        const viewportHeight = window.innerHeight;
+        const rightSectionRect = rightSection.getBoundingClientRect();
+        const progressBarTop = rightSectionRect.top + window.scrollY; 
 
-    visualSection.addEventListener("wheel", (e) => {
-        if (!isInVisualView()) return;
+        const firstCircle = circles[0];
+        const lastCircle = circles[circles.length - 1];
 
-        const direction = e.deltaY > 0 ? 'down' : 'up';
-        scrollToSection(direction);
-    }, { passive: true });
+        const firstCircleRect = firstCircle.getBoundingClientRect();
+        const lastCircleRect = lastCircle.getBoundingClientRect();
 
-    // 모바일 대응
-    let touchStartY = 0;
+        const progressBarStart = firstCircleRect.top + window.scrollY; 
+        const progressBarEnd = lastCircleRect.bottom + window.scrollY; 
+        
+        // 프로그레스 바 길이 조정
+        document.querySelector('.progress-bar').style.top = `${progressBarStart - progressBarTop}px`;
+        document.querySelector('.progress-bar').style.height = `${progressBarEnd - progressBarStart}px`;
 
-    visualSection.addEventListener("touchstart", (e) => {
-        touchStartY = e.touches[0].clientY;
-    });
+        const scrollPosition = window.scrollY + viewportHeight / 1.8;
+        const progress = 1 - (scrollPosition - progressBarStart) / (progressBarEnd - progressBarStart);
 
-    visualSection.addEventListener("touchend", (e) => {
-        const touchEndY = e.changedTouches[0].clientY;
-        const deltaY = touchStartY - touchEndY;
+        progressBar.style.height = `${Math.min(Math.max(progress * 100, 0), 100)}%`;
 
-        if (Math.abs(deltaY) > 5 && isInVisualView()) {
-            scrollToSection(deltaY > 0 ? 'down' : 'up');
-        }
-    });
+        // 원형 포인트 활성화 처리
+        updateCircleStates(circles, scrollPosition);
+        
+        // 좌측 섹션 활성화 처리
+        updateLeftSectionActiveStates(scrollPosition);
+    }
 
-    if (arrowIcon) {
-        arrowIcon.addEventListener("click", () => {
-            scrollToSection('down');
+    // 원형 포인트 상태 업데이트
+    function updateCircleStates(circles, scrollPosition) {
+        circles.forEach(circle => {
+            const currentColor = circle.dataset.color;
+            const circleTop = circle.getBoundingClientRect().top + window.scrollY;
+
+            const yearContainer = circle.closest('.year-container');
+            const yearTitle = yearContainer ? yearContainer.querySelector('.year-title') : null;
+
+            if (scrollPosition >= circleTop) {
+                circle.classList.add('active');
+                circle.style.borderColor = currentColor;
+                circle.style.color = currentColor;
+                if (yearTitle) yearTitle.style.color = currentColor;
+            } else {
+                circle.classList.remove('active');
+                circle.style.borderColor = '#262626';
+                circle.style.color = '#262626';
+                if (yearTitle) yearTitle.style.color = '#262626';
+            }
         });
     }
-});
 
+    // 좌측 섹션 활성화 상태 업데이트
+    function updateLeftSectionActiveStates(scrollPosition) {
+        const leftItems = document.querySelectorAll('.left-section__item');
+        const rightSections = document.querySelectorAll('.timeline-group');
 
+        rightSections.forEach((section, index) => {
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+                leftItems.forEach(item => item.classList.remove('active'));
+                leftItems[index].classList.add('active');
+            }
+        });
+    }
+
+    // 스크롤 이벤트 설정
+    function setupScrollEvents() {
+        window.addEventListener('scroll', updateProgressBar);
+        window.addEventListener('resize', updateProgressBar);
+    }
+
+    // 좌측 섹션 클릭 이벤트 연결
+    function attachH3ClickEvents() {
+        const leftItems = document.querySelectorAll('.left-section__item');
+        const rightSections = document.querySelectorAll('.timeline-group');
+
+        leftItems.forEach((item, index) => {
+            const h3 = item.querySelector('h3');
+            h3.addEventListener('click', () => {
+                rightSections[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    }
+
+    // 비주얼 섹션 스크롤/터치 이벤트 설정
+    function setupVisualSectionEvents() {
+        const visualSection = document.querySelector(".bizInfo_history__visual");
+        const nextSection = document.querySelector(".bizInfo_history__sub-container");
+        const arrowIcon = document.querySelector(".icon-arrow-down-wh48");
+
+        let isScrolling = false;
+        let scrollTimeout;
+        let touchStartY = 0;
+
+        // 비주얼 섹션 내에 있는지 확인
+        const isInVisualView = () => {
+            const rect = visualSection.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom > 0;
+        };
+
+        // 섹션 스크롤 함수
+        const scrollToSection = (direction) => {
+            if (isScrolling) return;
+
+            isScrolling = true;
+
+            if (direction === 'down') {
+                nextSection.scrollIntoView({ behavior: "smooth" });
+            } else if (direction === 'up') {
+                visualSection.scrollIntoView({ behavior: "smooth" });
+            }
+
+            scrollTimeout = setTimeout(() => {
+                isScrolling = false;
+            }, 1000);
+        };
+
+        // 마우스 휠 이벤트
+        visualSection.addEventListener("wheel", (e) => {
+            if (!isInVisualView()) return;
+
+            const direction = e.deltaY > 0 ? 'down' : 'up';
+            scrollToSection(direction);
+        }, { passive: true });
+
+        // 터치 이벤트 (모바일 대응)
+        visualSection.addEventListener("touchstart", (e) => {
+            touchStartY = e.touches[0].clientY;
+        });
+
+        visualSection.addEventListener("touchend", (e) => {
+            const touchEndY = e.changedTouches[0].clientY;
+            const deltaY = touchStartY - touchEndY;
+
+            if (Math.abs(deltaY) > 5 && isInVisualView()) {
+                scrollToSection(deltaY > 0 ? 'down' : 'up');
+            }
+        });
+
+        // 화살표 클릭 이벤트
+        if (arrowIcon) {
+            arrowIcon.addEventListener("click", () => {
+                scrollToSection('down');
+            });
+        }
+    }
     </script>
 </body>
-
 </html>
