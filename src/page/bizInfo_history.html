@@ -258,7 +258,13 @@
         leftItems.forEach((item, index) => {
             const h3 = item.querySelector('h3');
             h3.addEventListener('click', () => {
-                rightSections[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const targetTop = rightSections[index].getBoundingClientRect().top + window.scrollY;
+                const offset = window.innerWidth <= 768 ? 80 : 0; // 모바일이면 80px 더 내려감
+
+                window.scrollTo({
+                    top: targetTop - offset,
+                    behavior: 'smooth'
+                });
             });
         });
     }
@@ -313,7 +319,7 @@
             const touchEndY = e.changedTouches[0].clientY;
             const deltaY = touchStartY - touchEndY;
 
-            if (Math.abs(deltaY) > 5 && isInVisualView()) {
+            if (Math.abs(deltaY) > 3 && isInVisualView()) {
                 scrollToSection(deltaY > 0 ? 'down' : 'up');
             }
         });
