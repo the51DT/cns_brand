@@ -1041,12 +1041,15 @@
     }
     
     &__event-container {
-      // display: flex;
-      // justify-content: space-between;
+      display: grid;
       gap: calc(16/16*1rem);
       grid-template-columns: auto calc(724 / 16 * 1rem);
 
-      @media #{$phone} {
+      @media #{$tablet} {
+        grid-template-columns: auto 50%;
+      }
+
+      @media #{$tabletMini} {
         // justify-content: none;
         display: flex;
         flex-direction: column;
@@ -1063,13 +1066,80 @@
           margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l)/16*1rem);
         }
       }
-      .events {
+      .events-flex {
+        position: relative;
         display: flex;
-        flex-direction: column;
-        gap: calc(120 / 16 * 1rem);
+        flex-direction: row;
+        gap: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
 
         @media #{$phone}{
           margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge)/16*1rem);
+          margin-left: calc(12 / 16 * 1rem);
+        }
+        .progress-bar {
+          position: absolute;
+          width: calc(4 / 16 * 1rem);
+          height: 100%;
+          background: #D9D9D9;          
+          overflow: hidden;
+          // margin: 0 calc(16 / 16 * 1rem);
+  
+          .bar {
+            position: absolute;
+            // 임시 높이
+            height: 100%;
+            width: calc(4 / 16 * 1rem);
+            top: 0;
+            bottom: 0;
+            background: #A50034;
+          }
+        }
+  
+        .event-area{
+          display: flex;
+          flex-direction: column;
+          gap: calc(120 / 16 * 1rem);
+          margin-left: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
+          @media #{$tablet} {
+            margin-left: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+          }
+          @media #{$phone} {
+            margin-left: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
+          }
+          // JS에서 조작 .cmp-yearevent__month
+          .cmp-yearevent{
+            &__month{
+              .circle-container {
+                position: absolute;
+                left: calc(-12 / 16 * 1rem);
+                transform: translateY(calc(40 / 16 * 1rem));
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                border: 2px solid #D9D9D9;
+                background: #fff;
+
+                &::before {
+                  content: '';
+                  position: absolute;
+                  display: block;
+                  width: 16px;
+                  height: 16px;
+                  background: #D9D9D9;
+                  border-radius: 50%;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                }
+                &.active {
+                  border-color: #A50034;
+                  &::before {
+                    background-color: #A50034;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
