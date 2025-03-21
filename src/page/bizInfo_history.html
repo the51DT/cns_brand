@@ -25,7 +25,7 @@
                                 30년 넘게 대한민국 IT산업의<br />
                                 발전을 이끌어왔습니다.
                             </p>
-                        <i class="ico icon-arrow-down-wh48"></i>
+                        <i class="ico icon-arrow-down-wh48" style="cursor:pointer;"></i>
 
                         </div>
 
@@ -236,6 +236,64 @@ function attachH3ClickEvents() {
     });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const visualSection = document.querySelector(".bizInfo_history__visual");
+    const nextSection = document.querySelector(".bizInfo_history__sub-container");
+    const arrowIcon = document.querySelector(".icon-arrow-down-wh48");
+
+    let isScrolling = false;
+    let scrollTimeout;
+
+    const isInVisualView = () => {
+        const rect = visualSection.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+    };
+
+    const scrollToSection = (direction) => {
+        if (isScrolling) return;
+
+        isScrolling = true;
+
+        if (direction === 'down') {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        } else if (direction === 'up') {
+            visualSection.scrollIntoView({ behavior: "smooth" });
+        }
+
+        scrollTimeout = setTimeout(() => {
+            isScrolling = false;
+        }, 1000);
+    };
+
+    visualSection.addEventListener("wheel", (e) => {
+        if (!isInVisualView()) return;
+
+        const direction = e.deltaY > 0 ? 'down' : 'up';
+        scrollToSection(direction);
+    }, { passive: true });
+
+    // 모바일 대응
+    let touchStartY = 0;
+
+    visualSection.addEventListener("touchstart", (e) => {
+        touchStartY = e.touches[0].clientY;
+    });
+
+    visualSection.addEventListener("touchend", (e) => {
+        const touchEndY = e.changedTouches[0].clientY;
+        const deltaY = touchStartY - touchEndY;
+
+        if (Math.abs(deltaY) > 5 && isInVisualView()) {
+            scrollToSection(deltaY > 0 ? 'down' : 'up');
+        }
+    });
+
+    if (arrowIcon) {
+        arrowIcon.addEventListener("click", () => {
+            scrollToSection('down');
+        });
+    }
+});
 
 
     </script>

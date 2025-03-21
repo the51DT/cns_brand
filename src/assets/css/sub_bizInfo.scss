@@ -292,6 +292,7 @@
       background-size: cover;
       position: relative;
       overflow: hidden;
+      height: 100vh;
   
       @media #{$phone} {
         background: no-repeat center fixed url(/src/assets/image/sub/bg_history_mo01.png);
