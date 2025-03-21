@@ -15,10 +15,11 @@
     "icon-pagination-next",
     "icon-pagination-last",
     "icon-heart-line",
-    "icon-arrow-up-w24",
-    "icon-arrow-down-w24",
+    "icon-navigation-up-w24",
+    "icon-navigation-down-w24",
     "icon-download-bl24",
     "icon-arrow-down-wh48",
-    "icon-plus-wh24"
+    "icon-plus-wh24",
+    "icon-plus-bl24"
   ]
 }
