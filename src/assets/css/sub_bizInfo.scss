@@ -364,6 +364,10 @@
         bottom: 0;
         left: 50%;
         margin-bottom: calc(var(--typo-mo-line-height-head-sm)/16*1rem);
+
+        @media #{$phone}{
+          left: 45%;
+        }
       }
     }
   
@@ -413,7 +417,7 @@
 
   
         @media #{$phone} {
-          width: 100%;
+          width: 100vw;
           flex: none;
           border-bottom: 1px solid #f5f5f5;
           display: flex;
@@ -425,6 +429,8 @@
           z-index: 3;
           top: 0;
           overflow-x: auto; 
+          margin: 0 -1.25rem;
+          padding: 0 1.25rem;
           
           // &::before{
           //   content: "";
