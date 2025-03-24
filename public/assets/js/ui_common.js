@@ -431,54 +431,69 @@ const sidebarCmp = () => {
         section.setAttribute('id','section0' + (index+1))
     })
 
+    // 활성화 상태 업데이트 함수
+    const updateActiveState = (targetId) => {
+        // 모든 네비게이션 항목의 활성화 상태 제거
+        document.querySelectorAll('.cmp-sidebar li').forEach(item => {
+            item.classList.remove('is-active');
+        });
+
+        // 현재 섹션에 해당하는 네비게이션 항목 활성화
+        sideNavy.forEach(nav => {
+            const navTargetId = nav.getAttribute('href').replace('#', '');
+            if (navTargetId === targetId) {
+                nav.parentElement.classList.add('is-active');
+            }
+        });
+    };
+
     const sideNavy = sidebarEl.querySelectorAll('li a')
     sideNavy.forEach(nav => {
         nav.addEventListener('click', function(e) {
             e.preventDefault();
 
-
-            const targetId = this.getAttribute('href').replace('#', ''); // 대상 ID 가져오기
+            const targetId = this.getAttribute('href').replace('#', '');
             const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
                 const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - offset;
-                window.scrollTo({ top: targetPosition, behavior: "smooth" }); // 부드러운 스크롤 적용
+                window.scrollTo({ 
+                    top: targetPosition, 
+                    behavior: "smooth" 
+                });
+                
+                // 클릭 시 활성화 상태 업데이트
+                updateActiveState(targetId);
             }
+        });
+    });
 
-            const activeItem = document.querySelector('li.is-active');
-            activeItem.classList.remove('is-active');
-            if (activeItem) {
-                activeItem.classList.remove('is-active');
-            }
-            nav.parentElement.classList.add('is-active');
-        })
-        
-    })
-
-    // 스크롤 
+    // 스크롤 이벤트 핸들러
     const handleScroll = () => {
         let currentSection = null;
+        let minDistance = Infinity;
 
+        // 각 섹션의 위치를 확인하고 가장 가까운 섹션 찾기
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
-            if (rect.top <= 100 && rect.bottom >= 100) { 
+            const distance = Math.abs(rect.top - offset);
+            
+            if (distance < minDistance) {
+                minDistance = distance;
                 currentSection = section;
             }
         });
 
         if (currentSection) {
             const currentId = currentSection.getAttribute('id');
-            sideNavy.forEach(nav => {
-                const targetId = nav.getAttribute('href').replace('#', '');
-                if (targetId === currentId) {
-                    document.querySelectorAll('.cmp-sidebar li').forEach(item => item.classList.remove('is-active'));
-                    nav.parentElement.classList.add('is-active');
-                }
-            });
+            updateActiveState(currentId);
         }
     };
 
-    window.addEventListener('scroll', handleScroll);    
+    window.addEventListener('scroll', handleScroll);
+    
+    // 초기 로드 시 현재 위치에 맞는 섹션 활성화
+    handleScroll();
 }
 
 document.addEventListener("DOMContentLoaded", sidebarCmp);
