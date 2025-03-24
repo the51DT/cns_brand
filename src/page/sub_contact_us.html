@@ -24,119 +24,117 @@
         <div class="sub-content__wrap">
             <div class="inner-wrap">
                 <div class="form-container">
-                    <div class="form-container__contents">
-                        <%
-                        const inputData = [
-                            {
-                                id: 0,
-                                title: { text: "성함", required: true },
-                                inputData: [
-                                    {
-                                        type: "text",
-                                        placeholder: "성함을 입력해 주세요",
-                                    },
-                                ]
-                            },
-                            {
-                                id: 1,
-                                title: { text: "이메일", required: true },
-                                inputData: [
-                                    {
-                                        type: "multi",
-                                        placeholder: "입력해 주세요",
-                                        option: [
-                                            {
-                                                value: "직접 입력",
-                                            },
-                                            {
-                                                value: "naver.com",
-                                            }
-                                        ],
-                                    },
-                                ],
-                            },
-                            {
-                                id: 2,
-                                title: { text: "휴대전화", required: true },
-                                inputData: [
-                                    {
-                                        type: "text",
-                                        placeholder: "01012345678",
-                                    },
-                                ]
-                            },
-                            {
-                                id: 3,
-                                title: { text: "부서명", required: true },
-                                inputData: [
-                                    {
-                                        type: "text",
-                                        placeholder: "부서명을 입력해 주세요",
-                                    },
-                                ]
-                            },
-                            {
-                                id: 4,
-                                title: { text: "회사(소속)", required: true },
-                                inputData: [
-                                    {
-                                        type: "search",
-                                        placeholder: "검색해 주세요",
-                                    }
-                                ],
-                            },
-                            {
-                                id: 5,
-                                title: { text: "직급", required: true },
-                                inputData: [
-                                    {
-                                        type: "text",
-                                        placeholder: "직급을 입력해 주세요",
-                                    },
-                                ]
-                            },
-                            {
-                                id: 6,
-                                title: { text: "질문유형", required: true },
-                                inputData: [
-                                    {
-                                        type: "select",
-                                        placeholder: "질문 유형을 선택해 주세요",
-                                        option: [
-                                            {
-                                                value: "옵션1",
-                                            },
-                                            {
-                                                value: "옵션2",
-                                            }
-                                        ],
-                                    }
-                                ],
-                            },
-                            {
-                                id: 6,
-                                title: { text: "문의내용", required: true },
-                                inputData: [
-                                    {
-                                        type: "textarea",
-                                        placeholder: "내용을 입력해 주세요 &#10; *주민번호, 연락처, 계좌번호 등 개인정보가 포함된 내용은 입력을 금합니다",
-                                        countMax: "1,000"
-                                    },
-                                ],
-                            },
-                        ]
-                        %>
-                        <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
-                            jsonData: inputData,
-                        })) %>
-                        <div class="check-box-container">
-                            체크박스 컨테이너(이용동의)
-                        </div>
-                        <div class="button__wrap">
-                            <button type="button" class="btn btn-black btn-small">
-                                문의하기
-                            </button>
-                        </div>
+                    <%
+                    const inputData = [
+                        {
+                            id: 0,
+                            title: { text: "성함", required: true },
+                            inputData: [
+                                {
+                                    type: "text",
+                                    placeholder: "성함을 입력해 주세요",
+                                },
+                            ]
+                        },
+                        {
+                            id: 1,
+                            title: { text: "이메일", required: true },
+                            inputData: [
+                                {
+                                    type: "multi",
+                                    placeholder: "입력해 주세요",
+                                    option: [
+                                        {
+                                            value: "직접 입력",
+                                        },
+                                        {
+                                            value: "naver.com",
+                                        }
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            id: 2,
+                            title: { text: "휴대전화", required: true },
+                            inputData: [
+                                {
+                                    type: "text",
+                                    placeholder: "01012345678",
+                                },
+                            ]
+                        },
+                        {
+                            id: 3,
+                            title: { text: "부서명", required: true },
+                            inputData: [
+                                {
+                                    type: "text",
+                                    placeholder: "부서명을 입력해 주세요",
+                                },
+                            ]
+                        },
+                        {
+                            id: 4,
+                            title: { text: "회사(소속)", required: true },
+                            inputData: [
+                                {
+                                    type: "search",
+                                    placeholder: "검색해 주세요",
+                                }
+                            ],
+                        },
+                        {
+                            id: 5,
+                            title: { text: "직급", required: true },
+                            inputData: [
+                                {
+                                    type: "text",
+                                    placeholder: "직급을 입력해 주세요",
+                                },
+                            ]
+                        },
+                        {
+                            id: 6,
+                            title: { text: "질문유형", required: true },
+                            inputData: [
+                                {
+                                    type: "select",
+                                    placeholder: "질문 유형을 선택해 주세요",
+                                    option: [
+                                        {
+                                            value: "옵션1",
+                                        },
+                                        {
+                                            value: "옵션2",
+                                        }
+                                    ],
+                                }
+                            ],
+                        },
+                        {
+                            id: 6,
+                            title: { text: "문의내용", required: true },
+                            inputData: [
+                                {
+                                    type: "textarea",
+                                    placeholder: "내용을 입력해 주세요 &#10; *주민번호, 연락처, 계좌번호 등 개인정보가 포함된 내용은 입력을 금합니다",
+                                    countMax: "1,000"
+                                },
+                            ],
+                        },
+                    ]
+                    %>
+                    <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                        jsonData: inputData,
+                    })) %>
+                    <div class="check-box-container">
+                        체크박스 컨테이너(이용동의)
+                    </div>
+                    <div class="button__wrap">
+                        <button type="button" class="btn btn-black btn-small">
+                            문의하기
+                        </button>
                     </div>
                 </div>
             </div>
