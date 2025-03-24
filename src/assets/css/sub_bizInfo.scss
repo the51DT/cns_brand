@@ -796,6 +796,23 @@
         margin-bottom: 0;
       }
     }
+    .data-table td {
+      position: relative;
+      ul li {
+        position: relative;
+        padding-left: calc(27 / 16 * 1rem);
+        &::before {
+          content: '';
+          position: absolute;
+          width: calc(4 / 16 * 1rem);
+          height: calc(4 / 16 * 1rem);
+          background-color: #1a1a1a;
+          border-radius: 50%;
+          top: calc(10.5 / 16 * 1rem);
+          left: calc(12.5 / 16 * 1rem);
+        }
+      }
+    }
   }
 
   // LGWay 페이지 마크업을 위한 임시 스타일 적용
