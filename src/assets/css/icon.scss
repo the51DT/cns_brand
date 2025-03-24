@@ -28,7 +28,10 @@ $fileType: "svg";
     }   
     &.icon-arrow-right-wt16 {
         @include iconFile(16,16,'icon_arrow_wt16');
-    }        
+    }
+    &.icon-arrow-down-bl24 {
+        @include iconFile(24,24,'icon_arrow_down');
+    }      
     &.icon-lang-bl24 {
         @include iconFile(24,24,'icon_lang_bl24');
     }    
@@ -59,11 +62,11 @@ $fileType: "svg";
     &.icon-heart-line {
         @include iconFile(20,20,'icon_heart_line');
     }
-    &.icon-arrow-up-w24 {
-        @include iconFile(24,24,'icon_arrow_up_w24');
+    &.icon-navigation-up-w24 {
+        @include iconFile(24,24,'icon_navigation_up_w24');
     }                       
-    &.icon-arrow-down-w24 {
-        @include iconFile(24,24,'icon_arrow_down_w24');
+    &.icon-navigation-down-w24 {
+        @include iconFile(24,24,'icon_navigation_down_w24');
     }  
     &.icon-download-bl24 {
         @include iconFile(24,24,'icon_download_bl24');
@@ -73,5 +76,8 @@ $fileType: "svg";
     }  
     &.icon-plus-wh24 {
         @include iconFile(24,24,'icon-plus-wh24');
+    }  
+    &.icon-plus-bl24 {
+        @include iconFile(24,24,'icon-plus-bl24');
     }  
 }

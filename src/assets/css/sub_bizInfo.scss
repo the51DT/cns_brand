@@ -1,5 +1,5 @@
-.bizInfo_ {
-  &compOvw {
+.bizinfo- {
+  &comp-ovw {
     .sub-visual__wrap {
       margin-bottom: calc(40 / 16 * 1rem);
     }
@@ -29,7 +29,7 @@
     }
   }
   // .bizInfo_enviroMgmt
-  &enviroMgmt {
+  &enviro-mgmt {
     .cmp_image-item-2col,
     .cmp_image-item-column:not(:last-child) {
       margin-bottom: calc(200 / 16 * 1rem);
@@ -163,7 +163,7 @@
   }
 
   // bizInfo_disclosureInfo
-  &disclosureInfo {
+  &disclosure-info {
     .data-table {
       table-layout: auto;
       td {
@@ -251,7 +251,7 @@
       }
     }
   }
-  &humanRights {
+  &human-rights {
   }
 
   //.bizInfo_financial
@@ -576,7 +576,7 @@
   
             .year-title {
               display: contents;
-              font-size: calc(var(--typo-pc-size-head-2xl)/16*1rem);
+              font-size: calc(78/16*1rem);
               font-weight: 800;
 
               @media #{$phone}{
@@ -672,7 +672,7 @@
   }
 
 
-  &mgmtInfo {
+  &mgmt-info {
     .cmp-accordion {
       .accordion-list {
         .terms_orderList {
@@ -686,7 +686,7 @@
     }
   }
 
-  &socContrib {
+  &soc-contrib {
     .layout_col2 {
       margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
       @media #{$tablet} {
@@ -717,7 +717,7 @@
     }
   }
 
-  &jungdoMgmt {
+  &jungdo-mgmt {
     .cmp-wrap {
       @media #{$phone} {
         margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
@@ -752,7 +752,7 @@
     }
   }
 
-  &growFair {
+  &grow-fair {
     .detail-text {
       margin-bottom: calc(60 / 16 * 1rem);
       @media #{$tabletMini} {
@@ -770,6 +770,22 @@
     }
     .layout_col2 {
       margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+      // .table-container {
+      //   max-width: 100%;
+      //   overflow-x: auto;
+      // }
+      &.add-table {
+        @media #{$tablet} {
+          grid-template-columns: calc(350 / 16 * 1rem) calc(594 / 16 * 1rem);
+        }
+        @media #{$tabletMini} {
+          grid-template-columns: repeat(1, 100%);
+          gap: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
+          & > div:last-child .cmp-wrap:first-child:not(.cmp-table__wrap) {
+              margin-top: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
+          }
+        }
+      }
       @media #{$tablet} {
         margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
       }
@@ -786,27 +802,10 @@
         margin-bottom: 0;
       }
     }
-    .data-table td {
-      position: relative;
-      ul li {
-        position: relative;
-        padding-left: calc(27 / 16 * 1rem);
-        &::before {
-          content: '';
-          position: absolute;
-          width: calc(4 / 16 * 1rem);
-          height: calc(4 / 16 * 1rem);
-          background-color: #1a1a1a;
-          border-radius: 50%;
-          top: calc(10.5 / 16 * 1rem);
-          left: calc(12.5 / 16 * 1rem);
-        }
-      }
-    }
   }
 
   // LGWay 페이지 마크업을 위한 임시 스타일 적용
-  &LGWay {
+  &LG-way {
     background-color: #000000;
     color: #fff;
     &__section {
@@ -1033,7 +1032,7 @@
     }
   }
 
-  &irActivity {
+  &ir-activity {
     
     color: #1a1a1a;
 
@@ -1047,12 +1046,15 @@
     }
     
     &__event-container {
-      // display: flex;
-      // justify-content: space-between;
+      display: grid;
       gap: calc(16/16*1rem);
       grid-template-columns: auto calc(724 / 16 * 1rem);
 
-      @media #{$phone} {
+      @media #{$tablet} {
+        grid-template-columns: auto 50%;
+      }
+
+      @media #{$tabletMini} {
         // justify-content: none;
         display: flex;
         flex-direction: column;
@@ -1069,13 +1071,80 @@
           margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l)/16*1rem);
         }
       }
-      .events {
+      .events-flex {
+        position: relative;
         display: flex;
-        flex-direction: column;
-        gap: calc(120 / 16 * 1rem);
+        flex-direction: row;
+        gap: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
 
         @media #{$phone}{
           margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge)/16*1rem);
+          margin-left: calc(12 / 16 * 1rem);
+        }
+        .progress-bar {
+          position: absolute;
+          width: calc(4 / 16 * 1rem);
+          height: 100%;
+          background: #D9D9D9;          
+          overflow: hidden;
+          // margin: 0 calc(16 / 16 * 1rem);
+  
+          .bar {
+            position: absolute;
+            // 임시 높이
+            height: 100%;
+            width: calc(4 / 16 * 1rem);
+            top: 0;
+            bottom: 0;
+            background: #A50034;
+          }
+        }
+  
+        .event-area{
+          display: flex;
+          flex-direction: column;
+          gap: calc(120 / 16 * 1rem);
+          margin-left: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
+          @media #{$tablet} {
+            margin-left: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+          }
+          @media #{$phone} {
+            margin-left: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
+          }
+          // JS에서 조작 .cmp-yearevent__month
+          .cmp-yearevent{
+            &__month{
+              .circle-container {
+                position: absolute;
+                left: calc(-12 / 16 * 1rem);
+                transform: translateY(calc(40 / 16 * 1rem));
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                border: 2px solid #D9D9D9;
+                background: #fff;
+
+                &::before {
+                  content: '';
+                  position: absolute;
+                  display: block;
+                  width: 16px;
+                  height: 16px;
+                  background: #D9D9D9;
+                  border-radius: 50%;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                }
+                &.active {
+                  border-color: #A50034;
+                  &::before {
+                    background-color: #A50034;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

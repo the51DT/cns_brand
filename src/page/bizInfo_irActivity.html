@@ -11,12 +11,12 @@
 </head>
 
 <body>
-   <div class="wrap bizInfo_irActivity">
+   <div class="wrap bizinfo-ir-activity">
       <%- include('src/_inc/header.html') %>
 
       <div class="sub-content__wrap">
          <div class="inner-wrap">
-            <div class="bizInfo_irActivity__container">
+            <div class="bizinfo-ir-activity__container">
                <div class="cmp-exsample__wrap mt-3">
                   <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                      subTitle: 'IR', titleText: 'IR 활동' 
@@ -35,7 +35,7 @@
                      <div class="tab-content__wrap">
                         <!-- IR 행사 탭 -->
                         <div class="tab__content is-active">
-                           <div class="bizInfo_irActivity__event-container layout_col2">
+                           <div class="bizinfo-ir-activity__event-container layout_col2">
                               <div class="event-text">
                                  <span class="event-period font-bold">
                                     기간별 IR 행사를<br />확인해 보세요.
@@ -45,34 +45,39 @@
                                  </select>
                               </div>
 
-                              <div class="events">
-                                 <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
-                                    month: '11월', events: [
-                                       { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
-                                    ]
-                                 })) %>
-
-                                 <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
-                                    month: '10월', events: [
-                                       { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
-                                       { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
-                                    ]
-                                 })) %>
-
-                                 <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
-                                    month: '9월', events: [
-                                       { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
-                                       { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
-                                       { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
-                                    ]
-                                 })) %>
-
-                                 <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
-                                    month: '8월', events: [
-                                       { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
-                                       { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
-                                    ]
-                                 })) %>
+                              <div class="events-flex">
+                                 <div class="progress-bar">
+                                    <div class="bar"></div>
+                                 </div>
+                                 <div class="event-area">
+                                    <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
+                                       month: '11월', events: [
+                                          { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
+                                       ]
+                                    })) %>
+   
+                                    <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
+                                       month: '10월', events: [
+                                          { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
+                                          { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
+                                       ]
+                                    })) %>
+   
+                                    <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
+                                       month: '9월', events: [
+                                          { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
+                                          { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
+                                          { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
+                                       ]
+                                    })) %>
+   
+                                    <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
+                                       month: '8월', events: [
+                                          { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
+                                          { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
+                                       ]
+                                    })) %>
+                                 </div>
                               </div>
                            </div>
                         </div>
@@ -80,7 +85,7 @@
                         <!-- 실적발표 탭 -->
                         <div class="tab__content">
                            <div>
-                              <div class="bizInfo_irActivity__year-container">
+                              <div class="bizinfo-ir-activity__year-container">
                                  <span class="font-bold">2024년</span>
                                  <select name="IR">
                                     <option value="">연도선택</option>
@@ -103,15 +108,15 @@
                         <!-- 주주총회 탭 -->
                         <div class="tab__content">
                            <div>
-                              <div class="bizInfo_irActivity__year-container">
+                              <div class="bizinfo-ir-activity__year-container">
                                  <span class="font-bold">2024년</span>
                                  <select name="IR">
                                     <option value="">연도선택</option>
                                  </select>
                               </div>
 
-                              <div class="bizInfo_irActivity__accodion">
-                                 <% const faqData = [
+                              <div class="bizinfo-ir-activity__accodion">
+                                 <% const irData = [
                                     { id: 0, faqTitle: '제 5회 정기 주주총회', 
                                     faqContent: 
                                     `
@@ -204,7 +209,7 @@
                                  ]; %>
 
                                  <%- include('src/component/cmp_accordion.html', {
-                                    typeClass: 'open-type', openIndex: '0', itemCount: 5, jsonData: faqData 
+                                    typeClass: 'open-type', openIndex: '0', itemCount: 5, jsonData: irData 
                                  }) %>
                               </div>
                            </div>
@@ -225,6 +230,33 @@
       tabMenu('.basic-type', 'tab');
       accordion('.open-type', 'basic');
    </script>
+   <!-- <script>
+      document.addEventListener('DOMContentLoaded', function() {
+         const month = document.querySelectorAll('.cmp-yearevent__month');
+         month.forEach((item, index) => {
+            const circleContainer = document.createElement('div');
+            circleContainer.className = 'circle-container';
+            item.prepend(circleContainer);
+         });
+
+         function progressBarLength() {
+            const progressBar = document.querySelector('.progress-bar');
+            const firstCircle = document.querySelector('.circle-container');
+            const lastCircle = document.querySelectorAll('.circle-container')[month.length - 1];
+            
+            if (progressBar && firstCircle && lastCircle) {
+               const firstCircleTop = firstCircle.getBoundingClientRect().top;
+               const lastCircleBottom = lastCircle.getBoundingClientRect().bottom;
+               const distance = lastCircleBottom - firstCircleTop;
+               
+               progressBar.style.top = `${firstCircleTop - progressBar.parentElement.getBoundingClientRect().top}px`;
+               progressBar.style.height = `${distance}px`;
+            }
+         }
+         progressBarLength();
+         window.addEventListener('resize', progressBarLength);
+      });
+   </script> -->
 </body>
 
 </html>
