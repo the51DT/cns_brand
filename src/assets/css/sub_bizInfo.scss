@@ -566,14 +566,9 @@
         }
 
         .year-container {
-          // display: flex;
-          // align-items: center;
           position: relative;
-          // margin-left: calc(var(--spacing-mode1-horizontal6-x-l)/-16*1rem);
-          // margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l)/16*1rem);
 
           @media #{$tablet} {
-            // margin-left: calc(var(--spacing-mode1-horizontal4-x-l)/-16*1rem);
           }
 
           span {
@@ -1044,8 +1039,8 @@
   }
 
   &ir-activity {
-    
     color: #1a1a1a;
+
 
     select {
       display: block;
@@ -1057,9 +1052,11 @@
     }
     
     &__event-container {
-      display: grid;
+      display: flex;
+      align-items: flex-start;
       gap: calc(16/16*1rem);
-      grid-template-columns: auto calc(724 / 16 * 1rem);
+      justify-content: space-between;
+      // grid-template-columns: auto calc(724 / 16 * 1rem);
 
       @media #{$tablet} {
         grid-template-columns: auto 50%;
@@ -1073,6 +1070,11 @@
 
 
       .event-text{
+        position: sticky;
+        top: 20px; /* 원하는 값으로 조절 */
+        z-index: 10; /* 필요 시 */
+        background: white; /* 배경색 지정 안 하면 겹칠 수 있음 */
+
         .event-period {
           font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
           line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
@@ -1092,6 +1094,7 @@
           margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge)/16*1rem);
           margin-left: calc(12 / 16 * 1rem);
         }
+
         .progress-bar {
           position: absolute;
           width: calc(4 / 16 * 1rem);
@@ -1102,9 +1105,8 @@
   
           .bar {
             position: absolute;
-            // 임시 높이
-            height: 100%;
             width: calc(4 / 16 * 1rem);
+            border-radius: 2px;
             top: 0;
             bottom: 0;
             background: #A50034;
@@ -1122,9 +1124,17 @@
           @media #{$phone} {
             margin-left: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
           }
-          // JS에서 조작 .cmp-yearevent__month
+
           .cmp-yearevent{
             &__month{
+              margin-bottom: calc(80 / 16 * 1rem);
+              color: #e5e5e5;
+              font-size: calc(var(--typo-pc-size-head2xl)/16*1rem);
+
+              &.active {
+                color: #a50034;
+              }
+
               .circle-container {
                 position: absolute;
                 left: calc(-12 / 16 * 1rem);
@@ -1134,6 +1144,7 @@
                 border-radius: 50%;
                 border: 2px solid #D9D9D9;
                 background: #fff;
+
 
                 &::before {
                   content: '';
