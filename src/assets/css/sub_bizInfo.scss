@@ -1,5 +1,5 @@
-.bizInfo_ {
-  &compOvw {
+.bizinfo- {
+  &comp-ovw {
     .sub-visual__wrap {
       margin-bottom: calc(40 / 16 * 1rem);
     }
@@ -29,7 +29,7 @@
     }
   }
   // .bizInfo_enviroMgmt
-  &enviroMgmt {
+  &enviro-mgmt {
     .cmp_image-item-2col,
     .cmp_image-item-column:not(:last-child) {
       margin-bottom: calc(200 / 16 * 1rem);
@@ -163,7 +163,7 @@
   }
 
   // bizInfo_disclosureInfo
-  &disclosureInfo {
+  &disclosure-info {
     .data-table {
       table-layout: auto;
       td {
@@ -251,7 +251,7 @@
       }
     }
   }
-  &humanRights {
+  &human-rights {
   }
 
   //.bizInfo_financial
@@ -666,7 +666,7 @@
     }
   }
 
-  &mgmtInfo {
+  &mgmt-info {
     .cmp-accordion {
       .accordion-list {
         .terms_orderList {
@@ -680,7 +680,7 @@
     }
   }
 
-  &socContrib {
+  &soc-contrib {
     .layout_col2 {
       margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
       @media #{$tablet} {
@@ -711,7 +711,7 @@
     }
   }
 
-  &jungdoMgmt {
+  &jungdo-mgmt {
     .cmp-wrap {
       @media #{$phone} {
         margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
@@ -746,7 +746,7 @@
     }
   }
 
-  &growFair {
+  &grow-fair {
     .detail-text {
       margin-bottom: calc(60 / 16 * 1rem);
       @media #{$tabletMini} {
@@ -799,7 +799,7 @@
   }
 
   // LGWay 페이지 마크업을 위한 임시 스타일 적용
-  &LGWay {
+  &LG-way {
     background-color: #000000;
     color: #fff;
     &__section {
@@ -1026,7 +1026,7 @@
     }
   }
 
-  &irActivity {
+  &ir-activity {
     
     color: #1a1a1a;
 

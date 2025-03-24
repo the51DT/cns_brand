@@ -9,12 +9,12 @@
     <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
 </head>
 <body class="dark-mode">
-    <div class="wrap has-hero bizInfo_LGWay">
+    <div class="wrap has-hero bizinfo-LG-way">
         <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
-            <div class="bizInfo_LGWay__container">
+            <div class="bizinfo-LG-way__container">
                 <!-- 내비 -->
                 <div class="full-sec__pagination">
                     <div class="full-sec__pagination--item font-caption-xl is-active">LG 비전</div>
@@ -30,9 +30,9 @@
                 </div>
                 <!-- //이미지 -->
 
-                <div class="bizInfo_LGWay__section full-sec bizInfo_LGWay__section--01">
+                <div class="bizinfo-LG-way__section full-sec bizinfo-LG-way__section--01">
                     <div class="inner-wrap">
-                        <div class="bizInfo_LGWay__textarea">
+                        <div class="bizinfo-LG-way__textarea">
                             <h2 class="font-head-xl font-bold">LG Way</h2>
                             <p class="font-head-sm font-medium">
                                 LG 고유의 경영철학이자, 전 임직원이 지키고<br/>
@@ -53,9 +53,9 @@
                     </div>
                 </div>
 
-                <div class="bizInfo_LGWay__section full-sec bizInfo_LGWay__section--02">
+                <div class="bizinfo-LG-way__section full-sec bizinfo-LG-way__section--02">
                     <div class="inner-wrap">
-                        <div class="bizInfo_LGWay__textarea">
+                        <div class="bizinfo-LG-way__textarea">
                             <h2 class="font-head-lg font-bold">일등 LG</h2>
                             <p class="font-body-lg font-medium">
                                 LG의 궁극적인 지향점으로<br/>
@@ -72,9 +72,9 @@
                     </div>
                 </div>
 
-                <div class="bizInfo_LGWay__section full-sec bizInfo_LGWay__section--03">
+                <div class="bizinfo-LG-way__section full-sec bizinfo-LG-way__section--03">
                     <div class="inner-wrap">
-                        <div class="bizInfo_LGWay__textarea">
+                        <div class="bizinfo-LG-way__textarea">
                             <h2 class="font-head-lg font-bold">정도경영</h2>
                             <p class="font-body-lg font-medium">
                                 윤리경영을 기반으로<br/>
@@ -91,9 +91,9 @@
                     </div>
                 </div>
 
-                <div class="bizInfo_LGWay__section full-sec bizInfo_LGWay__section--04">
+                <div class="bizinfo-LG-way__section full-sec bizinfo-LG-way__section--04">
                     <div class="inner-wrap">
-                        <div class="bizInfo_LGWay__textarea">
+                        <div class="bizinfo-LG-way__textarea">
                             <h2 class="font-head-lg font-bold">고객을 위한 가치창조,<br>인간존중의 경영</h2>
                             <p class="font-body-lg font-medium">
                                 기업의 존립근거이자 회사운영의 원칙입니다.
@@ -108,9 +108,9 @@
                     </div>
                 </div>
             </div>
-            <div class="bizInfo_LGWay__section last-sec">
+            <div class="bizinfo-LG-way__section last-sec">
                 <div class="inner-wrap">
-                    <div class="bizInfo_LGWay__textarea">
+                    <div class="bizinfo-LG-way__textarea">
                         <h2 class="font-head-sm font-bold">LG 임직원의 부당한 요구,</h2>
                         <p class="font-body-lg font-medium">
                             또는 불공정 업무처리로 불편함을 겪고있다면, 사이버 신문고를 두드려 보세요!<br>
@@ -131,14 +131,14 @@
         }))%>
     </div>
     <script>
-        const sections = document.querySelectorAll('.bizInfo_LGWay__section');
-        const fullSecList = document.querySelectorAll('.bizInfo_LGWay__section.full-sec');
+        const sections = document.querySelectorAll('.bizinfo-LG-way__section');
+        const fullSecList = document.querySelectorAll('.bizinfo-LG-way__section.full-sec');
         const lastSection = document.querySelector('.last-sec');
         const goNextButton = document.querySelector('.button__wrap--scroll-down');
         const navigation = document.querySelector('.full-sec__pagination');
         const visualImgWrap = document.querySelector('.full-sec__img');
         const visualImg = visualImgWrap.querySelectorAll('div');
-        const container = document.querySelector('.bizInfo_LGWay__container');
+        const container = document.querySelector('.bizinfo-LG-way__container');
 
         let prevScrollTop = 0;
         let fullSecNum = 0;
@@ -176,9 +176,9 @@
             }
             if (
                 activeSection &&
-                (activeSection.classList.contains("bizInfo_LGWay__section--02") ||
-                activeSection.classList.contains("bizInfo_LGWay__section--03") ||
-                activeSection.classList.contains("bizInfo_LGWay__section--04"))
+                (activeSection.classList.contains("bizinfo-LG-way__section--02") ||
+                activeSection.classList.contains("bizinfo-LG-way__section--03") ||
+                activeSection.classList.contains("bizinfo-LG-way__section--04"))
             ) {
                 visualImgWrap.classList.add("is-active"); // 패럴랙스 구간에서는 is-active 유지
             } 
