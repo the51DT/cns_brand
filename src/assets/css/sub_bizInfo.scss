@@ -1,5 +1,5 @@
-.bizInfo_ {
-  &compOvw {
+.bizinfo- {
+  &comp-ovw {
     .sub-visual__wrap {
       margin-bottom: calc(40 / 16 * 1rem);
     }
@@ -29,7 +29,7 @@
     }
   }
   // .bizInfo_enviroMgmt
-  &enviroMgmt {
+  &enviro-mgmt {
     .cmp_image-item-2col,
     .cmp_image-item-column:not(:last-child) {
       margin-bottom: calc(200 / 16 * 1rem);
@@ -163,7 +163,7 @@
   }
 
   // bizInfo_disclosureInfo
-  &disclosureInfo {
+  &disclosure-info {
     .data-table {
       table-layout: auto;
       td {
@@ -251,7 +251,7 @@
       }
     }
   }
-  &humanRights {
+  &human-rights {
   }
 
   //.bizInfo_financial
@@ -666,7 +666,7 @@
     }
   }
 
-  &mgmtInfo {
+  &mgmt-info {
     .cmp-accordion {
       .accordion-list {
         .terms_orderList {
@@ -680,7 +680,7 @@
     }
   }
 
-  &socContrib {
+  &soc-contrib {
     .layout_col2 {
       margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
       @media #{$tablet} {
@@ -711,7 +711,7 @@
     }
   }
 
-  &jungdoMgmt {
+  &jungdo-mgmt {
     .cmp-wrap {
       @media #{$phone} {
         margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
@@ -746,7 +746,7 @@
     }
   }
 
-  &growFair {
+  &grow-fair {
     .detail-text {
       margin-bottom: calc(60 / 16 * 1rem);
       @media #{$tabletMini} {
@@ -764,6 +764,22 @@
     }
     .layout_col2 {
       margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+      // .table-container {
+      //   max-width: 100%;
+      //   overflow-x: auto;
+      // }
+      &.add-table {
+        @media #{$tablet} {
+          grid-template-columns: calc(350 / 16 * 1rem) calc(594 / 16 * 1rem);
+        }
+        @media #{$tabletMini} {
+          grid-template-columns: repeat(1, 100%);
+          gap: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
+          & > div:last-child .cmp-wrap:first-child:not(.cmp-table__wrap) {
+              margin-top: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
+          }
+        }
+      }
       @media #{$tablet} {
         margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
       }
@@ -780,27 +796,10 @@
         margin-bottom: 0;
       }
     }
-    .data-table td {
-      position: relative;
-      ul li {
-        position: relative;
-        padding-left: calc(27 / 16 * 1rem);
-        &::before {
-          content: '';
-          position: absolute;
-          width: calc(4 / 16 * 1rem);
-          height: calc(4 / 16 * 1rem);
-          background-color: #1a1a1a;
-          border-radius: 50%;
-          top: calc(10.5 / 16 * 1rem);
-          left: calc(12.5 / 16 * 1rem);
-        }
-      }
-    }
   }
 
   // LGWay 페이지 마크업을 위한 임시 스타일 적용
-  &LGWay {
+  &LG-way {
     background-color: #000000;
     color: #fff;
     &__section {
@@ -1027,7 +1026,7 @@
     }
   }
 
-  &irActivity {
+  &ir-activity {
     
     color: #1a1a1a;
 
