@@ -58,4 +58,108 @@ const mainNavigation = (selector) => {
     })
 }
 
-mainNavigation('.navy-list > li > a')
+const moNavigationToggle = (button) => {
+    const bodyWrap = document.querySelector('body');
+    const moNavigation = document.querySelector('.mo-gnb-navy__wrap');
+    const moMenu = document.querySelector(button);
+    moMenu.addEventListener('click', () => {
+        if(!moNavigation.classList.contains('is-active')) {
+            bodyWrap.classList.add('overflow');
+            headerWrap.classList.add('is-active')
+            moNavigation.classList.add('is-active');
+        } else {
+            bodyWrap.classList.remove('overflow');
+            headerWrap.classList.remove('is-active')
+            moNavigation.classList.remove('is-active');
+        }
+    })
+}
+
+// mobile gnb
+const moNavigationAccordion = (button) => {
+    const navigationButtons = document.querySelectorAll(button);
+    
+    navigationButtons.forEach(item => {
+        item.addEventListener("click", (target) => {
+            const targetParent = event.currentTarget.parentNode;
+            if (!targetParent.classList.contains('is-active')) {
+                targetParent.classList.add('is-active');
+            } else {
+                targetParent.classList.remove('is-active');
+            }
+        });
+    });
+}
+
+// 위 아래 구분을 위한 스크립트
+let lastScrollTop = 0;
+const headerWrap = document.querySelector('.header__wrap');
+const cmpSubVisual = document.querySelector(".sub-visual__wrap");
+const cmpMainVisual = document.querySelector(".main-visual__wrap");
+let subVisualHeight = 0;
+let mainVisualHeight = 0;
+if(cmpSubVisual) {
+    subVisualHeight = cmpSubVisual.offsetHeight;
+}
+if(cmpMainVisual) {
+    mainVisualHeight = cmpMainVisual.offsetHeight;
+}
+const scrollEventManage = () => {
+    const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if(subVisualHeight > 0 || mainVisualHeight > 0) {
+        if(Yoffset > subVisualHeight || Yoffset > mainVisualHeight) {
+            // cmpSubVisual 바깥에
+            headerWrap.classList.remove('header__wrap--bg-transparent');
+        } else {
+            headerWrap.classList.add('header__wrap--bg-transparent');
+        }
+    }
+
+    if(Yoffset == 0) {
+        onTopScroll();
+    } else {
+        if (Yoffset > lastScrollTop) {
+            onDownScroll();
+        } else {
+            onUpScroll();
+        }
+    }
+
+    lastScrollTop = Yoffset <= 0 ? 0 : Yoffset;
+}
+
+const onDownScroll = () => {
+    if(headerWrap.classList.contains('header__wrap--fixed')) {
+        headerWrap.classList.remove('header__wrap--fixed');
+        headerWrap.classList.add('header__wrap--fixed-motion');
+    }
+}
+
+const onUpScroll = () => {
+    if(!headerWrap.classList.contains('header__wrap--fixed')) {
+        headerWrap.classList.remove('header__wrap--fixed-motion');
+        headerWrap.classList.add('header__wrap--fixed');
+    }
+}
+
+const onTopScroll = () => {
+    headerWrap.classList.remove('header__wrap--fixed');
+    headerWrap.classList.remove('header__wrap--fixed-motion');
+}
+
+const checkTopVisual = () => {
+    if(cmpSubVisual) {
+        headerWrap.classList.add('header__wrap--bg-transparent');
+    } 
+    if(cmpMainVisual) {
+        headerWrap.classList.add('header__wrap--bg-transparent');
+    }
+}
+
+
+window.addEventListener("scroll", scrollEventManage);
+checkTopVisual();
+mainNavigation('.navy-list > li > a');
+moNavigationToggle('.mo-menu .btn-hamburger-menu');
+moNavigationAccordion('.mo-navy-list > li > a')
