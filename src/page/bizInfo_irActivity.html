@@ -230,7 +230,6 @@
       tabMenu('.basic-type', 'tab');
       accordion('.open-type', 'basic');
    </script>
-
 <script>
    function updateProgressBar() {
       const progressBar = document.querySelector('.progress-bar .bar');
@@ -267,8 +266,11 @@
          const circleHeight = circle.offsetHeight;
          const circleCenter = circleTop + circleHeight / 2;
    
-         const monthTitle = circle.querySelector('.cmp-yearevent__month');
+         // 정확한 monthTitle 위치 찾아오기
+         const monthTitle = circle.querySelector('.cmp-yearevent__month') 
+            || circle.closest('.cmp-yearevent')?.querySelector('.cmp-yearevent__month');
    
+         // 이게 핵심 조건 (bar 범위에 들어오면 active)
          if (circleCenter >= barTop && circleCenter <= barBottom) {
             circle.classList.add('active');
             if (monthTitle) monthTitle.classList.add('active');
@@ -283,6 +285,7 @@
    window.addEventListener('scroll', updateProgressBar);
    window.addEventListener('resize', updateProgressBar);
    </script>
+   
    
 </body>
 
