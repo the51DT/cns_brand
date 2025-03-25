@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3 mt-10">기본형</p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <%
+                            const imageSolutionColumnData = [
+                                {
+                                    id: 0,
+                                    type: 'type-default',
+                                    imageUrl: 'https://placehold.co/1168x492',
+                                    imageAlt: 'test',
+                                    title: 'SBP 솔루션 처리 모델',
+                                    content: [
+                                        'LG CNS의 SBP 솔루션은 LLM(Large Language Model)을 위한 통합 데이터 저장소인 Delta Lake를 제공하며, LLM에 검색 증강 생성(Retreival-Augmented Generation, RAG)을 위한 고도 병력 처리(Massive Parallel Processig, MPP) 구조의 Vector DB(CloudBerry with VectorDB)를 포함합니다. 또한, DataPrep을 활용해 분석에 필요한 데이터를 전처리할 수 있도록 지원하며, 독립적인 모델 개발 및 학습 공간을 제공하여 AI 학습을 신속하게 적용하고 활용할 수 있도록 돕습니다.',
+                                    ]
+                                },
+                                {
+                                    id: 1,
+                                    type: 'type-default',
+                                    imageUrl: 'https://placehold.co/880x440',
+                                    imageAlt: 'test',
+                                    title: 'SBP 솔루션 처리 모델',
+                                    content: [
+                                        'LG CNS의 SBP 솔루션은 LLM(Large Language Model)을 위한 통합 데이터 저장소인 Delta Lake를 제공하며, LLM에 검색 증강 생성(Retreival-Augmented Generation, RAG)을 위한 고도 병력 처리(Massive Parallel Processig, MPP) 구조의 Vector DB(CloudBerry with VectorDB)를 포함합니다. 또한, DataPrep을 활용해 분석에 필요한 데이터를 전처리할 수 있도록 지원하며, 독립적인 모델 개발 및 학습 공간을 제공하여 AI 학습을 신속하게 적용하고 활용할 수 있도록 돕습니다.',
+                                    ]
+                                }                                                         
+                            ]
+                        %> 
+                        <%- include('src/component/cmp_solution_imageL_1item.html', Object.assign({}, locals, {                             
+                            jsonData: imageSolutionColumnData
+                        })) %>
+                    </div>
+                    <p class="guide-title-h3 mt-10">이미지 좌우형</p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <%
+                            const imageSolutionColumnData2 = [
+                                {
+                                    id: 0,
+                                    type: 'type-left',
+                                    imageUrl: 'https://placehold.co/880x440',
+                                    imageAlt: 'test',
+                                    title: 'SBP 솔루션 처리 모델',
+                                    content: [
+                                        'LG CNS의 SBP 솔루션은 LLM(Large Language Model)을 위한 통합 데이터 저장소인 Delta Lake를 제공하며, LLM에 검색 증강 생성(Retreival-Augmented Generation, RAG)을 위한 고도 병력 처리(Massive Parallel Processig, MPP) 구조의 Vector DB(CloudBerry with VectorDB)를 포함합니다. 또한, DataPrep을 활용해 분석에 필요한 데이터를 전처리할 수 있도록 지원하며, 독립적인 모델 개발 및 학습 공간을 제공하여 AI 학습을 신속하게 적용하고 활용할 수 있도록 돕습니다.',
+                                    ]
+                                },
+                                {
+                                    id: 1,
+                                    type: 'type-left',
+                                    imageUrl: 'https://placehold.co/880x440',
+                                    imageAlt: 'test',
+                                    title: 'SBP 솔루션 처리 모델',
+                                    content: [
+                                        'LG CNS의 SBP 솔루션은 LLM(Large Language Model)을 위한 통합 데이터 저장소인 Delta Lake를 제공하며, LLM에 검색 증강 생성(Retreival-Augmented Generation, RAG)을 위한 고도 병력 처리(Massive Parallel Processig, MPP) 구조의 Vector DB(CloudBerry with VectorDB)를 포함합니다. 또한, DataPrep을 활용해 분석에 필요한 데이터를 전처리할 수 있도록 지원하며, 독립적인 모델 개발 및 학습 공간을 제공하여 AI 학습을 신속하게 적용하고 활용할 수 있도록 돕습니다.',
+                                    ]
+                                }                                                         
+                            ]
+                        %> 
+                        <%- include('src/component/cmp_solution_imageL_1item.html', Object.assign({}, locals, {                             
+                            jsonData: imageSolutionColumnData2
+                        })) %>
+                    </div>
+                    <p class="guide-title-h3 mt-10">이미지 2item</p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <%
+                            const imageSolutionColumnData3 = [
+                                {
+                                    id: 0,
+                                    type: 'type-left',
+                                    imageUrl: 'https://placehold.co/880x440',
+                                    imageAlt: 'test',
+                                    title: 'SBP 솔루션 처리 모델',
+                                    content: [
+                                        'LG CNS의 SBP 솔루션은 LLM(Large Language Model)을 위한 통합 데이터 저장소인 Delta Lake를 제공하며, LLM에 검색 증강 생성(Retreival-Augmented Generation, RAG)을 위한 고도 병력 처리(Massive Parallel Processig, MPP) 구조의 Vector DB(CloudBerry with VectorDB)를 포함합니다. 또한, DataPrep을 활용해 분석에 필요한 데이터를 전처리할 수 있도록 지원하며, 독립적인 모델 개발 및 학습 공간을 제공하여 AI 학습을 신속하게 적용하고 활용할 수 있도록 돕습니다.',
+                                    ]
+                                },
+                                {
+                                    id: 1,
+                                    type: 'type-left',
+                                    imageUrl: 'https://placehold.co/880x440',
+                                    imageAlt: 'test',
+                                    title: 'SBP 솔루션 처리 모델',
+                                    content: [
+                                        'LG CNS의 SBP 솔루션은 LLM(Large Language Model)을 위한 통합 데이터 저장소인 Delta Lake를 제공하며, LLM에 검색 증강 생성(Retreival-Augmented Generation, RAG)을 위한 고도 병력 처리(Massive Parallel Processig, MPP) 구조의 Vector DB(CloudBerry with VectorDB)를 포함합니다. 또한, DataPrep을 활용해 분석에 필요한 데이터를 전처리할 수 있도록 지원하며, 독립적인 모델 개발 및 학습 공간을 제공하여 AI 학습을 신속하게 적용하고 활용할 수 있도록 돕습니다.',
+                                    ]
+                                }                                                         
+                            ]
+                        %> 
+                        <%- include('src/component/cmp_solution_imageL_1item.html', Object.assign({}, locals, {                             
+                            jsonData: imageSolutionColumnData3
+                        })) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

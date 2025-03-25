@@ -278,6 +278,18 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_richtext.html"
+        },
+        {
+          "name": "Solution_imageL_1item",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_Solution_image_1item.html"
+        },
+        {
+          "name": "Solution_imageL_multiItem(2item, 3item)",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_Solution_image_multiItem.html"
         }
       ]
     },
