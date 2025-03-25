@@ -1,6 +1,6 @@
 .contact-us {
     &__visual-box {
-        padding: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem) 0;
+        padding: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem) calc(var(--spacing-mode1-horizontal-x-l) / 16 * 1rem);
         background-color: #F5F5F5;
         margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
         @media #{$tablet} {
@@ -12,18 +12,17 @@
     }
     .inner-wrap {
         .form-container {
-            margin: 0 calc(296 / 16 * 1rem) calc(var(--spacing-mode1-vertical9-x-l) / 16 * 1rem);
-            
+            max-width: calc(1168 / 16 * 1rem);
+            margin: 0 auto calc(var(--spacing-mode1-vertical9-x-l) / 16 * 1rem);
             @media #{$pcMiddle} {
-                margin: 0 calc(256 / 16 * 1rem) calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+                margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
             }
             @media #{$tablet} {
-                margin: 0 0 calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
+                margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
             }
             @media #{$phone} {
-                margin: 0 0 calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
+                margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
             }
-            
             .cmp-input__wrap {
                 margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
                 @media #{$tabletMini} {
