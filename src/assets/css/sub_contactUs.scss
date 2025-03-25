@@ -19,6 +19,7 @@
                 margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
             }
             @media #{$tablet} {
+                max-width: calc(896 / 16 * 1rem);
                 margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
             }
             @media #{$phone} {
