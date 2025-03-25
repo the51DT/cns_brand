@@ -1070,13 +1070,11 @@
 
 
       .event-text{
-        position: sticky;
+        // position: sticky;
         top: 20px;
         z-index: 10; 
         background: white;
-        @media #{$tablet}{
-          position: relative;
-        }
+
 
         .event-period {
           font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
@@ -1130,10 +1128,14 @@
 
           .cmp-yearevent{
             &__month{
-              margin-bottom: calc(80 / 16 * 1rem);
+              margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem);
               color: #e5e5e5;
               font-size: calc(var(--typo-pc-size-head2xl)/16*1rem);
 
+              @media #{$phone} {
+                font-size: calc(var(--typo-mo-size-head2xl)/16*1rem);
+                margin-bottom: calc(var(--spacing-mode1-horizontal3-x-l) / 16 * 1rem);
+              }
               &.active {
                 color: #a50034;
               }
@@ -1141,13 +1143,16 @@
               .circle-container {
                 position: absolute;
                 left: calc(-12 / 16 * 1rem);
-                transform: translateY(calc(40 / 16 * 1rem));
+                transform: translateY(calc(var(--spacing-mode1-horizontal4-x-l) / 16 * 1rem));
                 width: 28px;
                 height: 28px;
                 border-radius: 50%;
                 border: 2px solid #D9D9D9;
                 background: #fff;
 
+                @media #{$phone} {
+                  transform: translateY(calc(var(--spacing-mode1-horizontal2-x-l) / 16 * 1rem));
+                }
 
                 &::before {
                   content: '';
