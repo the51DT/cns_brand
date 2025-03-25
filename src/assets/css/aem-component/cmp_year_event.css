@@ -1,9 +1,9 @@
 .cmp-yearevent__month {
-  margin-bottom: 5rem;
+  margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem);
   color: #e5e5e5;
-  font-size: calc(var(--typo-pc-size-head-2xl) / 16 * 1rem);
+  font-size: calc(var(--typo-pc-size-head2xl) / 16 * 1rem);
 }
-.cmp-yearevent__month:active {
+.cmp-yearevent__month.active {
   color: #a50034;
 }
 .cmp-yearevent__item {

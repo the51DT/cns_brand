@@ -64,7 +64,7 @@
                                     })) %>
    
                                     <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
-                                       month: '9월', events: [
+                                       month: '09월', events: [
                                           { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
                                           { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
                                           { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
@@ -72,7 +72,7 @@
                                     })) %>
    
                                     <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
-                                       month: '8월', events: [
+                                       month: '08월', events: [
                                           { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
                                           { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
                                        ]
@@ -230,33 +230,63 @@
       tabMenu('.basic-type', 'tab');
       accordion('.open-type', 'basic');
    </script>
-   <!-- <script>
-      document.addEventListener('DOMContentLoaded', function() {
-         const month = document.querySelectorAll('.cmp-yearevent__month');
-         month.forEach((item, index) => {
-            const circleContainer = document.createElement('div');
-            circleContainer.className = 'circle-container';
-            item.prepend(circleContainer);
-         });
-
-         function progressBarLength() {
-            const progressBar = document.querySelector('.progress-bar');
-            const firstCircle = document.querySelector('.circle-container');
-            const lastCircle = document.querySelectorAll('.circle-container')[month.length - 1];
-            
-            if (progressBar && firstCircle && lastCircle) {
-               const firstCircleTop = firstCircle.getBoundingClientRect().top;
-               const lastCircleBottom = lastCircle.getBoundingClientRect().bottom;
-               const distance = lastCircleBottom - firstCircleTop;
-               
-               progressBar.style.top = `${firstCircleTop - progressBar.parentElement.getBoundingClientRect().top}px`;
-               progressBar.style.height = `${distance}px`;
-            }
+<script>
+   function updateProgressBar() {
+      const progressBar = document.querySelector('.progress-bar .bar');
+      const progressBarContainer = document.querySelector('.progress-bar');
+      const circles = document.querySelectorAll('.circle-container');
+      const eventArea = document.querySelector('.event-area');
+   
+      if (!eventArea || circles.length === 0) return;
+   
+      const viewportHeight = window.innerHeight;
+      const eventAreaRect = eventArea.getBoundingClientRect();
+      const progressBarWrapTop = eventAreaRect.top + window.scrollY;
+   
+      const firstCircle = circles[0];
+      const lastCircle = circles[circles.length - 1];
+   
+      const progressBarStart = firstCircle.getBoundingClientRect().top + window.scrollY;
+      const progressBarEnd = lastCircle.getBoundingClientRect().bottom + window.scrollY;
+   
+      progressBarContainer.style.top = `${progressBarStart - progressBarWrapTop}px`;
+      progressBarContainer.style.height = `${progressBarEnd - progressBarStart}px`;
+   
+      const scrollPosition = window.scrollY + viewportHeight / 1.8;
+      const progress = (scrollPosition - progressBarStart) / (progressBarEnd - progressBarStart);
+      progressBar.style.height = `${Math.max(0, Math.min(progress * 100, 100))}%`;
+   
+      const barRect = progressBar.getBoundingClientRect();
+      const barTop = barRect.top + window.scrollY;
+      const barBottom = barRect.bottom + window.scrollY;
+   
+      circles.forEach(circle => {
+         const circleRect = circle.getBoundingClientRect();
+         const circleTop = circleRect.top + window.scrollY;
+         const circleHeight = circle.offsetHeight;
+         const circleCenter = circleTop + circleHeight / 2;
+   
+         // 정확한 monthTitle 위치 찾아오기
+         const monthTitle = circle.querySelector('.cmp-yearevent__month') 
+            || circle.closest('.cmp-yearevent')?.querySelector('.cmp-yearevent__month');
+   
+         // 이게 핵심 조건 (bar 범위에 들어오면 active)
+         if (circleCenter >= barTop && circleCenter <= barBottom) {
+            circle.classList.add('active');
+            if (monthTitle) monthTitle.classList.add('active');
+         } else {
+            circle.classList.remove('active');
+            if (monthTitle) monthTitle.classList.remove('active');
          }
-         progressBarLength();
-         window.addEventListener('resize', progressBarLength);
       });
-   </script> -->
+   }
+   
+   updateProgressBar();
+   window.addEventListener('scroll', updateProgressBar);
+   window.addEventListener('resize', updateProgressBar);
+   </script>
+   
+   
 </body>
 
 </html>
