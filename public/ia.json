@@ -290,6 +290,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_Solution_image_multiItem.html"
+        },
+        {
+          "name": "Solution_icon",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_Solution_icon.html"
         }
       ]
     },

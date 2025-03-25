@@ -38,7 +38,7 @@
 @import 'aem-component/cmp_richitext.scss';
 @import 'aem-component/cmp_input.scss';
 @import 'aem-component/cmp_solution_imageL_1item.scss';
-
+@import 'aem-component/cmp_solution_icon.scss';
 
 /* icon */
 @import 'icon.scss';

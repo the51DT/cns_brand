@@ -3,7 +3,7 @@
     .solution-content-items {
         display: flex;
         flex-direction: column;
-        background-color: var(--colorGL-all-white100);
+        // background-color: var(--colorGL-all-white100);
         @media #{$phone} {
             padding: calc(24 / 16 * 1rem);   
         }
@@ -11,6 +11,7 @@
             margin-top: calc(60 / 16 * 1rem);
         }
         .solution-content {
+            background-color: #FAFAFA;
             .cate-text {
                 margin-top: calc(16 / 16 * 1rem);
             }
@@ -47,6 +48,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                background-color: #FAFAFA;
             }
         }
         &.type-item2-col {
@@ -54,7 +56,7 @@
         }
     }
     .solution-item-hor {
-        display: flex;
+        display: flex;        
         &.items2 {
             gap: calc(32 / 16 * 1rem);
         }
@@ -66,8 +68,8 @@
                 margin-top: calc(0 / 16 * 1rem);
             }
         }
-        .item-image {
-            margin-bottom: calc(32 / 16 * 1rem);
+        .solution-content {
+            padding: calc(32 / 16 * 1rem) calc(40 / 16 * 1rem);
         }
     }
 }
