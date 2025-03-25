@@ -131,216 +131,138 @@
         }))%>
     </div>
     <script>
-        const sections = document.querySelectorAll('.bizinfo-LG-way__section');
-        const fullSecList = document.querySelectorAll('.bizinfo-LG-way__section.full-sec');
-        const lastSection = document.querySelector('.last-sec');
-        const goNextButton = document.querySelector('.button__wrap--scroll-down');
-        const navigation = document.querySelector('.full-sec__pagination');
-        const visualImgWrap = document.querySelector('.full-sec__img');
-        const visualImg = visualImgWrap.querySelectorAll('div');
         const container = document.querySelector('.bizinfo-LG-way__container');
+        const sections = document.querySelectorAll('.bizinfo-LG-way__section.full-sec');
+        const lastSection = document.querySelector('.bizinfo-LG-way__section.last-sec');
+        const pagination = document.querySelector('.full-sec__pagination');
+        const visualImgWrap = document.querySelector('.full-sec__img');
+        const visualImgs = visualImgWrap.querySelectorAll('div');
 
-        let prevScrollTop = 0;
-        let fullSecNum = 0;
-        let scrollState = "none";
+        let currentIndex = 0;
+        let isScrolling = false;
+        let touchStartY = 0;
 
-        const fullSecMove = (el) => {
-            el.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        // 섹션 이동 함수
+        function moveToSection(index) {
+            if (index < 0) return;
 
-        const fullNumChange = (num) => {
-            fullSecNum = num
-        }
+            isScrolling = true;
+            currentIndex = index;
 
-        const pyramidAnim = () => {
-            const scrollTop = window.scrollY;
-            let moveAmount = (scrollTop - sections[1].offsetTop) * -0.2; // 02번부터 패럴랙스 시작
+            const target = index >= sections.length ? lastSection : sections[index];
+            const targetOffsetTop = target.offsetTop;
 
-            // 현재 활성화된 섹션 찾기
-            let activeSection = null;
-            sections.forEach((section, index) => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                    activeSection = section;
-                }
+            window.scrollTo({
+                top: targetOffsetTop,
+                behavior: 'smooth'
             });
 
-            // 패럴랙스 적용 구간: 02~04번 섹션만
-            if (scrollTop < sections[1].offsetTop) {
-                visualImgWrap.style.transform = "translateY(0)"; // 02번에서는 제자리 유지
+            setTimeout(() => {
+                isScrolling = false;
+
+                // 🔥 이 타이밍에 정확한 index 기반으로 처리
+                updatePagination(currentIndex);
+                updateImage(currentIndex);
+            }, 800); // 스크롤 애니메이션 시간 고려
+        }
+
+        // 패럴렉스 이미지 이동 처리 (bottom 기준)
+        function updateParallax() {
+            const scrollY = window.scrollY;
+            const sec02Top = sections[1].offsetTop;
+            const sec04Top = sections[3].offsetTop;
+            const lastTop = lastSection.offsetTop;
+
+            if (scrollY >= sec02Top && scrollY < lastTop) {
+                const moveRatio = (scrollY - sec02Top) / (sec04Top - sec02Top);
+                const moveY = Math.max(0, 40 - moveRatio * 40); // 40% → 0%로 줄어듦
+                visualImgWrap.style.bottom = `${moveY}%`;
+                visualImgWrap.style.top = 'auto';
+                visualImgWrap.classList.add('is-active');
+                visualImgWrap.classList.remove('is-last');
+            } else if (scrollY >= lastTop) {
+                visualImgWrap.style.bottom = `0%`;
+                visualImgWrap.style.top = 'auto';
+                visualImgWrap.classList.add('is-last');
+                visualImgWrap.classList.remove('is-active');
             } else {
-                visualImgWrap.style.transform = `translateY(${moveAmount}px)`; // 이후부터 패럴랙스 적용
-            }
-            if (
-                activeSection &&
-                (activeSection.classList.contains("bizinfo-LG-way__section--02") ||
-                activeSection.classList.contains("bizinfo-LG-way__section--03") ||
-                activeSection.classList.contains("bizinfo-LG-way__section--04"))
-            ) {
-                visualImgWrap.classList.add("is-active"); // 패럴랙스 구간에서는 is-active 유지
-            } 
-            // 01번 섹션에서는 숨김
-            else {
-                visualImgWrap.style.transform = "translateY(0)";
+                visualImgWrap.style.bottom = `40%`;
+                visualImgWrap.style.top = 'auto';
+                visualImgWrap.classList.remove('is-active');
+                visualImgWrap.classList.remove('is-last');
             }
         }
 
-        const handleScroll = () => {
-            let nextScrollTop = window.scrollY;
-            if (prevScrollTop < nextScrollTop) {
-                // console.log("스크롤다운 조건")
-                scrollState = "down";
-            } else if (prevScrollTop > nextScrollTop) {
-                // console.log("스크롤업 조건")
-                scrollState = "up";
-            }
-            prevScrollTop = nextScrollTop;
-            // fullSecList.forEach((el, index) => {
-            //     if (prevScrollTop < nextScrollTop && el.classList.contains("showing")) {
-            //         console.log("스크롤다운 조건")
-            //         if (fullSecNum < fullSecList.length) {
-            //             fullSecMove(fullSecList[fullSecNum + 1])
-            //             setTimeout(fullNumChange(index + 1), 2000)
-            //         } else {
-            //             console.log("마지막섹션임")
-            //         }
-            //     } else if (prevScrollTop > nextScrollTop && el.classList.contains("showing")) {
-            //         console.log("스크롤업 조건")
-            //         if (fullSecNum > 0) {
-            //             fullSecMove(fullSecList[fullSecNum - 1])
-            //             setTimeout(fullNumChange(index - 1), 2000)
-            //         } else {
-            //             console.log("첫번째섹션임")
-            //         }
-            //     }
-            // })
-
-            pyramidAnim();
-
-            let currentSection = null;
-            sections.forEach((section, index) => {
-                const rect = section.getBoundingClientRect();
-
-                // 첫 번째 섹션을 지나갔는지 체크
-                if (index === 0 && rect.bottom <= 0) {
-                    navigation.classList.add('is-active');
-                    visualImgWrap.classList.add('is-active');
-                } else if (index === 0 && rect.bottom > 0) {
-                    navigation.classList.remove('is-active');
-                    visualImgWrap.classList.remove('is-active');
-                }
-
-                if (rect.top <= 100 && rect.bottom >= 100) {
-                    currentSection = section;
-                    // navigation의 아이템들 활성화 상태 업데이트
-                    const navItems = navigation.querySelectorAll('.full-sec__pagination--item');
-                    navItems.forEach((item, i) => {
-                        if (i === (index - 1)) {
-                            item.classList.add('is-active');
-                        } else {
-                            item.classList.remove('is-active');
-                        }
-                    });
-                    visualImg.forEach((imgDiv, imgIndex) => {
-                        imgDiv.classList.remove("is-active");
-                        if (index === imgIndex+1) {
-                            visualImg[imgIndex].classList.add("is-active")
-                        }
-                    })
-                }
+        // 패럴렉스 이미지 교체
+        function updateImage(index) {
+            visualImgs.forEach((el, i) => {
+                el.classList.toggle('is-active', i === index - 1);
             });
-        };
-
-        let isScrolling = false; // 스크롤 중인지 체크
-
-        // 스크롤 방지 함수
-        function disableScroll() {
-            window.addEventListener("wheel", preventScroll, { passive: false });
-            window.addEventListener("touchmove", preventScroll, { passive: false });
         }
 
-        // 스크롤 허용 함수
-        function enableScroll() {
-            window.removeEventListener("wheel", preventScroll);
-            window.removeEventListener("touchmove", preventScroll);
+        // 페이지네이션 active 처리
+        function updatePagination(index) {
+            const scrollY = window.scrollY;
+            const windowH = window.innerHeight;
+            const lastTop = lastSection.offsetTop;
+
+            // pagination 영역 활성화 조건 (02~04에서만)
+            pagination.classList.toggle('is-active', index >= 1 && index <= 3);
+
+            // 마지막 섹션이 현재 화면에 걸쳐 있거나 완전히 도달했을 경우
+            const isLastVisible = scrollY + windowH >= lastTop + 100; // 여유 margin 주는게 안정적
+
+            // pagination.classList.toggle('is-last', isLastVisible);
+
+            const items = pagination.querySelectorAll('.full-sec__pagination--item');
+            items.forEach((el, i) => {
+                el.classList.toggle('is-active', i === index - 1);
+            });
         }
 
-        // 이벤트 실행 차단
-        function preventScroll(e) {
+        // 휠 + 터치 이벤트 통합 처리
+        function handleScroll(deltaY) {
+            if (isScrolling) return;
+
+            if (deltaY > 0) {
+                if (currentIndex < sections.length) {
+                moveToSection(currentIndex + 1);
+                }
+            } else if (deltaY < 0) {
+                if (currentIndex > 0) {
+                moveToSection(currentIndex - 1);
+                }
+            }
+        }
+
+        window.addEventListener('wheel', (e) => {
+            if (window.scrollY >= lastSection.offsetTop && currentIndex >= sections.length) return;
             e.preventDefault();
-        }
+            handleScroll(e.deltaY);
+        }, { passive: false });
 
-        const secIo = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                let targetEl = entry.target;
-                if (entry.intersectionRatio > 0 && !isScrolling) {
-                    console.log(scrollState);
-
-                    // 모든 fullSecList에서 'showing' 제거 후, 현재 target에 추가
-                    fullSecList.forEach(sec => sec.classList.remove("showing"));
-                    targetEl.classList.add("showing");
-
-                    let targetIndex = [...fullSecList].indexOf(targetEl);
-
-                    if (scrollState === "down" && targetIndex < fullSecList.length - 1) {
-                        isScrolling = true; // 추가 스크롤 방지
-                        disableScroll(); // 스크롤 막기
-
-                        fullSecMove(fullSecList[targetIndex + 1]);
-
-                        // scrollIntoView() 애니메이션이 끝나면 다시 스크롤 가능
-                        setTimeout(() => {
-                            fullNumChange(targetIndex + 1);
-                            isScrolling = false; // 스크롤 다시 활성화
-                            enableScroll(); // 스크롤 해제
-                        }, 1000); // 애니메이션 시간에 맞춰 조절
-                    } 
-                    else if (scrollState === "up" && targetIndex > 0) {
-                        isScrolling = true; // 추가 스크롤 방지
-                        disableScroll(); // 스크롤 막기
-
-                        fullSecMove(fullSecList[targetIndex - 1]);
-
-                        setTimeout(() => {
-                            fullNumChange(targetIndex - 1);
-                            isScrolling = false; // 스크롤 다시 활성화
-                            enableScroll(); // 스크롤 해제
-                        }, 1000); // 애니메이션 시간에 맞춰 조절
-                    }
-                }
-            });
-        }, { threshold: 0.8 });
-
-        fullSecList.forEach(sec => {
-            secIo.observe(sec);
+        window.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
         });
 
+        window.addEventListener('touchmove', (e) => {
+            if (window.scrollY >= lastSection.offsetTop && currentIndex >= sections.length) return;
+            const deltaY = touchStartY - e.touches[0].clientY;
+            handleScroll(deltaY);
+        }, { passive: false });
 
+        // 스크롤 시 패럴렉스 이미지 위치 갱신
+        window.addEventListener('scroll', () => {
+            updateParallax();
+            updatePagination(currentIndex);
+        });
 
-
-        const lastIo = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navigation.classList.add('is-last');
-                    navigation.classList.remove('is-active');
-
-                    visualImgWrap.classList.add('is-last');
-                    visualImgWrap.classList.remove('is-active');
-                } else {
-                    navigation.classList.remove('is-last');
-                    navigation.classList.add('is-active');
-
-                    visualImgWrap.classList.remove('is-last');
-                    visualImgWrap.classList.add('is-active');
-                }
-            });
-        }, { threshold: 0.1 });
-        lastIo.observe(lastSection);
-
-        window.addEventListener('scroll', handleScroll);
+        // 최초 상태 초기화
+        window.addEventListener('DOMContentLoaded', () => {
+            updateParallax();
+            updatePagination(currentIndex);
+            updateImage(currentIndex);
+        });
     </script>
 </body>
 </html>

@@ -11,7 +11,7 @@
 }
 .cmp-accordion .accordion-list li {
     border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
-    padding: calc(20 / 16 * 1rem) calc(28 / 16 * 1rem) ;
+    padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem) ;
 }
 .cmp-accordion .accordion-list li .accordion-title {
     display: flex;
@@ -35,7 +35,8 @@
     content: '';
     display: inline-flex;
     position: absolute;
-    background-color: var(--colorCM-all-primary-primary-enabled);
+    background-color: #1a1a1a;
+    /* background-color: var(--colorCM-all-primary-primary-enabled); */
 }
 .cmp-accordion .accordion-list li .accordion-title i::before {
     width: 100%;
@@ -58,15 +59,19 @@
 .cmp-accordion .accordion-list li.is-active i::after {
     transform: translateX(-50%) rotate(90deg);
     transition: all 0.3s;
+    background-color: var(--colorCM-all-primary-primary-enabled);
 }
 .cmp-accordion .accordion-list li .accordion-title .tit {    
     font-style: normal;
     color: var(--text-text-default);     
     font-size: calc(var(--typo-pc-size-body-lg) / 16 * 1rem);    
-    font-weight: 500;
+    font-weight: 600;
     line-height: calc(var(--typo-pc-line-height-body-lg) / 16 * 1rem);
     letter-spacing: var(--letter-spacing-small);
     text-align: left;
+}
+.cmp-accordion .accordion-list li.is-active .accordion-title .tit {
+    color: var(--colorCM-all-primary-primary-enabled);
 }
 .cmp-accordion .accordion-list li .accordion-content {
     display: none;
