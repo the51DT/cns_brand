@@ -1221,6 +1221,15 @@
 
         .button__wrap{
           margin-top: calc(16/16*1rem);
+
+          @media #{$phone}{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+  
+            button{
+              width: 100%;
+            }
+          }
         }
       }
     }
