@@ -1071,9 +1071,12 @@
 
       .event-text{
         position: sticky;
-        top: 20px; /* 원하는 값으로 조절 */
-        z-index: 10; /* 필요 시 */
-        background: white; /* 배경색 지정 안 하면 겹칠 수 있음 */
+        top: 20px;
+        z-index: 10; 
+        background: white;
+        @media #{$tablet}{
+          position: relative;
+        }
 
         .event-period {
           font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
