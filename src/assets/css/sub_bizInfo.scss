@@ -1220,34 +1220,30 @@
     }
 
     &__accodion{
-      .cmp-accordion .accordion-list li.is-active .accordion-content {
-        all: unset !important;
-        display: block !important;
-
-        padding: calc(20 / 16 * 1rem) calc(28 / 16 * 1rem) 0 calc(40 / 16 * 1rem) !important;
-        font-size: calc(var(--typo-pc-size-body-sm)/16*1rem);
-
-        span{
-          color: var(--colorGL-all-heritage-red600);
-          font-weight: bold;
-          margin-right: calc(8/16*1rem);
+      .juju-flex {
+        &__text{
+          margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+          p {
+          color: var(--colorCM-all-text-text-secondary);
+          }
+          span{
+            color: var(--colorGL-all-heritage-red600);
+            font-weight: bold;
+            margin-right: calc(8/16*1rem);
+          }
+          strong{
+            color: #1a1a1a;
+            margin-right: calc(12/16*1rem);
+          }
+          div:first-child{
+            margin-bottom: calc(8/16*1rem);
+          }
         }
-        
-        strong{
-          margin-right: calc(12/16*1rem);
-        }
-
-        div:first-child{
-          margin-bottom: calc(8/16*1rem);
-        }
-
         .button__wrap{
-          margin-top: calc(16/16*1rem);
-
+          color: #1a1a1a;
           @media #{$phone}{
             display: grid;
             grid-template-columns: 1fr 1fr;
-  
             button{
               width: 100%;
             }
