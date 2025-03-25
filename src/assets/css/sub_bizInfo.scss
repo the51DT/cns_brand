@@ -1079,6 +1079,16 @@
         .event-period {
           font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
           line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
+
+
+          @media #{$tablet} {
+            font-size: calc(var(--typo-tablet-size-head-lg)/16*1rem);
+            line-height: calc(var(--typo-tablet-line-height-head-lg) / 16 * 1rem);
+          }
+          @media #{$phone} {
+            font-size: calc(var(--typo-mo-size-head-lg)/16*1rem);
+            line-height: calc(var(--typo-mo-line-height-head-lg) / 16 * 1rem);
+          }
         }
   
         select{
