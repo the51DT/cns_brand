@@ -126,7 +126,7 @@
         }
         .spec-title {
             font-weight: 700;
-            // width: calc(50% - calc($gap-margin / 2));
+            width: calc(50% - calc($gap-margin / 2));
             // max-width: calc(425 / 16 * 1rem);
             color: var(--colorGL-all-gray950);
             display: flex;
