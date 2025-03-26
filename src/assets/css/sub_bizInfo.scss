@@ -910,7 +910,7 @@
       flex-direction: column;
       gap: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
       opacity: 0;
-      z-index: 12;
+      z-index: 1;
       &.is-active {
         opacity: 1;
       }
