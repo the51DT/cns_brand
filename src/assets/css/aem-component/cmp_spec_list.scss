@@ -1,7 +1,4 @@
 // specList
-// .cmp-wrap:has(+ .button__wrap) {
-//     margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
-// }
 .cmp-speclist__wrap {
     border-top: 1px solid var(--colorGL-all-gray950);
     display: flex;
@@ -17,25 +14,12 @@
         @media #{$phone} {
             grid-template-columns: 1fr;
         }
-        // flex-direction: row;
-        // flex-wrap: wrap;
         .spec-text {
             width: 100%;
         }
     }
     &:has(.spec-item.type-num-sub) {
         border-top: 0;
-        // @media #{$phone} {
-        //     .spec-item {
-        //             flex-direction: row;
-        //         .spec-title {
-        //             width: fit-content;
-        //         }
-        //         .spec-text {
-        //             padding-left: 0;
-        //         }
-        //     }
-        // }
     }
     .spec-item {
         display: flex;
@@ -127,7 +111,6 @@
         .spec-title {
             font-weight: 700;
             width: calc(50% - calc($gap-margin / 2));
-            // max-width: calc(425 / 16 * 1rem);
             color: var(--colorGL-all-gray950);
             display: flex;
             gap: calc(16 / 16 * 1rem);
