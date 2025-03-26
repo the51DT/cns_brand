@@ -8,6 +8,9 @@
             .solution-icon-items {
                 gap: calc(32 / 16 * 1rem);
                 align-items: center;
+                @media #{$phone} {
+                    align-items: flex-start;
+                }  
             }
             .item-image {
                 min-width: calc(60 / 16 * 1rem);
@@ -15,6 +18,10 @@
         }
         &.items2 {
             gap: calc(32 / 16 * 1rem);
+            @media #{$phone} {
+                flex-direction: column;
+                align-items: flex-start;
+            }  
             .solution-icon-items {
                 flex-direction: column;   
                 gap: calc(16 / 16 * 1rem);                   
@@ -22,13 +29,21 @@
         }
         &.items3 {
             gap: calc(32 / 16 * 1rem);
+            @media #{$phone} {
+                flex-direction: column;
+                align-items: flex-start;
+            }  
             .solution-icon-items {
                 flex-direction: column;   
                 gap: calc(16 / 16 * 1rem);            
             }
         }
         .solution-icon-items {
-            display: flex;            
+            display: flex;  
+            @media #{$phone} {
+                flex-direction: column;
+                align-items: flex-start;
+            }          
         }
     }
     // .solution-content-items {
