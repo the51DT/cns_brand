@@ -207,6 +207,132 @@
                                     ],
                                     info: "에러 메시지를 입력하세요"
                                 },
+                                {
+                                    id: 8,
+                                    inputData: [
+                                        {
+                                            type: "select",
+                                            placeholder: "no title",
+                                            option: [
+                                                {
+                                                    value: "옵션1",
+                                                },
+                                                {
+                                                    value: "옵션2",
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 9,
+                                    title: { text: "checkbox(small)" },
+                                    inputData: [
+                                        {
+                                            type: "checkbox",
+                                            size: "small",
+                                            name: "checkbox--small-guide",
+                                            dataList: [
+                                                {
+                                                    value: "default-small",
+                                                    required: true,
+                                                },
+                                                {
+                                                    value: "checked-small",
+                                                    label: "checked-small",
+                                                    checked: true,
+                                                },
+                                                {
+                                                    value: "disabled-small",
+                                                    label: "disabled-small",
+                                                    disabeld: true,
+                                                },
+                                                {
+                                                    value: "checked-disabled-small",
+                                                    label: "checked-disabled-small",
+                                                    checked: true,
+                                                    disabeld: true,
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 10,
+                                    title: { text: "checkbox" },
+                                    inputData: [
+                                        {
+                                            type: "checkbox",
+                                            name: "checkbox-guide",
+                                            dataList: [
+                                                {
+                                                    value: "checkbox-default",
+                                                    required: true,
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "checkbox-checked",
+                                                    checked: true,
+                                                },
+                                                {
+                                                    value: "checkbox-disabled",
+                                                    label: "checkbox-disabled",
+                                                    disabeld: true,
+                                                },
+                                                {
+                                                    value: "checkbox-checked-disabled",
+                                                    label: "checkbox-checked-disabled",
+                                                    checked: true,
+                                                    disabeld: true,
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 11,
+                                    title: { text: "radio" },
+                                    inputData: [
+                                        {
+                                            type: "radio",
+                                            name: "radio-guide",
+                                            dataList: [
+                                                {
+                                                    value: "radio-default",
+                                                    required: true,
+                                                },
+                                                {
+                                                    value: "radio-checked",
+                                                    label: "radio-checked",
+                                                    checked: true,
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 11,
+                                    title: { text: "radio-disabeld" },
+                                    inputData: [
+                                        {
+                                            type: "radio",
+                                            name: "radio-disabeld-guide",
+                                            dataList: [
+                                                {
+                                                    value: "radio-disabled",
+                                                    label: "radio-disabled",
+                                                    disabeld: true,
+                                                },
+                                                {
+                                                    value: "radio-checked-disabled",
+                                                    label: "radio-checked-disabled",
+                                                    checked: true,
+                                                    disabeld: true,
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
                             ]
                         %>
                         <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
