@@ -339,6 +339,37 @@
                             jsonData: inputData,
                         })) %>
                     </div>
+                    <p class="guide-title-h3 mt-20">cmp-form-group</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <%
+                            const formGroupData = {
+                                box: {
+                                    name: "전체동의 인풋 네임",
+                                    value: "전체동의",
+                                    label: "박스레이블",
+                                    checked: true,
+                                },
+                                name: "약관들 인풋 네임",
+                                acco: [
+                                    {
+                                        value: "필수약관",
+                                        label: "개인정보 수집·이용 동의 (필수)",
+                                        required: true,
+                                        text: "11111111<br>222222222<br>333333333<br>444444<br>555555<br>666666<br>7777777777777777777777777777777777777777777777777777777777777777<br>88888888888888888888888<br>99999",
+                                    },
+                                    {
+                                        value: "선택약관",
+                                        label: "개인정보 수집·이용 동의 (선택)",
+                                        disabeld: true,
+                                        text: "test",
+                                    },
+                                ],
+                            }
+                        %>
+                        <%- include('src/component/cmp_form-group.html', Object.assign({}, locals, { 
+                            jsonData: formGroupData,
+                        })) %>
+                    </div>
                 </div>
             </div>
         </div>

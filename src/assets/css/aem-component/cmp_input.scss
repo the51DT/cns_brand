@@ -124,6 +124,7 @@
       height: auto;
       & > textarea {
         height: calc(96 / 16 * 1rem);
+        resize: none;
       }
     }
     &--checkbox {

@@ -1,0 +1,77 @@
+.cmp-form-group {
+  &__wrap {
+    .cmp-input__label-box {
+      width: 100%;
+      & > label {
+        width: 100%;
+      }
+    }
+  }
+  &__box {
+    width: 100%;
+    padding: calc(20 / 16 * 1rem);
+    border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+    background-color: var(--colorCM-all-fill-fill-default2);
+    &:has( + .cmp-form-group__accordion) {
+      margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
+    }
+  }
+  &__accordion {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+    .accordion {
+      &-item {
+        &.is-active {
+          .accordion-title {
+            & > button {
+              transform: rotate(180deg);
+            }
+          }
+          .accordion-content {
+            display: block;
+          }
+        }
+      }
+      &-title {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 calc(20 / 16 * 1rem);
+        .cmp-input {
+          width: 100%;
+        }
+        & > button {
+          flex-shrink: 0;
+        }
+      }
+      &-content {
+        display: none;
+        padding: calc(16 / 16 * 1rem) calc(20 / 16 * 1rem) 0;
+      }
+      &-text {
+        max-height: calc(124 / 16 * 1rem);
+        padding: calc(20 / 16 * 1rem);
+        border: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default7);
+        border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+        background-color: var(--colorCM-all-fill-fill-default0);
+        overflow-y: auto;
+        word-wrap: break-word;
+        &::-webkit-scrollbar {
+          height: 100%;
+          width: calc(20 / 16 * 1rem);
+        }
+        &::-webkit-scrollbar-thumb {
+          border: calc(8 / 16 * 1rem) solid transparent;
+          border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
+          background-color: var(--colorCM-all-fill-fill-default4);
+          background-clip: content-box;
+          box-sizing: border-box;
+        }
+        &::-webkit-scrollbar-button {
+          height: calc(10 / 16 * 1rem);
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
