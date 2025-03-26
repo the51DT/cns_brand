@@ -11,17 +11,17 @@
 }
 .cmp-accordion .accordion-list li {
     border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
-    padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem) ;
 }
 .cmp-accordion .accordion-list li .accordion-title {
     display: flex;
     align-items: center;   
+    padding: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem) calc(var(--spacing-mode1-horizontal2-x-l) / 16 * 1rem);
 } 
 .cmp-accordion .accordion-list li .accordion-title button {
     width: 100%;
     display: flex;
     align-items: center;
-    gap: calc(20 / 16 * 1rem);    
+    gap: calc(var(--spacing-mode1-horizontal-m) / 16 * 1rem);    
 }
 .cmp-accordion .accordion-list li .accordion-title i {
     display: inline-flex;
@@ -75,10 +75,11 @@
 }
 .cmp-accordion .accordion-list li .accordion-content {
     display: none;
+    padding: 0 0 calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem) calc(var(--spacing-mode1-horizontal4-x-l) / 16 * 1rem);
+
 }
 .cmp-accordion .accordion-list li.is-active .accordion-content {
     display: block;
-    padding: calc(20 / 16 * 1rem) calc(28 / 16 * 1rem) 0 calc(40 / 16 * 1rem);
     color: var(--text-text-tertiary);
     font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);    
     font-weight: 400;
@@ -86,8 +87,11 @@
     letter-spacing: var(--letter-spacing-small);
 }
 @media screen and (max-width: 767px) {
-    .cmp-accordion .accordion-list li {
+    /* .cmp-accordion .accordion-list li {
         padding: calc(14 / 16 * 1rem) 0 calc(14 / 16 * 1rem) calc(20 / 16 * 1rem) ;
+    } */
+    .cmp-accordion .accordion-list li .accordion-title {
+        padding: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem) calc(var(--spacing-mode1-horizontal-x-l) / 16 * 1rem);
     }
     .cmp-accordion .accordion-list li .accordion-title i {
         width: calc(16 / 16 * 1rem);
@@ -105,7 +109,7 @@
         text-align: left;     
     }
     .cmp-accordion .accordion-list li.is-active .accordion-content {
-        padding: calc(14 / 16 * 1rem) calc(0 / 16 * 1rem) 0 calc(23 / 16 * 1rem);
+        padding: 0 0 calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem) calc(51 / 16 * 1rem);
         font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);    
         line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
     }
