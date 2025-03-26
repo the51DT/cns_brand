@@ -109,7 +109,7 @@
   &compliance {
     .sub-content__wrap {
       .inner-wrap {
-        padding-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+        margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
       }
     }
 
@@ -129,16 +129,14 @@
 
     .compliance-ceo {
       margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
-
-      .compiliance-ceo-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      &__text {
         display: flex;
         align-items: center;
         gap: 1rem;
         margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
-      }
-
-      .compliance-ceo-name {
-        font-weight: 600;
       }
     }
   }
