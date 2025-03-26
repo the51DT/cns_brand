@@ -109,7 +109,7 @@
   &compliance {
     .sub-content__wrap {
       .inner-wrap {
-        padding-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+        margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
       }
     }
 
@@ -129,16 +129,14 @@
 
     .compliance-ceo {
       margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
-
-      .compiliance-ceo-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      &__text {
         display: flex;
         align-items: center;
         gap: 1rem;
         margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
-      }
-
-      .compliance-ceo-name {
-        font-weight: 600;
       }
     }
   }
@@ -1218,37 +1216,9 @@
         margin-left: calc(var(--spacing-mode1-horizontal2-x-l) / 16 * 1rem);
       }
     }
-
     &__accodion{
-      .juju-flex {
-        &__text{
-          margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-          p {
-          color: var(--colorCM-all-text-text-secondary);
-          }
-          span{
-            color: var(--colorGL-all-heritage-red600);
-            font-weight: bold;
-            margin-right: calc(8/16*1rem);
-          }
-          strong{
-            color: #1a1a1a;
-            margin-right: calc(12/16*1rem);
-          }
-          div:first-child{
-            margin-bottom: calc(8/16*1rem);
-          }
-        }
-        .button__wrap{
-          color: #1a1a1a;
-          @media #{$phone}{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            button{
-              width: 100%;
-            }
-          }
-        }
+      .button__wrap{
+        color: #1a1a1a;
       }
     }
   }

@@ -1,7 +1,4 @@
 // specList
-// .cmp-wrap:has(+ .button__wrap) {
-//     margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
-// }
 .cmp-speclist__wrap {
     border-top: 1px solid var(--colorGL-all-gray950);
     display: flex;
@@ -17,8 +14,6 @@
         @media #{$phone} {
             grid-template-columns: 1fr;
         }
-        // flex-direction: row;
-        // flex-wrap: wrap;
         .spec-text {
             width: 100%;
         }
@@ -91,18 +86,21 @@
             gap: calc(12 / 16 * 1rem);
             justify-content: flex-start;
             border-bottom: 0;
+            flex-direction: row;
             & + .type-num-sub {
                 margin-top: calc(var(--spacing-mode1-vertical-s) /16 * 1rem);
             }
             .spec-num {
-                width: auto;
+                width: calc(24 / 16 * 1rem);
             }
             .spec-title {
-                width: auto;
                 gap: calc(var(--spacing-mode1-vertical-s) /16 * 1rem);
+                width: fit-content;
+                white-space: nowrap;
             }
             .spec-text {
-                width: auto;
+                padding-left: 0;
+
             }
         }
         .spec-num {
@@ -113,7 +111,6 @@
         .spec-title {
             font-weight: 700;
             width: calc(50% - calc($gap-margin / 2));
-            // max-width: calc(425 / 16 * 1rem);
             color: var(--colorGL-all-gray950);
             display: flex;
             gap: calc(16 / 16 * 1rem);
