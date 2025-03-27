@@ -14,19 +14,12 @@
         <!-- //헤더 영역 -->
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
-            <div class="inner-wrap">
-                <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
-                    pcImg: 'empty',
-                    moImg: 'empty',
-                    subText: '뉴스룸', 
-                    pageTitle: '보도자료' 
-                })) %>   
-                <!-- <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                    
-                    subTitle: '뉴스룸',
-                    titleText: '보도자료', 
-                })) %> -->
-            </div>
+            <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+                pcImg: 'empty',
+                moImg: 'empty',
+                subText: '뉴스룸', 
+                pageTitle: '보도자료' 
+            })) %>   
             <!-- Swiper -->
             <div class="cmp-wrap cmp-swiper__wrap">
                 <div class="swiper">
