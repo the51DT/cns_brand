@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/src/assets/css/guide.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+            <div class="page-location text-2xl font-bold">
+                <span id="pagesTitle"></span>
+            </div>
+            <div class="guide-content">
+                <div class="flex justify-between lnb-type">
+                    <%- include('src/component/cmp_lnb.html') %>
+                        <div class="page-cont flex-1">
+                            <p class="guide-title-h3">Popup Component (작업중)</p>
+                            <ul class="guide-list type-dot mt-3">
+                                <li>
+                                    <p>모달은 .wrap 바깥에 위치합니다.</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        모달에 있는 ID를 버튼의 "modal-id" 에 적용합니다. 
+                                    </p>
+                                </li>
+                            </ul>
+                            <p class="guide-title-h3 mt-5">Popup Component : .modal--type-default (pc-size: large, mo-size: full)</p>
+                            <div class="cmp-exsample__wrap mt-10">
+                                <div class="button_wrap">
+                                    <button type="button" class="btn btn-line" modal-id="modal-default01" onclick="openModal(event)">default modal</button>
+                                </div>
+                            </div>
+                            <p class="guide-title-h3 mt-10">Popup Component : .modal--type-small (pc-size: small, mo-size: small)</p>
+                            <div class="cmp-exsample__wrap mt-10">
+                                <div class="button_wrap">
+                                    <button type="button" class="btn btn-line" modal-id="modal-default02" onclick="openModal(event)">default
+                                        modal small</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+    </div>
+    <!-- [Start] modal : pc-size: large, mo-size: full -->
+    <div class="cmp-modal" id="modal-default01">
+        <div class="modal modal--type-default">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <div class="modal__header">
+                        <div class="modal__title font-body-xl font-bold">기업 검색</div>
+                    </div>
+                    <div class="modal__content">
+                        <!-- [Start] 모달 컨텐츠-스크롤 영역 -->
+                        <div class="modal__scroll-area">
+                            <!-- [Start] 모달 컨텐츠 영역 -->
+                            <div style="width:100%;height:300px;background:#999;">
+                                modal contents
+                            </div>
+                            <!-- [End] 모달 컨텐츠 영역 -->
+                        </div>
+                        <!-- [End] 모달 컨텐츠-스크롤 영역 -->
+                        <!-- [Start] 모달 컨텐츠 하단 버튼 영역 -->
+                        <div class="modal__content__footer">
+                            <div class="button__wrap">
+                                <button class="btn btn-gray">목록에 없음</button>
+                                <button class="btn btn-black">선택</button>
+                            </div>
+                        </div>
+                        <!-- [End] 모달 컨텐츠 하단 버튼 영역 -->
+                    </div>
+                    <div class="modal__close">
+                        <div class="button__wrap">
+                            <button type="button" class="btn" onclick="closeModal(event)">
+                                <!-- <i class="ico icon-close-bl32"></i> -->
+                                <span class="ir-text">모달 닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal -->
+    <!-- [Start] modal -->
+    <div class="cmp-modal" id="modal-default02">
+        <div class="modal modal--type-small">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <div class="modal__content">
+                        <!-- [Start] 모달 컨텐츠-스크롤 영역 -->
+                        <div class="modal__scroll-area">
+                            <!-- [Start] 모달 컨텐츠 영역 -->
+                            <p>
+                                최신 트렌드와 유용한 기술 레터를 <br>
+                                받아보시겠어요?
+                            </p>
+                            <div class="button_wrap">
+                                <a href="" class="btn btn-text" target="_blank">마케팅 정보 수신 동의</a>
+                            </div>
+                            <!-- [End] 모달 컨텐츠 영역 -->
+                        </div>
+                        <!-- [End] 모달 컨텐츠-스크롤 영역 -->
+                        <!-- [Start] 모달 컨텐츠 하단 버튼 영역 -->
+                        <div class="modal__content__footer">
+                            <div class="button__wrap">
+                                <button class="btn btn-gray" onclick="closeModal(event)">나중에 하기</button>
+                                <button class="btn btn-black">네 받을래요</button>
+                            </div>
+                        </div>
+                        <!-- [End] 모달 컨텐츠 하단 버튼 영역 -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal -->
+    <script type="module" src="/src/main.js"></script>
+    <script src="/assets/js/ui_common.js"></script>
+</body>
+
+</html>

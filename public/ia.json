@@ -78,6 +78,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_table.html"
+        },
+        {
+          "name": "모달",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_modal.html"
         }
       ]
     },

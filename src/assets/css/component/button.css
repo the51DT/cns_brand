@@ -99,6 +99,31 @@
     cursor: default;
     pointer-events: none;
 }
+/* btn-gray - hover, disabled 시 색상 업데이트 필요 */
+.btn.btn-gray {
+    background-color: #F0F0F0;
+    color: var(--text-text-default);
+    font-size: calc(14 / 16 * 1rem);
+    font-weight: 700;
+    line-height: calc(21 / 16 * 1rem);
+    padding: calc(6 / 16 * 1rem) calc(18 / 16 * 1rem);
+}
+.btn.btn-gray:hover {
+    background-color: var(--colorCM-all-fill-fill-default4);
+    color: var(--text-text-default);
+}
+.btn.btn-gray.is-active {
+    background-color: var(--colorCM-all-fill-fill-default5);
+    color: var(--text-text-default);
+}
+.btn.btn-gray:disabled,
+.btn.btn-gray.is-disabled {
+    background-color: var(--colorCM-all-fill-fill-default4);
+    color: var(--colorCM-all-text-text-disabled);
+    cursor: default;
+    pointer-events: none;
+}
+
 /* btn-trans - hover, disabled 시 색상 업데이트 필요 */
 .btn.btn-trans {
     background-color: transparent;

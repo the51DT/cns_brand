@@ -24,7 +24,8 @@
 @media #{$phone} {
 }  
 body {
-    &.overflow {
+    &.overflow,
+    &.modal-open {
         overflow: hidden;
         height: 100%;
     }
