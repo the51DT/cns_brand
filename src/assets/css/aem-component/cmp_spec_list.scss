@@ -157,7 +157,7 @@
         .spec-title {
             font-weight: 700;
             width: calc(50% - calc($gap-margin / 2));
-            color: var(--colorGL-all-gray950);
+            color: #1a1a1a;
             display: flex;
             gap: calc(16 / 16 * 1rem);
             @media #{$phone} {
