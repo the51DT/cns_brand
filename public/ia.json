@@ -296,6 +296,18 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_Solution_icon.html"
+        },
+        {
+          "name": "CTA-section",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_CTA_section.html"
+        },
+        {
+          "name": "title-nav",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_title_nav.html"
         }
       ]
     },

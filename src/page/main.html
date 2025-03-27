@@ -14,7 +14,65 @@
         <!-- //헤더 영역 -->
 
         <div class="main-visual__wrap">
-
+            <div class="cmp-wrap cmp-swiper__wrap slogan-swiper">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <p class="font-body-lg">새로운 세상을 기.술.합니다.</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="font-body-lg">새로운 세상을 기.술.합니다.</p>
+                        </div>
+                    </div>
+                    <!-- swiper-slide 2개 이상일 시 버튼 노출 / 1개일 경우 미노출 -->
+                    <div class="swiper-button-wrap">
+                        <button class="swiper-button-prev"></button>
+                        <button class="swiper-button-next"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="main-visual__flex">
+                <%
+                    const CTASecData = {
+                        title: "Generative AI in your work",
+                        text: "생성형 AI. 이제 관망의 시기는 지났습니다.<br>인터넷이 없는 업무 환경을 이제 생각할 수가 없듯이,<br>생성형 AI가 적용되지 않은 업무 시스템을 생각하기는  이제 어려운 세상이 되었습니다.",
+                        button: {
+                            text: "생성형 AI 상세보기",
+                            href: "#",
+                        }
+                    }
+                %>
+                <%- include('src/component/cmp_CTA_section.html', Object.assign({}, locals, { 
+                    jsonData: CTASecData,
+                })) %>
+                <%
+                    const titleNavData = [
+                        {
+                            href: "#",
+                            tag: "고객스토리",
+                            title: "Vision AI로 철스크랩 판정의<br>정확성과 효율성을 모두 잡다",
+                        },
+                        {
+                            href: "#",
+                            tag: "행사",
+                            title: "[4월 D-Talks] ESG 경영 DX :<br>지속가능성을 높이는 게임체인저",
+                        },
+                        {
+                            href: "#",
+                            tag: "자료",
+                            title: "해킹 공격과 방어의 전쟁 :<br>PURPLE LAB 보안 심층분석 보고서",
+                        },
+                        {
+                            href: "#",
+                            tag: "Techlog",
+                            title: "생성형 AI의 모든 것",
+                        },
+                    ]
+                %>
+                <%- include('src/component/cmp_title_nav.html', Object.assign({}, locals, { 
+                    jsonData: titleNavData,
+                })) %>
+            </div>
         </div>
         <!-- //비주얼 영역 -->
 
@@ -183,6 +241,14 @@
     <script>
         // Swiper 옵션 배열
         const swiperOptions = [
+            {
+                slidesPerView: 1,
+                loop: true,
+                navigation: { 
+                    prevEl: ".slogan-swiper .swiper-button-prev",
+                    nextEl: ".slogan-swiper .swiper-button-next",
+                },
+            },
             {
                 speed: 500,
                 slidesPerView: "auto",
