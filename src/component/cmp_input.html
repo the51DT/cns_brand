@@ -82,13 +82,14 @@
                       <%- title.required === true ? 'required' : '' %>
                     >
                     <span class="font-body-xs">@</span>
-                    <label class="ir-text" for="<%- item.id %>-select">이메일 도메인</label>
-                    <select class="cmp-input__item cmp-input__item--select <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %>" id="<%- item.id %>-select" <%- input.state === 'disabled' && input.state ? 'disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'readonly' : '' %> <%- title.required === true ? 'required' : '' %>>
-                        <option value="" disabled hidden selected>직접 입력</option>
-                      <% input.option.forEach((option)=> { %>
-                        <option value="<%- option.value %>" <%- option.selected === true ? 'selected' : '' %>><%- option.value %></option>
-                      <% }) %>
-                    </select>
+                    <div class="dropdown-menu cmp-input__item--dropdown">
+                      <div class="cmp-input__item"><input class="dropdown_input" placeholder="<%- input.enterPlacehold %>"><button class="btn-dropdown no-select"><%- input.secondPlacehold %></button></div>
+                      <ul class="dropdown_list">
+                        <% input.option.forEach((option)=> { %>
+                          <li><button class="font-body-xs <%- option.enter === true && option.enter ? 'dropdown_enter' : '' %>"><%- option.value %></button></li>
+                        <% }) %>
+                      </ul>
+                    </div>
                   </div>
                 <% } else if(input.type === 'checkbox') { %>
                   <% input.dataList.forEach((check)=> { %>
@@ -104,6 +105,15 @@
                       <label class="<%- radio.label ? '' : 'ir-text' %> font-body-xs" for="<%- radio.value %>"><%- radio.label ? radio.label : radio.value %></label>
                     </div>
                   <% }) %>
+                <% } else if(input.type === 'dropdown') { %>
+                  <div class="dropdown-menu cmp-input__item--dropdown">
+                    <div class="cmp-input__item"><input class="dropdown_input" placeholder="<%- input.enterPlacehold %>"><button class="btn-dropdown no-select"><%- input.placeholder %></button></div>
+                    <ul class="dropdown_list">
+                      <% input.option.forEach((option)=> { %>
+                        <li><button class="font-body-xs <%- option.enter === true && option.enter ? 'dropdown_enter' : '' %>"><%- option.value %></button></li>
+                      <% }) %>
+                    </ul>
+                  </div>
                 <% } else { %>
                   <% if(!item.title) { %>
                     <label class="ir-text" for="<%- item.id %>"><%- input.placeholder %></label>

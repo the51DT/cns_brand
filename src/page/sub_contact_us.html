@@ -42,9 +42,12 @@
                                 {
                                     type: "multi",
                                     placeholder: "입력해 주세요",
+                                    secondPlacehold: "직접 입력",
+                                    enterPlacehold: "직접 입력",
                                     option: [
                                         {
                                             value: "직접 입력",
+                                            enter: true,
                                         },
                                         {
                                             value: "naver.com",
@@ -98,17 +101,26 @@
                             title: { text: "질문유형", required: true },
                             inputData: [
                                 {
-                                    type: "select",
+                                    type: "dropdown",
                                     placeholder: "질문 유형을 선택해 주세요",
                                     option: [
                                         {
-                                            value: "옵션1",
+                                            value: "클라우드",
                                         },
                                         {
-                                            value: "옵션2",
-                                        }
+                                            value: "AI 빅데이터",
+                                        },
+                                        {
+                                            value: "스마트팩토리",
+                                        },
+                                        {
+                                            value: "스마트시티",
+                                        },
+                                        {
+                                            value: "클라우드",
+                                        },
                                     ],
-                                }
+                                },
                             ],
                         },
                         {

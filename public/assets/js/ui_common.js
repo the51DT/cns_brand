@@ -60,11 +60,16 @@ const dropdownMenu = (menuSelector) => {
     dropdownMenus.forEach(menu => {
         const trigger = menu.querySelector('.btn-dropdown');
         const siblings = getNextSibling(trigger); 
+        const enterInput = menu.querySelector('.dropdown_input');
 
         trigger.addEventListener('click', (e) => {
             e.stopPropagation(); 
             const isActive = trigger.classList.toggle('is-active');                       
-            siblings.classList.toggle('is-active', isActive);
+            if (enterInput) {
+                trigger.parentElement.nextElementSibling.classList.toggle('is-active', isActive);
+            } else {
+                siblings.classList.toggle('is-active', isActive);
+            }
         });
 
         const optionList = menu.querySelectorAll('.dropdown_list li button, .dropdown_list li a');
@@ -78,13 +83,28 @@ const dropdownMenu = (menuSelector) => {
                     trigger.textContent = selectText;
                 }
 
+                if(trigger.classList.contains('no-select')) {
+                    trigger.classList.remove('no-select');
+                }
+
+                if (option.classList.contains('dropdown_enter')) {
+                    enterInput.classList.add('is-active');
+                    trigger.textContent = '';
+                } else {
+                    enterInput.classList.remove('is-active');
+                }
+
                 menu.querySelectorAll('.dropdown_list li').forEach(item => {
                     item.classList.remove('is-active');
                 });
 
                 option.parentElement.classList.add('is-active');
                 trigger.classList.remove('is-active');
-                siblings.classList.remove('is-active');
+                if (enterInput) {
+                    trigger.parentElement.nextElementSibling.classList.toggle('is-active');
+                } else {
+                    siblings.classList.remove('is-active');
+                }
             });
         });
     });
@@ -93,10 +113,15 @@ const dropdownMenu = (menuSelector) => {
         dropdownMenus.forEach(menu => {
             const trigger = menu.querySelector('.btn-dropdown');
             const siblings = getNextSibling(trigger);
+            const enterInput = menu.querySelector('.dropdown_input');
 
             if (!menu.contains(e.target) && !e.target.closest('.btn-dropdown')) {                
                 trigger.classList.remove('is-active');
-                siblings.classList.remove('is-active');
+                if (enterInput) {
+                    trigger.parentElement.nextElementSibling.classList.remove('is-active');
+                } else {
+                    siblings.classList.remove('is-active');
+                }
             }
         });
     });

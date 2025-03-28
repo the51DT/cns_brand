@@ -152,9 +152,12 @@
                                         {
                                             type: "multi",
                                             placeholder: "firstData",
+                                            secondPlacehold: "secondData",
+                                            enterPlacehold: "직접 입력",
                                             option: [
                                                 {
                                                     value: "직접 입력",
+                                                    enter: true,
                                                 },
                                                 {
                                                     value: "naver.com",
@@ -328,6 +331,38 @@
                                                     label: "radio-checked-disabled",
                                                     checked: true,
                                                     disabeld: true,
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    id: 12,
+                                    title: { text: "dropdown", required: true },
+                                    inputData: [
+                                        {
+                                            type: "dropdown",
+                                            placeholder: "dropdown 가이드",
+                                            enterPlacehold: "직접 입력",
+                                            option: [
+                                                {
+                                                    value: "직접 입력",
+                                                    enter: true,
+                                                },
+                                                {
+                                                    value: "클라우드",
+                                                },
+                                                {
+                                                    value: "AI 빅데이터",
+                                                },
+                                                {
+                                                    value: "스마트팩토리",
+                                                },
+                                                {
+                                                    value: "스마트시티",
+                                                },
+                                                {
+                                                    value: "클라우드",
                                                 },
                                             ],
                                         },

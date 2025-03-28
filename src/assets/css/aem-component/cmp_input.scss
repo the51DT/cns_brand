@@ -202,6 +202,84 @@
         }
       }
     }
+    &--dropdown {
+      position: relative;
+      width: 100%;
+      .cmp-input__item {
+        display: flex;
+      }
+      .dropdown_input {
+        flex-grow: 1;
+        flex-shrink: 0;
+        display: none;
+        width: calc(100% - (34 / 16 * 1rem));
+        &.is-active {
+          display: inline-block;
+        }
+        &::placeholder {
+          color: var(--colorGL-all-gray600);
+        }
+      }
+      .btn-dropdown {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: calc(20 / 16 * 1rem);
+        min-height: calc(20 / 16 * 1rem);
+        background-image: url(../../image/icon/icon_arrow_down.svg);
+        background-repeat: no-repeat;
+        background-position: right center;
+        text-align: left;
+        &.no-select {
+          color: var(--colorGL-all-gray600);
+        }
+        &.is-active {
+          background-image: url(../../image/icon/icon_arrow_up.svg);
+        }
+      }
+      .dropdown_list {
+        z-index: 3;
+        position: absolute;
+        left: 0;
+        bottom: calc(-10 / 16 * 1rem);
+        transform: translateY(100%);
+        display: none;
+        width: 100%;
+        max-height: calc(152 / 16 * 1rem);
+        padding: calc(12 / 16 * 1rem) calc(14 / 16 * 1rem);
+        border: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default6);
+        border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+        background-color: var(--colorCM-all-fill-fill-default0);
+        overflow-y: auto;
+        word-wrap: break-word;
+        &.is-active {
+          display: block;
+        }
+        &::-webkit-scrollbar {
+          height: 100%;
+          width: calc(20 / 16 * 1rem);
+        }
+        &::-webkit-scrollbar-thumb {
+          border: calc(8 / 16 * 1rem) solid transparent;
+          border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
+          background-color: var(--colorCM-all-fill-fill-default4);
+          background-clip: content-box;
+          box-sizing: border-box;
+        }
+        &::-webkit-scrollbar-button {
+          height: calc(10 / 16 * 1rem);
+          pointer-events: none;
+        }
+        li {
+          padding: calc(6 / 16 * 1rem) calc(14 / 16 * 1rem);
+          &.is-active {
+            color: var(--colorCM-all-primary-primary-enabled);
+            button {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
   }
   &__count {
     text-align: right;
