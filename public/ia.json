@@ -304,10 +304,10 @@
           "fileName": "cmp_guide_Solution_icon.html"
         },
         {
-          "name": "CTA-section",
+          "name": "cta-section",
           "screenId": "",
           "path": "/src/guide/",
-          "fileName": "cmp_guide_CTA_section.html"
+          "fileName": "cmp_guide_cta_section.html"
         },
         {
           "name": "title-nav",
