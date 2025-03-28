@@ -520,6 +520,12 @@
           "fileName": "bizInfo_LGway.html"
         },
         {
+          "name": "기업정보 - LG Way",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_LGway2.html"
+        },
+        {
           "name": "기업정보 - 추진방향",
           "screenId": "",
           "path": "/src/page/",
