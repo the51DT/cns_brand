@@ -1,36 +1,48 @@
 /* 약관 관련 */
 .cmp-sidebar {
+  z-index: 99;
   position: fixed;
   left: calc(100 / 16 * 1rem);
   top:  calc(150 / 16 * 1rem);
   display: flex;
   flex-direction: column;
   gap: calc(3 / 16 * 1rem);
+
   li {
     a {
       position: relative;
       display: block;
-      padding: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem) ;
+      padding: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem);
+      color: rgba(46, 25, 20, 0.62);
+      font-size: calc(15/16*1rem);
+  
       &::before {
         content: '';
         width: 2px;
-        height: 100%;
+        height: calc(100% - 4px);
         position: absolute;
-        left:0;
-        top: 0;
+        left: 0;
+        top: 4px; 
         background-color: hsla(11, 20%, 36%, 0.2);
         transition: background-color 0.3s ease, transform 0.3s ease;
-        transform: scaleY(0);
+        transform: scaleY(1);
         transform-origin: top;
       }
+      
+      
     }
+  
     &.is-active {
       a {
+        color: #AD280A;
+        font-weight: 500;
+
         &::before {
           background-color: #DE5536;
-          transform: scaleY(1);
+          transform: scaleY(1); // 유지
         }
       }
     }
   }
+  
 }
