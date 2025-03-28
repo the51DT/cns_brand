@@ -78,6 +78,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_table.html"
+        },
+        {
+          "name": "모달",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_modal.html"
         }
       ]
     },
@@ -296,6 +302,18 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_Solution_icon.html"
+        },
+        {
+          "name": "cta-section",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_cta_section.html"
+        },
+        {
+          "name": "title-nav",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_title_nav.html"
         }
       ]
     },

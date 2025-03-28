@@ -1,0 +1,25 @@
+<div class="cmp-wrap cmp-cta-section">
+    <% 
+        const data = (typeof jsonData !== 'undefined' ? jsonData : {}); 
+    %>
+    <div class="cmp-cta-section__wrap inner-wrap">
+        <% if(typeof data.title !=='undefined' && data.title) { %>
+            <div class="cmp-cta-section__title">
+                <span class="font-head-xl"><%- data.title %></span>
+            </div>
+        <% } %>
+        <% if(typeof data.text !=='undefined' && data.text) { %>
+            <div class="cmp-cta-section__text">
+                <span class="font-body-md"><%- data.text %></span>
+            </div>
+        <% } %>
+        <% if(typeof data.button !=='undefined' && data.button) { %>
+            <div class="button__wrap">
+                <a href="<%- data.button.href %>" target="_blank" class="btn btn-white">
+                    <%- data.button.text %>
+                    <i class="ico icon-navigation-right-bl24"></i>
+                </a>
+            </div>
+        <% } %>
+    </div>
+</div>

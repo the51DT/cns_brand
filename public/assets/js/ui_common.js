@@ -122,6 +122,7 @@ const setModal = (target) => { // target : 모달 아이디
 window.setModal = setModal;
 // 모달 열기 1.
 const openModal = (event, type) => {
+    console.log(event)
     const btn = event.currentTarget;
     const modalId = btn.getAttribute('modal-id');
     const target = document.getElementById(modalId);
@@ -150,7 +151,7 @@ document.addEventListener("click", function(e) {
 //모달창 닫기
 const closeModal = (event, openButton) => {
     const btn = event.currentTarget;    
-    const activeModal = btn.closest('.modal__wrap--bg');    
+    const activeModal = btn.closest('.cmp-modal');    
     if (activeModal) {
         activeModal.classList.remove('is-active')        
         document.body.classList.remove('modal-open');

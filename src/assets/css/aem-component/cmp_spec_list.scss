@@ -18,6 +18,21 @@
             width: 100%;
         }
     }
+    &:has(.spec-item.type-box-row) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: $gap-margin;
+        border-top: 0;
+        @media #{$tablet} {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media #{$phone} {
+            grid-template-columns: 1fr;
+        }
+        .spec-text {
+            width: 100%;
+        }
+    }
     &:has(.spec-item.type-num-sub) {
         border-top: 0;
     }
@@ -32,7 +47,7 @@
             flex-direction: column;
             padding: calc(40 / 16 * 1rem) 0;
         }
-        &:last-child:not(.type-box) {
+        &:last-child:not(.type-box, .type-box-row) {
             border-bottom: 0;
             padding-bottom: 0;
         }
@@ -54,6 +69,37 @@
             flex-direction: column;
             justify-content: flex-start;
             padding: calc(24 / 16 * 1rem) 0;
+            .spec-item__list {
+                li {
+                    position: relative;
+                    padding-left: calc(26 / 16 * 1rem);
+                    &:before {
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        top: calc(10 / 16 * 1rem);
+                        left: calc(11 / 16 * 1rem);
+                        width: calc(4 / 16 * 1rem);
+                        height: calc(4 / 16 * 1rem);
+                        border-radius: 50%;
+                        background: var(--colorCM-all-fill-fill-default9);
+                    }
+                    &:only-of-type {
+                        padding-left: 0;
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+                .spec-text {
+                    width: 100%;
+                }
+            }
+        }
+        &.type-box-row {
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: calc(24 / 16 * 1rem) calc(var(--spacing-mode1-horizontal2-x-l) / 16 * 1rem);
             .spec-item__list {
                 li {
                     position: relative;
@@ -111,7 +157,7 @@
         .spec-title {
             font-weight: 700;
             width: calc(50% - calc($gap-margin / 2));
-            color: var(--colorGL-all-gray950);
+            color: var(--text-text-default);
             display: flex;
             gap: calc(16 / 16 * 1rem);
             @media #{$phone} {

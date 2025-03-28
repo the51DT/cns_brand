@@ -24,7 +24,7 @@
                             <%- item.smallContent %>
                         </p>
                     </div>
-                <% } else if(typeof styleType !=='undefined' && styleType == 'type-box' && item.content && item.content.length > 1) { %>
+                <% } else if(typeof styleType !=='undefined' && (styleType == 'type-box' || styleType == 'type-box-row') && item.content && item.content.length > 1) { %>
                     <ul class="spec-item__list">
                         <% item.content.forEach((content) => { %>
                             <li class="font-body-sm spec-text">

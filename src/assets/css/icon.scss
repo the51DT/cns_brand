@@ -14,6 +14,9 @@ $fileType: "svg";
     display: inline-flex;
     background-size: contain;
     vertical-align: middle;
+    &.icon-lang-bl24 {
+        @include iconFile(24,24,'icon_lang_bl24');
+    }
     &.icon-earth-wt24 {
         @include iconFile(24,24,'ico_language');
     }
@@ -26,27 +29,24 @@ $fileType: "svg";
     &.icon-remove-bl28 {
         @include iconFile(28,28,'ico_remove_gray28');
     }   
-    &.icon-arrow-right-wt16 {
-        @include iconFile(16,16,'icon_arrow_wt16');
-    }
     &.icon-arrow-right-bl16 {
         @include iconFile(16,16,'icon_arrow_right_bl16');
     }
+    &.icon-arrow-right-wt16 {
+        @include iconFile(16,16,'icon_arrow_wt16');
+    }
     &.icon-arrow-down-bl24 {
         @include iconFile(24,24,'icon_arrow_down');
-    }      
-    &.icon-lang-bl24 {
-        @include iconFile(24,24,'icon_lang_bl24');
-    }    
+    }
     &.icon-search-bl24 {
         @include iconFile(24,24,'icon_search_bl24');
-    }   
-    &.icon-hamburger-menu {
-        @include iconFile(24,24,'btn_hamburger_menu');
     }   
     &.icon-hamburger-menu_bl {
         @include iconFile(24,24,'icon_hamburger_bl');
     }      
+    &.icon-hamburger-menu {
+        @include iconFile(24,24,'btn_hamburger_menu');
+    }   
     &.icon-more-dot {
         @include iconFile(16,16,'ico-more');
     }   
@@ -70,17 +70,29 @@ $fileType: "svg";
     }                       
     &.icon-navigation-down-w24 {
         @include iconFile(24,24,'icon_navigation_down_w24');
-    }  
+    }
+    &.icon-navigation-down-wh48{
+        @include iconFile(48,48,'icon-navigation-down-wh48');
+    } 
+    &.icon-navigation-right-bl24 {
+        @include iconFile(24,24,'icon_navigation_right_bl24');
+    }
+    &.icon-navigation-right-wh16 {
+        @include iconFile(24,24,'icon_navigation_right_wh16');
+    }
+    &.icon-navigation-right-red16 {
+        @include iconFile(24,24,'icon_navigation_right_red16');
+    }
     &.icon-download-bl24 {
         @include iconFile(24,24,'icon_download_bl24');
-    }  
-    &.icon-arrow-down-wh48{
-        @include iconFile(48,48,'icon-arrow-down-wh48');
-    }  
+    }
+    &.icon-plus-bl24 {
+        @include iconFile(24,24,'icon-plus-bl24');
+    }
     &.icon-plus-wh24 {
         @include iconFile(24,24,'icon-plus-wh24');
     }  
-    &.icon-plus-bl24 {
-        @include iconFile(24,24,'icon-plus-bl24');
-    }  
+    &.icon-close-bl32 {
+        @include iconFile(32,32,'icon-close-bl32');
+    }   
 }

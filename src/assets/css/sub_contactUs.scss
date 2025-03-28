@@ -35,10 +35,15 @@
                 }
             }
             .check-box-container {
-                width: 100%;
-                height: calc(148 / 16 * 1rem);
-                background-color: lightgray;
-                margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+                .cmp-form-group{
+                    .cmp-input__wrap{
+                        margin-bottom: 0;
+                    }
+                }
+                // width: 100%;
+                // height: calc(148 / 16 * 1rem);
+                // background-color: lightgray;
+                // margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
             }
         }
     }

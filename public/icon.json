@@ -1,16 +1,16 @@
 {
   "icons": [
+    "icon-lang-bl24",
     "icon-earth-wt24",
     "icon-search-wt24",
     "icon-search-bl35",
     "icon-remove-bl28",
-    "icon-arrow-right-wt16",
     "icon-arrow-right-bl16",
+    "icon-arrow-right-wt16",
     "icon-arrow-down-bl24",
-    "icon-lang-bl24",
     "icon-search-bl24",
-    "icon-hamburger-menu",
     "icon-hamburger-menu_bl",
+    "icon-hamburger-menu",
     "icon-more-dot",
     "icon-pagination-first",
     "icon-pagination-prev",
@@ -19,9 +19,13 @@
     "icon-heart-line",
     "icon-navigation-up-w24",
     "icon-navigation-down-w24",
+    "icon-navigation-down-wh48",
+    "icon-navigation-right-bl24",
+    "icon-navigation-right-wh16",
+    "icon-navigation-right-red16",
     "icon-download-bl24",
-    "icon-arrow-down-wh48",
+    "icon-plus-bl24",
     "icon-plus-wh24",
-    "icon-plus-bl24"
+    "icon-close-bl32"
   ]
 }
