@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* 약관 관련 */
+.cmp-sidebar {
+  z-index: 99;
+  position: fixed;
+  left: 6.25rem;
+  top: 9.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1875rem;
+}
+.cmp-sidebar li a {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: rgba(46, 25, 20, 0.62);
+  font-size: 0.9375rem;
+}
+.cmp-sidebar li a::before {
+  content: "";
+  width: 2px;
+  height: calc(100% - 4px);
+  position: absolute;
+  left: 0;
+  top: 4px;
+  background-color: hsla(11, 20%, 36%, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transform: scaleY(1);
+  transform-origin: top;
+}
+.cmp-sidebar li.is-active a {
+  color: #AD280A;
+  font-weight: 500;
+}
+.cmp-sidebar li.is-active a::before {
+  background-color: #DE5536;
+  transform: scaleY(1);
+}
