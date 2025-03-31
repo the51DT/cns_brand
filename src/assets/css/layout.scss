@@ -12,6 +12,10 @@
     --header-logo-wh-display: none;
     --header-icon-bl-display: inline-flex;
     --header-icon-wh-display: none;
+    --footer-bg: var(--colorCM-all-background-background-default0);
+    --footer-font-color: var(--text-text-default);
+    --footer-family-site-dropdown-bg : #F0F0F0;
+    --footer-family-site-dropdown-icon: url('/src/assets/image/icon/icon-plus-bl16.svg');
 }
 
 @media #{$pcMiddle} {
@@ -848,8 +852,8 @@ body {
                 gap: calc(20 / 16 * 1rem);  
             }
             li {
-                a {                
-                    color: var(--colorGL-all-gray950);
+                a, button {                
+                    color: var(--footer-font-color);
                     font-weight: 500;
                     padding: calc(8 / 16 * 1rem) 0;
                 }
@@ -875,17 +879,19 @@ body {
                     align-items: center;
                     gap: calc(2 / 16 * 1rem);
                     border-radius: calc(50 / 16 * 1rem);
-                    background-color: var(--colorGL-all-gray100);
+                    background: var(--footer-family-site-dropdown-bg);
                     @media #{$phone} {
                         width: 100%;
                     }
                     &::after {
                         content: '';
                         display: inline-flex;
-                        width: calc(12 / 16 * 1rem);
-                        height: calc(8 / 16 * 1rem);
-                        background: url('/src/assets/image/icon/icon_arrow_down.svg') no-repeat center center;
+                        width: calc(16 / 16 * 1rem);
+                        height: calc(16 / 16 * 1rem);
+                        background: var(--footer-family-site-dropdown-icon);
                         background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
                     }
                 }
                 .dropdown_list {
@@ -899,7 +905,7 @@ body {
                         left:0;
                         top: -239px;
                         padding: calc(11 / 16 * 1rem) calc(12 / 16 * 1rem);                        
-                        background-color: var(--colorGL-all-gray100);
+                        background: var(--footer-family-site-dropdown-bg);
                         border-radius: var(--radius-mode1-3-x-l);
                         z-index: 9;                        
                     }
@@ -921,7 +927,7 @@ body {
         }
         .footer-info {
             p {
-                color: var(--colorGL-all-gray850);            
+                color: var(--footer-font-color);    
             } 
         }
         .footer-sns__wrap {
@@ -938,23 +944,28 @@ body {
         }
     }
     &.type-dark {
-        background: var(--colorCM-all-background-background-default10);
+        --footer-bg: var(--colorCM-all-background-background-default10);
+        --footer-font-color: var(--colorCM-all-text-text-on-bg);
+        --footer-family-site-dropdown-icon: url('/src/assets/image/icon/icon-plus-wh16.svg');
+        --footer-family-site-dropdown-bg : var(--colorCM-all-fill-fill-default10);
+
+        background: var(--footer-bg);
         border-top: calc(1 / 16 * 1rem) solid rgba(255, 255, 255, 0.20);
         .footer-info__top {
             .footer-menu {
                 li {
-                    a {
-                        color: var(--colorGL-all-white100);
+                    a, button {
+                        color: var(--footer-font-color);
                     }
                 }
             }
             .dropdown-menu {
                 &.family-site {
                     button {
-                        color: var(--colorGL-all-white100);
-                        background: var(--colorCM-all-fill-fill-default10);
+                        color: var(--footer-font-color);
+                        background: var(--footer-family-site-dropdown-bg);
                         &::after {
-                            background: url("/src/assets/image/icon/icon_arrow_down_wh.svg") no-repeat center center
+                            background: var(--footer-family-site-dropdown-icon);
                         }
                     }
                 }
@@ -963,29 +974,34 @@ body {
         .footer-info__bottom {
             .footer-info {
                 p {
-                    color: var(--colorGL-all-white100);
+                    color: var(--footer-font-color);
                 }
             }
         }
     }
     &.type-transparent-wh {
-        background: transparent;
+        --footer-bg: transparent;
+        --footer-font-color: var(--colorCM-all-text-text-on-bg);
+        --footer-family-site-dropdown-icon: url('/src/assets/image/icon/icon-plus-wh16.svg');
+        --footer-family-site-dropdown-bg : var(--colorCM-all-fill-fill-default10);
+
+        background: var(--footer-bg);
         border-top: calc(1 / 16 * 1rem) solid rgba(255, 255, 255, 0.20);
         .footer-info__top {
             .footer-menu {
                 li {
-                    a {
-                        color: var(--colorGL-all-white100);
+                    a, button {
+                        color: var(--footer-font-color);
                     }
                 }
             }
             .dropdown-menu {
                 &.family-site {
                     button {
-                        color: var(--colorGL-all-white100);
-                        background: var(--colorCM-all-fill-fill-default10);
+                        color: var(--footer-font-color);
+                        background: var(--footer-family-site-dropdown-bg);
                         &::after {
-                            background: url("/src/assets/image/icon/icon_arrow_down_wh.svg") no-repeat center center
+                            background: var(--footer-family-site-dropdown-icon);
                         }
                     }
                 }
@@ -994,7 +1010,7 @@ body {
         .footer-info__bottom {
             .footer-info {
                 p {
-                    color: var(--colorGL-all-white100);
+                    color: var(--footer-font-color);
                 }
             }
         }
