@@ -13,10 +13,11 @@
         <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
         <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
-            pcImg: '/src/assets/image/sub/bg_sub_enterprice.png',
-            moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
+            pcImg: 'empty',
+            moImg: 'empty',
             subText: 'MOA', 
-            pageTitle: '인사이트' 
+            pageTitle: '인사이트',
+            lifted: true
         })) %>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
