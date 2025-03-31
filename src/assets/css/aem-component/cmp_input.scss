@@ -140,6 +140,7 @@
       &:checked {
         background-color: var(--colorCM-all-primary-primary-enabled);
         background-image: url(../../image/icon/ico_checkbox_white.svg);
+        border: none;
       }
       &:disabled {
         background-color: var(--colorCM-all-fill-fill-default3);
