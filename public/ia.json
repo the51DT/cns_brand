@@ -452,13 +452,13 @@
           "fileName": "moa_event_detail.html"
         },
         {
-          "name": "MOA - 테크로그",
+          "name": "MOA - 인사이트",
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_techLog.html"
         },
         {
-          "name": "MOA - 테크로그 상세",
+          "name": "MOA - 인사이트 상세",
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_techLog_detail.html"
