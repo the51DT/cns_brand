@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/guide/cmp_guide_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="page-location text-2xl font-bold">
+        <span id="pagesTitle"></span>
+      </div>
+      <div class="guide-content">
+        <div class="flex justify-between lnb-type">
+          <div class="lnb-side__wrap">
+            <button type="button" class="lnb-trigger">아코디언</button>
+          </div>
+          <div class="page-cont flex-1">
+            <p class="guide-title-h3">Icon Component</p>
+            <div class="section_text mt-5">
+              경로 : src\assets\image\icon
+            </div>
+            <div class="content-box__wrap mt-5">
+              <ul class="icon-list" id="iconList">
+
+                <!-- <li>
+                                <div class="icon">
+                                    <i class="ico icon-earth-wt24"></i>
+                                </div>
+                                <div class="icon-name">ico icon-earth-wt24</div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-search-wt24"></i>
+                                </div>
+                                <div class="icon-name">ico icon-search-wt24</div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-search-bl28"></i>
+                                </div>
+                                <div class="icon-name">ico icon-search-bl35</div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-remove-bl28"></i>
+                                </div>
+                                <div class="icon-name">ico icon-remove-bl28</div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-arrow-right-wt16"></i>
+                                </div>
+                                <div class="icon-name">ico icon-arrow-right-wt16</div>
+                            </li>      
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-lang-bl24"></i>
+                                </div>
+                                <div class="icon-name">ico icon-lang-bl24</div>
+                            </li>    
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-search-bl24"></i>
+                                </div>
+                                <div class="icon-name">ico icon-search-bl24</div>
+                            </li>      
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-hamburger-menu"></i>
+                                </div>
+                                <div class="icon-name">ico icon-hamburger-menu</div>
+                            </li>      
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-more-dot"></i>
+                                </div>
+                                <div class="icon-name">ico icon-more-dot</div>
+                            </li>  
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-pagination-first"></i>
+                                </div>
+                                <div class="icon-name">ico icon-pagination-first</div>
+                            </li>  
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-pagination-prev"></i>
+                                </div>
+                                <div class="icon-name">ico icon-pagination-prev</div>
+                            </li>  
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-pagination-next"></i>
+                                </div>
+                                <div class="icon-name">ico icon-pagination-next</div>
+                            </li>  
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-pagination-last"></i>
+                                </div>
+                                <div class="icon-name">ico icon-pagination-last</div>
+                            </li>  
+                            <li>
+                                <div class="icon">
+                                    <i class="ico icon-hamburger-menu_bl"></i>
+                                </div>
+                                <div class="icon-name">ico icon-hamburger-menu_bl</div>
+                            </li>                               -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      async function loadIcons() {
+        try {
+          const response = await fetch('/icon.json'); // JSON 파일 불러오기
+          const data = await response.json();
+          const iconList = document.getElementById('iconList');
+          iconList.innerHTML = data.icons.map(iconClass => `
+            <li>
+                <div class="icon">
+                <i class="ico ${iconClass}"></i>
+                </div>
+                <div class="icon-name">${iconClass}</div>
+            </li>
+            `).join('');
+        } catch (error) {
+          console.error("아이콘 데이터를 불러오는 중 오류 발생:", error);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        loadIcons();
+        const iconList = document.querySelectorAll('.icon-list li');
+        iconList.forEach(li => {
+          li.addEventListener('click', () => {
+            const iconName = li.querySelector('.icon-name').innerText;
+            navigator.clipboard.writeText(iconName).then(() => {
+              alert('복사 되었습니다: ' + iconName);
+            }).catch(err => {
+              console.error('복사 실패:', err);
+            });
+          });
+        })
+      })
+    </script>
+  </body>
+</html>
