@@ -455,13 +455,13 @@
           "name": "MOA - 인사이트",
           "screenId": "",
           "path": "/src/page/",
-          "fileName": "moa_techLog.html"
+          "fileName": "moa_insight.html"
         },
         {
           "name": "MOA - 인사이트 상세",
           "screenId": "",
           "path": "/src/page/",
-          "fileName": "moa_techLog_detail.html"
+          "fileName": "moa_insight_detail.html"
         },
         {
           "name": "MOA - 뉴스레터",
