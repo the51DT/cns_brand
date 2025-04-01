@@ -220,7 +220,6 @@
     border: 1px solid #c6c6c6;
     border-radius: 12px;
     padding: 20px;
-    white-space: nowrap;
 }
 .lnb-type .lnb-side__wrap > ul > li {
     border-bottom: 1px solid #c6c6c6;
@@ -251,6 +250,7 @@
     line-height: 18px;
     color: #212121;
     padding: 6px 0;
+    word-break: break-all;
 }
 .lnb-type .lnb-side__wrap li:last-child {
     border: 0;
