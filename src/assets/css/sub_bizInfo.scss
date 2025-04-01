@@ -1051,16 +1051,11 @@
   &ir-activity {
     color: #1a1a1a;
 
-
-    select {
-      display: block;
-      font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
-      border: 1px solid #1a1a1a;
-      padding: 13px 16px 13px 20px;
-      border-radius: 50px;
+    .cmp-select{
       margin-top: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
+
     }
-    
+
     &__event-container {
       display: flex;
       align-items: flex-start;
@@ -1089,6 +1084,7 @@
         .event-period {
           font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
           line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
+
 
 
           @media #{$tablet} {

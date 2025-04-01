@@ -40,10 +40,11 @@
                                  <span class="event-period font-bold">
                                     기간별 IR 행사를<br />확인해 보세요.
                                  </span>
-                                 <select name="IR">
-                                    <option value="">2024년</option>
-                                 </select>
-                              </div>
+                                 <%- include('src/component/cmp_select.html', Object.assign({}, locals, {
+                                    selectedValue: '',
+                                    options: ['2025년', '2024년', '2023년', '2022년']
+                                  })) %>
+                                  </div>
 
                               <div class="events-flex">
                                  <div class="progress-bar">

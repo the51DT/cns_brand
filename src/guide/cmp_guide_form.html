@@ -19,7 +19,11 @@
                 <div class="page-cont flex-1">
                     <%- include('src/component/cmp_form.html') %>
                     <p class="guide-title-h3 mt-10">cmp-select</p>
-                    <%- include('src/component/cmp_select.html') %>  
+                    <%- include('src/component/cmp_select.html', Object.assign({}, locals, {
+                        selectedValue: '',
+                        options: ['2025년', '2024년', '2023년', '2022년']
+                      })) %>
+                       
                     <p class="guide-title-h3 mt-10">cmp-input</p>
                     <div class="cmp-exsample__wrap mt-3">
                         <%
