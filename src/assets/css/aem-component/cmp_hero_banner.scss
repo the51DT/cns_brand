@@ -57,14 +57,14 @@
 
   &.type-lifted {
     .visual-text {
-      top: calc(120 / 16 * 1rem);
+      top: calc(200 / 16 * 1rem);
 
       @media #{$tablet} {
-        top: calc(120 / 16 * 1rem);
+        top: calc(200 / 16 * 1rem);
       }
 
       @media #{$phone} {
-        top: calc(195.5 / 16 * 1rem);
+        top: calc(275.5 / 16 * 1rem);
       }
     }
   }
