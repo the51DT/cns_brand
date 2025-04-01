@@ -1,5 +1,14 @@
+<%
+const isEmptyVisual = (
+  (typeof pcImg === 'undefined' || pcImg === 'empty') &&
+  (typeof moImg === 'undefined' || moImg === 'empty')
+);
+
+const isEmptyStyle = isEmptyVisual || (typeof lifted !== 'undefined' && lifted);
+%>
+
 <div class="sub-visual__wrap 
-  <%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'type-empty' : '' %> 
+  <%= isEmptyVisual ? 'type-empty' : '' %> 
   <%= (typeof bannerSize !== 'undefined' && bannerSize === 'wide') ? 'type-wide' : '' %>
   <%= (typeof lifted !== 'undefined' && lifted) ? 'type-lifted' : '' %>"
   style="--hero-sub-pc-img: url('<%= typeof pcImg !== 'undefined' && pcImg !== 'empty' ? pcImg : '' %>'); 
@@ -10,7 +19,7 @@
       <div class="sub-visual__container">
         <div class="visual-text">
           <% if (typeof subText !== 'undefined' && subText) { %>
-            <p class="<%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'font-body-lg' : 'font-body-xl' %> sub-text">
+            <p class="<%= isEmptyStyle ? 'font-body-lg' : 'font-body-xl' %> sub-text">
               <%= subText %>
             </p>
           <% } %>
@@ -18,7 +27,7 @@
           <% if (typeof bannerSize !== 'undefined' && bannerSize === 'wide') { %>
             <span class="font-head-md font-bold"><%- pageTitle %></span>
           <% } else { %>
-            <h2 class="<%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'font-head-lg font-bold' : 'font-head-xl font-semibold' %>">
+            <h2 class="<%= isEmptyStyle ? 'font-head-lg font-bold' : 'font-head-xl font-semibold' %>">
               <%= typeof pageTitle !== 'undefined' ? pageTitle : '기본 타이틀 문구' %>
             </h2>
           <% } %>
@@ -34,7 +43,7 @@
     <% } else { %>
       <div class="visual-text">
         <% if (typeof subText !== 'undefined' && subText) { %>
-          <p class="<%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'font-body-lg' : 'font-body-xl' %> sub-text">
+          <p class="<%= isEmptyStyle ? 'font-body-lg' : 'font-body-xl' %> sub-text">
             <%= subText %>
           </p>
         <% } %>
@@ -42,7 +51,7 @@
         <% if (typeof bannerSize !== 'undefined' && bannerSize === 'wide') { %>
           <span class="font-head-md font-bold"><%- pageTitle %></span>
         <% } else { %>
-          <h2 class="<%= (typeof pcImg === 'undefined' || pcImg === 'empty') && (typeof moImg === 'undefined' || moImg === 'empty') ? 'font-head-lg font-bold' : 'font-head-xl font-semibold' %>">
+          <h2 class="<%= isEmptyStyle ? 'font-head-lg font-bold' : 'font-head-xl font-semibold' %>">
             <%= typeof pageTitle !== 'undefined' ? pageTitle : '기본 타이틀 문구' %>
           </h2>
         <% } %>
