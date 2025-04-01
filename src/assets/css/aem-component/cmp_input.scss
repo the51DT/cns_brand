@@ -209,6 +209,10 @@
       .cmp-input__item {
         display: flex;
       }
+      &:has(.cmp-input__item--disabled),
+      &:has(.cmp-input__item--readonly) {
+        pointer-events: none;
+      }
       .dropdown_input {
         flex-grow: 1;
         flex-shrink: 0;
