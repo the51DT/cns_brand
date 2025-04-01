@@ -59,52 +59,47 @@ const dropdownMenu = (menuSelector) => {
 
     dropdownMenus.forEach(menu => {
         const trigger = menu.querySelector('.btn-dropdown');
-        const siblings = getNextSibling(trigger); 
+        const dropdownList = menu.querySelector('.dropdown_list');
         const enterInput = menu.querySelector('.dropdown_input');
 
         trigger.addEventListener('click', (e) => {
             e.stopPropagation(); 
             const isActive = trigger.classList.toggle('is-active');                       
-            if (enterInput) {
-                trigger.parentElement.nextElementSibling.classList.toggle('is-active', isActive);
-            } else {
-                siblings.classList.toggle('is-active', isActive);
-            }
+            dropdownList.classList.toggle('is-active', isActive); // 드롭다운 리스트의 활성화 상태 토글
         });
 
         const optionList = menu.querySelectorAll('.dropdown_list li button, .dropdown_list li a');
         optionList.forEach(option => {
-            option.addEventListener('click', () => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
                 const selectedValue = option.getAttribute('data-option');
-                trigger.textContent = selectedValue;
+                trigger.textContent = selectedValue || option.innerText;
 
-                if(!selectedValue) {
-                    const selectText = option.innerText;
-                    trigger.textContent = selectText;
-                }
+                // 모든 옵션의 활성화 상태 제거
+                optionList.forEach(item => {
+                    item.parentElement.classList.remove('is-active'); // 모든 항목에서 .is-active 제거
+                });
 
-                if(trigger.classList.contains('no-select')) {
+                // 선택된 옵션의 활성화 상태 추가
+                option.parentElement.classList.add('is-active'); // 선택된 항목에 .is-active 추가
+
+                if (trigger.classList.contains('no-select')) {
                     trigger.classList.remove('no-select');
                 }
 
                 if (option.classList.contains('dropdown_enter')) {
-                    enterInput.classList.add('is-active');
-                    trigger.textContent = '';
+                    if (enterInput) {
+                        enterInput.classList.add('is-active');
+                        trigger.textContent = ''; // 텍스트 초기화
+                    }
                 } else {
-                    enterInput.classList.remove('is-active');
+                    if (enterInput) {
+                        enterInput.classList.remove('is-active');
+                    }
                 }
 
-                menu.querySelectorAll('.dropdown_list li').forEach(item => {
-                    item.classList.remove('is-active');
-                });
-
-                option.parentElement.classList.add('is-active');
-                trigger.classList.remove('is-active');
-                if (enterInput) {
-                    trigger.parentElement.nextElementSibling.classList.toggle('is-active');
-                } else {
-                    siblings.classList.remove('is-active');
-                }
+                trigger.classList.remove('is-active'); // 드롭다운 트리거의 .is-active 제거
+                dropdownList.classList.remove('is-active'); // 드롭다운 리스트 닫기
             });
         });
     });
@@ -112,20 +107,15 @@ const dropdownMenu = (menuSelector) => {
     document.addEventListener("click", function(e) {        
         dropdownMenus.forEach(menu => {
             const trigger = menu.querySelector('.btn-dropdown');
-            const siblings = getNextSibling(trigger);
-            const enterInput = menu.querySelector('.dropdown_input');
+            const dropdownList = menu.querySelector('.dropdown_list');
 
             if (!menu.contains(e.target) && !e.target.closest('.btn-dropdown')) {                
                 trigger.classList.remove('is-active');
-                if (enterInput) {
-                    trigger.parentElement.nextElementSibling.classList.remove('is-active');
-                } else {
-                    siblings.classList.remove('is-active');
-                }
+                dropdownList.classList.remove('is-active'); // 드롭다운 리스트 닫기
             }
         });
     });
-};
+}; 
 // 모달 열기 2.
 const setModal = (target) => { // target : 모달 아이디
     target = document.getElementById(target);
