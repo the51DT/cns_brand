@@ -87,6 +87,15 @@
                             contentsTitle: 'LG CNS의 전 구성원은 업무를 수행함에 있어<br>관련 법령을 준수하고 있습니다.',
                         })) %>
                     </div>
+
+                    <p class="guide-title-h3 mt-10">Contents Title</p>
+                    <%- include('src/component/cmp_title.html', {
+                        titleText: 'SCM DX 트렌드',
+                        showSelect: true,
+                        selectedValue: '',
+                        options: ['2025년', '2024년', '2023년', '2022년']
+                      }) %>
+                      
                 </div>
             </div>
         </div>
