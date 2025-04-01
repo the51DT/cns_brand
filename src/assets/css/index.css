@@ -42,6 +42,7 @@
 @import 'aem-component/cmp_solution_icon.scss';
 @import 'aem-component/cmp_cta_section.scss';
 @import 'aem-component/cmp_title_nav.scss';
+@import 'aem-component/cmp_select.scss';
 
 /* icon */
 @import 'icon.scss';

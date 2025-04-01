@@ -1,0 +1,11 @@
+.cmp-select__item {
+  display: flex;
+  width: 6.5625rem;
+  height: 3rem;
+  border: 1px solid #1a1a1a;
+  padding: calc(var(--spacing-mode1-vertical-s) / 16 * 1rem) calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
+  border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
+}
+.cmp-select .btn-dropdown.no-select {
+  color: #1a1a1a;
+}
