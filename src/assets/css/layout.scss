@@ -833,7 +833,7 @@ body {
     .footer-info__top {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         gap: calc(8 / 16 * 1rem);
         width: 100%;
         @media #{$phone} {
@@ -846,6 +846,7 @@ body {
             display: flex;
             align-items: center;
             gap: calc(20 / 16 * 1rem);
+            flex-wrap: wrap;
             @media #{$phone} {
                 flex-direction: column;
                 align-items: flex-start;
