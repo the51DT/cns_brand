@@ -87,10 +87,12 @@
                         <div class="tab__content">
                            <div>
                               <div class="bizinfo-ir-activity__year-container">
-                                 <span class="font-bold">2024년</span>
-                                 <select name="IR">
-                                    <option value="">연도선택</option>
-                                 </select>
+                                 <%- include('src/component/cmp_title.html', {
+                                    titleText: '2024년',
+                                    showSelect: true,
+                                    selectedValue: '',
+                                    options: ['2025년', '2024년', '2023년', '2022년']
+                                  }) %>
                               </div>
 
                                  <% const buttonItemListData = [
@@ -110,10 +112,12 @@
                         <div class="tab__content">
                            <div>
                               <div class="bizinfo-ir-activity__year-container">
-                                 <span class="font-bold">2024년</span>
-                                 <select name="IR">
-                                    <option value="">연도선택</option>
-                                 </select>
+                                 <%- include('src/component/cmp_title.html', {
+                                    titleText: '2024년',
+                                    showSelect: true,
+                                    selectedValue: '',
+                                    options: ['2025년', '2024년', '2023년', '2022년']
+                                  }) %>
                               </div>
 
                               <div class="bizinfo-ir-activity__accodion">

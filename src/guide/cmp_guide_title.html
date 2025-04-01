@@ -95,7 +95,15 @@
                         selectedValue: '',
                         options: ['2025년', '2024년', '2023년', '2022년']
                       }) %>
-                      
+
+                    <p class="guide-title-h3 mt-10">Contents Title : select + space-between</p>
+                      <%- include('src/component/cmp_title.html', {
+                        titleText: '이사회 활동',
+                        showSelect: true,
+                        selectedValue: '2024년',
+                        options: ['2025년', '2024년', '2023년'],
+                        rowJustify: 'space-between'
+                      }) %>
                       
                 </div>
             </div>

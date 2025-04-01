@@ -13,8 +13,17 @@
   
     .cmp-title__row {
       display: flex;
-      flex-wrap: wrap;
-    //   gap: calc(var(--spacing-mode1-vertical2-x-l)/16*1rem);
+      gap: calc(var(--spacing-mode1-vertical2-x-l)/16*1rem);
+      flex-direction: row; 
+
+      &.is-between {
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .dropdown-menu{
+        align-items: flex-start;
+    }
     }
   }
   

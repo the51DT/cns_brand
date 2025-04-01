@@ -195,10 +195,13 @@
                                  })) %> 
                               </div>
                            </div>
-                           <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                              titleText: '이사회 활동', 
-                           })) %>
-                           <!-- 타이틀 옆 셀렉트 박스 필요 -->
+                           <%- include('src/component/cmp_title.html', {
+                              titleText: '이사회 활동',
+                              showSelect: true,
+                              selectedValue: '2024년',
+                              options: ['2025년', '2024년', '2023년'],
+                              rowJustify: 'space-between'
+                            }) %>
                            <div class="cmp-wrap cmp-table__wrap">
                               <div class="table-container">
                                  <table class="data-table">

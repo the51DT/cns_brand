@@ -1051,10 +1051,6 @@
   &ir-activity {
     color: #1a1a1a;
 
-    .cmp-select{
-      margin-top: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
-
-    }
 
     &__event-container {
       display: flex;
@@ -1062,6 +1058,11 @@
       gap: calc(16/16*1rem);
       justify-content: space-between;
       // grid-template-columns: auto calc(724 / 16 * 1rem);
+
+      .cmp-select{
+        margin-top: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
+  
+      }
 
       @media #{$tablet} {
         grid-template-columns: auto 50%;
@@ -1096,10 +1097,7 @@
             line-height: calc(var(--typo-mo-line-height-head-lg) / 16 * 1rem);
           }
         }
-  
-        select{
-          margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l)/16*1rem);
-        }
+
       }
       .events-flex {
         position: relative;
