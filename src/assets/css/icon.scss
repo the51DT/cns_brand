@@ -38,6 +38,9 @@ $fileType: "svg";
     &.icon-arrow-down-bl24 {
         @include iconFile(24,24,'icon_arrow_down');
     }
+    &.icon-arrow-down-bl20 {
+        @include iconFile(24,24,'icon-arrow-down-bl20');
+    }
     &.icon-arrow-up-bl24 {
         @include iconFile(24,24,'icon_arrow_up');
     }
