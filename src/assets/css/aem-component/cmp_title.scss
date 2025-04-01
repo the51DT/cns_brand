@@ -1,12 +1,20 @@
-//title
 .cmp-title__wrap {
     display: flex;
-    flex-direction: column; 
-    color: var(--text-text-default);    
+    flex-direction: column;
+    color: var(--text-text-default);
+  
     .title-text {
-        font-weight: 700;      
+      font-weight: 700;
     }
+  
     .title-sub {
-        margin-bottom: calc(8 / 16 * 1rem);
+      margin-bottom: calc(8 / 16 * 1rem);
     }
-}
+  
+    .cmp-title__row {
+      display: flex;
+      flex-wrap: wrap;
+    //   gap: calc(var(--spacing-mode1-vertical2-x-l)/16*1rem);
+    }
+  }
+  

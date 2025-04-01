@@ -88,18 +88,20 @@
                         })) %>
                     </div>
 
-                    <p class="guide-title-h3 mt-10">Contents Title</p>
+                    <p class="guide-title-h3 mt-10">Contents Title : select 추가</p>
                     <%- include('src/component/cmp_title.html', {
-                        titleText: 'SCM DX 트렌드',
+                        titleText: '2024년',
                         showSelect: true,
                         selectedValue: '',
                         options: ['2025년', '2024년', '2023년', '2022년']
                       }) %>
+                      
                       
                 </div>
             </div>
         </div>
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script src="/assets/js/ui_common.js"></script>
 </body>
 </html>

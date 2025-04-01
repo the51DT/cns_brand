@@ -1,0 +1,15 @@
+.cmp-title__wrap {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-text-default);
+}
+.cmp-title__wrap .title-text {
+  font-weight: 700;
+}
+.cmp-title__wrap .title-sub {
+  margin-bottom: 0.5rem;
+}
+.cmp-title__wrap .cmp-title__row {
+  display: flex;
+  flex-wrap: wrap;
+}
