@@ -9,7 +9,6 @@
             .detail-info__title {
                 color: var(--text-text-default);
                 font-weight: 700;
-                line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
                 & + .detail-info__tag {
                     margin-top: calc(12 / 16 * 1rem);
                 }
