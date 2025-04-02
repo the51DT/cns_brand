@@ -130,6 +130,7 @@
 
 /* btn-radius */
 .btn.btn-radius {
+    color: var(--text-text-default);
     background-color: var(--colorCM-all-fill-fill-default0);
     border-radius: calc(999 / 16 * 1rem);
     border: calc(1 / 16 * 1rem) solid #1A1A1A;
