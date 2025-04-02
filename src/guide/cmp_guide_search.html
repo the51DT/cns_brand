@@ -24,7 +24,11 @@
                             placeholder: 'placeholder 디폴트 값 = 검색어를 입력하세요.',
                         })) %>
                     </div>
-
+                    <%- include('src/component/cmp_search.html', Object.assign({}, locals, {
+                        title: '태그 버튼',
+                        tagType: 'tech',
+                        tagList: ['IT 트렌드', '테크 딥다이브', '뉴스레터'],
+                    })) %>
                     <p class="guide-title-h3 mt-10">Search + 썸네일</p>
                     <div class="cmp-exsample__wrap mt-64">
                         <%- include('src/component/cmp_search.html', Object.assign({}, locals, { 

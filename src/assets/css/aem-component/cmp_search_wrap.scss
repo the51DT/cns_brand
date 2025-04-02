@@ -118,4 +118,22 @@
             line-height: calc(30 / 16 * 1rem);
         }
     }
+
+    .tag-button-wrap {
+        margin-top: calc(48/16*1rem);
+        display: flex;
+        flex-wrap: wrap;
+        gap: calc(16/16*1rem);
+        justify-content: center;
+    }
+    
+    .tag-button {
+        padding: calc(14/16*1rem) calc(24/16*1rem);
+        border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
+
+        background-color: #ffffff;
+        font-weight: 600;
+        color: #1a1a1a;
+    }
+    
 }

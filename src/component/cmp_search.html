@@ -28,4 +28,11 @@
             </span>
         </div>
     </div>
+    <% if (typeof tagType !== 'undefined' && Array.isArray(tagList) && tagList.length > 0) { %>
+        <div class="tag-button-wrap mt-3">
+            <% tagList.forEach(function(tag) { %>
+                <button class="tag-button font-body-xs"># <%= tag %></button>
+            <% }) %>
+            </div>
+    <% } %>
 </div>
