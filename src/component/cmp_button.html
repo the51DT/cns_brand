@@ -204,6 +204,26 @@
                             </button>
                         </div>
                     </div>
+                    <p class="guide-title-h3 mt-10">Button Component(btn-radius)</p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <!-- 모서리 둥근 button -->
+                        <!-- hover, disabled 시 컬러없음 * 추후 디자인 추가 예정 -->
+                        <div class="button__wrap flex-wrap">
+                            <button type="button" class="btn btn-large btn-radius">
+                                btn-large btn-radius
+                            </button>
+                            <a href="#" class="btn btn-large btn-radius" disabled>
+                                a[href='#'] btn-large btn-radius
+                            </a>
+                            <button type="button" class="btn btn-large btn-radius is-active">
+                                is-active
+                            </button>
+                            <button type="button" class="btn btn-large btn-radius is-disabled">
+                                .is-disabled or :disabled
+                            </button>
+                        </div>
+                        <!-- //모서리 둥근 button -->
+                    </div>
 
                     <p class="guide-title-h3 mt-10">Button Component(btn-text)</p>
                     <ul class="guide-list type-dot mt-3">
@@ -256,7 +276,7 @@
                         </li>
                     </ul>
                     <div class="cmp-exsample__wrap mt-5">
-                        <div class="button__wrap mt-5">
+                        <div class="button__wrap mt-5 flex-wrap">
                             <button type="button" class="btn btn-primary btn-large">
                                 button[type='button'] large
                                 <i class="ico icon-arrow-right-wt16"></i>
@@ -265,7 +285,9 @@
                                 a[href='#'] large
                                 <i class="ico icon-arrow-right-wt16"></i>
                             </a>
-                            
+                            <button type="button" class="btn btn-large btn-radius">
+                                btn-large btn-radius
+                            </button>
                         </div>
                         <!-- <div class="button__wrap mt-5">
                             <button type="button" class="btn btn-black btn-middle">
@@ -277,7 +299,7 @@
                                 <i class="ico icon-arrow-right-wt16"></i>
                             </a>
                         </div> -->
-                        <div class="button__wrap mt-5">
+                        <div class="button__wrap flex-wrap mt-5">
                             <button type="button" class="btn btn-primary btn-medium">
                                 button[type='button'] medium
                                 <i class="ico icon-arrow-right-wt16"></i>
@@ -286,6 +308,9 @@
                                 a[href='#'] medium
                                 <i class="ico icon-arrow-right-wt16"></i>
                             </a>
+                            <button type="button" class="btn btn-medium btn-radius">
+                                btn-large btn-radius
+                            </button>
                             <a href="#" class="btn btn-icon btn-medium btn-primary">
                                 <i class="ico icon-download-bl24"></i>
                                 <span class="ir-text">다운로드</span>
@@ -295,13 +320,16 @@
                                 <span class="ir-text">언어 선택</span>
                             </button>
                         </div>
-                        <div class="button__wrap mt-5">
+                        <div class="button__wrap flex-wrap mt-5">
                             <button type="button" class="btn btn-primary btn-small">
                                 button[type='button'] small
                             </button>
                             <a href="#" class="btn btn-primary btn-small">
                                 a[href='#'] small
                             </a>
+                            <button type="button" class="btn btn-small btn-radius">
+                                btn-large btn-radius
+                            </button>
                             <a href="#" class="btn btn-icon btn-small btn-primary">
                                 <i class="ico icon-download-bl24"></i>
                                 <span class="ir-text">다운로드</span>
@@ -420,21 +448,6 @@
                             </button>
                         </div>
                         <!-- //모바일에서 버튼 width 100% -->
-                    </div>
-
-                    <p class="guide-title-h3 mt-10">Button Component(Round)</p>
-                    <div class="cmp-exsample__wrap mt-5">
-                        <!-- 모서리 둥근 button -->
-                        <!-- hover, disabled 시 컬러없음 * 추후 디자인 추가 예정 -->
-                        <div class="button__wrap">
-                            <button type="button" class="btn btn-round">
-                                목록
-                            </button>
-                            <button type="button" class="btn btn-round" disabled>
-                                목록
-                            </button>
-                        </div>
-                        <!-- //모서리 둥근 button -->
                     </div>
 
                     <!-- <p class="guide-title-h3 mt-10">Button Component(Text / a tag)</p>
