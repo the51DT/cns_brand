@@ -16,7 +16,7 @@
                     <div class="button__wrap align-right">
                         <% if(item.buttonName && Array.isArray(item.buttonName)) { %>
                             <% item.buttonName.slice(0, 3).forEach((name, index) => { %>
-                                <button type="button" class="btn btn-line <%- type == 'default' ? 'flex' : '' %>">
+                                <button type="button" class="btn btn-medium btn-quaternary <%- type == 'default' ? 'flex' : '' %>">
                                     <%= name %>
                                     <% if (index >= 2) { %> <!-- 3번째 버튼부터 다른 아이콘 적용 -->
                                         <i class="ico icon-pagination-next"></i> 
@@ -30,7 +30,7 @@
                     </div>
                 <% } else { %>
                     <div class="button__wrap align-right">
-                        <button type="button" class="btn btn-line">
+                        <button type="button" class="btn btn-medium btn-quaternary">
                             다운로드
                             <i class="ico icon-download-bl24"></i>
                         </button>
@@ -46,7 +46,7 @@
                     <p class="title font-body-xl">2022~2023<br>지속가능경영보고서</p>
                 </div>
                 <div class="button__wrap align-right">
-                    <button type="button" class="btn btn-line">
+                    <button type="button" class="btn btn-medium btn-quaternary">
                         다운로드
                         <i class="ico icon-download-bl24"></i>
                     </button>
