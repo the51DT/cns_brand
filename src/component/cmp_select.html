@@ -2,8 +2,8 @@
    <div class="dropdown-menu cmp-input__item--dropdown">
      <div class="cmp-select__item">
        <button class="btn-dropdown no-select font-body-xs font-semibold">
-         <%= selectedValue || '연도선택' %>
-       </button>
+        <%= typeof selectedValue !== 'undefined' ? selectedValue : '연도선택' %>
+      </button>
      </div>
      <ul class="dropdown_list">
        <% options.forEach(function(option) { %>
