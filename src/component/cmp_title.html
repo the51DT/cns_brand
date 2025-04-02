@@ -1,43 +1,48 @@
 <div class="cmp-wrap cmp-title__wrap">
-    <% if (typeof subTitle !== 'undefined') { %>
-      <div class="font-body-lg title-sub"><%- subTitle %></div>
-    <% } %>
-  
-    <% const useSpaceBetween = typeof rowJustify === 'string' && rowJustify === 'space-between'; %>
-    <div class="cmp-title__row <%= useSpaceBetween ? 'is-between' : '' %>">
-      <div class="font-head-md">
-        <% if (typeof titleText !== 'undefined') { %>
-          <strong class="title-text"><%- titleText %></strong>
-        <% } %>
-        <% if (typeof titlePrimary2 !== 'undefined') { %>
-          <strong class="title-text colorcm-primary"><%- titlePrimary2 %></strong>
-        <% } %>
-      </div>
-  
-      <% if (typeof showSelect !== 'undefined' && showSelect === true && Array.isArray(options)) { %>
-        <div class="cmp-select">
-          <div class="dropdown-menu cmp-input__item--dropdown">
-            <div class="cmp-select__item">
-              <button class="btn-dropdown no-select font-body-xs font-semibold">
-                <%= selectedValue || '연도선택' %>
-              </button>
-            </div>
-            <ul class="dropdown_list">
-              <% options.forEach(function(option) { %>
-                <li><button class="font-body-xs"><%= option %></button></li>
-              <% }) %>
-            </ul>
-          </div>
-        </div>
+  <% if (typeof subTitle !== 'undefined') { %>
+    <div class="font-body-lg title-sub"><%- subTitle %></div>
+  <% } %>
+
+  <% const useSpaceBetween = typeof rowJustify === 'string' && rowJustify === 'space-between'; %>
+  <div class="cmp-title__row <%= useSpaceBetween ? 'is-between' : '' %>">
+    <div class="font-head-md">
+      <% if (typeof titleText !== 'undefined') { %>
+        <strong class="title-text"><%- titleText %></strong>
+      <% } %>
+      <% if (typeof titlePrimary2 !== 'undefined') { %>
+        <strong class="title-text colorcm-primary"><%- titlePrimary2 %></strong>
       <% } %>
     </div>
-  
-    <% if (typeof titleText2 !== 'undefined') { %>
-      <div class="font-head-md title-text"><%- titleText2 %></div>
-    <% } %>
-  
-    <% if (typeof titlePrimary !== 'undefined') { %>
-      <div class="font-head-md title-text colorcm-primary"><%- titlePrimary %></div>
+
+    <% if (typeof showSelect !== 'undefined' && showSelect === true) { 
+         const safeOptions = Array.isArray(options) ? options : [];
+    %>
+      <div class="cmp-select">
+        <div class="dropdown-menu cmp-input__item--dropdown">
+          <div class="cmp-select__item">
+            <button class="btn-dropdown no-select font-body-xs font-semibold">
+              <%= typeof selectedValue !== 'undefined' ? selectedValue : '연도선택' %>
+            </button>
+          </div>
+          <ul class="dropdown_list">
+            <% if (safeOptions.length > 0) { %>
+              <% safeOptions.forEach(function(option) { %>
+                <li><button class="font-body-xs"><%= option %></button></li>
+              <% }); %>
+            <% } else { %>
+              <li><span class="font-body-xs">옵션 없음</span></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
     <% } %>
   </div>
-  
+
+  <% if (typeof titleText2 !== 'undefined') { %>
+    <div class="font-head-md title-text"><%- titleText2 %></div>
+  <% } %>
+
+  <% if (typeof titlePrimary !== 'undefined') { %>
+    <div class="font-head-md title-text colorcm-primary"><%- titlePrimary %></div>
+  <% } %>
+</div>

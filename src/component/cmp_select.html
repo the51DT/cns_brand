@@ -1,15 +1,18 @@
 <div class="cmp-wrap cmp-select">
-   <div class="dropdown-menu cmp-input__item--dropdown">
-     <div class="cmp-select__item">
-       <button class="btn-dropdown no-select font-body-xs font-semibold">
+  <div class="dropdown-menu cmp-input__item--dropdown">
+    <div class="cmp-select__item">
+      <button class="btn-dropdown no-select font-body-xs font-semibold">
         <%= typeof selectedValue !== 'undefined' ? selectedValue : '연도선택' %>
       </button>
-     </div>
-     <ul class="dropdown_list">
-       <% options.forEach(function(option) { %>
-         <li><button class="font-body-xs"><%= option %></button></li>
-       <% }) %>
-     </ul>
-   </div>
- </div>
- 
+    </div>
+    <ul class="dropdown_list">
+      <% if (typeof options !== 'undefined' && Array.isArray(options) && options.length > 0) { %>
+        <% options.forEach(function(option) { %>
+          <li><button class="font-body-xs"><%= option %></button></li>
+        <% }) %>
+      <% } else { %>
+        <li><span class="font-body-xs">옵션 없음</span></li>
+      <% } %>
+    </ul>
+  </div>
+</div>
