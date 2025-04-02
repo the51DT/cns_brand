@@ -610,6 +610,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "newsroom_main.html"
+        },
+        {
+          "name": "Newsroom - 상세",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "newsroom_detail.html"
         }
       ]
     }
