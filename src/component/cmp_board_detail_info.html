@@ -19,6 +19,9 @@
         <strong class="detail-info__title <%= locals.contentType ? (locals.contentType === 'type-wide' ? 'font-head-md' : locals.contentType === 'type-card' ? 'font-head-xs' : 'font-head-xs') : 'font-head-xs' %>">
             <%= titleValue %>
         </strong>
+        <% if(typeof text !== 'undefined' && text) { %>
+            <p class="detail-info__text font-body-lg font-bold"><%= text %></p>
+        <% } %>
         <!-- contentType: 'type-wide' 의 경우 tagList 위치 -->
         <% if(tagList.length > 0 && contentType == 'type-wide') {%>
             <div class="chip__wrap detail-info__tag">
@@ -50,7 +53,7 @@
                 </dd>
             </dl>
         <% } %>
-        <% if(dateValue && likeCountValue) {%>
+        <% if(dateValue || likeCountValue) {%>
             <div class="detail-info__util">
                 <% if(dateValue) {%>
                     <span class="detail-info__util__item detail-info__date font-body-sm"><%= dateValue %></span>
