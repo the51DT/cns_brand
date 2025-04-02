@@ -10,27 +10,15 @@
       <% } %>
     </div>
   
-    <% if (typeof showSelect !== 'undefined' && showSelect === true) {
-         const safeOptions = Array.isArray(options) ? options : [];
-    %>
-      <div class="cmp-select">
-        <div class="dropdown-menu cmp-input__item--dropdown">
-          <div class="cmp-select__item">
-            <button class="btn-dropdown no-select font-body-xs font-semibold">
-              <%= typeof selectedValue !== 'undefined' ? selectedValue : '연도선택' %>
-            </button>
-          </div>
-          <ul class="dropdown_list">
-            <% if (safeOptions.length > 0) { %>
-              <% safeOptions.forEach(function(option) { %>
-                <li><button class="font-body-xs"><%= option %></button></li>
-              <% }); %>
-            <% } else { %>
-              <li><span class="font-body-xs">옵션 없음</span></li>
-            <% } %>
-          </ul>
-        </div>
-      </div>
+    <% if (typeof showSelect !== 'undefined' && showSelect === true) { %>
+      <%
+        const safeOptions = Array.isArray(options) ? options : [];
+        const placeholder = typeof selectedValue !=='undefined' && selectedValue ? selectedValue : '연도선택' 
+      %>
+      <%- include('src/component/cmp_select.html', Object.assign({}, locals, { 
+        selectedValue: placeholder , 
+        options: safeOptions
+      })) %>
     <% } %>
   </div>
 </div>
