@@ -12,6 +12,15 @@
                 & + .detail-info__tag {
                     margin-top: calc(12 / 16 * 1rem);
                 }
+                & + .detail-info__text {
+                    margin-top: calc(12 / 16 * 1rem);
+                }
+            }
+            .detail-info__text {
+                color: var(--text-text-default);
+                & + .detail-info__util {
+                    margin-top: calc(32 / 16 * 1rem);
+                }
             }
             .detail-info__tag {
                 & + .detail-info__util {
@@ -26,6 +35,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    color: var(--text-text-default);
                     &.detail-info__like {
                         .icon-heart-line {
                             margin-right: calc(4 / 16 * 1rem);
@@ -76,11 +86,12 @@
                 &__tit {
                     min-width: calc(84 / 16 * 1rem);
                     width: calc(84 / 16 * 1rem);
-                    color: var(--colorCM-all-text-text-tertiary);
+                    color: var(--text-text-default);
                     font-weight: 500;
                 }
                 &__txt {
                     width: 100%;
+                    color: var(--text-text-default);
                     font-weight: 600;
                 }
             }
