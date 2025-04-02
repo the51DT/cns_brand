@@ -9,15 +9,3 @@
 .cmp-title__wrap .title-sub {
   margin-bottom: 0.5rem;
 }
-.cmp-title__wrap .cmp-title__row {
-  display: flex;
-  gap: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
-  flex-direction: row;
-}
-.cmp-title__wrap .cmp-title__row.is-between {
-  justify-content: space-between;
-  align-items: center;
-}
-.cmp-title__wrap .cmp-title__row .dropdown-menu {
-  align-items: flex-start;
-}
