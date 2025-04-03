@@ -1,48 +1,54 @@
-/* 약관 관련 */
 .cmp-sidebar {
   z-index: 99;
   position: fixed;
-  left: calc(100 / 16 * 1rem);
-  top:  calc(150 / 16 * 1rem);
+  top: calc(150 / 16 * 1rem);
+  left: calc(var(--spacing-mode1-vertical4-x-l)/16*1rem);
   display: flex;
   flex-direction: column;
-  gap: calc(3 / 16 * 1rem);
 
   li {
     a {
       position: relative;
-      display: block;
-      padding: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem);
-      color: rgba(46, 25, 20, 0.62);
-      font-size: calc(15/16*1rem);
-  
+      display: flex;
+      align-items: center;
+      gap: calc(var(--spacing-mode1-horizontal-l)/16*1rem);
+      margin-bottom: calc(var(--spacing-mode1-horizontal2-x-l)/16*1rem);
+      color: var(--colorGL-all-gray700);
+      font-size: calc(var(--typo-pc-size-caption-xl) / 16 * 1rem);
+      font-weight: 600;
+
       &::before {
         content: '';
-        width: 2px;
-        height: calc(100% - 4px);
-        position: absolute;
-        left: 0;
-        top: 4px; 
-        background-color: hsla(11, 20%, 36%, 0.2);
-        transition: background-color 0.3s ease, transform 0.3s ease;
+        width: calc(10/16*1rem);
+        height: calc(10/16*1rem);
+        border: 1px solid var(--colorGL-all-gray700);
+        border-radius: calc(var(--radius-mode1-circular)/16*1rem);
         transform: scaleY(1);
         transform-origin: top;
+        transition: background-color 0.3s ease, transform 0.3s ease;
       }
-      
-      
     }
-  
+
+    &:last-child a{
+      margin-bottom: 0;
+      }
+
+
     &.is-active {
       a {
-        color: #AD280A;
-        font-weight: 500;
+        color: #1A1A1A;
+        font-weight: 700;
 
         &::before {
-          background-color: #DE5536;
-          transform: scaleY(1); // 유지
+          border: none;
+          background-color: #1A1A1A;
+          transform: scaleY(1);
         }
       }
     }
   }
-  
+
+  @media #{$tablet}{
+    display: none;
+  }
 }
