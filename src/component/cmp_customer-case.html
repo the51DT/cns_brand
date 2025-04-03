@@ -1,53 +1,54 @@
 <!-- CustomerCase -->
 <div class="cmp-wrap cmp-customer-case">
-    <%
-    const data = (typeof jsonData !== 'undefined' ? jsonData : []);
-    const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
-  %>
-  <% if (data.length > 0) { %>
-    <% data.slice(0, itemLimit).forEach((item, i) => { %>
-      <a href="<%- item.link && item.link.trim() !== '' ? item.link : '#' %>" class="customer-case-items">
-        <ul class="cs-category-list">
-          <% if (item.category && Array.isArray(item.category)) { %>
-            <% item.category.forEach((cate) => { %>
-              <li class="font-body-xs"><%- cate.name %></li>
-            <% }) %>
-          <% } %>                                                                 
-        </ul>
-        <div class="font-body-lg customer-case-title"><%- item.name %></div>
-        <div class="font-body-sm customer-case-text">
-          <%- item.content %>
-        </div>
-        <div class="customer-case-cf">
-          <% if (typeof item.link === 'string' && item.link.trim() !== '') { %>
-            <div class="customer-case-more">
-              <span class="font-body-xs">자세히 보기</span>
-              <i class="ico icon-arrow-right-bl16"></i>        
-            </div>
-          <% } %>
-          <img src="<%- item.logoPC %>" alt="" class="type-pc"/>
-          <img src="<%- item.logoMO %>" alt="" class="type-mo"/>
-        </div>
-      </a>  
-    <% }) %>
-  <% } else { %>
-    <% for (let i = 0; i < itemLimit; i++) { %>
-      <a href="#" class="customer-case-items">
-        <ul class="cs-category-list">
-          <li>제조</li>
-          <li>경영관리</li>     
-          <li>DWP</li>                                                                     
-        </ul>
-        <div class="font-body-xl customer-case-title">LG 이노텍</div>
-        <div class="font-body-xs customer-case-text">
-          임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축
-        </div>
-        <div class="customer-case-cf">
-          <img src="https://placehold.co/198x96" alt="" />
-        </div>
-      </a>  
-    <% } %>
-  <% } %>
-  
+    <div class="cmp-swiper">
+      <%
+      const data = (typeof jsonData !== 'undefined' ? jsonData : []);
+      const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
+        %>
+        <% if (data.length > 0) { %>
+      <% data.slice(0, itemLimit).forEach((item, i) => { %>
+        <a href="<%- item.link && item.link.trim() !== '' ? item.link : '#' %>" class="customer-case-items">
+          <ul class="cs-category-list">
+            <% if (item.category && Array.isArray(item.category)) { %>
+              <% item.category.forEach((cate) => { %>
+                <li class="font-body-xs"><%- cate.name %></li>
+              <% }) %>
+            <% } %>
+          </ul>
+          <div class="font-body-lg customer-case-title"><%- item.name %></div>
+          <div class="font-body-sm customer-case-text">
+            <%- item.content %>
+          </div>
+          <div class="customer-case-cf">
+            <% if (typeof item.link === 'string' && item.link.trim() !== '') { %>
+              <div class="customer-case-more">
+                <span class="font-body-xs">자세히 보기</span>
+                <i class="ico icon-arrow-right-bl16"></i>
+              </div>
+            <% } %>
+            <img src="<%- item.logoPC %>" alt="" class="type-pc"/>
+            <img src="<%- item.logoMO %>" alt="" class="type-mo"/>
+          </div>
+        </a>
+      <% }) %>
+        <% } else { %>
+      <% for (let i = 0; i < itemLimit; i++) { %>
+        <a href="#" class="customer-case-items">
+          <ul class="cs-category-list">
+            <li>제조</li>
+            <li>경영관리</li>
+            <li>DWP</li>
+          </ul>
+          <div class="font-body-xl customer-case-title">LG 이노텍</div>
+          <div class="font-body-xs customer-case-text">
+            임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축
+          </div>
+          <div class="customer-case-cf">
+            <img src="https://placehold.co/198x96" alt="" />
+          </div>
+        </a>
+      <% } %>
+        <% } %>
+    </div>
 </div>
 <!-- CustomerCase -->

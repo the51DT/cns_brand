@@ -1,8 +1,10 @@
 //Customer Case
 .cmp-customer-case {
+  .cmp-swiper{
     display: flex;
     flex-wrap: wrap;
     gap: $gap-margin;
+  }
     @media #{$phone} {
         flex-direction: column;
     }
