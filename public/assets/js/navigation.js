@@ -26,14 +26,14 @@ const mainNavigation = (selector) => {
                         menu.addEventListener('click', (event) => {
                             event.preventDefault();
                             const activeItem = document.querySelector('.sub-menu-list > li.is-active');
-                            if (activeItem && activeItem.nextElementSibling) {
+                            if (activeItem) {
                                 activeItem.classList.remove('is-active');
-                                activeItem.nextElementSibling.classList.remove('is-active')
+                                // activeItem.nextElementSibling.classList.remove('is-active')
                             } 
                             menu.parentElement.classList.add('is-active');
-                            if(menu.nextElementSibling) {
-                                menu.nextElementSibling.classList.add('is-active');
-                            }                            
+                            // if(menu.nextElementSibling) {
+                            //     menu.nextElementSibling.classList.add('is-active');
+                            // }                            
                         });
                     });    
                 }          
