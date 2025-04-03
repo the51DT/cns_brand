@@ -1,115 +1,191 @@
-//Customer Case
 .cmp-customer-case {
-  .cmp-swiper{
+  .cmp-swiper {
     display: flex;
     flex-wrap: wrap;
-    gap: $gap-margin;
-  }
-    @media #{$phone} {
-        flex-direction: column;
-    }
-    .customer-case-items {
-        display: flex;
-        width: calc((100% / 3) - calc($gap-margin * 2 / 3));
-        padding: calc(32 / 16 * 1rem);        
-        flex-direction: column;
-        border: 1px solid var(--colorCM-all-stroke-stroke-default7);
-        @media #{$tablet} {
-            width: calc((100% / 2) - calc($gap-margin / 2));
-        }
-        @media #{$phone} {
-            width: 100%;            
-            padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);  
-        }
-    }
-    .cs-category-list {
-        display: flex;
-        align-items: center;
-        gap: calc(8 / 16 * 1rem);
+    position: relative;
 
-        @media #{$phone} {
-            &+.customer-case-title {
-                margin-top: calc(36 / 16 * 1rem);   
-                margin-bottom: calc(8 / 16 * 1rem);   
-            }
-        }
-        &+.customer-case-title {
-            margin-top: calc(36 / 16 * 1rem);   
-            margin-bottom: calc(12 / 16 * 1rem);   
-        }
-        li {
-            position: relative;
-            font-weight: 400;
-            color: var(--colorGL-all-gray700);
-            padding-right: calc(8 / 16 * 1rem);
-            &::after {
-                content: '';
-                display: block;
-                width: 1px;
-                height: 16px;
-                position: absolute;
-                right:0;
-                top:50%;
-                transform: translateY(-50%);
-                background-color: #ebebeb;
-            }
-            &:last-child {
-                padding-right: 0;
-                &::after {
-                    display: none;
-                }
-            }
-        }
+    @media #{$phone}{
+      justify-content: center;
     }
-    .customer-case-title {
-        font-weight: 600;
-        color: var(--text-text-default);
+
+    .swiper-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
     }
-    .customer-case-text {    
-        color: var(--colorCM-all-text-text-secondary);
-        @include ellipsis(2);
-        height: auto;
-        // @media #{$tablet}{
-        //     height: calc(42 / 16 * 1rem);
-        // }
-        // @media #{$phone}{
-        //     height: calc(42 / 16 * 1rem);
-        // }
+
+    .swiper-slide {
+      display: flex;
+      flex: 1 1 calc((100% / 3) - calc($gap-margin * 2 / 3));
+      max-width: calc((100% / 3) - calc($gap-margin * 2 / 3));
     }
-    .customer-case-cf {
-        display: flex;
-        margin-top: calc(40 / 16 * 1rem);
-        height: calc(28 / 16 * 1rem);
-      
-        @media #{$phone} {
-          margin-top: calc(32 / 16 * 1rem);
-          height: calc(48 / 16 * 1rem);
-        }
-      
-        .customer-case-more {
-          span {
-            text-decoration: underline;
-            font-weight: 600;
-          }
-        }
-      
-        img {
-          width: fit-content;
-          height: 100%;
-          margin-left: auto;
-          &.type-pc {
-            display: block;
-            @media #{$phone} {
-              display: none;
-            }
-          }
-          &.type-mo {
-            display: none;
-            @media #{$phone} {
-              display: block;
-            }
-          }
+
+    @media #{$tablet} {
+      .swiper-slide {
+        flex: 1 1 calc((100% / 2) - calc($gap-margin / 2));
+        max-width: calc((100% / 2) - calc($gap-margin / 2));
+      }
+    }
+
+    @media #{$phone} {
+      .swiper-wrapper {
+        flex-wrap: nowrap;
+      }
+
+      .swiper-slide {
+        width: 100%;
+        flex-shrink: 0;
+        max-width: none;
+      }
+    }
+
+    @media not all and (max-width: 767px) {
+      .swiper-pagination {
+        display: none !important;
+      }
+    }
+  }
+
+  .swiper-custom-nav {
+    display: none;
+    position: relative;
+
+    @media #{$phone} {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+
+        &::after {
+          content: '';
         }
       }
-      
+      .swiper-button-prev{
+        left: -20px;
+      }
+      .swiper-button-next{
+        left: 35px;
+      }
+      .swiper-pagination-fraction {
+        font-weight: bold;
+        font-size: 14px;
+        min-width: 40px;
+        text-align: center;
+      }
+    }
+  }
+
+  .customer-case-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: calc(32 / 16 * 1rem);
+    border: 1px solid var(--colorCM-all-stroke-stroke-default7);
+    min-width: 0;
+  
+    @media #{$phone} {
+      width: 296px; 
+      flex-shrink: 0;
+      padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);
+    }
+  
+    * {
+      min-width: 0;
+    }
+  }
+  
+
+  .cs-category-list {
+    display: flex;
+    align-items: center;
+    gap: calc(8 / 16 * 1rem);
+
+    & + .customer-case-title {
+      margin-top: calc(36 / 16 * 1rem);
+      margin-bottom: calc(12 / 16 * 1rem);
+
+      @media #{$phone} {
+        margin-bottom: calc(8 / 16 * 1rem);
+      }
+    }
+
+    li {
+      position: relative;
+      font-weight: 400;
+      color: var(--colorGL-all-gray700);
+      padding-right: calc(8 / 16 * 1rem);
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 1px;
+        height: 16px;
+        transform: translateY(-50%);
+        background-color: #ebebeb;
+      }
+
+      &:last-child {
+        padding-right: 0;
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .customer-case-title {
+    font-weight: 600;
+    color: var(--text-text-default);
+  }
+
+  .customer-case-text {
+    color: var(--colorCM-all-text-text-secondary);
+    @include ellipsis(2);
+    height: auto;
+  }
+
+  .customer-case-cf {
+    display: flex;
+    margin-top: calc(40 / 16 * 1rem);
+    height: calc(28 / 16 * 1rem);
+
+    @media #{$phone} {
+      margin-top: calc(32 / 16 * 1rem);
+      height: calc(48 / 16 * 1rem);
+    }
+
+    .customer-case-more {
+      span {
+        text-decoration: underline;
+        font-weight: 600;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin-left: auto;
+
+      &.type-pc {
+        display: block;
+        @media #{$phone} {
+          display: none;
+        }
+      }
+
+      &.type-mo {
+        display: none;
+        @media #{$phone} {
+          display: block;
+        }
+      }
+    }
+  }
 }
