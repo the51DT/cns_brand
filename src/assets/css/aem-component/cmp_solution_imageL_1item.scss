@@ -13,10 +13,16 @@
             .cate-text {
                 margin-top: calc(16 / 16 * 1rem);
                 color: var(--colorCM-all-text-text-secondary);
+                @media #{$phone} {
+                    margin-top: calc(8 / 16 * 1rem);
+                }
             }
         }
         .item-image {
             margin-top: calc(32 / 16 * 1rem);
+            @media #{$phone} {
+                margin-top: calc(24 / 16 * 1rem);
+            }
             img {
                 width: 100%;
                 max-width: 100%;
