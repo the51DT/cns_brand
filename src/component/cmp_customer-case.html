@@ -10,12 +10,12 @@
         <ul class="cs-category-list">
           <% if (item.category && Array.isArray(item.category)) { %>
             <% item.category.forEach((cate) => { %>
-              <li><%- cate.name %></li>
+              <li class="font-body-xs"><%- cate.name %></li>
             <% }) %>
           <% } %>                                                                 
         </ul>
-        <div class="font-body-xl customer-case-title"><%- item.name %></div>
-        <div class="font-body-xs customer-case-text">
+        <div class="font-body-lg customer-case-title"><%- item.name %></div>
+        <div class="font-body-sm customer-case-text">
           <%- item.content %>
         </div>
         <div class="customer-case-cf">

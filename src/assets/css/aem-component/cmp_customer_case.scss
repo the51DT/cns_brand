@@ -24,6 +24,7 @@
         display: flex;
         align-items: center;
         gap: calc(8 / 16 * 1rem);
+
         @media #{$phone} {
             &+.customer-case-title {
                 margin-top: calc(36 / 16 * 1rem);   
@@ -48,7 +49,7 @@
                 right:0;
                 top:50%;
                 transform: translateY(-50%);
-                background-color: var(--colorGL-all-gray150);
+                background-color: #ebebeb;
             }
             &:last-child {
                 padding-right: 0;
@@ -65,17 +66,16 @@
     .customer-case-text {    
         color: var(--colorCM-all-text-text-secondary);
         @include ellipsis(2);
-        height: calc(48 / 16 * 1rem);
-        @media #{$tablet}{
-            height: calc(42 / 16 * 1rem);
-        }
-        @media #{$phone}{
-            height: calc(42 / 16 * 1rem);
-        }
+        height: auto;
+        // @media #{$tablet}{
+        //     height: calc(42 / 16 * 1rem);
+        // }
+        // @media #{$phone}{
+        //     height: calc(42 / 16 * 1rem);
+        // }
     }
     .customer-case-cf {
         display: flex;
-        justify-content: space-between;
         margin-top: calc(40 / 16 * 1rem);
         height: calc(28 / 16 * 1rem);
       
