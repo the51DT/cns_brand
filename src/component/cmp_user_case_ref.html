@@ -1,0 +1,44 @@
+<div class="cmp-wrap cmp-user-case-ref">
+  <div class="cmp-user-case-ref__container">
+    <% if(typeof title !=='undefined') { %>
+      <div class="cmp-user-case-ref__title">
+        <% if(typeof title.title !=='undefined') { %>
+          <span class="font-head-sm title font-bold"><%- title.title %></span>
+        <% } %>
+        <% if(typeof title.subTitle !=='undefined') { %>
+          <span class="font-body-lg sub-title font-bold"><%- title.subTitle %></span>
+        <% } %>
+      </div>
+    <% } %>
+    <% if(typeof img !=='undefined') { %>
+      <div class="cmp-user-case-ref__content">
+        <% 
+          const userCaseRefData =[{
+            pc: img.imgPc,
+            mo: img.imgMo,
+          }] 
+        %>
+        <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+          jsonData : userCaseRefData,
+          alt : img.imgAlt,
+          addClass: img.imgClass
+        })) %>
+        <div class="text-wrap">
+          <div class="cmp-wrap cmp-richtext">
+            <%- richText %>
+          </div>
+        </div>
+      </div>
+    <% } %>
+    <% if(typeof button !=='undefined') { %>
+      <div class="button__wrap">
+        <button type="button" class="btn btn-medium btn-quaternary" modal-id="<%- typeof button.btnModal !=='undefined' ? button.btnModal : '' %>" onclick="openModal(event)">
+          <% if(typeof button.btnIcon !=='undefined') { %>
+            <i class="ico icon-<%- typeof button.btnIcon !=='undefined' ? button.btnIcon : '' %>-bl20"></i>
+          <% } %>
+          <%- button.btnText %>
+        </button>
+      </div>
+    <% } %>
+  </div>
+</div>

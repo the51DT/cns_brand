@@ -85,8 +85,33 @@
       line-height: calc(var(--typo-mo-line-height-head-xs) / 16 * 1rem);
     }
   }
+  strong {
+    font-size: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-body-xl) / 16 * 1rem);
+    letter-spacing: calc(0.2 / 16 * 1rem);
+    font-weight: 600;
+    @media screen and (max-width: 1599px) and (min-width: 768px) {
+      font-size: calc(var(--typo-tablet-size-body-xl) / 16 * 1rem);
+      line-height: calc(var(--typo-tablet-line-height-body-xl) / 16 * 1rem);
+    }
+    @media screen and (max-width: 767px) {
+      font-size: calc(var(--typo-mo-size-body-xl) / 16 * 1rem);
+      line-height: calc(var(--typo-mo-line-height-body-xl) / 16 * 1rem);
+    }
+  }
   b {
-    font-weight: 700;
+    font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
+    letter-spacing: calc(0.2 / 16 * 1rem);
+    font-weight: 600;
+    @media screen and (max-width: 1599px) and (min-width: 768px) {
+      font-size: calc(var(--typo-tablet-size-body-md) / 16 * 1rem);
+      line-height: calc(var(--typo-tablet-line-height-body-md) / 16 * 1rem);
+    }
+    @media screen and (max-width: 767px) {
+      font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);
+      line-height: calc(var(--typo-mo-line-height-body-md) / 16 * 1rem);
+    }
   }
   i {
     font-style: italic;

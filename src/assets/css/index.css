@@ -44,6 +44,7 @@
 @import 'aem-component/cmp_title_nav.scss';
 @import 'aem-component/cmp_select.scss';
 @import 'aem-component/cmp_title_select.scss';
+@import 'aem-component/cmp_user_case_ref.scss';
 
 /* icon */
 @import 'icon.scss';

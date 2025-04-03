@@ -92,8 +92,14 @@ $fileType: "svg";
     &.icon-download-bl24 {
         @include iconFile(24,24,'icon_download_bl24');
     }
+    &.icon-download-bl20 {
+        @include iconFile(20,20,'icon_download_bl20');
+    }
     &.icon-plus-bl24 {
         @include iconFile(24,24,'icon-plus-bl24');
+    }
+    &.icon-plus-bl20 {
+        @include iconFile(20,20,'icon-plus-bl20');
     }
     &.icon-plus-bl16 {
         @include iconFile(16,16,'icon-plus-bl16');
