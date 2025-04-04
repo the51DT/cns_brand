@@ -115,6 +115,7 @@ const scrollEventManage = () => {
 
     if(Yoffset == 0) {
         onTopScroll();
+        // console.log('00')
     } else {
         if (Yoffset > lastScrollTop) {
             onDownScroll();
@@ -128,11 +129,13 @@ const scrollEventManage = () => {
 const onDownScroll = () => {
     // console.log('down');
     headerWrap.classList.remove('is-fixed');
+    headerWrap.classList.add('is-motion');
 }
 
 const onUpScroll = () => {
     // console.log('up');
     headerWrap.classList.add('is-fixed');
+    headerWrap.classList.remove('is-motion');
 }
 
 const onTopScroll = () => {
@@ -148,7 +151,7 @@ const onTopScroll = () => {
 
 
 const scrollPos = window.scrollY || document.documentElement.scrollTop;
-console.log(scrollPos)
+// console.log(scrollPos)
 if(subVisual && !subVisual.classList.contains('type-empty') || bodyDarkMode){
     headerWrap.classList.add('is-bg-transparent');
     headerWrap.classList.add('is-fixed');
