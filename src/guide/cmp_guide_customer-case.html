@@ -90,36 +90,36 @@
   <script src="/assets/js/initializeSwipers.js"></script>
   <script>
     let customerSwiper = null;
-  
+
     function updateCustomPagination(swiper) {
       const wrapper = swiper.el;
       const currentEl = wrapper.querySelector('.current-index');
       const totalEl = wrapper.querySelector('.total-index');
-  
+
       if (currentEl && totalEl) {
         currentEl.textContent = swiper.realIndex + 1;
         totalEl.textContent = swiper.slides.length;
       }
     }
-  
+
     function setupCustomerCaseSwiper() {
       const swiperEl = document.querySelector('.customer-case-swiper');
       const isMobile = window.innerWidth <= 767;
-  
+
       if (!swiperEl) return;
-  
+
       if (isMobile && !customerSwiper) {
         customerSwiper = new Swiper(swiperEl, {
-          slidesPerView: 2,
+          slidesPerView: 'auto',     
           navigation: {
             nextEl: swiperEl.querySelector('.custom-next'),
             prevEl: swiperEl.querySelector('.custom-prev'),
           },
           on: {
-            init: function () {
+            init() {
               updateCustomPagination(this);
             },
-            slideChange: function () {
+            slideChange() {
               updateCustomPagination(this);
             }
           }
@@ -127,7 +127,7 @@
       } else if (!isMobile && customerSwiper) {
         customerSwiper.destroy(true, true);
         customerSwiper = null;
-  
+
         const currentEl = swiperEl.querySelector('.current-index');
         const totalEl = swiperEl.querySelector('.total-index');
         if (currentEl && totalEl) {
@@ -136,11 +136,9 @@
         }
       }
     }
-  
-    // 초기 실행
+
     setupCustomerCaseSwiper();
-  
-    // 리사이즈 대응
+
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
@@ -148,6 +146,7 @@
         setupCustomerCaseSwiper();
       }, 200);
     });
+
   </script>
   
 </body>

@@ -12,33 +12,35 @@
       display: flex;
       flex-wrap: wrap;
       gap: calc(16 / 16 * 1rem);
+
+        @media #{$phone} {
+          flex-wrap: nowrap;
+          gap: 0;
+      }
     }
 
     .swiper-slide {
       display: flex;
       flex: 1 1 calc((100% / 3) - calc(16px * 2 / 3)); 
       max-width: calc((100% / 3) - calc(16px * 2 / 3));
+
+      @media #{$tablet} {
+          flex: 1 1 calc((100% / 2) - calc(16px / 2)); 
+          max-width: calc((100% / 2) - calc(16px / 2));
+        }
+
+        @media #{$phone} {
+          width: calc(297 / 16 * 1rem);
+          max-width: none;
+          flex: 0 0 auto;
+          margin-right: calc(16 / 16 * 1rem);
+          flex-shrink: 0;
+          }
     }
 
-    @media #{$tablet} {
-      .swiper-slide {
-        flex: 1 1 calc((100% / 2) - calc(16px / 2)); 
-        max-width: calc((100% / 2) - calc(16px / 2));
-      }
-    }
 
-    @media #{$phone} {
-      .swiper-wrapper {
-        flex-wrap: nowrap;
-      }
-
-      .swiper-slide {
-        flex-shrink: 0;
-      }
-    }
-
+    .swiper-pagination {
     @media not all and (max-width: 767px) {
-      .swiper-pagination {
         display: none !important;
       }
     }
@@ -90,6 +92,8 @@
     min-width: 0;
   
     @media #{$phone} {
+      // width값 추후 수정 필요!
+      width: calc(297 / 16 * 1rem);
       padding: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem) calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
     }
   
@@ -97,7 +101,7 @@
       min-width: 0;
     }
   }
-
+  
   .cs-category-list {
     display: flex;
     align-items: center;
