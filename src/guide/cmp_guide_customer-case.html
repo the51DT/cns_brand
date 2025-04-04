@@ -89,60 +89,65 @@
   <script src="/assets/bundle/swiper-bundle.min.js"></script>
   <script src="/assets/js/initializeSwipers.js"></script>
   <script>
-  let customerSwiper = null;
-
-  function setupCustomerCaseSwiper() {
-    const swiperEl = document.querySelector('.customer-case-swiper');
-    const isMobile = window.innerWidth <= 767;
-
-    if (!swiperEl) return;
-
-    if (isMobile && !customerSwiper) {
-      customerSwiper = new Swiper(swiperEl, {
-        slidesPerView: 'auto',
-        // spaceBetween: 8,
-        navigation: {
-          nextEl: swiperEl.querySelector('.custom-next'),
-          prevEl: swiperEl.querySelector('.custom-prev'),
-        },
-        on: {
-          init: function () {
-            updateCustomFraction(this);
-          },
-          slideChange: function () {
-            updateCustomFraction(this);
-          }
-        }
-      });
-    } else if (!isMobile && customerSwiper) {
-      customerSwiper.destroy(true, true);
-      customerSwiper = null;
-
-      const paginationEl = swiperEl.querySelector('.swiper-pagination-fraction');
-      if (paginationEl) {
-        paginationEl.querySelector('.current-index').textContent = '1';
-        paginationEl.querySelector('.total-index').textContent = '1';
+    let customerSwiper = null;
+  
+    function updateCustomPagination(swiper) {
+      const wrapper = swiper.el;
+      const currentEl = wrapper.querySelector('.current-index');
+      const totalEl = wrapper.querySelector('.total-index');
+  
+      if (currentEl && totalEl) {
+        currentEl.textContent = swiper.realIndex + 1;
+        totalEl.textContent = swiper.slides.length;
       }
     }
-  }
-
-  function updateCustomFraction(swiper) {
-    const current = swiper.realIndex + 1;
-    const total = swiper.slides.length;
-    const wrapper = swiper.el;
-    wrapper.querySelector('.current-index').textContent = current;
-    wrapper.querySelector('.total-index').textContent = total;
-  }
-
-  setupCustomerCaseSwiper();
-
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      setupCustomerCaseSwiper();
-    }, 200);
-  });
+  
+    function setupCustomerCaseSwiper() {
+      const swiperEl = document.querySelector('.customer-case-swiper');
+      const isMobile = window.innerWidth <= 767;
+  
+      if (!swiperEl) return;
+  
+      if (isMobile && !customerSwiper) {
+        customerSwiper = new Swiper(swiperEl, {
+          slidesPerView: 2,
+          navigation: {
+            nextEl: swiperEl.querySelector('.custom-next'),
+            prevEl: swiperEl.querySelector('.custom-prev'),
+          },
+          on: {
+            init: function () {
+              updateCustomPagination(this);
+            },
+            slideChange: function () {
+              updateCustomPagination(this);
+            }
+          }
+        });
+      } else if (!isMobile && customerSwiper) {
+        customerSwiper.destroy(true, true);
+        customerSwiper = null;
+  
+        const currentEl = swiperEl.querySelector('.current-index');
+        const totalEl = swiperEl.querySelector('.total-index');
+        if (currentEl && totalEl) {
+          currentEl.textContent = '1';
+          totalEl.textContent = '1';
+        }
+      }
+    }
+  
+    // 초기 실행
+    setupCustomerCaseSwiper();
+  
+    // 리사이즈 대응
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        setupCustomerCaseSwiper();
+      }, 200);
+    });
   </script>
   
 </body>

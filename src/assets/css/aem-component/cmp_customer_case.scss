@@ -33,9 +33,9 @@
       }
 
       .swiper-slide {
-        width: 100%;
+        // width: 100%;
         flex-shrink: 0;
-        max-width: none;
+        // max-width: none;
       }
     }
 
@@ -47,29 +47,33 @@
   }
 
   .swiper-custom-nav {
-    display: none;
+    display: none; // PC에선 감추기
     position: relative;
-
+  
     @media #{$phone} {
-      display: grid;
+      display: grid; // 모바일에서 보이게
+      margin-top: calc(24 / 16 * 1rem); // ✅ 여기가 핵심!
       grid-template-rows: repeat(2, 1fr);
-
+  
       .swiper-button-prev,
       .swiper-button-next {
-        width: 24px;
-        height: 24px;
+        width: calc(24 / 16 * 1rem);
+        height: calc(24 / 16 * 1rem);
         cursor: pointer;
-
+  
         &::after {
           content: '';
         }
       }
-      .swiper-button-prev{
+  
+      .swiper-button-prev {
         left: -20px;
       }
-      .swiper-button-next{
+  
+      .swiper-button-next {
         left: 35px;
       }
+  
       .swiper-pagination-fraction {
         font-weight: bold;
         font-size: 14px;
@@ -78,6 +82,7 @@
       }
     }
   }
+  
 
   .customer-case-items {
     display: flex;
@@ -88,8 +93,8 @@
     min-width: 0;
   
     @media #{$phone} {
-      width: 296px; 
-      flex-shrink: 0;
+      // width: 296px; 
+      // flex-shrink: 0;
       padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);
     }
   
@@ -152,8 +157,8 @@
 
   .customer-case-cf {
     display: flex;
+    justify-content: space-between;
     margin-top: calc(40 / 16 * 1rem);
-    height: calc(28 / 16 * 1rem);
 
     @media #{$phone} {
       margin-top: calc(32 / 16 * 1rem);
@@ -168,11 +173,9 @@
     }
 
     img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
+      width: calc(97/16*1rem);
       margin-left: auto;
-
+      
       &.type-pc {
         display: block;
         @media #{$phone} {
