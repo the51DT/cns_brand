@@ -1,0 +1,16 @@
+<div class="cmp-wrap cmp-agenda">
+  <% 
+    const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+  %>
+  <% data.forEach((item)=> { %>
+    <div class="cmp-agenda__time">
+      <span class="time-text font-body-md font-bold"><%- item.timeStart %> ~ <%- item.timeEnd %></span>
+    </div>
+    <div class="cmp-gaenda__box">
+      <span class="font-body-md font-bold"><%- item.boxTitle %></span>
+      <div class="cmp-wrap cmp-richtext">
+        <%- item.richText %>
+      </div>
+    </div>
+  <% }) %>
+</div>

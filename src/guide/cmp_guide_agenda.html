@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3">Agenda</p>                    
+                    <div class="cmp-exsample__wrap mt-5">
+                        <%
+                            const agendaData = [
+                                {
+                                    timeStart: "00:00",
+                                    timeEnd: "24:00",
+                                    boxTitle: "test Title",
+                                    richText: "<p>test P</p><ol><li>111</li><li>222</li></ol>",
+                                },
+                                {
+                                    timeStart: "13:10",
+                                    timeEnd: "14:00",
+                                    boxTitle: "AX 시대의 핵심 엔진: AI Agent로 판을 바꿔라",
+                                    richText: "<b>LG CNS 주민식 소장, 임은영 단장, 한정윤 팀장, 신승용 책임, 임지우 사원</b><br><ol><li>미래 지향적 Agentic AI의 진화</li><li>AX 서비스 기업 활용 방안: 임직원 업무 여정을 기반으로 한 LG Copilot</li></ol>",
+                                }
+                            ]
+                        %>
+                        <%- include('src/component/cmp_agenda.html', Object.assign({}, locals, { 
+                            jsonData: agendaData,
+                        })) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/assets/js/ui_common.js"></script>
+</body>
+</html>

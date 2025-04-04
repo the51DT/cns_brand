@@ -320,6 +320,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_user-case-ref.html"
+        },
+        {
+          "name": "agenda",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_agenda.html"
         }
       ]
     },

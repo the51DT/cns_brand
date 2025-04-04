@@ -1,0 +1,11 @@
+.cmp-agenda {
+  &__time {
+    .time-text {
+
+    }
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+  }
+}
