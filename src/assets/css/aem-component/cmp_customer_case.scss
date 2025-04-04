@@ -11,19 +11,19 @@
     .swiper-wrapper {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: calc(16 / 16 * 1rem);
     }
 
     .swiper-slide {
       display: flex;
-      flex: 1 1 calc((100% / 3) - calc($gap-margin * 2 / 3));
-      max-width: calc((100% / 3) - calc($gap-margin * 2 / 3));
+      flex: 1 1 calc((100% / 3) - calc(16px * 2 / 3)); 
+      max-width: calc((100% / 3) - calc(16px * 2 / 3));
     }
 
     @media #{$tablet} {
       .swiper-slide {
-        flex: 1 1 calc((100% / 2) - calc($gap-margin / 2));
-        max-width: calc((100% / 2) - calc($gap-margin / 2));
+        flex: 1 1 calc((100% / 2) - calc(16px / 2)); 
+        max-width: calc((100% / 2) - calc(16px / 2));
       }
     }
 
@@ -33,9 +33,7 @@
       }
 
       .swiper-slide {
-        // width: 100%;
         flex-shrink: 0;
-        // max-width: none;
       }
     }
 
@@ -47,12 +45,12 @@
   }
 
   .swiper-custom-nav {
-    display: none; // PC에선 감추기
+    display: none;
     position: relative;
   
     @media #{$phone} {
-      display: grid; // 모바일에서 보이게
-      margin-top: calc(24 / 16 * 1rem); // ✅ 여기가 핵심!
+      display: grid;
+      margin-top: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
       grid-template-rows: repeat(2, 1fr);
   
       .swiper-button-prev,
@@ -67,55 +65,47 @@
       }
   
       .swiper-button-prev {
-        left: -20px;
+        left: calc(-20 / 16 * 1rem);
       }
   
       .swiper-button-next {
-        left: 35px;
+        left: calc(35 / 16 * 1rem);
       }
   
       .swiper-pagination-fraction {
         font-weight: bold;
-        font-size: 14px;
-        min-width: 40px;
+        font-size: calc(var(--typo-mo-size-caption-xl) / 16 * 1rem);
+        min-width: calc(40 / 16 * 1rem);
         text-align: center;
       }
     }
   }
-  
 
   .customer-case-items {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: calc(32 / 16 * 1rem);
+    padding: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
     border: 1px solid var(--colorCM-all-stroke-stroke-default7);
     min-width: 0;
   
     @media #{$phone} {
-      // width: 296px; 
-      // flex-shrink: 0;
-      padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);
+      padding: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem) calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
     }
   
     * {
       min-width: 0;
     }
   }
-  
 
   .cs-category-list {
     display: flex;
     align-items: center;
-    gap: calc(8 / 16 * 1rem);
+    gap: calc(var(--spacing-mode1-vertical-s) / 16 * 1rem);
 
     & + .customer-case-title {
       margin-top: calc(36 / 16 * 1rem);
       margin-bottom: calc(12 / 16 * 1rem);
-
-      @media #{$phone} {
-        margin-bottom: calc(8 / 16 * 1rem);
-      }
     }
 
     li {
@@ -129,8 +119,8 @@
         position: absolute;
         right: 0;
         top: 50%;
-        width: 1px;
-        height: 16px;
+        width: calc(1 / 16 * 1rem);
+        height: calc(16 / 16 * 1rem);
         transform: translateY(-50%);
         background-color: #ebebeb;
       }
@@ -159,9 +149,10 @@
     display: flex;
     justify-content: space-between;
     margin-top: calc(40 / 16 * 1rem);
+    align-items: center;
 
     @media #{$phone} {
-      margin-top: calc(32 / 16 * 1rem);
+      margin-top: calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
       height: calc(48 / 16 * 1rem);
     }
 
@@ -173,7 +164,7 @@
     }
 
     img {
-      width: calc(97/16*1rem);
+      width: calc(97 / 16 * 1rem);
       margin-left: auto;
       
       &.type-pc {
