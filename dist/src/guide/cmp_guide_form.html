@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/guide/cmp_guide_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="page-location text-2xl font-bold">
+        <span id="pagesTitle"></span>
+      </div>
+      <div class="guide-content">
+        <div class="flex justify-between lnb-type">
+          <div class="lnb-side__wrap">
+            <button type="button" class="lnb-trigger">아코디언</button>
+          </div>
+          <div class="page-cont flex-1">
+            <p class="guide-title-h3">Input Component(Basic) / 마크업</p>
+            <div class="cmp-exsample__wrap mt-5">
+
+              <!-- 기본 Input -->
+              <div class="form-element__wrap">
+                <label class="ir-text">항목명</label>
+                <span class="form-element__inner input-type">
+            <input type="text" value="" placeholder="placeholder 입력하세요" />
+        </span>
+              </div> <!-- //기본 Input -->
+            </div>
+            <p class="guide-title-h3 mt-10">Input Component(search) / 마크업</p>
+            <div class="cmp-exsample__wrap mt-5">
+
+              <!-- 기본 Input -->
+              <div class="form-element__wrap">
+                <label class="ir-text">항목명</label>
+                <span class="form-element__inner input-type input-search search-type-full">
+            <input type="text" value="" placeholder="placeholder 입력하세요" />
+            <button type="button" class="btn btn-remove">
+                <i class="ico icon-remove-bl28"></i>
+                <span class="ir-text">삭제</span>
+                </button>
+                <button type="button" class="btn btn-search">
+                  <i class="ico icon-search-bl35"></i>
+                  <span class="ir-text">검색</span>
+                </button>
+                </span>
+              </div> <!-- //기본 Input -->
+            </div>
+            <p class="guide-title-h3 mt-10">cmp-select</p>
+            <div class="cmp-wrap cmp-select">
+              <div class="dropdown-menu cmp-input__item--dropdown">
+                <div class="cmp-select__item">
+                  <button class="btn-dropdown no-select font-body-xs font-semibold">
+                    연도선택
+                  </button>
+                </div>
+                <ul class="dropdown_list">
+                  <li><button class="font-body-xs">2025년</button></li>
+                  <li><button class="font-body-xs">2024년</button></li>
+                  <li><button class="font-body-xs">2023년</button></li>
+                  <li><button class="font-body-xs">2022년</button></li>
+                </ul>
+              </div>
+            </div>
+            <p class="guide-title-h3 mt-10">cmp-input</p>
+            <div class="cmp-exsample__wrap mt-3">
+
+              <!-- cmp-input -->
+              <div class="cmp-wrap cmp-input">
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <label class="font-body-xs font-semibold " for="0">타이틀</label>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <input class="cmp-input__item cmp-input__item--text   " id="0" type="text" placeholder="플레이스홀더" value="">
+                    </div>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <label class="font-body-xs font-semibold cmp-input__title--required" for="1">required</label>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <input class="cmp-input__item cmp-input__item--text   " id="1" type="text" placeholder="플레이스홀더" value="기본값" required>
+                      <input class="cmp-input__item cmp-input__item--text cmp-input__item--disabled  " id="1" type="text" placeholder="disabled" value="" disabled required>
+                      <input class="cmp-input__item cmp-input__item--text  cmp-input__item--readonly " id="1" type="text" placeholder="readonly" value="" readonly required>
+                      <input class="cmp-input__item cmp-input__item--text   cmp-input__item--error" id="1" type="text" placeholder="error" value="" required>
+                    </div>
+                    <p class="cmp-input__info font-caption-lg">에러 메시지를 입력하세요</p>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <label class="font-body-xs font-semibold " for="2">셀렉트</label>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <select class="cmp-input__item cmp-input__item--select   " id="2">
+                        <option value="" disabled hidden selected>select placeholder</option>
+                        <option value="옵션1">옵션1</option>
+                        <option value="옵션2">옵션2</option>
+                      </select>
+                      <select class="cmp-input__item cmp-input__item--select cmp-input__item--disabled  " id="2" disabled>
+                        <option value="" disabled hidden selected>select placeholder</option>
+                        <option value="옵션1">옵션1</option>
+                        <option value="옵션2">옵션2</option>
+                      </select>
+                      <select class="cmp-input__item cmp-input__item--select  cmp-input__item--readonly " id="2" readonly>
+                        <option value="" disabled hidden selected>select placeholder</option>
+                        <option value="옵션1">옵션1</option>
+                        <option value="옵션2">옵션2</option>
+                      </select>
+                      <select class="cmp-input__item cmp-input__item--select   cmp-input__item--error" id="2">
+                        <option value="" disabled hidden selected>select placeholder select placeholder</option>
+                        <option value="옵션1" selected>옵션1</option>
+                        <option value="옵션2">옵션2</option>
+                      </select>
+                    </div>
+                    <p class="cmp-input__info font-caption-lg">에러 메시지를 입력하세요</p>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <label class="font-body-xs font-semibold " for="3">서치</label>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <input class="cmp-input__item cmp-input__item--search   " id="3" type="text" placeholder="플레이스홀더" value="">
+                      <input class="cmp-input__item cmp-input__item--search cmp-input__item--disabled  " id="3" type="text" placeholder="disabled" value="" disabled>
+                      <input class="cmp-input__item cmp-input__item--search  cmp-input__item--readonly " id="3" type="text" placeholder="readonly" value="" readonly>
+                      <input class="cmp-input__item cmp-input__item--search   cmp-input__item--error" id="3" type="text" placeholder="error" value="기본값">
+                    </div>
+                    <p class="cmp-input__info font-caption-lg">에러 메시지를 입력하세요</p>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <label class="font-body-xs font-semibold " for="4">이메일</label>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <div class="cmp-input__multi-box">
+                        <input class="cmp-input__item cmp-input__item--text   " id="4" type="text" placeholder="firstData" value="">
+                        <span class="font-body-xs">@</span>
+                        <div class="dropdown-menu cmp-input__item--dropdown">
+                          <div class="cmp-input__item   "><input class="dropdown_input" placeholder="직접 입력"><button class="btn-dropdown no-select">secondData</button></div>
+                          <ul class="dropdown_list">
+                            <li><button class="font-body-xs dropdown_enter">직접 입력</button></li>
+                            <li><button class="font-body-xs ">naver.com</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <label class="font-body-xs font-semibold " for="5">이메일</label>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <div class="cmp-input__multi-box">
+                        <input class="cmp-input__item cmp-input__item--text  cmp-input__item--readonly " id="5" type="text" placeholder="firstData" value="" readonly>
+                        <span class="font-body-xs">@</span>
+                        <div class="dropdown-menu cmp-input__item--dropdown">
+                          <div class="cmp-input__item  cmp-input__item--readonly "><input class="dropdown_input" placeholder=""><button class="btn-dropdown no-select">secondData</button></div>
+                          <ul class="dropdown_list">
+                            <li><button class="font-body-xs ">직접 입력</button></li>
+                            <li><button class="font-body-xs ">naver.com</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <label class="font-body-xs font-semibold " for="6">textarea</label>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <div class="cmp-input__item--textarea">
+                        <textarea class="cmp-input__item   " id="6" type="text" placeholder="플레이스홀더">기본값</textarea>
+                        <p class="cmp-input__count font-caption-lg"><span>0</span> / 1,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <label class="font-body-xs font-semibold " for="7">textarea</label>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <div class="cmp-input__item--textarea">
+                        <textarea class="cmp-input__item   cmp-input__item--error" id="7" type="text" placeholder="countMax 와 info가 동시에 있을 경우
+countMax 미노출 info만 노출"></textarea>
+                      </div>
+                    </div>
+                    <p class="cmp-input__info font-caption-lg">에러 메시지를 입력하세요</p>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <label class="ir-text" for="8">no title</label>
+                      <select class="cmp-input__item cmp-input__item--select   " id="8">
+                        <option value="" disabled hidden selected>no title</option>
+                        <option value="옵션1">옵션1</option>
+                        <option value="옵션2">옵션2</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <span class="font-body-xs font-semibold " for="9">checkbox(small)</span>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item--checkbox--small " id="default-small" type="checkbox" name="checkbox--small-guide" value="default-small" required>
+                        <label class="ir-text font-body-xs" for="default-small"></label>
+                      </div>
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item--checkbox--small " id="checked-small" type="checkbox" name="checkbox--small-guide" value="checked-small" checked>
+                        <label class=" font-body-xs" for="checked-small">checked-small</label>
+                      </div>
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item--checkbox--small " id="disabled-small" type="checkbox" name="checkbox--small-guide" value="disabled-small" disabled>
+                        <label class=" font-body-xs" for="disabled-small">disabled-small</label>
+                      </div>
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item--checkbox--small " id="checked-disabled-small" type="checkbox" name="checkbox--small-guide" value="checked-disabled-small" disabled checked>
+                        <label class=" font-body-xs" for="checked-disabled-small">checked-disabled-small</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <span class="font-body-xs font-semibold " for="10">checkbox</span>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item--checkbox " id="checkbox-default" type="checkbox" name="checkbox-guide" value="checkbox-default" required>
+                        <label class="ir-text font-body-xs" for="checkbox-default"></label>
+                      </div>
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item--checkbox " id="checkbox-checked" type="checkbox" name="checkbox-guide" value="checkbox-checked" checked>
+                        <label class=" font-body-xs" for="checkbox-checked">checkbox-checked</label>
+                      </div>
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item--checkbox " id="checkbox-disabled" type="checkbox" name="checkbox-guide" value="checkbox-disabled" disabled>
+                        <label class=" font-body-xs" for="checkbox-disabled">checkbox-disabled</label>
+                      </div>
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item--checkbox " id="checkbox-checked-disabled" type="checkbox" name="checkbox-guide" value="checkbox-checked-disabled" disabled checked>
+                        <label class=" font-body-xs" for="checkbox-checked-disabled">checkbox-checked-disabled</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <span class="font-body-xs font-semibold " for="11">radio</span>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item cmp-input__item--radio " id="radio-default" type="radio" name="radio-guide" value="radio-default" required>
+                        <label class="ir-text font-body-xs" for="radio-default">radio-default</label>
+                      </div>
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item cmp-input__item--radio " id="radio-checked" type="radio" name="radio-guide" value="radio-checked" checked>
+                        <label class=" font-body-xs" for="radio-checked">radio-checked</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <span class="font-body-xs font-semibold " for="11">radio-disabeld</span>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item cmp-input__item--radio " id="radio-disabled" type="radio" name="radio-disabeld-guide" value="radio-disabled" disabled>
+                        <label class=" font-body-xs" for="radio-disabled">radio-disabled</label>
+                      </div>
+                      <div class="cmp-input__label-box">
+                        <input class="cmp-input__item cmp-input__item--radio " id="radio-checked-disabled" type="radio" name="radio-disabeld-guide" value="radio-checked-disabled" disabled checked>
+                        <label class=" font-body-xs" for="radio-checked-disabled">radio-checked-disabled</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cmp-input__wrap">
+                  <div class="cmp-input__title">
+                    <label class="font-body-xs font-semibold cmp-input__title--required" for="12">dropdown</label>
+                  </div>
+                  <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                      <div class="dropdown-menu cmp-input__item--dropdown">
+                        <div class="cmp-input__item"><input class="dropdown_input" placeholder="직접 입력"><button class="btn-dropdown no-select">dropdown 가이드</button></div>
+                        <ul class="dropdown_list">
+                          <li><button class="font-body-xs dropdown_enter">직접 입력</button></li>
+                          <li><button class="font-body-xs ">클라우드</button></li>
+                          <li><button class="font-body-xs ">AI 빅데이터</button></li>
+                          <li><button class="font-body-xs ">스마트팩토리</button></li>
+                          <li><button class="font-body-xs ">스마트시티</button></li>
+                          <li><button class="font-body-xs ">클라우드</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="guide-title-h3 mt-20">cmp-form-group</p>
+            <div class="cmp-exsample__wrap mt-3">
+
+              <!-- cmp-form-group -->
+              <div class="cmp-form-group">
+                <div class="cmp-form-group__wrap">
+                  <div class="cmp-form-group__box">
+
+                    <!-- cmp-input -->
+                    <div class="cmp-wrap cmp-input">
+                      <div class="cmp-input__wrap">
+                        <div class="cmp-input__content">
+                          <div class="cmp-input__box">
+                            <div class="cmp-input__label-box">
+                              <input class="cmp-input__item--checkbox " id="전체동의" type="checkbox" name="전체동의 인풋 네임" value="전체동의" checked>
+                              <label class=" font-body-xs" for="전체동의">박스레이블</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cmp-form-group__accordion basic-type">
+                    <div class="accordion-item">
+                      <div class="accordion-title">
+
+                        <!-- cmp-input -->
+                        <div class="cmp-wrap cmp-input">
+                          <div class="cmp-input__wrap">
+                            <div class="cmp-input__content">
+                              <div class="cmp-input__box">
+                                <div class="cmp-input__label-box">
+                                  <input class="cmp-input__item--checkbox--small " id="필수약관" type="checkbox" name="약관들 인풋 네임" value="필수약관" required>
+                                  <label class=" font-body-xs" for="필수약관">개인정보 수집·이용 동의 (필수)</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button><i class="ico icon-arrow-down-bl24"></i></button>
+                      </div>
+                      <div class="accordion-content">
+                        <div class="accordion-text">
+                          11111111<br>222222222<br>333333333<br>444444<br>555555<br>666666<br>7777777777777777777777777777777777777777777777777777777777777777<br>88888888888888888888888<br>99999
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <div class="accordion-title">
+
+                        <!-- cmp-input -->
+                        <div class="cmp-wrap cmp-input">
+                          <div class="cmp-input__wrap">
+                            <div class="cmp-input__content">
+                              <div class="cmp-input__box">
+                                <div class="cmp-input__label-box">
+                                  <input class="cmp-input__item--checkbox--small " id="선택약관" type="checkbox" name="약관들 인풋 네임" value="선택약관" disabled>
+                                  <label class=" font-body-xs" for="선택약관">개인정보 수집·이용 동의 (선택)</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button><i class="ico icon-arrow-down-bl24"></i></button>
+                      </div>
+                      <div class="accordion-content">
+                        <div class="accordion-text">
+                          test
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/ui_common.js"></script>
+  </body>
+</html>
