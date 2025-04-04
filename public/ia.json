@@ -314,6 +314,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_title_nav.html"
+        },
+        {
+          "name": "user-case-ref",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_user-case-ref.html"
         }
       ]
     },
