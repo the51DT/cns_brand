@@ -1,17 +1,20 @@
 const headerWrap = document.querySelector('.header');
+const bodyWrap = document.querySelector('body');
 const mainNavigation = (selector) => {
     const navyLists = document.querySelectorAll(selector);    
     if(!navyLists) {
         return;
     }
     navyLists.forEach(navy => {
-        navy.addEventListener('mouseenter', () => {            
+        navy.addEventListener('mouseenter', () => {
+            bodyWrap.classList.add('overflow');            
             const activeMenu = document.querySelector('.navy-list > li.is-active');
             if (activeMenu) {
                 activeMenu.classList.remove('is-active');
             }            
             if(navy.classList.contains('type-full') && navy.nextElementSibling) {
                 if(!navy.closest('.header').classList.contains('is-active')) {
+                    navy.closest('.header').classList.add('is-active');
                     navy.closest('.header').classList.add('is-active');
                 }
     
@@ -48,6 +51,7 @@ const mainNavigation = (selector) => {
         })
         const navyWrap = navy.closest('.gnb-navy__wrap');
         navyWrap.addEventListener('mouseleave',  () => {
+            bodyWrap.classList.remove('overflow');      
             navy.parentElement.style.position = '';
             navy.closest('.header').classList.remove('is-active'); 
             navy.closest('.header').style.setProperty('--gnb-bg-height', 0);
@@ -60,7 +64,6 @@ const mainNavigation = (selector) => {
 }
 
 const moNavigationToggle = (button) => {
-    const bodyWrap = document.querySelector('body');
     const moNavigation = document.querySelector('.mo-gnb-navy__wrap');
     const moMenu = document.querySelector(button);
     moMenu.addEventListener('click', () => {
