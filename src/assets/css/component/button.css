@@ -220,14 +220,13 @@
     font-weight: 500;
     white-space: nowrap;
 }
-
+/* 
 .btn:has(.btn__icon + .btn__text) {
     padding-left: calc(16 / 16 * 1rem);
 }
 .btn:has(.btn__text + .btn__icon) {
     padding-right: calc(16 / 16 * 1rem);
-}
-
+} */
 
 
 /* btn-text - 텍스트 버튼 */
