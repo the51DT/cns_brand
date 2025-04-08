@@ -38,11 +38,11 @@
                                     </button>
                                 </div>
                             </div>
-                            <p class="guide-title-h3 mt-10">Popup Component : .modal--type-small (pc-size: small, mo-size: small)</p>
+                            <p class="guide-title-h3 mt-10">Popup Component : .modal--type-alert (pc-size: small, mo-size: small)</p>
                             <div class="cmp-exsample__wrap mt-10">
                                 <div class="button_wrap">
                                     <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default02" onclick="openModal(event)">
-                                        <span class="btn__text">default modal small</span>
+                                        <span class="btn__text">default modal alert</span>
                                     </button>
                                 </div>
                             </div>
@@ -59,27 +59,52 @@
                         <div class="modal__title font-body-xl font-bold">기업 검색</div>
                     </div>
                     <div class="modal__content">
-                        <!-- [Start] 모달 컨텐츠-스크롤 영역 -->
-                        <div class="modal__scroll-area">
-                            <!-- [Start] 모달 컨텐츠 영역 -->
-                            <div style="width:100%;height:300px;background:#999;">
-                                modal contents
+                        <!-- [Start] 모달 컨텐츠 영역 -->
+                        <div class="modal__scroll">
+                            <div class="modal__scroll__inner">
+                                <%
+                                    const inputData = [
+                                        {
+                                            id: 2,
+                                            title: '',
+                                            inputData: [
+                                                {
+                                                    type: "select",
+                                                    placeholder: "select placeholder",
+                                                    option: [
+                                                        {
+                                                            value: "옵션1",
+                                                        },
+                                                        {
+                                                            value: "옵션2",
+                                                        }
+                                                    ],
+                                                },
+                                                {
+                                                    type: "search",
+                                                    placeholder: "플레이스홀더",
+                                                },
+                                            ],
+                                            info: "에러 메시지를 입력하세요"
+                                        },
+                                    ]
+                                %>
+                                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                                    jsonData: inputData,
+                                })) %>
                             </div>
-                            <!-- [End] 모달 컨텐츠 영역 -->
                         </div>
-                        <!-- [End] 모달 컨텐츠-스크롤 영역 -->
-                        <!-- [Start] 모달 컨텐츠 하단 버튼 영역 -->
-                        <div class="modal__content__footer">
-                            <div class="button__wrap">
-                                <button class="btn btn-secondary btn-large">
-                                    <span class="btn__text">목록에 없음</span>
-                                </button>
-                                <button class="btn btn-primary btn-large">
-                                    <span class="btn__text">선택</span>
-                                </button>
-                            </div>
+                        <!-- [End] 모달 컨텐츠 영역 -->
+                    </div>
+                    <div class="modal__footer">
+                        <div class="button__wrap">
+                            <button class="btn btn-secondary btn-large">
+                                <span class="btn__text">목록에 없음</span>
+                            </button>
+                            <button class="btn btn-primary btn-large">
+                                <span class="btn__text">선택</span>
+                            </button>
                         </div>
-                        <!-- [End] 모달 컨텐츠 하단 버튼 영역 -->
                     </div>
                     <div class="modal__close">
                         <div class="button__wrap">
@@ -95,41 +120,35 @@
         </div>
     </div>
     <!-- [End] modal -->
-    <!-- [Start] modal -->
+    <!-- [Start] modal : pc-size: samll, mo-size: small -->
     <div class="cmp-modal" id="modal-default02">
         <div class="modal modal--type-small">
             <div class="modal__wrapper">
                 <div class="modal__container">
                     <div class="modal__content">
-                        <!-- [Start] 모달 컨텐츠-스크롤 영역 -->
-                        <div class="modal__scroll-area">
-                            <!-- [Start] 모달 컨텐츠 영역 -->
-                            <p>
-                                최신 트렌드와 유용한 기술 레터를 <br>
-                                받아보시겠어요?
-                            </p>
-                            <div class="button_wrap">
-                                <a href="" class="btn btn-text" target="_blank">
-                                    <span class="btn-text__name">
-                                        마케팅 정보 수신 동의
-                                    </span>
-                                </a>
-                            </div>
-                            <!-- [End] 모달 컨텐츠 영역 -->
+                        <!-- [Start] 모달 컨텐츠 영역 -->
+                        <p class="font-body-md text-center">
+                            최신 트렌드와 유용한 기술 레터를 <br>
+                            받아보시겠어요?
+                        </p>
+                        <div class="button_wrap button_wrap--type-center mt-4">
+                            <a href="" class="btn btn-text mx-auto" target="_blank">
+                                <span class="btn__text">
+                                    마케팅 정보 수신 동의
+                                </span>
+                            </a>
                         </div>
-                        <!-- [End] 모달 컨텐츠-스크롤 영역 -->
-                        <!-- [Start] 모달 컨텐츠 하단 버튼 영역 -->
-                        <div class="modal__content__footer">
-                            <div class="button__wrap">
-                                <button class="btn btn-large btn-secondary" onclick="closeModal(event)">
-                                    <span class="btn__text">나중에 하기</span>
-                                </button>
-                                <button class="btn btn-large btn-primary">
-                                    <span class="btn__text">네 받을래요</span>
-                                </button>
-                            </div>
+                        <!-- [End] 모달 컨텐츠 영역 -->
+                    </div>
+                    <div class="modal__footer">
+                        <div class="button__wrap">
+                            <button class="btn btn-large btn-secondary" onclick="closeModal(event)">
+                                <span class="btn__text">나중에 하기</span>
+                            </button>
+                            <button class="btn btn-large btn-primary">
+                                <span class="btn__text">네 받을래요</span>
+                            </button>
                         </div>
-                        <!-- [End] 모달 컨텐츠 하단 버튼 영역 -->
                     </div>
                 </div>
             </div>
@@ -137,6 +156,7 @@
         </div>
     </div>
     <!-- [End] modal -->
+    
     <script type="module" src="/src/main.js"></script>
     <script src="/assets/js/ui_common.js"></script>
 </body>

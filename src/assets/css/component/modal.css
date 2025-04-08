@@ -24,12 +24,13 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: calc(40 / 16 * 1rem);
     margin: 0 auto;
     width: 100%;
     max-width: calc(1008 / 16 * 1rem);
-    min-width: calc(704 / 16 * 1rem);
-    max-height: calc(100vh - calc(350 / 16 * 1rem));
+    min-width: calc(480 / 16 * 1rem);
+    max-height: calc(100vh - calc(189 / 16 * 1rem));
     padding: calc(40 / 16 * 1rem);
     overflow: hidden;
     z-index: 1;
@@ -46,12 +47,32 @@
     box-sizing: border-box;
 }
 .modal .modal__content {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: calc(40 / 16 * 1rem);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
-.modal .modal__content .modal__scroll-area {
+.modal .modal__content::after {
+    display: block;
+    content: '';
+    clear: both;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100 / 16 * 1rem);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+}
+.modal .modal__scroll {
+    width: 100%;
+    height: 100%;
     overflow-y: auto;
+}
+.modal .modal__scroll__inner {
+    /* after로 적용된 그라데이션 만큼 하단 여백 적용 */
+    padding-bottom: calc(100 / 16 * 1rem);
 }
 
 .modal .modal__close {
@@ -74,15 +95,21 @@
     opacity: 0.6;
     z-index: -1;
 }
+.modal .button_wrap--type-center .btn {
+    margin: 0 auto;
+}
 
 /* 2. modal - type small */
 .modal--type-small .modal__container {
-    /* max-width: calc(480 / 16 * 1rem); */
-    min-width: calc(480 / 16 * 1rem);
+    gap: calc(36 / 16 * 1rem);
     padding: calc(36 / 16 * 1rem) calc(40 / 16 * 1rem) calc(40 / 16 * 1rem);
+}
+.modal--type-small .modal__content:after {
+    display: none;
 }
 
 @media only screen and (max-width : 767px) {
+    /* 1. modal - type default */
     .modal .modal__container {
         padding: calc(23.5 / 16 * 1rem) calc(20 / 16 * 1rem) calc(40 / 16 * 1rem);
         width: 100vw;
@@ -92,5 +119,16 @@
         min-height: 100%;
         max-height: 100%;
         border-radius: 0;
+    }
+    .modal .modal__close {
+        top: calc(23.5 / 16 * 1rem);
+        right: calc(20 / 16 * 1rem);
+    }
+    /* 2. modal - type small */
+    .modal--type-small .modal__container {
+        padding: calc(36 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
+        width: calc(100vw - calc(40 / 16 * 1rem));
+        height: calc(245 / 16 * 1rem);
+        border-radius: calc(16 / 16 * 1rem);
     }
 }
