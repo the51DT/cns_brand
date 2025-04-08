@@ -32,11 +32,13 @@
     <% } %>
     <% if(typeof button !=='undefined') { %>
       <div class="button__wrap">
-        <button type="button" class="btn btn-medium btn-quaternary" modal-id="<%- typeof button.btnModal !=='undefined' ? button.btnModal : '' %>" onclick="openModal(event)">
+        <button type="button" class="btn btn-medium btn-secondary" modal-id="<%- typeof button.btnModal !=='undefined' ? button.btnModal : '' %>" onclick="openModal(event)">
           <% if(typeof button.btnIcon !=='undefined') { %>
-            <i class="ico icon-<%- typeof button.btnIcon !=='undefined' ? button.btnIcon : '' %>-bl20"></i>
+            <i class="btn__icon ico icon-<%- typeof button.btnIcon !=='undefined' ? button.btnIcon : '' %>-bl20"></i>
           <% } %>
-          <%- button.btnText %>
+          <span class="btn__text">
+            <%- button.btnText %>
+          </span>
         </button>
       </div>
     <% } %>

@@ -15,9 +15,11 @@
         <% } %>
         <% if(typeof data.button !=='undefined' && data.button) { %>
             <div class="button__wrap">
-                <a href="<%- data.button.href %>" target="_blank" class="btn btn-quaternary">
-                    <%- data.button.text %>
-                    <i class="ico icon-navigation-right-bl24"></i>
+                <a href="<%- data.button.href %>" target="_blank" class="btn btn-secondary">
+                    <span class="btn__text">
+                        <%- data.button.text %>
+                    </span>
+                    <i class="btn__icon ico icon-navigation-right-bl24"></i>
                 </a>
             </div>
         <% } %>
