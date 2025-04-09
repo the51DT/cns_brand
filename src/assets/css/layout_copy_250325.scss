@@ -37,10 +37,10 @@ body {
                     display: inline-flex;
                 }
                 &.header__wrap--fixed {
-                    background-color: var(--colorCM-all-fill-fill-default12);
+                    background-color: var(--colorCM-mode1-fill-fill-default12);
                 }
                 &.is-active {
-                    background-color: var(--colorCM-all-fill-fill-default0);
+                    background-color: var(--colorCM-mode1-fill-fill-default0);
                 }
             }
         }
@@ -163,12 +163,12 @@ body {
                                 height: calc(52 / 16 * 1rem);
                                 padding-left: calc(24 / 16 * 1rem);                                
                                 &:hover {
-                                    background-color: var(--colorCM-all-fill-fill-default2);
+                                    background-color: var(--colorCM-mode1-fill-fill-default2);
                                 }
                             }
                             &.is-active {
                                 a {
-                                    background-color: var(--colorCM-all-fill-fill-default2);
+                                    background-color: var(--colorCM-mode1-fill-fill-default2);
                                 }
                                 .sub-menu-detail {
                                     position: absolute;
@@ -581,7 +581,7 @@ body {
                 position: fixed;
                 top:0;
                 left: 0;
-                background-color: var(--colorCM-all-fill-fill-default0);
+                background-color: var(--colorCM-mode1-fill-fill-default0);
                 border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default7);
                 transform: translateY(0);
                 .gnb-util {
@@ -884,7 +884,7 @@ body {
                 &.family-site {
                     button {
                         color: var(--colorGL-all-white100);
-                        background: var(--colorCM-all-fill-fill-default10);
+                        background: var(--colorCM-mode1-fill-fill-default10);
                         &::after {
                             background: url("/src/assets/image/icon/icon_arrow_down_wh.svg") no-repeat center center
                         }
@@ -915,7 +915,7 @@ body {
                 &.family-site {
                     button {
                         color: var(--colorGL-all-white100);
-                        background: var(--colorCM-all-fill-fill-default10);
+                        background: var(--colorCM-mode1-fill-fill-default10);
                         &::after {
                             background: url("/src/assets/image/icon/icon_arrow_down_wh.svg") no-repeat center center
                         }

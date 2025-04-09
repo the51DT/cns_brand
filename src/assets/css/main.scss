@@ -176,7 +176,7 @@
     &__wrap {
       width: 100%;
       height: calc(1080 / 16 * 1rem);
-      background-color: var(--colorCM-all-fill-fill-default10);
+      background-color: var(--colorCM-mode1-fill-fill-default10);
       @media #{$phone} {
         height: calc(332 / 16 * 1rem);
       }

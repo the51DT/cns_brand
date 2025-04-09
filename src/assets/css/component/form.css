@@ -44,7 +44,7 @@
     display: flex;
     align-items: center;
     padding: calc(var(--input-padding-top) / 16 * 1rem) calc(var(--input-padding-side) / 16 * 1rem);
-    background-color: var(--colorCM-all-fill-fill-default0);
+    background-color: var(--colorCM-mode1-fill-fill-default0);
 }
 .form-element__wrap .form-element__inner input {
     width: 100%;
@@ -68,7 +68,7 @@
 }
 .form-element__wrap .input-type {
     height: calc(var(--input-height) / 16 * 1rem);
-    background-color: var(--colorCM-all-fill-fill-default0);
+    background-color: var(--colorCM-mode1-fill-fill-default0);
     border: 1px solid var(--colorGL-all-gray250);
 }
 .form-element__wrap .input-type.bg-gray {
@@ -81,7 +81,7 @@
 /* search type */
 .form-element__wrap .input-type.search-type-full {
     height: calc(var(--input-height) / 16 * 1rem);
-    background-color: var(--colorCM-all-fill-fill-default0);
+    background-color: var(--colorCM-mode1-fill-fill-default0);
     border: 1px solid var(--colorGL-all-gray250);
     gap: calc(var(--gap-padding) / 16 * 1rem);
 }

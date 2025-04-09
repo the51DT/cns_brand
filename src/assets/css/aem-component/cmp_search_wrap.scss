@@ -2,7 +2,7 @@
 .cmp-search__wrap {
     position: relative;
     padding: calc(80 / 16 * 1rem);
-    background-color: var(--colorCM-all-fill-fill-default2);
+    background-color: var(--colorCM-mode1-fill-fill-default2);
     @media #{$tablet} {
         padding: calc(80 / 16 * 1rem) calc(32 / 16 * 1rem);
     }
@@ -133,7 +133,7 @@
     .tag-button {
         padding: calc(14/16*1rem) calc(24/16*1rem);
         border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
-        background-color: var(--colorCM-all-fill-fill-default0);
+        background-color: var(--colorCM-mode1-fill-fill-default0);
         font-weight: 600;
         color: var(--text-text-default);
         box-sizing: border-box;

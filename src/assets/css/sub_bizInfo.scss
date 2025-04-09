@@ -584,7 +584,7 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            border: 2px solid var(--colorCM-all-fill-fill-default10);
+            border: 2px solid var(--colorCM-mode1-fill-fill-default10);
 
             &::before {
               content: '';
@@ -592,7 +592,7 @@
               display: block;
               width: 16px;
               height: 16px;
-              background: var(--colorCM-all-fill-fill-default10);
+              background: var(--colorCM-mode1-fill-fill-default10);
               border-radius: 50%;
               top: 50%;
               left: 50%;

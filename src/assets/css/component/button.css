@@ -67,7 +67,7 @@
 
 /* .btn-secondary */
 .btn.btn-secondary {
-    background-color: var(--colorCM-all-fill-fill-default0);
+    background-color: var(--colorCM-mode1-fill-fill-default0);
     color: #121212;
     border: calc(1 / 16 * 1rem) solid #121212;
 }
@@ -93,16 +93,16 @@
     color: var(--text-text-default);
 }
 .btn.btn-tertiary:hover {
-    background-color: var(--colorCM-all-fill-fill-disabled);
+    background-color: var(--colorCM-mode1-fill-fill-disabled);
     color: var(--text-text-default);
 }
 .btn.btn-tertiary.is-active {
-    background-color: var(--colorCM-all-fill-fill-default5);
+    background-color: var(--colorCM-mode1-fill-fill-default5);
     color: var(--text-text-default);
 }
 .btn.btn-tertiary:disabled,
 .btn.btn-tertiary.is-disabled {
-    background-color: var(--colorCM-all-fill-fill-disabled);
+    background-color: var(--colorCM-mode1-fill-fill-disabled);
     color: var(--colorCM-all-text-text-disabled);
     cursor: default;
     pointer-events: none;
@@ -110,7 +110,7 @@
 
 /* .btn-quaternary */
 /* .btn.btn-quaternary {
-    background-color: var(--colorCM-all-fill-fill-default0);
+    background-color: var(--colorCM-mode1-fill-fill-default0);
     color: var(--text-text-default);
     border: calc(1 / 16 * 1rem) solid #1A1A1A;
 }
@@ -119,12 +119,12 @@
     color: var(--text-text-default);
 }
 .btn.btn-quaternary.is-active {
-    background-color: var(--colorCM-all-fill-fill-disabled);
+    background-color: var(--colorCM-mode1-fill-fill-disabled);
     color: var(--text-text-default);
 }
 .btn.btn-quaternary:disabled,
 .btn.btn-quaternary.is-disabled {
-    background-color: var(--colorCM-all-fill-fill-disabled);
+    background-color: var(--colorCM-mode1-fill-fill-disabled);
     border: calc(1 / 16 * 1rem) solid #D9D9D9;
     color: var(--colorCM-all-text-text-disabled);
     cursor: default;
@@ -141,7 +141,7 @@
 /* btn-radius */
 /* .btn.btn-radius {
     color: var(--text-text-default);
-    background-color: var(--colorCM-all-fill-fill-default0);
+    background-color: var(--colorCM-mode1-fill-fill-default0);
     border-radius: calc(999 / 16 * 1rem);
     border: calc(1 / 16 * 1rem) solid #1A1A1A;
 
@@ -151,12 +151,12 @@
     color: var(--text-text-default);
 }
 .btn.btn-radius.is-active {
-    background-color: var(--colorCM-all-fill-fill-disabled);
+    background-color: var(--colorCM-mode1-fill-fill-disabled);
     color: var(--text-text-default);
 }
 .btn.btn-radius:disabled,
 .btn.btn-radius.is-disabled {
-    background-color: var(--colorCM-all-fill-fill-disabled);
+    background-color: var(--colorCM-mode1-fill-fill-disabled);
     border: calc(1 / 16 * 1rem) solid #D9D9D9;
     color: var(--colorCM-all-text-text-disabled);
     cursor: default;

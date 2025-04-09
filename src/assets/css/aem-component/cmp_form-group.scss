@@ -11,7 +11,7 @@
     width: 100%;
     padding: calc(20 / 16 * 1rem);
     border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
-    background-color: var(--colorCM-all-fill-fill-default2);
+    background-color: var(--colorCM-mode1-fill-fill-default2);
     &:has( + .cmp-form-group__accordion) {
       margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
     }
@@ -53,7 +53,7 @@
         padding: calc(20 / 16 * 1rem);
         border: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default7);
         border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
-        background-color: var(--colorCM-all-fill-fill-default0);
+        background-color: var(--colorCM-mode1-fill-fill-default0);
         overflow-y: auto;
         word-wrap: break-word;
         &::-webkit-scrollbar {
@@ -63,7 +63,7 @@
         &::-webkit-scrollbar-thumb {
           border: calc(8 / 16 * 1rem) solid transparent;
           border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
-          background-color: var(--colorCM-all-fill-fill-default4);
+          background-color: var(--colorCM-mode1-fill-fill-default4);
           background-clip: content-box;
           box-sizing: border-box;
         }

@@ -68,13 +68,13 @@
     height: calc(8 / 16 * 1rem);
     margin: 0 !important;
     border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
-    background-color: var(--colorCM-all-fill-fill-disabled);
+    background-color: var(--colorCM-mode1-fill-fill-disabled);
     opacity: 1;
 }
 .cmp-swiper__wrap .swiper-pagination-bullet-active {
     width: calc(88 / 16 * 1rem);
     height: calc(2 / 16 * 1rem);
-    background-color: var(--colorCM-all-fill-fill-default11);
+    background-color: var(--colorCM-mode1-fill-fill-default11);
 }
 
 @media screen and (max-width: 1919px) {

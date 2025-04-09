@@ -191,12 +191,12 @@ body {
                         height: calc(52 / 16 * 1rem);
                         padding-left: calc(24 / 16 * 1rem);                                
                         &:hover {
-                            background-color: var(--colorCM-all-fill-fill-default2);
+                            background-color: var(--colorCM-mode1-fill-fill-default2);
                         }
                     }
                     &.is-active {
                         .gnb-sub__menu {
-                            background-color: var(--colorCM-all-fill-fill-default2);
+                            background-color: var(--colorCM-mode1-fill-fill-default2);
                         }
                         .sub-menu-detail {
                             position: absolute;
@@ -754,7 +754,7 @@ body {
         --footer-bg: var(--colorCM-all-background-background-default10);
         --footer-font-color: var(--colorCM-all-text-text-on-bg);
         --footer-family-site-dropdown-icon: url('/src/assets/image/icon/icon-plus-wh16.svg');
-        --footer-family-site-dropdown-bg : var(--colorCM-all-fill-fill-default10);
+        --footer-family-site-dropdown-bg : var(--colorCM-mode1-fill-fill-default10);
 
         background: var(--footer-bg);
         border-top: calc(1 / 16 * 1rem) solid rgba(255, 255, 255, 0.20);
@@ -790,7 +790,7 @@ body {
         --footer-bg: transparent;
         --footer-font-color: var(--colorCM-all-text-text-on-bg);
         --footer-family-site-dropdown-icon: url('/src/assets/image/icon/icon-plus-wh16.svg');
-        --footer-family-site-dropdown-bg : var(--colorCM-all-fill-fill-default10);
+        --footer-family-site-dropdown-bg : var(--colorCM-mode1-fill-fill-default10);
 
         background: var(--footer-bg);
         border-top: calc(1 / 16 * 1rem) solid rgba(255, 255, 255, 0.20);
