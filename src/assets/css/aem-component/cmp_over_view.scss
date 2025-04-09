@@ -4,11 +4,11 @@
     flex-direction: column;
     .cmp-overview-title {
         color: var(--text-text-default);
-        font-weight: 700;
+        font-weight: 500;
         &+.cmp-overview-text {
-            margin-top: calc(64 / 16 * 1rem);
+            margin-top: calc(32 / 16 * 1rem);
             @media #{$phone} {
-                margin-top: calc(32 / 16 * 1rem);
+                margin-top: calc(24 / 16 * 1rem);
             }
         }
         &+.cmp-overview-text2 {
@@ -19,11 +19,11 @@
         }
     }
     .cmp-overview-text {
-        color: var(--text-text-default);
+        color: var(--colorCM-mode1-text-text-secondary);
         p+p {
-            margin-top: calc(32 / 16 * 1rem);
+            margin-top: calc(16 / 16 * 1rem);
             @media #{$phone} {
-                margin-top: calc(16 / 16 * 1rem);
+                margin-top: calc(12 / 16 * 1rem);
             }
         }
     }

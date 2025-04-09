@@ -1,6 +1,6 @@
 // specList
 .cmp-speclist__wrap {
-    border-top: 1px solid var(--colorGL-all-gray950);
+    border-top: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
     display: flex;
     flex-direction: column;
     &:has(.spec-item.type-column) {
@@ -40,7 +40,7 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        border-bottom: 1px solid var(--colorGL-all-gray200);
+        border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
         gap: $gap-margin;
         padding: calc(60 / 16 * 1rem) 0;
         @media #{$phone} {
@@ -155,9 +155,9 @@
             color: var(--colorCM-mode1-primary-primary-enabled);
         }
         .spec-title {
-            font-weight: 700;
+            font-weight: 500;
             width: calc(50% - calc($gap-margin / 2));
-            color: var(--text-text-default);
+            color: var(--colorCM-mode1-text-text-defailt);
             display: flex;
             gap: calc(16 / 16 * 1rem);
             @media #{$phone} {
@@ -166,7 +166,7 @@
         }
         .spec-text {
             width: calc(50% - calc($gap-margin / 2));
-            color: var(--colorGL-all-gray850);
+            color: var(--colorCM-mode1-text-text-secondary);
             @media #{$phone} {
                 padding-left: calc(45 / 16 * 1rem);
                 width: 100%;

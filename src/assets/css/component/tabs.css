@@ -5,7 +5,7 @@
     background: var(--colorGL-all-white100);
 }
 .cmp-tab .cmp-tab__header {
-    border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default6);
+    border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
     margin-bottom: calc(80 / 16 * 1rem);
 }
 .cmp-tab .cmp-tab__header ul {
@@ -17,7 +17,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: calc(64 / 16 * 1rem);
+    height: calc(74 / 16 * 1rem);
+    padding: 0 calc(20 / 16 * 1rem);
 }
 .cmp-tab .cmp-tab__header ul li a {
     display: flex;
@@ -25,16 +26,17 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 0 calc(40 / 16 * 1rem);
+    padding: 0 calc(0 / 16 * 1rem);
     color: var(--colorCM-mode1-text-text-tertiary);     
-    font-size: calc(var(--typo-pc-size-body-lg) / 16 * 1rem);    
-    font-weight: 500;
-    line-height: calc(var(--typo-pc-line-height-body-lg) / 16 * 1rem);
+    font-size: calc(var(---typo-pc-size-head-sm-mode) / 16 * 1rem);    
+    font-weight: 400;
+    line-height: calc(var(--typo-pc-size-head-sm-mode) / 16 * 1rem);
     letter-spacing: var(--letter-spacing-small);
     position: relative;
 }
 .cmp-tab .cmp-tab__header ul li.is-active a {
     color: var(--typo-pc-size-body-lg);
+    font-weight: 600;
 }
 .cmp-tab .cmp-tab__header ul li a::after {
     content: '';
@@ -49,7 +51,7 @@
 }
 .cmp-tab .cmp-tab__header ul li.is-active a::after {
     width: 100%;
-    background: var(--colorCM-all-stroke-stroke-default2);
+    background: var(--colorCM-mode1-stroke-stroke-default10);
     transition: width 0.3s, background 0.3s;
 }
 .cmp-tab .tab__content {
@@ -69,9 +71,9 @@
 }
 @media screen and (max-width : 1599px) {
     .cmp-tab .cmp-tab__header ul li a {
-        font-size: calc(var(--typo-tablet-size-body-md) / 16 * 1rem);    
-        font-weight: 500;
-        line-height: calc(var(--typo-tablet-line-height-body-lg) / 16 * 1rem);
+        font-size: calc(var(--typo-mo-size-head-sm-mode) / 16 * 1rem);    
+        font-weight: 400;
+        line-height: calc(var(--typo-mo-size-head-sm-mode) / 16 * 1rem);
         letter-spacing: var(--typo-tablet-letter-spacing-default);
     }
 }
