@@ -1,4 +1,4 @@
-/* 탭 */
+/* 아코디언 */
 .cmp-accordion {
     width: 100%;
     background: var(--colorGL-all-white100);
@@ -14,22 +14,16 @@
 }
 .cmp-accordion .accordion-list li .accordion-title {
     display: flex;
-    align-items: center;   
-    padding: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
-} 
-.cmp-accordion .accordion-list li .accordion-title button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: calc(var(--spacing-mode1-horizontal-m) / 16 * 1rem);    
+    align-items: center; 
+    padding: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem) 0;
 }
 .cmp-accordion .accordion-list li .accordion-title i {
     display: inline-flex;
     position: relative;
-    width: calc(24 / 16 * 1rem);
-    min-width: calc(24 / 16 * 1rem);
-    height: calc(24 / 16 * 1rem);    
+    width: calc(16 / 16 * 1rem);
+    min-width: calc(16 / 16 * 1rem);
+    height: calc(16 / 16 * 1rem);    
+    margin-top: calc(5 / 16 * 1rem);
 }
 .cmp-accordion .accordion-list li .accordion-title i::before,
 .cmp-accordion .accordion-list li .accordion-title i::after {
@@ -46,9 +40,6 @@
     top: 50%;
     transform: translateY(-50%);
 }
-.cmp-accordion .accordion-list li.is-active i::before {
-    display: none;
-}
 .cmp-accordion .accordion-list li .accordion-title i::after {
     width: calc(2 / 16 * 1rem);
     height: 100%;
@@ -57,61 +48,78 @@
     transform: translateX(-50%);
     transition: all 0.3s;
 }
+.cmp-accordion .accordion-list li .accordion-title button {
+    width: 100%;
+    display: flex;                
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: calc(8 / 16 * 1rem);    
+}
+.cmp-accordion .accordion-list li .accordion-title .tit {
+    font-style: normal;
+    color: var(--colorCM-mode1-text-text-secondary);     
+    font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+    font-weight: 600;    
+    line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem); 
+    letter-spacing: var(--letter-spacing-small);  
+    text-align: left;     
+}
+.cmp-accordion .accordion-list li .accordion-content {
+    display: none;
+    padding: 0 calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
+}
+
+/* .is-active*/
+.cmp-accordion .accordion-list li.is-active i::before {
+    display: none;
+}
 .cmp-accordion .accordion-list li.is-active i::after {
     transform: translateX(-50%) rotate(90deg);
     transition: all 0.3s;
     background-color: var(--colorCM-mode1-text-text-defailt);
 }
-.cmp-accordion .accordion-list li .accordion-title .tit {    
-    font-style: normal;
-    color: var(--colorCM-mode1-text-text-secondary);     
-    font-size: calc(var(--typo-pc-size-head-sm-mode) / 16 * 1rem);    
-    font-weight: 600;
-    line-height: calc(var(--typo-pc-size-head-sm-mode) / 16 * 1rem);
-    letter-spacing: var(--letter-spacing-small);
-    text-align: left;
+.cmp-accordion .accordion-list li.is-active .accordion-title {
+    padding: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem) 0 calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
 }
 .cmp-accordion .accordion-list li.is-active .accordion-title .tit {
     color: var(--colorCM-mode1-text-text-defailt);
 }
-.cmp-accordion .accordion-list li .accordion-content {
-    display: none;
-    padding: 0 calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
-
-}
 .cmp-accordion .accordion-list li.is-active .accordion-content {
     display: block;
     color: var(--text-text-tertiary);
-    font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);    
-    font-weight: 400;
-    line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+    padding: 0 calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
+    font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);    
+    line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
     letter-spacing: var(--letter-spacing-small);
 }
-@media screen and (max-width: 767px) {
-    /* .cmp-accordion .accordion-list li {
-        padding: calc(14 / 16 * 1rem) 0 calc(14 / 16 * 1rem) calc(20 / 16 * 1rem) ;
-    } */
+
+/* PC */
+@media screen and (min-width : 1280px) {
     .cmp-accordion .accordion-list li .accordion-title {
-        padding: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem) calc(var(--spacing-mode1-horizontal-x-l) / 16 * 1rem);
+        padding: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
     }
     .cmp-accordion .accordion-list li .accordion-title i {
-        width: calc(16 / 16 * 1rem);
-        min-width: calc(16 / 16 * 1rem);
-        height: calc(16 / 16 * 1rem);    
-        margin-top: calc(5 / 16 * 1rem);
+        width: calc(24 / 16 * 1rem);
+        min-width: calc(24 / 16 * 1rem);
+        height: calc(24 / 16 * 1rem);    
     }
-    .cmp-accordion .accordion-list li .accordion-title button {                
-        align-items: flex-start;
-        gap: calc(8 / 16 * 1rem);    
+    .cmp-accordion .accordion-list li .accordion-title button {
+        align-items: center;
+        gap: calc(var(--spacing-mode1-horizontal-m) / 16 * 1rem);    
+    } 
+    .cmp-accordion .accordion-list li .accordion-title .tit {    
+        font-size: calc(var(--typo-pc-size-head-sm-mode) / 16 * 1rem);    
+        line-height: calc(var(--typo-pc-size-head-sm-mode) / 16 * 1rem);
     }
-    .cmp-accordion .accordion-list li .accordion-title .tit {     
-        font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);    
-        line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);   
-        text-align: left;     
+    
+    /* .is-active*/
+    .cmp-accordion .accordion-list li.is-active .accordion-title {
+       padding: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0 calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
     }
     .cmp-accordion .accordion-list li.is-active .accordion-content {
-        padding: 0 calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem) 0 calc(51 / 16 * 1rem);
-        font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);    
-        line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
+        padding: 0 calc(96 / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
+        font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);    
+        font-weight: 400;
+        line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
     }
 }

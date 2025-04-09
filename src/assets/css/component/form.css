@@ -1,14 +1,26 @@
 /* 폼 */
 :root {
-    --gap-padding: 20;
+    --gap-padding: 8;
     --input-border-radius: 47;
-    --input-padding-top: 21; 
-    --input-padding-side: 28;
+    --input-padding-top: 12; 
+    --input-padding-side: 12;
     --input-basic-size: 12;
-    --input-height: 80;
+    --input-height: 44;
 }
 
-@media screen and (max-width : 1043px) {
+/* PC */
+@media screen and (min-width : 1280px) {
+    :root {
+        --gap-padding: 20;
+        --input-border-radius: 47;
+        --input-padding-top: 21; 
+        --input-padding-side: 28;
+        --input-basic-size: 12;
+        --input-height: 80;
+    }
+}
+
+/* @media screen and (max-width : 1043px) {
     :root {
         --gap-padding: 20;
         --input-border-radius: 47;
@@ -28,7 +40,7 @@
         --input-basic-size: 12;
         --input-height: 44;
     }
-}
+} */
 
 .form-element__wrap {
     display: flex;
@@ -52,10 +64,10 @@
     height: 100%;
     color: #000;
     background-color: transparent;
-    font-size:calc(var(--typo-pc-size-body-lg) / 16 * 1rem);
-    line-height: calc(var(--typo-pc-line-height-body-lg) / 16 * 1rem);
     color: var(--colorGL-all-gray750);
-    font-weight: 600;
+    font-size:calc(13 / 16 * 1rem);
+    font-weight: 400;
+    line-height: calc(19.5 / 16 * 1rem);
 }
 .form-element__wrap .form-element__inner input::placeholder {
     color: var(--colorGL-all-gray700);
@@ -86,8 +98,8 @@
     gap: calc(var(--gap-padding) / 16 * 1rem);
 }
 .form-element__wrap .input-type.search-type-full .btn.btn-search {
-    width: calc(35 / 16 * 1rem);
-    height: calc(35 / 16 * 1rem);
+     width: calc(20 / 16 * 1rem);
+    height: calc(20 / 16 * 1rem);
 }
 .form-element__wrap .input-type.search-type-full .btn.btn-remove {
     width: calc(24 / 16 * 1rem);
@@ -104,18 +116,15 @@
     transition: all 0.3s ease-in-out;
 }
 
-@media screen and (max-width : 1043px) {
-
-}
-
-@media only screen and (max-width : 768px) {
+/* PC */
+@media screen and (min-width : 1280px) {
     .form-element__wrap .form-element__inner input {
-        font-size:calc(13 / 16 * 1rem);
-        line-height: calc(19.5 / 16 * 1rem);
-        font-weight: 400;
+        font-size:calc(var(--typo-pc-size-body-lg) / 16 * 1rem);
+        line-height: calc(var(--typo-pc-line-height-body-lg) / 16 * 1rem);
+        font-weight: 600;
     }
     .form-element__wrap .input-type.search-type-full .btn.btn-search {
-        width: calc(20 / 16 * 1rem);
-        height: calc(20 / 16 * 1rem);
+        width: calc(35 / 16 * 1rem);
+        height: calc(35 / 16 * 1rem);
     }
 }

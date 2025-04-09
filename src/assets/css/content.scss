@@ -1,8 +1,8 @@
 // 컴포넌트 margin-bottom:60px, 최하단 컴포넌트는 margin-bottom: 0;
 .cmp-wrap {
-    margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem); 
-    @media #{$phone} {
-        margin-bottom: calc(48 / 16 * 1rem); 
+    margin-bottom: calc(48 / 16 * 1rem); 
+    @media #{$min1280} {
+        margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem);
     }
     &.cmp-overview__wrap {
         &+ .cmp-customer-case {
@@ -20,9 +20,9 @@
     }
     &.cmp-post-navigation {
         & + .button__wrap {
-            margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem); 
-            @media #{$phone} {
-                margin-bottom: calc(48 / 16 * 1rem); 
+            margin-bottom: calc(48 / 16 * 1rem); 
+            @media #{$min1280} {
+                margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem); 
             }
         }
     }
@@ -48,28 +48,20 @@
         display: flex;
         align-items: center;
         color: var(--text-text-default);
-        font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
-        line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
+        font-size: calc(var(--typo-mo-size-body-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-xs) / 16 * 1rem);
         text-align: right;
-        @media #{$tablet} {
-            font-size: calc(var(--typo-tablet-size-body-xs) / 16 * 1rem);
-            line-height: calc(var(--typo-tablet-line-height-body-xs) / 16 * 1rem);
-        }
-        @media #{$phone} {
-            font-size: calc(var(--typo-mo-size-body-xs) / 16 * 1rem);
-            line-height: calc(var(--typo-mo-line-height-body-xs) / 16 * 1rem);
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
         }
         .font-bold {
             padding: 0 calc(2 / 16 * 1rem) 0 calc(8 / 16 * 1rem);
-            font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
-            line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
-            @media #{$tablet} {
-                font-size: calc(var(--typo-tablet-size-body-md) / 16 * 1rem);
-                line-height: calc(var(--typo-tablet-line-height-body-md) / 16 * 1rem);
-            }
-            @media #{$phone} {
-                font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);
-                line-height: calc(var(--typo-mo-line-height-body-md) / 16 * 1rem);
+            font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);
+            line-height: calc(var(--typo-mo-line-height-body-md) / 16 * 1rem);
+            @media #{$min1280} {
+                font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
+                line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
             }
         }
     }
@@ -80,27 +72,28 @@
 .content-list__wrap {
     display: flex;
     flex-wrap: wrap;
-    @media #{$phone} {
-        flex-direction: column;
+    flex-direction: column;
+    @media #{$min1280} {
+        flex-direction: row;
     }
     &.thumbnail-type {
         gap: $gap-margin;
         &.pc-col3 {
             li {
-                width: calc((100% / 3) - calc($gap-margin * 2 / 3));
-                @media #{$tablet} {
-                    width: calc((100% / 2) - calc($gap-margin / 2));
-                }
-                @media #{$phone} {
-                    width: 100%;
+                width: 100%;
+                // @media #{$tablet} {
+                //     width: calc((100% / 2) - calc($gap-margin / 2));
+                // }
+                @media #{$min1280} {
+                    width: calc((100% / 3) - calc($gap-margin * 2 / 3));
                 }
             }
         }
         &.pc-col2-big {
             li {
-                width: calc((100% / 2) - calc($gap-margin / 2));
-                @media #{$phone} {
-                    width: 100%;
+                width: 100%;
+                @media #{$min1280} {
+                    width: calc((100% / 2) - calc($gap-margin / 2));
                 }
             }
         }        

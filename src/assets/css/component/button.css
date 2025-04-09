@@ -12,10 +12,14 @@
 .button__wrap:has(.btn.btn-text) {
     width: fit-content;
 }
-/* .button__wrap.align-left:has(.btn.btn-line), 
-.button__wrap.align-right:has(.btn.btn-line) {
-    gap: calc(8 / 16 * 1rem);
-} */
+
+.button__wrap.align-left, 
+.button__wrap.align-right,
+.button__wrap.mo-100 {
+    flex-wrap: wrap;
+    gap: calc(16 / 16 * 1rem);
+}
+
 .button__wrap.align-left {
     justify-content: flex-start;
 }
@@ -35,6 +39,17 @@
     white-space: nowrap;
     border-radius: calc(100 / 16 * 1rem);
     box-sizing: border-box;
+}
+.button__wrap.align-left .btn, 
+.button__wrap.align-right .btn {
+    width: calc(50% - calc(8 / 16 * 1rem));
+}
+.button__wrap.mo-100 .btn {
+    width: 100%;
+}
+.button__wrap.align-left .btn:only-of-type, 
+.button__wrap.align-right .btn:only-of-type {
+    width: 100%;
 }
 .btn .btn__text {
     display: block;
@@ -278,35 +293,23 @@
     height: auto;
 }
 
-/* ~ $tablet */
-@media screen and (max-width: 1599px) {
-    
-}
 
-/* ~ $tabletMini */
-@media screen and (max-width: 1023px) {
-}
-
-/* ~ $phone */
-@media screen and (max-width: 767px) {
+/* PC */
+@media screen and (min-width : 1280px) {
     .button__wrap.align-left, 
     .button__wrap.align-right,
     .button__wrap.mo-100 {
-        flex-wrap: wrap;
-        gap: calc(16 / 16 * 1rem);
+        flex-wrap: nowrap;
+        gap: calc(12 / 16 * 1rem);
     }
     .button__wrap.align-right {
-        justify-content: flex-start;
+        justify-content: flex-end;
     }
     .button__wrap.align-left .btn, 
-    .button__wrap.align-right .btn {
-        width: calc(50% - calc(8 / 16 * 1rem));
-    }
-    .button__wrap.mo-100 .btn {
-        width: 100%;
-    }
+    .button__wrap.align-right .btn,
+    .button__wrap.mo-100 .btn,
     .button__wrap.align-left .btn:only-of-type, 
     .button__wrap.align-right .btn:only-of-type {
-        width: 100%;
+        width: fit-content;
     }
 }
