@@ -6,15 +6,19 @@ $tablet: "only screen and (max-width : 1599px)";
 $pcMiddle: "only screen and (max-width : 1919px)";
 $pcWide: "screen and (min-width : 1920px)";
 
+// min-width 사용 : mo -> pc 순서로 스타일 적용
+$min1280: "screen and (min-width : 1280px)";
+$min720: "screen and (min-width : 720px)";
+
 :root {
-    --cmp-margin-bottom: 160;
-    --cmp-margin-bottom-overview: 80;
-    --cmp-margin-bottom-title: 64;
-    --cmp-margin-bottom-teaser: 40;
-    --cmp-margin-bottom-itemlist-columns: 64;
-    --cmp-margin-bottom-imageltem: 48;
-    --cmp-margin-bottom-customer: 64;
-    --cmp-margin-bottom-datalist: 64;
+    --cmp-margin-bottom: 96;
+    --cmp-margin-bottom-overview: 48;
+    --cmp-margin-bottom-title: 32;
+    --cmp-margin-bottom-teaser: 24;
+    --cmp-margin-bottom-itemlist-columns: 32;
+    --cmp-margin-bottom-imageltem: 16;
+    --cmp-margin-bottom-customer: 32;
+    --cmp-margin-bottom-datalist: 32;
 
     --spacing-mode1-vertical-none: 0;
     --spacing-mode1-vertical2-x-s: 2;
@@ -55,16 +59,16 @@ $pcWide: "screen and (min-width : 1920px)";
     --spacing-mode1-horizontal8-x-l: 180;
     --spacing-mode1-horizontal9-x-l: 200;
 }
-@media #{$phone} {
+@media #{$min1280} {
     :root {
-        --cmp-margin-bottom: 96;
-        --cmp-margin-bottom-overview: 48;
-        --cmp-margin-bottom-title: 32;
-        --cmp-margin-bottom-teaser: 24;
-        --cmp-margin-bottom-itemlist-columns: 32;
-        --cmp-margin-bottom-imageltem: 16;
-        --cmp-margin-bottom-customer: 32;
-        --cmp-margin-bottom-datalist: 32;
+        --cmp-margin-bottom: 160;
+        --cmp-margin-bottom-overview: 80;
+        --cmp-margin-bottom-title: 64;
+        --cmp-margin-bottom-teaser: 40;
+        --cmp-margin-bottom-itemlist-columns: 64;
+        --cmp-margin-bottom-imageltem: 48;
+        --cmp-margin-bottom-customer: 64;
+        --cmp-margin-bottom-datalist: 64;
     }
 }
 //반응형 *--
