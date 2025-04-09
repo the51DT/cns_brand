@@ -136,17 +136,20 @@
         }        
         document.addEventListener('DOMContentLoaded', function(){
             loadIcons();
-            const iconList = document.querySelectorAll('.icon-list li');
-            iconList.forEach(li => {
-                li.addEventListener('click', () => {
-                const iconName = li.querySelector('.icon-name').innerText;
+            const iconList = document.getElementById('iconList');
+            iconList.addEventListener('click', function(e) {
+                const li = e.target.closest('li');
+                if (!li) return;
+
+                const iconName = li.querySelector('.icon-name')?.innerText;
+                if (!iconName) return;
+
                 navigator.clipboard.writeText(iconName).then(() => {
                     alert('복사 되었습니다: ' + iconName);
                 }).catch(err => {
                     console.error('복사 실패:', err);
                 });
             });
-            })
         })
     </script>
 </body>
