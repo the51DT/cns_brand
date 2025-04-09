@@ -222,7 +222,7 @@ input[type='number'] {
 /* common root */
 :root {
     --letter-spacing-small: -0.5px;
-    --text-text-default: #1A1A1A;
-    --text-text-tertiary: #6B6B6B;
-    --background-default: #f0f0f0;
+    --text-text-default: #121212;
+    --text-text-tertiary: #8e8e8e;
+    --background-default: #ffffff;
 }
