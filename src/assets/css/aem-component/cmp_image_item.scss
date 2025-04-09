@@ -21,7 +21,7 @@
       color: var(--text-text-default);
     }
     .info-text {
-      color: var(--colorGL-all-gray850);
+      color: var(--colorCM-mode1-text-text-secondary);
       @media #{$phone} {
         margin-top: calc(0 / 16 * 1rem);
       }
@@ -79,14 +79,18 @@
           margin-bottom: calc(40 / 16 * 1rem);
         }
         .info-title {
-          color: var(--colorGL-all-gray950);
-          font-weight: 700;
+          color: var(--colorCM-mode1-text-text-defailt);
+          font-weight: 600;
           width: 100%;
           max-width: 48%;
         }
         .info-text {
           flex: 1;
         }
+      }
+      .img-box {
+        border-radius: calc(32 / 16 * 1rem);
+        overflow: hidden;
       }
     }
     &.type-left {

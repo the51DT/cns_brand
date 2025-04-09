@@ -4,7 +4,7 @@
     flex-direction: column;
     margin-bottom: calc(40 / 16 * 1rem);
     .teaser-title {
-        color: var(--text-text-default);
+        color: var(--colorCM-mode1-text-text-defailt);
         &.type-button-flex {
             display: flex;
             justify-content: space-between;
@@ -15,14 +15,14 @@
             }
         }
         strong {
-            font-weight: 700;
+            font-weight: 600;
         }
         &+.teaser-text {
             margin-top: calc(12 / 16 * 1rem);
         }
     }
     .teaser-text {
-        color: var(--text-text-default);
+        color: var(--colorCM-mode1-text-text-secondary);
         p+p {
             margin-top: calc(32 / 16 * 1rem);
             @media #{$phone} {
