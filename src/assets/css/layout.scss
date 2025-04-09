@@ -292,7 +292,7 @@ body {
         .btn-type {
             // border: 1px solid var(--colorGL-all-gray950);
             border: calc(1 / 16 * 1rem) solid var(--header-util-border-color);
-            border-radius: 50px;
+            border-radius: calc(50 / 16 * 1rem);
             display: flex;
             padding: calc(6 / 16 * 1rem) calc(30 / 16 * 1rem);
             justify-content: center;
@@ -710,7 +710,7 @@ body {
                         position: absolute;
                         width: 100%;
                         left:0;
-                        top: -239px;
+                        top: calc(-239 / 16 * 1rem);
                         padding: calc(11 / 16 * 1rem) calc(12 / 16 * 1rem);                        
                         background: var(--footer-family-site-dropdown-bg);
                         border-radius: var(--radius-mode1-3-x-l);
