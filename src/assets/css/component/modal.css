@@ -5,7 +5,6 @@
 .cmp-modal.is-active {
     display: block;
 }
-/* 1. modal - type default */
 .modal {
     position: fixed;
     top: 0;
@@ -19,6 +18,8 @@
 }
 .modal .modal__wrapper {
     padding: 0 calc(20 / 16 * 1rem);
+    width: 100%;
+    box-sizing: border-box;
 }
 .modal .modal__container {
     position: relative;
@@ -28,8 +29,7 @@
     gap: calc(40 / 16 * 1rem);
     margin: 0 auto;
     width: 100%;
-    max-width: calc(1008 / 16 * 1rem);
-    min-width: calc(480 / 16 * 1rem);
+    /* min-width: calc(480 / 16 * 1rem); */
     max-height: calc(100vh - calc(189 / 16 * 1rem));
     padding: calc(40 / 16 * 1rem);
     overflow: hidden;
@@ -75,6 +75,10 @@
     padding-bottom: calc(100 / 16 * 1rem);
 }
 
+/* footer 에 버튼 하나만 있을 경우 w100% 적용 */
+.modal .modal__footer .btn:only-of-type {
+    width: 100%;
+}
 .modal .modal__close {
     position: absolute;
     top: calc(40 / 16 * 1rem);
@@ -95,40 +99,59 @@
     opacity: 0.6;
     z-index: -1;
 }
-.modal .button_wrap--type-center .btn {
-    margin: 0 auto;
+/* 2. modal - type full */
+.modal--type-full .modal__container {
+    max-width: calc(1008 / 16 * 1rem);
 }
-
 /* 2. modal - type small */
 .modal--type-small .modal__container {
-    gap: calc(36 / 16 * 1rem);
-    padding: calc(36 / 16 * 1rem) calc(40 / 16 * 1rem) calc(40 / 16 * 1rem);
+    max-width: calc(480 / 16 * 1rem);
 }
 .modal--type-small .modal__content:after {
     display: none;
 }
+/* 3. modal - type alert */
+.modal--type-alert .modal__container {
+    gap: calc(36 / 16 * 1rem);
+    padding: calc(36 / 16 * 1rem) calc(40 / 16 * 1rem) calc(40 / 16 * 1rem);
+    max-width: calc(480 / 16 * 1rem);
+}
+.modal--type-alert .modal__content:after {
+    display: none;
+}
+
+
+/* popup content */
+.modal .button_wrap--type-center .btn {
+    margin: 0 auto;
+}
 
 @media only screen and (max-width : 767px) {
-    /* 1. modal - type default */
     .modal .modal__container {
         padding: calc(23.5 / 16 * 1rem) calc(20 / 16 * 1rem) calc(40 / 16 * 1rem);
         width: 100vw;
         min-width: 100%;
         max-width: 100%;
-        height: 100vh;
         min-height: 100%;
         max-height: 100%;
-        border-radius: 0;
+        
     }
     .modal .modal__close {
         top: calc(23.5 / 16 * 1rem);
         right: calc(20 / 16 * 1rem);
     }
-    /* 2. modal - type small */
-    .modal--type-small .modal__container {
+    /* 1. modal - type full */
+    .modal--type-full .modal__wrapper {
+        padding: 0 0;
+    }
+    .modal--type-full .modal__container {
+        height: 100vh;
+        border-radius: 0;
+    }
+    /* 2. modal - type alerts */
+    .modal--type-alert .modal__container {
         padding: calc(36 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
         width: calc(100vw - calc(40 / 16 * 1rem));
         height: calc(245 / 16 * 1rem);
-        border-radius: calc(16 / 16 * 1rem);
     }
 }
