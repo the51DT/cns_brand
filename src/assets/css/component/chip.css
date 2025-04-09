@@ -28,7 +28,7 @@
     color: var(--colorGL-all-gray700);
 }
 .chip.bg-black {
-    background: var(--colorCM-all-background-background-default8);
+    background: var(--colorCM-mode1-background-background-default8);
     color: var(--colorCM-all-text-text-on-bg);
 }
 /* ~ $phone */

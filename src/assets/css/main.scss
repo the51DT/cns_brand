@@ -132,7 +132,7 @@
       align-items: center;
       width: 100%;
       height: calc(1080 / 16 * 1rem);
-      background-color: var(--colorCM-all-background-background-default2);
+      background-color: var(--colorCM-mode1-background-background-default2);
       @media #{$phone} {
         height: auto;
       }
@@ -154,7 +154,7 @@
       justify-content: center;
       align-items: center;
       padding: calc(27 / 16 * 1rem) calc(20 / 16 * 1rem);
-      background-color: var(--colorCM-all-background-background-default0);
+      background-color: var(--colorCM-mode1-background-background-default0);
       @media #{$phone} {
         padding: calc(6 / 16 * 1rem) calc(8 / 16 * 1rem);
       }
@@ -190,7 +190,7 @@
       justify-content: center;
       width: 100%;
       padding: calc(150 / 16 * 1rem);
-      background-color: var(--colorCM-all-background-background-default0);
+      background-color: var(--colorCM-mode1-background-background-default0);
       @media #{$phone} {
         height: auto;
         padding: calc(32 / 16 * 1rem) 0;
@@ -199,7 +199,7 @@
         margin-bottom: 0;
         &.dataList {
           .content-list__wrap.thumbnail-type .content-list__inner .content-info {
-            background-color: var(--colorCM-all-background-background-default0);
+            background-color: var(--colorCM-mode1-background-background-default0);
             .title {
               @include ellipsis(1);
               height: calc(39 / 16 * 1rem);

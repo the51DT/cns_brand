@@ -1,18 +1,18 @@
 // header 기본 스타일 변수
 :root {
-    --header-bg: var(--colorCM-all-background-background-default0);
-    --header-active-bg : var(--colorCM-all-background-background-default0);
-    --header-2depth-bg: var(--colorCM-all-background-background-default0);
+    --header-bg: var(--colorCM-mode1-background-background-default0);
+    --header-active-bg : var(--colorCM-mode1-background-background-default0);
+    --header-2depth-bg: var(--colorCM-mode1-background-background-default0);
     --header-border-color: var(--colorCM-all-stroke-stroke-default7);
     --header-active-border-color: var(--colorCM-all-stroke-stroke-default7);
     --header-font-color: var(--text-text-default);
-    --header-active-underbar-bg: var(--colorCM-all-background-background-default10);
+    --header-active-underbar-bg: var(--colorCM-mode1-background-background-default10);
     --header-util-border-color: var(--colorCM-all-stroke-stroke-default4);
     --header-logo-bl-display: block;
     --header-logo-wh-display: none;
     --header-icon-bl-display: inline-flex;
     --header-icon-wh-display: none;
-    --footer-bg: var(--colorCM-all-background-background-default0);
+    --footer-bg: var(--colorCM-mode1-background-background-default0);
     --footer-font-color: var(--text-text-default);
     --footer-family-site-dropdown-bg : #F0F0F0;
     --footer-family-site-dropdown-icon: url('/src/assets/image/icon/icon-plus-bl16.svg');
@@ -28,7 +28,7 @@ body {
         --header-bg: transparent;
         --header-border-color: rgba(255,255,255,0.20);
         --header-font-color: var(--colorCM-all-text-text-on-bg);
-        --header-active-underbar-bg: var(--colorCM-all-background-background-default0);
+        --header-active-underbar-bg: var(--colorCM-mode1-background-background-default0);
         --header-util-border-color: rgba(255,255,255,0.20);
         --header-icon-bl-display: none;
         --header-icon-wh-display: inline-flex;
@@ -38,7 +38,7 @@ body {
             // gnb 펼쳐졌을 경우 스타일 변수 변경
             &.is-active {
                 --header-font-color: var(--text-text-default);
-                --header-active-underbar-bg: var(--colorCM-all-background-background-default10);
+                --header-active-underbar-bg: var(--colorCM-mode1-background-background-default10);
             }
         }
     }
@@ -565,10 +565,10 @@ body {
             z-index: 99;
         }
         &.is-bg-transparent {
-            --header-bg: var(--colorCM-all-background-background-default0);
+            --header-bg: var(--colorCM-mode1-background-background-default0);
             --header-border-color: var(--colorCM-all-stroke-stroke-default7);
             --header-font-color: var(--text-text-default);
-            --header-active-underbar-bg: var(--colorCM-all-background-background-default10);
+            --header-active-underbar-bg: var(--colorCM-mode1-background-background-default10);
             --header-util-border-color: var(--colorCM-all-stroke-stroke-default4);
             --header-logo-bl-display: block;
             --header-logo-wh-display: none;
@@ -591,7 +591,7 @@ body {
         --header-bg: transparent;
         --header-border-color: rgba(255,255,255,0.20);
         --header-font-color: var(--colorCM-all-text-text-on-bg);
-        --header-active-underbar-bg: var(--colorCM-all-background-background-default0);
+        --header-active-underbar-bg: var(--colorCM-mode1-background-background-default0);
         --header-util-border-color: rgba(255,255,255,0.20);
         --header-icon-bl-display: none;
         --header-icon-wh-display: inline-flex;
@@ -751,7 +751,7 @@ body {
         }
     }
     &.type-dark {
-        --footer-bg: var(--colorCM-all-background-background-default10);
+        --footer-bg: var(--colorCM-mode1-background-background-default10);
         --footer-font-color: var(--colorCM-all-text-text-on-bg);
         --footer-family-site-dropdown-icon: url('/src/assets/image/icon/icon-plus-wh16.svg');
         --footer-family-site-dropdown-bg : var(--colorCM-mode1-fill-fill-default10);

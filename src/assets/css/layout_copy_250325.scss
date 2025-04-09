@@ -346,7 +346,7 @@ body {
                     left: 0;
                     width: 100%;
                     height: calc(100vh - calc(80 / 16 * 1rem));
-                    background: var(--colorCM-all-background-background-default0);
+                    background: var(--colorCM-mode1-background-background-default0);
                     overflow-y: auto;
                     z-index: 1;
                 }
@@ -530,7 +530,7 @@ body {
             position: fixed;
             top:0;
             left: 0;
-            background-color: var(--colorCM-all-background-background-default0);
+            background-color: var(--colorCM-mode1-background-background-default0);
             transform: translateY(0);
         }
         &.header__wrap--fixed-motion {
@@ -870,7 +870,7 @@ body {
         }
     }
     &.type-dark {
-        background: var(--colorCM-all-background-background-default10);
+        background: var(--colorCM-mode1-background-background-default10);
         border-top: calc(1 / 16 * 1rem) solid rgba(255, 255, 255, 0.20);
         .footer-info__top {
             .footer-menu {

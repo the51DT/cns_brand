@@ -312,7 +312,7 @@
     left: 0;
     width: calc(6 / 16 * 1rem);
     height: calc(6 / 16 * 1rem);
-    background: var(--colorCM-all-background-background-default8);
+    background: var(--colorCM-mode1-background-background-default8);
     border-radius: 50%;
 }
 /* ItemList 컴포넌트 가이드 스타일 */

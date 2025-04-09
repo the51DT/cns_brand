@@ -36,7 +36,7 @@
     z-index: 1;
     box-sizing: border-box;
     border-radius: calc(16 / 16 * 1rem);
-    background: var(--colorCM-all-background-background-default0);
+    background: var(--colorCM-mode1-background-background-default0);
 }
 .modal .modal__header {
     display: flex;
@@ -95,7 +95,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: var(--colorCM-all-background-background-default10);
+    background: var(--colorCM-mode1-background-background-default10);
     opacity: 0.6;
     z-index: -1;
 }
