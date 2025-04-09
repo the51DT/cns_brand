@@ -26,7 +26,7 @@
     width: 100%;
     height: 100%;
     padding: 0 calc(40 / 16 * 1rem);
-    color: var(--colorCM-all-text-text-tertiary);     
+    color: var(--colorCM-mode1-text-text-tertiary);     
     font-size: calc(var(--typo-pc-size-body-lg) / 16 * 1rem);    
     font-weight: 500;
     line-height: calc(var(--typo-pc-line-height-body-lg) / 16 * 1rem);

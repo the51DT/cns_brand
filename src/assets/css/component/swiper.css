@@ -40,7 +40,7 @@
 .swiper-thumbnail .content-info .title + .description {
 }
 .swiper-thumbnail .content-info .description {
-    color: var(--colorCM-all-text-text-secondary);
+    color: var(--colorCM-mode1-text-text-secondary);
     margin-bottom: calc(32 / 16 * 1rem);
     display: -webkit-box;
     overflow: hidden;

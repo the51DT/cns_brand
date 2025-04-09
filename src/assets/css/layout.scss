@@ -27,7 +27,7 @@ body {
         // header.dark-mode 스타일 변수로 변경
         --header-bg: transparent;
         --header-border-color: rgba(255,255,255,0.20);
-        --header-font-color: var(--colorCM-all-text-text-on-bg);
+        --header-font-color: var(--colorCM-mode1-text-text-on-bg);
         --header-active-underbar-bg: var(--colorCM-mode1-background-background-default0);
         --header-util-border-color: rgba(255,255,255,0.20);
         --header-icon-bl-display: none;
@@ -590,7 +590,7 @@ body {
         // header.dark-mode 스타일 변수로 변경
         --header-bg: transparent;
         --header-border-color: rgba(255,255,255,0.20);
-        --header-font-color: var(--colorCM-all-text-text-on-bg);
+        --header-font-color: var(--colorCM-mode1-text-text-on-bg);
         --header-active-underbar-bg: var(--colorCM-mode1-background-background-default0);
         --header-util-border-color: rgba(255,255,255,0.20);
         --header-icon-bl-display: none;
@@ -752,7 +752,7 @@ body {
     }
     &.type-dark {
         --footer-bg: var(--colorCM-mode1-background-background-default10);
-        --footer-font-color: var(--colorCM-all-text-text-on-bg);
+        --footer-font-color: var(--colorCM-mode1-text-text-on-bg);
         --footer-family-site-dropdown-icon: url('/src/assets/image/icon/icon-plus-wh16.svg');
         --footer-family-site-dropdown-bg : var(--colorCM-mode1-fill-fill-default10);
 
@@ -788,7 +788,7 @@ body {
     }
     &.type-transparent-wh {
         --footer-bg: transparent;
-        --footer-font-color: var(--colorCM-all-text-text-on-bg);
+        --footer-font-color: var(--colorCM-mode1-text-text-on-bg);
         --footer-family-site-dropdown-icon: url('/src/assets/image/icon/icon-plus-wh16.svg');
         --footer-family-site-dropdown-bg : var(--colorCM-mode1-fill-fill-default10);
 

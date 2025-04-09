@@ -5,7 +5,7 @@
   height: 100%;
   margin-bottom: 0;
   &__wrap {
-    color: var(--colorCM-all-text-text-on-bg);
+    color: var(--colorCM-mode1-text-text-on-bg);
     @media #{$phone} {
       padding-top: calc(80 / 16 * 1rem);
       padding-bottom: calc(80 / 16 * 1rem);

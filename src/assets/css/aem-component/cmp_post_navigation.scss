@@ -26,7 +26,7 @@
         }
         &__link {
             @include ellipsis($line: 1);
-            color: var(--colorCM-all-text-text-tertiary);
+            color: var(--colorCM-mode1-text-text-tertiary);
         }
     }
 }

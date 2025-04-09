@@ -65,19 +65,19 @@
     &--disabled {
       border-color: var(--colorCM-all-stroke-stroke-default6);
       background-color: var(--colorCM-mode1-fill-fill-disabled);
-      color: var(--colorCM-all-text-text-disabled);
+      color: var(--colorCM-mode1-text-text-disabled);
       opacity: 1;
       &::placeholder {
-        color: var(--colorCM-all-text-text-disabled);
+        color: var(--colorCM-mode1-text-text-disabled);
       }
     }
     &--readonly {
       border: none;
       background-color: var(--colorCM-mode1-fill-fill-default3);
-      color: var(--colorCM-all-text-text-tertiary);
+      color: var(--colorCM-mode1-text-text-tertiary);
       opacity: 1;
       &::placeholder {
-        color: var(--colorCM-all-text-text-tertiary);
+        color: var(--colorCM-mode1-text-text-tertiary);
       }
     }
     &--error {
@@ -94,9 +94,9 @@
       background-size: calc(20 / 16 * 1rem);
       background-position: right calc(14 / 16 * 1rem) top 50%;
       &:has(> option[value=""]:checked):not(.cmp-input__item--readonly) {
-        color: var(--colorCM-all-text-text-disabled);
+        color: var(--colorCM-mode1-text-text-disabled);
         &:focus {
-          color: var(--colorCM-all-text-text-default);
+          color: var(--colorCM-mode1-text-text-defailt);
         }
       }
       &[readonly] {
@@ -110,9 +110,9 @@
       background-size: calc(20 / 16 * 1rem);
       background-position: right calc(14 / 16 * 1rem) top 50%;
       &:has(> option[value=""]:checked) {
-        color: var(--colorCM-all-text-text-disabled);
+        color: var(--colorCM-mode1-text-text-disabled);
         &:focus {
-          color: var(--colorCM-all-text-text-default);
+          color: var(--colorCM-mode1-text-text-defailt);
         }
       }
       &[readonly] {
