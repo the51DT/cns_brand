@@ -36,7 +36,7 @@
     display: inline-flex;
     position: absolute;
     background-color: #1a1a1a;
-    /* background-color: var(--colorCM-all-primary-primary-enabled); */
+    /* background-color: var(--colorCM-mode1-primary-primary-enabled); */
 }
 .cmp-accordion .accordion-list li .accordion-title i::before {
     width: 100%;
@@ -59,7 +59,7 @@
 .cmp-accordion .accordion-list li.is-active i::after {
     transform: translateX(-50%) rotate(90deg);
     transition: all 0.3s;
-    background-color: var(--colorCM-all-primary-primary-enabled);
+    background-color: var(--colorCM-mode1-primary-primary-enabled);
 }
 .cmp-accordion .accordion-list li .accordion-title .tit {    
     font-style: normal;
@@ -71,7 +71,7 @@
     text-align: left;
 }
 .cmp-accordion .accordion-list li.is-active .accordion-title .tit {
-    color: var(--colorCM-all-primary-primary-enabled);
+    color: var(--colorCM-mode1-primary-primary-enabled);
 }
 .cmp-accordion .accordion-list li .accordion-content {
     display: none;

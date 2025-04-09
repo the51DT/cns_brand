@@ -54,7 +54,7 @@
 }
 /* .btn.btn-primary:hover,
 .btn.btn-primary.is-active {
-    background-color: var(--colorCM-all-primary-primary-pressed);
+    background-color: var(--colorCM-mode1-primary-primary-pressed);
     color: var(--colorCM-mode1-text-text-on-bg);
 } */
 .btn.btn-primary:disabled,
@@ -76,7 +76,7 @@
     color: var(--colorCM-mode1-text-text-on-bg);
 }
 .btn.btn-secondary.is-active {
-    background-color: var(--colorCM-all-primary-primary-enabled);
+    background-color: var(--colorCM-mode1-primary-primary-enabled);
     color: var(--colorCM-mode1-text-text-on-bg);
 } */
 .btn.btn-secondary:disabled,

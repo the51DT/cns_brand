@@ -19,7 +19,7 @@
         content: '*';
         display: inline-block;
         margin-left: calc(2 / 16 * 1rem);
-        color: var(--colorCM-all-primary-primary-enabled);
+        color: var(--colorCM-mode1-primary-primary-enabled);
       }
     }
   }
@@ -138,14 +138,14 @@
       background-size: cover;
       background-position: center;
       &:checked {
-        background-color: var(--colorCM-all-primary-primary-enabled);
+        background-color: var(--colorCM-mode1-primary-primary-enabled);
         background-image: url(../../image/icon/ico_checkbox_white.svg);
         border: none;
       }
       &:disabled {
         background-color: var(--colorCM-mode1-fill-fill-default3);
         &:checked {
-          background-color: var(--colorCM-all-primary-primary-enabled);
+          background-color: var(--colorCM-mode1-primary-primary-enabled);
           opacity: 0.4;
         }
       }
@@ -181,7 +181,7 @@
       border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
       background-color: var(--colorCM-mode1-fill-fill-default0);
       &:checked {
-        border-color: var(--colorCM-all-primary-primary-enabled);
+        border-color: var(--colorCM-mode1-primary-primary-enabled);
         &::after {
           content: '';
           position: absolute;
@@ -192,7 +192,7 @@
           height: calc(15 / 16 * 1rem);
           transform: translate(-50%, -50%);
           border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
-          background-color: var(--colorCM-all-primary-primary-enabled);
+          background-color: var(--colorCM-mode1-primary-primary-enabled);
         }
       }
       &:disabled {
@@ -277,7 +277,7 @@
         li {
           padding: calc(6 / 16 * 1rem) calc(14 / 16 * 1rem);
           &.is-active {
-            color: var(--colorCM-all-primary-primary-enabled);
+            color: var(--colorCM-mode1-primary-primary-enabled);
             button {
               font-weight: 600;
             }
@@ -289,7 +289,7 @@
   &__count {
     text-align: right;
     & > span {
-      color: var(--colorCM-all-primary-primary-enabled);
+      color: var(--colorCM-mode1-primary-primary-enabled);
     }
   }
   &__info {

@@ -1,14 +1,14 @@
 /* 칼라 시스템 */
 .colorcm-primary {
-    color: var(--colorCM-all-primary-primary-enabled);
+    color: var(--colorCM-mode1-primary-primary-enabled);
 }
 .colorcm-primary.is-select,
 a.colorcm-primary:hover,
 button.colorcm-primary:hover  {
-    color: var(--colorCM-all-primary-primary-pressed);
+    color: var(--colorCM-mode1-primary-primary-pressed);
 }
 .colorcm-primary.is-disabled {
-    color: var(--colorCM-all-primary-primary-disabled);
+    color: var(--colorCM-mode1-primary-primary-disabled);
 }
 .colorcm-sub-primary {
     color: var(--colorCM-all-primary-primary-sub-enabled);
@@ -23,14 +23,14 @@ button.colorcm-sub-primary:hover {
 }
 
 .bg-colorcm-primary {
-    background: var(--colorCM-all-primary-primary-enabled);
+    background: var(--colorCM-mode1-primary-primary-enabled);
 }
 .bg-colorcm-primary.is-select,
 .bg-colorcm-primary:hover {
-    background: var(--colorCM-all-primary-primary-pressed);
+    background: var(--colorCM-mode1-primary-primary-pressed);
 }
 .bg-colorcm-primary.is-disabled {
-    background: var(--colorCM-all-primary-primary-disabled);
+    background: var(--colorCM-mode1-primary-primary-disabled);
 }
 .bg-colorcm-sub-primary {
     background: var(--colorCM-all-primary-primary-sub-enabled);
