@@ -12,21 +12,28 @@
     }
     .inner-wrap {
         height: 100%;
-        padding: calc(56 / 16 * 1rem) calc(var(--spacing-mode1-horizontal-x-l) / 16 * 1rem);
-        text-align: center;
+        padding: calc(120 / 16 * 1rem) calc(713 / 16 * 1rem) calc(120 / 16 * 1rem) calc(240 / 16 * 1rem);
+
+        @media #{$phone}{
+            padding: calc(72 / 16 * 1rem) calc(100 / 16 * 1rem) calc(79 / 16 * 1rem) calc(20 / 16 * 1rem);
+        }
     }
     .banner_content {
-        p {
-            margin-bottom: calc(40 / 16 * 1rem);
-            font-size: calc(var(--typo-pc-size-head-xs) / 16 * 1rem);
-            font-weight: 600;
-            line-height: 42px;
-            color: var(--colorGL-all-white100);
-            @media #{$tablet} {
-                font-size: calc(var(--typo-tablet-size-head-xs) / 16 * 1rem);
+        .cmp-buttonbanner-subtitle{
+            color: var(--colorGL-all-grey350);
+            margin-bottom: calc(16 / 16 * 1rem);
+
+            @media #{$phone}{
+                margin-bottom: calc(12 / 16 * 1rem);
             }
-            @media #{$phone} {
-                font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
+        }
+        .cmp-buttonbanner-title{
+            margin-bottom: calc(56 / 16 * 1rem);
+            color: var(--colorGL-all-grey500);
+
+            @media #{$phone}{
+                font-size: calc(20 / 16 * 1rem);
+                margin-bottom: calc(45 / 16 * 1rem);
             }
         }
     }
