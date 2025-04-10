@@ -74,6 +74,12 @@
           "fileName": "cmp_badge.html"
         },
         {
+          "name": "태그",
+          "screenId": "",
+          "path": "/src/component/",
+          "fileName": "cmp_tag.html"
+        },
+        {
           "name": "테이블(Table)",
           "screenId": "",
           "path": "/src/guide/",
