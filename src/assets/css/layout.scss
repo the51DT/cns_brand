@@ -3,7 +3,7 @@
     --header-bg: var(--colorCM-mode1-background-background-default0);
     --header-active-bg : var(--colorCM-mode1-background-background-default0);
     --header-2depth-bg: var(--colorCM-mode1-background-background-default0);
-    --header-border-color: var(--colorCM-all-stroke-stroke-default7);
+    --header-border-color: var(--colorCM-mode1-stroke-stroke-default2);
     --header-active-border-color: var(--colorCM-all-stroke-stroke-default7);
     --header-font-color: var(--text-text-default);
     --header-active-underbar-bg: var(--colorCM-mode1-background-background-default10);
@@ -27,7 +27,7 @@ body {
     &.dark-mode {
         // header.dark-mode 스타일 변수로 변경
         --header-bg: transparent;
-        --header-border-color: rgba(255,255,255,0.20);
+        // --header-border-color: rgba(255,255,255,0.20);
         --header-font-color: var(--colorCM-mode1-text-text-on-bg);
         --header-active-underbar-bg: var(--colorCM-mode1-background-background-default0);
         --header-util-border-color: rgba(255,255,255,0.20);
@@ -74,7 +74,7 @@ body {
     border-bottom: calc(1 / 16 * 1rem) solid var(--header-border-color);
     z-index: 100;
     display: flex;
-    height: calc(80 / 16 * 1rem);
+    height: calc(100 / 16 * 1rem);
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
@@ -137,7 +137,7 @@ body {
             }
             & > a {
                 color: var(--header-font-color);
-                font-weight: 600;
+                font-weight: 500;
                 position: relative;
                 display: block;
                 &::after {
@@ -146,10 +146,11 @@ body {
                     position: absolute;
                     left: 50%;
                     transform: translateX(-50%);
-                    bottom: calc(-28 / 16 * 1rem);
-                    width: 0%;
-                    height: calc(4 / 16 * 1rem);
+                    bottom: calc(-4 / 16 * 1rem);
+                    width: 0;
+                    height: 0;
                     background-color: var(--header-active-underbar-bg);
+                    border-radius: 50%;
                     transition: width 0.3s;
                 }
                 &:hover {
@@ -158,7 +159,8 @@ body {
                     transform: scaleX(1.1);
                     transform-origin: center;
                     &::after {
-                        width: 100%;
+                        width: calc(4 / 16 * 1rem);
+                        height: calc(4 / 16 * 1rem);
                         transition: width 0.3s;
                     }
                 }
@@ -167,7 +169,7 @@ body {
                 display: none;
                 z-index: 100;
                 position: absolute;
-                top: calc(80 / 16 * 1rem);
+                top: calc(100 / 16 * 1rem);
                 left:0;
                 background-color: var(--header-active-bg);
                 width: 100%;
@@ -177,7 +179,7 @@ body {
                 width: 100%;
                 max-width: calc(1354 / 16 * 1rem);
                 position: absolute;
-                top: calc(80 / 16 * 1rem);
+                top: calc(100 / 16 * 1rem);
                 z-index: 100;
                 left: 50%;
                 transform: translateX(-50%);
@@ -256,10 +258,10 @@ body {
                 & > a {
                     padding: 0 calc(5 / 16 * 1rem);
                     transition: all 0.3s;
-                    transform: scaleX(1.1);
-                    transform-origin: center;
+                    // transform: scaleX(1.1);
+                    // transform-origin: center;
                     &::after {
-                        width: 100%;
+                        // width: 100%;
                         transition: width 0.3s;
                     }
                 }
@@ -559,14 +561,14 @@ body {
             position: absolute;
             width: 100%;
             left: 0;
-            top: calc(80 / 16 * 1rem);
+            top: calc(100 / 16 * 1rem);
             height: var(--gnb-bg-height);
             background-color: var(--header-active-bg);
             z-index: 99;
         }
         &.is-bg-transparent {
             --header-bg: var(--colorCM-mode1-background-background-default0);
-            --header-border-color: var(--colorCM-all-stroke-stroke-default7);
+            // --header-border-color: var(--colorCM-all-stroke-stroke-default7);
             --header-font-color: var(--text-text-default);
             --header-active-underbar-bg: var(--colorCM-mode1-background-background-default10);
             --header-util-border-color: var(--colorCM-all-stroke-stroke-default4);
@@ -582,10 +584,10 @@ body {
         .dim {
             display: block;
             width: 100%;
-            height: calc(100vh - calc(80 / 16 * 1rem));
+            height: calc(100vh - calc(100 / 16 * 1rem));
             position: absolute;
             left: 0;
-            top: calc(80 / 16 * 1rem);
+            top: calc(100 / 16 * 1rem);
             z-index: 99;
             background: rgba(0,0,0,0.60);
         }
@@ -593,7 +595,7 @@ body {
     &.is-bg-transparent {
         // header.dark-mode 스타일 변수로 변경
         --header-bg: transparent;
-        --header-border-color: rgba(255,255,255,0.20);
+        // --header-border-color: rgba(255,255,255,0.20);
         --header-font-color: var(--colorCM-mode1-text-text-on-bg);
         --header-active-underbar-bg: var(--colorCM-mode1-background-background-default0);
         --header-util-border-color: rgba(255,255,255,0.20);
@@ -611,10 +613,10 @@ body {
         top: 0;
         left: 0;
         z-index: 100;
-        // transform: translateY(calc(-80 / 16 * 1rem));
+        // transform: translateY(calc(-100 / 16 * 1rem));
     }
     &.is-motion {
-        transform: translateY(calc(-80 / 16 * 1rem));
+        transform: translateY(calc(-100 / 16 * 1rem));
     }
     .dim {
         display: none;
@@ -827,9 +829,12 @@ body {
 .header-inner,
 .inner-wrap {
     padding: 0 calc(20 / 16 * 1rem); 
+    max-width: 100%;
+    box-sizing: border-box;
     @media #{$min1280} {
-        max-width: calc(1920 / 16 * 1rem);
-        padding: 0 calc(80 / 16 * 1rem); 
+        margin: 0 auto;
+        max-width: calc(1480 / 16 * 1rem);
+        // padding: 0 calc(80 / 16 * 1rem); 
     }
     // max-width: calc(1920 / 16 * 1rem);
     // padding: 0 calc(80 / 16 * 1rem);    
