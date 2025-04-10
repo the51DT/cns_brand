@@ -12,6 +12,9 @@
 .cmp-accordion .accordion-list li {
     border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
 }
+.cmp-accordion .accordion-list li:last-child {
+    border-bottom: none;
+}
 .cmp-accordion .accordion-list li .accordion-title {
     display: flex;
     align-items: center; 
@@ -57,7 +60,7 @@
 }
 .cmp-accordion .accordion-list li .accordion-title .tit {
     font-style: normal;
-    color: var(--colorCM-mode1-text-text-secondary);     
+    color: var(--colorGL-all-grey500);     
     font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
     font-weight: 600;    
     line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem); 
@@ -118,7 +121,7 @@
     }
     .cmp-accordion .accordion-list li.is-active .accordion-content {
         padding: 0 calc(96 / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
-        font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);    
+        font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);    
         font-weight: 400;
         line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
     }
