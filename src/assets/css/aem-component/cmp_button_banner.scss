@@ -11,8 +11,8 @@
         background-position: left top;
     }
     .inner-wrap {
-        height: 100%;
-        padding: calc(120 / 16 * 1rem) calc(713 / 16 * 1rem) calc(120 / 16 * 1rem) calc(240 / 16 * 1rem);
+        margin: 0;
+        padding: calc(120 / 16 * 1rem) 0  calc(120 / 16 * 1rem) calc(240 / 16 * 1rem);
 
         @media #{$phone}{
             padding: calc(72 / 16 * 1rem) calc(100 / 16 * 1rem) calc(79 / 16 * 1rem) calc(20 / 16 * 1rem);
