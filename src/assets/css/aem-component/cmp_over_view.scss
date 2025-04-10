@@ -30,6 +30,9 @@
                 margin-top: calc(16 / 16 * 1rem);
             }
         }
+        &+.cmp-overview-text4{
+            color: var(--colorCM-mode1-text-text-secondary);
+        }
     }
     .cmp-overview-text {
         color: var(--colorCM-mode1-text-text-secondary);
