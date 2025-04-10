@@ -12,7 +12,7 @@
     }
     .inner-wrap {
         margin: 0;
-        padding: calc(120 / 16 * 1rem) 0  calc(120 / 16 * 1rem) calc(240 / 16 * 1rem);
+        padding: calc(120 / 16 * 1rem) calc(240 / 16 * 1rem) calc(120 / 16 * 1rem) calc(240 / 16 * 1rem);
 
         @media #{$phone}{
             padding: calc(72 / 16 * 1rem) calc(100 / 16 * 1rem) calc(79 / 16 * 1rem) calc(20 / 16 * 1rem);
@@ -21,14 +21,14 @@
     .banner_content {
         .cmp-buttonbanner-subtitle{
             color: var(--colorGL-all-grey350);
-            margin-bottom: calc(16 / 16 * 1rem);
+            margin-bottom: calc(17 / 16 * 1rem);
 
             @media #{$phone}{
                 margin-bottom: calc(12 / 16 * 1rem);
             }
         }
         .cmp-buttonbanner-title{
-            margin-bottom: calc(56 / 16 * 1rem);
+            margin-bottom: calc(83 / 16 * 1rem);
             color: var(--colorGL-all-grey500);
 
             @media #{$phone}{
