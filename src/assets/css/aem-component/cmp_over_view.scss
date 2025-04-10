@@ -2,6 +2,19 @@
 .cmp-overview__wrap {
     display: flex;
     flex-direction: column;
+
+    &--row{
+        flex-direction: row;
+        gap: calc(20 / 16 * 1rem);
+
+        @media #{$phone} {
+            flex-direction: column;
+        }
+
+        .cmp-overview-title{
+            flex: 0 0 50%;
+        }
+    }
     .cmp-overview-title {
         color: var(--text-text-default);
         font-weight: 500;
