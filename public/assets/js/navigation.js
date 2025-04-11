@@ -124,17 +124,17 @@ const subVisualHeight = subVisual ?  subVisual.offsetHeight : 0;
 const mainVisualHeight = mainVisual ? mainVisual.offsetHeight : 0;
 const scrollEventManage = () => {
     const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
-    if(subVisual || mainVisual || bodyDarkMode) {
-        if(Yoffset < subVisualHeight || Yoffset < mainVisualHeight || bodyDarkMode) {
-            if(subVisual && !subVisual.classList.contains('type-empty')) {
-                headerWrap.classList.add('is-bg-transparent');
-                headerWrap.classList.add('is-fixed');
-            }
-        } else {
-            headerWrap.classList.remove('is-bg-transparent');
-            headerWrap.classList.remove('is-fixed');
-        }
-    }
+    // if(subVisual || mainVisual || bodyDarkMode) {
+    //     if(Yoffset < subVisualHeight || Yoffset < mainVisualHeight || bodyDarkMode) {
+    //         if(subVisual && !subVisual.classList.contains('type-empty')) {
+    //             headerWrap.classList.add('is-bg-transparent');
+    //             headerWrap.classList.add('is-fixed');
+    //         }
+    //     } else {
+    //         headerWrap.classList.remove('is-bg-transparent');
+    //         headerWrap.classList.remove('is-fixed');
+    //     }
+    // }
 
     if(Yoffset == 0) {
         onTopScroll();
@@ -163,22 +163,23 @@ const onUpScroll = () => {
 
 const onTopScroll = () => {
     // console.log('00')
-    if(subVisual && !subVisual.classList.contains('type-empty') || bodyDarkMode){
-        headerWrap.classList.add('is-bg-transparent');
-        headerWrap.classList.add('is-fixed');
-    } else {
-        headerWrap.classList.remove('is-fixed');
-    }
-
+    // if(subVisual && !subVisual.classList.contains('type-empty') || bodyDarkMode){
+    //     headerWrap.classList.add('is-bg-transparent');
+    //     headerWrap.classList.add('is-fixed');
+    // } else {
+    //     headerWrap.classList.remove('is-fixed');
+    // }
+    headerWrap.classList.remove('is-fixed');
+    headerWrap.classList.remove('is-motion');
 }
 
 
-const scrollPos = window.scrollY || document.documentElement.scrollTop;
-// console.log(scrollPos)
-if(subVisual && !subVisual.classList.contains('type-empty') || bodyDarkMode){
-    headerWrap.classList.add('is-bg-transparent');
-    headerWrap.classList.add('is-fixed');
-}
+// const scrollPos = window.scrollY || document.documentElement.scrollTop;
+// // console.log(scrollPos)
+// if(subVisual && !subVisual.classList.contains('type-empty') || bodyDarkMode){
+//     headerWrap.classList.add('is-bg-transparent');
+//     headerWrap.classList.add('is-fixed');
+// }
 
 window.addEventListener("scroll", scrollEventManage);
 mainNavigation('.navy-list > li > a');
