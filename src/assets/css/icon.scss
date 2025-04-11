@@ -116,4 +116,7 @@ $fileType: "svg";
     &.icon-close-bl32 {
         @include iconFile(32,32,'icon-close-bl32');
     }   
+    &.icon-arrow-right-bl48{
+        @include iconFile(48, 48, 'icon_arrow_right_bl48');
+    }
 }
