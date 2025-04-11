@@ -17,6 +17,9 @@ $fileType: "svg";
     &.icon-lang-bl24 {
         @include iconFile(24,24,'icon_lang_bl24');
     }
+    &.icon-lang-bl40 {
+        @include iconFile(40,40,'icon_lang_bl40');
+    }
     &.icon-earth-wt24 {
         @include iconFile(24,24,'ico_language');
     }
@@ -115,7 +118,10 @@ $fileType: "svg";
     }  
     &.icon-close-bl32 {
         @include iconFile(32,32,'icon-close-bl32');
-    }   
+    }  
+    &.icon-close-bl40 {
+        @include iconFile(40,40,'icon-close-bl40');
+    } 
     &.icon-arrow-right-bl48{
         @include iconFile(48, 48, 'icon_arrow_right_bl48');
     }

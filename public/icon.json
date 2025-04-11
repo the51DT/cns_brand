@@ -1,6 +1,7 @@
 {
   "icons": [
     "icon-lang-bl24",
+    "icon-lang-bl40",
     "icon-earth-wt24",
     "icon-search-wt24",
     "icon-search-bl35",
@@ -34,6 +35,7 @@
     "icon-plus-wh24",
     "icon-plus-wh16",
     "icon-close-bl32",
+    "icon-close-bl40",
     "icon-arrow-right-bl48"
   ]
 }
