@@ -1,45 +1,53 @@
-// overview
 .cmp-overview__wrap {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 
-    &--row{
-        flex-direction: row;
+    &--row {
+        flex-direction: column;
         gap: calc(20 / 16 * 1rem);
 
-        @media #{$phone} {
-            flex-direction: column;
+        .cmp-overview-title {
+            flex: none;
         }
 
-        .cmp-overview-title{
-            flex: 0 0 50%;
+        @media #{$min720} {
+            flex-direction: row;
+
+            .cmp-overview-title {
+                flex: 0 0 50%;
+            }
         }
     }
+
     .cmp-overview-title {
         color: var(--text-text-default);
         font-weight: 500;
-        &+.cmp-overview-text {
-            margin-top: calc(32 / 16 * 1rem);
-            @media #{$phone} {
-                margin-top: calc(24 / 16 * 1rem);
+
+        & + .cmp-overview-text {
+            margin-top: calc(24 / 16 * 1rem);
+
+            @media #{$min720} {
+                margin-top: calc(32 / 16 * 1rem);
             }
         }
-        &+.cmp-overview-text2 {
-            margin-top: calc(16 / 16 * 1rem);
-            @media #{$phone} {
-                margin-top: calc(16 / 16 * 1rem);
-            }
+
+        & + .cmp-overview-text2 {
+            margin-top: calc(16 / 16 * 1rem);  
         }
-        &+.cmp-overview-text4{
+
+        & + .cmp-overview-text4 {
             color: var(--colorCM-mode1-text-text-secondary);
         }
     }
+
     .cmp-overview-text {
         color: var(--colorCM-mode1-text-text-secondary);
-        p+p {
-            margin-top: calc(16 / 16 * 1rem);
-            @media #{$phone} {
-                margin-top: calc(12 / 16 * 1rem);
+
+        p + p {
+            margin-top: calc(12 / 16 * 1rem);  
+
+            @media #{$min720} {
+                margin-top: calc(16 / 16 * 1rem);
             }
         }
     }
