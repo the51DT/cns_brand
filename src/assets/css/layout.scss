@@ -225,16 +225,7 @@ body {
                     }
                 }
             }
-            .gnb-sub__wrap--drop {
-                display: none;
-                z-index: 100;
-                position: absolute;
-                top: calc(99 / 16 * 1rem);
-                left:0;
-                background-color: var(--header-active-bg);
-                border-top: calc(1 / 16 * 1rem) solid var(--header-border-color);
-                width: 100%;
-            }
+            // PC 2depth menu wrapper (left)
             .gnb-sub__wrap {
                 display: none;
                 width: 100%;
@@ -247,7 +238,31 @@ body {
                 background-color: var(--header-active-bg);
                 border-top: calc(1 / 16 * 1rem) solid var(--header-border-color);
             }
-            // PC 2depth menu
+            // PC 2depth menu wrapper - drop (right)
+            .gnb-sub__wrap--drop {
+                display: none;
+                z-index: 100;
+                position: absolute;
+                top: calc(99 / 16 * 1rem);
+                left:calc(50% - calc(288 / 16 * 1rem));
+                background-color: var(--header-active-bg);
+                border-top: calc(1 / 16 * 1rem) solid var(--header-border-color);
+                // width: 100%;
+                width: calc(576 / 16 * 1rem);
+                border-bottom-left-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
+                border-bottom-right-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
+                overflow: hidden;
+                &--sub {
+                    left:calc(50% - calc(270 / 16 * 1rem));
+                    width: calc(540 / 16 * 1rem);
+                }
+                .gnb-sub-inner {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: calc(48 / 16 * 1rem);
+                }
+            }
+            // PC 2depth menu list (left)
             .sub-menu-list {
                 li {
                     .sub-menu-detail {
@@ -327,6 +342,77 @@ body {
                 }
                 .button__wrap {
                     width: fit-content;
+                }
+            }
+            // PC 2depth menu wrapper - drop 기업정보 (right)
+            .sub-menu-list--drop {
+                width: 33.33%;
+                .sub-menu-tit {
+                    display: block;
+                    color: var(--header-2depth-font-color);
+                    font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
+                    font-weight: 600;
+                    line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
+                    & + .sub-menu {
+                        margin-top: calc(12 / 16 * 1rem);
+                    }
+                }
+                .sub-menu {
+                    li {
+                        a {
+                            display: block;
+                            padding: calc(12 / 16 * 1rem) 0;
+                            color: var(--header-2depth-font-color);
+                            font-size: calc(var(--typo-pc-size-caption-sm) / 16 * 1rem);
+                            line-height: calc(var(--typo-pc-line-height-caption-sm-mode) / 16 * 1rem);
+                        }
+                    }
+                }
+            }
+            // PC 2depth menu wrapper - drop 인재채용 (right)
+            .gnb-sub-left--drop {
+                width: 100%;
+                max-width: calc(160 / 16 * 1rem);
+                border-right: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+                .sub-menu {
+                    li {
+                        a {
+                            display: block;
+                            padding: calc(12 / 16 * 1rem) 0;
+                            color: var(--header-2depth-font-color);
+                            font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
+                            font-weight: 600;
+                            line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
+                        }
+                        &:first-of-type {
+                            a {
+                                padding-top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .gnb-sub-right--drop {
+                padding-left: calc(34 / 16 * 1rem);
+            }
+            .gnb-sub-swiper {
+                padding: 0;
+                max-width: calc(248 / 16 * 1rem);
+                .swiper-slide img {
+                    border-radius: calc(8 / 16 * 1rem);
+                    overflow: hidden;
+                }
+                .swiper-pagination {
+                    column-gap: calc(16 / 16 * 1rem);
+                    margin-top: calc(20 / 16 * 1rem);
+                    .swiper-pagination-bullet {
+                        width: calc(8 / 16 * 1rem);
+                        height: calc(8 / 16 * 1rem);
+                        background: var(--colorCM-mode1-background-background-default3);
+                        &-active {
+                            background: var(--colorCM-mode1-background-background-default10);
+                        }
+                    }
                 }
             }
             &.is-active {
