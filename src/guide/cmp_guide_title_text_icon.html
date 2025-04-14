@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="/src/assets/css/guide.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <div class="cmp-exsample__wrap mt-5">
+                     <%
+                     const iconSolutionColumnData3 = [
+                         {
+                             id: 0,                                    
+                             imageUrl: 'https://placehold.co/345x129/png',
+                             imageAlt: 'test',
+                             title: 'SBP 솔루션 처리 모델',
+                             content: [
+                                 '간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출',
+                             ]
+                         },   
+                         {
+                             id: 1,                                    
+                             imageUrl: 'https://placehold.co/345x129/png',
+                             imageAlt: 'test',
+                             title: 'SBP 솔루션 처리 모델',
+                             content: [
+                                 '간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출',
+                             ]
+                         },                                                    
+                         {
+                             id: 2,                                    
+                             imageUrl: 'https://placehold.co/345x129/png',
+                             imageAlt: 'test',
+                             title: 'SBP 솔루션 처리 모델',
+                             content: [
+                                 '간헐적 수요 대응을 위해 고객 만족도 수준에 따라 필요한 적정 재고 산출',
+                             ]
+                         }                                                    
+                     ]
+                 %> 
+                 <%- include('src/component/cmp_title_text_icon.html', Object.assign({}, locals, {                             
+                     jsonData: iconSolutionColumnData3
+                 })) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

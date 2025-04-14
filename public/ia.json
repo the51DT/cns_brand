@@ -338,6 +338,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_feature_grid.html"
+        },
+        {
+          "name": "title-text-icon",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_title_text_icon.html"
         }
       ]
     },
