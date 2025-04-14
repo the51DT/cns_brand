@@ -53,7 +53,7 @@
 
   .customer-case-title {
     font-weight: 600;
-    color: var(--colorCM-mode1-text-text-defailt);
+    color: var(--colorCM-mode1-text-text-default);
     margin-bottom: calc(4 / 16 * 1rem);
     @media #{$min1280} {
       margin-bottom: calc(12 / 16 * 1rem);
