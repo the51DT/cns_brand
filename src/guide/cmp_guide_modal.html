@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="button_wrap mt-5">
                                     <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default05" onclick="openModal(event)">
-                                        <span class="btn__text">default modal small : 오늘 하루 닫기</span>
+                                        <span class="btn__text">default modal small : 오늘 하루 보지 않기</span>
                                     </button>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="button_wrap mt-5">
                                     <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default06" onclick="openModal(event)">
-                                        <span class="btn__text">default modal alert : 오늘 하루 닫기</span>
+                                        <span class="btn__text">default modal alert : 오늘 하루 보지 않기</span>
                                     </button>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
             <div class="modal__wrapper">
                 <div class="modal__container">
                     <div class="modal__header">
-                        <div class="modal__title font-body-xl font-bold">기업 검색</div>
+                        <div class="modal__title font-head-sm font-bold">기업 검색</div>
                     </div>
                     <div class="modal__content">
                         <!-- [Start] 모달 컨텐츠 영역 -->
@@ -149,7 +149,7 @@
             <div class="modal__wrapper">
                 <div class="modal__container">
                     <div class="modal__header">
-                        <div class="modal__title font-body-xl font-bold">기업 검색</div>
+                        <div class="modal__title font-head-sm font-bold">기업 검색</div>
                     </div>
                     <div class="modal__content">
                         <!-- [Start] 모달 컨텐츠 영역 -->
@@ -190,13 +190,13 @@
         </div>
     </div>
     <!-- [End] modal - small -->
-    <!-- [Start] modal - small / 오늘 하루 닫기 : pc-size: small, mo-size: small -->
+    <!-- [Start] modal - small / 오늘 하루 보지 않기 : pc-size: small, mo-size: small -->
     <div class="cmp-modal" id="modal-default05">
         <div class="modal modal--type-small">
             <div class="modal__wrapper">
                 <div class="modal__container">
                     <div class="modal__header">
-                        <div class="modal__title font-body-xl font-bold">기업 검색</div>
+                        <div class="modal__title font-head-sm font-bold">기업 검색</div>
                     </div>
                     <div class="modal__content">
                         <!-- [Start] 모달 컨텐츠 영역 -->
@@ -224,7 +224,7 @@
                         </div>
                         <div class="modal__checkbox-hidden mt-4">
                             <% const inputData2=[ { id: 0, title: '' , inputData: [ { type: "checkbox" ,
-                                name: "checkbox-guide" , dataList: [ { label: "오늘 하루 닫기" , value: "checkbox-default" ,
+                                name: "checkbox-guide" , dataList: [ { label: "오늘 하루 보지 않기" , value: "checkbox-default" ,
                                 required: true, }, ], }, ], }, ] %>
                                 <%- include('src/component/cmp_input.html', Object.assign({}, locals, { jsonData:
                                     inputData2, })) %>
@@ -243,7 +243,7 @@
             <div class="modal__dim"></div>
         </div>
     </div>
-    <!-- [End] modal - small / 오늘 하루 닫기 -->
+    <!-- [End] modal - small / 오늘 하루 보지 않기 -->
     <!-- [Start] modal - alert : pc-size: samll, mo-size: small -->
     <div class="cmp-modal" id="modal-default03">
         <div class="modal modal--type-alert">
@@ -313,7 +313,7 @@
         </div>
     </div>
     <!-- [End] modal - alert -->
-    <!-- [Start] modal - alert / 오늘 하루 닫기 : pc-size: samll, mo-size: small -->
+    <!-- [Start] modal - alert / 오늘 하루 보지 않기 : pc-size: samll, mo-size: small -->
     <div class="cmp-modal" id="modal-default06">
         <div class="modal modal--type-alert">
             <div class="modal__wrapper">
@@ -351,7 +351,7 @@
                                                 name: "checkbox-guide",
                                                 dataList: [
                                                     {
-                                                        label: "오늘 하루 닫기",
+                                                        label: "오늘 하루 보지 않기",
                                                         value: "checkbox-default",
                                                         required: true,
                                                     },
@@ -371,7 +371,7 @@
             <div class="modal__dim"></div>
         </div>
     </div>
-    <!-- [End] modal - alert / 오늘 하루 닫기 -->
+    <!-- [End] modal - alert / 오늘 하루 보지 않기 -->
     <script type="module" src="/src/main.js"></script>
     <script src="/assets/js/ui_common.js"></script>
 </body>

@@ -924,23 +924,39 @@ body {
                 max-width: calc(800 / 16 * 1rem);
                 .input-type {
                     &.search-type-full {
+                        gap: calc(12 / 16 * 1rem);
                         padding: calc(13 / 16 * 1rem) calc(24 / 16 * 1rem) calc(13 / 16 * 1rem) calc(32 / 16 * 1rem);
                         background: #F7F8F9;
                         height: calc(56 / 16 * 1rem);
                         box-sizing: border-box;
                         @media #{$min1280} {
+                            gap: calc(16 / 16 * 1rem);
                             padding: calc(19 / 16 * 1rem) calc(32 / 16 * 1rem) calc(19 / 16 * 1rem) calc(54 / 16 * 1rem);
                             height: calc(78 / 16 * 1rem);
                         }
                         input[type="text"] {
+                            padding-right: calc(4 / 16 * 1rem);
                             font-size: calc(var(--typo-mo-size-head-sm) / 16 *1rem);
                             line-height: calc(var(--typo-mo-line-height-head-sm) / 16 * 1rem);
                             font-weight: 400;
                             @media #{$min1280} {
+                                padding-right: calc(8 / 16 * 1rem);
                                 font-size: calc(var(--typo-pc-size-head-sm) / 16 *1rem);
                                 line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
                             }
                         }
+                        .ico {
+                            &.icon-search-border-bl40 {
+                                min-width: calc(32 / 16 * 1rem);
+                                width: calc(32 / 16 * 1rem);
+                                height: calc(32 / 16 * 1rem);
+                                @media #{$min1280} {
+                                    min-width: calc(40 / 16 * 1rem);
+                                    width: calc(40 / 16 * 1rem);
+                                    height: calc(40 / 16 * 1rem);
+                                }
+                            }
+                    }
                     }
                 }
             }
@@ -952,24 +968,21 @@ body {
             .modal__scroll__inner {
                 padding-bottom: calc(60 / 16 * 1rem);
                 @media #{$min1280} {
-                    padding-bottom: calc(100 / 16 * 1rem);
+                    padding-bottom: calc(80 / 16 * 1rem);
                 }
             }
             .search-layer__result {
-                margin: calc(32 / 16 * 1rem) auto 0;
+                margin: 0 auto;
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: flex-start;
                 gap: calc(16 / 16 * 1rem);
                 width: 100%;
                 max-width: calc(1440 / 16 * 1rem);
                 @media #{$min1280} {
+                    justify-content: center;
                     margin: calc(48 / 16 * 1rem) auto 0;
                     padding: 0 calc(140 / 16 * 1rem);
-                }
-                @media #{$phone} {
-                    justify-content: flex-start;
-                    margin: 0 auto 0;
                 }
                 &--empty {
                     padding: calc(32 /16 * 1rem) calc(0 /16 * 1rem);
@@ -983,10 +996,15 @@ body {
                 display: block;
                 padding: calc(15 / 16 * 1rem) calc(24 / 16 * 1rem);
                 color: var(--text-text-default);
-                font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
-                line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+                font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
+                line-height: calc(26 / 16 * 1rem);
                 border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
                 border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default10);
+                box-sizing: border-box;
+                @media #{$min1280} {
+                    font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+                    line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+                }
             }
             .search-layer__empty-text {
                 color: var(--colorCM-mode1-text-text-tertiary);
@@ -995,7 +1013,6 @@ body {
             }
         }
     }
-
     .dim {
         display: none;
     }
