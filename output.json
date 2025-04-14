@@ -36,7 +36,15 @@
             "letterSpacingDefault": -0.30000001192092896,
             "letterSpacingSmall": -0.20000000298023224,
             "sizeCaptionSmMode": 16,
-            "lineHeightCaptionSmMode": 24
+            "lineHeightCaptionSmMode": 24,
+            "sizeCaptionXs": 14,
+            "lineHeightCaptionXs": 20,
+            "sizeCaptionMdUi": 18,
+            "lineHeightCaptionMdUi": 26,
+            "sizeCaptionLgUi": 20,
+            "sizeCaptionSmUi": 16,
+            "lineHeightCaptionLgUi": 34,
+            "lineHeightCaptionSmUi": 26
         },
         "mo": {
             "familyHead": "Pretendard",
@@ -53,9 +61,9 @@
             "sizeHeadSm": 20,
             "sizeHeadMdMode": 24,
             "sizeHeadSmMode": 18,
-            "sizeBodyLg": 18,
-            "sizeBodyMd": 16,
-            "sizeBodySm": 14,
+            "sizeBodyLg": 20,
+            "sizeBodyMd": 18,
+            "sizeBodySm": 16,
             "sizeCaptionLg": 18,
             "sizeCaptionMd": 16,
             "sizeCaptionSm": 14,
@@ -65,29 +73,37 @@
             "lineHeightHeadSm": 30,
             "lineHeightHeadMdMode": 34,
             "lineHeightHeadSmMode": 28,
-            "lineHeightBodyLg": 28,
-            "lineHeightBodyMd": 26,
-            "lineHeightBodySm": 26,
+            "lineHeightBodyLg": 32,
+            "lineHeightBodyMd": 28,
+            "lineHeightBodySm": 24,
             "lineHeightCaptionLg": 26,
             "lineHeightCaptionMd": 26,
             "lineHeightCaptionSm": 24,
             "letterSpacingDefault": -0.30000001192092896,
             "letterSpacingSmall": -0.20000000298023224,
             "sizeCaptionSmMode": 14,
-            "lineHeightCaptionSmMode": 24
+            "lineHeightCaptionSmMode": 24,
+            "sizeCaptionXs": 12,
+            "lineHeightCaptionXs": 20,
+            "sizeCaptionMdUi": 16,
+            "lineHeightCaptionMdUi": 26,
+            "sizeCaptionLgUi": 20,
+            "sizeCaptionSmUi": 16,
+            "lineHeightCaptionLgUi": 34,
+            "lineHeightCaptionSmUi": 26
         }
     },
     "colorGL": {
         "all": {
             "grey10": "#fbfbfc",
-            "grey50": "#e5e5e5",
-            "grey150": "#d1d1d1",
-            "grey200": "#afafaf",
-            "grey250": "#8e8e8e",
-            "grey300": "#787878",
-            "grey350": "#565656",
-            "grey400": "#3e3e3e",
-            "grey500": "#121212",
+            "grey100": "#e5e5e5",
+            "grey200": "#d1d1d1",
+            "grey250": "#afafaf",
+            "grey300": "#8e8e8e",
+            "grey350": "#787878",
+            "grey400": "#565656",
+            "grey450": "#3e3e3e",
+            "grey550": "#121212",
             "heritageRed100": "#ffdaea",
             "heritageRed200": "#ff6b98",
             "heritageRed300": "#e2255b",
@@ -123,7 +139,7 @@
             "purple300": "#685afc",
             "purple400": "#512fba",
             "purple500": "#2f2278",
-            "grey100": "#e0e0e0",
+            "grey150": "#e0e0e0",
             "white0": "#ffffff00",
             "white5": "#ffffff0c",
             "white10": "#ffffff19",
@@ -174,12 +190,13 @@
             "magentaSky450": "#cf7afd",
             "magentaSky300": "#c19df4",
             "magentaSky100": "#aecbe9",
-            "grey450": "#1f1f1f"
+            "grey500": "#1f1f1f",
+            "grey50": "#f7f8f9"
         }
     },
     "colorCM": {
         "mode1": {
-            "textTextDefailt": "#121212",
+            "textTextDefault": "#121212",
             "textTextSecondary": "#565656",
             "textTextTertiary": "#8e8e8e",
             "textTextDisabled": "#e0e0e0",
@@ -193,7 +210,7 @@
             "iconIconOnBg": "#ffffff",
             "fillFillDefault0": "#ffffff",
             "fillFillDefault1": "#fbfbfc",
-            "fillFillDefault2": "#e5e5e5",
+            "fillFillDefault2": "#f7f8f9",
             "fillFillDefault3": "#d1d1d1",
             "fillFillDefault4": "#afafaf",
             "fillFillDefault5": "#8e8e8e",
@@ -246,7 +263,8 @@
             "successSuccessEnabled": "#19ab57",
             "primaryPrimaryEnabled": "#9b002e",
             "primaryPrimaryPressed": "#610024",
-            "primaryPrimaryDisabled": "#ff6b98"
+            "primaryPrimaryDisabled": "#ff6b98",
+            "textTextQuaternary": "#afafaf"
         }
     },
     "radius": {
