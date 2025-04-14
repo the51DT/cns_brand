@@ -1071,13 +1071,6 @@ body {
             li {
                 a, button {                
                     color: var(--footer-font-color);
-                    font-size: calc(var(--typo-mo-size-caption-sm-mode) / 16 * 1rem);
-                    line-height: calc(var(--typo-pc-line-height-caption-md) / 16 * 1rem);
-                    // padding: calc(8 / 16 * 1rem) 0;
-                    @media #{$min1280} {
-                        font-size: calc(var(--typo-pc-size-caption-sm) / 16 * 1rem);
-                        line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
-                    }
                     &.font-primary {
                         color: var(--footer-font-color-primary);
                         font-weight: 600;
@@ -1168,8 +1161,8 @@ body {
                     &__navigation-list {
                         li {
                             color: var(--text-text-default);
-                            font-size: calc(14 / 16 * 1rem);
-                            line-height: calc(20 / 16 * 1rem);
+                            font-size: calc(var(--typo-pc-size-caption-xs) / 16 * 1rem);
+                            line-height: calc(var(--typo-pc-line-height-caption-xs) / 16 * 1rem);
                             & + li {
                                 margin-top: calc(8 / 16 * 1rem);
                             }
@@ -1216,12 +1209,6 @@ body {
         .footer-info {
             p {
                 color: var(--footer-font-color);
-                font-size: calc(var(--typo-mo-size-caption-sm-mode) / 16 * 1rem);
-                line-height: calc(var(--typo-pc-line-height-caption-md) / 16 * 1rem);
-                @media #{$min1280} {
-                    font-size: calc(var(--typo-pc-size-caption-sm) / 16 * 1rem);
-                    line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
-                }
             } 
         }
     }
