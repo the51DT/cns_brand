@@ -7,7 +7,7 @@ const mainNavigation = (selector) => {
     }
     navyLists.forEach(navy => {
         navy.addEventListener('mouseenter', () => {
-            // bodyWrap.classList.add('overflow');            
+            bodyWrap.classList.add('overflow');            
             const activeMenu = document.querySelector('.navy-list > li.is-active');
             if (activeMenu) {
                 activeMenu.classList.remove('is-active');
@@ -56,7 +56,7 @@ const mainNavigation = (selector) => {
         })
         const navyWrap = navy.closest('.gnb-navy__wrap');
         navyWrap.addEventListener('mouseleave',  () => {
-            // bodyWrap.classList.remove('overflow');      
+            bodyWrap.classList.remove('overflow');      
             navy.parentElement.style.position = '';
             navy.closest('.header').classList.remove('is-active'); 
             navy.closest('.header').style.setProperty('--gnb-bg-height', 0);
