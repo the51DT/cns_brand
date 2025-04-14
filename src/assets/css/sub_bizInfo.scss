@@ -681,7 +681,7 @@
   }
 
   &soc-contrib {
-    .layout_col2 {
+    .cmp-feature-grid {
       margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
       @media #{$tablet} {
         margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
@@ -727,7 +727,7 @@
         }
       }
     }
-    .layout_col2 {
+    .cmp-feature-grid {
       @media #{$phone} {
         margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
       }
@@ -762,7 +762,7 @@
         margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
       }
     }
-    .layout_col2 {
+    .cmp-feature-grid {
       margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
       // .table-container {
       //   max-width: 100%;
@@ -1050,7 +1050,7 @@
     }
   }
   &esg {
-    .layout_col2 {
+    .cmp-feature-grid {
       margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
       @media #{$tablet} {
         margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
