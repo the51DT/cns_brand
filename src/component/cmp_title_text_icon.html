@@ -1,29 +1,42 @@
 <div class="cmp-title-text-icon__wrap">
-    <%
-        const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
-        const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
-    %>
-    <% if (data.length > 0) { %>
-        <div class="title-text-icon items<%= data.length %>">
-        <% data.forEach((item) => { %>
-            <div class="title-text-icon-items">                
-                <% if(item.imageUrl) { %>
-                    <div class="item-image">
-                        <img src="<%= item.imageUrl %>" alt="<%= item.title %>" />
-                    </div>
-                <% } %>
-                <% if (item.title) { %>
-                    <div class="stitle-text-icon-content">
-                        <div class="cate-title font-head-sm font-medium"><%= item.title %></div>
-                        <% if (item.content) { %>
-                            <div class="cate-text font-body-sm">
-                                <%= item.content %>
-                            </div>
-                        <% } %>
-                    </div>
-                <% } %>
-            </div>
-        <% }) %>
-        </div>
-    <% } %> 
-</div>
+   <%
+     const _jsonData = typeof jsonData !== 'undefined' ? jsonData : [];
+   %>
+ 
+   <% if (_jsonData.length > 0) { %>
+     <div class="title-text-icon items<%= _jsonData.length %>">
+       <% _jsonData.forEach((item) => { %>
+         <div class="title-text-icon-items<%= !item.imageUrl ? ' no-image' : '' %>">                
+           <% if (item.imageUrl) { %>
+             <div class="item-image">
+               <img src="<%= item.imageUrl %>" alt="<%= item.title %>" />
+             </div>
+           <% } %>
+ 
+           <% if (item.title) { %>
+             <div class="stitle-text-icon-content">
+               <div class="cate-title font-head-sm font-medium"><%= item.title %></div>
+ 
+               <% if (item.content && item.content.length > 0) { %>
+                 <div class="cate-text font-body-sm">
+                   <% if (item.useList) { %>
+                     <ul>
+                       <% item.content.forEach((text) => { %>
+                         <li><%= text %></li>
+                       <% }) %>
+                     </ul>
+                   <% } else { %>
+                     <% item.content.forEach((text) => { %>
+                       <div><%= text %></div>
+                     <% }) %>
+                   <% } %>
+                 </div>
+               <% } %>
+             </div>
+           <% } %>
+         </div>
+       <% }) %>
+     </div>
+   <% } %>
+ </div>
+ 
