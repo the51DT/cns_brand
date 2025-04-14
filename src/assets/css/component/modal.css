@@ -5,6 +5,7 @@
 .cmp-modal.is-active {
     display: block;
 }
+
 .modal {
     position: fixed;
     top: 0;
@@ -13,7 +14,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 100;
 }
 .modal .modal__wrapper {
@@ -119,6 +120,7 @@
 .modal--type-small .modal__content:after {
     display: none;
 }
+
 /* 3. modal - type alert */
 .modal--type-alert .modal__container {
     padding: calc(36 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
@@ -130,6 +132,17 @@
     display: none;
 }
 
+/* 4. modal - type align-top*/
+.modal--type-align-top {
+    align-items: flex-start;
+}
+.modal--type-align-top .modal__wrapper {
+    padding: 0;
+}
+.modal--type-align-top .modal__container {
+    max-width: 100%;
+    border-radius: 0;
+}
 
 /* popup content */
 .modal .button_wrap--type-center .btn {
@@ -191,5 +204,13 @@
     .modal--type-alert .modal__container {
         padding: calc(36 / 16 * 1rem) calc(40 / 16 * 1rem) calc(40 / 16 * 1rem);
         max-width: calc(480 / 16 * 1rem);
+    }
+    /* 4. modal - type align-top*/
+    .modal--type-align-top .modal__wrapper {
+        padding: 0;
+    }
+    .modal--type-align-top .modal__container {
+        max-width: 100%;
+        border-radius: 0;
     }
 }

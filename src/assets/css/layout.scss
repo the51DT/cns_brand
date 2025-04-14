@@ -14,6 +14,7 @@
     --header-icon-bl-display: inline-flex;
     --header-icon-wh-display: none;
     --header-search-ico: url("/src/assets/image/icon/icon_search_bl40.svg"); // 임시로 bl24, wh40 적용
+    --header-search-close-ico: url("/src/assets/image/icon/icon-close-bl24.svg"); // 임시로 bl24, wh40 적용
     --header-lang-ico: url("/src/assets/image/icon/icon_lang_bl40.svg"); // 임시로 bl24, wh40 적용
     --header-close-ico: url("/src/assets/image/icon/icon-close-bl40.svg");
     --footer-bg: var(--colorCM-mode1-background-background-default10);
@@ -895,6 +896,90 @@ body {
     &.is-motion {
         transform: translateY(calc(-100 / 16 * 1rem));
     }
+    // search
+    .modal--type-search {
+        .modal__wrapper {
+            background: var(--colorCM-mode1-background-background-default0);
+        }
+        .modal__container {
+            margin: 0 auto;
+            max-width: calc(1440 / 16 * 1rem);
+            padding: calc(64 / 16 * 1rem) calc(20 / 16 * 1rem) calc(48 / 16 * 1rem) calc(20 / 16 * 1rem);
+            @media #{$min1280} {
+                padding: calc(100 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
+            }
+        }
+        .modal__close {
+            .btn {
+                width: calc(24 / 16 * 1rem);
+                height: calc(24 / 16 * 1rem);
+                background: url("/src/assets/image/icon/icon-close-bl24.svg") center center / contain;
+            }
+        }
+        .modal__header {
+            padding-right: 0;
+            .form-element__wrap {
+                margin: 0 auto;
+                max-width: calc(800 / 16 * 1rem);
+                .input-type {
+                    &.search-type-full {
+                        padding: calc(13 / 16 * 1rem) calc(24 / 16 * 1rem) calc(13 / 16 * 1rem) calc(32 / 16 * 1rem);
+                        background: #F7F8F9;
+                        height: calc(56 / 16 * 1rem);
+                        box-sizing: border-box;
+                        @media #{$min1280} {
+                            padding: calc(19 / 16 * 1rem) calc(32 / 16 * 1rem) calc(19 / 16 * 1rem) calc(54 / 16 * 1rem);
+                            height: calc(78 / 16 * 1rem);
+                        }
+                        input[type="text"] {
+                            font-size: calc(var(--typo-pc-size-head-sm) / 16 *1rem);
+                            line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+        .modal__content {
+            &::after {
+                display: none;
+            }
+            .modal__scroll__inner {
+                padding-bottom: calc(48 / 16 * 1rem);
+                @media #{$min1280} {
+                    padding-bottom: calc(100 / 16 * 1rem);
+                }
+            }
+            .search-layer__result {
+                margin: calc(48 / 16 * 1rem) auto 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: calc(16 / 16 * 1rem);
+                padding: 0 calc(140 / 16 * 1rem);
+                width: 100%;
+                max-width: calc(1440 / 16 * 1rem);
+                &--empty {
+                    padding: calc(40 / 16 * 1rem) calc(140 / 16 * 1rem);
+                }
+            }
+            .search-layer__chip {
+                display: block;
+                padding: calc(15 / 16 * 1rem) calc(24 / 16 * 1rem);
+                color: var(--text-text-default);
+                font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+                line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+                border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
+                border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default10);
+            }
+            .search-layer__empty-text {
+                color: var(--colorCM-mode1-text-text-tertiary);
+                font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+                line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+            }
+        }
+    }
+
     .dim {
         display: none;
     }

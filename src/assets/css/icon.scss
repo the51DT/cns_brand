@@ -115,7 +115,10 @@ $fileType: "svg";
     }  
     &.icon-plus-wh16 {
         @include iconFile(16,16,'icon-plus-wh16');
-    }  
+    }
+    &.icon-close-bl24 {
+        @include iconFile(24,24,'icon-close-bl24');
+    }   
     &.icon-close-bl32 {
         @include iconFile(32,32,'icon-close-bl32');
     }  

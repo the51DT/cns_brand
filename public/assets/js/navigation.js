@@ -184,4 +184,4 @@ const onTopScroll = () => {
 window.addEventListener("scroll", scrollEventManage);
 mainNavigation('.navy-list > li > a');
 moNavigationToggle('.mo-menu .btn-hamburger-menu');
-moNavigationAccordion('.mo-gnb-navy__wrap .mo-navy-list')
+moNavigationAccordion('.mo-gnb-navy__wrap .mo-navy-list');
