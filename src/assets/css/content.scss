@@ -10,10 +10,24 @@
         }
     }   
     &.cmp-customer-case {
-        &+.button__wrap {            
-            margin-top: calc(var(--cmp-margin-bottom-itemlist-columns) / 16 * 1rem);
+        &+.button__wrap {
+            display: none;
+            margin-top: calc(40 / 16 * 1rem);
             margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+            @media #{$min720}{
+                display: flex;
+            }
         }      
+    }
+    &.dataList {
+        &+.button__wrap {
+            display: none;
+            margin-top: calc(40 / 16 * 1rem);
+            margin-bottom: calc(var(--cmp-margin-bottom) / 16 * 1rem);
+            @media #{$min720}{
+                display: flex;
+            }
+        }
     }
     &.cmp-buttonbanner:last-child {
         margin-bottom: 0;

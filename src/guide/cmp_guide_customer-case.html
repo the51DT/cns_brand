@@ -32,7 +32,7 @@
                   link: '#',
                   logoPC: 'https://placehold.co/198x96',
                   logoMO: 'https://placehold.co/198x96',
-                  category: [{ name: '제조' }, { name: '경영관리' }, {name: 'DWP'}]
+                  category: [{ name: '# 제조' }, { name: '# 경영관리' }, {name: '# DWP'}]
                 },
                 {
                   name: '링크 있을 때',
@@ -40,7 +40,7 @@
                   link: '#',
                   logoPC: 'https://placehold.co/198x96',
                   logoMO: 'https://placehold.co/198x96',
-                  category: [{ name: '제조' }, { name: '경영관리' }, {name: 'DWP'}]
+                  category: [{ name: '# 제조' }, { name: '# 경영관리' }, {name: '# DWP'}]
                 },
                 {
                   name: '링크 있을 때',
@@ -48,7 +48,7 @@
                   link: '#',
                   logoPC: 'https://placehold.co/198x96',
                   logoMO: 'https://placehold.co/198x96',
-                  category: [{ name: '제조' }, { name: '경영관리' }, {name: 'DWP'}]
+                  category: [{ name: '# 제조' }, { name: '# 경영관리' }, {name: '# DWP'}]
                 },
                 {
                   name: '링크 있을 때',
@@ -56,7 +56,7 @@
                   link: '#',
                   logoPC: 'https://placehold.co/198x96',
                   logoMO: 'https://placehold.co/198x96',
-                  category: [{ name: '제조' }, { name: '경영관리' }, {name: 'DWP'}]
+                  category: [{ name: '# 제조' }, { name: '# 경영관리' }, {name: '# DWP'}, {name: 'test'}, {name: 'test'}]
                 },
                 {
                   name: '링크 없을 때',
@@ -69,16 +69,17 @@
               ];
             %>
 
-            <%- include('src/component/cmp_customer-case.html', {
-              itemCount: 5,
-              jsonData: jsonData
-            }) %>
-
-            <div class="button__wrap">
-              <a href="#" class="btn btn-medium btn-secondary">
-                <span class="btn__text">더 보기</span>
-                <i class="btn__icon ico icon-arrow-right-bl16"></i>
-              </a>
+            <div class="inner-wrap py-4" style="background-color: beige;">
+              <%- include('src/component/cmp_customer-case.html', {
+                itemCount: 5,
+                jsonData: jsonData
+              }) %>
+              <div class="button__wrap">
+                <button href="#" class="btn btn-medium btn-secondary">
+                  <span class="btn__text">더 보기</span>
+                  <i class="btn__icon ico icon-arrow-right-bl16"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -91,49 +92,29 @@
   <script>
     let customerSwiper = null;
 
-    function updateCustomPagination(swiper) {
-      const wrapper = swiper.el;
-      const currentEl = wrapper.querySelector('.current-index');
-      const totalEl = wrapper.querySelector('.total-index');
-
-      if (currentEl && totalEl) {
-        currentEl.textContent = swiper.realIndex + 1;
-        totalEl.textContent = swiper.slides.length;
-      }
-    }
-
     function setupCustomerCaseSwiper() {
       const swiperEl = document.querySelector('.customer-case-swiper');
-      const isMobile = window.innerWidth <= 767;
+      const isMobile = window.innerWidth < 720;
 
       if (!swiperEl) return;
 
       if (isMobile && !customerSwiper) {
         customerSwiper = new Swiper(swiperEl, {
-          slidesPerView: 'auto',     
-          navigation: {
-            nextEl: swiperEl.querySelector('.custom-next'),
-            prevEl: swiperEl.querySelector('.custom-prev'),
-          },
-          on: {
-            init() {
-              updateCustomPagination(this);
-            },
-            slideChange() {
-              updateCustomPagination(this);
+          slidesPerView: 'auto',
+          spaceBetween: 20,
+          slidesOffsetBefore: 20,
+          slidesOffsetAfter: 20,
+          breakpoints: {
+            720: {
+              spaceBetween: 0,
+              slidesOffsetBefore: 0,
+              slidesOffsetAfter: 0,
             }
-          }
+          },
         });
       } else if (!isMobile && customerSwiper) {
         customerSwiper.destroy(true, true);
         customerSwiper = null;
-
-        const currentEl = swiperEl.querySelector('.current-index');
-        const totalEl = swiperEl.querySelector('.total-index');
-        if (currentEl && totalEl) {
-          currentEl.textContent = '1';
-          totalEl.textContent = '1';
-        }
       }
     }
 
@@ -146,8 +127,6 @@
         setupCustomerCaseSwiper();
       }, 200);
     });
-
   </script>
-  
 </body>
 </html>

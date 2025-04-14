@@ -3,48 +3,33 @@
   <div class="cmp-swiper customer-case-swiper swiper">
     <div class="swiper-wrapper">
       <% const data = typeof jsonData !== 'undefined' ? jsonData : []; %>
-      <% const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1; %>
-
-      <% if (data.length > 0) { %>
-        <% data.slice(0, itemLimit).forEach((item) => { %>
-          <div class="swiper-slide">
-            <a href="<%- item.link && item.link.trim() !== '' ? item.link : '#' %>" class="customer-case-items">
-              <ul class="cs-category-list">
-                <% if (item.category && Array.isArray(item.category)) { %>
-                  <% item.category.forEach((cate) => { %>
-                    <li class="font-body-xs"><%- cate.name %></li>
-                  <% }) %>
+      <% data.forEach((item) => { %>
+        <div class="swiper-slide">
+          <div class="customer-case-items">
+            <div class="customer-case-img">
+              <img src="<%- item.logoPC %>" alt="" class="type-pc"/>
+              <img src="<%- item.logoMO %>" alt="" class="type-mo"/>
+            </div>
+            <div class="font-body-lg customer-case-title"><%- item.name %></div>
+            <div class="font-body-sm customer-case-text"><%- item.content %></div>
+            <div class="customer-case-more">
+              <% if (typeof item.link === 'string' && item.link.trim() !== '') { %>
+                <a href="<%- item.link && item.link.trim() !== '' ? item.link : '#' %>">
+                  <span class="font-body-xs">자세히 보기</span>
+                  <i class="ico icon-arrow-right-bl16"></i>
+                </a>
                 <% } %>
-              </ul>
-              <div class="font-body-lg customer-case-title"><%- item.name %></div>
-              <div class="font-body-sm customer-case-text"><%- item.content %></div>
-              <div class="customer-case-cf">
-                <% if (typeof item.link === 'string' && item.link.trim() !== '') { %>
-                  <div class="customer-case-more">
-                    <span class="font-body-xs">자세히 보기</span>
-                    <i class="ico icon-arrow-right-bl16"></i>
-                  </div>
-                <% } %>
-                <img src="<%- item.logoPC %>" alt="" class="type-pc"/>
-                <img src="<%- item.logoMO %>" alt="" class="type-mo"/>
-              </div>
-            </a>
+            </div>
+            <div class="tag-box">
+              <% if (item.category && Array.isArray(item.category)) { %>
+                <% item.category.forEach((cate) => { %>
+                  <div class="tag"><%- cate.name %></div>
+                <% }) %>
+              <% } %>
+            </div>
           </div>
-        <% }) %>
-      <% } %>
-    </div>
-
-    <!-- 커스텀 내비게이션 -->
-    <div class="swiper-custom-nav">
-      <button class="swiper-button-prev custom-prev" aria-label="이전">
-        <i class="ico icon-pagination-prev"></i>
-      </button>
-      <div class="swiper-pagination-fraction">
-        <span class="current-index">1</span> / <span class="total-index">1</span>
-      </div>
-      <button class="swiper-button-next custom-next" aria-label="다음">
-        <i class="ico icon-pagination-next"></i>
-      </button>
+        </div>
+      <% }) %>
     </div>
   </div>
 </div>
