@@ -133,6 +133,7 @@ body {
     transition: transform 0.5s ease-in-out;
     transform: translateY(0);
     background: var(--header-bg);
+    position: relative;
     @media #{$min1280} {
         height: calc(100 / 16 * 1rem);
     }
@@ -966,8 +967,13 @@ body {
                     margin: calc(48 / 16 * 1rem) auto 0;
                     padding: 0 calc(140 / 16 * 1rem);
                 }
+                @media #{$phone} {
+                    justify-content: flex-start;
+                    margin: 0 auto 0;
+                }
                 &--empty {
                     padding: calc(32 /16 * 1rem) calc(0 /16 * 1rem);
+                    justify-content: center;
                     @media #{$min1280} {
                         padding: calc(40 / 16 * 1rem) calc(140 / 16 * 1rem);
                     }
