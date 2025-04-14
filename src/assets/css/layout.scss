@@ -197,9 +197,7 @@ body {
             }
             & > a {
                 color: var(--header-font-color);
-                font-size: calc(16 / 16 * 1rem);
                 font-weight: 500;
-                line-height: calc(26 / 16 * 1rem);
                 position: relative;
                 display: block;
                 &::after {
@@ -297,8 +295,6 @@ body {
                             .sub-menu-text {
                                 margin-top: calc(16 / 16 * 1rem);
                                 color: var(--text-text-default);
-                                font-size: calc(18 / 16 * 1rem);
-                                line-height: calc(26 / 16 * 1rem);
                             }
                             .sub-depth-menu-list {
                                 display: grid;
@@ -317,9 +313,7 @@ body {
                                     padding: calc(24 / 16 * 1rem) calc(24 / 16 * 1rem);
                                     .sub-depth-items-tit {
                                         color: var(--text-text-default);
-                                        font-size: calc(18 / 16 * 1rem);
                                         font-weight: 600;
-                                        line-height: calc(26 / 16 * 1rem);
                                     }
                                     .sub-depth-items-text {
                                         margin-top: calc(16 / 16 * 1rem);
@@ -327,8 +321,6 @@ body {
                                         flex-direction: column;
                                         gap: calc(8 / 16 * 1rem);
                                         color: var(--text-text-default);
-                                        font-size: calc(14 / 16 * 1rem);
-                                        line-height: calc(20 / 16 * 1rem);
                                         li {
                                             padding: 0;
                                         }
@@ -352,9 +344,7 @@ body {
                 .sub-menu-tit {
                     display: block;
                     color: var(--header-2depth-font-color);
-                    font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
                     font-weight: 600;
-                    line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
                     & + .sub-menu {
                         margin-top: calc(12 / 16 * 1rem);
                     }
@@ -382,9 +372,7 @@ body {
                             display: block;
                             padding: calc(12 / 16 * 1rem) 0;
                             color: var(--header-2depth-font-color);
-                            font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
                             font-weight: 600;
-                            line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
                         }
                         &:first-of-type {
                             a {
@@ -493,8 +481,8 @@ body {
             justify-content: center;
             align-items: center;
             color: var(--header-font-color);
-            font-size: calc(16 / 16 * 1rem);
-            line-height: calc(26 / 16 * 1rem);
+            // font-size: calc(16 / 16 * 1rem);
+            // line-height: calc(26 / 16 * 1rem);
             @media #{$min1280} {
                 display: flex;
             }
@@ -698,8 +686,8 @@ body {
                             display: block;
                             padding: 0 0;
                             color: var(--header-font-color);
-                            font-size: calc(16 / 16 * 1rem);
-                            line-height: calc(24 / 16 * 1rem);
+                            font-size: calc(var(--typo-pc-size-caption-sm-mode) / 16 * 1rem);
+                            line-height: calc(var(--typo-pc-line-height-caption-sm-mode) / 16 * 1rem);
                             box-sizing: border-box;
                             &::after {
                                 display: none;
@@ -996,20 +984,12 @@ body {
                 display: block;
                 padding: calc(15 / 16 * 1rem) calc(24 / 16 * 1rem);
                 color: var(--text-text-default);
-                font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
-                line-height: calc(26 / 16 * 1rem);
                 border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
                 border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default10);
                 box-sizing: border-box;
-                @media #{$min1280} {
-                    font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
-                    line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
-                }
             }
             .search-layer__empty-text {
                 color: var(--colorCM-mode1-text-text-tertiary);
-                font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
-                line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
             }
         }
     }
