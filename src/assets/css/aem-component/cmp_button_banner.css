@@ -11,11 +11,11 @@
   padding: 4.5rem 6.25rem 4.9375rem 1.25rem;
 }
 .cmp-buttonbanner .banner_content .cmp-buttonbanner-subtitle {
-  color: var(--colorGL-all-grey350);
+  color: var(--colorGL-all-grey400);
   margin-bottom: 0.75rem;
 }
 .cmp-buttonbanner .banner_content .cmp-buttonbanner-title {
-  color: var(--colorGL-all-grey500);
+  color: var(--colorGL-all-grey550);
   font-size: 1.25rem;
   margin-bottom: 2.8125rem;
 }
