@@ -58,7 +58,7 @@
 }
 .cmp-accordion .accordion-list li .accordion-title .tit {
     font-style: normal;
-    color: var(--colorGL-all-grey500);     
+    color: var(--colorGL-all-grey550);     
     font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
     font-weight: 600;    
     line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem); 
@@ -77,13 +77,13 @@
 .cmp-accordion .accordion-list li.is-active i::after {
     transform: translateX(-50%) rotate(90deg);
     transition: all 0.3s;
-    background-color: var(--colorCM-mode1-text-text-defailt);
+    background-color: var(--colorCM-mode1-text-text-default);
 }
 .cmp-accordion .accordion-list li.is-active .accordion-title {
     padding: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem) 0 calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
 }
 .cmp-accordion .accordion-list li.is-active .accordion-title .tit {
-    color: var(--colorCM-mode1-text-text-defailt);
+    color: var(--colorCM-mode1-text-text-default);
 }
 .cmp-accordion .accordion-list li.is-active .accordion-content {
     display: block;

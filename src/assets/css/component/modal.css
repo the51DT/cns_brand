@@ -141,6 +141,8 @@
 }
 .modal--type-align-top .modal__container {
     max-width: 100%;
+    height: fit-content;
+    max-height: 100vh;
     border-radius: 0;
 }
 

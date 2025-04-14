@@ -89,6 +89,24 @@
     letter-spacing: calc(0.05 / 16 * 1rem);
     font-weight: 400;
 }
+.font-caption-md-ui {
+    font-size: calc(var(--typo-pc-size-caption-md-ui) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-caption-md-ui) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-caption-lg-ui {
+    font-size: calc(var(--typo-pc-size-caption-lg-ui) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-caption-lg-ui) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
+.font-caption-sm-ui {
+    font-size: calc(var(--typo-pc-size-caption-sm-ui) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-caption-sm-ui) / 16 * 1rem);
+    letter-spacing: calc(0.05 / 16 * 1rem);
+    font-weight: 400;
+}
 
 @media screen and (max-width: 767px) {
     .font-head-xl {
@@ -152,5 +170,23 @@
     .font-caption-sm {
         font-size: calc(var(--typo-mo-size-caption-sm) / 16 * 1rem);
         line-height: calc(var(--typo-mo-line-height-caption-sm) / 16 * 1rem);
+    }
+    .font-caption-md-ui {
+        font-size: calc(var(--typo-mo-size-caption-md-ui) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-caption-md-ui) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+    }
+    .font-caption-lg-ui {
+        font-size: calc(var(--typo-mo-size-caption-lg-ui) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-caption-lg-ui) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+    }
+    .font-caption-sm-ui {
+        font-size: calc(var(--typo-mo-size-caption-sm-ui) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-caption-sm-ui) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
     }
 }

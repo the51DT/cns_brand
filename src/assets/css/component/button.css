@@ -83,7 +83,7 @@
 /* .btn-secondary */
 .btn.btn-secondary {
     background-color: var(--colorCM-mode1-fill-fill-default0);
-    color: var(--colorCM-mode1-text-text-defailt);
+    color: var(--colorCM-mode1-text-text-default);
     border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default10);
 }
 /* .btn.btn-secondary:hover {
@@ -252,7 +252,7 @@
     width: fit-content;
     min-width: fit-content;
     height: auto;
-    color: var(--colorCM-mode1-text-text-defailt);
+    color: var(--colorCM-mode1-text-text-default);
     /* font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
     line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
     font-weight: 600; */
