@@ -29,8 +29,7 @@
     justify-content: space-between;
     gap: calc(40 / 16 * 1rem);
     margin: 0 auto;
-
-    padding: calc(23.5 / 16 * 1rem) calc(20 / 16 * 1rem) calc(40 / 16 * 1rem);
+    padding: calc(32 / 16 * 1rem) calc(24 / 16 * 1rem) calc(6 / 36 * 1rem);
     width: 100vw;
     min-width: 100%;
     max-width: 100%;
@@ -41,7 +40,7 @@
     overflow: hidden;
     z-index: 1;
     box-sizing: border-box;
-    border-radius: calc(16 / 16 * 1rem);
+    border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
     background: var(--colorCM-mode1-background-background-default0);
 }
 .modal .modal__header {
@@ -85,10 +84,13 @@
 .modal .modal__footer .btn:only-of-type {
     width: 100%;
 }
+.modal .modal__footer .modal__checkbox-hidden {
+    margin-top: calc(26 / 16 * 1rem);
+}
 .modal .modal__close {
     position: absolute;
-    top: calc(23.5 / 16 * 1rem);
-    right: calc(20 / 16 * 1rem);
+    top: calc(34 / 16 * 1rem);
+    right: calc(24 / 16 * 1rem);
 }
 .modal .modal__close .btn {
     width: calc(32 / 16 * 1rem);
@@ -105,23 +107,24 @@
     opacity: 0.6;
     z-index: -1;
 }
-/* 2. modal - type full */
+/* 1. modal - type full */
 .modal--type-full .modal__wrapper {
     padding: 0 0;
 }
 .modal--type-full .modal__container {
     height: 100vh;
-    border-radius: 0;
+    border-radius: var(--radius-mode1-none);
 }
 /* 2. modal - type small */
-.modal--type-small .modal__container {
-    max-width: calc(480 / 16 * 1rem);
-}
 .modal--type-small .modal__content:after {
     display: none;
 }
+/* 3. modal - type medium */
+.modal--type-medium .modal__content:after {
+    display: none;
+}
 
-/* 3. modal - type alert */
+/* 4. modal - type alert */
 .modal--type-alert .modal__container {
     padding: calc(36 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
     width: calc(100vw - calc(40 / 16 * 1rem));
@@ -132,7 +135,7 @@
     display: none;
 }
 
-/* 4. modal - type align-top*/
+/* 5. modal - type align-top*/
 .modal--type-align-top {
     align-items: flex-start;
 }
@@ -143,7 +146,7 @@
     max-width: 100%;
     height: fit-content;
     max-height: 100vh;
-    border-radius: 0;
+    border-radius: var(--radius-mode1-none);
 }
 
 /* popup content */
@@ -151,46 +154,19 @@
     margin: 0 auto;
 }
 
-/* @media only screen and (max-width : 767px) {
-    .modal .modal__container {
-        padding: calc(23.5 / 16 * 1rem) calc(20 / 16 * 1rem) calc(40 / 16 * 1rem);
-        width: 100vw;
-        min-width: 100%;
-        max-width: 100%;
-        min-height: 100%;
-        max-height: 100%;
-        
-    }
-    .modal .modal__close {
-        top: calc(23.5 / 16 * 1rem);
-        right: calc(20 / 16 * 1rem);
-    }
-    // 1. modal - type full 
-    .modal--type-full .modal__wrapper {
-        padding: 0 0;
-    }
-    .modal--type-full .modal__container {
-        height: 100vh;
-        border-radius: 0;
-    }
-    // 2. modal - type alerts 
-    .modal--type-alert .modal__container {
-        padding: calc(36 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
-        width: calc(100vw - calc(40 / 16 * 1rem));
-        height: calc(245 / 16 * 1rem);
-    }
-} */
-
 /* PC */
 @media screen and (min-width : 1280px) {
     .modal .modal__container {
         width: 100%;
         min-width: fit-content;
         max-height: calc(100vh - calc(189 / 16 * 1rem));
-        padding: calc(40 / 16 * 1rem);
+        padding: calc(32 / 16 * 1rem) calc(40 / 16 * 1rem) calc(43 / 16 * 1rem) calc(40 / 16 * 1rem);
+    }
+    .modal .modal__footer .modal__checkbox-hidden {
+        margin-top: calc(35 / 16 * 1rem);
     }
     .modal .modal__close {
-        top: calc(40 / 16 * 1rem);
+        top: calc(32 / 16 * 1rem);
         right: calc(40 / 16 * 1rem);
     }
     /* 1. modal - type full */
@@ -199,20 +175,28 @@
     }
     .modal--type-full .modal__container {
         max-width: calc(1008 / 16 * 1rem);
-        border-radius: calc(16 / 16 * 1rem);
+        border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
         height: fit-content;
     }
-    /* 2. modal - type alerts */
+    /* 2. modal - type small */
+    .modal--type-small .modal__container {
+        max-width: calc(480 / 16 * 1rem);
+    }
+    /* 3. modal - type medium */
+    .modal--type-medium .modal__container {
+        max-width: calc(600 / 16 * 1rem);
+    }
+    /* 4. modal - type alerts */
     .modal--type-alert .modal__container {
         padding: calc(36 / 16 * 1rem) calc(40 / 16 * 1rem) calc(40 / 16 * 1rem);
         max-width: calc(480 / 16 * 1rem);
     }
-    /* 4. modal - type align-top*/
+    /* 5. modal - type align-top*/
     .modal--type-align-top .modal__wrapper {
         padding: 0;
     }
     .modal--type-align-top .modal__container {
         max-width: 100%;
-        border-radius: 0;
+        border-radius: var(--radius-mode1-none);
     }
 }
