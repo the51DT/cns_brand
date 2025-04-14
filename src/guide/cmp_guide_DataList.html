@@ -19,18 +19,61 @@
                 <div class="page-cont flex-1">
                     <p class="guide-title-h3">DataList</p>                    
                     <div class="cmp-exsample__wrap mt-5">
-                        <!-- datalist -->
-                        <%- include('src/component/cmp_DataList.html', {
-                            itemClass: 'pc-col3',                            
-                            itemCount: 3
-                        }) %>  
-                        <!-- //datalist -->
-                        <div class="button__wrap">
-                            <a href="#" class="btn btn-medium btn-primary">
-                                <span class="btn__text">DX 자료실로 이동</span>
-                                <i class="btn__icon ico icon-arrow-right-wt16"></i>
-                            </a>
-                        </div> 
+                        <div class="inner-wrap py-4" style="background-color: beige;">
+                            <!-- datalist -->
+                            <%
+                                const relatedData = [
+                                    {
+                                        id: 0,
+                                        imgPc: 'https://placehold.co/980x564',
+                                        imgMo: 'https://placehold.co/980x564',
+                                        label: 'Category',
+                                        title: 'Cloud 뉴스레터',
+                                        content: 'LG CNS Cloud Service에 대한 모든 뉴스레터',
+                                        button: {
+                                            type: 'link',
+                                            target: 'blank',
+                                            href: '#',
+                                        }
+                                    },
+                                    {
+                                        id: 1,
+                                        imgPc: 'https://placehold.co/980x564',
+                                        imgMo: 'https://placehold.co/980x564',
+                                        label: 'Category',
+                                        title: 'Cloud 소개 영상',
+                                        content: 'LG CNS Cloud Service에 대한 모든 것을 이해하기 쉽게 소개한 영상',
+                                        button: {
+                                            type: 'video',
+                                            target: 'blank',
+                                            disabled: true,
+                                            href: '#',
+                                        }
+                                    },
+                                    {
+                                        id: 2,
+                                        imgPc: 'https://placehold.co/980x564',
+                                        imgMo: 'https://placehold.co/980x564',
+                                        label: 'Category',
+                                        title: 'Cloud 소개 자료',
+                                        content: 'LG CNS Cloud Service에 대한 모든 것을 이해하기 쉽게 소개한 자료',
+                                        button: {
+                                            type: 'download',
+                                            modalId: '',
+                                        }
+                                    },
+                                ];
+                            %>
+                            <%- include('src/component/cmp_DataList.html', {
+                                jsonData: relatedData,
+                            }) %>  
+                            <!-- //datalist -->
+                            <div class="button__wrap">
+                                <button class="btn btn-medium btn-secondary">
+                                    <span class="btn__text">더 보기</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -38,5 +81,46 @@
         </div>
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script src="/assets/bundle/swiper-bundle.min.js"></script>
+    <script src="/assets/js/initializeSwipers.js"></script>
+    <script>
+        let customerSwiper = null;
+
+        function setupCustomerCaseSwiper() {
+            const swiperEl = document.querySelector('.data-list-swiper');
+            const isMobile = window.innerWidth < 720;
+
+            if (!swiperEl) return;
+
+            if (isMobile && !customerSwiper) {
+                customerSwiper = new Swiper(swiperEl, {
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                slidesOffsetBefore: 20,
+                slidesOffsetAfter: 20,
+                breakpoints: {
+                    720: {
+                    spaceBetween: 0,
+                    slidesOffsetBefore: 0,
+                    slidesOffsetAfter: 0,
+                    }
+                },
+                });
+            } else if (!isMobile && customerSwiper) {
+                customerSwiper.destroy(true, true);
+                customerSwiper = null;
+            }
+        }
+
+        setupCustomerCaseSwiper();
+
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                setupCustomerCaseSwiper();
+            }, 200);
+        });
+    </script>
 </body>
 </html>
