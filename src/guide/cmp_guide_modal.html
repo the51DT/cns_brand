@@ -34,7 +34,7 @@
                             <div class="cmp-exsample__wrap mt-10">
                                 <div class="button_wrap">
                                     <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default01" onclick="openModal(event)">
-                                        <span class="btn__text">default modal</span>
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">default modal</span>
                                     </button>
                                 </div>
                             </div>
@@ -42,12 +42,25 @@
                             <div class="cmp-exsample__wrap mt-10">
                                 <div class="button_wrap">
                                     <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default02" onclick="openModal(event)">
-                                        <span class="btn__text">default modal small</span>
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">default modal small</span>
                                     </button>
                                 </div>
                                 <div class="button_wrap mt-5">
                                     <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default05" onclick="openModal(event)">
-                                        <span class="btn__text">default modal small : 오늘 하루 보지 않기</span>
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">default modal small : 오늘 하루 보지 않기</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="guide-title-h3 mt-10">Popup Component : .modal--type-medium (pc-size: medium, mo-size: medium)</p>
+                            <div class="cmp-exsample__wrap mt-10">
+                                <div class="button_wrap">
+                                    <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default07" onclick="openModal(event)">
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">default modal medium</span>
+                                    </button>
+                                </div>
+                                <div class="button_wrap mt-5">
+                                    <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default08" onclick="openModal(event)">
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">default modal medium : 오늘 하루 보지 않기</span>
                                     </button>
                                 </div>
                             </div>
@@ -55,17 +68,17 @@
                             <div class="cmp-exsample__wrap mt-10">
                                 <div class="button_wrap">
                                     <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default03" onclick="openModal(event)">
-                                        <span class="btn__text">default modal alert</span>
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">default modal alert</span>
                                     </button>
                                 </div>
                                 <div class="button_wrap mt-5">
                                     <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default04" onclick="openModal(event)">
-                                        <span class="btn__text">default modal alert : only one button</span>
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">default modal alert : only one button</span>
                                     </button>
                                 </div>
                                 <div class="button_wrap mt-5">
                                     <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default06" onclick="openModal(event)">
-                                        <span class="btn__text">default modal alert : 오늘 하루 보지 않기</span>
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">default modal alert : 오늘 하루 보지 않기</span>
                                     </button>
                                 </div>
                             </div>
@@ -222,7 +235,7 @@
                                     <span class="btn__text">네 받을래요</span>
                                 </button> -->
                         </div>
-                        <div class="modal__checkbox-hidden mt-4">
+                        <div class="modal__checkbox-hidden">
                             <% const inputData2=[ { id: 0, title: '' , inputData: [ { type: "checkbox" ,
                                 name: "checkbox-guide" , dataList: [ { label: "오늘 하루 보지 않기" , value: "checkbox-default" ,
                                 required: true, }, ], }, ], }, ] %>
@@ -244,6 +257,109 @@
         </div>
     </div>
     <!-- [End] modal - small / 오늘 하루 보지 않기 -->
+
+    <!-- [Start] modal - medium : pc-size: medium, mo-size: medium -->
+    <div class="cmp-modal" id="modal-default07">
+        <div class="modal modal--type-medium">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <div class="modal__header">
+                        <div class="modal__title font-head-sm font-bold">기업 검색</div>
+                    </div>
+                    <div class="modal__content">
+                        <!-- [Start] 모달 컨텐츠 영역 -->
+                        <p class="font-body-md text-center">
+                            최신 트렌드와 유용한 기술 레터를 <br>
+                            받아보시겠어요?
+                        </p>
+                        <div class="button_wrap button_wrap--type-center mt-4">
+                            <a href="" class="btn btn-text mx-auto" target="_blank">
+                                <span class="btn__text">
+                                    마케팅 정보 수신 동의
+                                </span>
+                            </a>
+                        </div>
+                        <!-- [End] 모달 컨텐츠 영역 -->
+                    </div>
+                    <div class="modal__footer">
+                        <div class="button__wrap">
+                            <button class="btn btn-large btn-secondary" onclick="closeModal(event)">
+                                <span class="btn__text">나중에 하기</span>
+                            </button>
+                            <button class="btn btn-large btn-primary">
+                                <span class="btn__text">네 받을래요</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal__close">
+                        <div class="button__wrap">
+                            <button type="button" class="btn" onclick="closeModal(event)">
+                                <!-- <i class="ico icon-close-bl32"></i> -->
+                                <span class="ir-text">모달 닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal - medium -->
+    <!-- [Start] modal - medium / 오늘 하루 보지 않기 : pc-size: medium, mo-size: medium -->
+    <div class="cmp-modal" id="modal-default08">
+        <div class="modal modal--type-medium">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <div class="modal__header">
+                        <div class="modal__title font-head-sm font-bold">기업 검색</div>
+                    </div>
+                    <div class="modal__content">
+                        <!-- [Start] 모달 컨텐츠 영역 -->
+                        <p class="font-body-md text-center">
+                            최신 트렌드와 유용한 기술 레터를 <br>
+                            받아보시겠어요?
+                        </p>
+                        <div class="button_wrap button_wrap--type-center mt-4">
+                            <a href="" class="btn btn-text mx-auto" target="_blank">
+                                <span class="btn__text">
+                                    마케팅 정보 수신 동의
+                                </span>
+                            </a>
+                        </div>
+                        <!-- [End] 모달 컨텐츠 영역 -->
+                    </div>
+                    <div class="modal__footer">
+                        <div class="button__wrap">
+                            <button class="btn btn-large btn-primary" onclick="closeModal(event)">
+                                <span class="btn__text">닫기</span>
+                            </button>
+                            <!-- <button class="btn btn-large btn-primary">
+                                        <span class="btn__text">네 받을래요</span>
+                                    </button> -->
+                        </div>
+                        <div class="modal__checkbox-hidden mt-4">
+                            <% const inputData4=[ { id: 0, title: '' , inputData: [ { type: "checkbox" ,
+                                name: "checkbox-guide" , dataList: [ { label: "오늘 하루 보지 않기" , value: "checkbox-default" ,
+                                required: true, }, ], }, ], }, ] %>
+                                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { jsonData:
+                                    inputData4, })) %>
+                        </div>
+                    </div>
+                    <div class="modal__close">
+                        <div class="button__wrap">
+                            <button type="button" class="btn" onclick="closeModal(event)">
+                                <!-- <i class="ico icon-close-bl32"></i> -->
+                                <span class="ir-text">모달 닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal - small / 오늘 하루 보지 않기 -->
+
     <!-- [Start] modal - alert : pc-size: samll, mo-size: small -->
     <div class="cmp-modal" id="modal-default03">
         <div class="modal modal--type-alert">
