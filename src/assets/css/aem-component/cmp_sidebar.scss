@@ -47,12 +47,12 @@
     }
   }
 
-  @media #{$min720} {
+  @media #{$pcWide} {
     display: flex;
     flex-direction: column;
     position: fixed;
     top: calc(150 / 16 * 1rem);
-    right: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
-    text-align: right;
+    left: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+    text-align: left;
   }
 }
