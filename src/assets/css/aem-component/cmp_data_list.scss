@@ -48,6 +48,9 @@
                     margin-bottom: calc(16 / 16 * 1rem);
                 }
             }
+            .description {
+                color: var(--colorCM-mode1-text-text-secondary);
+            }
         }
         &-bottom {
             display: flex;
