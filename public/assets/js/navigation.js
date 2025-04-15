@@ -31,7 +31,7 @@ const mainNavigation = (selector) => {
                             const activeItem = document.querySelector('.sub-menu-list > li.is-active');
                             if (activeItem) {
                                 activeItem.classList.remove('is-active');
-                                // activeItem.nextElementSibling.classList.remove('is-active')
+                                activeItem.nextElementSibling.classList.remove('is-active')
                             } 
                             menu.parentElement.classList.add('is-active');
                             // if(menu.nextElementSibling) {
