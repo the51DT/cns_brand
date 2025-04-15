@@ -509,18 +509,38 @@ body {
                 .dropdown_list {
                     display: none;
                     &.is-active {
-                        // display: block; 디자인 미정
-                        border: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default7);
-                        border-bottom: 0;
+                        display: block;
+                        border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
                         position: absolute;
                         // width: 100%;
-                        width: calc(200 / 16 * 1rem);
-                        right:0;
-                        bottom: calc(-122 / 16 * 1rem);
-                        padding: calc(11 / 16 * 1rem) calc(12 / 16 * 1rem);                        
-                        background-color: var(--colorGL-all-gray100);
-                        border-radius: var(--radius-mode1-3-x-l);
-                        z-index: 9;                        
+                        // width: calc(200 / 16 * 1rem);
+                        left:50%;
+                        top: calc(36 / 16 * 1rem);
+                        transform: translateX(-50%);
+                        padding: calc(16 / 16 * 1rem) calc(12 / 16 * 1rem);                        
+                        background: var(--colorCM-mode1-background-background-default0);
+                        border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
+                        z-index: 1000;                        
+                    }
+                    li {
+                        & + li {
+                            margin-top: calc(12 / 16 * 1rem);
+                        }
+                    }
+                    .lang-select__btn {
+                        display: block;
+                        min-width: calc(24 / 16 * 1rem);
+                        width: calc(24 / 16 * 1rem);
+                        height: calc(24 / 16 * 1rem);
+                        &--ko {
+                            background: url("/src/assets/image/icon/icon-lang-ko-bl24.svg") no-repeat center center / contain;
+                        }
+                        &--global {
+                            background: url("/src/assets/image/icon/icon-lang-global-bl24.svg") no-repeat center center / contain;
+                        }
+                        &--jp {
+                            background: url("/src/assets/image/icon/icon-lang-jp-bl24.svg") no-repeat center center / contain;
+                        }
                     }
                 }
             }
@@ -891,18 +911,31 @@ body {
             background: var(--colorCM-mode1-background-background-default0);
         }
         .modal__container {
+            gap: calc(32 / 16 * 1rem);
             margin: 0 auto;
             max-width: calc(1440 / 16 * 1rem);
             padding: calc(64 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
             @media #{$min1280} {
+                gap: calc(48 / 16 * 1rem);
                 padding: calc(100 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
             }
         }
         .modal__close {
+            top: calc(12 / 16 * 1rem);
+            right: calc(12 / 16 * 1rem);
+            @media #{$min1280} {
+                top: calc(38 / 16 * 1rem);
+                right: calc(32 / 16 * 1rem);
+            }
             .btn {
-                width: calc(24 / 16 * 1rem);
-                height: calc(24 / 16 * 1rem);
-                background: url("/src/assets/image/icon/icon-close-bl24.svg") center center / contain;
+                width: calc(40 / 16 * 1rem);
+                height: calc(40 / 16 * 1rem);
+                background: url("/src/assets/image/icon/icon-close-bl40.svg") no-repeat center center / contain;
+                @media #{$min1280} {
+                    width: calc(24 / 16 * 1rem);
+                    height: calc(24 / 16 * 1rem);
+                    background: url("/src/assets/image/icon/icon-close-bl24.svg") no-repeat center center / contain;
+                }
             }
         }
         .modal__header {
@@ -932,6 +965,9 @@ body {
                                 font-size: calc(var(--typo-pc-size-head-sm) / 16 *1rem);
                                 line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
                             }
+                            &::placeholder {
+                                color: var(--colorCM-mode1-text-text-quaternary);
+                            }
                         }
                         .ico {
                             &.icon-search-border-bl40 {
@@ -956,7 +992,7 @@ body {
             .modal__scroll__inner {
                 padding-bottom: calc(60 / 16 * 1rem);
                 @media #{$min1280} {
-                    padding-bottom: calc(80 / 16 * 1rem);
+                    padding-bottom: calc(100 / 16 * 1rem);
                 }
             }
             .search-layer__result {
@@ -969,14 +1005,19 @@ body {
                 max-width: calc(1440 / 16 * 1rem);
                 @media #{$min1280} {
                     justify-content: center;
-                    margin: calc(48 / 16 * 1rem) auto 0;
                     padding: 0 calc(140 / 16 * 1rem);
                 }
                 &--empty {
-                    padding: calc(32 /16 * 1rem) calc(0 /16 * 1rem);
+                    padding: calc(40 /16 * 1rem) calc(0 /16 * 1rem);
                     justify-content: center;
                     @media #{$min1280} {
-                        padding: calc(40 / 16 * 1rem) calc(140 / 16 * 1rem);
+                        padding: calc(102 / 16 * 1rem) calc(140 / 16 * 1rem);
+                    }
+                }
+                & + .search-layer__result--empty {
+                    margin-top: calc(32 / 16 * 1rem);
+                    @media #{$min1280} {
+                        margin-top: calc(48 / 16 * 1rem);
                     }
                 }
             }
@@ -989,7 +1030,8 @@ body {
                 box-sizing: border-box;
             }
             .search-layer__empty-text {
-                color: var(--colorCM-mode1-text-text-tertiary);
+                color: var(--text-text-default);
+                font-weight: 600;
             }
         }
     }
