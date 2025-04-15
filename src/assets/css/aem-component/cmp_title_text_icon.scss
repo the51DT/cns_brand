@@ -55,6 +55,7 @@
           li {
             position: relative;
             text-indent:  calc(-8 / 16 * 1rem); 
+            margin-left: calc(8/16*1rem);
 
             &::before {
               content: "";
