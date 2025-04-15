@@ -51,4 +51,12 @@
             }
         }
     }
+    .cmp-overview-text4 {
+        display: flex;
+        flex-direction: column;
+        gap: calc(12 / 16 * 1rem);
+        @media #{$min720} {
+            gap: #{$gap-margin};
+        }
+    }
 }

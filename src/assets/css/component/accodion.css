@@ -58,11 +58,7 @@
 }
 .cmp-accordion .accordion-list li .accordion-title .tit {
     font-style: normal;
-    color: var(--colorGL-all-grey550);     
-    font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
-    font-weight: 600;    
-    line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem); 
-    letter-spacing: var(--letter-spacing-small);  
+    color: var(--colorCM-mode1-text-text-default);
     text-align: left;     
 }
 .cmp-accordion .accordion-list li .accordion-content {
@@ -87,10 +83,8 @@
 }
 .cmp-accordion .accordion-list li.is-active .accordion-content {
     display: block;
-    color: var(--text-text-tertiary);
+    color: var(--colorCM-mode1-text-text-secondary);
     padding: 0 calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
-    font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);    
-    line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
     letter-spacing: var(--letter-spacing-small);
 }
 
@@ -98,7 +92,7 @@
 @media screen and (min-width : 1280px) {
     .cmp-accordion .accordion-list li:last-child {
         border-bottom: none !important;
-      }
+    }
     .cmp-accordion .accordion-list li .accordion-title {
         padding: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
     }
@@ -112,10 +106,6 @@
         align-items: center;
         gap: calc(var(--spacing-mode1-horizontal-m) / 16 * 1rem);    
     } 
-    .cmp-accordion .accordion-list li .accordion-title .tit {    
-        font-size: calc(var(--typo-pc-size-head-sm-mode) / 16 * 1rem);    
-        line-height: calc(var(--typo-pc-size-head-sm-mode) / 16 * 1rem);
-    }
     
     /* .is-active*/
     .cmp-accordion .accordion-list li.is-active .accordion-title {
@@ -123,8 +113,5 @@
     }
     .cmp-accordion .accordion-list li.is-active .accordion-content {
         padding: 0 calc(96 / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
-        font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);    
-        font-weight: 400;
-        line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
     }
 }
