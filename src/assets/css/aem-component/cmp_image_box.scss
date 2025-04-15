@@ -6,15 +6,15 @@
             width: 100%;
         }
         &__item-pc {
-            display: block;
-            @media #{$phone} {
-                display: none;
+            display: none;
+            @media #{$min1280} {
+                display: block;
             }
         }
         &__item-mo {
-            display: none;
-            @media #{$phone} {
-                display: block;
+            display: block;
+            @media #{$min1280} {
+                display: none;
             }
         }
     }
