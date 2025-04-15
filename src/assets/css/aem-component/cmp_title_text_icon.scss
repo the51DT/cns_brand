@@ -42,11 +42,11 @@
 
       .title-text-icon-content {
         width: 100%;
-        margin-left: calc(4 / 16 * 1rem);
         margin-top: calc(24 / 16 * 1rem);
 
         .cate-title {
           margin-bottom: calc(8 / 16 * 1rem);
+          display: block;
         }
 
         .cate-text {
@@ -54,6 +54,7 @@
 
           li {
             position: relative;
+            text-indent:  calc(-8 / 16 * 1rem); 
 
             &::before {
               content: "";
@@ -66,12 +67,6 @@
               vertical-align: middle;
             }
           }
-        }
-
-        a {
-          font-size: calc(var(--typo-pc-size-caption-sm-ui) / 16 * 1rem);
-          border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default9);
-          margin-top: calc(8 / 16 * 1rem);
         }
 
         &.type-large {
@@ -101,16 +96,11 @@
 
       .title-text-icon-content {
         width: 50%;
-        padding-left: calc(20 / 16 * 1rem);
+        padding-left: calc(24 / 16 * 1rem);
         margin-top: 0;
 
         .cate-title {
           margin-bottom: calc(12 / 16 * 1rem);
-        }
-
-        a {
-          font-size: calc(var(--typo-pc-size-caption-lg-ui) / 16 * 1rem);
-          margin-top: calc(16 / 16 * 1rem);
         }
 
         &.type-large {
