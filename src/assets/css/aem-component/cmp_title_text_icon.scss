@@ -70,7 +70,7 @@
 
         a {
           font-size: calc(var(--typo-pc-size-caption-sm-ui) / 16 * 1rem);
-          border-bottom: 1px solid black;
+          border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default9);
           margin-top: calc(8 / 16 * 1rem);
         }
 
