@@ -49,6 +49,19 @@
     &.cmp-input {
         margin-bottom: 0;
     }
+    &.cmp-image-box {
+        &:has(.img-box__only-pc) {
+            margin-bottom: 0; 
+            @media #{$min1280} {
+                margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem);
+            }
+        }
+        &:has(.img-box__only-mo) {
+            @media #{$min1280} {
+                margin-bottom: 0;
+            }
+        }
+    }
     & > div:last-child {
         margin-bottom: 0;
     }
