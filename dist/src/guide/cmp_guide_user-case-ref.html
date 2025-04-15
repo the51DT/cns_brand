@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/guide/cmp_guide_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="page-location text-2xl font-bold">
+        <span id="pagesTitle"></span>
+      </div>
+      <div class="guide-content">
+        <div class="flex justify-between lnb-type">
+          <div class="lnb-side__wrap">
+            <button type="button" class="lnb-trigger">아코디언</button>
+          </div>
+          <div class="page-cont flex-1">
+            <p class="guide-title-h3">cmp_user-case-ref</p>
+            <div class="cmp-exsample__wrap mt-3">
+              <div class="cmp-wrap cmp-user-case-ref">
+                <div class="cmp-user-case-ref__container">
+                  <div class="cmp-user-case-ref__title">
+                    <span class="font-head-sm title font-bold">LG CNS 인사이트를 구독해보세요!</span>
+                    <span class="font-body-lg sub-title font-bold">LG CNS의 인사이트가 담긴 소식이 정기적으로 구독자의 메일함으로 찾아갑니다.</span>
+                  </div>
+                  <div class="cmp-user-case-ref__content">
+
+                    <!-- 이미지 컴포넌트 -->
+                    <div class="cmp-wrap cmp-image-box">
+                      <div class="img-box test">
+                        <img src="https://placehold.co/198x128" alt="alt" class="img-box__item-pc">
+                        <img src="https://placehold.co/98x28" alt="alt" class="img-box__item-mo">
+                      </div>
+                    </div>
+                    <div class="text-wrap">
+                      <div class="cmp-wrap cmp-richtext">
+                        <strong>이 ebook을 통해 아래 내용을 상세하게 확인할 수 있습니다</strong><br><br><b>ESG 뉴스레터 'ESG 에브릿띵'과 함께 지속 가능한 비즈니스의<br>최신 트렌드와 인사이트를 받아보세요. 지금 뉴스레터를 구독하시면 ESG 에브릿띵에서 다룬 핵심 인사이트를 요약 정리한 특별 eBook을 제공해 드립니다.</b><br><br>
+                        <p>*정보 입력 후 등록을 하시면 이메일로 eBook을 발송해 드립니다.<br><br>eBook 하이라이트</p>
+                        <ul>
+                          <li>ESG 경영의 기초와 중요성</li>
+                          <li>ESG 경영 실천을 위한 핵심 가이드</li>
+                          <li>글로벌 ESG 규제와 트렌드</li>
+                          <li>ESG 공시 대응을 위한 전략</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button__wrap">
+                    <button type="button" class="btn btn-medium btn-secondary" modal-id="" onclick="openModal(event)">
+                      <i class="btn__icon ico icon-plus-bl20"></i>
+                      <span class="btn__text">
+            구독하기
+          </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/ui_common.js"></script>
+  </body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/guide/cmp_guide_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="page-location text-2xl font-bold">
+        <span id="pagesTitle"></span>
+      </div>
+      <div class="guide-content">
+        <div class="flex justify-between lnb-type">
+          <div class="lnb-side__wrap">
+            <button type="button" class="lnb-trigger">아코디언</button>
+          </div>
+          <div class="page-cont flex-1">
+            <p class="guide-title-h3">Button Component(btn-primary)</p>
+            <ul class="guide-list type-dot mt-3">
+              <li>
+                <p><b>.btn.btn-primary</b> : default, hover, is-active, is-disabled</p>
+              </li>
+            </ul>
+            <div class="cmp-exsample__wrap mt-5">
+
+              <!-- 기본 button -->
+              <div class="button__wrap flex-wrap">
+                <button type="button" class="btn btn-large btn-primary">
+                  <span class="btn__text">button[type='button'] btn-primary</span>
+                </button>
+                <a href="#" class="btn btn-large btn-primary">
+                  <span class="btn__text">a[href='#'] btn-primary</span>
+                </a>
+
+                <!-- <button type="button" class="btn btn-large btn-primary is-active">
+                                .is-active
+                            </button> -->
+                <button type="button" class="btn btn-large btn-primary is-disabled">
+                  <span class="btn__text">.is-disabled or :disabled</span>
+                </button>
+              </div>
+              <div class="button__wrap flex-wrap mt-3">
+                <button type="button" class="btn btn-icon btn-medium btn-primary">
+                  <i class="ico icon-plus-wh24"></i>
+                  <span class="ir-text">추가하기</span>
+                </button>
+                <a href="#" class="btn btn-icon btn-medium btn-primary">
+                  <i class="ico icon-plus-wh24"></i>
+                  <span class="ir-text">추가하기</span>
+                </a>
+
+                <!-- <button type="button" class="btn btn-icon btn-medium btn-primary is-active">
+                                <i class="ico icon-plus-wh24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </button> -->
+                <button type="button" class="btn btn-icon btn-medium btn-primary is-disabled">
+                  <i class="ico icon-plus-wh24"></i>
+                  <span class="ir-text">추가하기</span>
+                </button>
+              </div> <!-- //기본 button -->
+            </div>
+            <p class="guide-title-h3 mt-10">Button Component(btn-secondary)</p>
+            <ul class="guide-list type-dot mt-3">
+              <li>
+                <p><b>.btn.btn-secondary</b> : default, hover, is-active, is-disabled</p>
+              </li>
+            </ul>
+            <div class="cmp-exsample__wrap mt-5">
+              <div class="button__wrap flex-wrap">
+                <button type="button" class="btn btn-large btn-secondary">
+                  <span class="btn__text">btn-large btn-secondary</span>
+                </button>
+                <a href="#" class="btn btn-large btn-secondary">
+                  <span class="btn__text">a[href='#'] btn-large btn-secondary</span>
+                </a>
+
+                <!-- <button type="button" class="btn btn-large btn-secondary is-active">
+                                <span class="btn__text">.is-active</span>
+                            </button> -->
+                <button type="button" class="btn btn-large btn-secondary is-disabled">
+                  <span class="btn__text">.is-disabled or :disabled</span>
+                </button>
+              </div>
+
+              <!-- <div class="button__wrap flex-wrap mt-3">
+                            <button type="button" class="btn btn-icon btn-medium btn-secondary">
+                                <i class="ico icon-plus-wh24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </button>
+                            <a href="#" class="btn btn-icon btn-medium btn-secondary">
+                                <i class="ico icon-plus-wh24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </a>
+                            <button type="button" class="btn btn-icon btn-medium btn-secondary is-active">
+                                <i class="ico icon-plus-wh24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </button>
+                            <button type="button" class="btn btn-icon btn-medium btn-secondary is-disabled">
+                                <i class="ico icon-plus-wh24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </button>
+                        </div> -->
+            </div>
+
+            <!-- <p class="guide-title-h3 mt-10">Button Component(btn-tertiary)</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p><b>.btn.btn-tertiary</b> : default, hover, is-active, is-disabled</p>
+                        </li>
+                    </ul>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <div class="button__wrap flex-wrap">
+                            <button type="button" class="btn btn-large btn-tertiary">
+                                <span class="btn__text">btn-large btn-tertiary</span>
+                            </button>
+                            <a href="#" class="btn btn-large btn-tertiary">
+                                <span class="btn__text">a[href='#'] btn-large btn-tertiary</span>
+                            </a>
+                            <button type="button" class="btn btn-large btn-tertiary is-active">
+                                <span class="btn__text">.is-active</span>
+                            </button>
+                            <button type="button" class="btn btn-large btn-tertiary is-disabled">
+                                <span class="btn__text">.is-disabled or :disabled</span>
+                            </button>
+                        </div>
+                        <div class="button__wrap flex-wrap mt-3">
+                            <button type="button" class="btn btn-icon btn-medium btn-tertiary">
+                                <i class="ico icon-plus-wh24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </button>
+                            <a href="#" class="btn btn-icon btn-medium btn-tertiary">
+                                <i class="ico icon-plus-wh24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </a>
+                            <button type="button" class="btn btn-icon btn-medium btn-tertiary is-active">
+                                <i class="ico icon-plus-wh24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </button>
+                            <button type="button" class="btn btn-icon btn-medium btn-tertiary is-disabled">
+                                <i class="ico icon-plus-wh24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </button>
+                        </div>
+                    </div> -->
+
+            <!-- <p class="guide-title-h3 mt-10">Button Component(btn-quaternary)</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p><b>.btn.btn-quaternary</b> : default, hover, is-active, is-disabled</p>
+                        </li>
+                    </ul>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <div class="button__wrap flex-wrap">
+                            <button type="button" class="btn btn-large btn-quaternary">
+                                <span class="btn__text">btn-large btn-quaternary</span>
+                            </button>
+                            <a href="#" class="btn btn-large btn-quaternary">
+                                <span class="btn__text">a[href='#'] btn-large btn-quaternary</span>
+                            </a>
+                            <button type="button" class="btn btn-large btn-quaternary is-active">
+                                <span class="btn__text">.is-active</span>
+                            </button>
+                            <button type="button" class="btn btn-large btn-quaternary is-disabled">
+                                <span class="btn__text">.is-disabled or :disabled</span>
+                            </button>
+                        </div>
+                        <div class="button__wrap flex-wrap mt-3">
+                            <button type="button" class="btn btn-icon btn-medium btn-quaternary">
+                                <i class="ico icon-plus-bl24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </button>
+                            <a href="#" class="btn btn-icon btn-medium btn-quaternary">
+                                <i class="ico icon-plus-bl24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </a>
+                            <button type="button" class="btn btn-icon btn-medium btn-quaternary is-active">
+                                <i class="ico icon-plus-bl24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </button>
+                            <button type="button" class="btn btn-icon btn-medium btn-quaternary is-disabled">
+                                <i class="ico icon-plus-bl24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </button>
+                        </div>
+                    </div> -->
+
+            <!-- <p class="guide-title-h3 mt-10">Button Component(btn-reversal)</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p><b>.btn.btn-quaternary</b> : default</p>
+                        </li>
+                    </ul>
+                    <div class="cmp-exsample__wrap mt-5 py-3 bg-black">
+                        <div class="button__wrap flex-wrap">
+                            <button type="button" class="btn btn-large btn-reversal">
+                                <span class="btn__text">btn-large btn-reversal</span> 
+                            </button>
+                            <a href="#" class="btn btn-large btn-reversal">
+                                <span class="btn__text">a[href='#'] btn-large btn-reversal</span>
+                            </a>
+                        </div>
+                        <div class="button__wrap mt-3">
+                            <button type="button" class="btn btn-icon btn-medium btn-reversal">
+                                <i class="ico icon-plus-wh24"></i>
+                                <span class="ir-text">추가하기</span>
+                            </button>
+                        </div>
+                    </div> -->
+
+            <!-- <p class="guide-title-h3 mt-10">Button Component(btn-radius)</p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <div class="button__wrap flex-wrap">
+                            <button type="button" class="btn btn-large btn-radius">
+                                <span class="btn__text">btn-large btn-radius</span>
+                            </button>
+                            <a href="#" class="btn btn-large btn-radius" disabled>
+                                <span class="btn__text">a[href='#'] btn-large btn-radius</span>
+                            </a>
+                            <button type="button" class="btn btn-large btn-radius is-active">
+                                <span class="btn__text">is-active</span>
+                            </button>
+                            <button type="button" class="btn btn-large btn-radius is-disabled">
+                                <span class="btn__text">.is-disabled or :disabled</span>
+                            </button>
+                        </div>
+                    </div> -->
+            <p class="guide-title-h3 mt-10">Button Component(btn-text)</p>
+            <ul class="guide-list type-dot mt-3">
+              <li>
+                <p><b>.btn.btn-text</b> : default, hover, is-active, is-disabled</p>
+              </li>
+              <li>
+                <p>아이콘이 있는 경우 밑줄 없음</p>
+              </li>
+            </ul>
+            <div class="cmp-exsample__wrap mt-5">
+              <div class="button__wrap flex-wrap">
+
+                <!-- <button type="button" class="btn btn-medium btn-text">
+                                btn-medium btn-text
+                            </button> -->
+                <a href="#" class="btn btn-medium btn-text">
+                  <span class="btn__text">
+                                    btn-text:has(.btn__icon)
+                                </span>
+                  <i class="btn__icon ico icon-arrow-right-bl16"></i>
+                </a>
+                <a href="#" class="btn btn-medium btn-text is-disabled">
+                  <span class="btn__text">
+                                    .is-disabled or :disabled
+                                </span>
+                  <i class="btn__icon ico icon-arrow-right-bl16"></i>
+                </a>
+
+                <!-- <a href="#" class="btn btn-medium btn-text is-active">
+                                <span class="btn__text">
+                                    .is-active
+                                </span>
+                                <i class="btn__icon ico icon-arrow-right-bl16"></i>
+                            </a> -->
+                <a href="#" class="btn btn-medium btn-text">
+                  <span class="btn__text">
+                                    btn-text
+                                </span>
+                </a>
+                <a href="#" class="btn btn-medium btn-text is-disabled">
+                  <span class="btn__text">
+                                    .is-disabled or :disabled
+                                </span>
+                </a>
+              </div>
+              <p class="guide-title-h3 mt-10">Button Component(only icon) <b>TBD</b></p>
+              <div class="cmp-exsample__wrap mt-5">
+                <div class="button__wrap flex-wrap">
+                  <a href="#" class="btn btn-medium btn-icon">
+                    <i class="ico icon-download-bl24"></i>
+                    <span class="ir-text">다운로드</span>
+                  </a>
+                  <button type="button" class="btn btn-medium btn-icon">
+                    <i class="ico icon-lang-bl24"></i>
+                    <span class="ir-text">언어 선택</span>
+                  </button>
+                </div>
+              </div>
+              <p class="guide-title-h3 mt-10">Button Component(Size) : button</p>
+              <ul class="guide-list type-dot mt-3">
+                <li>
+                  <p><b>btn-large</b>: <b>TBD</b></p>
+                </li>
+                <li>
+                  <p><b>btn-medium</b>: min-width:160px; height:56px; font-size:18px; font-weight:500;</p>
+                </li>
+                <li>
+                  <p><b>btn-small</b> : min-width:140px; height:48px; font-size:16px; font-weight:400;</p>
+                </li>
+                <li>
+                  <p><b>btn-ultra-small</b> : min-width:88px; height:36px; font-size:16px; font-weight:400;</p>
+                </li>
+              </ul>
+              <div class="cmp-exsample__wrap mt-5">
+                <div class="button__wrap mt-5 flex-wrap">
+                  <button type="button" class="btn btn-primary btn-large">
+                    <span class="btn__text">button[type='button'] large</span>
+                  </button>
+                  <a href="#" class="btn btn-primary btn-large">
+                    <span class="btn__text">a[href='#'] large</span>
+                  </a>
+                  <a href="#" class="btn btn-primary btn-large">
+                    <span class="btn__text">icon right</span>
+                    <i class="btn__icon ico icon-plus-wh24"></i>
+                  </a>
+                  <a href="#" class="btn btn-primary btn-large">
+                    <i class="btn__icon ico icon-plus-wh24"></i>
+                    <span class="btn__text">icon left</span>
+                  </a>
+
+                  <!-- <button type="button" class="btn btn-large btn-radius">
+                                <span class="btn__text">btn-large btn-radius</span>
+                            </button> -->
+                </div>
+
+                <!-- <div class="button__wrap mt-5">
+                            <button type="button" class="btn btn-black btn-middle">
+                                button[type='button'] middle
+                                <i class="ico icon-arrow-right-wt16"></i>
+                            </button>
+                            <a href="#" class="btn btn-black btn-middle">
+                                a[href='#'] middle
+                                <i class="ico icon-arrow-right-wt16"></i>
+                            </a>
+                        </div> -->
+                <div class="button__wrap flex-wrap mt-5">
+                  <button type="button" class="btn btn-primary btn-medium">
+                    <span class="btn__text">button[type='button'] medium</span>
+                  </button>
+                  <a href="#" class="btn btn-primary btn-medium">
+                    <span class="btn__text">a[href='#'] medium</span>
+                  </a>
+                  <a href="#" class="btn btn-primary btn-medium">
+                    <span class="btn__text">icon right</span>
+                    <i class="btn__icon ico icon-plus-wh24"></i>
+                  </a>
+                  <a href="#" class="btn btn-primary btn-medium">
+                    <i class="btn__icon ico icon-plus-wh24"></i>
+                    <span class="btn__text">icon left</span>
+                  </a>
+
+                  <!-- <button type="button" class="btn btn-medium btn-radius">
+                                <span class="btn__text">btn-large btn-radius</span>
+                            </button> -->
+
+                  <!-- <a href="#" class="btn btn-icon btn-medium btn-primary">
+                                <i class="ico icon-download-bl24"></i>
+                                <span class="ir-text">다운로드</span>
+                            </a>
+                            <button type="button" class="btn btn-icon btn-medium btn-primary">
+                                <i class="ico icon-lang-bl24"></i>
+                                <span class="ir-text">언어 선택</span>
+                            </button> -->
+                </div>
+                <div class="button__wrap flex-wrap mt-5">
+                  <button type="button" class="btn btn-primary btn-small">
+                    <span class="btn__text">button[type='button'] small</span>
+                  </button>
+                  <a href="#" class="btn btn-primary btn-small">
+                    <span class="btn__text">a[href='#'] small</span>
+                  </a>
+                  <a href="#" class="btn btn-primary btn-small">
+                    <span class="btn__text">icon right</span>
+                    <i class="btn__icon ico icon-plus-wh24"></i>
+                  </a>
+                  <a href="#" class="btn btn-primary btn-small">
+                    <i class="btn__icon ico icon-plus-wh24"></i>
+                    <span class="btn__text">icon left</span>
+                  </a>
+
+                  <!-- <button type="button" class="btn btn-small btn-radius">
+                                <span class="btn__text">btn-large btn-radius</span>
+                            </button> -->
+
+                  <!-- <a href="#" class="btn btn-icon btn-small btn-primary">
+                                <i class="ico icon-download-bl24"></i>
+                                <span class="ir-text">다운로드</span>
+                            </a>
+                            <button type="button" class="btn btn-icon btn-small btn-primary">
+                                <i class="ico icon-lang-bl24"></i>
+                                <span class="ir-text">언어 선택</span>
+                            </button> -->
+                </div>
+                <div class="button__wrap flex-wrap mt-5">
+                  <button type="button" class="btn btn-primary btn-ultra-small">
+                    <span class="btn__text">button[type='button'] ultra-small</span>
+                  </button>
+                  <a href="#" class="btn btn-primary btn-ultra-small">
+                    <span class="btn__text">a[href='#'] ultra-small</span>
+                  </a>
+                  <a href="#" class="btn btn-primary btn-ultra-small">
+                    <span class="btn__text">icon right</span>
+                    <i class="btn__icon ico icon-plus-wh24"></i>
+                  </a>
+                  <a href="#" class="btn btn-primary btn-ultra-small">
+                    <i class="btn__icon ico icon-plus-wh24"></i>
+                    <span class="btn__text">icon left</span>
+                  </a>
+
+                  <!-- <a href="#" class="btn btn-icon btn-ultra-small btn-primary">
+                                <i class="ico icon-download-bl24"></i>
+                                <span class="ir-text">다운로드</span>
+                            </a>
+                            <button type="button" class="btn btn-icon btn-ultra-small btn-primary">
+                                <i class="ico icon-lang-bl24"></i>
+                                <span class="ir-text">언어 선택</span>
+                            </button> -->
+                </div>
+              </div>
+              <p class="guide-title-h3 mt-10">Button Component(Size) : text</p>
+
+              <!-- <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p><b>btn-large</b>: min-width:140px; height:56px; font-size:18px; font-weight:700;</p>
+                        </li>
+                        <li>
+                            <p><b>btn-medium</b>: min-width:100px; height:48px; font-size:16px; font-weight:600;</p>
+                        </li>
+                        <li>
+                            <p><b>btn-small</b> : min-width:80px; height:40px; font-size:16px; font-weight:500;</p>
+                        </li>
+                    </ul> -->
+              <div class="cmp-exsample__wrap mt-5">
+                <div class="button__wrap mt-5 m-auto">
+                  <a href="#" class="btn btn-text">
+                    <span class="btn__text">
+                                    btn-text
+                                </span>
+                  </a>
+                </div>
+                <div class="button__wrap mt-5 m-auto flex-wrap">
+                  <a href="#" class="btn btn-text">
+                    <span class="btn__text">
+                                    btn-text:has(btn__icon)
+                                </span>
+                    <i class="btn__icon ico icon-arrow-right-bl16"></i>
+                  </a>
+                </div>
+              </div>
+              <p class="guide-title-h3 mt-10">Button Component(align-left / align-right / align-center)</p>
+              <ul class="guide-list type-dot mt-3">
+                <li>
+                  <p>.btn 이 하나 있을 경우 모바일 분기에서 width:100% 적용됩니다.</p>
+                </li>
+                <li>
+                  <p>align-right 타입은 모바일 분기에서 left 정렬됩니다.</p>
+                </li>
+              </ul>
+              <div class="cmp-exsample__wrap mt-5">
+
+                <!-- 기본 button, align-left -->
+                <div class="button__wrap align-left">
+                  <button type="button" class="btn btn-large btn-primary">
+                    <span class="btn__text">PC align-left</span>
+                  </button>
+                  <button type="button" class="btn btn-large btn-primary">
+                    <span class="btn__text">PC align-left</span>
+                    <i class="btn__icon ico icon-arrow-right-wt16"></i>
+                  </button>
+                  <button type="button" class="btn btn-large btn-primary">
+                    <span class="btn__text">PC align-left</span>
+                    <i class="btn__icon ico icon-arrow-right-wt16"></i>
+                  </button>
+                </div> <!-- //기본 button, align-left -->
+
+                <!-- 기본 button, align-right -->
+                <div class="button__wrap align-right mt-5">
+                  <button type="button" class="btn btn-large btn-primary">
+                    <span class="btn__text">PC align-right</span>
+                  </button>
+                  <button type="button" class="btn btn-large btn-primary">
+                    <span class="btn__text">PC align-right</span>
+                    <i class="btn__icon ico icon-arrow-right-wt16"></i>
+                  </button>
+                  <button type="button" class="btn btn-large btn-primary">
+                    <span class="btn__text">PC align-right</span>
+                    <i class="btn__icon ico icon-arrow-right-wt16"></i>
+                  </button>
+                </div> <!-- //기본 button, align-right -->
+
+                <!-- 모바일에서 버튼 width 100% -->
+                <div class="button__wrap mo-100 mt-5">
+                  <button type="button" class="btn btn-large btn-primary">
+                    <span class="btn__text">MO flex-wrap .mo-100</span>
+                  </button>
+                  <button type="button" class="btn btn-large btn-primary">
+                    <span class="btn__text">MO flex-wrap .mo-100</span>
+                    <i class="btn__icon ico icon-arrow-right-wt16"></i>
+                  </button>
+                  <button type="button" class="btn btn-large btn-primary">
+                    <span class="btn__text">MO flex-wrap .mo-100</span>
+                    <i class="btn__icon ico icon-arrow-right-wt16"></i>
+                  </button>
+                </div> <!-- //모바일에서 버튼 width 100% -->
+              </div>
+
+              <!-- <p class="guide-title-h3 mt-10">Button Component(Text / a tag)</p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <div class="button__wrap">
+                            <a href="#" class="btn btn-text btn-icon">
+                                a 태그 자세히 보기
+                            </a>
+                            <a href="#" class="btn btn-text btn-icon">
+                                a 태그 자세히 보기
+                                <i class="ico icon-pagination-next"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="guide-title-h3 mt-10">Button Component(Text / button tab)</p>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <div class="button__wrap">
+                            <button type="button" class="btn btn-text btn-icon">
+                                button 태그 자세히 보기
+                            </button>
+                            <button type="button" class="btn btn-text btn-icon">
+                                button 태그 자세히 보기
+                                <i class="ico icon-pagination-next"></i>
+                            </button>
+                        </div>
+                    </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
