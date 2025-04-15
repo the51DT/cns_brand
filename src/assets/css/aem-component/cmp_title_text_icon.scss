@@ -81,6 +81,10 @@
         }
       }
     }
+
+    a{
+      margin-top: calc(16/16*1rem);
+    }
   }
 
   @media #{$min720} {
@@ -122,6 +126,9 @@
           margin-top: 0;
         }
       }
+    }
+    a{
+      margin-top: calc(8/16*1rem);
     }
   }
 }
