@@ -14,8 +14,11 @@
                 gap: calc(16 / 16 * 1rem);
             }
         }
-        strong {
-            font-weight: 600;
+        .cmp-title__wrap {
+            margin-bottom: 0;
+            .font-head-sm {
+                font-weight: 500;
+            }
         }
         &+.teaser-text {
             margin-top: calc(12 / 16 * 1rem);
@@ -24,10 +27,7 @@
     .teaser-text {
         color: var(--colorCM-mode1-text-text-secondary);
         p+p {
-            margin-top: calc(32 / 16 * 1rem);
-            @media #{$phone} {
-                margin-top: calc(16 / 16 * 1rem);
-            }
+            margin-top: calc(12 / 16 * 1rem);
         }
     }
 }

@@ -1,11 +1,16 @@
 <div class="cmp-wrap cmp_teaser_title__wrap">
     <div class="teaser-title <%= typeof arrowButton !== 'undefined' ? 'type-button-flex' : '' %>">
-        <% if(typeof teaserTitle !== 'undefined' && teaserTitle) { %>
-            <div class="font-head-sm font-semibold">
-                <%= teaserTitle %>
-            </div>
-        <% } %>
-        <% if(typeof arrowButton !== 'undefined' && arrowButton) {%>
+        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+            title:
+                {
+                    text: title.text,
+                    size: title.size ? title.size : 'sm',
+                    class: title.class,
+                    subTitle: title.subTitle,
+                },
+        })) %>
+        <!-- 04.15 자세히 보기 버튼 임시 비활성화 -->
+        <!-- <% if(typeof arrowButton !== 'undefined' && arrowButton) {%>
             <div class="button__wrap">
                 <a href="#" class="btn btn-medium btn-text">
                     <span class="btn__text">
@@ -14,12 +19,14 @@
                     <i class="ico icon-pagination-next"></i>
                 </a>
             </div>
-        <% } %>
+        <% } %> -->
+        <!-- // 04.15 자세히 보기 버튼 임시 비활성화 -->
     </div>
-    <% if(typeof teaserText1 !== 'undefined' && teaserText1 || typeof teaserText2 !== 'undefined' && teaserText2) { %>
-        <div class="font-body-md teaser-text">
-            <%- typeof teaserText1 !== 'undefined' ? `<p>${teaserText1}</p>` : `<p>티저 문구 길게 들어갈수 있음</p>` %>
-            <%- typeof teaserText2 !== 'undefined' ? `<p>${teaserText2}</p>` : '' %>
+    <% if(typeof textCon !== 'undefined' && textCon) { %>
+        <div class="teaser-text">
+            <% textCon.forEach((text) => { %>
+                <p class="font-body-md"><%- text %></p>
+            <% }) %>
         </div>
     <% } %>
 </div>
