@@ -17,5 +17,17 @@
                 display: none;
             }
         }
+        &.img-box__only-pc {
+            display: none;
+            @media #{$min1280} {
+                display: block;
+            }
+        }
+        &.img-box__only-mo {
+            display: block;
+            @media #{$min1280} {
+                display: none;
+            }
+        }
     }
 }
