@@ -5,6 +5,7 @@
     justify-items: center;
     flex-wrap: wrap;
     gap: calc(8 / 16 * 1rem);
+    /* margin-bottom: calc(16/16*1rem); */
 }
 .tag-box .tag {
     padding: calc(4 / 16 * 1rem) calc(16 / 16 * 1rem);

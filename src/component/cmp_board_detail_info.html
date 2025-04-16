@@ -1,4 +1,3 @@
-<!-- 상세 정보 요약 영역 -->
 <div class="cmp-wrap cmp-board-detail-info">
     <% 
         const data = (typeof jsonData !== 'undefined' && jsonData ? jsonData : []); 
@@ -9,7 +8,9 @@
         const titleValue = typeof title !== 'undefined' ? title : '';
         const prefixText = typeof prefix !== 'undefined' ? prefix : '보도자료';
     %>
+
     <div class="detail-info <%= typeof contentType !== 'undefined' && contentType ? contentType : '' %>">
+        
         <% if (categoryValue) { %>
             <div class="chip__wrap detail-info__category">
                 <div class="chip bg-basic font-caption-xl font-semibold">
@@ -26,10 +27,10 @@
             <p class="detail-info__text font-body-sm"><%= text %></p>
         <% } %>
 
-        <% if (tagList.length > 0 && contentType == 'type-wide') { %>
-            <div class="chip__wrap detail-info__tag">
+        <% if (tagList.length > 0 && contentType === 'type-wide') { %>
+            <div class="tag-box cmp-exsample__wrap mt-5">
                 <% tagList.forEach((tag) => { %>
-                    <div class="chip bg-black font-caption-xl"><%= tag %></div>
+                    <div class="tag"># <%= tag %></div>
                 <% }) %>
             </div>
         <% } %>
@@ -43,15 +44,13 @@
             <% }) %>
         <% } %>
 
-        <% if (tagList.length > 0 && contentType == 'type-card') { %>
-            <dl class="detail-info__desc">
+        <% if (tagList.length > 0 && contentType === 'type-card') { %>
+            <dl class="detail-info__desc cmp-exsample__wrap mt-5">
                 <dt class="detail-info__desc__tit">연관 태그</dt>
                 <dd class="detail-info__desc__txt">
-                    <div class="chip__wrap detail-info__tag">
+                    <div class="tag-box">
                         <% tagList.forEach((tag) => { %>
-                            <div class="chip bg-black font-caption-xl">
-                                <%= tag %>
-                            </div>
+                            <div class="tag"># <%= tag %></div>
                         <% }) %>
                     </div>
                 </dd>
@@ -65,8 +64,10 @@
                 <% } %>
                 <% if (likeCountValue) { %>
                     <span class="detail-info__util__item detail-info__like font-body-sm-mode">
-                        <i class="ico icon-heart-line"><!-- 아이콘 변경 필요 --></i>
-                        <%= likeCountValue %>
+                        <a href="#" class="btn btn-medium btn-icon">
+                            <i class="ico icon-heart-line"></i>
+                            <span><%= likeCountValue %></span>
+                        </a>
                     </span>
                 <% } %>
             </div>
@@ -82,5 +83,6 @@
                 </button>
             </div>
         <% } %>
+
     </div>
 </div>

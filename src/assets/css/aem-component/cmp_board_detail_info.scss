@@ -32,6 +32,7 @@
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
+                margin-top: calc(16/16*1rem);
                 &__item {
                     display: flex;
                     justify-content: center;
@@ -40,6 +41,7 @@
                     &.detail-info__like {
                         .icon-heart-line {
                             margin-right: calc(4 / 16 * 1rem);
+                            border-left: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
                         }
                     }
                     & + .detail-info__util__item {
