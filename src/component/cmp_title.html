@@ -1,29 +1,8 @@
 <div class="cmp-wrap cmp-title__wrap">
-    <% if (typeof subTitle !== 'undefined') { %>
-        <div class="font-body-lg title-sub"><%- subTitle %></div>
-    <% } %>
-
-    <% const useSpaceBetween = typeof rowJustify === 'string' && rowJustify === 'space-between'; %>
-    <div class="cmp-title__row <%= useSpaceBetween ? 'is-between' : '' %>">
-        <div class="font-head-lg">
-            <% if (typeof titleText !== 'undefined') { %>
-                <strong class="title-text"><%- titleText %></strong>
-            <% } %>
-            <% if (typeof titlePrimary2 !== 'undefined') { %>
-                <strong class="title-text colorcm-primary"><%- titlePrimary2 %></strong>
-            <% } %>
-        </div>
-    </div>
-
-    <% if (typeof titleText2 !== 'undefined') { %>
-        <div class="font-head-md title-text"><%- titleText2 %></div>
-    <% } %>
-
-    <% if (typeof titleText2Semibold !== 'undefined') { %>
-        <div class="font-head-md"><%- titleText2Semibold %></div>
-    <% } %>
-
-    <% if (typeof titlePrimary !== 'undefined') { %>
-        <div class="font-head-md title-text colorcm-primary"><%- titlePrimary %></div>
+    <% if (typeof title !== 'undefined' && title) { %>
+        <% if (typeof title.subTitle !== 'undefined' && title.subTitle) { %>
+            <div class="font-body-sm title-sub"><%- title.subTitle %></div>
+        <% } %>
+        <div class="font-head-<%= typeof title.size !== 'undefined' ? title.size : 'lg' %> <%= typeof title.class !== 'undefined' ? title.class : '' %>"><%- title.text %></div>
     <% } %>
 </div>
