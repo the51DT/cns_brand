@@ -43,7 +43,7 @@ const isEmptyStyle = isEmptyVisual || (typeof lifted !== 'undefined' && lifted);
     <% } else { %>
       <div class="visual-text">
         <% if (typeof subText !== 'undefined' && subText) { %>
-          <p class="<%= isEmptyStyle ? 'font-body-lg' : 'font-body-xl' %> sub-text">
+          <p class="font-body-md sub-text">
             <%= subText %>
           </p>
         <% } %>
@@ -51,7 +51,7 @@ const isEmptyStyle = isEmptyVisual || (typeof lifted !== 'undefined' && lifted);
         <% if (typeof bannerSize !== 'undefined' && bannerSize === 'wide') { %>
           <span class="font-head-md font-bold"><%- pageTitle %></span>
         <% } else { %>
-          <h2 class="<%= isEmptyStyle ? 'font-head-lg font-bold' : 'font-head-xl font-semibold' %>">
+          <h2 class="font-head-xl">
             <%= typeof pageTitle !== 'undefined' ? pageTitle : '기본 타이틀 문구' %>
           </h2>
         <% } %>

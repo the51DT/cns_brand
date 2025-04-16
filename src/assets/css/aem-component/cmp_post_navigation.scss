@@ -9,6 +9,10 @@
             & + .post-navigation__item {
                 border-top: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default5);
             }
+            
+        }
+        &__item--prev{
+            border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
         }
         &__text {
             display: flex;
@@ -16,6 +20,7 @@
             gap: calc(20 / 16 * 1rem);
             color: var(--text-text-default);
             white-space: nowrap;
+            font-weight: 600;
             &::after {
                 display: block;
                 content: '';
@@ -26,7 +31,7 @@
         }
         &__link {
             @include ellipsis($line: 1);
-            color: var(--colorCM-mode1-text-text-tertiary);
+            color: var(--colorCM-mode1-text-text-secondary);
         }
     }
 }
