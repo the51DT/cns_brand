@@ -1,29 +1,33 @@
 const headerWrap = document.querySelector('.header');
 const bodyWrap = document.querySelector('body');
 const mainNavigation = (selector) => {
-    const navyLists = document.querySelectorAll(selector);    
-    if(!navyLists) {
+    console.log(selector);
+    const navyLists = document.querySelectorAll(selector); 
+    if (!navyLists.length) {
         return;
     }
     navyLists.forEach(navy => {
         navy.addEventListener('mouseenter', () => {
+            console.log(selector);
+            navy.classList.add('is-active')
+            console.log('mouseenter');
             bodyWrap.classList.add('overflow');            
             const activeMenu = document.querySelector('.navy-list > li.is-active');
             if (activeMenu) {
                 activeMenu.classList.remove('is-active');
             }            
-            if(navy.classList.contains('type-full') && navy.nextElementSibling) {
-                if(!navy.closest('.header').classList.contains('is-active')) {
-                    // navy.closest('.header').classList.add('is-active');
+            if (navy.classList.contains('type-full') && navy.nextElementSibling) {
+                console.log(navy.nextElementSibling);
+                if (!navy.closest('.header').classList.contains('is-active')) {
                     navy.closest('.header').classList.add('is-active');
                 }
-    
+                
                 navy.parentElement.classList.add('is-active');
                 const subMenu = navy.parentElement.querySelector('.gnb-sub__wrap');
                 let subMenuHeight = subMenu ? subMenu.scrollHeight : 0;
                 navy.closest('.header').style.setProperty('--gnb-bg-height', `${subMenuHeight}px`);
                 
-                if(navy.parentElement.classList.contains('is-active'))  {
+                if (navy.parentElement.classList.contains('is-active'))  {
                     const subDepthMenus = navy.parentElement.querySelectorAll('.sub-menu-list li a');                    
                     subDepthMenus.forEach(menu => {
                         menu.addEventListener('click', (event) => {
@@ -31,31 +35,23 @@ const mainNavigation = (selector) => {
                             const activeItem = document.querySelector('.sub-menu-list > li.is-active');
                             if (activeItem) {
                                 activeItem.classList.remove('is-active');
-                                activeItem.nextElementSibling.classList.remove('is-active')
                             } 
                             menu.parentElement.classList.add('is-active');
-                            // if(menu.nextElementSibling) {
-                            //     menu.nextElementSibling.classList.add('is-active');
-                            // }                            
                         });
                     });    
                 }          
 
             } else {
-                if(navy.closest('.header').classList.contains('is-active')) {
-                    navy.closest('.header').style.setProperty('--gnb-bg-height', 0);                    
-                    navy.parentElement.classList.add('is-active');
-                    navy.parentElement.style.position = 'relative';
-                } else {
-                    navy.closest('.header').classList.add('is-active');
-                    navy.closest('.header').style.setProperty('--gnb-bg-height', 0);                    
-                    navy.parentElement.classList.add('is-active');
-                    navy.parentElement.style.position = 'relative';
-                }
+                navy.closest('.header').classList.add('is-active');
+                navy.closest('.header').style.setProperty('--gnb-bg-height', 0);                    
+                navy.parentElement.classList.add('is-active');
+                navy.parentElement.style.position = 'relative';
             }            
-        })
+        });
+
         const navyWrap = navy.closest('.gnb-navy__wrap');
-        navyWrap.addEventListener('mouseleave',  () => {
+        navyWrap.addEventListener('mouseleave', () => {
+            console.log('mouseleave');
             bodyWrap.classList.remove('overflow');      
             navy.parentElement.style.position = '';
             navy.closest('.header').classList.remove('is-active'); 
@@ -65,8 +61,8 @@ const mainNavigation = (selector) => {
                 activeItem.classList.remove('is-active');
             }
         });
-    })
-}
+    });
+};
 
 const moNavigationToggle = (button) => {
     const moNavigation = document.querySelector('.mo-gnb-navy__wrap');
@@ -173,7 +169,6 @@ const onTopScroll = () => {
     headerWrap.classList.remove('is-motion');
 }
 
-
 // const scrollPos = window.scrollY || document.documentElement.scrollTop;
 // // console.log(scrollPos)
 // if(subVisual && !subVisual.classList.contains('type-empty') || bodyDarkMode){
@@ -181,7 +176,30 @@ const onTopScroll = () => {
 //     headerWrap.classList.add('is-fixed');
 // }
 
+// PC 언어선택 토글
+const langTogglePC = () => {
+    const langToggleBtn = document.querySelector('.header .lang-select .btn-lang');
+    const lagnList = document.querySelector('.header .lang-select .dropdown_list');
+    if(langToggleBtn && lagnList) {
+        langToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            const isActive = langToggleBtn.classList.toggle('is-active');                       
+            lagnList.classList.toggle('is-active', isActive); // 드롭다운 리스트의 활성화 상태 토글
+        });
+    }
+}
+
+// PC 인재채용
+const gnbSwiper = new Swiper('.gnb-sub-swiper .swiper', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
 window.addEventListener("scroll", scrollEventManage);
-mainNavigation('.navy-list > li > a');
 moNavigationToggle('.mo-menu .btn-hamburger-menu');
 moNavigationAccordion('.mo-gnb-navy__wrap .mo-navy-list');
+mainNavigation('.navy-list > li >a');
+langTogglePC();
