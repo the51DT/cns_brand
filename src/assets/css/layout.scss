@@ -130,7 +130,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s linear;
     transform: translateY(0);
     background: var(--header-bg);
     position: relative;
@@ -241,7 +241,7 @@ body {
                 transform: translateX(-50%);
                 background-color: var(--header-active-bg);
                 border-top: calc(1 / 16 * 1rem) solid var(--header-border-color);
-                // transition: all 0.3s ease;
+                transition: height 0.5s linear;
                 overflow: hidden;
                 .gnb-sub-inner {
                     margin: 0 auto;
@@ -448,6 +448,7 @@ body {
                     display: flex;
                     height: var(--gnb-bg-height);
                     max-height: var(--gnb-bg-height);
+                    transition: height 0.5s linear;
                 }
                 .gnb-sub-inner {
                     position: relative;
