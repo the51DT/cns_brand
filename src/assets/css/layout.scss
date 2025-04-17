@@ -185,13 +185,14 @@ body {
         align-items: center;                                       
         height: 100%;
         @media #{$min1280} {
-            gap: calc(40 / 16 * 1rem);
+            // gap: calc(40 / 16 * 1rem);
         }
         > li {
-            // padding: 0 calc(20 / 16 * 1rem);
+            padding: 0 calc(20 / 16 * 1rem);
             height: 100%;
             display: flex;
             align-items: center;
+            // position: relative;
             &:first-child {
                 padding-left: 0;
             }
@@ -229,6 +230,7 @@ body {
             .gnb-sub__wrap {
                 display: none;
                 width: 100vw;
+                height: var(--gnb-bg-height);
                 // width: 100%;
                 // max-width: calc(1440 / 16 * 1rem);
                 // height: var(--gnb-bg-height);
@@ -254,7 +256,8 @@ body {
                 z-index: 100;
                 position: absolute;
                 top: calc(99 / 16 * 1rem);
-                left:calc(50% - calc(288 / 16 * 1rem));
+                left:50%;
+                transform: translateX(-50%);
                 background-color: var(--header-active-bg);
                 border-top: calc(1 / 16 * 1rem) solid var(--header-border-color);
                 // width: 100%;
@@ -263,7 +266,7 @@ body {
                 border-bottom-right-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
                 overflow: hidden;
                 &--sub {
-                    left:calc(50% - calc(270 / 16 * 1rem));
+                    // left:calc(50% - calc(270 / 16 * 1rem));
                     width: calc(540 / 16 * 1rem);
                 }
                 .gnb-sub-inner {
@@ -296,7 +299,7 @@ body {
                             font-weight: 600;
                         }
                         .sub-menu-detail {
-                            border-left: calc(1 / 16 * 1rem) solid #EBEBEB;
+                            // border-left: calc(1 / 16 * 1rem) solid #EBEBEB;
                             position: absolute;
                             // width: calc(996 / 16 * 1rem);
                             width: calc(calc(1440 / 16 * 1rem) - calc(428 / 16 * 1rem));
@@ -304,16 +307,6 @@ body {
                             top: 0;
                             padding: calc(32 / 16 * 1rem);
                             display: block;
-                            &:after {
-                                display: block;
-                                content: '';
-                                position: absolute;
-                                top: 0;
-                                left: calc(-1 / 16 * 1rem);
-                                width: calc(1 / 16 * 1rem);
-                                height: 100%;
-                                background: #EBEBEB;
-                            }
                             .sub-menu-text {
                                 margin-top: calc(16 / 16 * 1rem);
                                 color: var(--text-text-default);
@@ -450,30 +443,11 @@ body {
                 .gnb-sub__wrap--drop {
                     display: block;
                 }
-                // the future & 2depth menu
-                .navy-list__the-future {
-                    & + .gnb-sub__wrap {
-                        max-height: calc(288 / 16 * 1rem);
-                        overflow: auto;
-                    }
-                }
-                // 서비스 & 2depth menu
-                .navy-list__service {
-                    & + .gnb-sub__wrap {
-                        max-height: calc(692 / 16 * 1rem);
-                        overflow: auto;
-                    }
-                }
-                // 산업 & 2depth menu
-                .navy-list__industry {
-                    & + .gnb-sub__wrap {
-                        max-height: calc(288 / 16 * 1rem);
-                        overflow: auto;
-                    }
-                }
                 // 2depth menu
                 .gnb-sub__wrap {
                     display: flex;
+                    height: var(--gnb-bg-height);
+                    max-height: var(--gnb-bg-height);
                 }
                 .gnb-sub-inner {
                     position: relative;
@@ -482,16 +456,8 @@ body {
                         position: relative;
                         padding: calc(40 / 16 * 1rem);
                         max-width: calc(428 / 16 * 1rem);
-                        &:after {
-                            display: block;
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            right: calc(-1 / 16 * 1rem);
-                            width: calc(1 / 16 * 1rem);
-                            height: 100%;
-                            background: #EBEBEB;
-                        }
+                        height: 100%;
+                        border-right: calc(1 / 16 * 1rem) solid #EBEBEB;
                     }
                 }
             }

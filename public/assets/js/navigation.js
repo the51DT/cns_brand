@@ -1,5 +1,6 @@
 const headerWrap = document.querySelector('.header');
 const bodyWrap = document.querySelector('body');
+let subMenuHeight = 0
 const mainNavigation = (selector) => {
     console.log(selector);
     const navyLists = document.querySelectorAll(selector); 
@@ -8,27 +9,37 @@ const mainNavigation = (selector) => {
     }
     navyLists.forEach(navy => {
         navy.addEventListener('mouseenter', () => {
-            console.log(selector);
-            navy.classList.add('is-active')
+            const navyBtn = navy.querySelector('.type-full');
+            const subMenu = navy.querySelector('.gnb-sub__wrap');
+            const subMenuDrop = navy.querySelector('.gnb-sub__wrap--drop');
+            // 초기화
+            navyLists.forEach(item => {
+                item.closest('.header').classList.remove('is-active');
+                item.classList.remove('is-active');
+                item.closest('.header').style.setProperty('--gnb-bg-height', '0px');
+            })
+            navy.classList.add('is-active');
+            bodyWrap.classList.add('overflow');
+
             console.log('mouseenter');
-            bodyWrap.classList.add('overflow');            
-            const activeMenu = document.querySelector('.navy-list > li.is-active');
-            if (activeMenu) {
-                activeMenu.classList.remove('is-active');
-            }            
-            if (navy.classList.contains('type-full') && navy.nextElementSibling) {
-                console.log(navy.nextElementSibling);
+            // const activeMenu = document.querySelector('.navy-list > li.is-active');
+            // if (activeMenu) {
+            //     activeMenu.classList.remove('is-active');
+            // }
+
+            if (navyBtn && subMenu) {
                 if (!navy.closest('.header').classList.contains('is-active')) {
                     navy.closest('.header').classList.add('is-active');
                 }
+
+                // navy.classList.add('is-active');
                 
-                navy.parentElement.classList.add('is-active');
-                const subMenu = navy.parentElement.querySelector('.gnb-sub__wrap');
-                let subMenuHeight = subMenu ? subMenu.scrollHeight : 0;
-                navy.closest('.header').style.setProperty('--gnb-bg-height', `${subMenuHeight}px`);
+                console.log(subMenu)
+                subMenuHeight = subMenu ? subMenu.scrollHeight : 0;
+                navy.closest('.header').style.setProperty('--gnb-bg-height', `${subMenuHeight + 80}px`);
                 
-                if (navy.parentElement.classList.contains('is-active'))  {
-                    const subDepthMenus = navy.parentElement.querySelectorAll('.sub-menu-list li a');                    
+                if (navy.classList.contains('is-active'))  {
+                    const subDepthMenus = navy.querySelectorAll('.sub-menu-list li');                    
                     subDepthMenus.forEach(menu => {
                         menu.addEventListener('click', (event) => {
                             event.preventDefault();
@@ -36,16 +47,16 @@ const mainNavigation = (selector) => {
                             if (activeItem) {
                                 activeItem.classList.remove('is-active');
                             } 
-                            menu.parentElement.classList.add('is-active');
+                            menu.classList.add('is-active');
                         });
                     });    
-                }          
-
-            } else {
+                } 
+            } else if(subMenuDrop) {
+                console.log('test')
                 navy.closest('.header').classList.add('is-active');
                 navy.closest('.header').style.setProperty('--gnb-bg-height', 0);                    
-                navy.parentElement.classList.add('is-active');
-                navy.parentElement.style.position = 'relative';
+                navy.classList.add('is-active');
+                navy.style.position = 'relative';
             }            
         });
 
@@ -201,5 +212,5 @@ const gnbSwiper = new Swiper('.gnb-sub-swiper .swiper', {
 window.addEventListener("scroll", scrollEventManage);
 moNavigationToggle('.mo-menu .btn-hamburger-menu');
 moNavigationAccordion('.mo-gnb-navy__wrap .mo-navy-list');
-mainNavigation('.navy-list > li >a');
+mainNavigation('.navy-list > li');
 langTogglePC();
