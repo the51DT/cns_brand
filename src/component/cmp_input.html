@@ -12,9 +12,9 @@
         <% if(typeof item.title !=='undefined' && item.title) { %>
           <div class="cmp-input__title">
             <% if(item.inputData[0].type === "checkbox" || item.inputData[0].type === "radio") { %>
-              <span class="font-body-xs font-semibold <%- title.required === true ? 'cmp-input__title--required' : '' %>" for="<%- item.id %>"><%- title.text %></span>
+              <span class="font-body-sm <%- title.required === true ? 'cmp-input__title--required' : '' %>" for="<%- item.id %>"><%- title.text %></span>
             <% } else { %>
-              <label class="font-body-xs font-semibold <%- title.required === true ? 'cmp-input__title--required' : '' %>" for="<%- item.id %>"><%- title.text %></label>
+              <label class="font-body-sm <%- title.required === true ? 'cmp-input__title--required' : '' %>" for="<%- item.id %>"><%- title.text %></label>
             <% } %>
           </div>
         <% } %>
