@@ -4,138 +4,145 @@
         const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
     %>
     <% data.forEach((item)=> { %>
-      <div class="cmp-input__wrap">
-        <% 
-          const title = (typeof item.title !== 'undefined' ? item.title : []);
-          const inputData = (typeof item.inputData !== 'undefined' ? item.inputData : []);
-        %>
-        <% if(typeof item.title !=='undefined' && item.title) { %>
-          <div class="cmp-input__title">
-            <% if(item.inputData[0].type === "checkbox" || item.inputData[0].type === "radio") { %>
-              <span class="font-body-sm <%- title.required === true ? 'cmp-input__title--required' : '' %>" for="<%- item.id %>"><%- title.text %></span>
-            <% } else { %>
-              <label class="font-body-sm <%- title.required === true ? 'cmp-input__title--required' : '' %>" for="<%- item.id %>"><%- title.text %></label>
+        <div class="cmp-input__wrap">
+            <% 
+                const title = (typeof item.title !== 'undefined' ? item.title : []);
+                const inputData = (typeof item.inputData !== 'undefined' ? item.inputData : []);
+            %>
+            <% if(typeof item.title !=='undefined' && item.title) { %>
+                <div class="cmp-input__title">
+                <% if(item.inputData[0].type === "checkbox" || item.inputData[0].type === "radio") { %>
+                    <span class="font-body-sm <%- title.required === true ? 'cmp-input__title--required' : '' %>" for="<%- item.id %>"><%- title.text %></span>
+                <% } else { %>
+                    <label class="font-body-sm <%- title.required === true ? 'cmp-input__title--required' : '' %>" for="<%- item.id %>"><%- title.text %></label>
+                <% } %>
+                </div>
             <% } %>
-          </div>
-        <% } %>
-        <% if(typeof inputData !=='undefined' && inputData) { %>
-          <div class="cmp-input__content">
-              <div class="cmp-input__box">
-              <% inputData.forEach((input)=> { %>
-                <% if(input.type === 'select') { %>
-                  <% if(!item.title) { %>
-                    <label class="ir-text" for="<%- item.id %>"><%- input.placeholder %></label>
-                  <% } %>
-                  <select class="cmp-input__item cmp-input__item--select <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %>" id="<%- item.id %>" <%- input.state === 'disabled' && input.state ? 'disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'readonly' : '' %> <%- title.required === true ? 'required' : '' %>>
-                    <% if(input.placeholder) { %>
-                      <option value="" disabled hidden selected><%- input.placeholder %></option>
-                    <% } %>
-                    <% input.option.forEach((option)=> { %>
-                      <option value="<%- option.value %>" <%- option.selected === true ? 'selected' : '' %>><%- option.value %></option>
-                    <% }) %>
-                  </select>
-                <% } else if(input.type === 'search') { %>
-                  <% if(!item.title) { %>
-                    <label class="ir-text" for="<%- item.id %>"><%- input.placeholder %></label>
-                  <% } %>
-                  <input
-                    class="cmp-input__item cmp-input__item--<%- input.type %> <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %>"
-                    id="<%- item.id %>"
-                    type="text"
-                    placeholder="<%- input.placeholder %>"
-                    value="<%- input.value %>"
-                    <%- input.state === 'disabled' && input.state ? 'disabled' : '' %>
-                    <%- input.state === 'readonly' && input.state ? 'readonly' : '' %>
-                    <%- title.required === true ? 'required' : '' %>
-                  >
-                <% } else if(input.type === 'textarea') { %>
-                  <div class="cmp-input__item--<%- input.type %>">
-                    <% if(!item.title) { %>
-                      <label class="ir-text" for="<%- item.id %>"><%- input.placeholder %></label>
-                    <% } %>
-                    <textarea
-                      class="cmp-input__item <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %>"
+            <% if(typeof inputData !=='undefined' && inputData) { %>
+                <div class="cmp-input__content">
+                    <div class="cmp-input__box">
+                    <% inputData.forEach((input)=> { %>
+                    <% if(input.type === 'select') { %>
+                        <% if(!item.title) { %>
+                            <label class="ir-text" for="<%- item.id %>"><%- input.placeholder %></label>
+                        <% } %>
+                        <select class="cmp-input__item cmp-input__item--select <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %> <%- input.state==='success' && input.state ? 'cmp-input__item--success' : '' %>" id="<%- item.id %>" <%- input.state === 'disabled' && input.state ? 'disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'readonly' : '' %> <%- title.required === true ? 'required' : '' %>>
+                        <% if(input.placeholder) { %>
+                            <option value="" disabled hidden selected><%- input.placeholder %></option>
+                        <% } %>
+                        <% input.option.forEach((option)=> { %>
+                            <option value="<%- option.value %>" <%- option.selected === true ? 'selected' : '' %>><%- option.value %></option>
+                        <% }) %>
+                        </select>
+                    <% } else if(input.type === 'search') { %>
+                        <% if(!item.title) { %>
+                            <label class="ir-text" for="<%- item.id %>"><%- input.placeholder %></label>
+                        <% } %>
+                        <input
+                            class="cmp-input__item cmp-input__item--<%- input.type %> <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %> <%- input.state==='success' && input.state ? 'cmp-input__item--success' : '' %>"
+                            id="<%- item.id %>"
+                            type="text"
+                            placeholder="<%- input.placeholder %>"
+                            value="<%- input.value %>"
+                            <%- input.state === 'disabled' && input.state ? 'disabled' : '' %>
+                            <%- input.state === 'readonly' && input.state ? 'readonly' : '' %>
+                            <%- title.required === true ? 'required' : '' %>
+                        >
+                    <% } else if(input.type === 'textarea') { %>
+                        <div class="cmp-input__item--<%- input.type %>">
+                        <% if(!item.title) { %>
+                            <label class="ir-text" for="<%- item.id %>"><%- input.placeholder %></label>
+                        <% } %>
+                        <textarea
+                            class="cmp-input__item <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %> <%- input.state==='success' && input.state ? 'cmp-input__item--success' : '' %>"
+                            id="<%- item.id %>"
+                            type="text"
+                            placeholder="<%- input.placeholder %>"
+                            <%- input.state === 'disabled' && input.state ? 'disabled' : '' %>
+                            <%- input.state === 'readonly' && input.state ? 'readonly' : '' %>
+                            <%- title.required === true ? 'required' : '' %>
+                            ><%- input.value %></textarea>
+                            <% if(input.countMax && input.state !== 'error' && input.state !== 'success') { %>
+                                <p class="cmp-input__count"><span>0</span> / <%- input.countMax %></p>
+                            <% } %>
+                        </div>
+                    <% } else if(input.type === 'multi') { %>
+                        <div class="cmp-input__multi-box">
+                        <% if(!item.title) { %>
+                            <labe class="ir-text"l for="<%- item.id %>">이메일 주소 앞부분</labe>
+                        <% } %>
+                        <input
+                            class="cmp-input__item cmp-input__item--text <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %> <%- input.state==='success' && input.state ? 'cmp-input__item--success' : '' %>"
+                            id="<%- item.id %>"
+                            type="text"
+                            placeholder="<%- input.placeholder %>"
+                            value="<%- input.value %>"
+                            <%- input.state === 'disabled' && input.state ? 'disabled' : '' %>
+                            <%- input.state === 'readonly' && input.state ? 'readonly' : '' %>
+                            <%- title.required === true ? 'required' : '' %>
+                        >
+                        <span class="font-body-xs">@</span>
+                        <div class="dropdown-menu cmp-input__item--dropdown">
+                            <div class="cmp-input__item <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %> <%- input.state==='success' && input.state ? 'cmp-input__item--success' : '' %>"><input class="dropdown_input" placeholder="<%- input.enterPlacehold %>"><button class="btn-dropdown no-select"><%- input.secondPlacehold %></button></div>
+                                <ul class="dropdown_list">
+                                    <% input.option.forEach((option)=> { %>
+                                        <li><button class="font-body-xs <%- option.enter === true && option.enter ? 'dropdown_enter' : '' %>"><%- option.value %></button></li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                        </div>
+                    <% } else if(input.type === 'checkbox') { %>
+                        <% input.dataList.forEach((check)=> { %>
+                        <div class="cmp-input__label-box">
+                            <input class="<%- input.size === 'small' && input.size ? 'cmp-input__item--checkbox--small' : 'cmp-input__item--checkbox' %> <%- check.disabeld === 'disabled' && check.disabeld ? 'cmp-input__item--disabled' : '' %>" id="<%- check.value %>" type="checkbox" name="<%- input.name %>" value="<%- check.value %>" <%- check.disabeld === true ? 'disabled' : '' %> <%- check.checked === true ? 'checked' : '' %> <%- check.required === true ? 'required' : '' %>>
+                            <label class="<%- check.label ? '' : 'ir-text' %> font-body-xs" for="<%- check.value %>"><%- check.label ? check.label : check.id %></label>
+                        </div>
+                        <% }) %>
+                    <% } else if(input.type === 'radio') { %>
+                        <% input.dataList.forEach((radio)=> { %>
+                        <div class="cmp-input__label-box">
+                            <input class="cmp-input__item cmp-input__item--radio <%- radio.disabeld === 'disabled' && radio.disabeld ? 'cmp-input__item--disabled' : '' %>" id="<%- radio.value %>" type="radio" name="<%- input.name %>" value="<%- radio.value %>" <%- radio.disabeld === true ? 'disabled' : '' %> <%- radio.checked === true ? 'checked' : '' %> <%- radio.required === true ? 'required' : '' %>>
+                            <label class="<%- radio.label ? '' : 'ir-text' %> font-body-xs" for="<%- radio.value %>"><%- radio.label ? radio.label : radio.value %></label>
+                        </div>
+                        <% }) %>
+                    <% } else if(input.type === 'dropdown') { %>
+                        <div class="dropdown-menu cmp-input__item--dropdown">
+                            <div class="cmp-input__item">
+                                <input class="dropdown_input" placeholder="<%- input.enterPlacehold %>">
+                                    <button class="btn-dropdown no-select"><%- input.placeholder %></button>
+                                </div>
+                            <ul class="dropdown_list">
+                                <% input.option.forEach((option)=> { %>
+                                    <li class="<%- option.disabled === true && option.disabled ? 'is-disabled' : '' %>">
+                                        <button class="<%- option.enter === true && option.enter ? 'dropdown_enter' : '' %>"><%- option.value %></button>
+                                    </li>
+                                <% }) %>
+                            </ul>
+                        </div>
+
+                        <!-- 아코디언처럼 펼쳐지는 타입 -->
+                    <% } else { %>
+                        <% if(!item.title) { %>
+                        <label class="ir-text" for="<%- item.id %>"><%- input.placeholder %></label>
+                        <% } %>
+                        <input
+                        class="cmp-input__item cmp-input__item--<%- input.type %> <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %> <%- input.state==='success' && input.state ? 'cmp-input__item--success' : '' %>"
                         id="<%- item.id %>"
-                        type="text"
+                        type="<%- input.type %>"
                         placeholder="<%- input.placeholder %>"
+                        value="<%- input.value %>"
                         <%- input.state === 'disabled' && input.state ? 'disabled' : '' %>
                         <%- input.state === 'readonly' && input.state ? 'readonly' : '' %>
                         <%- title.required === true ? 'required' : '' %>
-                      ><%- input.value %></textarea>
-                      <% if(input.countMax && !item.info) { %>
-                        <p class="cmp-input__count font-caption-lg"><span>0</span> / <%- input.countMax %></p>
-                      <% } %>
-                  </div>
-                <% } else if(input.type === 'multi') { %>
-                  <div class="cmp-input__multi-box">
-                    <% if(!item.title) { %>
-                      <labe class="ir-text"l for="<%- item.id %>">이메일 주소 앞부분</labe>
+                        >
                     <% } %>
-                    <input
-                      class="cmp-input__item cmp-input__item--text <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %>"
-                      id="<%- item.id %>"
-                      type="text"
-                      placeholder="<%- input.placeholder %>"
-                      value="<%- input.value %>"
-                      <%- input.state === 'disabled' && input.state ? 'disabled' : '' %>
-                      <%- input.state === 'readonly' && input.state ? 'readonly' : '' %>
-                      <%- title.required === true ? 'required' : '' %>
-                    >
-                    <span class="font-body-xs">@</span>
-                    <div class="dropdown-menu cmp-input__item--dropdown">
-                      <div class="cmp-input__item <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %>"><input class="dropdown_input" placeholder="<%- input.enterPlacehold %>"><button class="btn-dropdown no-select"><%- input.secondPlacehold %></button></div>
-                      <ul class="dropdown_list">
-                        <% input.option.forEach((option)=> { %>
-                          <li><button class="font-body-xs <%- option.enter === true && option.enter ? 'dropdown_enter' : '' %>"><%- option.value %></button></li>
-                        <% }) %>
-                      </ul>
+                    <% }) %>
                     </div>
-                  </div>
-                <% } else if(input.type === 'checkbox') { %>
-                  <% input.dataList.forEach((check)=> { %>
-                    <div class="cmp-input__label-box">
-                      <input class="<%- input.size === 'small' && input.size ? 'cmp-input__item--checkbox--small' : 'cmp-input__item--checkbox' %> <%- check.disabeld === 'disabled' && check.disabeld ? 'cmp-input__item--disabled' : '' %>" id="<%- check.value %>" type="checkbox" name="<%- input.name %>" value="<%- check.value %>" <%- check.disabeld === true ? 'disabled' : '' %> <%- check.checked === true ? 'checked' : '' %> <%- check.required === true ? 'required' : '' %>>
-                      <label class="<%- check.label ? '' : 'ir-text' %> font-body-xs" for="<%- check.value %>"><%- check.label ? check.label : check.id %></label>
-                    </div>
-                  <% }) %>
-                <% } else if(input.type === 'radio') { %>
-                  <% input.dataList.forEach((radio)=> { %>
-                    <div class="cmp-input__label-box">
-                      <input class="cmp-input__item cmp-input__item--radio <%- radio.disabeld === 'disabled' && radio.disabeld ? 'cmp-input__item--disabled' : '' %>" id="<%- radio.value %>" type="radio" name="<%- input.name %>" value="<%- radio.value %>" <%- radio.disabeld === true ? 'disabled' : '' %> <%- radio.checked === true ? 'checked' : '' %> <%- radio.required === true ? 'required' : '' %>>
-                      <label class="<%- radio.label ? '' : 'ir-text' %> font-body-xs" for="<%- radio.value %>"><%- radio.label ? radio.label : radio.value %></label>
-                    </div>
-                  <% }) %>
-                <% } else if(input.type === 'dropdown') { %>
-                  <div class="dropdown-menu cmp-input__item--dropdown">
-                    <div class="cmp-input__item"><input class="dropdown_input" placeholder="<%- input.enterPlacehold %>"><button class="btn-dropdown no-select"><%- input.placeholder %></button></div>
-                    <ul class="dropdown_list">
-                      <% input.option.forEach((option)=> { %>
-                        <li><button class="font-body-xs <%- option.enter === true && option.enter ? 'dropdown_enter' : '' %>"><%- option.value %></button></li>
-                      <% }) %>
-                    </ul>
-                  </div>
-                <% } else { %>
-                  <% if(!item.title) { %>
-                    <label class="ir-text" for="<%- item.id %>"><%- input.placeholder %></label>
-                  <% } %>
-                  <input
-                    class="cmp-input__item cmp-input__item--<%- input.type %> <%- input.state === 'disabled' && input.state ? 'cmp-input__item--disabled' : '' %> <%- input.state === 'readonly' && input.state ? 'cmp-input__item--readonly' : '' %> <%- input.state === 'error' && input.state ? 'cmp-input__item--error' : '' %>"
-                    id="<%- item.id %>"
-                    type="<%- input.type %>"
-                    placeholder="<%- input.placeholder %>"
-                    value="<%- input.value %>"
-                    <%- input.state === 'disabled' && input.state ? 'disabled' : '' %>
-                    <%- input.state === 'readonly' && input.state ? 'readonly' : '' %>
-                    <%- title.required === true ? 'required' : '' %>
-                  >
-                <% } %>
-              <% }) %>
-              </div>
-              <% if(item.info) { %>
-                <p class="cmp-input__info font-caption-lg"><%- item.info %></p>
-              <% } %>
-          </div>
-        <% } %>
-      </div>
+                    <% if(item.info) { %>
+                    <p class="cmp-input__info"><%- item.info %></p>
+                    <% } %>
+                </div>
+            <% } %>
+        </div>
     <% }) %>
 </div>

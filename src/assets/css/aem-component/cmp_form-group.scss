@@ -9,17 +9,17 @@
   }
   &__box {
     width: 100%;
-    padding: calc(20 / 16 * 1rem);
-    border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
-    background-color: var(--colorCM-mode1-fill-fill-default2);
+    // padding: calc(20 / 16 * 1rem);
+    // border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+    // background-color: var(--colorCM-mode1-fill-fill-default2);
     &:has( + .cmp-form-group__accordion) {
-      margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
+      margin-bottom: calc(32 / 16 * 1rem);
     }
   }
   &__accordion {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+    gap: calc(20 / 16 * 1rem);
     .accordion {
       &-item {
         &.is-active {
@@ -36,7 +36,7 @@
       &-title {
         display: flex;
         justify-content: space-between;
-        padding: 0 calc(20 / 16 * 1rem);
+        // padding: 0 calc(20 / 16 * 1rem);
         .cmp-input {
           width: 100%;
         }
@@ -46,14 +46,14 @@
       }
       &-content {
         display: none;
-        padding: calc(16 / 16 * 1rem) calc(20 / 16 * 1rem) 0;
+        padding: calc(12 / 16 * 1rem) 0 0;
       }
       &-text {
-        max-height: calc(124 / 16 * 1rem);
-        padding: calc(20 / 16 * 1rem);
-        border: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default7);
-        border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
-        background-color: var(--colorCM-mode1-fill-fill-default0);
+        max-height: calc(240 / 16 * 1rem);
+        padding: calc(24 / 16 * 1rem) calc(38 / 16 * 1rem);
+        // border: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default7);
+        border-radius: calc(8 / 16 * 1rem);
+        background-color: var(--colorCM-mode1-fill-fill-default2);
         overflow-y: auto;
         word-wrap: break-word;
         &::-webkit-scrollbar {

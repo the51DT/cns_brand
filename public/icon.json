@@ -39,6 +39,10 @@
     "icon-close-bl24",
     "icon-close-bl32",
     "icon-close-bl40",
-    "icon-arrow-right-bl48"
+    "icon-arrow-right-bl48",
+    "icon-checkbox-disabled-unselected-gr12",
+    "icon-checkbox-normal-unselected-gr12",
+    "icon-checkbox-all-selected-wh12",
+    "icon-check-bl24"
   ]
 }

@@ -134,4 +134,16 @@ $fileType: "svg";
     &.icon-arrow-right-bl48{
         @include iconFile(48, 48, 'icon_arrow_right_bl48');
     }
+    &.icon-checkbox-disabled-unselected-gr12{
+        @include iconFile(14, 9.5, 'ico_checkbox_disabled_unselected');
+    }
+    &.icon-checkbox-normal-unselected-gr12{
+        @include iconFile(14, 9.5, 'ico_checkbox_normal_unselected');
+    }
+    &.icon-checkbox-all-selected-wh12{
+        @include iconFile(14, 9.5, 'ico_checkbox_all_selected');
+    }
+    &.icon-check-bl24{
+        @include iconFile(14, 9.5, 'icon_check_bl24');
+    }
 }
