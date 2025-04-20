@@ -23,11 +23,10 @@
     .accordion {
       &-item {
         &.is-active {
-          .accordion-title {
-            & > button {
-              transform: rotate(180deg);
-            }
-          }
+          .accordion-button {
+                //   transform: rotate(180deg);
+                background: url('#{$basePath}image/icon/icon-minus-bl32.svg') no-repeat center / contain;
+            }   
           .accordion-content {
             display: block;
           }
@@ -40,8 +39,18 @@
         .cmp-input {
           width: 100%;
         }
-        & > button {
-          flex-shrink: 0;
+        // & > button {
+        //   flex-shrink: 0;
+        // }
+      }
+      &-button {
+        flex-shrink: 0;
+        width: calc(24 / 16 * 1rem);
+        height: calc(24 / 16 * 1rem);
+        background: url('#{$basePath}image/icon/icon-plus-bl32.svg') no-repeat center / contain;
+        @media #{$min1280} {
+            width: calc(32 / 16 * 1rem);
+            height: calc(32 / 16 * 1rem);
         }
       }
       &-content {
