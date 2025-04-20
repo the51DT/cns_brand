@@ -2,7 +2,6 @@
     &__wrap {
         display: flex;
         width: 100%;
-        flex-direction: column;
         gap: calc(10 / 16 * 1rem);
         @media #{$min1280} {
             gap: calc(8 / 16 * 1rem);
@@ -12,6 +11,15 @@
             @media #{$min1280} {
                 margin-top:calc(40 / 16 * 1rem);
             }
+        }
+    }
+    &__container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: calc(10 / 16 * 1rem);
+        @media #{$min1280} {
+            gap: calc(8 / 16 * 1rem);
         }
     }
     &__title {
