@@ -16,7 +16,7 @@
     }
     &__title {
         flex-shrink: 0;
-        width: calc(134 / 16 * 1rem);
+        // width: calc(134 / 16 * 1rem);
         color: var(--colorCM-mode1-text-text-tertiary);
         &--required {
             &::after {
