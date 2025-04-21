@@ -1,6 +1,7 @@
 :root {
     --chip-gap: 6;
     --chip-height: 28;
+    --chip-height-large : 32;
     --chip-padding-top-bottom: 4;
     --chip-padding-side: 10;
 }
@@ -12,16 +13,22 @@
     flex-wrap: wrap;
 }
 .chip {
-    display: inline-flex;
     display: flex;
     height: calc(var(--chip-height) / 16 * 1rem);
-    padding: calc(var(--chip-padding-top-bottom) / 16 * 1rem) calc(var(--chip-padding-side) / 16 * 1rem);
+    padding: calc(2 / 16 * 1rem) calc(16 / 16 * 1rem);
     justify-content: center;
     align-items: center;
     white-space: nowrap;
     font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
     line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
     font-weight: 400;
+    border: calc(1 / 16 * 1rem) solid var(--colorGL-all-white25);
+    border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
+    box-sizing: border-box;
+}
+.chip__wrap--large .chip {
+    height: calc(var(--chip-height-large) / 16 * 1rem);
+    padding: calc(4 / 16 * 1rem) calc(16 / 16 * 1rem);
 }
 .chip.bg-basic {
     background: var(--colorGL-all-gray100);
@@ -34,8 +41,14 @@
 
 /* PC */
 @media screen and (min-width : 1280px) {
+    :root {
+        --chip-height: 32;
+        --chip-height-large : 40;
+    }
     .chip {
-        font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
-        line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+        padding: calc(3 / 16 * 1rem) calc(16 / 16 * 1rem);
+    }
+    .chip__wrap--large .chip {
+        padding: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem);
     }
 }
