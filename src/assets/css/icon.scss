@@ -69,16 +69,16 @@ $fileType: "svg";
         @include iconFile(16,16,'ico-more');
     }   
     &.icon-pagination-first {
-        @include iconFile(16,16,'icon_page_first');
+        @include iconFile(32,32,'icon_page_first');
     }   
     &.icon-pagination-prev {
-        @include iconFile(16,16,'icon_page_prev');
+        @include iconFile(32,32,'icon_page_prev');
     }      
     &.icon-pagination-next {
-        @include iconFile(16,16,'icon_page_next');
+        @include iconFile(32,32,'icon_page_next');
     } 
     &.icon-pagination-last {
-        @include iconFile(16,16,'icon_page_last');
+        @include iconFile(32,32,'icon_page_last');
     }     
     &.icon-heart-line {
         @include iconFile(20,20,'icon_heart_line');

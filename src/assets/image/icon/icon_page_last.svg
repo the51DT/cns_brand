@@ -1,4 +1,8 @@
-<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5.5 3.33073L10.1667 7.9974L5.5 12.6641" stroke="#1A1A1A" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M10.8359 3.33594V12.6693" stroke="#1A1A1A" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Foundation/Button/Icon">
+<g id="Group 2147224620">
+<path id="Arrow_M " d="M11 10L17.05 16.05L11 22.1" stroke="#121212" stroke-width="1.5" stroke-linecap="square"/>
+<path id="Vector 724" d="M20.2734 9L20.2734 23" stroke="#121212" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+</g>
+</g>
 </svg>

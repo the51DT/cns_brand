@@ -1,3 +1,5 @@
-<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10.1667 13.1693L5.5 8.5026L10.1667 3.83594" stroke="#1A1A1A" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Foundation/Button/Icon">
+<path id="Arrow_M " d="M19 9L12.3175 15.6825L19 22.365" stroke="#121212" stroke-width="1.5" stroke-linecap="square"/>
+</g>
 </svg>

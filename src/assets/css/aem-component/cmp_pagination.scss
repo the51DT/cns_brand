@@ -10,8 +10,8 @@
         justify-content: center;
         gap: calc(8 / 16 * 1rem);
         .btn-move {
-            width: calc(45 / 16 * 1rem);
-            height: calc(45 / 16 * 1rem);
+            width: calc(32 / 16 * 1rem);
+            height: calc(32 / 16 * 1rem);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -26,32 +26,46 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: calc(8 / 16 * 1rem);
+        gap: calc(16 / 16 * 1rem);
+        padding: 0 calc(16 / 16 * 1rem);
         color: var(--text-text-tertiary);
+        @media #{$min1280} {
+            gap: calc(8 / 16 * 1rem);
+        }
         &.pc-type {
-            display: inline-flex;
-            @media #{$phone} {
-                display: none;
+            display: none;
+            @media #{$min1280} {
+                display: inline-flex;
             }
         }
         &.mo-type {
-            display: none;
-            @media #{$phone} {
-                display: inline-flex;
+            display: inline-flex;
+            @media #{$min1280} {
+                display: none;
             }
         }
         li {
             a {
-                width: calc(45 / 16 * 1rem);
-                height: calc(45 / 16 * 1rem);
+                width: calc(32 / 16 * 1rem);
+                height: calc(32 / 16 * 1rem);
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: var(--text-text-tertiary);
+                color: var(--colorCM-mode1-text-text-secondary);
+                font-size: calc(16 / 16 * 1rem);
+                line-height: calc(26 / 16 * 1rem);
                 border-radius: var(--radius-mode1-s-nudge);
+                @media #{$min1280} {
+                    width: calc(40 / 16 * 1rem);
+                    height: calc(40 / 16 * 1rem);
+                    font-size: calc(18 / 16 * 1rem);
+                }
                 &.is-active {
-                    background-color: var(--colorCM-mode1-fill-fill-default2);
-                    color: var(--colorGL-all-gray950);
+                    background-color: var(--colorCM-mode1-fill-fill-default10);
+                    color: var(--colorCM-mode1-text-text-on-bg);
+                    font-weight: 600;
+                    border-radius: 50%;
+                    overflow: hidden;
                 }
             }
         }
