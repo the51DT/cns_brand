@@ -1,5 +1,5 @@
 <div class="cmp-wrap cmp-search__wrap">
-    <% if (typeof thumbnailType !== 'undefined' && typeof thumbnailData !== 'undefined') { %>
+    <!-- <% if (typeof thumbnailType !== 'undefined' && typeof thumbnailData !== 'undefined') { %>
         <div class="search-thumbnail-wrap">
             <%- include('src/component/cmp_thumbnail_type.html', { 
                 itemClass: 'pc-col2-big' , 
@@ -8,10 +8,10 @@
                 jsonData : thumbnailData, 
             }) %>
         </div>
-    <% } %>
+    <% } %> -->
     <div class="text-wrap">
         <% if (typeof title !== 'undefined') { %>
-            <p class="search-text"><%- title %></p>
+            <span class="search-text font-head-lg font-medium"><%- title %></span>
         <% } %>
         <div class="form-element__wrap">
             <label class="ir-text">검색어 입력</label>

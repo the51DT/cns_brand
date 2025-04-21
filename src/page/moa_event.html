@@ -20,100 +20,99 @@
         })) %>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
-            <% 
-                const thumbnailDataEvent=[
-                    {
-                        id: 0,
-                        category: '웨비나',
-                        title: '유통 산업 성장의 Key : 최대 효율을 달성하는 성공 DX',
-                        tag : ['CX','DX', '최적화'],
-                        date: 'YYYY.MM.DD',
-                    },
-                    {
-                        id: 1,
-                        category: '웨비나',
-                        title: 'Rethinking Tomorrow’s Work : 일하는 방식의 혁신',
-                        tag : ['DX'],
-                        date: 'YYYY.MM.DD',
-                    },
-                    {
-                        id: 2,
-                        category: '웨비나',
-                        title: 'Active Directory의 숨겨진 비밀 : 해킹 공격과 방어의 전쟁',
-                        tag : ['보안'],
-                        date: 'YYYY.MM.DD',
-                    },
-                    {
-                        id: 3,
-                        category: '웨비나',
-                        title: '로보틱스, AI 발전이 가져온 스마트 물류의 확장',
-                        tag : ['스마트물류'],
-                        date: 'YYYY.MM.DD',
-                    },
-                    {
-                        id: 4,
-                        category: '웨비나',
-                        title: 'ESG 경영 DX : 지속가능성을 높이는 게임체인저',
-                        tag : ['데이터','DX', 'ESG'],
-                        date: 'YYYY.MM.DD',
-                    },
-                    {
-                        id: 5,
-                        category: '웨비나',
-                        title: 'Autify : AI-Powered Test Automation Platform',
-                        tag : ['DX'],
-                        date: 'YYYY.MM.DD',
-                    },
-                    {
-                        id: 6,
-                        category: '웨비나',
-                        title: 'Network Modernization: 미래를 위한 선제적 대응',
-                        tag : ['컨설팅', '클라우드'],
-                        date: 'YYYY.MM.DD',
-                    },
-                    {
-                        id: 7,
-                        category: '웨비나',
-                        title: '긴축의 시대, 숨어 있는 1%의 낭비까지 제거하는 수학적최적화',
-                        tag : ['컨설팅','DX', '최적화'],
-                        date: 'YYYY.MM.DD',
-                    },
-                    {
-                        id: 8,
-                        category: '웨비나',
-                        title: 'LG CNS 생성형 AI : 새로운 차원의 보안 위험에 대비하는 법',
-                        tag : ['보안','AI', 'DX'],
-                        date: 'YYYY.MM.DD',
-                    },
-                    {
-                        id: 9,
-                        category: '웨비나',
-                        title: 'LG CNS 생성형 AI : 공간의 제약을 넘어서는 AI Coding',
-                        tag : ['데이터','AI', 'DX'],
-                        date: 'YYYY.MM.DD',
-                    },
-                    {
-                        id: 10,
-                        category: '웨비나',
-                        title: 'LG CNS AI센터에 무엇이든 물어보세요! Enterprise AI에 주목할 시간',
-                        tag : ['데이터','AI', 'DX'],
-                        date: 'YYYY.MM.DD',
-                    },
-                    {
-                        id: 11,
-                        category: '컨퍼런스',
-                        title: `'24년 주목할 AWS Top3 Tech Trend`,
-                        tag : [],
-                        date: 'YYYY.MM.DD',
-                    },
-                ]
-            %>
-            <%- include('src/component/cmp_search.html', Object.assign({}, locals, { 
-                title: 'LG CNS가 추천하는 행사와<br>이벤트를 살펴보세요.',
-                thumbnailType: 'type-moa-case3',
-                thumbnailData: thumbnailDataEvent,
-            })) %>
             <div class="inner-wrap">
+                <% 
+                    const thumbnailDataEvent=[
+                        {
+                            id: 0,
+                            category: '웨비나',
+                            title: '유통 산업 성장의 Key : 최대 효율을 달성하는 성공 DX',
+                            tag : ['CX','DX', '최적화'],
+                            date: 'YYYY.MM.DD',
+                        },
+                        {
+                            id: 1,
+                            category: '웨비나',
+                            title: 'Rethinking Tomorrow’s Work : 일하는 방식의 혁신',
+                            tag : ['DX'],
+                            date: 'YYYY.MM.DD',
+                        },
+                        {
+                            id: 2,
+                            category: '웨비나',
+                            title: 'Active Directory의 숨겨진 비밀 : 해킹 공격과 방어의 전쟁',
+                            tag : ['보안'],
+                            date: 'YYYY.MM.DD',
+                        },
+                        {
+                            id: 3,
+                            category: '웨비나',
+                            title: '로보틱스, AI 발전이 가져온 스마트 물류의 확장',
+                            tag : ['스마트물류'],
+                            date: 'YYYY.MM.DD',
+                        },
+                        {
+                            id: 4,
+                            category: '웨비나',
+                            title: 'ESG 경영 DX : 지속가능성을 높이는 게임체인저',
+                            tag : ['데이터','DX', 'ESG'],
+                            date: 'YYYY.MM.DD',
+                        },
+                        {
+                            id: 5,
+                            category: '웨비나',
+                            title: 'Autify : AI-Powered Test Automation Platform',
+                            tag : ['DX'],
+                            date: 'YYYY.MM.DD',
+                        },
+                        {
+                            id: 6,
+                            category: '웨비나',
+                            title: 'Network Modernization: 미래를 위한 선제적 대응',
+                            tag : ['컨설팅', '클라우드'],
+                            date: 'YYYY.MM.DD',
+                        },
+                        {
+                            id: 7,
+                            category: '웨비나',
+                            title: '긴축의 시대, 숨어 있는 1%의 낭비까지 제거하는 수학적최적화',
+                            tag : ['컨설팅','DX', '최적화'],
+                            date: 'YYYY.MM.DD',
+                        },
+                        {
+                            id: 8,
+                            category: '웨비나',
+                            title: 'LG CNS 생성형 AI : 새로운 차원의 보안 위험에 대비하는 법',
+                            tag : ['보안','AI', 'DX'],
+                            date: 'YYYY.MM.DD',
+                        },
+                        {
+                            id: 9,
+                            category: '웨비나',
+                            title: 'LG CNS 생성형 AI : 공간의 제약을 넘어서는 AI Coding',
+                            tag : ['데이터','AI', 'DX'],
+                            date: 'YYYY.MM.DD',
+                        },
+                        {
+                            id: 10,
+                            category: '웨비나',
+                            title: 'LG CNS AI센터에 무엇이든 물어보세요! Enterprise AI에 주목할 시간',
+                            tag : ['데이터','AI', 'DX'],
+                            date: 'YYYY.MM.DD',
+                        },
+                        {
+                            id: 11,
+                            category: '컨퍼런스',
+                            title: `'24년 주목할 AWS Top3 Tech Trend`,
+                            tag : [],
+                            date: 'YYYY.MM.DD',
+                        },
+                    ]
+                %>
+                <%- include('src/component/cmp_search.html', Object.assign({}, locals, { 
+                    title: 'LG CNS가 추천하는 행사와<br>이벤트를 살펴보세요.',
+                    thumbnailData: thumbnailDataEvent,
+                })) %>
                 <%- include('src/component/cmp_thumbnail_type.html', { 
                     itemClass: 'pc-col3' , 
                     itemCount: 12, 
