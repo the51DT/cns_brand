@@ -201,7 +201,10 @@
 // MOA 최상단 스와이프 : .cmp-swiper__moa__top-swiper
 .cmp-swiper__moa__top-swiper {
     padding: 0;
-    max-width: unset;
+    @media #{$min1280} {
+        margin: 0 auto;
+        max-width: calc(1440 / 16 * 1rem);
+    }
     .swiper-wrapper {
         @media #{$min1280} {
             display: flex;
