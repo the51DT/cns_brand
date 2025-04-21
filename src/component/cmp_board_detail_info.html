@@ -28,7 +28,7 @@
         <% } %>
 
         <% if (tagList.length > 0 && contentType === 'type-wide') { %>
-            <div class="tag-box cmp-exsample__wrap mt-5">
+            <div class="tag-box">
                 <% tagList.forEach((tag) => { %>
                     <div class="tag"># <%= tag %></div>
                 <% }) %>
@@ -45,7 +45,7 @@
         <% } %>
 
         <% if (tagList.length > 0 && contentType === 'type-card') { %>
-            <dl class="detail-info__desc cmp-exsample__wrap mt-5">
+            <dl class="detail-info__desc mt-5">
                 <dt class="detail-info__desc__tit">연관 태그</dt>
                 <dd class="detail-info__desc__txt">
                     <div class="tag-box">
@@ -60,10 +60,10 @@
         <% if (dateValue || likeCountValue) { %>
             <div class="detail-info__util">
                 <% if (dateValue) { %>
-                    <span class="detail-info__util__item detail-info__date font-caption-sm-mode"><%= prefixText %> · <%= dateValue %></span>
+                    <span class="detail-info__util__item detail-info__date font-caption-sm"><%= prefixText %> · <%= dateValue %></span>
                 <% } %>
                 <% if (likeCountValue) { %>
-                    <span class="detail-info__util__item detail-info__like font-body-sm-mode">
+                    <span class="detail-info__util__item detail-info__like font-caption-sm">
                         <a href="#" class="btn btn-medium btn-icon">
                             <i class="ico icon-heart-line"></i>
                             <span><%= likeCountValue %></span>
