@@ -69,9 +69,10 @@
             background-color: transparent;
             .text-info {
                 justify-content: space-between;
-                gap: calc(24 / 16 * 1rem);
+                gap: calc(12 / 16 * 1rem);
                 @media #{$min1280} {
                     margin-top: calc(32 / 16 * 1rem);
+                    gap: calc(20 / 16 * 1rem);
                     // margin-bottom: 0;
                 }
                 .info-title {
@@ -116,10 +117,11 @@
             .text-info {
                 flex-direction: column;
                 // justify-content: center;
-                gap: calc(24 / 16 * 1rem);
+                gap: calc(12 / 16 * 1rem);
                 width: 100%;
                 min-width: 100%;
                 @media #{$min1280} {
+                    gap: calc(24 / 16 * 1rem);
                     width: 50%;
                     min-width: 50%;
                     padding: calc(80 / 16 * 1rem) calc(72 / 16 * 1rem);
@@ -168,10 +170,11 @@
             .text-info {
                 flex-direction: column;
                 // justify-content: center;
-                gap: calc(24 / 16 * 1rem);
+                gap: calc(12 / 16 * 1rem);
                 width: 100%;
                 min-width: 100%;
                 @media #{$min1280} {
+                    gap: calc(24 / 16 * 1rem);
                     width: 50%;
                     min-width: 50%;
                     padding: calc(80 / 16 * 1rem) calc(72 / 16 * 1rem) 0 0;
