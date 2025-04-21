@@ -4,7 +4,6 @@
         const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
     %>
     <% data.forEach((item)=> { %>
-        <% console.log %>
         <div class="cmp-input__wrap">
             <% 
                 const title = (typeof item.title !== 'undefined' ? item.title : []);
@@ -52,6 +51,14 @@
                                         <%- inputData.state === 'readonly' && inputData.state ? 'readonly' : '' %>
                                         <%- inputData.required === true ? 'required' : '' %>
                                     >
+                                    <button type="button" class="btn btn-remove">
+                                        <i class="ico icon-remove-bl24"></i>
+                                        <span class="ir-text">삭제</span>
+                                    </button>
+                                    <button type="button" class="btn btn-search">
+                                        <i class="ico icon-search-bl24"></i>
+                                        <span class="ir-text">검색</span>
+                                    </button>
                                 <% } else if(inputData.type === 'textarea') { %>
                                     <div class="cmp-input__item--<%- inputData.type %>">
                                     <% if(!inputData.title) { %>
@@ -115,6 +122,86 @@
                                     >
                                 <% } %>
                             </div>
+                            <% if(inputData.type === 'search' && inputData.step) { %>
+                                <!-- .cmp-input__drop-content.is-active : 가이드를 위한 활성화 처리 -->
+                                <div class="cmp-input__drop-content is-active">
+                                    <% if(inputData.step === 'guide') { %>
+                                        <div class="cmp-input__drop-content--guide">
+                                            <span class="font-body-lg font-semibold drop-content__title">회사(소속) 검색 Tip</span>
+                                            <dl>
+                                                <dt class="font-body-md font-semibold">기업명 검색 시</dt>
+                                                <dd>근무기업의 사업자등록증에 기재된 한글 기업명이 가장 정확하게 검색됩니다. (예시: LG CNS -> 엘지씨엔에스)</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>사업자등록번호 검색 시</dt>
+                                                <dd>10자리 숫자로만 입력해주세요.</dd>
+                                            </dl>
+                                        </div>
+                                    <% } else if (inputData.step === 'result') {%>
+                                        <div class="cmp-input__drop-content--result">
+                                            <ul class="result__list">
+                                                <li>
+                                                    <a href="#" class="result__select-box">
+                                                        <span class="font-body-md font-semibold result__title">엘지씨앤에스</span>
+                                                        <span class="font-body-sm result__address result__address--num">1234567890</span>
+                                                        <span class="font-body-sm result__address">경기도 성남시 분당구 황새울로 234</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="result__select-box">
+                                                        <span class="font-body-md font-semibold result__title">엘지씨앤에스</span>
+                                                        <span class="font-body-sm result__address result__address--num">1234567890</span>
+                                                        <span class="font-body-sm result__address">경기도 성남시 분당구 황새울로 234</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="result__select-box">
+                                                        <span class="font-body-md font-semibold result__title">엘지씨앤에스</span>
+                                                        <span class="font-body-sm result__address result__address--num">1234567890</span>
+                                                        <span class="font-body-sm result__address">경기도 성남시 분당구 황새울로 234</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="result__select-box">
+                                                        <span class="font-body-md font-semibold result__title">엘지씨앤에스</span>
+                                                        <span class="font-body-sm result__address result__address--num">1234567890</span>
+                                                        <span class="font-body-sm result__address">경기도 성남시 분당구 황새울로 234</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <!-- pagination : 검색결과가 10개 이상일 경우 노출 -->
+                                            <%- include('src/component/cmp_pagination.html') %>
+                                            <!-- //pagination -->
+                                            <div class="result__util">
+                                                <p class="result__util__text font-body-sm">현재 검색에 사용한 회사 정보로 직접 입력하시겠습니까?</p>
+                                                <div class="button__wrap">
+                                                    <button type="button" class="btn btn-ultra-small btn-secondary">
+                                                        <span class="btn__text">입력하기</span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-ultra-small btn-secondary result__btn-close">
+                                                        <span class="btn__text">닫기</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% } else if (inputData.step === 'result-empty') {%>
+                                        <div class="cmp-input__drop-content--result-empty">
+                                            <p class="font-body-lg font-semibold result__empty-text">검색 결과가 없습니다.</p>
+                                            <div class="result__util">
+                                                <p class="result__util__text font-body-sm">현재 검색에 사용한 회사 정보로 직접 입력하시겠습니까?</p>
+                                                <div class="button__wrap">
+                                                    <button type="button" class="btn btn-ultra-small btn-secondary">
+                                                        <span class="btn__text">입력하기</span>
+                                                    </button>
+                                                    <button type="button" class="btn btn-ultra-small btn-secondary result__btn-close">
+                                                        <span class="btn__text">닫기</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            <% } %>
                             <% if(inputData.info) { %>
                                 <p class="cmp-input__info"><%- inputData.info %></p>
                             <% } %>

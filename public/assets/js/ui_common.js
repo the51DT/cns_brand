@@ -2,7 +2,7 @@
  * UI common function * 
  ***************************/
 
-// input 포커스 
+// search 포커스 
 const checkInputFocus = (inputAdditionalFn) => {
     const inputs = document.querySelectorAll('.form-element__inner input[type="text"]');
     const autoComplete = document.querySelector('.autocomplate__wrap')    
@@ -52,6 +52,56 @@ const checkInputFocus = (inputAdditionalFn) => {
     });
 };
 
+// input 포커스 
+const checkCmpInputFocus = (inputAdditionalFn) => {
+    const inputs = document.querySelectorAll('.cmp-input__wrap input[type="text"]');
+    const autoComplete = document.querySelector('.autocomplate__wrap')    
+    inputs.forEach(input => {
+        if(input.value !== '') {
+            const nextSibling = input.nextElementSibling;
+            if (nextSibling && nextSibling.classList.contains('btn-remove')) {
+                nextSibling.classList.add('is-show');
+            } 
+        }        
+    });
+    const handleInputKeyup = (event) => {
+        const nextSibling = event.target.nextElementSibling;
+        if (nextSibling && nextSibling.classList.contains('btn-remove')) {
+            nextSibling.classList.add('is-show');
+        } 
+        if (event.target.value === '') {
+            nextSibling.classList.remove('is-show');
+        }
+
+        if(autoComplete) {
+            autoComplete.style.display = "block";
+        }         
+        // 추가로 전달된 함수 실행
+        if (inputAdditionalFn) {
+            inputAdditionalFn(event);
+        }
+    };
+    const handleBtnRemoveClick = (event) => {
+        const input = event.target.closest('.cmp-input__wrap').querySelector('input[type="text"]');
+        input.value = '';
+        event.target.classList.remove('is-show');
+        event.target.closest('.btn-remove').classList.remove('is-show');
+        if(autoComplete) {
+            autoComplete.style.display = "none";
+        }         
+        // 추가로 전달된 함수 실행
+        if (inputAdditionalFn) {
+            inputAdditionalFn(event);
+        }
+    };
+    inputs.forEach(input => {
+        input.addEventListener('keyup', handleInputKeyup);
+        const btnRemove = input.nextElementSibling;
+        if (btnRemove && btnRemove.classList.contains('btn-remove')) {
+            btnRemove.addEventListener('click', handleBtnRemoveClick);
+        }       
+    });
+};
 
 //dropdown menu  
 const dropdownMenu = (menuSelector) => {   
@@ -512,8 +562,43 @@ const sidebarCmp = () => {
     handleScroll();
 }
 
+const inputSearch  = (target) => {
+    const searchInput = document.querySelectorAll(target);
+    const searchList = document.querySelectorAll(".result__list li");
+    const searchClose = document.querySelectorAll(".result__btn-close");
+    searchInput.forEach((el) => {
+        // const resultList = dropContent.querySelector('.result__list');
+        el.addEventListener("click", (evnet)=> {
+            const inputContent = el.closest('.cmp-input__content');
+            const dropCont = inputContent.querySelector('.cmp-input__drop-content');
+            dropCont.classList.add('is-active');
+        })
+    });
+
+    searchList.forEach((el) => {
+        const selector = el.querySelector('.result__select-box');
+        el.addEventListener("click", (evnet) => {
+            event.preventDefault()
+            if(!selector.classList.contains('is-active')) {
+                selector.classList.add('is-active')
+            } else {
+                selector.classList.remove('is-active')
+            }
+        });
+    });
+
+    searchClose.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+            const closeTarget = btn.closest('.cmp-input__drop-content');
+            closeTarget.classList.remove('is-active');
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", sidebarCmp);
 checkInputFocus();
+checkCmpInputFocus();
 accordion('.basic-type', 'basic');        
 accordion('.open-type', 'basic');   
-dropdownMenu('.dropdown-menu'); 
+dropdownMenu('.dropdown-menu');
+inputSearch('.cmp-input__item--search'); 
