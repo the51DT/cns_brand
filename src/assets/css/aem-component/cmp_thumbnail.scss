@@ -216,13 +216,16 @@
                 }
             }
         }
-        .thumbnail-type.pc-col3 li {
-            width: 100%;
-            & + li {
-                border-top: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
-            }
-            &:last-child {
-                border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+        .thumbnail-type.pc-col3 {
+            gap: 0;
+            li {
+                width: 100%;
+                & + li {
+                    border-top: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+                }
+                &:last-child {
+                    border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+                }
             }
         }
         .thumbnail-item {
