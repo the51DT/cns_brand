@@ -1,46 +1,48 @@
 <div class="cmp-wrap cmp-user-case-ref">
-  <div class="cmp-user-case-ref__container">
-    <% if(typeof title !=='undefined') { %>
-      <div class="cmp-user-case-ref__title">
-        <% if(typeof title.title !=='undefined') { %>
-          <span class="font-head-sm title font-bold"><%- title.title %></span>
+    <div class="cmp-user-case-ref__container">
+        <% if(typeof title !=='undefined') { %>
+            <div class="cmp-user-case-ref__title">
+                <% if(typeof title.title !=='undefined') { %>
+                    <span class="font-head-md-mode title font-semibold"><%- title.title %></span>
+                <% } %>
+                <% if(typeof title.subTitle !=='undefined') { %>
+                    <span class="font-body-md sub-title font-medium"><%- title.subTitle %></span>
+                <% } %>
+            </div>
         <% } %>
-        <% if(typeof title.subTitle !=='undefined') { %>
-          <span class="font-body-lg sub-title font-bold"><%- title.subTitle %></span>
+        <% if(typeof img !=='undefined') { %>
+            <div class="cmp-user-case-ref__content">
+                <div class="text-wrap">
+                    <div class="cmp-wrap cmp-richtext">
+                        <%- richText %>
+                    </div>
+                    <% if(typeof button !=='undefined' ) { %>
+                        <div class="button__wrap">
+                            <button type="button" class="btn btn-small btn-secondary"
+                                modal-id="<%- typeof button.btnModal !=='undefined' ? button.btnModal : '' %>" onclick="openModal(event)">
+                                <% if(typeof button.btnIcon !=='undefined' ) { %>
+                                    <i
+                                        class="btn__icon ico icon-<%- typeof button.btnIcon !=='undefined' ? button.btnIcon : '' %>-bl20"></i>
+                                    <% } %>
+                                        <span class="btn__text">
+                                            <%- button.btnText %>
+                                        </span>
+                            </button>
+                        </div>
+                    <% } %>
+                </div>
+                <% 
+                    const userCaseRefData =[{
+                        pc: img.imgPc,
+                        mo: img.imgMo,
+                    }] 
+                %>
+                <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                    jsonData : userCaseRefData,
+                    alt : img.imgAlt,
+                    addClass: img.imgClass
+                })) %>
+            </div>
         <% } %>
-      </div>
-    <% } %>
-    <% if(typeof img !=='undefined') { %>
-      <div class="cmp-user-case-ref__content">
-        <% 
-          const userCaseRefData =[{
-            pc: img.imgPc,
-            mo: img.imgMo,
-          }] 
-        %>
-        <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
-          jsonData : userCaseRefData,
-          alt : img.imgAlt,
-          addClass: img.imgClass
-        })) %>
-        <div class="text-wrap">
-          <div class="cmp-wrap cmp-richtext">
-            <%- richText %>
-          </div>
-        </div>
-      </div>
-    <% } %>
-    <% if(typeof button !=='undefined') { %>
-      <div class="button__wrap">
-        <button type="button" class="btn btn-medium btn-secondary" modal-id="<%- typeof button.btnModal !=='undefined' ? button.btnModal : '' %>" onclick="openModal(event)">
-          <% if(typeof button.btnIcon !=='undefined') { %>
-            <i class="btn__icon ico icon-<%- typeof button.btnIcon !=='undefined' ? button.btnIcon : '' %>-bl20"></i>
-          <% } %>
-          <span class="btn__text">
-            <%- button.btnText %>
-          </span>
-        </button>
-      </div>
-    <% } %>
-  </div>
+    </div>
 </div>
