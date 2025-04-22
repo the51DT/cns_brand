@@ -59,7 +59,7 @@
     width: 100%;
     height: 100%;
 }
-.modal .modal__content::after {
+/* .modal .modal__content::after {
     display: block;
     content: '';
     clear: both;
@@ -69,7 +69,7 @@
     width: 100%;
     height: calc(100 / 16 * 1rem);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
-}
+} */
 .modal .modal__scroll {
     width: 100%;
     height: 100%;
@@ -77,7 +77,7 @@
 }
 .modal .modal__scroll__inner {
     /* after로 적용된 그라데이션 만큼 하단 여백 적용 */
-    padding-bottom: calc(100 / 16 * 1rem);
+    /* padding-bottom: calc(100 / 16 * 1rem); */
 }
 
 /* footer 에 버튼 하나만 있을 경우 w100% 적용 */
@@ -112,8 +112,15 @@
     padding: 0 0;
 }
 .modal--type-full .modal__container {
+    padding-bottom: calc(24 / 16 * 1rem);
     height: 100vh;
     border-radius: var(--radius-mode1-none);
+}
+.modal--type-full .modal__content {
+    padding-top : calc(56 / 16 * 1rem);
+}
+.modal--type-full .modal__header + .modal__content {
+    padding-top: 0;
 }
 /* 2. modal - type small */
 .modal--type-small .modal__content:after {
@@ -174,9 +181,13 @@
         padding: 0 calc(20 / 16 * 1rem);
     }
     .modal--type-full .modal__container {
+        padding-bottom: calc(32 / 16 * 1rem);
         max-width: calc(1008 / 16 * 1rem);
         border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
         height: fit-content;
+    }
+    .modal--type-full .modal__content {
+        padding-top : calc(44 / 16 * 1rem);
     }
     /* 2. modal - type small */
     .modal--type-small .modal__container {

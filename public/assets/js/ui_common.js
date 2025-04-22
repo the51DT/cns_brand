@@ -565,14 +565,26 @@ const sidebarCmp = () => {
 const inputSearch  = (target) => {
     const searchInput = document.querySelectorAll(target);
     const searchList = document.querySelectorAll(".result__list li");
-    const searchClose = document.querySelectorAll(".result__btn-close");
     searchInput.forEach((el) => {
         // const resultList = dropContent.querySelector('.result__list');
+        // search 선택 시 검색 영역 펼쳐짐
         el.addEventListener("click", (evnet)=> {
             const inputContent = el.closest('.cmp-input__content');
             const dropCont = inputContent.querySelector('.cmp-input__drop-content');
-            dropCont.classList.add('is-active');
+            if(dropCont) {
+                dropCont.classList.add('is-active');
+            }
         })
+
+        // 닫기 버튼 선택 시 search 검색 영역 닫힘
+        const btnClose = el.closest('.cmp-input__content').querySelector('.result__btn-close');
+        if(btnClose) {
+            btnClose.addEventListener("click", (event) => {
+                // console.log('test')
+                const closeTarget = btnClose.closest('.cmp-input__drop-content');
+                closeTarget.classList.remove('is-active');
+            });
+        }
     });
 
     searchList.forEach((el) => {
@@ -584,13 +596,6 @@ const inputSearch  = (target) => {
             } else {
                 selector.classList.remove('is-active')
             }
-        });
-    });
-
-    searchClose.forEach((btn) => {
-        btn.addEventListener("click", (event) => {
-            const closeTarget = btn.closest('.cmp-input__drop-content');
-            closeTarget.classList.remove('is-active');
         });
     });
 }

@@ -510,6 +510,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_resources.html"
+        },
+        {
+          "name": "MOA - modal",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "moa_modal.html"
         }
       ]
     },
