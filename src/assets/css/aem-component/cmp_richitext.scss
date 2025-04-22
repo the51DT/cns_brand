@@ -1,201 +1,152 @@
 /* 약관 관련 */
 .cmp-richtext {
-  h1 {
-    font-size: calc(var(--typo-pc-size-head-xl) / 16 * 1rem);
-    line-height: calc(var(--typo-pc-line-height-head-xl) / 16 * 1rem);
-    letter-spacing: calc(0.05 / 16 * 1rem);
-    font-weight: 400;
-    @media screen and (max-width: 1599px) and (min-width: 768px) {
-      font-size: calc(var(--typo-tablet-size-head-xl) / 16 * 1rem);
-      line-height: calc(var(--typo-tablet-line-height-head-xl) / 16 * 1rem);
+    h1 {
+        font-size: calc(var(--typo-mo-size-head-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-head-xl) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-head-xl) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-head-xl) / 16 * 1rem);
+        }
     }
-    @media screen and (max-width: 767px) {
-      font-size: calc(var(--typo-mo-size-head-xl) / 16 * 1rem);
-      line-height: calc(var(--typo-mo-line-height-head-xl) / 16 * 1rem);
+    h2 {
+        font-size: calc(var(--typo-mo-size-head-lg) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-head-lg) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
+        }
     }
-  }
-  h2 {
-    font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
-    line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
-    letter-spacing: calc(0.05 / 16 * 1rem);
-    font-weight: 400;
-    @media screen and (max-width: 1599px) and (min-width: 768px) {
-      font-size: calc(var(--typo-tablet-size-head-lg) / 16 * 1rem);
-      line-height: calc(var(--typo-tablet-line-height-head-lg) / 16 * 1rem);
-
+    h3 {
+        font-size: calc(var(--typo-mo-size-head-md) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-head-md) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-head-md) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-head-md) / 16 * 1rem);
+        }
     }
-    @media screen and (max-width: 767px) {
-      font-size: calc(var(--typo-mo-size-head-lg) / 16 * 1rem);
-      line-height: calc(var(--typo-mo-line-height-head-lg) / 16 * 1rem);
-    }
-  }
-  h3 {
-    font-size: calc(var(--typo-pc-size-head-md) / 16 * 1rem);
-    line-height: calc(var(--typo-pc-line-height-head-md) / 16 * 1rem);
-    letter-spacing: calc(0.05 / 16 * 1rem);
-    font-weight: 400;
-    @media screen and (max-width: 1599px) and (min-width: 768px) {
-      font-size: calc(var(--typo-tablet-size-head-md) / 16 * 1rem);
-      line-height: calc(var(--typo-tablet-line-height-head-md) / 16 * 1rem);
-    }
-    @media screen and (max-width: 767px) {
-      font-size: calc(var(--typo-mo-size-head-md) / 16 * 1rem);
-      line-height: calc(var(--typo-mo-line-height-head-md) / 16 * 1rem);
-    }
-  }
-  h4 {
-    font-size: calc(var(--typo-pc-size-head-sm) / 16 * 1rem);
-    line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
-    letter-spacing: calc(0.05 / 16 * 1rem);
-    font-weight: 400;
-    @media screen and (max-width: 1599px) and (min-width: 768px) {
-      font-size: calc(var(--typo-tablet-size-head-sm) / 16 * 1rem);
-      line-height: calc(var(--typo-tablet-line-height-head-sm) / 16 * 1rem);
-    }
-    @media screen and (max-width: 767px) {
-      font-size: calc(var(--typo-mo-size-head-sm) / 16 * 1rem);
-      line-height: calc(var(--typo-mo-line-height-head-sm) / 16 * 1rem);
-    }
-  }
-  h5 {
-    font-size: calc(var(--typo-pc-size-head-xs) / 16 * 1rem);
-    line-height: calc(var(--typo-pc-line-height-head-xs) / 16 * 1rem);
-    letter-spacing: calc(0.05 / 16 * 1rem);
-    font-weight: 400;
-    @media screen and (max-width: 1599px) and (min-width: 768px) {
-      font-size: calc(var(--typo-tablet-size-head-xs) / 16 * 1rem);
-      line-height: calc(var(--typo-tablet-line-height-head-xs) / 16 * 1rem);
-    }
-    @media screen and (max-width: 767px) {
-      font-size: calc(var(--typo-mo-size-head-sm) / 16 * 1rem);
-      line-height: calc(var(--typo-mo-line-height-head-sm) / 16 * 1rem);
-    }
-  }
-  h6 {
-    font-size: calc(var(--typo-pc-size-head-xs) / 16 * 1rem);
-    line-height: calc(var(--typo-pc-line-height-head-xs) / 16 * 1rem);
-    letter-spacing: calc(0.05 / 16 * 1rem);
-    font-weight: 400;
-    @media screen and (max-width: 1599px) and (min-width: 768px) {
-      font-size: calc(var(--typo-tablet-size-head-xs) / 16 * 1rem);
-      line-height: calc(var(--typo-tablet-line-height-head-xs) / 16 * 1rem);
-    }
-    @media screen and (max-width: 767px) {
-      font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
-      line-height: calc(var(--typo-mo-line-height-head-xs) / 16 * 1rem);
-    }
-  }
-  strong {
-    font-size: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
-    line-height: calc(var(--typo-pc-line-height-body-xl) / 16 * 1rem);
-    letter-spacing: calc(0.2 / 16 * 1rem);
-    font-weight: 600;
-    @media screen and (max-width: 1599px) and (min-width: 768px) {
-      font-size: calc(var(--typo-tablet-size-body-xl) / 16 * 1rem);
-      line-height: calc(var(--typo-tablet-line-height-body-xl) / 16 * 1rem);
-    }
-    @media screen and (max-width: 767px) {
-      font-size: calc(var(--typo-mo-size-body-xl) / 16 * 1rem);
-      line-height: calc(var(--typo-mo-line-height-body-xl) / 16 * 1rem);
-    }
-  }
-  b {
-    font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
-    line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
-    letter-spacing: calc(0.2 / 16 * 1rem);
-    font-weight: 600;
-    @media screen and (max-width: 1599px) and (min-width: 768px) {
-      font-size: calc(var(--typo-tablet-size-body-md) / 16 * 1rem);
-      line-height: calc(var(--typo-tablet-line-height-body-md) / 16 * 1rem);
-    }
-    @media screen and (max-width: 767px) {
-      font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);
-      line-height: calc(var(--typo-mo-line-height-body-md) / 16 * 1rem);
-    }
-  }
-  i {
-    font-style: italic;
-  }
-  sup {
-    
-  }
-  sub {
-    
-  }
-  a {
-    font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
-    line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
-    letter-spacing: calc(0.05 / 16 * 1rem);
-    font-weight: 400;
-    @media screen and (max-width: 1599px) and (min-width: 768px) {
-      font-size: calc(var(--typo-tablet-size-body-xs) / 16 * 1rem);
-      line-height: calc(var(--typo-tablet-line-height-body-xs) / 16 * 1rem);
-    }
-    @media screen and (max-width: 767px) {
-      font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
-      line-height: calc(var(--typo-mo-line-height-head-xs) / 16 * 1rem);
-    }
-  }
-  p {
-    font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
-    line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
-    letter-spacing: calc(0.05 / 16 * 1rem);
-    font-weight: 400;
-    @media screen and (max-width: 1599px) and (min-width: 768px) {
-      font-size: calc(var(--typo-tablet-size-body-xs) / 16 * 1rem);
-      line-height: calc(var(--typo-tablet-line-height-body-xs) / 16 * 1rem);
-    }
-    @media screen and (max-width: 767px) {
-      font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
-      line-height: calc(var(--typo-mo-line-height-head-xs) / 16 * 1rem);
-    }
-  }
-  blockquote {
-    text-decoration: underline;
-  }
-  ul {
-    li {
-      position: relative;
-      font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
-      line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
-      letter-spacing: calc(0.05 / 16 * 1rem);
-      font-weight: 400;
-      padding-left: calc(10 / 16 * 1rem);
-      &::before {
-        content: '';
-        width: calc(2 / 16 * 1rem);
-        height: calc(2 / 16 * 1rem);
-        display: block;
-        border-radius: 50%;
-        position: absolute;
-        left: 0;
-        top: 10px;
-        background-color: #333333;
-      }
-      @media screen and (max-width: 1599px) and (min-width: 768px) {
-        font-size: calc(var(--typo-tablet-size-body-xs) / 16 * 1rem);
-        line-height: calc(var(--typo-tablet-line-height-body-xs) / 16 * 1rem);
-      }
-      @media screen and (max-width: 767px) {
-        font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
-        line-height: calc(var(--typo-mo-line-height-head-xs) / 16 * 1rem);
-      }
-    }
-  }
-  ol {
-    li {
-      font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
-      line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
-      letter-spacing: calc(0.05 / 16 * 1rem);
-      font-weight: 400;
-      @media screen and (max-width: 1599px) and (min-width: 768px) {
-        font-size: calc(var(--typo-tablet-size-body-sm) / 16 * 1rem);
-        line-height: calc(var(--typo-tablet-line-height-body-sm) / 16 * 1rem);
-      }
-      @media screen and (max-width: 767px) {
+    h4 {
         font-size: calc(var(--typo-mo-size-head-sm) / 16 * 1rem);
         line-height: calc(var(--typo-mo-line-height-head-sm) / 16 * 1rem);
-      }
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-head-sm) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
+        }
     }
-  }
+    h5 {
+        font-size: calc(var(--typo-mo-size-head-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-head-sm) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-head-xs) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-head-xs) / 16 * 1rem);
+        }
+    }
+    h6 {
+        font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-head-xs) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-head-xs) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-head-xs) / 16 * 1rem);
+        }
+    }
+    strong {
+        font-size: calc(var(--typo-mo-size-body-xl) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-xl) / 16 * 1rem);
+        letter-spacing: calc(0.2 / 16 * 1rem);
+        font-weight: 600;
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-body-xl) / 16 * 1rem);
+        }
+    }
+    b {
+        font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-md) / 16 * 1rem);
+        letter-spacing: calc(0.2 / 16 * 1rem);
+        font-weight: 600;
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
+        }
+    }
+    i {
+        font-style: italic;
+    }
+    sup {
+
+    }
+    sub {
+
+    }
+    a {
+        font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-head-xs) / 16 * 1rem);
+        letter-spacing: calc(0.05 / 16 * 1rem);
+        font-weight: 400;
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
+        }
+    }
+    p {
+        font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+        letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+        font-weight: 400;
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+            line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+        }
+    }
+    blockquote {
+        text-decoration: underline;
+    }
+    ul {
+        li {
+            position: relative;
+            font-size: calc(var(--typo-mo-size-head-xs) / 16 * 1rem);
+            line-height: calc(var(--typo-mo-line-height-head-xs) / 16 * 1rem);
+            letter-spacing: calc(0.05 / 16 * 1rem);
+            font-weight: 400;
+            padding-left: calc(10 / 16 * 1rem);
+            &::before {
+                content: '';
+                width: calc(2 / 16 * 1rem);
+                height: calc(2 / 16 * 1rem);
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                left: 0;
+                top: 10px;
+                background-color: #333333;
+            }
+            @media #{$min1280} {
+                font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
+                line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
+            }
+        }
+    }
+    ol {
+        li {
+            font-size: calc(var(--typo-mo-size-head-sm) / 16 * 1rem);
+            line-height: calc(var(--typo-mo-line-height-head-sm) / 16 * 1rem);
+            letter-spacing: calc(0.05 / 16 * 1rem);
+            font-weight: 400;
+            @media #{$min1280} {
+                font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+                line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+            }
+        }
+    }
 }
