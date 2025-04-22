@@ -106,7 +106,10 @@
             margin-bottom: calc(32 / 16 * 1rem);
         }
     }
-
+    .form-element__wrap {
+        margin: 0 auto;
+        max-width: calc(800 / 16 * 1rem);
+    }
     .tag-button-wrap {
         margin-top: calc(32 / 16*1rem);
         display: flex;
