@@ -117,101 +117,105 @@
                 <%- include('src/component/cmp_search.html', Object.assign({}, locals, { 
                     title: 'LG CNS의 보도자료를 확인해 보세요.' , 
                 })) %>
-                <% 
-                    const thumbnailDataNewsRoom=[
+                <!-- search-result : 검색 결과가 없는 경우 -->
+                <div class="cmp-wrap cmp-search-result">
+                    <div class="search-result__util">
+                        <span class="font-body-md search-result__count">
+                            총 <strong class="font-bold">0</strong> 건</span>
+                        </span>
+                    </div>
+                    <div class="search-result--empty">
+                        <p class="font-body-md search-result--empty__text">검색된 결과가 없습니다.</p>
+                    </div>
+                </div>
+                <!-- // search-result : 검색 결과가 없는 경우 -->
+                <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, { 
+                    allCountData: '284',
+                    thumType: 'card',
+                    detailData: [
                         {
-                            id: 0,
-                            category: '보도자료',
-                            title: '“글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개(IPO) 기자간담회 개최',
-                            content: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
-                            date: '2025.01.10',
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            title: '“고객경험 핵심은 데이터” LG CNS, 고객데이터플랫폼(CDP) 출시',
+                            description: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                            category: '보도자료 · 2025.01.10'
                         },
                         {
-                            id: 1,
-                            category: '보도자료',
-                            title: 'LG CNS, 국내 3대 신용평가에서 신용등급 전망 상향',
-                            content: '국내 3대 신용평가사 모두 신용등급 전망 ‘AA- 안정적’에서 ‘AA- 긍정적’으로 조정',
-                            date: '2024.12.11',
-                        },
-                        {
-                            id: 2,
-                            category: '보도자료',
-                            title: 'AI로 ‘철스크랩 등급’ 판정',
-                            content: '■ LG CNS-대한제강, 합작법인 아이모스(Aimos) 설립 ∙∙∙ 철스크랩 분류 사업 본격화',
-                            date: '2024.05.02',
-                        },
-                        {
-                            id: 3,
-                            category: '보도자료',
-                            title: 'LG CNS, 차세대 DX 분야 청년인재 양성 나선다',
-                            content: '고용노동부 주관 직업훈련 프로그램 K-디지털 트레이닝 교육기관으로 발탁',
-                            date: '2024.11.27',
-                        },
-                        {
-                            id: 4,
-                            category: '보도자료',
-                            title: 'LG CNS, 전력 AI 솔루션 ‘에너딕트’ 출시',
-                            content: 'SaaS 형태로 제공해 고객의 초기 구축비용 절감 … 글로벌 사업장에서도 손쉽게 도입',
-                            date: '2024.11.06',
-                        },
-                        {
-                            id: 5,
-                            category: '보도자료',
-                            title: 'LG CNS, 채용 연계형 계약학과 신입생 모집',
-                            content: '- 고려대 「AI데이터사이언스학과」, 연세대 「지능형데이터,최적화학과」 -',
-                            date: '2024.09.30',
-                        },
-                        {
-                            id: 6,
-                            category: '보도자료',
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
                             title: 'LG CNS, 구글 클라우드 「생성형 AI 전문기업」 아시아 최초 인증',
-                            content: '지난 7월 신설된 구글 클라우드의 「생성형 AI 전문기업」 인증 획득',
-                            date: '2024.10.10',
+                            description: '21일부터 22일까지 양일간 ‘싱글렉스 라이브(SINGLEX Live)’ 웨비나 개최',
+                            category: '보도자료 · 2025.01.10'
                         },
                         {
-                            id: 7,
-                            category: '보도자료',
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            title: 'AI로 ‘철스크랩 등급’ 판정',
+                            description: '■ LG CNS-대한제강, 합작법인 아이모스(Aimos) 설립 ∙∙∙ 철스크랩 분류 사업 본격화',
+                            category: '보도자료 · 2025.01.10'
+                        },
+                        {
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            title: 'LG CNS, 국내 3대 신용평가에서 신용등급 전망 상향',
+                            description: '국내 3대 신용평가사 모두 신용등급 전망 ‘AA- 안정적’에서 ‘AA- 긍정적’으로 조정',
+                            category: '보도자료 · 2025.01.10'
+                        },
+                        {
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
                             title: 'LG CNS, 국내 최초 최적화 경연 ‘최적화 그랜드 챌린지 2024’ 성료',
-                            content: 'LG CNS 주최 최적화 경연대회, 국내 유수 대학과 대기업서 380여개팀 몰려',
-                            date: '2024.10.28',
+                            description: 'LG CNS 주최 최적화 경연대회, 국내 유수 대학과 대기업서 380여개팀 몰려',
+                            category: '보도자료 · 2025.01.10'
                         },
                         {
-                            id: 8,
-                            category: '보도자료',
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
                             title: 'LG CNS, ‘싱글렉스(SINGLEX)’로 SaaS 사업 박차',
-                            content: '21일부터 22일까지 양일간 ‘싱글렉스 라이브(SINGLEX Live)’ 웨비나 개최',
-                            date: '2024.08.08',
+                            description: '21일부터 22일까지 양일간 ‘싱글렉스 라이브(SINGLEX Live)’ 웨비나 개최',
+                            category: '보도자료 · 2025.01.10'
                         },
                         {
-                            id: 9,
-                            category: '보도자료',
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
                             title: 'LG CNS, 대학교 직접 찾아 우수 인재 확보 나선다',
-                            content: '현신균 대표, 서울대학교 재학생 100여명 대상 ‘리더십’ 특강 진행',
-                            date: '2024.06.17',
+                            description: '현신균 대표, 서울대학교 재학생 100여명 대상 ‘리더십’ 특강 진행',
+                            category: '보도자료 · 2025.01.10'
                         },
                         {
-                            id: 10,
-                            category: '보도자료',
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
                             title: 'LG CNS, 「DX 엔지니어」 「클라우드」 등 하반기 신입·경력 채용',
-                            content: '전공 무관, DX 전문가로 성장 원하는 대졸자 이상 세 자릿수 채용 예정 ',
-                            date: '2024.05.02',
+                            description: '전공 무관, DX 전문가로 성장 원하는 대졸자 이상 세 자릿수 채용 예정',
+                            category: '보도자료 · 2025.01.10'
                         },
                         {
-                            id: 11,
-                            category: '보도자료',
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
                             title: 'LG CNS, 인도네시아 DX사업 대폭 강화',
-                            content: '인니 시나르마스 그룹과 합작투자 계약 체결',
-                            date: '2024.03.28',
+                            description: '인니 시나르마스 그룹과 합작투자 계약 체결',
+                            category: '보도자료 · 2025.01.10'
                         },
                     ]
-                %>
-                <%- include('src/component/cmp_thumbnail_type.html', { 
-                    itemClass: 'pc-col3' , 
-                    itemCount: 12, 
-                    allCountData: '883' ,
-                    contentType : 'type-news',
-                    jsonData : thumbnailDataNewsRoom, 
-                }) %>
+                })) %>
                 <%- include('src/component/cmp_pagination.html') %>
             </div>
         </div>
