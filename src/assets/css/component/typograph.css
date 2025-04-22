@@ -90,7 +90,7 @@
     font-weight: 400;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 720px) {
     .font-head-xl {
         font-size: calc(var(--typo-mo-size-head-xl) / 16 * 1rem);
         line-height: calc(var(--typo-mo-line-height-head-xl) / 16 * 1rem);
