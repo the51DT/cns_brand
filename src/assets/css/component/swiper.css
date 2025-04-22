@@ -1,9 +1,8 @@
 /* 스와이퍼 */
 .cmp-swiper__wrap {
     width: 100%;
-    max-width: calc(1920 / 16 * 1rem);
     margin: 0 auto;
-    padding: 0 calc(80 / 16 * 1rem);
+    padding: 0 calc(20 / 16 * 1rem);
 }
 .swiper-thumbnail {
     display: flex;
@@ -53,7 +52,7 @@
     color: var(--text-text-tertiary);
 }
 .cmp-swiper__wrap .swiper-wrapper {
-    margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+    margin-bottom: calc(88 / 16 * 1rem);
 }
 .cmp-swiper__wrap .swiper-pagination {
     position: static;
@@ -76,8 +75,19 @@
     height: calc(2 / 16 * 1rem);
     background-color: var(--colorCM-mode1-fill-fill-default11);
 }
+@media screen and (min-width: 1280px) {
+    .cmp-swiper__wrap {
+        width: 100%;
+        max-width: calc(1480 / 16 * 1rem);
+        margin: 0 auto;
+        padding: 0 calc(20 / 16 * 1rem);
+    }
+    .cmp-swiper__wrap .swiper-wrapper {
+        margin-bottom: calc(var(--spacing-mode1-vertical8-x-l) / 16 * 1rem);
+    }
+}
 
-@media screen and (max-width: 1919px) {
+/* @media screen and (max-width: 1919px) {
     .cmp-swiper__wrap {
         max-width: calc(1600 / 16 * 1rem);
         padding: 0 calc(40 / 16 * 1rem);
@@ -110,7 +120,7 @@
         margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
     }
     .cmp-swiper__wrap .swiper-wrapper {
-        margin-bottom: 0;
+        margin-bottom: calc(88/ 16 * 1rem);
     }
     .cmp-swiper__wrap .swiper-pagination-bullet-active {
         width: calc(24 / 16 * 1rem);
@@ -146,4 +156,4 @@
         height: calc(48 / 16 * 1rem);
         -webkit-line-clamp: 2;
     }
-}
+} */

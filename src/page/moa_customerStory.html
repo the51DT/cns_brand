@@ -13,106 +13,192 @@
         <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
         <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
-            pcImg: '/src/assets/image/sub/bg_sub_enterprice.png',
-            moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
+            pcImg: 'empty',
+            moImg: 'empty',
             subText: 'MOA', 
             pageTitle: '고객스토리',
             lifted: true
         })) %>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
+            <!-- Swiper -->
+            <div class="cmp-swiper__wrap cmp-swiper__moa__top-swiper">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-card">
+                            <div class="swiper-card__thumbnamil">
+                                <img src="https://placehold.co/710x400" alt="">
+                                <div class="chip__wrap chip__wrap--large">
+                                    <div class="chip bg-black font-caption-md">Label</div>
+                                </div>
+                            </div>
+                            <div class="swiper-card__content-info">
+                                <div class="swiper-card__container swiper-card__container--top">
+                                    <span class="font-head-md-mode font-semibold swiper-card__title">WAAP (Web Application and API
+                                        Protection)</span>
+                                    <p class="swiper-card__desc">현대의 디지털 환경은 날로 발전하고 있으며, 이에 따라 웹 애플리케이션과 API의 활용이 폭발적으로 증가하고
+                                        있습니다. 하지만 이러한 변화는 보안 위협을 동반하기 마련입니다. 해커들은 민감한 데이터가</p>
+                                </div>
+                                <div class="swiper-card__container swiper-card__container--bottom">
+                                    <div class="tag-box tag-box--large">
+                                        <div class="tag"># 제조</div>
+                                        <div class="tag"># 화학</div>
+                                        <div class="tag"># 경영관리</div>
+                                        <div class="tag"># Digital Workplace Platform</div>
+                                    </div>
+                                    <div class="button__wrap swiper-card__link">
+                                        <a href="#" class="btn btn-icon btn-primary">
+                                            <span class="ir-text">이동하기</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-card">
+                            <div class="swiper-card__thumbnamil">
+                                <img src="https://placehold.co/710x400" alt="">
+                                <div class="chip__wrap chip__wrap--large">
+                                    <div class="chip bg-black font-caption-md">Label</div>
+                                </div>
+                            </div>
+                            <div class="swiper-card__content-info">
+                                <div class="swiper-card__container swiper-card__container--top">
+                                    <span class="font-head-md-mode font-semibold swiper-card__title">WAAP (Web Application and API
+                                        Protection)</span>
+                                    <p class="swiper-card__desc">현대의 디지털 환경은 날로 발전하고 있으며, 이에 따라 웹 애플리케이션과 API의 활용이 폭발적으로 증가하고
+                                        있습니다. 하지만 이러한 변화는 보안 위협을 동반하기 마련입니다. 해커들은 민감한 데이터가</p>
+                                </div>
+                                <div class="swiper-card__container swiper-card__container--bottom">
+                                    <div class="tag-box tag-box--large">
+                                        <div class="tag"># 제조</div>
+                                        <div class="tag"># 화학</div>
+                                        <div class="tag"># 경영관리</div>
+                                        <div class="tag"># Digital Workplace Platform</div>
+                                    </div>
+                                    <div class="button__wrap swiper-card__link">
+                                        <a href="#" class="btn btn-icon btn-primary">
+                                            <span class="ir-text">이동하기</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // Swiper -->
             <div class="inner-wrap">
-                <% 
-                    const thumbnailDataStory=[
+                <%- include('src/component/cmp_search.html', Object.assign({}, locals, { 
+                    title: 'LG CNS의 DX기술을 만나 비즈니스 혁신을 경험한 <br>고객의 스토리를 살펴보세요.',
+                })) %>
+                <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, { 
+                    allCountData: '883',
+                    thumType: 'list',
+                    detailData: [
                         {
-                            id: 0,
-                            title: 'SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스',
-                            content: '회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’',
-                            tag : ['제조','화학', '서비스', '경영관리', 'Digital Workplace Platform'],
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            label: 'Label',
+                            title: '사람을 위한, 사람에 의한, 사람의 ESG 경영',
+                            description: '에이브러햄 링컨은 게티즈버그 연설문(Gettysburg Address)을 통해 ‘국민의, 국민에 의한, 국민을 위한 정부는 이 땅에서 사라지지 않을 것이다',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                         },
                         {
-                            id: 1,
-                            title: 'LG전자',
-                            content: `고객의 기대를 뛰어넘다, '언어 장벽 제로'를 실현한 DigitalTrans`,
-                            tag : ['전자','제조', '전환 및 구축'],
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            label: 'Label',
+                            title: '보안 강화를 위한 블록체인 기술',
+                            description: '디지털 시대에 정보의 안전한 관리는 필수이며, 블록체인은 이를 해결할 수 있는 혁신적인 기술로 자리매김하고 있습니다.',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                         },
                         {
-                            id: 2,
-                            title: '대한제강',
-                            content: 'Vision AI로 철스크랩 판정의 정확성과 효율성을 모두 잡다',
-                            tag : ['전자','제조', 'AI', 'Vision AI'],
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            label: 'Label',
+                            title: 'LG CNS가 제안하는 진화하는 사이버 공격 대처 방안',
+                            description: '사이버 공격이 갈수록 정교해지고 있습니다. 해커들은 공공기관, 방위산업, 민간기업을 가리지 않고 공격 대상으로 삼고 있으며, 이로 인한 피해도 전 세계적으로 급증하고 있습니다.',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                         },
                         {
-                            id: 3,
-                            title: 'Vitesco Technologies',
-                            content: '업계 최초 AutoStore 도입으로 최대 저장 공간과 물류 효율 달성',
-                            tag : ['전자','제조', '물류로봇'],
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            label: 'Label',
+                            title: 'ESG 공시의 New Trend, 생물다양성과 자연 자본',
+                            description: '지난 시간에 살펴본 ESG 공시와 규제 환경의 변화를 기억하시나요? 변화하는 공시 체계와 함께 본격 시행 예정인 규제들을 알아보며',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                         },
                         {
-                            id: 4,
-                            title: 'LG화학',
-                            content: '탄소발자국 관리 시스템 구축으로 ESG 목표에 한 걸음 더 다가선, LG화학의 탄소배출량 추적 사례를 확인해보세요.',
-                            tag : ['전자','제조', '물류로봇'],
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            label: 'Label',
+                            title: '불가능했던 서비스를 가능하게 만드는 ‘디바이스플랫폼’',
+                            description: '디바이스플랫폼은 다양한 제품을 제어하고 모니터링하는 것을 넘어, 우리가 상상하는 모든 것을 연결하며 새로운 세계를 열어가고 있습니다. ',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                         },
                         {
-                            id: 5,
-                            title: 'KT&G',
-                            content: '수학적최적화로 재고관리 및 운송 효율을 극대화하는 답을 찾다',
-                            tag : ['전자','제조', '물류로봇'],
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            label: 'Label',
+                            title: 'LG CNS, 유가증권시장 상장 위한 증권신고서 제출',
+                            description: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                         },
                         {
-                            id: 6,
-                            title: 'LG이노텍',
-                            content: '일하는 방식을 바꾸는 LG이노텍의 모바일 오피스 도입 사례를 소개합니다.',
-                            tag : ['전자','제조', '경영관리', 'Digital Workplace Platform'],
-                        },
-                        {
-                            id: 7,
-                            title: '한국거래소',
-                            content: '업무 효율과 협업의 새로운 패러다임, ‘스마트워크 환경 구축’',
-                            tag : ['금융','경영관리', 'Digital Workplace Platform'],
-                        },
-                        {
-                            id: 8,
-                            title: 'KB손해보험',
-                            content: 'AI 솔루션이 보여주는 보험의 미래',
-                            tag : ['금융','경영관리', 'AICC'],
-                        },
-                        {
-                            id: 9,
-                            title: 'NCSOFT',
-                            content: '글로벌 게임서비스를 보다 안정적으로, 엔씨소프트 Google Cloud MSP',
-                            tag : ['통신','서비스', 'Cloud', '컨설팅'],
-                        },
-                        {
-                            id: 10,
-                            title: 'LG전자',
-                            content: '맞춤형 스마트홈 서비스 ‘LG ThinQ’로 더욱 풍성해진 가전 경험',
-                            tag : ['전자','AI', '경영관리', 'Digital Workplace Platform'],
-                        },
-                        {
-                            id: 11,
-                            title: 'LX판토스',
-                            content: '물류 혁신의 시작, LX판토스 BigData Platform',
-                            tag : ['유통','물류', '유통물류'],
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            label: 'Label',
+                            title: 'LG CNS, 유가증권시장 상장 위한 증권신고서 제출',
+                            description: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                         },
                     ]
-                %>
-                <%- include('src/component/cmp_search.html', Object.assign({}, locals, { 
-                    title: 'LG CNS의 DX기술을 만나 비즈니스 혁신을 경험한<br>고객의 스토리를 살펴보세요.',
-                    thumbnailData: thumbnailDataStory,
                 })) %>
-                <%- include('src/component/cmp_thumbnail_type.html', { 
-                    itemClass: 'pc-col3' , 
-                    itemCount: 12, 
-                    allCountData: '883' ,
-                    contentType : 'type-moa-case1',
-                    jsonData : thumbnailDataStory, 
-                }) %>
                 <%- include('src/component/cmp_pagination.html') %>
             </div>
         </div>
         <%- include('src/_inc/footer.html') %>
     </div>
+    <script src="/assets/bundle/swiper-bundle.min.js"></script>
+    <script src="/assets/js/initializeSwipers.js"></script>
+    <script>
+        let moaSwiper; // Swiper 인스턴스를 전역 변수로 선언
+        const initializeMoaSwipe = () => {
+            const cmpSwipe = document.querySelector('.cmp-swiper__moa__top-swiper .swiper');
+
+            if (window.innerWidth <= 1280) {
+                // 1280 이하에서 Swiper 초기화
+                moaSwiper = new Swiper(cmpSwipe, {
+                    slidesPerView: 'auto',
+                    spaceBetween: 8,
+                    slidesOffsetBefore: 20,
+                    slidesOffsetAfter: 20,
+                });
+            } else if (moaSwiper) {
+                // 1280 초과일 때 Swiper 비활성화
+                moaSwiper.destroy(true, true);
+                moaSwiper = null; // 인스턴스 초기화
+            }
+        };
+
+        // 초기화 함수 호출
+        initializeMoaSwipe();
+
+        // 창 크기 변경 시 Swiper 상태 업데이트
+        window.addEventListener('resize', initializeMoaSwipe);
+    </script>
 </body>
 </html>

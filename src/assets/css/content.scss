@@ -2,7 +2,7 @@
 .cmp-wrap {
     margin-bottom: calc(48 / 16 * 1rem); 
     @media #{$min1280} {
-        margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem);
+        margin-bottom: calc(var(--spacing-mode1-vertical8-x-l) / 16 * 1rem);
     }
     &.cmp-overview__wrap {
         &+ .cmp-customer-case {
@@ -74,6 +74,20 @@
         &:has(.img-box__only-mo) {
             @media #{$min1280} {
                 margin-bottom: 0;
+            }
+        }
+    }
+    &.cmp-search__wrap {
+        margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+        @media #{$min1280} {
+            margin-bottom: calc(66 / 16 * 1rem);
+        }
+    }
+    &.cmp-thumbnail {
+        &:has( + .cmp-pagination__wrap) {
+            margin-bottom: calc(48 / 16 * 1rem);
+            @media #{$min1280} {
+                margin-bottom: calc(64 / 16 * 1rem);
             }
         }
     }
@@ -201,9 +215,11 @@
 // MOA 최상단 스와이프 : .cmp-swiper__moa__top-swiper
 .cmp-swiper__moa__top-swiper {
     padding: 0;
+    box-sizing: border-box;
     @media #{$min1280} {
         margin: 0 auto;
-        max-width: calc(1440 / 16 * 1rem);
+        padding: 0 calc(20 / 16 * 1rem);
+        max-width: calc(1480 / 16 * 1rem);
     }
     .swiper-wrapper {
         @media #{$min1280} {
@@ -215,8 +231,11 @@
     .swiper-card {
         border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
         overflow: hidden;
+        box-sizing: border-box;
+        max-width: calc(100% - calc(40 / 16 * 1rem));
         @media #{$min1280} {
             width: calc(50% - calc(6 / 16 * 1rem));
+            max-width: none;
         }
         &__thumbnamil {
             position: relative;
