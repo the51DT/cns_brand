@@ -53,6 +53,25 @@
                         class: 'font-medium',
                     },
                 })) %>
+                <%
+                    const agendaData = [
+                        {
+                            timeStart: "13:10",
+                            timeEnd: "14:00",
+                            boxTitle: "AX 시대의 핵심 엔진: AI Agent로 판을 바꿔라",
+                            richText: "<p>LG CNS 주민식 소장, 임은영 단장, 한정윤 팀장, 신승용 책임, 임지우 사원</p><br><br><ol><li>1. 미래 지향적 Agentic AI의 진화</li><li>2. AX 서비스 기업 활용 방안: 임직원 업무 여정을 기반으로 한 LG Copilot</li></ol>",
+                        },
+                        {
+                            timeStart: "13:10",
+                            timeEnd: "14:00",
+                            boxTitle: "AX 시대의 핵심 엔진: AI Agent로 판을 바꿔라",
+                            richText: "<p>LG CNS 주민식 소장, 임은영 단장, 한정윤 팀장, 신승용 책임, 임지우 사원</p><br><br><ol><li>1. 미래 지향적 Agentic AI의 진화</li><li>2. AX 서비스 기업 활용 방안: 임직원 업무 여정을 기반으로 한 LG Copilot</li></ol>",
+                        }
+                    ]
+                %>
+                <%- include('src/component/cmp_agenda.html', Object.assign({}, locals, { 
+                    jsonData: agendaData,
+                })) %>
                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                     title: {
                         text: '이런 분에게 추천해요!',

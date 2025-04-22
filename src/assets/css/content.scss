@@ -20,6 +20,9 @@
         &:has( + .cmp-thumbnail.list) {
             margin-bottom: 0;
         }
+        &:has( + .cmp-agenda) {
+            margin-bottom: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
+        }
     }
     &.cmp-overview__wrap {
         &+ .cmp-customer-case {
