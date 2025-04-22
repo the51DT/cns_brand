@@ -13,68 +13,107 @@
         <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
         <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
-            pcImg: '/src/assets/image/sub/bg_sub_enterprice.png',
-            moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
+            pcImg: 'empty',
+            moImg: 'empty',
             subText: 'MOA', 
             pageTitle: '고객스토리' 
         })) %>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
-                <div class="mt-20">
-                    <%- include('src/component/cmp_board_detail_info.html', Object.assign({}, locals, { 
-                        title : '업계 최초 AUtoStore 도입으로 최대 저장 공간과 물류 효율 달성',
-                        tag : ['제조', '서비스', '통신', '경영관리', 'Digital Workplace Platform'],
-                        date : '2024.04.04',
-                        likeCount : '11',
-                        contentType: 'type-wide',
-                    })) %>
-                    <div class="cmp-wrap" style="height: 600px; background-color: whitesmoke;">컨텐츠 들어가는 영역</div>
-                    <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                        teaserTitle: '관련 스토리',
-                    })) %>
-                    <% 
-                        const thumbnailDataStoryDetail=[
-                            {
-                                id: 0,
-                                title: 'SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스 SK하이닉스',
-                                content: '회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’ 회사의 첫인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’',
-                                tag : ['제조','화학', '서비스', '경영관리', 'Digital Workplace Platform'],
-                            },
-                            {
-                                id: 1,
-                                title: 'LG전자',
-                                content: `고객의 기대를 뛰어넘다, '언어 장벽 제로'를 실현한 DigitalTrans`,
-                                tag : ['전자','제조', '전환 및 구축'],
-                            },
-                            {
-                                id: 2,
-                                title: '대한제강',
-                                content: 'Vision AI로 철스크랩 판정의 정확성과 효율성을 모두 잡다',
-                                tag : ['전자','제조', 'AI', 'Vision AI'],
-                            },
-                        ]
-                    %>
-                    <%- include('src/component/cmp_thumbnail_type.html', { 
-                        itemClass: 'pc-col3' , 
-                        itemCount: 3, 
-                        contentType : 'type-moa-case1',
-                        jsonData : thumbnailDataStoryDetail, 
-                    }) %>
-                    <%- include('src/component/cmp_post_navigation.html') %>
-                    <div class="button__wrap">
-                        <a href="#" class="btn btn-secondary btn-large">
-                            <span class="btn__text">목록</span>
-                        </a>
-                    </div>
+                <%- include('src/component/cmp_board_detail_info.html', Object.assign({}, locals, { 
+                    title : '업계 최초 AUtoStore 도입으로 최대 저장 공간과 물류 효율 달성',
+                    tag : ['제조', '서비스', '통신', '경영관리', 'Digital Workplace Platform'],
+                    date : '2024.04.04',
+                    likeCount : '11',
+                    contentType: 'type-wide',
+                })) %>
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    title: {
+                        text: 'Vitesco Technologies 고객 스토리를 영상으로 시청하세요:',
+                        size: 'sm',
+                        class: 'font-medium',
+                    },
+                })) %>
+                <%- include('src/component/cmp_video.html', Object.assign({}, locals, { 
+                    id: 1,
+                    type: 'iframe',
+                    videoUrl: 'https://www.youtube.com/embed/B3u8O4CwV9M',
+                    videoTitle: 'test',
+                    addClass: 'test1',
+                })) %>
+                <div class="cmp-wrap" style="height: 600px; background-color: whitesmoke;">컨텐츠 들어가는 영역</div>
+                <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                    teaserTitle: '관련 스토리',
+                })) %>
+            </div>
+            <div class="inner-wrap wide">
+                <%- include('src/component/cmp_user_case_ref.html', {
+                    title: {
+                        title: "KT&G 고객 스토리 ebook 다운받기",
+                        subTitle: "지금 읽으신 고객 스토리를 더 자세히 알고 싶으시면 ebook을 다운받아 보세요"
+                    },
+                    img: {
+                        imgPc: "https://placehold.co/724x408",
+                        imgMo: "https://placehold.co/320x179",
+                        imgAlt: "alt",
+                        imgClass: "test",
+                    },
+                    richText: "<p>ESG 뉴스레터 'ESG 에브릿띵'과 함께 지속 가능한 비즈니스의 최신 트렌드와 인사이트를 받아보세요. 지금 뉴스레터를 구독하시면 ESG 에브릿띵에서 다룬 핵심 인사이트를 요약 정리한 특별 eBook을 제공해 드립니다.</p><br><p><sup>*</sup>정보 입력 후 등록을 하시면 이메일로 eBook을 발송해 드립니다.</p><ul><li>ESG 경영의 기초와 중요성</li><li>ESG 경영 실천을 위한 핵심 가이드</li><li>글로벌 ESG 규제와 트렌드</li><li>ESG 공시 대응을 위한 전략</li></ul>",
+                    button: {
+                        btnIcon: "download",
+                        btnText: "다운로드",
+                    }
+                }) %>
+            </div>
+            <div class="inner-wrap">
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                        title:
+                        {
+                            text: '관련 스토리',
+                        },
+                })) %>
+                <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, { 
+                    thumType: 'list',
+                    detailData: [
+                        {
+                            img: {
+                                    url: 'https://placehold.co/480x270',
+                                    alt: '이미지알트'
+                                },
+                            label: 'Label',
+                            title: '사람을 위한, 사람에 의한, 사람의 ESG 경영',
+                            description: '에이브러햄 링컨은 게티즈버그 연설문(Gettysburg Address)을 통해 ‘국민의, 국민에 의한, 국민을 위한 정부는 이 땅에서 사라지지 않을 것이다',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
+                        },
+                        {
+                            img: {
+                                    url: 'https://placehold.co/480x270',
+                                    alt: '이미지알트'
+                                },
+                            label: 'Label',
+                            title: '보안 강화를 위한 블록체인 기술',
+                            description: '디지털 시대에 정보의 안전한 관리는 필수이며, 블록체인은 이를 해결할 수 있는 혁신적인 기술로 자리매김하고 있습니다.',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
+                        },
+                        {
+                            img: {
+                                    url: 'https://placehold.co/480x270',
+                                    alt: '이미지알트'
+                                },
+                            label: 'Label',
+                            title: 'LG CNS가 제안하는 진화하는 사이버 공격 대처 방안',
+                            description: '사이버 공격이 갈수록 정교해지고 있습니다. 해커들은 공공기관, 방위산업, 민간기업을 가리지 않고 공격 대상으로 삼고 있으며, 이로 인한 피해도 전 세계적으로 급증하고 있습니다.',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
+                        },
+                    ]
+                })) %>
+                <div class="button__wrap mo-100">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <span class="btn__text">모든 스토리 살펴보기</span>
+                    </a>
                 </div>
             </div>
-            <%- include('src/component/cmp_buttonBanner.html', Object.assign({}, locals, {
-                pcImg: '/src/assets/image/sub/bg_sub_enterprice.png',
-                moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
-                title: 'LG CNS의 전문 역량을 귀사의 비즈니스와 접목시켜<br>혁신적인 시너지로 만들어 나가고 싶다면 지금 상담신청 하세요.',
-                buttonText: '상담 신청',
-            })) %>
         </div>
         <%- include('src/_inc/footer.html') %>
     </div>
