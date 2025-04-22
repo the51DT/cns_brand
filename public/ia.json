@@ -470,13 +470,13 @@
           "fileName": "moa_customerStory_detail.html"
         },
         {
-          "name": "MOA - 행사/이벤트",
+          "name": "MOA - 행사",
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_event.html"
         },
         {
-          "name": "MOA - 행사/이벤트 상세",
+          "name": "MOA - 행사 상세",
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_event_detail.html"
@@ -510,6 +510,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_resources.html"
+        },
+        {
+          "name": "MOA - modal",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "moa_modal.html"
         }
       ]
     },

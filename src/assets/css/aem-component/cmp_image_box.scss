@@ -2,6 +2,11 @@
 .cmp-image-box {
     .img-box {
         position: relative;
+        border-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
+        overflow: hidden;
+        @media #{$min1280} {
+            border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+        }
         img {
             width: 100%;
         }

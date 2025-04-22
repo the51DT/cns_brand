@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title><%= data.title %></title>
+  <meta name="description" content="<%= data.description %>">
+  <link rel="stylesheet" href="/src/assets/css/index.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap has-hero">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+            pcImg: 'empty',
+            moImg: 'empty',
+            subText: 'MOA', 
+            pageTitle: 'modal' 
+        })) %>
+        <!-- //비주얼 영역 -->
+        <div class="sub-content__wrap">
+            <div class="inner-wrap">
+                <div style="height: 600px;">
+                    <div class="button__wrap mo-100">
+                        <a href="#" class="btn btn-primary btn-large" modal-id="modal-moa01" onclick="openModal(event)">
+                            <span class="btn__text">다운로드 modal</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+    <!-- [Start] modal : pc-size: large, mo-size: full -->
+    <div class="cmp-modal cmp-modal--moa-donwload" id="modal-moa01">
+        <div class="modal modal--type-full">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <!-- <div class="modal__header">
+                    </div> -->
+                    <div class="modal__content">
+                        <!-- [Start] 모달 컨텐츠 영역 -->
+                        <div class="modal__scroll">
+                            <div class="modal__scroll__inner">
+                                <div class="chip__wrap chip__wrap--large">
+                                    <div class="chip bg-black font-caption-md">오퍼링</div>
+                                </div>
+                                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                    title: {
+                                        text: '해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서',
+                                        size: 'md-mode',
+                                        class: 'font-semibold',
+                                    },
+                                })) %>
+                                <% 
+                                    const iamgeData=[{
+                                        pc: 'https://placehold.co/874x493', 
+                                        mo: 'https://placehold.co/320x180', 
+                                    }] 
+                                %>
+                                <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                                    jsonData : iamgeData,
+                                    alt : '해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서',
+                                }))%>
+                                <p>Data Driven 시대! 데이터, AI, 클라우드 기반 분석 솔루션으로 엔터프라이즈 디지털 경영을 더욱 가속화 합니다.</p>
+                                <div class="tag-box">
+                                    <div class="tag"># 제조</div>
+                                    <div class="tag"># 화학</div>
+                                    <div class="tag"># 경영관리</div>
+                                    <div class="tag"># Digital Workplace Platform</div>
+                                    <div class="tag"># 제조</div>
+                                    <div class="tag"># 화학</div>
+                                    <div class="tag"># 경영관리</div>
+                                    <div class="tag"># Digital Workplace Platform</div>
+                                </div>
+                                <div class="cmp-wrap cmp-seperator">
+                                    <hr class="cmp-separator__horizontal" />
+                                </div>
+                                <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                                    title: {
+                                        text: '자료 열람을 위한 정보 입력',
+                                        class: 'font-semibold',
+                                    },
+                                })) %>
+                                <!-- input -->
+                                <%
+                                    const inputData = [
+                                        {
+                                            inputData: [
+                                                {
+                                                    id: 1,
+                                                    title: "성",
+                                                    required: true,
+                                                    type: "text",
+                                                    placeholder: "성을 입력해주세요.",
+                                                },
+                                                {
+                                                    id: 2,
+                                                    title: "이름",
+                                                    required: true,
+                                                    type: "text",
+                                                    placeholder: "이름을 입력해주세요.",
+                                                },
+                                            ],
+                                        },
+                                        {
+                                            inputData: [
+                                                {
+                                                    id : 3,
+                                                    title: "이메일",
+                                                    required: true,
+                                                    type: "text",
+                                                    placeholder: "이메일을 입력해주세요.",
+                                                },
+                                            ]
+                                        },
+                                        {
+                                            inputData: [
+                                                {
+                                                    id : 4,
+                                                    title: "휴대전화",
+                                                    required: true,
+                                                    type: "text",
+                                                    placeholder: "휴대전화 번호를 입력해주세요.",
+                                                },
+                                            ]
+                                        },
+                                        {
+                                            inputData: [
+                                                {
+                                                    id : 5,
+                                                    title: "부서명",
+                                                    required: true,
+                                                    type: "text",
+                                                    placeholder: "부서명을 입력해주세요.",
+                                                },
+                                            ]
+                                        },
+                                        {
+                                            inputData: [
+                                                {
+                                                    id: 6,
+                                                    title: "회사(소속)",
+                                                    required: true,
+                                                    type: "search",
+                                                    placeholder: "기업명 또는 사업자등록번호 입력",
+                                                },
+                                            ],
+                                        },
+                                        {
+                                            inputData: [
+                                                {
+                                                    id: 7,
+                                                    title: "회사(소속)",
+                                                    required: true,
+                                                    type: "search",
+                                                    placeholder: "기업명 또는 사업자등록번호 입력",
+                                                    step: "guide"
+                                                },
+                                            ],
+                                        },
+                                        {
+                                            inputData: [
+                                                {
+                                                    id: 8,
+                                                    title: "회사(소속)",
+                                                    required: true,
+                                                    type: "search",
+                                                    placeholder: "기업명 또는 사업자등록번호 입력",
+                                                    step: "result"
+                                                },
+                                            ],
+                                        },
+                                        {
+                                            inputData: [
+                                                {
+                                                    id: 9,
+                                                    title: "회사(소속)",
+                                                    required: true,
+                                                    type: "search",
+                                                    placeholder: "기업명 또는 사업자등록번호 입력",
+                                                    step: "result-empty"
+                                                },
+                                            ],
+                                        },
+                                        {
+                                            inputData: [
+                                                {
+                                                    id : 10,
+                                                    title: "직급",
+                                                    required: true,
+                                                    type: "text",
+                                                    placeholder: "직급을 입력해주세요.",
+                                                },
+                                            ]
+                                        },
+                                        {
+                                            inputData: [
+                                                {
+                                                    title: "적용의사",
+                                                    required: true,
+                                                    type: "radio",
+                                                    name: "radio-guide",
+                                                    dataList: [
+                                                        {
+                                                            value: "radio-default",
+                                                            label: "네, 서비스 적용을 검토하고 있습니다.",
+                                                            required: true,
+                                                            checked: true,
+                                                        },
+                                                        {
+                                                            value: "radio-checked",
+                                                            label: "아니오, 자료만 참고하고자 합니다.",
+                                                        },
+                                                    ],
+                                                },
+                                            ],
+                                        },
+                                        {
+                                            inputData: [
+                                                {
+                                                    id: 15,
+                                                    title: "문의내용",
+                                                    required: true,
+                                                    type: "textarea",
+                                                    placeholder: "내용을 입력해주세요.",
+                                                    countMax: "100",
+                                                    info: "개인정보가 포함된 내용은 입력을 금합니다."
+                                                },
+                                            ],
+                                        },
+                                    ]
+                                %>
+                                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                                    jsonData: inputData,
+                                })) %>
+                                <!-- // input -->
+                                <!-- cmp-form-group -->
+                                <%
+                                    const formGroupData = {
+                                        box: {
+                                            name: "checkboxGroup",
+                                            value: "전체동의",
+                                            label: "전체 동의합니다. (선택항목 포함)",
+                                            checked: true,
+                                        },
+                                        name: "checkboxGroup",
+                                        acco: [
+                                            {
+                                                value: "필수약관",
+                                                label: "개인정보 수집·이용 동의 (필수)",
+                                                text: "",
+                                            },
+                                            {
+                                                value: "선택약관",
+                                                label: "개인정보 수집·이용 동의 (선택)",
+                                                text: "test",
+                                            },
+                                        ],
+                                    }
+                                %>
+                                <%- include('src/component/cmp_form-group.html', Object.assign({}, locals, { 
+                                    jsonData: formGroupData,
+                                })) %>
+                                <!-- // cmp-form-group -->
+                                <div class="button__wrap mo-100">
+                                    <button class="btn btn-primary btn-large">
+                                        <span class="btn__text">등록</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [End] 모달 컨텐츠 영역 -->
+                    </div>
+                    <!-- <div class="modal__footer">
+                        
+                    </div> -->
+                    <div class="modal__close">
+                        <div class="button__wrap">
+                            <button type="button" class="btn" onclick="closeModal(event)">
+                                <!-- <i class="ico icon-close-bl32"></i> -->
+                                <span class="ir-text">모달 닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal -->
+</body>
+</html>

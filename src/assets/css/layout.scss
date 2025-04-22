@@ -1245,6 +1245,12 @@ body {
         max-width: calc(1480 / 16 * 1rem);
         // padding: 0 calc(80 / 16 * 1rem); 
     }
+    &.wide {
+        padding: 0;
+        @media #{$min1280} {
+            max-width: 100%;
+        }
+    }
 }
 
 .layout_ {

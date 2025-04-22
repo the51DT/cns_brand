@@ -1,11 +1,74 @@
 .cmp-agenda {
-  &__time {
-    .time-text {
-
-    }
-  }
-  &__box {
     display: flex;
     flex-direction: column;
-  }
+    gap: calc(24 / 16 * 1rem);
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: calc(12 / 16 * 1rem);
+        @media #{$min1280}{
+            align-items: stretch;
+            flex-direction: row;
+            gap: 0;
+        }
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: calc(30 / 16 * 1rem);
+            left: calc(16 / 16 * 1rem);
+            width: calc(4 / 16 * 1rem);
+            height: 100%;
+            background: var(--colorCM-mode1-stroke-stroke-default2);
+            @media #{$min1280}{
+                top: calc(40 / 16 * 1rem);
+                left: calc(183 / 16 * 1rem);
+            }
+        }
+        &:last-of-type {
+            &::after {
+                display: none;
+            }
+        }
+    }
+    &__time {
+        padding-left: calc(46 / 16 * 1rem);
+        width: 100%;
+        background: url('#{$basePath}image/icon/icon-agenda-dot-gr36.svg') no-repeat;
+        background-position: 0 50%;
+        background-size: calc(36 / 16 * 1rem) calc(36 / 16 * 1rem);
+        box-sizing: border-box;
+        @media #{$min1280}{
+            padding-left: 0;
+            padding-right: calc(84 / 16 * 1rem);
+            width: auto;
+            background-position: calc(100% - calc(24 / 16 * 1rem)) calc(10 / 16 * 1rem);
+        }
+        .time-text {
+            display: block;
+            @media #{$min1280}{
+                padding: calc(9 / 16 * 1rem) 0;
+            }
+        }
+    }
+    &__box {
+        display: flex;
+        flex-direction: column;
+        padding: calc(24 / 16 * 1rem);
+        background: var(--colorCM-mode1-background-background-default1);
+        border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+        width: 100%;
+        max-width: calc(100% - calc(46 / 16 * 1rem));
+        @media #{$min1280}{
+            max-width: calc(100% - calc(227 / 16 * 1rem));
+            padding: calc(48 / 16 * 1rem) calc(84 / 16 * 1rem);
+        }
+    }
+    .cmp-richtext {
+        margin-top: calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
+        margin-bottom: 0;
+    }
 }

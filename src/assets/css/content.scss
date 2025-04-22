@@ -4,9 +4,37 @@
     @media #{$min1280} {
         margin-bottom: calc(var(--spacing-mode1-vertical8-x-l) / 16 * 1rem);
     }
+    &.cmp-title__wrap {
+        &:has( + .cmp-video__wrap) {
+            margin-bottom: calc(24 / 16 * 1rem);
+            @media #{$min1280} {
+                margin-bottom: calc(48 / 16 * 1rem);
+            }
+        }
+        &:has( + .cmp-richtext) {
+            margin-bottom: calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
+            @media #{$min1280} {
+                margin-bottom: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
+            }
+        }
+        &:has( + .cmp-thumbnail.list) {
+            margin-bottom: 0;
+        }
+        &:has( + .cmp-agenda) {
+            margin-bottom: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
+        }
+    }
     &.cmp-overview__wrap {
         &+ .cmp-customer-case {
             margin-bottom: calc(var(--spacing-mode1-horizontal3-x-l) / 16 * 1rem);
+        }
+    }
+    &.cmp-richtext {
+        &:has( + .cmp-title__wrap) {
+            margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+            @media #{$min1280} {
+                margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+            }
         }
     }
     &.cmp-customer-case {
@@ -48,10 +76,10 @@
         margin-bottom: 0;
     }
     &.cmp-post-navigation {
-        & + .button__wrap {
-            margin-bottom: calc(48 / 16 * 1rem); 
+        &:has( + .button__wrap) {
+            margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
             @media #{$min1280} {
-                margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem); 
+                margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
             }
         }
     }
@@ -89,6 +117,12 @@
             @media #{$min1280} {
                 margin-bottom: calc(64 / 16 * 1rem);
             }
+        }
+    }
+    &.cmp-board-detail-info {
+        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+        @media #{$min1280} {
+            margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
         }
     }
     & > div:last-child {
