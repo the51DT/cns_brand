@@ -141,6 +141,7 @@
     }
     ol {
         li {
+            color: var(--colorCM-mode1-text-text-secondary);
             font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
             line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
             letter-spacing: calc(0.05 / 16 * 1rem);
