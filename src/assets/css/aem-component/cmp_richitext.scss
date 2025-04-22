@@ -141,8 +141,8 @@
     }
     ol {
         li {
-            font-size: calc(var(--typo-mo-size-head-sm) / 16 * 1rem);
-            line-height: calc(var(--typo-mo-line-height-head-sm) / 16 * 1rem);
+            font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
+            line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
             letter-spacing: calc(0.05 / 16 * 1rem);
             font-weight: 400;
             @media #{$min1280} {
