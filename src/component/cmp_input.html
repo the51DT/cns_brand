@@ -126,6 +126,7 @@
                                 <!-- .cmp-input__drop-content.is-active : 가이드를 위한 활성화 처리 -->
                                 <div class="cmp-input__drop-content is-active">
                                     <% if(inputData.step === 'guide') { %>
+                                        <!-- search : 검색영역 최초 활성화 시 -->
                                         <div class="cmp-input__drop-content--guide">
                                             <span class="font-body-lg font-semibold drop-content__title">회사(소속) 검색 Tip</span>
                                             <dl>
@@ -138,6 +139,7 @@
                                             </dl>
                                         </div>
                                     <% } else if (inputData.step === 'result') {%>
+                                        <!-- search : 검색 시_결과노출 -->
                                         <div class="cmp-input__drop-content--result">
                                             <ul class="result__list">
                                                 <li>
@@ -185,6 +187,7 @@
                                             </div>
                                         </div>
                                     <% } else if (inputData.step === 'result-empty') {%>
+                                        <!-- search : 검색 시_결과없음 -->
                                         <div class="cmp-input__drop-content--result-empty">
                                             <p class="font-body-lg font-semibold result__empty-text">검색 결과가 없습니다.</p>
                                             <div class="result__util">
