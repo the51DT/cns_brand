@@ -86,7 +86,76 @@
         margin-bottom: calc(var(--spacing-mode1-vertical8-x-l) / 16 * 1rem);
     }
 }
+/* rework style */
+.cmp-swiper__wrap.type-text-pagination .swiper-thumbnail {
+    width: 100%;
 
+}
+.cmp-swiper__wrap.type-text-pagination .swiper-thumbnail .content-info .title {
+    height: calc(100 / 16 * 1rem);
+    font-weight: 600;
+    margin-bottom: calc(16 / 16 * 1rem);
+}
+.cmp-swiper__wrap.type-text-pagination .swiper-thumbnail  .content-info {
+    padding: calc(0 / 16 * 1rem) calc(120 / 16 * 1rem)  calc(0 / 16 * 1rem)  calc(0 / 16 * 1rem) ;
+}
+.cmp-swiper__wrap.type-text-pagination .thumbnail-wrap {
+    width: 50%;
+    min-height: calc(405 / 16 * 1rem);
+    border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+    overflow: hidden;
+}
+.cmp-swiper__wrap.type-text-pagination .thumbnail-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cmp-swiper__wrap.type-text-pagination .description {
+    margin-bottom: 0;
+    height: auto;
+    max-height: calc(81 / 16 * 1rem);
+}
+.cmp-swiper__wrap.type-text-pagination .date-box  {
+    color: var(--colorCM-mode1-text-text-secondary);
+    margin-top: calc(48 / 16 * 1rem);
+}
+.cmp-swiper__wrap.type-text-pagination .swiper-pagination-bullet {
+    height: auto;
+    width: calc(100% / 4);
+    position: relative;
+    background: transparent;
+}
+.cmp-swiper__wrap.type-text-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: transparent;
+}
+.cmp-swiper__wrap.type-text-pagination .swiper-pagination-bullet::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #D9D9D9;
+    position: absolute;
+    left:0;
+    top: 0;
+}
+.cmp-swiper__wrap.type-text-pagination .swiper-pagination-bullet::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #D9D9D9;
+    position: absolute;
+    left:0;
+    top: 0;
+    transition: all 0.3s;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+.cmp-swiper__wrap.type-text-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+    background: linear-gradient(90deg, #F803FE 0%, #0000FF 100%);
+    transition: all 0.3s;
+    animation: fill-bar 0.4s forwards;
+}
 /* @media screen and (max-width: 1919px) {
     .cmp-swiper__wrap {
         max-width: calc(1600 / 16 * 1rem);
@@ -157,3 +226,8 @@
         -webkit-line-clamp: 2;
     }
 } */
+@keyframes fill-bar {
+    to {
+        transform: scaleX(1);
+    }
+}
