@@ -2,10 +2,13 @@
 .cmp-search__wrap {
     position: relative;
     .ico.icon-search-bl35 {
-        @media #{$phone} {
-            width: calc(20 / 16 * 1rem);
-            height: calc(20 / 16 * 1rem);
-            min-width: calc(20 / 16 * 1rem);
+        width: calc(20 / 16 * 1rem);
+        height: calc(20 / 16 * 1rem);
+        min-width: calc(20 / 16 * 1rem);
+        @media #{$min1280}{
+            width: calc(40 / 16 * 1rem);
+            height: calc(40 / 16 * 1rem);
+            min-width: calc(40 / 16 * 1rem);
         }
     }
     // &:has(.search-thumbnail-wrap) {
@@ -133,4 +136,26 @@
         }
     }
     
+}
+//검색 결과 영역
+.cmp-search-result {
+    .search-result {
+        &__util {
+            padding: calc(9 / 16 * 1rem) 0;
+            color:var(--colorCM-mode1-text-text-secondary);
+            @media #{$min1280}{
+                padding: calc(16 / 16 * 1rem) 0;
+            }
+        }
+        &--empty {
+            padding-top: calc(178 / 16 * 1rem);
+            @media #{$min1280}{
+                padding-top: calc(280 / 16 * 1rem);
+            }
+            &__text {
+                color:var(--colorCM-mode1-text-text-secondary);
+                text-align: center;
+            }
+        }
+    }
 }
