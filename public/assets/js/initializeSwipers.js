@@ -1,5 +1,8 @@
-function initializeSwipers(optionsArray) {
-    const swipers = document.querySelectorAll('.swiper');
+function initializeSwipers(optionsArray, target) {
+    let swipers = document.querySelectorAll('.swiper');
+    if(target) {
+        swipers = document.querySelectorAll(target);
+    }
     console.log("🧩 Found swiper elements:", swipers.length);
     // Swiper 요소를 순회하며 초기화
     swipers.forEach((swiper, index) => {
@@ -11,6 +14,7 @@ function initializeSwipers(optionsArray) {
         // Pagination 요소에 고유 클래스 추가
         let paginationEl = swiper.querySelector('.swiper-pagination');
         console.log(`🌀 Swiper #${index} - paginationEl found:`, !!paginationEl);
+        
         if (paginationEl) {
             paginationEl.classList.add(`swiper-pagination-${index}`);
         }

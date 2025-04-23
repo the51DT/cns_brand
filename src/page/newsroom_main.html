@@ -22,7 +22,7 @@
             })) %>   
             <!-- Swiper -->
             <div class="cmp-wrap cmp-swiper__wrap type-text-pagination">
-                <div class="swiper" data-autoplay="true">
+                <div class="swiper" data-autoplay="true" data-pagination="true">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="#" class="swiper-thumbnail">
@@ -210,7 +210,7 @@
         <%- include('src/_inc/footer.html') %>
     </div>
     <!-- <script src="/assets/bundle/swiper-bundle.min.js"></script> -->
-    <!-- <script src="/assets/js/initializeSwipers.js"></script> -->
+    <script src="/assets/js/initializeSwipers.js"></script>
     <script>
         const swiperData = [
             {
@@ -230,58 +230,58 @@
                 date: '보도자료 2024.12.11'
             }
         ]
-        const swiperEl = document.querySelector('.swiper');
-        const slides = swiperEl.querySelectorAll('.swiper-slide');
+        // const swiperEl = document.querySelector('.swiper');
+        // const slides = swiperEl.querySelectorAll('.swiper-slide');
 
-        const swiper = new Swiper('.swiper', {
-        loop: true,
-        slidesPerView: 1,
-        autoplay: {
-            delay: 3000,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            renderBullet: function (index, className) {
-                const data = swiperData[index] || {};
-                const title = data.title || '';
-                const date = data.date || '';
-                return `
-                    <button type="button" class="${className}">
-                        <div class="bullet-title">${title}</div>
-                        <div class="bullet-date">${date}</div>
-                    </button>
-                `;
-            },
-        },
-        });
-
-
-        // const swiperOptions = [
-        //     {
-        //         loop: true,
-        //         slidesPerView: 1,
-        //         autoplay: {
-        //             delay: 3000,
-        //         },
-        //         pagination: {
-        //             el: '.swiper-pagination',
-        //             clickable: true,
-        //             renderBullet: function (index, className) {
-        //                 const data = swiperData[index] || {};
-        //                 const title = data.title || '';
-        //                 const date = data.date || '';
-        //                 return `
-        //                     <button type="button" class="${className}">
-        //                         <div class="bullet-title">${title}</div>
-        //                         <div class="bullet-date">${date}</div>
-        //                     </button>
-        //                 `;
-        //             },
-        //         },
+        // const swiper = new Swiper('.swiper', {
+        // loop: true,
+        // slidesPerView: 1,
+        // autoplay: {
+        //     delay: 3000,
+        // },
+        // pagination: {
+        //     el: '.swiper-pagination',
+        //     clickable: true,
+        //     renderBullet: function (index, className) {
+        //         const data = swiperData[index] || {};
+        //         const title = data.title || '';
+        //         const date = data.date || '';
+        //         return `
+        //             <button type="button" class="${className}">
+        //                 <div class="bullet-title">${title}</div>
+        //                 <div class="bullet-date">${date}</div>
+        //             </button>
+        //         `;
         //     },
-        // ];
-        // initializeSwipers(swiperOptions);
+        // },
+        // });
+
+
+        const swiperOptions = [
+            {
+                loop: true,
+                slidesPerView: 1,
+                autoplay: {
+                    delay: 3000,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        const data = swiperData[index] || {};
+                        const title = data.title || '';
+                        const date = data.date || '';
+                        return `
+                            <button type="button" class="${className}">
+                                <div class="bullet-title">${title}</div>
+                                <div class="bullet-date">${date}</div>
+                            </button>
+                        `;
+                    },
+                },
+            },
+        ];
+        initializeSwipers(swiperOptions, ".type-text-pagination .swiper");
     </script>
 </body>
 </html>
