@@ -110,42 +110,38 @@
                         <div class="modal__title font-head-sm font-bold">기업 검색</div>
                     </div>
                     <div class="modal__content">
-                        <!-- [Start] 모달 컨텐츠 영역 -->
                         <div class="modal__scroll">
-                            <div class="modal__scroll__inner">
-                                <%
-                                    const inputData = [
-                                        {
-                                            id: 2,
-                                            title: '',
-                                            inputData: [
-                                                {
-                                                    type: "select",
-                                                    placeholder: "select placeholder",
-                                                    option: [
-                                                        {
-                                                            value: "옵션1",
-                                                        },
-                                                        {
-                                                            value: "옵션2",
-                                                        }
-                                                    ],
-                                                },
-                                                {
-                                                    type: "search",
-                                                    placeholder: "플레이스홀더",
-                                                },
-                                            ],
-                                            info: "에러 메시지를 입력하세요"
-                                        },
-                                    ]
-                                %>
-                                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
-                                    jsonData: inputData,
-                                })) %>
-                            </div>
+                            <%
+                                const inputData = [
+                                    {
+                                        id: 2,
+                                        title: '',
+                                        inputData: [
+                                            {
+                                                type: "select",
+                                                placeholder: "select placeholder",
+                                                option: [
+                                                    {
+                                                        value: "옵션1",
+                                                    },
+                                                    {
+                                                        value: "옵션2",
+                                                    }
+                                                ],
+                                            },
+                                            {
+                                                type: "search",
+                                                placeholder: "플레이스홀더",
+                                            },
+                                        ],
+                                        info: "에러 메시지를 입력하세요"
+                                    },
+                                ]
+                            %>
+                            <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                                jsonData: inputData,
+                            })) %>
                         </div>
-                        <!-- [End] 모달 컨텐츠 영역 -->
                     </div>
                     <div class="modal__footer">
                         <div class="button__wrap">
@@ -160,7 +156,6 @@
                     <div class="modal__close">
                         <div class="button__wrap">
                             <button type="button" class="btn" onclick="closeModal(event)">
-                                <!-- <i class="ico icon-close-bl32"></i> -->
                                 <span class="ir-text">모달 닫기</span>
                             </button>
                         </div>

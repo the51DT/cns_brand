@@ -27,11 +27,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: calc(40 / 16 * 1rem);
+    /* gap: calc(24 / 16 * 1rem); */
     margin: 0 auto;
-    padding: calc(32 / 16 * 1rem) calc(24 / 16 * 1rem) calc(6 / 36 * 1rem);
+    padding: calc(32 / 16 * 1rem) calc(24 / 16 * 1rem) calc(24 / 16 * 1rem);
     width: 100vw;
-    min-width: 100%;
+    /* min-width: 100%; */
     max-width: 100%;
     min-height: 100%;
     max-height: 100%;
@@ -58,6 +58,10 @@
     overflow: hidden;
     width: 100%;
     height: 100%;
+    padding-top: calc(44 / 16 * 1rem);
+}
+.modal .modal__header + .modal__content {
+    padding-top: calc(16 / 16 * 1rem);
 }
 /* .modal .modal__content::after {
     display: block;
@@ -73,6 +77,7 @@
 .modal .modal__scroll {
     width: 100%;
     height: 100%;
+    padding-bottom: calc(24 / 16 * 1rem);
     overflow-y: auto;
 }
 .modal .modal__scroll__inner {
@@ -80,6 +85,9 @@
     /* padding-bottom: calc(100 / 16 * 1rem); */
 }
 
+.modal .modal__footer {
+    padding-top: calc(24 / 16 * 1rem);
+}
 /* footer 에 버튼 하나만 있을 경우 w100% 적용 */
 .modal .modal__footer .btn:only-of-type {
     width: 100%;
@@ -93,9 +101,9 @@
     right: calc(24 / 16 * 1rem);
 }
 .modal .modal__close .btn {
-    width: calc(32 / 16 * 1rem);
-    height: calc(32 / 16 * 1rem);
-    background: url("/src/assets/image/icon/icon-close-bl32.svg") no-repeat right center / calc(32 / 16 * 1rem) calc(32 / 16 * 1rem);
+    width: calc(24 / 16 * 1rem);
+    height: calc(24 / 16 * 1rem);
+    background: url("/src/assets/image/icon/icon-close-bl32.svg") no-repeat right center / contain;
 }
 .modal .modal__dim {
     position: absolute;
@@ -112,16 +120,16 @@
     padding: 0 0;
 }
 .modal--type-full .modal__container {
-    padding-bottom: calc(24 / 16 * 1rem);
+    /* padding-bottom: calc(24 / 16 * 1rem); */
     height: 100vh;
     border-radius: var(--radius-mode1-none);
 }
 .modal--type-full .modal__content {
-    padding-top : calc(56 / 16 * 1rem);
+    /* padding-top : calc(44 / 16 * 1rem); */
 }
-.modal--type-full .modal__header + .modal__content {
+/* .modal--type-full .modal__header + .modal__content {
     padding-top: 0;
-}
+} */
 /* 2. modal - type small */
 .modal--type-small .modal__content:after {
     display: none;
@@ -136,7 +144,10 @@
     padding: calc(36 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
     width: calc(100vw - calc(40 / 16 * 1rem));
     /* height: calc(245 / 16 * 1rem); */
-    gap: calc(36 / 16 * 1rem);
+    gap: calc(18 / 16 * 1rem);
+}
+.modal--type-alert .modal__content {
+    padding-top: 0;
 }
 .modal--type-alert .modal__content:after {
     display: none;
@@ -161,13 +172,52 @@
     margin: 0 auto;
 }
 
+/* MOA */
+.cmp-modal--moa .cmp-warp:has( + .cmp-seperator),
+.cmp-modal--moa .tag-box {
+    margin-bottom: calc(48 / 16 * 1rem);
+}
+.cmp-modal--moa .cmp-wrap.cmp-title__wrap {
+    margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+}
+.cmp-modal--moa .cmp-wrap.cmp-image-box {
+    margin-bottom: calc(46 / 16 * 1rem);
+}
+.cmp-modal--moa .cmp-wrap.cmp-image-box:has( + .cmp-wrap.cmp-richtext) {
+    margin-bottom: calc(16.37 / 16 * 1rem);
+}
+.cmp-modal--moa .cmp-wrap.cmp-seperator {
+    margin-bottom: calc(48 / 16 * 1rem);
+}
+.cmp-modal--moa .cmp-wrap.cmp-input {
+    margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+}
+.cmp-modal--moa .cmp-wrap.cmp-richtext {
+    margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+}
+.cmp-modal--moa .cmp-form-group .cmp-wrap.cmp-input {
+    margin-bottom: 0;
+}
+.cmp-modal--moa .modal__footer .button__wrap.mo-100 .btn:only-child {
+    width: 100%;
+    margin: 0 auto;
+}
 /* PC */
 @media screen and (min-width : 1280px) {
     .modal .modal__container {
         width: 100%;
-        min-width: fit-content;
+        /* min-width: fit-content; */
         max-height: calc(100vh - calc(189 / 16 * 1rem));
-        padding: calc(32 / 16 * 1rem) calc(40 / 16 * 1rem) calc(43 / 16 * 1rem) calc(40 / 16 * 1rem);
+        padding: calc(32 / 16 * 1rem) calc(40 / 16 * 1rem) calc(32 / 16 * 1rem) calc(40 / 16 * 1rem);
+    }
+    .modal .modal__content {
+        padding-top: calc(56 / 16 * 1rem);
+    }
+    .modal .modal__header + .modal__content {
+        padding-top: calc(24 / 16 * 1rem);
+    }
+    .modal .modal__scroll {
+        padding-bottom: calc(40 / 16 * 1rem);
     }
     .modal .modal__footer .modal__checkbox-hidden {
         margin-top: calc(35 / 16 * 1rem);
@@ -176,18 +226,22 @@
         top: calc(32 / 16 * 1rem);
         right: calc(40 / 16 * 1rem);
     }
+    .modal .modal__close .btn {
+        width: calc(32 / 16 * 1rem);
+        height: calc(32 / 16 * 1rem);
+    }
     /* 1. modal - type full */
     .modal--type-full .modal__wrapper {
         padding: 0 calc(20 / 16 * 1rem);
     }
     .modal--type-full .modal__container {
         padding-bottom: calc(32 / 16 * 1rem);
-        max-width: calc(1008 / 16 * 1rem);
+        max-width: calc(954 / 16 * 1rem);
         border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
         height: fit-content;
     }
     .modal--type-full .modal__content {
-        padding-top : calc(44 / 16 * 1rem);
+        /* padding-top : calc(56 / 16 * 1rem); */
     }
     /* 2. modal - type small */
     .modal--type-small .modal__container {
@@ -209,5 +263,33 @@
     .modal--type-align-top .modal__container {
         max-width: 100%;
         border-radius: var(--radius-mode1-none);
+    }
+
+    /* MOA */
+    .cmp-modal--moa .cmp-warp:has( + .cmp-seperator) {
+        margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+    }
+    .cmp-modal--moa .cmp-wrap.cmp-title__wrap{
+        margin-bottom: calc(48 / 16 * 1rem);
+    }
+    .cmp-modal--moa .cmp-wrap.cmp-image-box {
+        margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+    }
+    .cmp-modal--moa .cmp-wrap.cmp-image-box:has( + .cmp-wrap.cmp-richtext) {
+        margin-bottom: calc(23.67 / 16 * 1rem);
+    }
+    .cmp-modal--moa .cmp-wrap.cmp-seperator,
+    .cmp-modal--moa .tag-box {
+        margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+    }
+    .cmp-modal--moa .cmp-wrap.cmp-input {
+        margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+    }
+    .cmp-modal--moa .cmp-wrap.cmp-richtext {
+        margin-bottom: calc(48 / 16 * 1rem);
+    }
+    .cmp-modal--moa .modal__footer .button__wrap.mo-100 .btn:only-child {
+        width: fit-content;
+        margin: 0 auto;
     }
 }
