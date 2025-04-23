@@ -22,12 +22,12 @@
             })) %>   
             <!-- Swiper -->
             <div class="cmp-wrap cmp-swiper__wrap type-text-pagination">
-                <div class="swiper">
+                <div class="swiper" data-autoplay="true">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="#" class="swiper-thumbnail">
                                 <div class="content-info">
-                                    <div class="title font-head-md">
+                                    <div class="title font-head-md-mode">
                                         LG CNS, 국내 3대 신용평가에서 신용등급 전망 상향 
                                     </div>
                                     <div class="description font-body-sm">
@@ -45,7 +45,7 @@
                         <div class="swiper-slide">
                             <a href="#" class="swiper-thumbnail">
                                 <div class="content-info">
-                                    <div class="title font-head-md">
+                                    <div class="title font-head-md-mode">
                                         LG CNS, 국내 3대 신용평가에서 신용등급 전망 상향 
                                     </div>
                                     <div class="description font-body-sm">
@@ -63,7 +63,7 @@
                         <div class="swiper-slide">
                             <a href="#" class="swiper-thumbnail">
                                 <div class="content-info">
-                                    <div class="title font-head-md">
+                                    <div class="title font-head-md-mode">
                                         LG CNS, 국내 3대 신용평가에서 신용등급 전망 상향 
                                     </div>
                                     <div class="description font-body-sm">
@@ -81,7 +81,7 @@
                         <div class="swiper-slide">
                             <a href="#" class="swiper-thumbnail">
                                 <div class="content-info">
-                                    <div class="title font-head-md">
+                                    <div class="title font-head-md-mode">
                                         LG CNS, 국내 3대 신용평가에서 신용등급 전망 상향 
                                     </div>
                                     <div class="description font-body-sm">
@@ -209,7 +209,7 @@
         </div>
         <%- include('src/_inc/footer.html') %>
     </div>
-    <script src="/assets/bundle/swiper-bundle.min.js"></script>
+    <!-- <script src="/assets/bundle/swiper-bundle.min.js"></script> -->
     <!-- <script src="/assets/js/initializeSwipers.js"></script> -->
     <script>
         const swiperData = [
@@ -236,6 +236,9 @@
         const swiper = new Swiper('.swiper', {
         loop: true,
         slidesPerView: 1,
+        autoplay: {
+            delay: 3000,
+        },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -252,15 +255,28 @@
             },
         },
         });
+
+
         // const swiperOptions = [
         //     {
         //         loop: true,
-        //         speed: 500,
-        //         slidesPerView: 'auto',
+        //         slidesPerView: 1,
+        //         autoplay: {
+        //             delay: 3000,
+        //         },
         //         pagination: {
+        //             el: '.swiper-pagination',
         //             clickable: true,
         //             renderBullet: function (index, className) {
-        //                 return `<button type="button" class="${className}">${index + 1}</button>`;
+        //                 const data = swiperData[index] || {};
+        //                 const title = data.title || '';
+        //                 const date = data.date || '';
+        //                 return `
+        //                     <button type="button" class="${className}">
+        //                         <div class="bullet-title">${title}</div>
+        //                         <div class="bullet-date">${date}</div>
+        //                     </button>
+        //                 `;
         //             },
         //         },
         //     },
