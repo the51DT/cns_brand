@@ -568,7 +568,7 @@ const inputSearch  = (target) => {
     searchInput.forEach((el) => {
         // const resultList = dropContent.querySelector('.result__list');
         // search 선택 시 검색 영역 펼쳐짐
-        el.addEventListener("click", (evnet)=> {
+        el.addEventListener("click", (event)=> {
             const inputContent = el.closest('.cmp-input__content');
             const dropCont = inputContent.querySelector('.cmp-input__drop-content');
             if(dropCont) {
@@ -580,7 +580,7 @@ const inputSearch  = (target) => {
         const btnClose = el.closest('.cmp-input__content').querySelector('.result__btn-close');
         if(btnClose) {
             btnClose.addEventListener("click", (event) => {
-                // console.log('test')
+                // event.stopPropagation();
                 const closeTarget = btnClose.closest('.cmp-input__drop-content');
                 closeTarget.classList.remove('is-active');
             });
@@ -589,7 +589,7 @@ const inputSearch  = (target) => {
 
     searchList.forEach((el) => {
         const selector = el.querySelector('.result__select-box');
-        el.addEventListener("click", (evnet) => {
+        el.addEventListener("click", (event) => {
             event.preventDefault()
             if(!selector.classList.contains('is-active')) {
                 selector.classList.add('is-active')
@@ -600,10 +600,13 @@ const inputSearch  = (target) => {
     });
 }
 
-document.addEventListener("DOMContentLoaded", sidebarCmp);
-checkInputFocus();
-checkCmpInputFocus();
-accordion('.basic-type', 'basic');        
-accordion('.open-type', 'basic');   
-dropdownMenu('.dropdown-menu');
-inputSearch('.cmp-input__item--search'); 
+// document.addEventListener("DOMContentLoaded", sidebarCmp);
+document.addEventListener("DOMContentLoaded", () => {
+    sidebarCmp;
+    checkInputFocus();
+    checkCmpInputFocus();
+    dropdownMenu('.dropdown-menu');
+    accordion('.basic-type', 'basic');        
+    accordion('.open-type', 'basic');   
+    inputSearch('.cmp-input__item--search'); 
+});
