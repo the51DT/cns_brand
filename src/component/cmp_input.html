@@ -14,17 +14,15 @@
                     <% if(typeof inputData.title !=='undefined' && inputData.title) { %>
                         <div class="cmp-input__title">
                             <% if(inputData.type === "checkbox" || inputData.type === "radio") { %>
-                                <span class="font-body-sm <%- inputData.required === true ? 'cmp-input__title--required' : '' %>" for="<%- inputData.id %>"><%- inputData.title %></span>
+                                <span class="font-caption-md-ui <%- inputData.required === true ? 'cmp-input__title--required' : '' %>" for="<%- inputData.id %>"><%- inputData.title %></span>
                             <% } else { %>
-                                <label class="font-body-sm <%- inputData.required === true ? 'cmp-input__title--required' : '' %>" for="<%- inputData.id %>"><%- inputData.title %></label>
+                                <label class="font-caption-md-ui <%- inputData.required === true ? 'cmp-input__title--required' : '' %>" for="<%- inputData.id %>"><%- inputData.title %></label>
                             <% } %>
                         </div>
                     <% } %>
                     <% if(typeof inputData !=='undefined' && inputData) { %>
                         <div class="cmp-input__content">
-                            <div class="cmp-input__box">
-                                <!-- <% const input = (typeof item.inputData !== 'undefined' ? item.inputData : []); %> -->
-                                <!-- <% console.log(input) %> -->
+                            <div class="cmp-input__box <%- inputData.dataListStyle === 'sub' ? 'cmp-input__box--sub' : '' %>">
                                 <% if(inputData.type === 'select') { %>
                                     <% if(!inputData.title) { %>
                                         <label class="ir-text" for="<%- item.id %>"><%- inputData.placeholder %></label>
@@ -56,7 +54,7 @@
                                         <span class="ir-text">삭제</span>
                                     </button>
                                     <button type="button" class="btn btn-search">
-                                        <i class="ico icon-search-bl24"></i>
+                                        <i class="ico icon-search-bl32"></i>
                                         <span class="ir-text">검색</span>
                                     </button>
                                 <% } else if(inputData.type === 'textarea') { %>
@@ -81,14 +79,14 @@
                                     <% inputData.dataList.forEach((check)=> { %>
                                         <div class="cmp-input__label-box">
                                             <input class="<%- inputData.size === 'small' && inputData.size ? 'cmp-input__item--checkbox--small' : 'cmp-input__item--checkbox' %> <%- check.disabeld === 'disabled' && check.disabeld ? 'cmp-input__item--disabled' : '' %>" id="<%- check.value %>" type="checkbox" name="<%- inputData.name %>" value="<%- check.value %>" <%- check.disabeld === true ? 'disabled' : '' %> <%- check.checked === true ? 'checked' : '' %> <%- check.required === true ? 'required' : '' %>>
-                                            <label class="<%- check.label ? '' : 'ir-text' %> font-body-xs" for="<%- check.value %>"><%- check.label ? check.label : check.id %></label>
+                                            <label class="<%- check.label ? '' : 'ir-text' %> cmp-input__label-text" for="<%- check.value %>"><%- check.label ? check.label : check.id %></label>
                                         </div>
                                     <% }) %>
                                 <% } else if(inputData.type === 'radio') { %>
                                     <% inputData.dataList.forEach((radio)=> { %>
                                         <div class="cmp-input__label-box">
                                             <input class="cmp-input__item cmp-input__item--radio <%- radio.disabeld === 'disabled' && radio.disabeld ? 'cmp-input__item--disabled' : '' %>" id="<%- radio.value %>" type="radio" name="<%- inputData.name %>" value="<%- radio.value %>" <%- radio.disabeld === true ? 'disabled' : '' %> <%- radio.checked === true ? 'checked' : '' %> <%- radio.required === true ? 'required' : '' %>>
-                                            <label class="<%- radio.label ? '' : 'ir-text' %> font-body-xs" for="<%- radio.value %>"><%- radio.label ? radio.label : radio.value %></label>
+                                            <label class="<%- radio.label ? '' : 'ir-text' %> cmp-input__label-text" for="<%- radio.value %>"><%- radio.label ? radio.label : radio.value %></label>
                                         </div>
                                     <% }) %>
                                 <% } else if(inputData.type === 'dropdown') { %>

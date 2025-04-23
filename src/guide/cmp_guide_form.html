@@ -286,7 +286,6 @@
                                             placeholder: "placeholder",
                                             value: "기본값",
                                             state: "success",
-                                            countMax: "1,000",
                                             info: "Positive Feedback Message"
                                         },
                                     ],
@@ -299,7 +298,6 @@
                                             type: "textarea",
                                             placeholder: "countMax 와 info가 동시에 있을 경우\ncountMax 미노출 info만 노출",
                                             state: "error",
-                                            countMax: "1,000",
                                             info: "Error Message"
                                         },
                                     ],
@@ -369,18 +367,58 @@
                                                     label: "checkbox-checked",
                                                     checked: true,
                                                 },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            title: "산업",
+                                            required: true,
+                                            type: "checkbox",
+                                            name: "checkbox-guide",
+                                            dataList: [
                                                 {
-                                                    value: "checkbox-disabled",
-                                                    label: "checkbox-disabled",
-                                                    disabeld: true,
+                                                    value: "checkbox-default",
+                                                    label: "금융",
+                                                    checked: true,
+                                                    
                                                 },
                                                 {
-                                                    value: "checkbox-checked-disabled",
-                                                    label: "checkbox-checked-disabled",
-                                                    checked: true,
-                                                    disabeld: true,
+                                                    value: "checkbox-checked",
+                                                    label: "공공",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "교통",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "제조",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "물류",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "통신/미디어",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "리테일",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "서비스/IT",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "기타",
                                                 },
                                             ],
+                                            dataListStyle: "sub",
                                         },
                                     ],
                                 },

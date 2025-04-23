@@ -1,9 +1,11 @@
 .cmp-input {
     &__wrap {
         display: flex;
+        flex-direction: column;
         width: 100%;
         gap: calc(10 / 16 * 1rem);
         @media #{$min1280} {
+            flex-direction: row;
             gap: calc(8 / 16 * 1rem);
         }
         & + .cmp-input__wrap {
@@ -21,6 +23,13 @@
         @media #{$min1280} {
             gap: calc(8 / 16 * 1rem);
         }
+        &:has(input[type='checkbox']),
+        &:has(input[type='radio']) {
+            gap: calc(21 / 16 * 1rem);
+            @media #{$min1280} {
+                gap: calc(23 / 16 * 1rem);
+            }
+        }
     }
     &__title {
         flex-shrink: 0;
@@ -31,6 +40,7 @@
                 content: '';
                 display: inline-block;
                 margin-left: calc(4 / 16 * 1rem);
+                margin-bottom: calc(3 / 16 * 1rem);
                 width: calc(12 / 16 * 1rem);
                 height: calc(12 / 16 * 1rem);
                 background: url('#{$basePath}image/icon/icon-required-bl12.svg');
@@ -56,27 +66,42 @@
                 color: var(--colorCM-mode1-success-success-enabled);
             }
         }
+        // search 영역 - 열림 상태
         &:has(.cmp-input__drop-content.is-active) {
-            .cmp-input__item {
+            .cmp-input__item--search {
                 border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
                 border-top-left-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
                 border-top-right-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
-            }
-            .cmp-input__item--search {
                 padding-left: calc(24 / 16 * 1rem);
+                padding-right: calc(80 / 16 * 1rem);
+                &:has( + .btn-remove.is-show) {
+                    padding-right: calc(112 / 16 * 1rem);
+                }
+            }
+            .btn-remove {
+                right: calc(64 / 16 * 1rem);
+            }
+            .btn-search {
+                right: calc(24 / 16 * 1rem);
             }
         }
     }
     &__box {
         position: relative;
         display: flex;
-        gap: calc(var(--spacing-mode1-horizontal-s) / 16 * 1rem);
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: calc(12 / 16 * 1rem);
         width: 100%;
+        @media #{$min1280} {
+            flex-direction: row;
+            gap: calc(56 / 16 * 1rem);
+        }
         .btn-remove {
             display: none;
             position: absolute;
             top: calc(50%);
-            right: calc(64 / 16 * 1rem);
+            right: calc(40 / 16 * 1rem);
             transform: translateY(-50%);
             &.is-show {
                 display: block;
@@ -85,8 +110,24 @@
         .btn-search {
             position: absolute;
             top: calc(50%);
-            right: calc(24 / 16 * 1rem);
+            right: 0;
             transform: translateY(-50%);
+        }
+        &--sub {
+            gap: 0;
+            flex-direction: row;
+            column-gap: calc(48 / 16 * 1rem);
+            row-gap: calc(12 / 16 * 1rem);
+            @media #{$min1280} {
+                column-gap: 0;
+                row-gap: calc(16 / 16 * 1rem);
+            }
+            .cmp-input__label-box {
+                width: auto;
+                @media #{$min1280} {
+                    width: 33.33%;
+                }
+            }
         }
     }
     &__multi-box {
@@ -130,17 +171,12 @@
             color: var(--colorCM-mode1-text-text-quaternary);
         }
         &--disabled {
-            // border-color: var(--colorCM-mode1-error-error-enabled);
-            // background-color: var(--colorCM-mode1-fill-fill-disabled);
-            // color: var(--colorCM-mode1-text-text-disabled);
             opacity: 1;
             &::placeholder {
                 color: var(--colorCM-mode1-text-text-disabled);
             }
         }
         &--readonly {
-            // border: none;
-            // background-color: var(--colorCM-mode1-fill-fill-default3);
             color: var(--colorCM-mode1-text-text-disabled);
             opacity: 1;
             &:focus,
@@ -187,13 +223,9 @@
             }
         }
         &--search {
-            padding-right: calc(112 / 16 * 1rem);
-            // background-image: url('#{$basePath}image/icon/icon_search_bl24.svg');
-            // background-repeat: no-repeat;
-            // background-size: calc(20 / 16 * 1rem);
-            // background-position: right calc(14 / 16 * 1rem) top 50%;
-            @media #{$min1280} {
-                padding-right: calc(112 / 16 * 1rem);
+            padding-right: calc(56 / 16 * 1rem);
+            &:has( + .btn-remove.is-show) {
+                padding-right: calc(88 / 16 * 1rem);
             }
             &:has(> option[value=""]:checked) {
                 color: var(--colorCM-mode1-text-text-disabled);
@@ -210,9 +242,11 @@
             }
         }
         &--textarea {
+            position: relative;
             width: 100%;
-            height: auto;
+            // height: auto;
             & > textarea {
+                display: block;
                 height: calc(64 / 16 * 1rem);
                 // max-height: calc(260 / 16 * 1rem);
                 // resize: none;
@@ -418,6 +452,13 @@
             }
         }
     }
+    // radio, checkbox text
+    &__label-text {
+        font-size: calc(var(--typo-pc-size-caption-lg-ui) / 16 * 1rem);
+        line-height: calc(var(--typo-pc-line-height-caption-lg-ui) / 16 * 1rem);
+        letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+        font-weight: 400;
+    }
     &__drop-content {
         display: none;
         margin-top: calc(calc(var(--spacing-mode1-vertical-s) / 16 * 1rem * -1));
@@ -555,13 +596,16 @@
         }
     }
     &__count {
+        position: absolute;
+        right: 0;
+        bottom: calc(-24 / 16 * 1rem);
         color: var(--colorCM-mode1-text-text-secondary);
-        font-size: calc(14 / 16 * 1rem);
-        line-height: calc(20 / 16 * 1rem);
+        font-size: calc(var(--typo-mo-size-caption-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-pc-line-height-caption-xs) / 16 * 1rem);
         text-align: right;
-        // & > span {
-        //     color: var(--colorCM-mode1-primary-primary-enabled);
-        // }
+        @media #{$min1280} {
+            font-size: calc(var(--typo-pc-size-caption-xs) / 16 * 1rem);
+        }
     }
     &__info {
         color: var(--colorCM-mode1-text-text-secondary);
