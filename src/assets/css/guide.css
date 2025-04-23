@@ -327,7 +327,7 @@
 }
 
 /* 모바일 반응형 css */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 720px) {
     .guide-header__wrap .navi button {
         display: block;
         width: 24px;
