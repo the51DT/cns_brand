@@ -26,6 +26,9 @@ $fileType: "svg";
     &.icon-search-wt24 {
         @include iconFile(24,24,'ico_search');
     }
+    &.icon-search-bl32 {
+        @include iconFile(32,32,'icon-search-bl32');
+    }
     &.icon-search-bl35 {
         @include iconFile(35,35,'ico_sarch_bl35');
     }
