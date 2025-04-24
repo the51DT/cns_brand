@@ -1,7 +1,7 @@
-@import 'variables.css';
-@import 'reset.css';
-@import 'component.css';
-@import '/assets/bundle/swiper.min.css';
+@import 'variables.scss';
+@import 'reset.scss';
+@import 'component.scss';
+@import '../bundle/swiper.min.scss';
 
 @import 'layout.scss';
 @import 'content.scss';
@@ -53,7 +53,7 @@
 /* icon */
 @import 'icon.scss';
 /* tailwind */
-@import url("/assets/bundle/tailwindcss/tailwind-all.css");
+@import '../bundle/tailwindcss/tailwind-all.min.scss';
 /* main content*/
 @import 'main.scss';
 /* sub content*/

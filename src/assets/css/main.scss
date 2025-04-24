@@ -44,21 +44,22 @@
               height: 100%;
               z-index: 1;
               max-width: calc(1920 / 16 * 1rem);
-              padding: 0 calc(80 / 16 * 1rem);    
+              padding: 0 calc(80 / 16 * 1rem);
               @media #{$pcMiddle} {
-                  padding: 0 calc(40 / 16 * 1rem);   
+                padding: 0 calc(40 / 16 * 1rem);
               }
-              @media #{$tablet} {        
-                  padding: 0 calc(32 / 16 * 1rem);  
+              @media #{$tablet} {
+                padding: 0 calc(32 / 16 * 1rem);
               }
               @media #{$tabletMini} {
-                  padding: 0 calc(32 / 16 * 1rem);             
-              }        
+                padding: 0 calc(32 / 16 * 1rem);
+              }
               @media #{$phone} {
-                  padding: 0 calc(20 / 16 * 1rem);  
-              }  
+                padding: 0 calc(20 / 16 * 1rem);
+              }
             }
-            &-prev, &-next {
+            &-prev,
+            &-next {
               position: static;
               width: calc(24 / 16 * 1rem);
               height: calc(24 / 16 * 1rem);
@@ -84,17 +85,17 @@
       max-width: calc(1920 / 16 * 1rem);
       padding: 0 calc(80 / 16 * 1rem);
       @media #{$pcMiddle} {
-          padding: 0 calc(40 / 16 * 1rem);   
+        padding: 0 calc(40 / 16 * 1rem);
       }
-      @media #{$tablet} {        
-          padding: 0 calc(32 / 16 * 1rem);  
+      @media #{$tablet} {
+        padding: 0 calc(32 / 16 * 1rem);
       }
       @media #{$tabletMini} {
-          padding: 0 calc(32 / 16 * 1rem);             
-      }        
+        padding: 0 calc(32 / 16 * 1rem);
+      }
       @media #{$phone} {
-          padding: 0;  
-      }  
+        padding: 0;
+      }
       & > div:first-child {
         width: 100%;
         flex-basis: calc(1200 / 16 * 1rem);
@@ -248,7 +249,6 @@
       }
       .swiper {
         &-wrapper {
-          
         }
         &-slide {
           @media #{$phone} {
@@ -256,12 +256,13 @@
           }
         }
         &-button {
-          &-wrap {  
+          &-wrap {
             display: flex;
             gap: calc(8 / 16 * 1rem);
             height: fit-content;
           }
-          &-prev, &-next {
+          &-prev,
+          &-next {
             position: static;
             width: calc(64 / 16 * 1rem);
             height: calc(64 / 16 * 1rem);
