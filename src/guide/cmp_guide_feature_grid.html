@@ -22,8 +22,11 @@
                             <div class="cmp-exsample__wrap mt-3">
                                 <div class="cmp-wrap cmp-feature-grid">
                                     <div>
-                                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
-                                            titleText: '동반성장<br>「최우수 명예기업 LG CNS」',
+                                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                            title:
+                                                {
+                                                    text: '타이틀 기본 사이즈 lg',
+                                                },
                                         })) %>
                                     </div>
                                     <div>
