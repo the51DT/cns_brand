@@ -76,7 +76,7 @@ export default defineConfig({
                 assetFileNames: (assetInfo) => {
                     console.log('Processing asset:', assetInfo.name); // 디버깅용 로그
                     if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-                        return 'assets/css/index.scss'; // 모든 CSS를 assets/css/index.scss로 통합
+                        return 'assets/css/index.css'; // 모든 CSS를 assets/css/index.css로 통합
                     }
                     if (/\.(png|jpe?g|gif|svg|webp)$/i.test(assetInfo.name)) {
                         return 'assets/images/[name].[extname]'; // 이미지를 assets/images/ 폴더로 저장

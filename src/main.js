@@ -1,5 +1,3 @@
-// import './assets/css/index.scss';
-
 let currentPage = null;
 let currentLocation = window.location.href;
 
