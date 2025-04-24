@@ -1,158 +1,158 @@
-$baseUrl: "/src/assets/image/icon/";
-$fileType: "svg";
+$baseUrl: '#{$basePath}/image/icon/';
+$fileType: 'svg';
 
 @mixin iconFile($wd, $ht, $icoName) {
-    width: calc(#{$wd} / 16 * 1rem); 
-    height: calc(#{$ht} / 16 * 1rem);
-    min-width: calc(#{$wd} / 16 * 1rem); 
-    background: url("#{$baseUrl}#{$icoName}." + $fileType) no-repeat center center; 
-    background-size: contain;
+  width: calc(#{$wd} / 16 * 1rem);
+  height: calc(#{$ht} / 16 * 1rem);
+  min-width: calc(#{$wd} / 16 * 1rem);
+  background: url('#{$baseUrl}#{$icoName}.' + $fileType) no-repeat center center;
+  background-size: contain;
 }
 
 /* 아이콘 */
 .ico {
-    display: inline-flex;
-    background-size: contain;
-    vertical-align: middle;
-    &.icon-lang-bl24 {
-        @include iconFile(24,24,'icon_lang_bl24');
-    }
-    &.icon-lang-bl40 {
-        @include iconFile(40,40,'icon_lang_bl40');
-    }
-    &.icon-earth-wt24 {
-        @include iconFile(24,24,'ico_language');
-    }
-    &.icon-search-wt24 {
-        @include iconFile(24,24,'ico_search');
-    }
-    &.icon-search-bl32 {
-        @include iconFile(32,32,'icon-search-bl32');
-    }
-    &.icon-search-bl35 {
-        @include iconFile(35,35,'ico_sarch_bl35');
-    }
-    &.icon-search-bl40 {
-        @include iconFile(40,40,'icon_search_bl40');
-    }       
-    &.icon-search-border-bl40 {
-        @include iconFile(40,40,'icon_search_border_bl40');
-    }       
-    &.icon-remove-bl24 {
-        @include iconFile(24,24,'ico_remove_gray24');
-    }   
-    &.icon-remove-bl28 {
-        @include iconFile(28,28,'ico_remove_gray28');
-    }   
-    &.icon-arrow-right-bl16 {
-        @include iconFile(16,16,'icon_arrow_right_bl16');
-    }
-    &.icon-arrow-right-wt16 {
-        @include iconFile(16,16,'icon_arrow_wt16');
-    }
-    &.icon-arrow-down-bl24 {
-        @include iconFile(24,24,'icon_arrow_down');
-    }
-    &.icon-arrow-down-bl20 {
-        @include iconFile(24,24,'icon-arrow-down-bl20');
-    }
-    &.icon-arrow-up-bl24 {
-        @include iconFile(24,24,'icon_arrow_up');
-    }
-    &.icon-search-bl24 {
-        @include iconFile(24,24,'icon_search_bl24');
-    }   
-    &.icon-hamburger-menu_bl {
-        @include iconFile(24,24,'icon_hamburger_bl');
-    }      
-    &.icon-hamburger-menu {
-        @include iconFile(24,24,'btn_hamburger_menu');
-    }   
-    &.icon-more-dot {
-        @include iconFile(16,16,'ico-more');
-    }   
-    &.icon-pagination-first {
-        @include iconFile(32,32,'icon_page_first');
-    }   
-    &.icon-pagination-prev {
-        @include iconFile(32,32,'icon_page_prev');
-    }      
-    &.icon-pagination-next {
-        @include iconFile(32,32,'icon_page_next');
-    } 
-    &.icon-pagination-last {
-        @include iconFile(32,32,'icon_page_last');
-    }     
-    &.icon-heart-line {
-        @include iconFile(20,20,'icon_heart_line');
-    }
-    &.icon-navigation-up-w24 {
-        @include iconFile(24,24,'icon_navigation_up_w24');
-    }                       
-    &.icon-navigation-down-w24 {
-        @include iconFile(24,24,'icon_navigation_down_w24');
-    }
-    &.icon-navigation-down-wh48{
-        @include iconFile(48,48,'icon-navigation-down-wh48');
-    } 
-    &.icon-navigation-right-bl24 {
-        @include iconFile(24,24,'icon_navigation_right_bl24');
-    }
-    &.icon-navigation-right-wh16 {
-        @include iconFile(24,24,'icon_navigation_right_wh16');
-    }
-    &.icon-navigation-right-red16 {
-        @include iconFile(24,24,'icon_navigation_right_red16');
-    }
-    &.icon-download-bl24 {
-        @include iconFile(24,24,'icon_download_bl24');
-    }
-    &.icon-download-bl20 {
-        @include iconFile(20,20,'icon_download_bl20');
-    }
-    &.icon-minus-bl32 {
-        @include iconFile(32,32,'icon-minus-bl24');
-    }
-    &.icon-plus-bl32 {
-        @include iconFile(32,32,'icon-plus-bl32');
-    }
-    &.icon-plus-bl24 {
-        @include iconFile(24,24,'icon-plus-bl24');
-    }
-    &.icon-plus-bl20 {
-        @include iconFile(20,20,'icon-plus-bl20');
-    }
-    &.icon-plus-bl16 {
-        @include iconFile(16,16,'icon-plus-bl16');
-    }
-    &.icon-plus-wh24 {
-        @include iconFile(24,24,'icon-plus-wh24');
-    }  
-    &.icon-plus-wh16 {
-        @include iconFile(16,16,'icon-plus-wh16');
-    }
-    &.icon-close-bl24 {
-        @include iconFile(24,24,'icon-close-bl24');
-    }   
-    &.icon-close-bl32 {
-        @include iconFile(32,32,'icon-close-bl32');
-    }  
-    &.icon-close-bl40 {
-        @include iconFile(40,40,'icon-close-bl40');
-    } 
-    &.icon-arrow-right-bl48{
-        @include iconFile(48, 48, 'icon_arrow_right_bl48');
-    }
-    &.icon-checkbox-disabled-unselected-gr12{
-        @include iconFile(14, 9.5, 'ico_checkbox_disabled_unselected');
-    }
-    &.icon-checkbox-normal-unselected-gr12{
-        @include iconFile(14, 9.5, 'ico_checkbox_normal_unselected');
-    }
-    &.icon-checkbox-all-selected-wh12{
-        @include iconFile(14, 9.5, 'ico_checkbox_all_selected');
-    }
-    &.icon-check-bl24{
-        @include iconFile(14, 9.5, 'icon_check_bl24');
-    }
+  display: inline-flex;
+  background-size: contain;
+  vertical-align: middle;
+  &.icon-lang-bl24 {
+    @include iconFile(24, 24, 'icon_lang_bl24');
+  }
+  &.icon-lang-bl40 {
+    @include iconFile(40, 40, 'icon_lang_bl40');
+  }
+  &.icon-earth-wt24 {
+    @include iconFile(24, 24, 'ico_language');
+  }
+  &.icon-search-wt24 {
+    @include iconFile(24, 24, 'ico_search');
+  }
+  &.icon-search-bl32 {
+    @include iconFile(32, 32, 'icon-search-bl32');
+  }
+  &.icon-search-bl35 {
+    @include iconFile(35, 35, 'ico_sarch_bl35');
+  }
+  &.icon-search-bl40 {
+    @include iconFile(40, 40, 'icon_search_bl40');
+  }
+  &.icon-search-border-bl40 {
+    @include iconFile(40, 40, 'icon_search_border_bl40');
+  }
+  &.icon-remove-bl24 {
+    @include iconFile(24, 24, 'ico_remove_gray24');
+  }
+  &.icon-remove-bl28 {
+    @include iconFile(28, 28, 'ico_remove_gray28');
+  }
+  &.icon-arrow-right-bl16 {
+    @include iconFile(16, 16, 'icon_arrow_right_bl16');
+  }
+  &.icon-arrow-right-wt16 {
+    @include iconFile(16, 16, 'icon_arrow_wt16');
+  }
+  &.icon-arrow-down-bl24 {
+    @include iconFile(24, 24, 'icon_arrow_down');
+  }
+  &.icon-arrow-down-bl20 {
+    @include iconFile(24, 24, 'icon-arrow-down-bl20');
+  }
+  &.icon-arrow-up-bl24 {
+    @include iconFile(24, 24, 'icon_arrow_up');
+  }
+  &.icon-search-bl24 {
+    @include iconFile(24, 24, 'icon_search_bl24');
+  }
+  &.icon-hamburger-menu_bl {
+    @include iconFile(24, 24, 'icon_hamburger_bl');
+  }
+  &.icon-hamburger-menu {
+    @include iconFile(24, 24, 'btn_hamburger_menu');
+  }
+  &.icon-more-dot {
+    @include iconFile(16, 16, 'ico-more');
+  }
+  &.icon-pagination-first {
+    @include iconFile(32, 32, 'icon_page_first');
+  }
+  &.icon-pagination-prev {
+    @include iconFile(32, 32, 'icon_page_prev');
+  }
+  &.icon-pagination-next {
+    @include iconFile(32, 32, 'icon_page_next');
+  }
+  &.icon-pagination-last {
+    @include iconFile(32, 32, 'icon_page_last');
+  }
+  &.icon-heart-line {
+    @include iconFile(20, 20, 'icon_heart_line');
+  }
+  &.icon-navigation-up-w24 {
+    @include iconFile(24, 24, 'icon_navigation_up_w24');
+  }
+  &.icon-navigation-down-w24 {
+    @include iconFile(24, 24, 'icon_navigation_down_w24');
+  }
+  &.icon-navigation-down-wh48 {
+    @include iconFile(48, 48, 'icon-navigation-down-wh48');
+  }
+  &.icon-navigation-right-bl24 {
+    @include iconFile(24, 24, 'icon_navigation_right_bl24');
+  }
+  &.icon-navigation-right-wh16 {
+    @include iconFile(24, 24, 'icon_navigation_right_wh16');
+  }
+  &.icon-navigation-right-red16 {
+    @include iconFile(24, 24, 'icon_navigation_right_red16');
+  }
+  &.icon-download-bl24 {
+    @include iconFile(24, 24, 'icon_download_bl24');
+  }
+  &.icon-download-bl20 {
+    @include iconFile(20, 20, 'icon_download_bl20');
+  }
+  &.icon-minus-bl32 {
+    @include iconFile(32, 32, 'icon-minus-bl24');
+  }
+  &.icon-plus-bl32 {
+    @include iconFile(32, 32, 'icon-plus-bl32');
+  }
+  &.icon-plus-bl24 {
+    @include iconFile(24, 24, 'icon-plus-bl24');
+  }
+  &.icon-plus-bl20 {
+    @include iconFile(20, 20, 'icon-plus-bl20');
+  }
+  &.icon-plus-bl16 {
+    @include iconFile(16, 16, 'icon-plus-bl16');
+  }
+  &.icon-plus-wh24 {
+    @include iconFile(24, 24, 'icon-plus-wh24');
+  }
+  &.icon-plus-wh16 {
+    @include iconFile(16, 16, 'icon-plus-wh16');
+  }
+  &.icon-close-bl24 {
+    @include iconFile(24, 24, 'icon-close-bl24');
+  }
+  &.icon-close-bl32 {
+    @include iconFile(32, 32, 'icon-close-bl32');
+  }
+  &.icon-close-bl40 {
+    @include iconFile(40, 40, 'icon-close-bl40');
+  }
+  &.icon-arrow-right-bl48 {
+    @include iconFile(48, 48, 'icon_arrow_right_bl48');
+  }
+  &.icon-checkbox-disabled-unselected-gr12 {
+    @include iconFile(14, 9.5, 'ico_checkbox_disabled_unselected');
+  }
+  &.icon-checkbox-normal-unselected-gr12 {
+    @include iconFile(14, 9.5, 'ico_checkbox_normal_unselected');
+  }
+  &.icon-checkbox-all-selected-wh12 {
+    @include iconFile(14, 9.5, 'ico_checkbox_all_selected');
+  }
+  &.icon-check-bl24 {
+    @include iconFile(14, 9.5, 'icon_check_bl24');
+  }
 }

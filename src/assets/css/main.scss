@@ -2,13 +2,13 @@
   &-visual {
     &__wrap {
       width: 100%;
-      background-image: url(../image/main/bg_main_hero_pc.png);
+      background-image: url('#{$basePath}/image/main/bg_main_hero_pc.png');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
       padding-top: calc(80 / 16 * 1rem);
       @media #{$phone} {
-        background-image: url(../image/main/bg_main_hero_mo.png);
+        background-image: url('#{$basePath}/image/main/bg_main_hero_mo.png');
         background-position: top center;
       }
       .slogan-swiper {
@@ -64,7 +64,7 @@
               width: calc(24 / 16 * 1rem);
               height: calc(24 / 16 * 1rem);
               margin-top: 0;
-              background-image: url(../image/icon/icon_arrow_wt16.svg);
+              background-image: url('#{$basePath}/image/icon/icon_arrow_wt16.svg');
               background-repeat: no-repeat;
               background-size: contain;
               &::after {
@@ -267,7 +267,7 @@
             width: calc(64 / 16 * 1rem);
             height: calc(64 / 16 * 1rem);
             margin-top: 0;
-            background-image: url(../image/icon/btn_swiper_on.svg);
+            background-image: url('#{$basePath}/image/icon/btn_swiper_on.svg');
             &::after {
               content: none;
             }
@@ -279,7 +279,7 @@
             }
           }
           &-disabled {
-            background-image: url(../image/icon/btn_swiper_off.svg);
+            background-image: url('#{$basePath}/image/icon/btn_swiper_off.svg');
             opacity: 1;
             &.swiper-button-next {
               transform: rotate(180deg);

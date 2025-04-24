@@ -15,7 +15,7 @@
       .cmp-title-nav__title {
         color: var(--colorGL-all-heritage-red300);
         &::after {
-          background-image: url(../../image/icon/icon_navigation_right_red16.svg);
+          background-image: url('#{$basePath}/image/icon/icon_navigation_right_red16.svg');
           border-color: var(--colorGL-all-heritage-red300);
         }
       }
@@ -50,7 +50,7 @@
       height: calc(44 / 16 * 1rem);
       border-radius: calc(50 / 16 * 1rem);
       border: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-trans-w20);
-      background-image: url(../../image/icon/icon_navigation_right_wh16.svg);
+      background-image: url('#{$basePath}/image/icon/icon_navigation_right_wh16.svg');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: calc(16 / 16 * 1rem) calc(16 / 16 * 1rem);
