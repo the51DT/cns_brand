@@ -13,7 +13,7 @@
         <%- include('src/_inc/header.html') %>
             <!-- //헤더 영역 -->
         <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { pcImg: 'empty' , moImg: 'empty'
-            , subText: '기업정보' , pageTitle: '정도경영' , rightDesc: 'LG CNS는 윤리경영을 기반으로<br>LG만의 행동방식 정도경영을 추구합니다.' })) %>
+            , subText: '기업정보' , pageTitle: '정도경영' , rightDesc: '' })) %>
 
 
         <!-- //비주얼 영역 -->
@@ -37,7 +37,7 @@
 
                     <div class="tab-content__wrap">
                         <div class="tab__content is-active">
-                            <div class="layout_col2">
+                            <div class="cmp-wrap cmp-feature-grid">
                                 <div>
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         titleText: 'LG Way와 정도경영', 
@@ -92,7 +92,7 @@
                                 contentsTitle: 'LG는 전 임직원이 지켜야 할 올바른 행동과 가치판단의 기준으로<br>윤리규범을 제정하여 실천하고 있습니다.', 
                                 })) %>
 
-                            <div class="layout_col2">
+                            <div class="cmp-wrap cmp-feature-grid">
                                 <div>
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         titleText: '윤리규범', 

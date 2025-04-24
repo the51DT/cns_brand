@@ -1,0 +1,13 @@
+<div class="cmp-wrap cmp-title-nav">
+    <% 
+        const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+    %>
+    <div class="cmp-title-nav__wrap">
+        <% data.forEach((item)=> { %>
+            <a href="<%- item.href %>" class="cmp-title-nav__item">
+                <p class="cmp-title-nav__tag font-body-sm"><%- item.tag %></p>
+                <p class="cmp-title-nav__title font-body-lg"><%- item.title %></p>
+            </a>
+        <% }) %>
+    </div>
+</div>

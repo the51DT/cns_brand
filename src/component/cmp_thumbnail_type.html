@@ -1,5 +1,5 @@
 <!-- 썸네일 유형 -->
-<div class="cmp-wrap cmp-thumbnail">
+<div class="cmp-wrap cmp-thumbnail <%= typeof thumType !== 'undefined' && thumType === 'card' ? 'card' : '' %> <%= typeof thumType !== 'undefined' && thumType === 'list' ? 'list' : '' %>">
     <% 
         const data=(typeof jsonData !=='undefined' ? jsonData : []); 
         const itemLimit=typeof itemCount !=='undefined' ? itemCount : 1;
@@ -13,7 +13,53 @@
         </div>
     <% } %>
     <ul class="content-list__wrap thumbnail-type type-box-line <%= typeof itemClass !== 'undefined' ? itemClass : 'pc-col3' %> <%= typeof contentType !== 'undefined' && contentType ? contentType : '' %>">
-        <% if (data.length > 0) { %>
+        <% if (typeof thumType !== 'undefined' && thumType) { %>
+            <!-- 04.16 BX 가이드 적용 마크업 수정 -->
+            <% 
+                const detail=(typeof detailData !=='undefined' ? detailData : []); 
+            %>
+            <% detail.forEach((item) => { %>
+                <li>
+                    <a href="<%- item.floatText %>" class="thumbnail-item">
+                        <% if(typeof item.img !=='undefined') { %>
+                            <% 
+                                const img = item.img; 
+                            %>
+                            <div class="thumbnail-wrap">
+                                <img src="<%- img.url %>" alt="<%= img.alt ? img.url : '' %>" />
+                            </div>
+                        <% } %>
+                        <div class="content-info">
+                            <div class="content-top">
+                                <% if(typeof item.label !=='undefined') { %>
+                                    <div class="label font-caption-sm"><%- item.label %></div>
+                                <% } %>
+                                <% if(typeof item.title !=='undefined') { %>
+                                    <div class="title font-caption-lg"><%- item.title %></div>
+                                <% } %>
+                                <% if(typeof item.description !=='undefined') { %>
+                                    <div class="description font-caption-md"><%- item.description %></div>
+                                <% } %>
+                            </div>
+                            <div class="content-bottom">
+                                <% if(typeof item.tag !=='undefined') { %>
+                                    <div class="tag-box">
+                                        <% item.tag.forEach((tag) => { %>
+                                        <div class="tag"><%- tag %></div>
+                                        <% }) %>
+                                    </div>
+                                <% } %>
+                                <% if(typeof item.img !=='undefined') { %>
+                                    <div class="category font-caption-sm"><%- item.category %></div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            <% }); %>
+            <!-- // 04.16 BX 가이드 적용 마크업 수정 -->
+        <% } else if (data.length > 0) { %>
+            <!-- 04.16 기존 마크업 오류방지용으로 유지 -->
             <% data.slice(0, itemLimit).forEach((item, i) => { %>                            
                 <li>
                     <a href="#" class="content-list__inner">
@@ -87,6 +133,7 @@
                     </a>
                 </li>    
             <% } %>
+            <!-- // 04.16 기존 마크업 오류방지용으로 유지 -->
         <% } %>                          
     </ul>
 <!-- //썸네일 유형 -->   

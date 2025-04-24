@@ -17,7 +17,7 @@
             moImg: 'empty',
             subText: '기업정보',
             pageTitle: '환경경영',
-            rightDesc: 'LG CNS는 친환경 기술로<br>환경경영을 실천하고 있습니다.'
+            rightDesc: ''
         })) %>
 
 
@@ -295,8 +295,8 @@
                                 jsonData: imageItemColumnDataChange
                             })) %>
 
-                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                titleText: '친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과 (상암IT센터)', 
+                            <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                                teaserTitle: '친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과 (상암IT센터)'
                             })) %>
                             <div class="cmp-wrap cmp-table__wrap">
                                 <span class="unit-text font-body-sm font-bold">[ 절감량 / 단위 : tCO2eq ]</span>

@@ -16,12 +16,14 @@
                     <div class="button__wrap align-right">
                         <% if(item.buttonName && Array.isArray(item.buttonName)) { %>
                             <% item.buttonName.slice(0, 3).forEach((name, index) => { %>
-                                <button type="button" class="btn btn-line <%- type == 'default' ? 'flex' : '' %>">
-                                    <%= name %>
+                                <button type="button" class="btn btn-medium btn-secondary <%- type == 'default' ? 'flex' : '' %>">
+                                    <% if(name) { %>
+                                        <span class="btn__text"><%= name %></span>
+                                    <% } %>
                                     <% if (index >= 2) { %> <!-- 3번째 버튼부터 다른 아이콘 적용 -->
-                                        <i class="ico icon-pagination-next"></i> 
+                                        <i class="btn__icon ico icon-pagination-next"></i> 
                                     <% } else { %>
-                                        <i class="ico icon-download-bl24"></i> 
+                                        <i class="btn__icon ico icon-download-bl24"></i> 
                                     <% } %>
                                 </button>
                             <% }) %>
@@ -30,9 +32,9 @@
                     </div>
                 <% } else { %>
                     <div class="button__wrap align-right">
-                        <button type="button" class="btn btn-line">
-                            다운로드
-                            <i class="ico icon-download-bl24"></i>
+                        <button type="button" class="btn btn-medium btn-secondary">
+                            <span class="btn__text">다운로드</span>
+                            <i class="btn__icon ico icon-download-bl24"></i>
                         </button>
                     </div>
                 <% } %>
@@ -46,9 +48,9 @@
                     <p class="title font-body-xl">2022~2023<br>지속가능경영보고서</p>
                 </div>
                 <div class="button__wrap align-right">
-                    <button type="button" class="btn btn-line">
-                        다운로드
-                        <i class="ico icon-download-bl24"></i>
+                    <button type="button" class="btn btn-medium btn-secondary">
+                        <span class="btn__text">다운로드</span>
+                        <i class="btn__icon ico icon-download-bl24"></i>
                     </button>
                 </div>
             </div>

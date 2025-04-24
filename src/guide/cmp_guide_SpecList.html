@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="/src/assets/css/guide.css" />
-  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/src/assets/css/guide.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
 </head>
 <body>
     <div class="guide__wrap">
@@ -143,6 +143,56 @@
                         <!-- //cmp_SpecList -->
                     </div>
 
+                    <p class="guide-title-h3 mt-10">SpecList styleType : type-box-row : 기업정보 > 인권경영</p> 
+                    <div class="cmp-exsample__wrap mt-10">
+                        <!-- cmp_SpecList -->
+                        <% const specListData4 = [ 
+                        { 
+                            id: 0,
+                            title: '초동조치',
+                            content: [
+                                '신고인 요청사항 확인',
+                                '신고인 보호조치',
+                                '(필요 시) 피신고인 인사조치',
+                            ]
+                        },
+                        { 
+                            id: 1,
+                            title: '초동조치',
+                            content: [
+                                '신고인 요청사항 확인',
+                                '신고인 보호조치',
+                                '(필요 시) 피신고인 인사조치',
+                            ]
+                        },  
+                        { 
+                            id: 2, 
+                            title: '초동조치',
+                            content: [
+                                '신고인 요청사항 확인',
+                                '신고인 보호조치',
+                                '(필요 시) 피신고인 인사조치',
+                            ]
+                        }, 
+                        { 
+                            id: 3, 
+                            title: '초동조치',
+                            content: [
+                                '신고인 요청사항 확인',
+                                '신고인 보호조치',
+                                '(필요 시) 피신고인 인사조치',
+                            ]
+                        }, 
+                        ]; 
+                        %>
+                        <%- include('src/component/cmp_SpecList.html', {
+                            itemCount: 4,
+                            jsonData: specListData4,
+                            styleType: 'type-box-row',
+                        }) %>
+                        <!-- //cmp_SpecList -->
+                    </div>
+
                     <p class="guide-title-h3 mt-10">SpecList styleType : type-num-sub : 기업정보 > IR 활동</p>
                     <ul class="guide-list type-dot mt-3">
                         <li>
@@ -151,7 +201,7 @@
                     </ul>
                     <div class="cmp-exsample__wrap mt-10">
                         <!-- cmp_SpecList -->
-                        <% const specListData4 = [ 
+                        <% const specListData5 = [ 
                             { 
                                 id: 0,
                                 subTitle: '01',
@@ -172,22 +222,22 @@
                         %>
                         <%- include('src/component/cmp_SpecList.html', {
                             itemCount: 4,
-                            jsonData: specListData4,
+                            jsonData: specListData5,
                             styleType: 'type-num-sub',
                         }) %>
                         <!-- //cmp_SpecList -->
                         <div class="button__wrap align-left mt-4">
-                            <button type="button" class="btn btn-line">
-                                다운로드
-                                <i class="ico icon-download-bl24"></i>
+                            <button type="button" class="btn btn-medium btn-secondary">
+                                <span class="btn__text">다운로드</span>
+                                <i class="btn__icon ico icon-download-bl24"></i>
                             </button>
-                            <button type="button" class="btn btn-line">
-                                다운로드
-                                <i class="ico icon-download-bl24"></i>
+                            <button type="button" class="btn btn-medium btn-secondary">
+                                <span class="btn__text">다운로드</span>
+                                <i class="btn__icon ico icon-download-bl24"></i>
                             </button>
-                            <button type="button" class="btn btn-line">
-                                다운로드
-                                <i class="ico icon-download-bl24"></i>
+                            <button type="button" class="btn btn-medium btn-secondary">
+                                <span class="btn__text">다운로드</span>
+                                <i class="btn__icon ico icon-download-bl24"></i>
                             </button>
                         </div>
                     </div>

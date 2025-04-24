@@ -13,77 +13,94 @@
         <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
         <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
-            pcImg: '/src/assets/image/sub/bg_sub_enterprice.png',
-            moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
+            pcImg: 'empty',
+            moImg: 'empty',
             subText: 'MOA', 
-            pageTitle: '행사/이벤트' 
+            pageTitle: '행사' 
         })) %>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
-                <div class="board-detail__warp mt-20">
-                    <div class="board-detail__container">
-                        <%
-                            const iamgeData = [
-                                {
-                                    pc: 'https://placehold.co/1144x643',
-                                    mo: '',
-                                }
-                            ]
-                        %>
-                        <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
-                            jsonData: iamgeData,
-                            alt: '유통 산업 성장의 Key 최대 효율을 당성하는 성공 DX',
-                            addClass: 'detail-info-visual'
-                        })) %>
-                    </div>
-                    <div class="board-detail__container type-float">
-                        <% const boardInfoData=[ 
-                                { 
-                                    title : '등록기간' , 
-                                    text : '2024.09.12 - 2024.10.16' , 
-                                }, 
-                                { 
-                                    title : '행사일' , 
-                                    text: '2024.10.16' ,
-                                }, 
-                                { 
-                                    title : '행사시간' , 
-                                    text : '13:10 - 14:10' , 
-                                }, 
-                                { 
-                                    title : '장소' , 
-                                    text : '온라인' , 
-                                }, 
-                            ]; 
-                        %>
-                        <%- include('src/component/cmp_board_detail_info.html', Object.assign({}, locals, { 
-                            category: '웨비나',
-                            title : '유통 산업 성장의 Key : 최대 효율을 달성하는 성공 DX',
-                            date: locals.date || '',
-                            likeCount : locals.date || '',
-                            tag : ['제조', '서비스', '통신', '경영관리', 'Digital Workplace Platform'],
-                            jsonData: boardInfoData,
-                            contentType: 'type-card',
-                        })) %>
-                    </div>
-                    <div class="board-detail__container">
-                        <div class="cmp-wrap" style="height: 600px; background-color: whitesmoke;">컨텐츠 들어가는 영역</div>
-                        <%- include('src/component/cmp_post_navigation.html') %>
-                        <div class="button__wrap">
-                            <a href="#" class="btn btn-black btn-small">
-                                목록
-                            </a>
-                        </div>
-                    </div>
+                <% 
+                    const iamgeData = [{
+                        pc: 'https://placehold.co/1144x643', 
+                        mo: 'https://placehold.co/319x178', 
+                    }] 
+                %>
+                <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                    jsonData : iamgeData,
+                    alt : '행사',
+                }))%>
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    title: {
+                        text: 'Intro',
+                        size: 'md-mode',
+                        class: 'font-medium',
+                    },
+                })) %>
+                <div class="cmp-wrap cmp-richtext">
+                    <p>
+                        LG CNS는 특정 산업, 업계의 디지털 혁신 노하우와 인사이트를 전달해 드리고자 매월 진행하는 월간 D-Talks의 spin-off 프로그램을 준비했습니다. <br><br>
+                        경영환경 악화와 저성장이 지속되며, '경영 효율화','비용 절감'은 유통의 필수적인 과제입니다. <br>
+                        이에 유통 D-Talks에서는 유통산업에서의 성공적인 비즈니스 DX 방안을 함께 고민하는 시간을 마련했습니다.<br><br>
+                        데이터 기반으로 차별적 고객 경험을 제공하는 CDP, 물류/구매 영역의 효율을 가져오는 수학적 최적화, 생성형 AI 기반 디지털 콘텐츠 생성 솔루션 소개와 실제 사례를 통해 유통 비즈니스 성공의 핵심 인사이트를 얻을 수 있는 시간이 되길 바랍니다.
+                    </p>
+                </div>
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    title: {
+                        text: 'Agenda',
+                        size: 'md-mode',
+                        class: 'font-medium',
+                    },
+                })) %>
+                <%
+                    const agendaData = [
+                        {
+                            timeStart: "13:10",
+                            timeEnd: "14:00",
+                            boxTitle: "AX 시대의 핵심 엔진: AI Agent로 판을 바꿔라",
+                            richText: "<p>LG CNS 주민식 소장, 임은영 단장, 한정윤 팀장, 신승용 책임, 임지우 사원</p><br><br><ol><li>1. 미래 지향적 Agentic AI의 진화</li><li>2. AX 서비스 기업 활용 방안: 임직원 업무 여정을 기반으로 한 LG Copilot</li></ol>",
+                        },
+                        {
+                            timeStart: "13:10",
+                            timeEnd: "14:00",
+                            boxTitle: "AX 시대의 핵심 엔진: AI Agent로 판을 바꿔라",
+                            richText: "<p>LG CNS 주민식 소장, 임은영 단장, 한정윤 팀장, 신승용 책임, 임지우 사원</p><br><br><ol><li>1. 미래 지향적 Agentic AI의 진화</li><li>2. AX 서비스 기업 활용 방안: 임직원 업무 여정을 기반으로 한 LG Copilot</li></ol>",
+                        }
+                    ]
+                %>
+                <%- include('src/component/cmp_agenda.html', Object.assign({}, locals, { 
+                    jsonData: agendaData,
+                })) %>
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    title: {
+                        text: '이런 분에게 추천해요!',
+                        size: 'md-mode',
+                        class: 'font-medium',
+                    },
+                })) %>
+                <div class="cmp-wrap cmp-richtext">
+                    <p>
+                        👍 경영 효율화, 비용 절감에 대해 고민인 유통 업계에 종사하시는 분 <br>
+                        👍 유통 산업의 성공적인 비즈니스 DX 방안이 궁금하신 분
+                    </p>
+                </div>
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    title: {
+                        text: 'Event',
+                        size: 'md-mode',
+                        class: 'font-medium',
+                    },
+                })) %>
+                <div class="cmp-wrap cmp-richtext">
+                    <p>웨비나에 등록, 참여하시고 설문을 제출해 주신 분들 대상으로 추첨을 통해 깜짝 선물을 드립니다.</p>
+                </div>
+                <div class="button__wrap mo-100">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <span class="btn__text">등록하기</span>
+                    </a>
                 </div>
             </div>
-            <%- include('src/component/cmp_buttonBanner.html', Object.assign({}, locals, {
-                pcImg: '/src/assets/image/sub/bg_sub_enterprice.png',
-                moImg: '/src/assets/image/sub/bg_sub_enterprice_mo.png',
-                title: 'LG CNS의 전문 역량을 귀사의 비즈니스와 접목시켜<br>혁신적인 시너지로 만들어 나가고 싶다면 지금 상담신청 하세요.',
-                buttonText: '상담 신청',
-            })) %>
         </div>
         <%- include('src/_inc/footer.html') %>
     </div>

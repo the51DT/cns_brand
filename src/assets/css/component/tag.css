@@ -1,0 +1,43 @@
+/* 태그 */
+/* tag default size */
+.tag-box {
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+    gap: calc(8 / 16 * 1rem);
+    /* margin-bottom: calc(16/16*1rem); */
+}
+.tag-box .tag {
+    padding: calc(4 / 16 * 1rem) calc(16 / 16 * 1rem);
+    color: var(--colorCM-mode1-text-text-secondary);
+    font-size: calc(14 / 16 * 1rem);
+    font-weight: 400;
+    line-height: calc(20 / 16 * 1rem);
+    text-align: center;
+    border-radius: calc(var(--radius-mode1-x-s) / 16 * 1rem);
+    background: #F7F8F9;
+}
+
+/* tag large size */
+.tag-box.tag-box--large .tag {
+    font-size: calc(16 / 16 * 1rem);
+    line-height: calc(24 / 16 * 1rem);
+    background: #EDF0F3;
+}
+
+/* PC */
+@media screen and (min-width : 1280px) {
+    /* tag default size */
+    .tag-box .tag {
+        font-size: calc(16 / 16 * 1rem);
+        line-height: calc(24 / 16 * 1rem);
+    }
+
+    /* tag large size */
+    .tag-box.tag-box--large .tag {
+        padding: calc(7 / 16 * 1rem) calc(16 / 16 * 1rem);
+        font-size: calc(18 / 16 * 1rem);
+        line-height: calc(26 / 16 * 1rem);
+    }
+
+}

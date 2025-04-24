@@ -1,0 +1,28 @@
+<div class="cmp-solution-item__wrap">
+    <%
+        const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+        const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
+    %>
+    <% if (data.length > 0) { %>
+        <% data.forEach((item) => { %>
+            <div class="solution-content-items <%= item.type ? item.type : '' %>">
+                <% if (item.title) { %>
+                    <div class="solution-content">
+                        <div class="cate-title font-body-xl font-bold"><%= item.title %></div>
+                        <% if (item.content) { %>
+                            <div class="cate-text font-body-sm">
+                                <%= item.content %>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+                
+                <% if(item.imageUrl) { %>
+                    <div class="item-image">
+                        <img src="<%= item.imageUrl %>" alt="<%= item.title %>" />
+                    </div>
+                <% } %>
+            </div>
+        <% }) %>
+    <% } %> 
+</div>

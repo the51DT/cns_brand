@@ -1,9 +1,6 @@
 // specList
-// .cmp-wrap:has(+ .button__wrap) {
-//     margin-bottom: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
-// }
 .cmp-speclist__wrap {
-    border-top: 1px solid var(--colorGL-all-gray950);
+    border-top: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
     display: flex;
     flex-direction: column;
     &:has(.spec-item.type-column) {
@@ -17,8 +14,21 @@
         @media #{$phone} {
             grid-template-columns: 1fr;
         }
-        // flex-direction: row;
-        // flex-wrap: wrap;
+        .spec-text {
+            width: 100%;
+        }
+    }
+    &:has(.spec-item.type-box-row) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: $gap-margin;
+        border-top: 0;
+        @media #{$tablet} {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media #{$phone} {
+            grid-template-columns: 1fr;
+        }
         .spec-text {
             width: 100%;
         }
@@ -30,14 +40,14 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        border-bottom: 1px solid var(--colorGL-all-gray200);
+        border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
         gap: $gap-margin;
         padding: calc(60 / 16 * 1rem) 0;
         @media #{$phone} {
             flex-direction: column;
             padding: calc(40 / 16 * 1rem) 0;
         }
-        &:last-child:not(.type-box) {
+        &:last-child:not(.type-box, .type-box-row) {
             border-bottom: 0;
             padding-bottom: 0;
         }
@@ -72,7 +82,38 @@
                         width: calc(4 / 16 * 1rem);
                         height: calc(4 / 16 * 1rem);
                         border-radius: 50%;
-                        background: var(--colorCM-all-fill-fill-default9);
+                        background: var(--colorCM-mode1-fill-fill-default9);
+                    }
+                    &:only-of-type {
+                        padding-left: 0;
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+                .spec-text {
+                    width: 100%;
+                }
+            }
+        }
+        &.type-box-row {
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: calc(24 / 16 * 1rem) calc(var(--spacing-mode1-horizontal2-x-l) / 16 * 1rem);
+            .spec-item__list {
+                li {
+                    position: relative;
+                    padding-left: calc(26 / 16 * 1rem);
+                    &:before {
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        top: calc(10 / 16 * 1rem);
+                        left: calc(11 / 16 * 1rem);
+                        width: calc(4 / 16 * 1rem);
+                        height: calc(4 / 16 * 1rem);
+                        border-radius: 50%;
+                        background: var(--colorCM-mode1-fill-fill-default9);
                     }
                     &:only-of-type {
                         padding-left: 0;
@@ -91,30 +132,32 @@
             gap: calc(12 / 16 * 1rem);
             justify-content: flex-start;
             border-bottom: 0;
+            flex-direction: row;
             & + .type-num-sub {
                 margin-top: calc(var(--spacing-mode1-vertical-s) /16 * 1rem);
             }
             .spec-num {
-                width: auto;
+                width: calc(24 / 16 * 1rem);
             }
             .spec-title {
-                width: auto;
                 gap: calc(var(--spacing-mode1-vertical-s) /16 * 1rem);
+                width: fit-content;
+                white-space: nowrap;
             }
             .spec-text {
-                width: auto;
+                padding-left: 0;
+
             }
         }
         .spec-num {
             width: calc(31 / 16 * 1rem);
             font-weight: 700;
-            color: var(--colorCM-all-primary-primary-enabled);
+            color: var(--colorCM-mode1-primary-primary-enabled);
         }
         .spec-title {
-            font-weight: 700;
+            font-weight: 500;
             width: calc(50% - calc($gap-margin / 2));
-            // max-width: calc(425 / 16 * 1rem);
-            color: var(--colorGL-all-gray950);
+            color: var(--colorCM-mode1-text-text-default);
             display: flex;
             gap: calc(16 / 16 * 1rem);
             @media #{$phone} {
@@ -123,7 +166,7 @@
         }
         .spec-text {
             width: calc(50% - calc($gap-margin / 2));
-            color: var(--colorGL-all-gray850);
+            color: var(--colorCM-mode1-text-text-secondary);
             @media #{$phone} {
                 padding-left: calc(45 / 16 * 1rem);
                 width: 100%;

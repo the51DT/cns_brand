@@ -1,0 +1,29 @@
+<div class="cmp-solution-icon__wrap">
+    <%
+        const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+        const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
+    %>
+    <% if (data.length > 0) { %>
+        <div class="solution-icon items<%= data.length %>">
+        <% data.forEach((item) => { %>
+            <div class="solution-icon-items">                
+                <% if(item.imageUrl) { %>
+                    <div class="item-image">
+                        <img src="<%= item.imageUrl %>" alt="<%= item.title %>" />
+                    </div>
+                <% } %>
+                <% if (item.title) { %>
+                    <div class="solution-content">
+                        <div class="cate-title font-body-lg font-bold"><%= item.title %></div>
+                        <% if (item.content) { %>
+                            <div class="cate-text font-body-sm">
+                                <%= item.content %>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+        <% }) %>
+        </div>
+    <% } %> 
+</div>

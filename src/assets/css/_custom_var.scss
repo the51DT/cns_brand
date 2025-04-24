@@ -6,26 +6,72 @@ $tablet: "only screen and (max-width : 1599px)";
 $pcMiddle: "only screen and (max-width : 1919px)";
 $pcWide: "screen and (min-width : 1920px)";
 
+// min-width 사용 : mo -> pc 순서로 스타일 적용
+$min1280: "screen and (min-width : 1280px)";
+$min720: "screen and (min-width : 720px)";
+
+// url
+$basePath : '/src/assets/';
+
 :root {
-    --cmp-margin-bottom: 160;
-    --cmp-margin-bottom-overview: 80;
-    --cmp-margin-bottom-title: 64;
-    --cmp-margin-bottom-teaser: 40;
-    --cmp-margin-bottom-itemlist-columns: 64;
-    --cmp-margin-bottom-imageltem: 48;
-    --cmp-margin-bottom-customer: 64;
-    --cmp-margin-bottom-datalist: 64;
+    --cmp-margin-bottom: 96;
+    --cmp-margin-bottom-overview: 48;
+    --cmp-margin-bottom-title: 32;
+    --cmp-margin-bottom-teaser: 24;
+    --cmp-margin-bottom-itemlist-columns: 32;
+    --cmp-margin-bottom-imageltem: 16;
+    --cmp-margin-bottom-customer: 32;
+    --cmp-margin-bottom-datalist: 32;
+
+    --spacing-mode1-vertical-none: 0;
+    --spacing-mode1-vertical2-x-s: 2;
+    --spacing-mode1-vertical-x-s: 4;
+    --spacing-mode1-vertical-s-nudge: 6;
+    --spacing-mode1-vertical-s: 8;
+    --spacing-mode1-vertical-m-nudge: 10;
+    --spacing-mode1-vertical-m: 12;
+    --spacing-mode1-vertical-l: 16;
+    --spacing-mode1-vertical-x-l: 20;
+    --spacing-mode1-vertical2-x-l: 24;
+    --spacing-mode1-vertical2-x-l-nudge: 32;
+    --spacing-mode1-vertical3-x-l: 40;
+    --spacing-mode1-vertical4-x-l: 60;
+    --spacing-mode1-vertical5-x-l: 80;
+    --spacing-mode1-vertical6-x-l: 100;
+    --spacing-mode1-vertical7-x-l: 160;
+    --spacing-mode1-vertical6-x-l-nudge: 120;
+    --spacing-mode1-vertical8-x-l: 180;
+    --spacing-mode1-vertical9-x-l: 200;
+    --spacing-mode1-horizontal-none: 0;
+    --spacing-mode1-horizontal2-x-s: 2;
+    --spacing-mode1-horizontal-x-s: 4;
+    --spacing-mode1-horizontal-s-nudge: 6;
+    --spacing-mode1-horizontal-s: 8;
+    --spacing-mode1-horizontal-m-nudge: 10;
+    --spacing-mode1-horizontal-m: 12;
+    --spacing-mode1-horizontal-l: 16;
+    --spacing-mode1-horizontal-x-l: 20;
+    --spacing-mode1-horizontal2-x-l: 24;
+    --spacing-mode1-horizontal2-x-l-nudge: 32;
+    --spacing-mode1-horizontal3-x-l: 40;
+    --spacing-mode1-horizontal4-x-l: 60;
+    --spacing-mode1-horizontal5-x-l: 80;
+    --spacing-mode1-horizontal6-x-l: 100;
+    --spacing-mode1-horizontal6-x-l-nudge: 120;
+    --spacing-mode1-horizontal7-x-l: 160;
+    --spacing-mode1-horizontal8-x-l: 180;
+    --spacing-mode1-horizontal9-x-l: 200;
 }
-@media #{$phone} {
+@media #{$min1280} {
     :root {
-        --cmp-margin-bottom: 96;
-        --cmp-margin-bottom-overview: 48;
-        --cmp-margin-bottom-title: 32;
-        --cmp-margin-bottom-teaser: 24;
-        --cmp-margin-bottom-itemlist-columns: 32;
-        --cmp-margin-bottom-imageltem: 16;
-        --cmp-margin-bottom-customer: 32;
-        --cmp-margin-bottom-datalist: 32;
+        --cmp-margin-bottom: 160;
+        --cmp-margin-bottom-overview: 80;
+        --cmp-margin-bottom-title: 64;
+        --cmp-margin-bottom-teaser: 40;
+        --cmp-margin-bottom-itemlist-columns: 64;
+        --cmp-margin-bottom-imageltem: 48;
+        --cmp-margin-bottom-customer: 64;
+        --cmp-margin-bottom-datalist: 64;
     }
 }
 //반응형 *--

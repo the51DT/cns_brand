@@ -1,14 +1,14 @@
 /* 칼라 시스템 */
 .colorcm-primary {
-    color: var(--colorCM-all-primary-primary-enabled);
+    color: var(--colorCM-mode1-primary-primary-enabled);
 }
 .colorcm-primary.is-select,
 a.colorcm-primary:hover,
 button.colorcm-primary:hover  {
-    color: var(--colorCM-all-primary-primary-pressed);
+    color: var(--colorCM-mode1-primary-primary-pressed);
 }
 .colorcm-primary.is-disabled {
-    color: var(--colorCM-all-primary-primary-disabled);
+    color: var(--colorCM-mode1-primary-primary-disabled);
 }
 .colorcm-sub-primary {
     color: var(--colorCM-all-primary-primary-sub-enabled);
@@ -23,14 +23,14 @@ button.colorcm-sub-primary:hover {
 }
 
 .bg-colorcm-primary {
-    background: var(--colorCM-all-primary-primary-enabled);
+    background: var(--colorCM-mode1-primary-primary-enabled);
 }
 .bg-colorcm-primary.is-select,
 .bg-colorcm-primary:hover {
-    background: var(--colorCM-all-primary-primary-pressed);
+    background: var(--colorCM-mode1-primary-primary-pressed);
 }
 .bg-colorcm-primary.is-disabled {
-    background: var(--colorCM-all-primary-primary-disabled);
+    background: var(--colorCM-mode1-primary-primary-disabled);
 }
 .bg-colorcm-sub-primary {
     background: var(--colorCM-all-primary-primary-sub-enabled);
@@ -87,46 +87,46 @@ button.colorcm-sub-primary:hover {
 
 /* fill color */
 .fill-color-default0 {
-    color: var(--colorCM-all-fill-fill-default0);
+    color: var(--colorCM-mode1-fill-fill-default0);
 }
 .fill-color-default1 {
-    color: var(--colorCM-all-fill-fill-default1);
+    color: var(--colorCM-mode1-fill-fill-default1);
 }
 .fill-color-default2 {
-    color: var(--colorCM-all-fill-fill-default2);
+    color: var(--colorCM-mode1-fill-fill-default2);
 }
 .fill-color-default3 {
-    color: var(--colorCM-all-fill-fill-default3);
+    color: var(--colorCM-mode1-fill-fill-default3);
 }
 .fill-color-default4 {
-    color: var(--colorCM-all-fill-fill-default4);
+    color: var(--colorCM-mode1-fill-fill-default4);
 }
 .fill-color-default5 {
-    color: var(--colorCM-all-fill-fill-default5);
+    color: var(--colorCM-mode1-fill-fill-default5);
 }
 .fill-color-default6 {
-    color: var(--colorCM-all-fill-fill-default6);
+    color: var(--colorCM-mode1-fill-fill-default6);
 }
 .fill-color-default7 {
-    color: var(--colorCM-all-fill-fill-default7);
+    color: var(--colorCM-mode1-fill-fill-default7);
 }
 .fill-color-default8 {
-    color: var(--colorCM-all-fill-fill-default8);
+    color: var(--colorCM-mode1-fill-fill-default8);
 }
 .fill-color-default9 {
-    color: var(--colorCM-all-fill-fill-default9);
+    color: var(--colorCM-mode1-fill-fill-default9);
 }
 .fill-color-default10 {
-    color: var(--colorCM-all-fill-fill-default10);
+    color: var(--colorCM-mode1-fill-fill-default10);
 }
 .fill-color-default11 {
-    color: var(--colorCM-all-fill-fill-default11);
+    color: var(--colorCM-mode1-fill-fill-default11);
 }
 .fill-color-default12 {
-    color: var(--colorCM-all-fill-fill-default12);
+    color: var(--colorCM-mode1-fill-fill-default12);
 }
 .fill-color-default-disabled {
-    color: var(--colorCM-all-fill-fill-disabled);
+    color: var(--colorCM-mode1-fill-fill-disabled);
 }
 
 /* black-color */

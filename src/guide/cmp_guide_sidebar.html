@@ -14,18 +14,18 @@
             <span id="pagesTitle"></span>
         </div>        
         <div class="sub-content__wrap">
+            <div class="cmp-container">
+                <%- include('src/component/cmp_sidebar.html', Object.assign({}, locals, { 
+                    anchors: [
+                        { id: 'section01', name: '서비스 소개' },
+                        { id: 'section02', name: 'FAQ' },
+                        { id: 'section03', name: '고객사례' },
+                        { id: 'section04', name: '연관 자료' }
+                    ],
+                    activeSection: 'section01' // 현재 활성화된 섹션
+                })) %>
+        </div>
             <div class="inner-wrap">
-                <div class="cmp-container">
-                    <%- include('src/component/cmp_sidebar.html', Object.assign({}, locals, { 
-                        anchors: [
-                            { id: 'section01', name: '서비스 소개' },
-                            { id: 'section02', name: 'FAQ' },
-                            { id: 'section03', name: '고객사례' },
-                            { id: 'section04', name: '연관 자료실' }
-                        ],
-                        activeSection: 'section01' // 현재 활성화된 섹션
-                    })) %>
-            </div>
             <!-- overview -->
             <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
                 overviewTitle: '디지털AX 트렌드', 
@@ -46,24 +46,110 @@
             <%- include('src/component/cmp_seperator.html') %>
             <!-- //cmp_seperator -->
             <!-- CustomerCase -->
+            <%
+                const customerData = [
+                    {
+                        name: '링크 있을 때',
+                        content: '임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축 임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축',
+                        link: '#',
+                        logoPC: 'https://placehold.co/198x96',
+                        logoMO: 'https://placehold.co/198x96',
+                        category: [{ name: '# 제조' }, { name: '# 경영관리' }, {name: '# DWP'}]
+                    },
+                    {
+                        name: '링크 있을 때',
+                        content: '임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축 임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축',
+                        link: '#',
+                        logoPC: 'https://placehold.co/198x96',
+                        logoMO: 'https://placehold.co/198x96',
+                        category: [{ name: '# 제조' }, { name: '# 경영관리' }, {name: '# DWP'}]
+                    },
+                    {
+                        name: '링크 있을 때',
+                        content: '임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축 임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축',
+                        link: '#',
+                        logoPC: 'https://placehold.co/198x96',
+                        logoMO: 'https://placehold.co/198x96',
+                        category: [{ name: '# 제조' }, { name: '# 경영관리' }, {name: '# DWP'}]
+                    },
+                    {
+                        name: '링크 있을 때',
+                        content: '임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축 임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축',
+                        link: '#',
+                        logoPC: 'https://placehold.co/198x96',
+                        logoMO: 'https://placehold.co/198x96',
+                        category: [{ name: '# 제조' }, { name: '# 경영관리' }, {name: '# DWP'}, {name: 'test'}, {name: 'test'}]
+                    },
+                    {
+                        name: '링크 없을 때',
+                        content: '임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축 임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축',
+                        link: '',
+                        logoPC: 'https://placehold.co/198x96',
+                        logoMO: 'https://placehold.co/198x96',
+                        category: [{ name: '자동차' }]
+                    }
+                ];
+            %>
             <%- include('src/component/cmp_customer-case.html', {
-                itemCount: 5
+                jsonData: customerData
             }) %>  
             <!-- CustomerCase -->
             <!-- cmp_seperator -->
             <%- include('src/component/cmp_seperator.html') %>
             <!-- //cmp_seperator -->
             <!-- datalist -->
+            <%
+                const relatedData = [
+                    {
+                        id: 0,
+                        imgPc: 'https://placehold.co/980x564',
+                        imgMo: 'https://placehold.co/980x564',
+                        label: 'Category',
+                        title: 'Cloud 뉴스레터',
+                        content: 'LG CNS Cloud Service에 대한 모든 뉴스레터',
+                        button: {
+                            type: 'link',
+                            target: 'blank',
+                            href: '#',
+                        }
+                    },
+                    {
+                        id: 1,
+                        imgPc: 'https://placehold.co/980x564',
+                        imgMo: 'https://placehold.co/980x564',
+                        label: 'Category',
+                        title: 'Cloud 소개 영상',
+                        content: 'LG CNS Cloud Service에 대한 모든 것을 이해하기 쉽게 소개한 영상',
+                        button: {
+                            type: 'video',
+                            target: 'blank',
+                            disabled: true,
+                            href: '#',
+                        }
+                    },
+                    {
+                        id: 2,
+                        imgPc: 'https://placehold.co/980x564',
+                        imgMo: 'https://placehold.co/980x564',
+                        label: 'Category',
+                        title: 'Cloud 소개 자료',
+                        content: 'LG CNS Cloud Service에 대한 모든 것을 이해하기 쉽게 소개한 자료',
+                        button: {
+                            type: 'download',
+                            modalId: '',
+                        }
+                    },
+                ];
+            %>
             <%- include('src/component/cmp_DataList.html', {
-                itemClass: 'pc-col3',                            
-                itemCount: 3
+                jsonData: relatedData,
             }) %>  
             <!-- //datalist -->
             <!-- button -->
             <div class="button__wrap">
-                <a href="#" class="btn btn-primary">
-                    DX 자료실로 이동
-                    <i class="ico icon-arrow-right-wt16"></i>
+                <a href="#" class="btn btn-primary btn-medium">
+                    <span class="btn__text">DX 자료실로 이동</span>
+                    <i class="btn__icon ico icon-arrow-right-wt16"></i>
                 </a>
             </div>     
             <!-- //button -->

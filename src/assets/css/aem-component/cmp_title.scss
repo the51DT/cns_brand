@@ -1,12 +1,15 @@
-//title
 .cmp-title__wrap {
     display: flex;
-    flex-direction: column; 
-    color: var(--text-text-default);    
+    flex-direction: column;
+    color: var(--colorCM-mode1-text-text-default);
+  
     .title-text {
-        font-weight: 700;      
+      font-weight: 500;
     }
+  
     .title-sub {
-        margin-bottom: calc(8 / 16 * 1rem);
+      margin-bottom: calc(8 / 16 * 1rem);
     }
-}
+
+  }
+  

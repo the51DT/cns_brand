@@ -74,10 +74,22 @@
           "fileName": "cmp_badge.html"
         },
         {
+          "name": "태그",
+          "screenId": "",
+          "path": "/src/component/",
+          "fileName": "cmp_tag.html"
+        },
+        {
           "name": "테이블(Table)",
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_table.html"
+        },
+        {
+          "name": "모달",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_modal.html"
         }
       ]
     },
@@ -278,6 +290,60 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_richtext.html"
+        },
+        {
+          "name": "Solution_imageL_1item",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_Solution_image_1item.html"
+        },
+        {
+          "name": "Solution_imageL_multiItem(2item, 3item)",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_Solution_image_multiItem.html"
+        },
+        {
+          "name": "Solution_icon",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_Solution_icon.html"
+        },
+        {
+          "name": "cta-section",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_cta_section.html"
+        },
+        {
+          "name": "title-nav",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_title_nav.html"
+        },
+        {
+          "name": "user-case-ref",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_user-case-ref.html"
+        },
+        {
+          "name": "agenda",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_agenda.html"
+        },
+        {
+          "name": "feature-grid",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_feature_grid.html"
+        },
+        {
+          "name": "title-text-icon",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_title_text_icon.html"
         }
       ]
     },
@@ -333,6 +399,20 @@
     },
     {
       "id": 6,
+      "Level1": "Sub - 문의하기",
+      "screenId": "",
+      "fileName": "",
+      "Level2": [
+        {
+          "name": "상담 및 문의하기",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "sub_contact_us.html"
+        }
+      ]
+    },
+    {
+      "id": 7,
       "Level1": "Sub - The Future",
       "screenId": "",
       "fileName": "",
@@ -346,7 +426,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": 8,
       "Level1": "Sub - 서비스",
       "screenId": "",
       "fileName": "",
@@ -372,7 +452,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": 9,
       "Level1": "Sub - MOA",
       "screenId": "",
       "fileName": "",
@@ -390,28 +470,28 @@
           "fileName": "moa_customerStory_detail.html"
         },
         {
-          "name": "MOA - 행사/이벤트",
+          "name": "MOA - 행사",
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_event.html"
         },
         {
-          "name": "MOA - 행사/이벤트 상세",
+          "name": "MOA - 행사 상세",
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_event_detail.html"
         },
         {
-          "name": "MOA - 테크로그",
+          "name": "MOA - 인사이트",
           "screenId": "",
           "path": "/src/page/",
-          "fileName": "moa_techLog.html"
+          "fileName": "moa_insight.html"
         },
         {
-          "name": "MOA - 테크로그 상세",
+          "name": "MOA - 인사이트 상세",
           "screenId": "",
           "path": "/src/page/",
-          "fileName": "moa_techLog_detail.html"
+          "fileName": "moa_insight_detail.html"
         },
         {
           "name": "MOA - 뉴스레터",
@@ -430,11 +510,17 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "moa_resources.html"
+        },
+        {
+          "name": "MOA - modal",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "moa_modal.html"
         }
       ]
     },
     {
-      "id": 9,
+      "id": 10,
       "Level1": "Sub - 기업정보",
       "screenId": "",
       "fileName": "",
@@ -486,6 +572,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "bizInfo_LGway.html"
+        },
+        {
+          "name": "기업정보 - LG Way",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_LGway2.html"
         },
         {
           "name": "기업정보 - 추진방향",
@@ -544,7 +636,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": 11,
       "Level1": "Sub - 뉴스룸",
       "screenId": "",
       "fileName": "",
@@ -554,6 +646,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "newsroom_main.html"
+        },
+        {
+          "name": "Newsroom - 상세",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "newsroom_detail.html"
         }
       ]
     }

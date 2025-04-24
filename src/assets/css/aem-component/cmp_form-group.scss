@@ -1,0 +1,86 @@
+.cmp-form-group {
+  &__wrap {
+    .cmp-input__label-box {
+      width: 100%;
+      & > label {
+        width: 100%;
+      }
+    }
+  }
+  &__box {
+    width: 100%;
+    // padding: calc(20 / 16 * 1rem);
+    // border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+    // background-color: var(--colorCM-mode1-fill-fill-default2);
+    &:has( + .cmp-form-group__accordion) {
+      margin-bottom: calc(32 / 16 * 1rem);
+    }
+  }
+  &__accordion {
+    display: flex;
+    flex-direction: column;
+    gap: calc(20 / 16 * 1rem);
+    .accordion {
+      &-item {
+        &.is-active {
+          .accordion-button {
+                //   transform: rotate(180deg);
+                background: url('#{$basePath}image/icon/icon-minus-bl32.svg') no-repeat center / contain;
+            }   
+          .accordion-content {
+            display: block;
+          }
+        }
+      }
+      &-title {
+        display: flex;
+        justify-content: space-between;
+        // padding: 0 calc(20 / 16 * 1rem);
+        .cmp-input {
+          width: 100%;
+        }
+        // & > button {
+        //   flex-shrink: 0;
+        // }
+      }
+      &-button {
+        flex-shrink: 0;
+        width: calc(24 / 16 * 1rem);
+        height: calc(24 / 16 * 1rem);
+        background: url('#{$basePath}image/icon/icon-plus-bl32.svg') no-repeat center / contain;
+        @media #{$min1280} {
+            width: calc(32 / 16 * 1rem);
+            height: calc(32 / 16 * 1rem);
+        }
+      }
+      &-content {
+        display: none;
+        padding: calc(12 / 16 * 1rem) 0 0;
+      }
+      &-text {
+        max-height: calc(240 / 16 * 1rem);
+        padding: calc(24 / 16 * 1rem) calc(38 / 16 * 1rem);
+        // border: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default7);
+        border-radius: calc(8 / 16 * 1rem);
+        background-color: var(--colorCM-mode1-fill-fill-default2);
+        overflow-y: auto;
+        word-wrap: break-word;
+        &::-webkit-scrollbar {
+          height: 100%;
+          width: calc(20 / 16 * 1rem);
+        }
+        &::-webkit-scrollbar-thumb {
+          border: calc(8 / 16 * 1rem) solid transparent;
+          border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
+          background-color: var(--colorCM-mode1-fill-fill-default4);
+          background-clip: content-box;
+          box-sizing: border-box;
+        }
+        &::-webkit-scrollbar-button {
+          height: calc(10 / 16 * 1rem);
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

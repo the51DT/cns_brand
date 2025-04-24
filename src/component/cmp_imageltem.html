@@ -1,43 +1,48 @@
 <div class="cmp-wrap cmp_imageltem__wrap">
-    <% const data=typeof jsonData !=='undefined' ? jsonData : []; const itemLimit=typeof itemCount !=='undefined' ?
-        itemCount : 1; %>
+    <% 
+        const data = typeof jsonData !== 'undefined' ? jsonData : []; 
+        const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1; 
+    %>
 
-        <% if (data.length> 0) { %>
-            <% data.slice(0, itemLimit).forEach((item, i)=> { %>
-                <div
-                    class="cmp_imageitem <%= typeof item.typeClass !== 'undefined' ? item.typeClass : 'type-default' %>">
-                    <div class="img-box">
-                        <img src="<%= item.imageUrl %>" alt="이미지" />
-                    </div>
-                    <div class="text-info">
-                        <h3 class="info-title font-body-lg"><%- item.title %></h3>
-                        <% if (item.content && Array.isArray(item.content)) {%>
-                            <ul class="info-list">
-                                <% item.content.forEach((content)=> { %>
-                                    <li class="font-body-lg"><%- content %></li>
-                                    <%})%>
-                            </ul>
-                            <% } else {%>
-                                <div class="info-text font-body-lg">
-                                    <%- item.content %>
-                                </div>
-                                <% } %>
+    <% if (data.length > 0) { %>
+        <% data.slice(0, itemLimit).forEach((item, i) => { 
+            const imgSrc = (typeof item.imageUrl === 'string' && item.imageUrl.trim()) 
+                ? item.imageUrl 
+                : 'https://placehold.co/5760x2160'; 
+        %>
+            <div class="cmp_imageitem <%= typeof item.typeClass !== 'undefined' ? item.typeClass : 'type-default' %>">
+                <div class="img-box">
+                    <img src="<%= imgSrc %>" alt="이미지" />
+                </div>
+                <div class="text-info">
+                    <h3 class="info-title font-head-sm"><%- item.title %></h3>
+                    <% if (item.content && Array.isArray(item.content)) { %>
+                        <ul class="info-list">
+                            <% item.content.forEach((content) => { %>
+                                <li class="font-body-md"><%- content %></li>
+                            <% }) %>
+                        </ul>
+                    <% } else { %>
+                        <div class="info-text font-body-md">
+                            <%- item.content %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <% for (let i = 0; i < itemLimit; i++) { %>
+            <div class="cmp_imageitem">
+                <div class="img-box">
+                    <img src="https://placehold.co/5760x2160" alt="기본 이미지" />
+                </div>
+                <div class="text-info">
+                    <h3 class="info-title font-head-sm">제목 없음</h3>
+                    <div class="info-text font-body-md">
+                        <p>기본 콘텐츠입니다. 제공된 데이터가 없습니다.</p>
                     </div>
                 </div>
-                <% }) %>
-                    <% } else { %>
-                        <% for (let i=0; i < itemLimit; i++) { %>
-                            <div class="cmp_imageitem">
-                                <div class="img-box">
-                                    <img src="https://placehold.co/5760x2160" alt="기본 이미지" />
-                                </div>
-                                <div class="text-info">
-                                    <h3 class="info-title font-body-lg">제목 없음</h3>
-                                    <div class="info-text font-body-lg">
-                                        <p>기본 콘텐츠입니다. 제공된 데이터가 없습니다.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <% } %>
-                                <% } %>
+            </div>
+        <% } %>
+    <% } %>
 </div>

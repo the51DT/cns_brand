@@ -1,0 +1,52 @@
+.cmp-cta-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 0;
+  &__wrap {
+    color: var(--colorCM-mode1-text-text-on-bg);
+    @media #{$phone} {
+      padding-top: calc(80 / 16 * 1rem);
+      padding-bottom: calc(80 / 16 * 1rem);
+      min-height: calc(524 / 16 * 1rem);
+    }
+  }
+  &__title {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: calc(32 / 16 * 1rem);
+      @media #{$phone} {
+        margin-bottom: calc(14 / 16 * 1rem);
+      }
+    }
+    & > span {
+      font-weight: 700;
+    }
+  }
+  &__text {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: calc(52 / 16 * 1rem);
+      @media #{$phone} {
+        margin-bottom: calc(24 / 16 * 1rem);
+      }
+    }
+  }
+  .button__wrap {
+    .btn {
+      padding: calc(18 / 16 * 1rem) calc(37 / 16 * 1rem);
+      font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+      line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+      gap: calc(12 / 16 * 1rem);
+      @media screen and (max-width: 1599px) and (min-width: 768px) {
+        font-size: calc(var(--typo-tablet-size-body-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-tablet-line-height-body-sm) / 16 * 1rem);
+      }
+      @media #{$phone} {
+        font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+      }
+    }
+  }
+}

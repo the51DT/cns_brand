@@ -220,7 +220,6 @@
     border: 1px solid #c6c6c6;
     border-radius: 12px;
     padding: 20px;
-    white-space: nowrap;
 }
 .lnb-type .lnb-side__wrap > ul > li {
     border-bottom: 1px solid #c6c6c6;
@@ -251,6 +250,7 @@
     line-height: 18px;
     color: #212121;
     padding: 6px 0;
+    word-break: break-all;
 }
 .lnb-type .lnb-side__wrap li:last-child {
     border: 0;
@@ -312,7 +312,7 @@
     left: 0;
     width: calc(6 / 16 * 1rem);
     height: calc(6 / 16 * 1rem);
-    background: var(--colorCM-all-background-background-default8);
+    background: var(--colorCM-mode1-background-background-default8);
     border-radius: 50%;
 }
 /* ItemList 컴포넌트 가이드 스타일 */
@@ -327,7 +327,7 @@
 }
 
 /* 모바일 반응형 css */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 720px) {
     .guide-header__wrap .navi button {
         display: block;
         width: 24px;

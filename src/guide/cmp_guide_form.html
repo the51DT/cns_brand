@@ -17,55 +17,95 @@
             <div class="flex justify-between lnb-type">
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
-                    <%- include('src/component/cmp_form.html') %>  
+                    <%- include('src/component/cmp_form.html') %>
+                    <p class="guide-title-h3 mt-10">cmp-select</p>
+                    <div class="cmp-exsample__wrap mt-10">
+                    <%- include('src/component/cmp_select.html', Object.assign({}, locals, {
+                        selectedValue: '연도선택',
+                        options: ['2025년', '2024년', '2023년', '2022년']
+                    })) %>
+                    </div>
+
                     <p class="guide-title-h3 mt-10">cmp-input</p>
-                    <div class="cmp-exsample__wrap mt-3">
+                    <div class="cmp-exsample__wrap mt-10">
                         <%
                             const inputData = [
                                 {
-                                    id: 0,
-                                    title: { text: "타이틀" },
                                     inputData: [
                                         {
+                                            id: 0,
+                                            title: "input[type='text']",
                                             type: "text",
-                                            placeholder: "플레이스홀더",
+                                            placeholder: "placeholder",
                                         },
                                     ]
                                 },
                                 {
-                                    id: 1,
-                                    title: { text: "required", required: true },
                                     inputData: [
                                         {
+                                            id: 1,
+                                            title: "input[type='text']",
+                                            required: true,
                                             type: "text",
-                                            placeholder: "플레이스홀더",
+                                            placeholder: "placeholder",
                                             value: "기본값"
                                         },
                                         {
+                                            id: 2,
+                                            title: "input[type='text']",
+                                            required: true,
                                             type: "text",
-                                            placeholder: "disabled",
-                                            state: "disabled"
-                                        },
-                                        {
-                                            type: "text",
-                                            placeholder: "readonly",
-                                            state: "readonly"
-                                        },
-                                        {
-                                            type: "text",
-                                            placeholder: "error",
+                                            placeholder: "placeholder",
+                                            value: "기본값",
                                             state: "error",
+                                            info: "에러 메시지를 입력하세요"
                                         },
                                     ],
-                                    info: "에러 메시지를 입력하세요"
                                 },
                                 {
-                                    id: 2,
-                                    title: { text: "셀렉트" },
                                     inputData: [
                                         {
+                                            id: 3,
+                                            title: "input[type='text'] disabled",
+                                            required: true,
+                                            type: "text",
+                                            placeholder: "placeholder",
+                                            state: "disabled"
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 4,
+                                            title: "input[type='text'] readonly",
+                                            required: true,
+                                            type: "text",
+                                            placeholder: "placeholder",
+                                            state: "readonly"
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 5,
+                                            title: "input[type='text'] error",
+                                            required: true,
+                                            type: "text",
+                                            placeholder: "placeholder",
+                                            state: "error",
+                                            info: "에러 메시지를 입력하세요"
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 6,
+                                            title: "select",
                                             type: "select",
-                                            placeholder: "select placeholder",
+                                            placeholder: "placeholder",
                                             option: [
                                                 {
                                                     value: "옵션1",
@@ -75,9 +115,15 @@
                                                 }
                                             ],
                                         },
+                                    ],
+                                },
+                                {
+                                    inputData: [
                                         {
+                                            id: 7,
+                                            title: "select disabled",
                                             type: "select",
-                                            placeholder: "select placeholder",
+                                            placeholder: "placeholder",
                                             option: [
                                                 {
                                                     value: "옵션1",
@@ -88,9 +134,15 @@
                                             ],
                                             state: "disabled"
                                         },
+                                    ],
+                                },
+                                {
+                                    inputData: [
                                         {
+                                            id: 8,
+                                            title: "select readonly",
                                             type: "select",
-                                            placeholder: "select placeholder",
+                                            placeholder: "placeholder",
                                             option: [
                                                 {
                                                     value: "옵션1",
@@ -101,9 +153,15 @@
                                             ],
                                             state: "readonly"
                                         },
+                                    ],
+                                },
+                                {
+                                    inputData: [
                                         {
+                                            id: 9,
+                                            title: "select error",
                                             type: "select",
-                                            placeholder: "select placeholder select placeholder",
+                                            placeholder: "placeholder",
                                             option: [
                                                 {
                                                     value: "옵션1",
@@ -114,103 +172,378 @@
                                                 }
                                             ],
                                             state: "error",
+                                            info: "에러 메시지를 입력하세요"
                                         },
                                     ],
-                                    info: "에러 메시지를 입력하세요"
                                 },
                                 {
-                                    id: 3,
-                                    title: { text: "서치" },
                                     inputData: [
                                         {
+                                            id: 10,
+                                            title: "search",
                                             type: "search",
-                                            placeholder: "플레이스홀더",
+                                            placeholder: "placeholder",
                                         },
+                                    ],
+                                },
+                                {
+                                    inputData: [
                                         {
+                                            id: 10,
+                                            title: "search 최초 활성화 시",
                                             type: "search",
-                                            placeholder: "disabled",
+                                            placeholder: "placeholder",
+                                            step: "guide"
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 10,
+                                            title: "search 검색 결과 노출",
+                                            type: "search",
+                                            placeholder: "placeholder",
+                                            step: "result"
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 10,
+                                            title: "search 검색 결과 없음",
+                                            type: "search",
+                                            placeholder: "placeholder",
+                                            step: "result-empty"
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id:11,
+                                            title: "search disabled",
+                                            type: "search",
+                                            placeholder: "placeholder",
                                             state: "disabled"
                                         },
+                                    ],
+                                },
+                                {
+                                    inputData: [
                                         {
+                                            id: 12,
+                                            title: "search readonly",
                                             type: "search",
-                                            placeholder: "readonly",
+                                            placeholder: "placeholder",
                                             state: "readonly"
                                         },
+                                    ],
+                                },
+                                {
+                                    inputData: [
                                         {
+                                            id: 13,
+                                            title: "search error",
                                             type: "search",
-                                            placeholder: "error",
+                                            placeholder: "placeholder",
                                             state: "error",
-                                            value: "기본값"
-                                        },
-                                    ],
-                                    info: "에러 메시지를 입력하세요"
-                                },
-                                {
-                                    id: 4,
-                                    title: { text: "이메일" },
-                                    inputData: [
-                                        {
-                                            type: "multi",
-                                            placeholder: "firstData",
-                                            option: [
-                                                {
-                                                    value: "직접 입력",
-                                                },
-                                                {
-                                                    value: "naver.com",
-                                                }
-                                            ],
-                                        },
-                                    ],
-                                },
-                                {
-                                    id: 5,
-                                    title: { text: "이메일" },
-                                    inputData: [
-                                        {
-                                            type: "multi",
-                                            placeholder: "firstData",
-                                            state: "disabled",
-                                            option: [
-                                                {
-                                                    value: "직접 입력",
-                                                },
-                                                {
-                                                    value: "naver.com",
-                                                }
-                                            ],
-                                        },
-                                    ],
-                                },
-                                {
-                                    id: 6,
-                                    title: { text: "textarea" },
-                                    inputData: [
-                                        {
-                                            type: "textarea",
-                                            placeholder: "플레이스홀더",
                                             value: "기본값",
-                                            countMax: "1,000"
+                                            info: "에러 메시지를 입력하세요"
                                         },
                                     ],
                                 },
                                 {
-                                    id: 7,
-                                    title: { text: "textarea" },
                                     inputData: [
                                         {
+                                            id : 14,
+                                            title: "email",
+                                            type: "text",
+                                            placeholder: "placeholder",
+                                        },
+                                    ]
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 15,
+                                            title: "textarea",
+                                            type: "textarea",
+                                            placeholder: "placeholder",
+                                            value: "기본값",
+                                            countMax: "1,000",
+                                            info: "개인정보가 포함된 내용은 입력을 금합니다."
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 16,
+                                            title: "textarea success",
+                                            type: "textarea",
+                                            placeholder: "placeholder",
+                                            value: "기본값",
+                                            state: "success",
+                                            info: "Positive Feedback Message"
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 17,
+                                            title: "textarea error",
                                             type: "textarea",
                                             placeholder: "countMax 와 info가 동시에 있을 경우\ncountMax 미노출 info만 노출",
                                             state: "error",
-                                            countMax: "1,000",
+                                            info: "Error Message"
                                         },
                                     ],
-                                    info: "에러 메시지를 입력하세요"
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 18,
+                                            type: "select",
+                                            placeholder: "no title",
+                                            option: [
+                                                {
+                                                    value: "옵션1",
+                                                },
+                                                {
+                                                    value: "옵션2",
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            title: "checkbox group title",
+                                            required: true,
+                                            type: "checkbox",
+                                            size: "small",
+                                            name: "checkbox--small-guide",
+                                            dataList: [
+                                                {
+                                                    value: "default-small",
+                                                    required: true,
+                                                },
+                                                {
+                                                    value: "checked-small",
+                                                    label: "checked-small",
+                                                    checked: true,
+                                                },
+                                                {
+                                                    value: "disabled-small",
+                                                    label: "disabled-small",
+                                                    disabeld: true,
+                                                },
+                                                {
+                                                    value: "checked-disabled-small",
+                                                    label: "checked-disabled-small",
+                                                    checked: true,
+                                                    disabeld: true,
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            type: "checkbox",
+                                            name: "checkbox-guide",
+                                            dataList: [
+                                                {
+                                                    value: "checkbox-default",
+                                                    required: true,
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "checkbox-checked",
+                                                    checked: true,
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            title: "산업",
+                                            required: true,
+                                            type: "checkbox",
+                                            name: "checkbox-guide",
+                                            dataList: [
+                                                {
+                                                    value: "checkbox-default",
+                                                    label: "금융",
+                                                    checked: true,
+                                                    
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "공공",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "교통",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "제조",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "물류",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "통신/미디어",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "리테일",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "서비스/IT",
+                                                },
+                                                {
+                                                    value: "checkbox-checked",
+                                                    label: "기타",
+                                                },
+                                            ],
+                                            dataListStyle: "sub",
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            title: "radio group title",
+                                            required: true,
+                                            type: "radio",
+                                            name: "radio-guide",
+                                            dataList: [
+                                                {
+                                                    value: "radio-default",
+                                                    required: true,
+                                                },
+                                                {
+                                                    value: "radio-checked",
+                                                    label: "radio-checked",
+                                                    checked: true,
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            title: "radio disabled group title",
+                                            type: "radio",
+                                            name: "radio-disabeld-guide",
+                                            dataList: [
+                                                {
+                                                    value: "radio-disabled",
+                                                    label: "radio-disabled",
+                                                    disabeld: true,
+                                                },
+                                                {
+                                                    value: "radio-checked-disabled",
+                                                    label: "radio-checked-disabled",
+                                                    checked: true,
+                                                    disabeld: true,
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {   
+                                            id: 19,
+                                            title: "dropdown",
+                                            required: true,
+                                            type: "dropdown",
+                                            placeholder: "dropdown 가이드",
+                                            option: [
+                                                {
+                                                    value: "disabled",
+                                                    disabled: true,
+                                                },
+                                                {
+                                                    value: "option",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 20,
+                                            title: "dropdown",
+                                            type: "dropdown",
+                                            placeholder: "dropdown 가이드",
+                                            enterPlacehold: "직접 입력",
+                                            option: [
+                                                {
+                                                    value: "직접 입력",
+                                                    enter: true,
+                                                },
+                                                {
+                                                    value: "disabled",
+                                                    disabled: true,
+                                                },
+                                                {
+                                                    value: "option",
+                                                },
+                                            ],
+                                        },
+                                    ],
                                 },
                             ]
                         %>
                         <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
                             jsonData: inputData,
+                        })) %>
+                    </div>
+                    <p class="guide-title-h3 mt-20">cmp-form-group</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <%
+                            const formGroupData = {
+                                box: {
+                                    name: "전체동의 인풋 네임",
+                                    value: "전체동의",
+                                    label: "전체 동의합니다. (선택항목 포함)",
+                                    checked: true,
+                                },
+                                name: "약관들 인풋 네임",
+                                acco: [
+                                    {
+                                        value: "필수약관",
+                                        label: "개인정보 수집·이용 동의 (필수)",
+                                        required: true,
+                                        text: "11111111<br>222222222<br>333333333<br>444444<br>555555<br>666666<br>7777777777777777777777777777777777777777777777777777777777777777<br>88888888888888888888888<br>99999",
+                                    },
+                                    {
+                                        value: "선택약관",
+                                        label: "개인정보 수집·이용 동의 (선택)",
+                                        disabeld: true,
+                                        text: "test",
+                                    },
+                                ],
+                            }
+                        %>
+                        <%- include('src/component/cmp_form-group.html', Object.assign({}, locals, { 
+                            jsonData: formGroupData,
                         })) %>
                     </div>
                 </div>

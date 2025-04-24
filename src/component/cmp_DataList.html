@@ -1,51 +1,49 @@
-                    <!-- data list 유형 -->                    
-                    <div class="cmp-wrap dataList">
-                        <ul class="content-list__wrap thumbnail-type type-box-line <%= typeof itemClass !== 'undefined' ? itemClass : 'pc-col3' %>">
-                            <% 
-                                const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
-                                const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
-                            %>
-                            
-                            <% if (data.length > 0) { %>
-                                <% data.slice(0, itemLimit).forEach((item, i) => { %>                            
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="/src/assets/image/temp/temp_thum01.png" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label"><%- item.label %></div>
-                                                <div class="title font-body-lg">
-                                                    <%- item.title %>
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    <%- item.content %>                                            
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                <% }) %>
-                            <% } else { %>
-                                <% for (let i = 0; i < itemLimit; i++) { %>                                           
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="https://placehold.co/939x470" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label">보도자료</div>
-                                                <div class="title font-body-lg">
-                                                    글로벌 DX시장의 ‘퍼스트 무버(First Mover)’로 도약할 것”LG CNS, 기업공개 임박함 기업공개 임박함
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
+<!-- data list 유형 -->
+<div class="cmp-wrap cmp-data-list">
+    <div class="cmp-swiper data-list-swiper swiper">
+        <div class="swiper-wrapper">
+            <% 
+                const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+            %>
+            <% data.forEach((item, i) => { %>
+                <div class="swiper-slide">
+                    <div class="data-list-item">
+                        <div class="data-list-img">
+                            <img src="<%- item.imgPc %>" alt="" class="type-pc" />
+                            <img src="<%- item.imgMo %>" alt="" class="type-mo" />
+                        </div>
+                        <div class="data-list-content">
+                            <div class="title font-head-sm-mode">
+                                <%- item.title %>
+                            </div>
+                            <div class="description font-body-sm">
+                                <%- item.content %>
+                            </div>
+                            <div class="data-list-bottom">
+                                <div class="font-caption-sm category-label"><%- item.label %></div>
+                                <% 
+                                    const btn = (typeof item.button !== 'undefined' ? item.button : {}); 
+                                %>
+                                <% if(btn.type === "download") { %>
+                                    <button type="button" class="btn btn-primary data-list-download <%- btn.disabled ? 'is-disabled' : '' %>" modal-id="<%- btn.modalId %>" onclick="openModal(event)">
+                                        <span class="ir-text">자료보기</span>
+                                    </button>
+                                <% } else if(btn.type === "link") { %>
+                                    <a href="<%- btn.href %>" target="_<%- btn.target %>" class="btn btn-primary data-list-link <%- btn.disabled ? 'is-disabled' : '' %>">
+                                        <span class="ir-text">자료보기</span>
+                                    </a>
+                                <% } else if(btn.type === "video") { %>
+                                    <a href="<%- btn.href %>" target="_<%- btn.target %>" class="btn btn-primary data-list-video <%- btn.disabled ? 'is-disabled' : '' %>">
+                                        <span class="ir-text">자료보기</span>
+                                    </a>
                                 <% } %>
-                            <% } %>                          
-                        </ul>
-                    <!-- //썸네일 유형 -->   
-                    </div>                                           
-                    <!-- data list 유형 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+            <!-- //썸네일 유형 -->
+        </div>
+    </div>
+</div>
+<!-- data list 유형 -->

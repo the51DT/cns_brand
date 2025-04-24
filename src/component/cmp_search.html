@@ -1,5 +1,5 @@
 <div class="cmp-wrap cmp-search__wrap">
-    <% if (typeof thumbnailType !== 'undefined' && typeof thumbnailData !== 'undefined') { %>
+    <!-- <% if (typeof thumbnailType !== 'undefined' && typeof thumbnailData !== 'undefined') { %>
         <div class="search-thumbnail-wrap">
             <%- include('src/component/cmp_thumbnail_type.html', { 
                 itemClass: 'pc-col2-big' , 
@@ -8,24 +8,31 @@
                 jsonData : thumbnailData, 
             }) %>
         </div>
-    <% } %>
+    <% } %> -->
     <div class="text-wrap">
         <% if (typeof title !== 'undefined') { %>
-            <p class="search-text"><%- title %></p>
+            <span class="search-text font-head-lg font-medium"><%- title %></span>
         <% } %>
         <div class="form-element__wrap">
             <label class="ir-text">검색어 입력</label>
             <span class="form-element__inner input-type input-search search-type-full">
-                <button type="button" class="btn btn-search">
-                    <i class="ico icon-search-bl35"></i>
-                    <span class="ir-text">검색</span>
-                </button>
                 <input type="text" value="" placeholder="<%= typeof placeholder !== 'undefined' ? placeholder : '검색어를 입력하세요.' %>" />
                 <button type="button" class="btn btn-remove">
                     <i class="ico icon-remove-bl28"></i>
                     <span class="ir-text">삭제</span>
                 </button>
+                <button type="button" class="btn btn-search">
+                    <i class="ico icon-search-bl35"></i>
+                    <span class="ir-text">검색</span>
+                </button>
             </span>
         </div>
     </div>
+    <% if (typeof tagType !== 'undefined' && Array.isArray(tagList) && tagList.length > 0) { %>
+        <div class="tag-button-wrap">
+            <% tagList.forEach(function(tag) { %>
+                <button class="tag-button font-body-xs"># <%= tag %></button>
+            <% }) %>
+            </div>
+    <% } %>
 </div>

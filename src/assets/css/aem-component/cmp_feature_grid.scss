@@ -1,0 +1,13 @@
+.cmp-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    gap: calc(24 / 16 * 1rem);
+    @media #{$min1280} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cmp-title__wrap {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

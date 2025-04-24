@@ -1,0 +1,52 @@
+<div class="cmp-title-text-icon__wrap">
+  <%
+    const _jsonData = typeof jsonData !== 'undefined' ? jsonData : [];
+  %>
+
+  <% if (_jsonData.length > 0) { %>
+    <div class="title-text-icon items<%= _jsonData.length %>">
+      <% _jsonData.forEach((item) => { %>
+        <div class="title-text-icon-items<%= !item.imageUrl ? ' no-image' : '' %>">
+          
+          <% if (item.imageUrl) { %>
+            <div class="item-image">
+              <img src="<%= item.imageUrl %>" alt="<%= item.title %>" />
+            </div>
+          <% } %>
+
+          <% if (item.title) { %>
+            <div class="title-text-icon-content <%= item.type ? 'type-' + item.type : '' %>">
+              <span class="cate-title font-head-sm font-medium"><%= item.title %></span>
+
+              <% if (item.content && item.content.length > 0) { %>
+                <div class="cate-text font-body-sm">
+                  <% if (item.useList) { %>
+                    <ul>
+                      <% item.content.forEach((text) => { %>
+                        <li><%= text %></li>
+                      <% }) %>
+                    </ul>
+                  <% } else { %>
+                    <% item.content.forEach((text) => { %>
+                      <p><%= text %></p>
+                    <% }) %>
+                  <% } %>
+                </div>
+              <% } %>
+
+              <% if (item.buttonName && item.buttonUrl && item.buttonTarget) { %>
+                <div class="btn btn-medium btn-text">
+                  <a href="<%= item.buttonUrl %>" class="btn__text"
+                     target="<%= item.buttonTarget %>" rel="noopener noreferrer">
+                    <%= item.buttonName %>
+                  </a>
+                </div>
+              <% } %>
+            </div>
+          <% } %>
+
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+</div>

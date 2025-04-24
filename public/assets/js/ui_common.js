@@ -2,7 +2,7 @@
  * UI common function * 
  ***************************/
 
-// input 포커스 
+// search 포커스 
 const checkInputFocus = (inputAdditionalFn) => {
     const inputs = document.querySelectorAll('.form-element__inner input[type="text"]');
     const autoComplete = document.querySelector('.autocomplate__wrap')    
@@ -52,6 +52,56 @@ const checkInputFocus = (inputAdditionalFn) => {
     });
 };
 
+// input 포커스 
+const checkCmpInputFocus = (inputAdditionalFn) => {
+    const inputs = document.querySelectorAll('.cmp-input__wrap input[type="text"]');
+    const autoComplete = document.querySelector('.autocomplate__wrap')    
+    inputs.forEach(input => {
+        if(input.value !== '') {
+            const nextSibling = input.nextElementSibling;
+            if (nextSibling && nextSibling.classList.contains('btn-remove')) {
+                nextSibling.classList.add('is-show');
+            } 
+        }        
+    });
+    const handleInputKeyup = (event) => {
+        const nextSibling = event.target.nextElementSibling;
+        if (nextSibling && nextSibling.classList.contains('btn-remove')) {
+            nextSibling.classList.add('is-show');
+        } 
+        if (event.target.value === '') {
+            nextSibling.classList.remove('is-show');
+        }
+
+        if(autoComplete) {
+            autoComplete.style.display = "block";
+        }         
+        // 추가로 전달된 함수 실행
+        if (inputAdditionalFn) {
+            inputAdditionalFn(event);
+        }
+    };
+    const handleBtnRemoveClick = (event) => {
+        const input = event.target.closest('.cmp-input__wrap').querySelector('input[type="text"]');
+        input.value = '';
+        event.target.classList.remove('is-show');
+        event.target.closest('.btn-remove').classList.remove('is-show');
+        if(autoComplete) {
+            autoComplete.style.display = "none";
+        }         
+        // 추가로 전달된 함수 실행
+        if (inputAdditionalFn) {
+            inputAdditionalFn(event);
+        }
+    };
+    inputs.forEach(input => {
+        input.addEventListener('keyup', handleInputKeyup);
+        const btnRemove = input.nextElementSibling;
+        if (btnRemove && btnRemove.classList.contains('btn-remove')) {
+            btnRemove.addEventListener('click', handleBtnRemoveClick);
+        }       
+    });
+};
 
 //dropdown menu  
 const dropdownMenu = (menuSelector) => {   
@@ -59,32 +109,47 @@ const dropdownMenu = (menuSelector) => {
 
     dropdownMenus.forEach(menu => {
         const trigger = menu.querySelector('.btn-dropdown');
-        const siblings = getNextSibling(trigger); 
+        const dropdownList = menu.querySelector('.dropdown_list');
+        const enterInput = menu.querySelector('.dropdown_input');
 
         trigger.addEventListener('click', (e) => {
             e.stopPropagation(); 
             const isActive = trigger.classList.toggle('is-active');                       
-            siblings.classList.toggle('is-active', isActive);
+            dropdownList.classList.toggle('is-active', isActive); // 드롭다운 리스트의 활성화 상태 토글
         });
 
         const optionList = menu.querySelectorAll('.dropdown_list li button, .dropdown_list li a');
         optionList.forEach(option => {
-            option.addEventListener('click', () => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
                 const selectedValue = option.getAttribute('data-option');
-                trigger.textContent = selectedValue;
+                trigger.textContent = selectedValue || option.innerText;
 
-                if(!selectedValue) {
-                    const selectText = option.innerText;
-                    trigger.textContent = selectText;
-                }
-
-                menu.querySelectorAll('.dropdown_list li').forEach(item => {
-                    item.classList.remove('is-active');
+                // 모든 옵션의 활성화 상태 제거
+                optionList.forEach(item => {
+                    item.parentElement.classList.remove('is-active'); // 모든 항목에서 .is-active 제거
                 });
 
-                option.parentElement.classList.add('is-active');
-                trigger.classList.remove('is-active');
-                siblings.classList.remove('is-active');
+                // 선택된 옵션의 활성화 상태 추가
+                option.parentElement.classList.add('is-active'); // 선택된 항목에 .is-active 추가
+
+                if (trigger.classList.contains('no-select')) {
+                    trigger.classList.remove('no-select');
+                }
+
+                if (option.classList.contains('dropdown_enter')) {
+                    if (enterInput) {
+                        enterInput.classList.add('is-active');
+                        trigger.textContent = ''; // 텍스트 초기화
+                    }
+                } else {
+                    if (enterInput) {
+                        enterInput.classList.remove('is-active');
+                    }
+                }
+
+                trigger.classList.remove('is-active'); // 드롭다운 트리거의 .is-active 제거
+                dropdownList.classList.remove('is-active'); // 드롭다운 리스트 닫기
             });
         });
     });
@@ -92,15 +157,15 @@ const dropdownMenu = (menuSelector) => {
     document.addEventListener("click", function(e) {        
         dropdownMenus.forEach(menu => {
             const trigger = menu.querySelector('.btn-dropdown');
-            const siblings = getNextSibling(trigger);
+            const dropdownList = menu.querySelector('.dropdown_list');
 
             if (!menu.contains(e.target) && !e.target.closest('.btn-dropdown')) {                
                 trigger.classList.remove('is-active');
-                siblings.classList.remove('is-active');
+                dropdownList.classList.remove('is-active'); // 드롭다운 리스트 닫기
             }
         });
     });
-};
+}; 
 // 모달 열기 2.
 const setModal = (target) => { // target : 모달 아이디
     target = document.getElementById(target);
@@ -122,6 +187,7 @@ const setModal = (target) => { // target : 모달 아이디
 window.setModal = setModal;
 // 모달 열기 1.
 const openModal = (event, type) => {
+    console.log(event)
     const btn = event.currentTarget;
     const modalId = btn.getAttribute('modal-id');
     const target = document.getElementById(modalId);
@@ -150,7 +216,7 @@ document.addEventListener("click", function(e) {
 //모달창 닫기
 const closeModal = (event, openButton) => {
     const btn = event.currentTarget;    
-    const activeModal = btn.closest('.modal__wrap--bg');    
+    const activeModal = btn.closest('.cmp-modal');    
     if (activeModal) {
         activeModal.classList.remove('is-active')        
         document.body.classList.remove('modal-open');
@@ -431,58 +497,116 @@ const sidebarCmp = () => {
         section.setAttribute('id','section0' + (index+1))
     })
 
+    // 활성화 상태 업데이트 함수
+    const updateActiveState = (targetId) => {
+        // 모든 네비게이션 항목의 활성화 상태 제거
+        document.querySelectorAll('.cmp-sidebar li').forEach(item => {
+            item.classList.remove('is-active');
+        });
+
+        // 현재 섹션에 해당하는 네비게이션 항목 활성화
+        sideNavy.forEach(nav => {
+            const navTargetId = nav.getAttribute('href').replace('#', '');
+            if (navTargetId === targetId) {
+                nav.parentElement.classList.add('is-active');
+            }
+        });
+    };
+
     const sideNavy = sidebarEl.querySelectorAll('li a')
     sideNavy.forEach(nav => {
         nav.addEventListener('click', function(e) {
             e.preventDefault();
 
-
-            const targetId = this.getAttribute('href').replace('#', ''); // 대상 ID 가져오기
+            const targetId = this.getAttribute('href').replace('#', '');
             const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
                 const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - offset;
-                window.scrollTo({ top: targetPosition, behavior: "smooth" }); // 부드러운 스크롤 적용
+                window.scrollTo({ 
+                    top: targetPosition, 
+                    behavior: "smooth" 
+                });
+                
+                // 클릭 시 활성화 상태 업데이트
+                updateActiveState(targetId);
             }
+        });
+    });
 
-            const activeItem = document.querySelector('li.is-active');
-            activeItem.classList.remove('is-active');
-            if (activeItem) {
-                activeItem.classList.remove('is-active');
-            }
-            nav.parentElement.classList.add('is-active');
-        })
-        
-    })
-
-    // 스크롤 
+    // 스크롤 이벤트 핸들러
     const handleScroll = () => {
         let currentSection = null;
+        let minDistance = Infinity;
 
+        // 각 섹션의 위치를 확인하고 가장 가까운 섹션 찾기
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
-            if (rect.top <= 100 && rect.bottom >= 100) { 
+            const distance = Math.abs(rect.top - offset);
+            
+            if (distance < minDistance) {
+                minDistance = distance;
                 currentSection = section;
             }
         });
 
         if (currentSection) {
             const currentId = currentSection.getAttribute('id');
-            sideNavy.forEach(nav => {
-                const targetId = nav.getAttribute('href').replace('#', '');
-                if (targetId === currentId) {
-                    document.querySelectorAll('.cmp-sidebar li').forEach(item => item.classList.remove('is-active'));
-                    nav.parentElement.classList.add('is-active');
-                }
-            });
+            updateActiveState(currentId);
         }
     };
 
-    window.addEventListener('scroll', handleScroll);    
+    window.addEventListener('scroll', handleScroll);
+    
+    // 초기 로드 시 현재 위치에 맞는 섹션 활성화
+    handleScroll();
 }
 
-document.addEventListener("DOMContentLoaded", sidebarCmp);
-checkInputFocus();
-accordion('.basic-type', 'basic');        
-accordion('.open-type', 'basic');   
-dropdownMenu('.dropdown-menu'); 
+const inputSearch  = (target) => {
+    const searchInput = document.querySelectorAll(target);
+    const searchList = document.querySelectorAll(".result__list li");
+    searchInput.forEach((el) => {
+        // const resultList = dropContent.querySelector('.result__list');
+        // search 선택 시 검색 영역 펼쳐짐
+        el.addEventListener("click", (event)=> {
+            const inputContent = el.closest('.cmp-input__content');
+            const dropCont = inputContent.querySelector('.cmp-input__drop-content');
+            if(dropCont) {
+                dropCont.classList.add('is-active');
+            }
+        })
+
+        // 닫기 버튼 선택 시 search 검색 영역 닫힘
+        const btnClose = el.closest('.cmp-input__content').querySelector('.result__btn-close');
+        if(btnClose) {
+            btnClose.addEventListener("click", (event) => {
+                // event.stopPropagation();
+                const closeTarget = btnClose.closest('.cmp-input__drop-content');
+                closeTarget.classList.remove('is-active');
+            });
+        }
+    });
+
+    searchList.forEach((el) => {
+        const selector = el.querySelector('.result__select-box');
+        el.addEventListener("click", (event) => {
+            event.preventDefault()
+            if(!selector.classList.contains('is-active')) {
+                selector.classList.add('is-active')
+            } else {
+                selector.classList.remove('is-active')
+            }
+        });
+    });
+}
+
+// document.addEventListener("DOMContentLoaded", sidebarCmp);
+document.addEventListener("DOMContentLoaded", () => {
+    sidebarCmp;
+    checkInputFocus();
+    checkCmpInputFocus();
+    dropdownMenu('.dropdown-menu');
+    accordion('.basic-type', 'basic');        
+    accordion('.open-type', 'basic');   
+    inputSearch('.cmp-input__item--search'); 
+});

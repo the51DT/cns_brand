@@ -1,121 +1,161 @@
 // 검색 영역
 .cmp-search__wrap {
     position: relative;
-    padding: calc(80 / 16 * 1rem);
-    background-color: var(--colorCM-all-fill-fill-default2);
-    @media #{$tablet} {
-        padding: calc(80 / 16 * 1rem) calc(32 / 16 * 1rem);
-    }
-    @media #{$phone} {
-        padding: calc(48 / 16 * 1rem) calc(20 / 16 * 1rem);
-    }
     .ico.icon-search-bl35 {
-        @media #{$phone} {
-            width: calc(20 / 16 * 1rem);
-            height: calc(20 / 16 * 1rem);
-            min-width: calc(20 / 16 * 1rem);
+        width: calc(20 / 16 * 1rem);
+        height: calc(20 / 16 * 1rem);
+        min-width: calc(20 / 16 * 1rem);
+        @media #{$min1280}{
+            width: calc(40 / 16 * 1rem);
+            height: calc(40 / 16 * 1rem);
+            min-width: calc(40 / 16 * 1rem);
         }
     }
-    &:has(.search-thumbnail-wrap) {
-        padding-top: calc(606 / 16 * 1rem);
-        @media #{$pcMiddle} {
-            padding-top: calc(539 / 16 * 1rem);
-        }
-        @media #{$tablet} {
-            padding-top: calc(563 / 16 * 1rem);
-        }
-        @media #{$tabletMini} {
-            padding-top: calc(420 / 16 * 1rem);
-        }
-        @media #{$phone} {
-            padding-top: calc(301 / 16 * 1rem);
-        }
-    }
-    .search-thumbnail-wrap {
-        position: absolute;
-        top: calc(-250 / 16 * 1rem);
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: calc(1760 / 16 * 1rem);
-        margin: 0 auto;
-        @media #{$pcMiddle} {
-            max-width: calc(1520 / 16 * 1rem);
-        }
-        @media #{$tablet} {
-            max-width: 100%;
-            overflow: hidden;
-        }
-        @media #{$tabletMini} {
-            max-width: 100%;
-        }
-        @media #{$phone} {
-            top: calc(-160 / 16 * 1rem);
-        }
-        .cmp-thumbnail {
-            @media #{$tablet} {
-                overflow-x: scroll;
-                 -ms-overflow-style: none; /* for Internet Explorer, Edge */
-                scrollbar-width: none; /* for Firefox */
-            }
-            &::-webkit-scrollbar {
-                @media #{$tablet} {
-                    display:none;
-                }
-            }
-        }
-        .content-list__wrap {
-            &.thumbnail-type {
-                &.pc-col2-big {
-                    @media #{$tablet} {
-                        width: max-content;
-                        padding: 0 calc((100% - (960 / 16 * 1rem)) / 2);
-                        flex-wrap: nowrap;
-                    }
-                    @media #{$tabletMini} {
-                        padding: 0 calc((100%  - (704 / 16 * 1rem)) / 2);
-                    }
-                    @media #{$phone} {
-                        padding: 0 calc(20 / 16 * 1rem);
-                        flex-direction: row;
-                    }
-                    li {
-                        @media #{$tablet} {
-                            flex-shrink: 0;
-                            width: calc(960 / 16 * 1rem);
-                        }
-                        @media #{$tabletMini} {
-                            width: calc(704 / 16 * 1rem);
-                        }
-                        @media #{$phone} {
-                            width: calc(100vw - (40 / 16 * 1rem));
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .text-wrap {
-        width: 100%;
-        max-width: calc(1168 / 16 * 1rem);
-        margin: 0 auto;
-        @media #{$tablet} {
-            max-width: calc(960 / 16 * 1rem);
-        }
-        @media #{$tabletMini} {
-            max-width: calc(704 / 16 * 1rem);
-        }
-    }
+    // &:has(.search-thumbnail-wrap) {
+    //     padding-top: calc(606 / 16 * 1rem);
+    //     @media #{$pcMiddle} {
+    //         padding-top: calc(539 / 16 * 1rem);
+    //     }
+    //     @media #{$tablet} {
+    //         padding-top: calc(563 / 16 * 1rem);
+    //     }
+    //     @media #{$tabletMini} {
+    //         padding-top: calc(420 / 16 * 1rem);
+    //     }
+    //     @media #{$phone} {
+    //         padding-top: calc(301 / 16 * 1rem);
+    //     }
+    // }
+    // .search-thumbnail-wrap {
+    //     position: absolute;
+    //     top: calc(-250 / 16 * 1rem);
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     width: 100%;
+    //     max-width: calc(1760 / 16 * 1rem);
+    //     margin: 0 auto;
+    //     @media #{$pcMiddle} {
+    //         max-width: calc(1520 / 16 * 1rem);
+    //     }
+    //     @media #{$tablet} {
+    //         max-width: 100%;
+    //         overflow: hidden;
+    //     }
+    //     @media #{$tabletMini} {
+    //         max-width: 100%;
+    //     }
+    //     @media #{$phone} {
+    //         top: calc(-160 / 16 * 1rem);
+    //     }
+    //     .cmp-thumbnail {
+    //         @media #{$tablet} {
+    //             overflow-x: scroll;
+    //              -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    //             scrollbar-width: none; /* for Firefox */
+    //         }
+    //         &::-webkit-scrollbar {
+    //             @media #{$tablet} {
+    //                 display:none;
+    //             }
+    //         }
+    //     }
+    //     .content-list__wrap {
+    //         &.thumbnail-type {
+    //             &.pc-col2-big {
+    //                 @media #{$tablet} {
+    //                     width: max-content;
+    //                     padding: 0 calc((100% - (960 / 16 * 1rem)) / 2);
+    //                     flex-wrap: nowrap;
+    //                 }
+    //                 @media #{$tabletMini} {
+    //                     padding: 0 calc((100%  - (704 / 16 * 1rem)) / 2);
+    //                 }
+    //                 @media #{$phone} {
+    //                     padding: 0 calc(20 / 16 * 1rem);
+    //                     flex-direction: row;
+    //                 }
+    //                 li {
+    //                     @media #{$tablet} {
+    //                         flex-shrink: 0;
+    //                         width: calc(960 / 16 * 1rem);
+    //                     }
+    //                     @media #{$tabletMini} {
+    //                         width: calc(704 / 16 * 1rem);
+    //                     }
+    //                     @media #{$phone} {
+    //                         width: calc(100vw - (40 / 16 * 1rem));
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // .text-wrap {
+    //     width: 100%;
+    //     max-width: calc(1168 / 16 * 1rem);
+    //     margin: 0 auto;
+    //     @media #{$tablet} {
+    //         max-width: calc(960 / 16 * 1rem);
+    //     }
+    //     @media #{$tabletMini} {
+    //         max-width: calc(704 / 16 * 1rem);
+    //     }
+    // }
     .search-text {
-        margin-bottom: calc(40 / 16 * 1rem);
-        font-size: calc(var(--typo-pc-size-head-md) / 16 * 1rem);
-        line-height: calc(var(--typo-pc-line-height-head-md) / 16 * 1rem);
-        font-weight: 700;
+        display: block;
+        margin-bottom: calc(24 / 16 * 1rem);
         text-align: center;
-        @media #{$phone} {
+        @media #{$min1280}{
             margin-bottom: calc(32 / 16 * 1rem);
-            font-size: calc(20 / 16 * 1rem);
-            line-height: calc(30 / 16 * 1rem);
+        }
+    }
+    .form-element__wrap {
+        margin: 0 auto;
+        max-width: calc(800 / 16 * 1rem);
+    }
+    .tag-button-wrap {
+        margin-top: calc(32 / 16*1rem);
+        display: flex;
+        flex-wrap: wrap;
+        gap: calc(16/16*1rem);
+        justify-content: center;
+        @media #{$min1280}{
+            margin-top: calc(48 / 16*1rem);
+        }
+    }
+    
+    .tag-button {
+        padding: calc(9.5 / 16 * 1rem) calc(24 / 16 * 1rem);
+        border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
+        background-color: var(--colorCM-mode1-fill-fill-default0);
+        font-weight: 600;
+        color: var(--text-text-default);
+        box-sizing: border-box;
+        @media #{$min1280}{
+            padding: calc(14 / 16 * 1rem) calc(24 / 16 * 1rem);
+        }
+    }
+    
+}
+//검색 결과 영역
+.cmp-search-result {
+    .search-result {
+        &__util {
+            padding: calc(9 / 16 * 1rem) 0;
+            color:var(--colorCM-mode1-text-text-secondary);
+            @media #{$min1280}{
+                padding: calc(16 / 16 * 1rem) 0;
+            }
+        }
+        &--empty {
+            padding-top: calc(178 / 16 * 1rem);
+            @media #{$min1280}{
+                padding-top: calc(280 / 16 * 1rem);
+            }
+            &__text {
+                color:var(--colorCM-mode1-text-text-secondary);
+                text-align: center;
+            }
         }
     }
 }

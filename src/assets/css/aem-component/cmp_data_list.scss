@@ -1,0 +1,130 @@
+.cmp-data-list {
+    .data-list {
+        &-item {
+            border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+            border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+            background-color: var(--colorCM-mode1-background-background-default0);
+            overflow: hidden;
+            width: 100%;
+        }
+        &-img {
+            height: calc(150 / 16 * 1rem);
+            @media #{$min720} {
+                height: calc(262 / 16 * 1rem);
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .type-pc {
+                display: none;
+                @media #{$min720} {
+                    display: block;
+                }
+            }
+            .type-mo {
+                display: block;
+                @media #{$min720} {
+                    display: none;
+                }
+            }
+        }
+        &-content {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: calc(290 / 16 * 1rem);
+            height: auto;
+            padding: calc(24 / 16 * 1rem) calc(24 / 16 * 1rem) calc(40 / 16 * 1rem);
+            @media #{$min720} {
+                min-height: calc(416 / 16 * 1rem);
+                padding: calc(48 / 16 * 1rem) calc(48 / 16 * 1rem) calc(46 / 16 * 1rem);
+            }
+            .title {
+                font-weight: 600;
+                margin-bottom: calc(12 / 16 * 1rem);
+                @media #{$min720} {
+                    margin-bottom: calc(16 / 16 * 1rem);
+                }
+            }
+            .description {
+                color: var(--colorCM-mode1-text-text-secondary);
+            }
+        }
+        &-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: calc(20 / 16 * 1rem);
+            width: 100%;
+            margin-top: auto;
+            @media #{$min720} {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+            .category-label {
+                color: var(--colorCM-mode1-icon-icon-tertiary);
+            }
+        }
+    }
+    .btn-primary {
+        width: calc(48 / 16 * 1rem);
+        height: calc(48 / 16 * 1rem);
+        background-position: center center;
+        background-repeat: no-repeat;
+        @media #{$min720} {
+            width: calc(72 / 16 * 1rem);
+            height: calc(72 / 16 * 1rem);
+        }
+        &.data-list-download {
+            background-image: url(../../image/icon/icon_data_list_download_mo.svg);
+            @media #{$min720} {
+                background-image: url(../../image/icon/icon_data_list_download.svg);
+            }
+        }
+        &.data-list-link {
+            background-image: url(../../image/icon/icon_data_list_link_mo.svg);
+            @media #{$min720} {
+                background-image: url(../../image/icon/icon_data_list_link.svg);
+            }
+        }
+        &.data-list-video {
+            background-image: url(../../image/icon/icon_data_list_video_mo.svg);
+            background-position: center left 45%;
+            @media #{$min720} {
+                background-image: url(../../image/icon/icon_data_list_video.svg);
+            }
+        }
+    }
+    .cmp-swiper {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        margin: 0 calc(-20 / 16 * 1rem);
+        @media #{$min720}{
+            justify-content: center;
+            margin: 0;
+        }
+        .swiper-wrapper {
+            display: flex;
+            gap: 0;
+            @media #{$min720} {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: calc(20 / 16 * 1rem);
+            }
+            @media #{$min1280} {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .swiper-slide {
+            display: flex;
+            width: 73.61111111111%;
+            height: auto;
+            @media #{$min720} {
+                width: 100%;
+            }
+        }
+    }
+}
