@@ -1,3 +1,5 @@
+@use '_index' as *;
+// @use 'aem_component.scss';
 // 컴포넌트 margin-bottom:60px, 최하단 컴포넌트는 margin-bottom: 0;
 .cmp-wrap {
     margin-bottom: calc(48 / 16 * 1rem); 

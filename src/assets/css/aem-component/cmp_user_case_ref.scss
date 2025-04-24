@@ -1,3 +1,4 @@
+@use '/src/assets/css/_index' as *;
 .cmp-user-case-ref {
     background-color: var(--colorCM-mode1-fill-fill-default1);
     &__container {

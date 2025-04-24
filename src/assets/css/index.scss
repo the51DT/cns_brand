@@ -1,64 +1,13 @@
-@forward 'variables';
-@forward 'reset';
-@forward 'component';
-@forward '/public/assets/bundle/swiper.min';
-@forward 'layout';
-@forward 'content';
-// @forward '_custom_var';
+/* common value */
+@forward 'layout.scss';
+@forward 'content.scss';
 /* aem-component */
-@forward 'aem-component/cmp_image_box';
-@forward 'aem-component/cmp_hero_banner';
-@forward 'aem-component/cmp_over_view';
-@forward 'aem-component/cmp_title';
-@forward 'aem-component/cmp_teaser_title';
-@forward 'aem-component/cmp_image_item';
-@forward 'aem-component/cmp_image_item_2columns';
-@forward 'aem-component/cmp_image_item_3columns_box';
-@forward 'aem-component/cmp_item_list_columns';
-@forward 'aem-component/cmp_spec_list';
-@forward 'aem-component/cmp_customer_case';
-@forward 'aem-component/cmp_pagination';
-@forward 'aem-component/cmp_button_banner';
-@forward 'aem-component/cmp_thumbnail';
-@forward 'aem-component/cmp_board_detail_info';
-@forward 'aem-component/cmp_post_navigation';
-@forward 'aem-component/cmp_search_wrap';
-@forward 'aem-component/cmp_item_list';
-@forward 'aem-component/cmp_image_item_column';
-@forward 'aem-component/cmp_dash_list';
-@forward 'aem-component/cmp_button_item_list';
-@forward 'aem-component/cmp_profile_card_list';
-@forward 'aem-component/cmp_contents_title';
-@forward 'aem-component/cmp_video';
-@forward 'aem-component/cmp_chart';
-@forward 'aem-component/cmp_text_image_cluster';
-@forward 'aem-component/cmp_year_event';
-@forward 'aem-component/cmp_seperator';
-@forward 'aem-component/cmp_sidebar';
-@forward 'aem-component/cmp_richitext';
-@forward 'aem-component/cmp_input';
-@forward 'aem-component/cmp_form-group';
-@forward 'aem-component/cmp_solution_imageL_1item';
-@forward 'aem-component/cmp_solution_icon';
-@forward 'aem-component/cmp_cta_section';
-@forward 'aem-component/cmp_title_nav';
-@forward 'aem-component/cmp_select';
-@forward 'aem-component/cmp_title_select';
-@forward 'aem-component/cmp_user_case_ref';
-@forward 'aem-component/cmp_data_list';
-@forward 'aem-component/cmp_agenda';
-@forward 'aem-component/cmp_title_text_icon';
-@forward 'aem-component/cmp_feature_grid';
-
-/* icon */
-@forward 'icon';
-/* tailwind */
-// @forward "/assets/bundle/tailwindcss/tailwind-all";
-@forward "/public/assets/bundle/tailwindcss/tailwind-all";
+@forward 'aem_component';
 /* main content*/
-@forward 'main';
+@forward 'main.scss';
 /* sub content*/
-@forward 'sub_moa';
-@forward 'sub_future';
-@forward 'sub_bizInfo';
-@forward 'sub_contactUs';
+@forward 'sub_moa.scss';
+@forward 'sub_future.scss';
+@forward 'sub_bizInfo.scss';
+@forward 'sub_contactUs.scss';
+

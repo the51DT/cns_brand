@@ -1,3 +1,4 @@
+@use '/src/assets/css/_index' as *;
 .cmp-profile_card_list__wrap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
