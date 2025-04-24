@@ -1,4 +1,4 @@
-// import './assets/css/index.css';
+// import './assets/css/index.scss';
 
 let currentPage = null;
 let currentLocation = window.location.href;
