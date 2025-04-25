@@ -43,7 +43,7 @@
         margin-bottom: calc(3 / 16 * 1rem);
         width: calc(12 / 16 * 1rem);
         height: calc(12 / 16 * 1rem);
-        background: url('#{$basePath}image/icon/icon-required-bl12.svg');
+        background: url('#{$basePath}/image/icon/icon-required-bl12.svg');
         vertical-align: middle;
       }
     }
@@ -208,7 +208,7 @@
     &--select {
       appearance: unset;
       padding-right: calc(48 / 16 * 1rem);
-      background-image: url('#{$basePath}image/icon/icon_arrow_down.svg');
+      background-image: url('#{$basePath}/image/icon/icon_arrow_down.svg');
       background-repeat: no-repeat;
       background-size: calc(20 / 16 * 1rem);
       background-position: right calc(14 / 16 * 1rem) top 50%;
@@ -267,23 +267,23 @@
       height: calc(26 / 16 * 1rem);
       border: calc(2 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default3);
       border-radius: calc(var(--radius-mode1-x-s) / 16 * 1rem);
-      background: url('#{$basePath}image/icon/ico_checkbox_normal_unselected.svg') no-repeat
+      background: url('#{$basePath}/image/icon/ico_checkbox_normal_unselected.svg') no-repeat
         center / calc(14 / 16 * 1rem) calc(9.5 / 16 * 1rem);
       background-color: var(--colorCM-mode1-fill-fill-default0);
       &:checked {
-        background: url('#{$basePath}image/icon/ico_checkbox_all_selected.svg') no-repeat center /
+        background: url('#{$basePath}/image/icon/ico_checkbox_all_selected.svg') no-repeat center /
           calc(14 / 16 * 1rem) calc(9.5 / 16 * 1rem);
         background-color: var(--colorCM-mode1-fill-fill-default10);
         border: none;
       }
       &:disabled {
         border-color: var(--colorCM-mode1-stroke-stroke-disabled);
-        background: url('#{$basePath}image/icon/ico_checkbox_disabled_unselected.svg') no-repeat
+        background: url('#{$basePath}/image/icon/ico_checkbox_disabled_unselected.svg') no-repeat
           center / calc(14 / 16 * 1rem) calc(9.5 / 16 * 1rem);
         background-color: var(--colorCM-mode1-fill-fill-default1);
         &:checked {
-          background: url('#{$basePath}image/icon/ico_checkbox_all_selected.svg') no-repeat center /
-            calc(14 / 16 * 1rem) calc(9.5 / 16 * 1rem);
+          background: url('#{$basePath}/image/icon/ico_checkbox_all_selected.svg') no-repeat
+            center / calc(14 / 16 * 1rem) calc(9.5 / 16 * 1rem);
           background-color: var(--colorCM-mode1-fill-fill-disabled);
           // opacity: 0.4;
         }
@@ -434,7 +434,7 @@
             button {
               color: var(--colorCM-mode1-text-text-default);
               font-weight: 600;
-              background: url('#{$basePath}image/icon/icon_check_bl24.svg') no-repeat 100% center /
+              background: url('#{$basePath}/image/icon/icon_check_bl24.svg') no-repeat 100% center /
                 calc(24 / 16 * 1rem) calc(24 / 16 * 1rem);
             }
           }
@@ -538,7 +538,7 @@
           width: 100%;
           box-sizing: border-box;
           &.is-active {
-            background: url('#{$basePath}image/icon/icon-check-bl24.svg') no-repeat
+            background: url('#{$basePath}/image/icon/icon-check-bl24.svg') no-repeat
               calc(100% - calc(24 / 16 * 1rem)) center / calc(24 / 16 * 1rem) calc(24 / 16 * 1rem);
           }
         }

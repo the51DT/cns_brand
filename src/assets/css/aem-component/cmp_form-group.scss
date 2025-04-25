@@ -12,7 +12,7 @@
     // padding: calc(20 / 16 * 1rem);
     // border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
     // background-color: var(--colorCM-mode1-fill-fill-default2);
-    &:has( + .cmp-form-group__accordion) {
+    &:has(+ .cmp-form-group__accordion) {
       margin-bottom: calc(32 / 16 * 1rem);
     }
   }
@@ -24,9 +24,10 @@
       &-item {
         &.is-active {
           .accordion-button {
-                //   transform: rotate(180deg);
-                background: url('#{$basePath}image/icon/icon-minus-bl32.svg') no-repeat center / contain;
-            }   
+            //   transform: rotate(180deg);
+            background: url('#{$basePath}/image/icon/icon-minus-bl32.svg') no-repeat center /
+              contain;
+          }
           .accordion-content {
             display: block;
           }
@@ -47,10 +48,10 @@
         flex-shrink: 0;
         width: calc(24 / 16 * 1rem);
         height: calc(24 / 16 * 1rem);
-        background: url('#{$basePath}image/icon/icon-plus-bl32.svg') no-repeat center / contain;
+        background: url('#{$basePath}/image/icon/icon-plus-bl32.svg') no-repeat center / contain;
         @media #{$min1280} {
-            width: calc(32 / 16 * 1rem);
-            height: calc(32 / 16 * 1rem);
+          width: calc(32 / 16 * 1rem);
+          height: calc(32 / 16 * 1rem);
         }
       }
       &-content {
