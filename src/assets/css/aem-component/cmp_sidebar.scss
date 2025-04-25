@@ -1,59 +1,49 @@
-@use '/src/assets/css/_index' as *;
 .cmp-sidebar {
-  display: none; 
-  z-index: 99;
-
-  .label {
-    display: none;
-    transition: opacity 0.3s;
-  }
-
-  .circle {
-    width: 10px;
-    height: 10px;
-    border: 1px solid #1A1A1A;
-    border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
-    display: inline-block;
-  }
-
-  li {
-    margin-bottom: calc(40 / 16 * 1rem);
-
-    a {
-      position: relative;
-      align-items: center;
-      color: var(--colorGL-all-gray700);
-      font-size: calc(var(--typo-pc-size-caption-xl) / 16 * 1rem);
+    display: none; 
+    z-index: 99;
+    @media #{$pcWide} {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: calc(150 / 16 * 1rem);
+        left: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+        text-align: left;
     }
-
-    &:last-child a {
-      margin-bottom: 0;
-    }
-
-    &.is-active {
-      a {
-        color: #1A1A1A;
-        border: 1px solid var(--colorGL-all-grey550);
-        padding: calc(6 / 16 * 1rem) calc(20 / 16 * 1rem);
-        border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
-      }
-
-      .label {
-        display: inline;
-      }
-
-      .circle {
+    .label {
         display: none;
-      }
+        transition: opacity 0.3s;
     }
-  }
-
-  @media #{$pcWide} {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: calc(150 / 16 * 1rem);
-    left: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
-    text-align: left;
-  }
+    .circle {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #1A1A1A;
+        border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
+        display: inline-block;
+    }
+    li {
+        margin-bottom: calc(40 / 16 * 1rem);
+        a {
+            position: relative;
+            align-items: center;
+            color: var(--colorGL-all-gray700);
+            font-size: calc(var(--typo-pc-size-caption-xl) / 16 * 1rem);
+        }
+        &:last-child a {
+            margin-bottom: 0;
+        }
+        &.is-active {
+            a {
+                color: #1A1A1A;
+                border: 1px solid var(--colorGL-all-grey550);
+                padding: calc(6 / 16 * 1rem) calc(20 / 16 * 1rem);
+                border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
+            }
+            .label {
+                display: inline;
+            }
+            .circle {
+                display: none;
+            }
+        }
+    }
 }

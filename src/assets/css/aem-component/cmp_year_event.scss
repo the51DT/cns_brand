@@ -1,51 +1,43 @@
-@use '/src/assets/css/_index' as *;
 .cmp-yearevent {
-  &__month{
-    margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem);
-    color: #e5e5e5;
-    font-size: calc(var(--typo-pc-size-head2xl)/16*1rem);
-
-    &.active {
-      color: #a50034;
+    &__month{
+        margin-bottom: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem);
+        color: #e5e5e5;
+        font-size: calc(var(--typo-pc-size-head2xl)/16*1rem);
+        &.active {
+            color: #a50034;
+        }
     }
-  }
+    &__item {
+        padding-bottom: calc(40 / 16 * 1rem);
 
-  &__item {
-    padding-bottom: calc(40 / 16 * 1rem);
-
-    &:last-child {
-      padding-bottom: 0;
+        &:last-child {
+            padding-bottom: 0;
+        }
     }
-  }
-
-  &__title {
+    &__title {
     position: relative;
     padding-bottom: calc(20 / 16 * 1rem);
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: calc(20 / 16 * 1rem);
-      border-bottom: 2px solid #e5e5e5;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: calc(20 / 16 * 1rem);
+            border-bottom: 2px solid #e5e5e5;
+        }
     }
-  }
-
-  &__details {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-top: calc(20 / 16 * 1rem);
-  }
-
-  &__label {
-    color: black;
-    margin-right: calc(20 / 16 * 1rem);
-    font-weight: 600;
-  }
-
-  &__value {
-    color: #6b6b6b;
-  }
+    &__details {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: calc(20 / 16 * 1rem);
+    }
+    &__label {
+        color: black;
+        margin-right: calc(20 / 16 * 1rem);
+        font-weight: 600;
+    }
+    &__value {
+        color: #6b6b6b;
+    }
 }

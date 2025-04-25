@@ -39,13 +39,13 @@ export default defineConfig({
             },
         },
     ],
-    // css: {
-    //     preprocessorOptions: {
-    //         scss: {
-    //             additionalData: `@use '/src/assets/css/_custom_var' as *;`,
-    //         },
-    //     },
-    // },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                additionalData: `@use '/src/assets/css/_custom_var' as *;`,
+            },
+        },
+    },
     build: {
         outDir: 'dist',
         emptyOutDir: true,

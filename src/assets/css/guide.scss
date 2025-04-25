@@ -1,21 +1,4 @@
-/* common value */
-@forward 'variables.scss';
-@forward 'reset.scss';
-@forward '/public/assets/bundle/swiper.min.scss';
-@forward '_custom_var.scss';
-@use '_custom_var.scss';
-
-@forward 'layout.scss';
-@forward 'content.scss';
-
-@forward 'component.scss';
-@forward 'aem_component.scss';
-
-/* icon */
-@forward 'icon.scss';
-
-/* tailwind */
-@forward "/public/assets/bundle/tailwindcss/tailwind-all.scss";
+@import '/src/assets/css/index.css';
 
 .guide-header__wrap {
     background-color: var(--color-g-header);

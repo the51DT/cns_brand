@@ -1,16 +1,11 @@
-@use '/src/assets/css/_index' as *;
 .cmp-title__wrap {
     display: flex;
     flex-direction: column;
     color: var(--colorCM-mode1-text-text-default);
-  
     .title-text {
-      font-weight: 500;
+        font-weight: 500;
     }
-  
     .title-sub {
-      margin-bottom: calc(8 / 16 * 1rem);
+        margin-bottom: calc(8 / 16 * 1rem);
     }
-
-  }
-  
+}
