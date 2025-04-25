@@ -44,7 +44,9 @@
             "sizeCaptionLgUi": 20,
             "sizeCaptionSmUi": 16,
             "lineHeightCaptionLgUi": 34,
-            "lineHeightCaptionSmUi": 26
+            "lineHeightCaptionSmUi": 26,
+            "sizeHeadXXl": 78,
+            "lineHeightHeadXxl": 94
         },
         "mo": {
             "familyHead": "Pretendard",
@@ -90,7 +92,9 @@
             "sizeCaptionLgUi": 20,
             "sizeCaptionSmUi": 16,
             "lineHeightCaptionLgUi": 34,
-            "lineHeightCaptionSmUi": 26
+            "lineHeightCaptionSmUi": 26,
+            "sizeHeadXXl": 58,
+            "lineHeightHeadXxl": 70
         }
     },
     "colorGL": {
