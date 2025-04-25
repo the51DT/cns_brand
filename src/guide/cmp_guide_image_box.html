@@ -26,8 +26,31 @@
                             <p>PC, MO 이미지 url을 따로 넣을 수 있으나, <b class="font-bold text-red-600">PC 이미지 url 입력은 필수 조건</b>입니다. </p>
                         </li>
                     </ul>
+                    <p class="guide-title-h3 mt-10">Image Box Component : Option</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>
+                                jsonData : 이미지 경로 적용 {pc, mo}
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                alt : 이미지 alt 값 적용, PC/MO 공통으로 적용
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                addClass : .img-box 에 이중클래스 추가
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                round: true // .img-box 에 이중클래스 .img-box--round 적용 (이미지에 border-radius 적용  (pc-32 / mo-16))
+                            </p>
+                        </li>
+                    </ul>
 
-                    <p class="guide-title-h3 mt-5">Image Box Component type 1. pc/mo 이미지가 같은 경우</p>
+                    <p class="guide-title-h3 mt-10">Image Box Component type 1. pc/mo 이미지가 같은 경우</p>
                     <div class="cmp-exsample__wrap mt-3">    
                         <% 
                             const iamgeData2=[{
@@ -37,7 +60,8 @@
                         <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
                             jsonData : iamgeData2,
                             alt : '유통 산업 성장의 Key 최대 효율을 당성하는 성공 DX',
-                            addClass: 'test2' 
+                            addClass: 'test2',
+                            round: true,
                         }))%>
                     </div>
 

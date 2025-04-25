@@ -2,9 +2,10 @@
 <div class="cmp-wrap cmp-image-box">
     <% 
         const data=(typeof jsonData !=='undefined' ? jsonData : []); 
+        const isRound = typeof round !== 'undefined' ? round : false; 
     %>
     <% if (data.length> 0) { %>
-        <div class="img-box <%- typeof addClass !== 'undefined' && addClass ? addClass : '' %>">
+        <div class="img-box <%- isRound ? 'img-box--round' : '' %> <%- typeof addClass !== 'undefined' && addClass ? addClass : '' %>">
             <% data.forEach((item)=> { %>
                 <img src="<%- item.pc %>" alt="<%- alt %>" class="<%- item.mo && typeof item.mo !== 'undefined' ? 'img-box__item-pc' : ''%>">
                 <% if(item.mo && typeof item.mo !=='undefined' ) {%>
