@@ -88,7 +88,6 @@
         .info-text {
             li {
                 color: var(--colorGL-all-gray950);
-                display: flex;
                 padding-left: calc(13 / 16 * 1rem);
                 position: relative;
                 &::before {
