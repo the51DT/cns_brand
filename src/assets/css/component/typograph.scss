@@ -89,6 +89,12 @@
     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
     font-weight: 400;
 }
+.font-caption-xs {
+    font-size: calc(var(--typo-mo-size-caption-xs) / 16 * 1rem);
+    line-height: calc(var(--typo-mo-line-height-caption-xs) / 16 * 1rem);
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+    font-weight: 400;
+}
 
 @media screen and (max-width: 720px) {
     .font-head-xl {
@@ -150,5 +156,9 @@
     .font-caption-sm-ui {
         font-size: calc(var(--typo-mo-size-caption-sm-ui) / 16 * 1rem);
         line-height: calc(var(--typo-mo-line-height-caption-sm-ui) / 16 * 1rem);
+    }
+    .font-caption-xs {
+        font-size: calc(var(--typo-pc-size-caption-xs) / 16 * 1rem);
+        line-height: calc(var(--typo-pc-line-height-caption-xs) / 16 * 1rem);
     }
 }
