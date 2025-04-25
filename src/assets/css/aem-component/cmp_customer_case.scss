@@ -66,17 +66,16 @@
         }
     }
     .customer-case-more {
-        a {
-            display: flex;
-            align-items: center;
-            gap: calc(4 / 16 * 1rem);
-            height: calc(26 / 16 * 1rem);
-            margin-bottom: calc(24 / 16 * 1rem);
-            @media #{$min1280} {
-                position: absolute;
-                top: calc(47 / 16 * 1rem);
-                right: calc(48 / 16 * 1rem);
-            }
+        display: flex;
+        align-items: center;
+        gap: calc(4 / 16 * 1rem);
+        height: calc(26 / 16 * 1rem);
+        margin-bottom: calc(24 / 16 * 1rem);
+        @media #{$min1280} {
+            position: absolute;
+            top: calc(47 / 16 * 1rem);
+            right: calc(48 / 16 * 1rem);
+            margin-bottom: 0;
         }
     }
     .customer-case-img {

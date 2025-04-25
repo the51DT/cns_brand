@@ -5,29 +5,53 @@
       <% const data = typeof jsonData !== 'undefined' ? jsonData : []; %>
       <% data.forEach((item) => { %>
         <div class="swiper-slide">
-          <div class="customer-case-items">
-            <div class="customer-case-img">
-              <img src="<%- item.logoPC %>" alt="" class="type-pc"/>
-              <img src="<%- item.logoMO %>" alt="" class="type-mo"/>
-            </div>
-            <div class="font-head-sm-mode customer-case-title"><%- item.name %></div>
-            <div class="font-body-sm customer-case-text"><%- item.content %></div>
-            <div class="customer-case-more">
-              <% if (typeof item.link === 'string' && item.link.trim() !== '') { %>
-                <a href="<%- item.link && item.link.trim() !== '' ? item.link : '#' %>">
-                  <span class="font-caption-lg-ui">자세히 보기</span>
-                  <i class="ico icon-arrow-right-bl16"></i>
+            <% if (typeof item.link === 'string' && item.link.trim() !== '') { %>
+                <a href="<%- item.link && item.link.trim() !== '' ? item.link : '#' %>" class="customer-case-items">
+                    <div class="customer-case-img">
+                        <img src="<%- item.logoPC %>" alt="" class="type-pc"/>
+                        <img src="<%- item.logoMO %>" alt="" class="type-mo"/>
+                    </div>
+                    <div class="font-head-sm-mode customer-case-title"><%- item.name %></div>
+                    <div class="font-body-sm customer-case-text"><%- item.content %></div>
+                    <div class="customer-case-more">
+                        <% if (typeof item.link === 'string' && item.link.trim() !== '') { %>
+                            <span class="font-caption-lg-ui">자세히 보기</span>
+                            <i class="ico icon-arrow-right-bl16"></i>
+                        <% } %>
+                    </div>
+                    <div class="tag-box">
+                        <% if (item.category && Array.isArray(item.category)) { %>
+                            <% item.category.forEach((cate) => { %>
+                                <div class="tag"><%- cate.name %></div>
+                            <% }) %>
+                        <% } %>
+                    </div>
                 </a>
-                <% } %>
-            </div>
-            <div class="tag-box">
-              <% if (item.category && Array.isArray(item.category)) { %>
-                <% item.category.forEach((cate) => { %>
-                  <div class="tag"><%- cate.name %></div>
-                <% }) %>
-              <% } %>
-            </div>
-          </div>
+            <% } else { %>
+                <div class="customer-case-items">
+                    <div class="customer-case-img">
+                        <img src="<%- item.logoPC %>" alt="" class="type-pc"/>
+                        <img src="<%- item.logoMO %>" alt="" class="type-mo"/>
+                    </div>
+                    <div class="font-head-sm-mode customer-case-title"><%- item.name %></div>
+                    <div class="font-body-sm customer-case-text"><%- item.content %></div>
+                    <div class="customer-case-more">
+                        <!-- <% if (typeof item.link === 'string' && item.link.trim() !== '') { %>
+                            <a href="<%- item.link && item.link.trim() !== '' ? item.link : '#' %>">
+                                <span class="font-caption-lg-ui">자세히 보기</span>
+                                <i class="ico icon-arrow-right-bl16"></i>
+                            </a>
+                        <% } %> -->
+                    </div>
+                    <div class="tag-box">
+                        <% if (item.category && Array.isArray(item.category)) { %>
+                            <% item.category.forEach((cate) => { %>
+                                <div class="tag"><%- cate.name %></div>
+                            <% }) %>
+                        <% } %>
+                    </div>
+                </div>
+            <% } %>
         </div>
       <% }) %>
     </div>

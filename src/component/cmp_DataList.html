@@ -6,8 +6,11 @@
                 const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
             %>
             <% data.forEach((item, i) => { %>
+                <% 
+                    const btn = (typeof item.button !== 'undefined' ? item.button : {}); 
+                %>
                 <div class="swiper-slide">
-                    <div class="data-list-item">
+                    <a href="<%- btn.href %>" class="data-list-item <%- btn.disabled ? 'data-list-item--disabled' : '' %>">
                         <div class="data-list-img">
                             <img src="<%- item.imgPc %>" alt="" class="type-pc" />
                             <img src="<%- item.imgMo %>" alt="" class="type-mo" />
@@ -21,25 +24,22 @@
                             </div>
                             <div class="data-list-bottom">
                                 <div class="font-caption-sm category-label"><%- item.label %></div>
-                                <% 
-                                    const btn = (typeof item.button !== 'undefined' ? item.button : {}); 
-                                %>
                                 <% if(btn.type === "download") { %>
-                                    <button type="button" class="btn btn-primary data-list-download <%- btn.disabled ? 'is-disabled' : '' %>" modal-id="<%- btn.modalId %>" onclick="openModal(event)">
+                                    <span class="btn btn-primary data-list-download <%- btn.disabled ? 'is-disabled' : '' %>" modal-id="<%- btn.modalId %>" onclick="openModal(event)">
                                         <span class="ir-text">자료보기</span>
-                                    </button>
+                                    </span>
                                 <% } else if(btn.type === "link") { %>
-                                    <a href="<%- btn.href %>" target="_<%- btn.target %>" class="btn btn-primary data-list-link <%- btn.disabled ? 'is-disabled' : '' %>">
+                                    <span class="btn btn-primary data-list-link <%- btn.disabled ? 'is-disabled' : '' %>">
                                         <span class="ir-text">자료보기</span>
-                                    </a>
+                                    </span>
                                 <% } else if(btn.type === "video") { %>
-                                    <a href="<%- btn.href %>" target="_<%- btn.target %>" class="btn btn-primary data-list-video <%- btn.disabled ? 'is-disabled' : '' %>">
+                                    <span class="btn btn-primary data-list-video <%- btn.disabled ? 'is-disabled' : '' %>">
                                         <span class="ir-text">자료보기</span>
-                                    </a>
+                                    </span>
                                 <% } %>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             <% }) %>
             <!-- //썸네일 유형 -->
