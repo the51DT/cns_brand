@@ -12,7 +12,7 @@
         position: relative;
         width: 100%;
         padding: calc(40 / 16 * 1rem);
-        background-image: url('/src/assets/image/sub/bg_profile_card_list.png');
+        background-image: url('#{$basePath}image/sub/bg_profile_card_list.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;

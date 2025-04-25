@@ -332,7 +332,7 @@
         display: block;
         width: 24px;
         height: 24px;
-        background-image: url(../image/icon/ico_menu_wt.svg);
+        background-image: url('#{$basePath}/image/icon/ico_menu_wt.svg');
     }
     .guide-header__wrap .navi ul {
         display: none;
@@ -399,7 +399,7 @@
         vertical-align: middle;
         width: 16px;
         height: 16px;
-        background: url('/src/assets/image/icon/ico_arrow_down.png') no-repeat center;
+        background: url('#{$basePath}image/icon/ico_arrow_down.png') no-repeat center;
         background-size: contain;
     }
     .lnb_list {

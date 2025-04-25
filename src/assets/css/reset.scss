@@ -2,63 +2,63 @@
 	font-family: 'Pretendard';
 	font-weight: 900;
 	font-display: swap;
-	src: local('Pretendard Black'), url(/assets/font/Pretendard-Black.woff2) format('woff2'), url(/assets/font/Pretendard-Black.woff) format('woff');
+	src: local('Pretendard Black'), url(#{$basePathAssets}font/Pretendard-Black.woff2) format('woff2'), url(#{$basePathAssets}font/Pretendard-Black.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 800;
 	font-display: swap;
-	src: local('Pretendard ExtraBold'), url(/assets/font/Pretendard-ExtraBold.woff2) format('woff2'), url(/assets/font/Pretendard-ExtraBold.woff) format('woff');
+	src: local('Pretendard ExtraBold'), url(#{$basePathAssets}font/Pretendard-ExtraBold.woff2) format('woff2'), url(#{$basePathAssets}font/Pretendard-ExtraBold.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 700;
 	font-display: swap;
-	src: local('Pretendard Bold'), url(/assets/font/Pretendard-Bold.woff2) format('woff2'), url(/assets/font/Pretendard-Bold.woff) format('woff');
+	src: local('Pretendard Bold'), url(#{$basePathAssets}font/Pretendard-Bold.woff2) format('woff2'), url(#{$basePathAssets}font/Pretendard-Bold.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 600;
 	font-display: swap;
-	src: local('Pretendard SemiBold'), url(/assets/font/Pretendard-SemiBold.woff2) format('woff2'), url(/assets/font/Pretendard-SemiBold.woff) format('woff');
+	src: local('Pretendard SemiBold'), url(#{$basePathAssets}font/Pretendard-SemiBold.woff2) format('woff2'), url(#{$basePathAssets}font/Pretendard-SemiBold.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 500;
 	font-display: swap;
-	src: local('Pretendard Medium'), url(/assets/font/Pretendard-Medium.woff2) format('woff2'), url(/assets/font/Pretendard-Medium.woff) format('woff');
+	src: local('Pretendard Medium'), url(#{$basePathAssets}font/Pretendard-Medium.woff2) format('woff2'), url(#{$basePathAssets}font/Pretendard-Medium.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 400;
 	font-display: swap;
-	src: local('Pretendard Regular'), url(/assets/font/Pretendard-Regular.woff2) format('woff2'), url(/assets/font/Pretendard-Regular.woff) format('woff');
+	src: local('Pretendard Regular'), url(#{$basePathAssets}font/Pretendard-Regular.woff2) format('woff2'), url(#{$basePathAssets}font/Pretendard-Regular.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 300;
 	font-display: swap;
-	src: local('Pretendard Light'), url(/assets/font/Pretendard-Light.woff2) format('woff2'), url(/assets/font/Pretendard-Light.woff) format('woff');
+	src: local('Pretendard Light'), url(#{$basePathAssets}font/Pretendard-Light.woff2) format('woff2'), url(#{$basePathAssets}font/Pretendard-Light.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 200;
 	font-display: swap;
-	src: local('Pretendard ExtraLight'), url(/assets/font/Pretendard-ExtraLight.woff2) format('woff2'), url(/assets/font/Pretendard-ExtraLight.woff) format('woff');
+	src: local('Pretendard ExtraLight'), url(#{$basePathAssets}font/Pretendard-ExtraLight.woff2) format('woff2'), url(#{$basePathAssets}font/Pretendard-ExtraLight.woff) format('woff');
 }
 
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 100;
 	font-display: swap;
-	src: local('Pretendard Thin'), url(/assets/font/Pretendard-Thin.woff2) format('woff2'), url(/assets/font/Pretendard-Thin.woff) format('woff');
+	src: local('Pretendard Thin'), url(#{$basePathAssets}font/Pretendard-Thin.woff2) format('woff2'), url(#{$basePathAssets}font/Pretendard-Thin.woff) format('woff');
 }
 
 

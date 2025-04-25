@@ -103,7 +103,7 @@
 .modal .modal__close .btn {
     width: calc(24 / 16 * 1rem);
     height: calc(24 / 16 * 1rem);
-    background: url("/src/assets/image/icon/icon-close-bl32.svg") no-repeat right center / contain;
+    background: url("#{$basePath}image/icon/icon-close-bl32.svg") no-repeat right center / contain;
 }
 .modal .modal__dim {
     position: absolute;

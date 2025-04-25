@@ -13,18 +13,18 @@
     --header-logo-wh-display: none;
     --header-icon-bl-display: inline-flex;
     --header-icon-wh-display: none;
-    --header-search-ico: url("/src/assets/image/icon/icon_search_bl40.svg"); // 임시로 bl24, wh40 적용
-    --header-search-close-ico: url("/src/assets/image/icon/icon-close-bl24.svg"); // 임시로 bl24, wh40 적용
-    --header-lang-ico: url("/src/assets/image/icon/icon_lang_bl40.svg"); // 임시로 bl24, wh40 적용
-    --header-close-ico: url("/src/assets/image/icon/icon-close-bl40.svg");
+    --header-search-ico: url("#{$basePath}image/icon/icon_search_bl40.svg"); // 임시로 bl24, wh40 적용
+    --header-search-close-ico: url("#{$basePath}image/icon/icon-close-bl24.svg"); // 임시로 bl24, wh40 적용
+    --header-lang-ico: url("#{$basePath}image/icon/icon_lang_bl40.svg"); // 임시로 bl24, wh40 적용
+    --header-close-ico: url("#{$basePath}image/icon/icon-close-bl40.svg");
     --footer-bg: var(--colorCM-mode1-background-background-default10);
     --footer-font-color: #828282;
     --footer-font-color-primary: var(--colorCM-mode1-text-text-on-bg);
     --footer-family-site-dropdown-bg : #262626;
-    --footer-family-site-dropdown-icon: url("/src/assets/image/icon/icon-dropdown-gray16.svg");
+    --footer-family-site-dropdown-icon: url("#{$basePath}image/icon/icon-dropdown-gray16.svg");
     @media #{$min1280} {
-        --header-search-ico: url("/src/assets/image/icon/icon_search_bl24.svg");
-        --header-lang-ico: url("/src/assets/image/icon/icon_lang_bl24.svg");
+        --header-search-ico: url("#{$basePath}image/icon/icon_search_bl24.svg");
+        --header-lang-ico: url("#{$basePath}image/icon/icon_lang_bl24.svg");
     }
 }
 body {
@@ -44,9 +44,9 @@ body {
         --header-icon-wh-display: inline-flex;
         --header-logo-bl-display: none;
         --header-logo-wh-display: block;
-        --header-search-ico: url("/src/assets/image/icon/icon_search_wh40.svg");
+        --header-search-ico: url("#{$basePath}image/icon/icon_search_wh40.svg");
         @media #{$min1280} {
-            --header-search-ico: url("/src/assets/image/icon/ico_search.svg");
+            --header-search-ico: url("#{$basePath}image/icon/ico_search.svg");
         }
         .header {
             // gnb 펼쳐졌을 경우 스타일 변수 변경
@@ -535,13 +535,13 @@ body {
                     width: calc(24 / 16 * 1rem);
                     height: calc(24 / 16 * 1rem);
                     &--ko {
-                        background: url("/src/assets/image/icon/icon-lang-ko-bl24.svg") no-repeat center center / contain;
+                        background: url("#{$basePath}image/icon/icon-lang-ko-bl24.svg") no-repeat center center / contain;
                     }
                     &--global {
-                        background: url("/src/assets/image/icon/icon-lang-global-bl24.svg") no-repeat center center / contain;
+                        background: url("#{$basePath}image/icon/icon-lang-global-bl24.svg") no-repeat center center / contain;
                     }
                     &--jp {
-                        background: url("/src/assets/image/icon/icon-lang-jp-bl24.svg") no-repeat center center / contain;
+                        background: url("#{$basePath}image/icon/icon-lang-jp-bl24.svg") no-repeat center center / contain;
                     }
                 }
             }
@@ -571,7 +571,7 @@ body {
             display: block;
             width: 100%;
             height: 100%;
-            background: url("/src/assets/image/icon/icon-hamburger-menu_bl40.svg") no-repeat center center / contain;
+            background: url("#{$basePath}image/icon/icon-hamburger-menu_bl40.svg") no-repeat center center / contain;
             @media #{$min1280} {
                 display: none;
             }
@@ -644,7 +644,7 @@ body {
                             transform: translateY(-50%);
                             width: calc(20 / 16 * 1rem);
                             height: calc(20 / 16 * 1rem);
-                            background: url("/src/assets/image/icon/icon-arrow-down-bl20.svg") no-repeat center center / contain;
+                            background: url("#{$basePath}image/icon/icon-arrow-down-bl20.svg") no-repeat center center / contain;
                         }
                         &.mo-navy-list--no-ico {
                             &::after {
@@ -656,7 +656,7 @@ body {
                         & > a {
                             --header-font-color: var(--colorCM-mode1-primary-primary-enabled);
                             &::after {
-                                background: url("/src/assets/image/icon/icon-arrow-up-bl20.svg") no-repeat center center / contain;
+                                background: url("#{$basePath}image/icon/icon-arrow-up-bl20.svg") no-repeat center center / contain;
                             }
                         }
                         .gnb-sub__wrap {
@@ -778,9 +778,9 @@ body {
             --header-logo-wh-display: none;
             --header-icon-bl-display: inline-flex;
             --header-icon-wh-display: none;
-            --header-search-ico: url("/src/assets/image/icon/icon_search_bl40.svg");
+            --header-search-ico: url("#{$basePath}image/icon/icon_search_bl40.svg");
             @media #{$min1280} {
-                --header-search-ico: url("/src/assets/image/icon/icon_search_bl24.svg");
+                --header-search-ico: url("#{$basePath}image/icon/icon_search_bl24.svg");
             }
         }
         .dim {
@@ -805,9 +805,9 @@ body {
         --header-icon-wh-display: inline-flex;
         --header-logo-bl-display: none;
         --header-logo-wh-display: block;
-        --header-search-ico: url("/src/assets/image/icon/icon_search_wh40.svg");
+        --header-search-ico: url("#{$basePath}image/icon/icon_search_wh40.svg");
         @media #{$min1280} {
-            --header-search-ico: url("/src/assets/image/icon/ico_search.svg");
+            --header-search-ico: url("#{$basePath}image/icon/ico_search.svg");
         }
     }
     &.is-fixed {
@@ -845,11 +845,11 @@ body {
             .btn {
                 width: calc(40 / 16 * 1rem);
                 height: calc(40 / 16 * 1rem);
-                background: url("/src/assets/image/icon/icon-close-bl40.svg") no-repeat center center / contain;
+                background: url("#{$basePath}image/icon/icon-close-bl40.svg") no-repeat center center / contain;
                 @media #{$min1280} {
                     width: calc(24 / 16 * 1rem);
                     height: calc(24 / 16 * 1rem);
-                    background: url("/src/assets/image/icon/icon-close-bl24.svg") no-repeat center center / contain;
+                    background: url("#{$basePath}image/icon/icon-close-bl24.svg") no-repeat center center / contain;
                 }
             }
         }
@@ -1157,7 +1157,7 @@ body {
     &.type-dark {
         --footer-bg: var(--colorCM-mode1-background-background-default10);
         --footer-font-color: var(--colorCM-mode1-text-text-on-bg);
-        --footer-family-site-dropdown-icon: url('/src/assets/image/icon/icon-plus-wh16.svg');
+        --footer-family-site-dropdown-icon: url('#{$basePath}image/icon/icon-plus-wh16.svg');
         --footer-family-site-dropdown-bg : var(--colorCM-mode1-fill-fill-default10);
 
         background: var(--footer-bg);
@@ -1197,7 +1197,7 @@ body {
     &.type-transparent-wh {
         --footer-bg: transparent;
         --footer-font-color: var(--colorCM-mode1-text-text-on-bg);
-        --footer-family-site-dropdown-icon: url('/src/assets/image/icon/icon-plus-wh16.svg');
+        --footer-family-site-dropdown-icon: url('#{$basePath}image/icon/icon-plus-wh16.svg');
         --footer-family-site-dropdown-bg : var(--colorCM-mode1-fill-fill-default10);
 
         background: var(--footer-bg);

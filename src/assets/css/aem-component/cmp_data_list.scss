@@ -78,22 +78,22 @@
             height: calc(72 / 16 * 1rem);
         }
         &.data-list-download {
-            background-image: url(/src/assets/image/icon/icon_data_list_download_mo.svg);
+            background-image: url("#{$basePath}image/icon/icon_data_list_download_mo.svg");
             @media #{$min720} {
-                background-image: url(/src/assets/image/icon/icon_data_list_download.svg);
+                background-image: url("#{$basePath}image/icon/icon_data_list_download.svg");
             }
         }
         &.data-list-link {
-            background-image: url(/src/assets/image/icon/icon_data_list_link_mo.svg);
+            background-image: url("#{$basePath}image/icon/icon_data_list_link_mo.svg");
             @media #{$min720} {
-                background-image: url(/src/assets/image/icon/icon_data_list_link.svg);
+                background-image: url("#{$basePath}image/icon/icon_data_list_link.svg");
             }
         }
         &.data-list-video {
-            background-image: url(/src/assets/image/icon/icon_data_list_video_mo.svg);
+            background-image: url("#{$basePath}image/icon/icon_data_list_video_mo.svg");
             background-position: center left 45%;
             @media #{$min720} {
-                background-image: url(/src/assets/image/icon/icon_data_list_video.svg);
+                background-image: url("#{$basePath}image/icon/icon_data_list_video.svg");
             }
         }
     }

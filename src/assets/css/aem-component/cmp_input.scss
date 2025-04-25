@@ -292,16 +292,16 @@
             height: calc(24 / 16 * 1rem);
             border: none;
             background-color: transparent;
-            background-image: url(../../image/icon/ico_checkbox_default.svg);
+            background-image: url("#{$basePath}image/icon/ico_checkbox_default.svg");
             background-size: cover;
             background-position: center;
             &:checked {
-                background-image: url(../../image/icon/ico_checkbox_checked.svg);
+                background-image: url("#{$basePath}image/icon/ico_checkbox_checked.svg");
             }
             &:disabled {
-                background-image: url(../../image/icon/ico_checkbox_disabled.svg);
+                background-image: url("#{$basePath}image/icon/ico_checkbox_disabled.svg");
                 &:checked {
-                    background-image: url(../../image/icon/ico_checkbox_checked.svg);
+                    background-image: url("#{$basePath}image/icon/ico_checkbox_checked.svg");
                     opacity: 0.4;
                 }
             }
@@ -369,7 +369,7 @@
                 width: 100%;
                 min-width: calc(20 / 16 * 1rem);
                 min-height: calc(20 / 16 * 1rem);
-                background-image: url(../../image/icon/icon_arrow_down.svg);
+                background-image: url("#{$basePath}image/icon/icon_arrow_down.svg");
                 background-repeat: no-repeat;
                 background-position: right center;
                 text-align: left;
@@ -377,7 +377,7 @@
                     color: var(--colorGL-all-gray600);
                 }
                 &.is-active {
-                    background-image: url(../../image/icon/icon_arrow_up.svg);
+                    background-image: url("#{$basePath}image/icon/icon_arrow_up.svg");
                 }
             }
             .dropdown_list {
