@@ -35,9 +35,7 @@ $asset-paths: (
 .full-type-content__wrap {
     width: 100%;
     height: 100%;
-    @include image-path(sub, 'bg_future_pc');
-    background-repeat: no-repeat;
-    background-position: center bottom;
+    background: url('#{$basePath}image/sub/bg_future_pc.png') no-repeat center bottom;
     background-size: contain;
     background-attachment: fixed;
     .future-inner__wrap {

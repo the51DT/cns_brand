@@ -1,4 +1,4 @@
-<div class="cmp-wrap cmp-title__wrap">
+<div class="cmp-wrap cmp-title__wrap mb-<%- typeof marginbottom !== 'undefined' && marginbottom ? marginbottom : '0' %>">
     <% if (typeof title !== 'undefined' && title) { %>
         <% if (typeof title.subTitle !== 'undefined' && title.subTitle) { %>
             <div class="font-body-sm title-sub"><%- title.subTitle %></div>
