@@ -11,7 +11,7 @@
                 : 'https://placehold.co/5760x2160'; 
         %>
             <div class="cmp_imageitem <%= typeof item.typeClass !== 'undefined' ? item.typeClass : 'type-default' %>">
-                <div class="img-box">
+                <div class="img-box <%- item.imageRound === true && item.imageRound ? 'img-box--round' : ''%>">
                     <img src="<%= imgSrc %>" alt="이미지" />
                 </div>
                 <div class="text-info">

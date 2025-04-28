@@ -3,10 +3,15 @@
     flex-direction: column;
     .img-box {
         overflow: hidden;
+        &--round {
+            border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+            @media #{$min1280} {
+                border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+            }
+        }
         img {
             width: 100%;
             height: 100%;
-            border-radius: calc(16 / 16 * 1rem);
         }
     }
     .text-info {
@@ -108,6 +113,12 @@
                     width: 50%;
                     min-width: 50%;
                 }
+                &--round {
+                    border-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
+                    @media #{$min1280} {
+                        border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+                    }
+                }
                 img {
                     width: 100%;
                     height: auto;
@@ -162,6 +173,12 @@
                     width: 50%;
                     min-width: 50%;
                 }
+                &--round {
+                    border-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
+                    @media #{$min1280} {
+                        border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+                    }
+                }
                 img {
                     width: 100%;
                     height: auto;
@@ -207,7 +224,9 @@
                 }
                 .info-title {
                     width: 100%;
-                    max-width: 48%;
+                    @media #{$min1280} {
+                        max-width: 48%;
+                    }
                 }
                 .info-text {
                     flex: 1;
