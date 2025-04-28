@@ -58,7 +58,10 @@
     margin-left: calc(8 / 16 * 1rem);
 }
 .btn .btn__text + .btn__icon {
-    margin-left: calc(12 / 16 * 1rem);
+    margin-left: calc(4 / 16 * 1rem);
+    @media #{$min1280} {
+        margin-left: calc(8 / 16 * 1rem);
+    }
 }
 /* button style */
 /* .btn-primary */
