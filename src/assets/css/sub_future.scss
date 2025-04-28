@@ -82,11 +82,13 @@ $asset-paths: (
             position: sticky;
             top:0px;
             @media #{$tabletMini} {
-                position: relative;
-                top: initial;
+                position: fixed;
+                top: 0;
+                left: 0;
                 height: auto;
-                max-width: calc(484 / 16 * 1rem);
-                margin: rem(67) auto 0;
+                max-width: 100%;
+                padding: 0 calc(32 / 16 * 1rem);
+                margin: rem(130) auto 0;
             }
             .sub-title {
             }
@@ -104,8 +106,10 @@ $asset-paths: (
             //margin-top: calc(200 / 16 * 1rem);
             margin: rem(200) 0 rem(100);
 
-            @media #{$tabletMini} {                               
-                margin:rem(480) auto rem(140);
+            @media #{$tabletMini} {
+                position: relative;
+                z-index: 1;
+                margin:rem(826) auto rem(140);
             }
         }
     }
@@ -187,12 +191,13 @@ $asset-paths: (
     }
 
     &__inner {
-        transition: width 0.5s cubic-bezier(0.64, -0.02, 0.16, 1);
+        transition: width 0.8s cubic-bezier(0.64, -0.02, 0.16, 1);
     }
 
     &__text {
         display: inline-block;
-        transition: 0.7s cubic-bezier(0.64, -0.02, 0.16, 1);
+        transition-delay: .3s;
+        transition: 1s cubic-bezier(0.64, -0.02, 0.16, 1);
         transition-property: opacity, transform;
         padding: 0 rem(90) 0 rem(40);
         opacity: 0;

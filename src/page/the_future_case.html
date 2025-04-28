@@ -78,39 +78,80 @@
 <script>
     //버튼 스타일 스크립트
     const glideText = (() => {
-        const text = document.querySelector('.btn-glide');
-        if (!text) return;
+        const text = document.querySelector('.btn-glide')
+        if (!text) return
 
-        const textInner = text.querySelector('.btn-glide__inner');
-        const textInnerWidth = textInner.offsetWidth;
+        const textInner = text.querySelector('.btn-glide__inner')
+        const textInnerWidth = textInner.offsetWidth
 
         const init = () => {
-            textInner.style.width = `0px`;
-        };
+            textInner.style.width = `0px`
+
+            setTimeout(() => {
+                animate(true)
+            }, 500)
+        }
 
         const animate = (isVisible) => {
-            textInner.style.width = `${isVisible? textInnerWidth : 0}px`;
-            text.classList.toggle('btn-glide--active', isVisible);
-        };
+            textInner.style.width = `${isVisible? textInnerWidth : 0}px`
+            text.classList.toggle('btn-glide--active', isVisible)
+        }
 
-        init(); // 최초 초기화
+        init() // 실행
+    })
 
-        return { animate };
-    })();
+    //모바일화면에서의 패럴랙스 모션
+    function parallaxEffect() {
+        const futureContent = document.querySelector('.future-content')
+        const futureText = document.querySelector('.future-text')
 
-    /*header 높이에 따른 컨텐츠 요소 덜걱거림 보정*/
-    //1. 윈도우 로드 완료시, header 의 높이 측정, header에 fixed 스타일 부여
-    //2. header 의 높이 만큼 .the-future-case 에 padding-top: header.height 반영
-    //3. 스크롤 시, header의 높이만큼 스크롤이 지났다면 fixed 스타일 제거
+        if (!futureContent || !futureText) return
 
-    /*
-        조건	동작
-        스크롤 < 헤더 높이	헤더 원래 위치 (translateY(0))
-        스크롤 > 헤더 높이 + 아래로 스크롤	헤더 숨김 (translateY(-6.25rem))
-        스크롤 > 헤더 높이 + 위로 스크롤	헤더 보여짐 (translateY(0))
-    */
+        function handleScroll() {
+            // 모바일 화면 여부 확인 ($tabletMini 기준)
+            const isMobile = window.matchMedia('only screen and (max-width: 1023px)').matches
 
-    /*특정 높이(ex. header 의 높이만큼 지났을 때, btn btn-medium btn-primary 에 active 클래스 on)*/
+            if (isMobile) {
+                const rect = futureContent.getBoundingClientRect()
+                const windowHeight = window.innerHeight
+
+                const thresholdTop = windowHeight * 0.3
+                const thresholdBottom = windowHeight * 0.8
+
+                if (rect.top <= thresholdBottom && rect.top >= thresholdTop) {
+                    const ratio = (rect.top - thresholdTop) / (thresholdBottom - thresholdTop)
+
+                    futureText.style.opacity = ratio.toFixed(2)
+
+                    const translateY = 5 * (1 - ratio)
+                    futureText.style.transform = `translateY(${translateY}%)`
+
+                } else if (rect.top > thresholdBottom) {
+                    // 뷰포트 기준, 위에서 80% 지점보다 아래에 있으면 컨텐츠 보임
+                    futureText.style.opacity = 1
+                    futureText.style.transform = 'translateY(0%)'
+                } else if (rect.top < thresholdTop) {
+                    // 뷰포트 기준, 위에서 30% 지점보다 올라가면 완전히 숨기기
+                    futureText.style.opacity = 0
+                    futureText.style.transform = 'translateY(5%)'
+                }
+            } else {
+                // 모바일이 아닌 경우 항상 보이게 설정
+                futureText.removeAttribute('style')
+            }
+        }
+
+        function init() {
+            handleScroll()
+
+            // 스크롤 이벤트 리스너 등록
+            window.addEventListener('scroll', handleScroll)
+            window.addEventListener('resize', handleScroll)
+        }
+
+        init()
+    }
+
 
     // 헤더 높이 측정 함수
     const getElementHeight = (element) => {
@@ -119,13 +160,11 @@
 
     function setHeaderStyle() {
         const header = document.querySelector('.header')
-        const primaryBtn = document.querySelector('.btn-glide')
         const futureCaseContainer = document.querySelector('.the-future-case')
 
         const headerHeight = getElementHeight(header)
         let isHeaderHidden = false
         let lastScrollY = window.scrollY
-        let isAnimation = false
 
         // 스타일 설정 함수
         const setStyles = () => {
@@ -169,15 +208,6 @@
                 }
             }
             lastScrollY = scrollPosition
-
-            // 버튼 활성화/비활성화(필요시 사용)
-            if (scrollPosition >= headerHeight && !isAnimation) {
-                glideText.animate(true);
-                isAnimation = true;
-            } else if (scrollPosition < headerHeight && isAnimation) {
-                // glideText.animate(false);
-                // isAnimation = false;
-            }
         };
 
         // 초기화 함수
@@ -198,9 +228,10 @@
     }
 
 
-
     /*실행*/
     window.addEventListener('load', () => {
         setHeaderStyle()
+        glideText()
+        parallaxEffect()
     })
 </script>
