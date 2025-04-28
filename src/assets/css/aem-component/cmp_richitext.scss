@@ -1,75 +1,5 @@
 /* 약관 관련 */
 .cmp-richtext {
-    h1 {
-        font-size: calc(var(--typo-mo-size-head-xl) / 16 * 1rem);
-        line-height: calc(var(--typo-mo-line-height-head-xl) / 16 * 1rem);
-        letter-spacing: calc(0.05 / 16 * 1rem);
-        font-weight: 400;
-        @media #{$min720} {
-            font-size: calc(var(--typo-pc-size-head-xl) / 16 * 1rem);
-            line-height: calc(var(--typo-pc-line-height-head-xl) / 16 * 1rem);
-        }
-    }
-    h2 {
-        font-size: calc(var(--typo-mo-size-head-lg) / 16 * 1rem);
-        line-height: calc(var(--typo-mo-line-height-head-lg) / 16 * 1rem);
-        letter-spacing: calc(0.05 / 16 * 1rem);
-        font-weight: 400;
-        @media #{$min720} {
-            font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
-            line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
-        }
-    }
-    h3 {
-        font-size: calc(var(--typo-mo-size-head-md) / 16 * 1rem);
-        line-height: calc(var(--typo-mo-line-height-head-md) / 16 * 1rem);
-        letter-spacing: calc(0.05 / 16 * 1rem);
-        font-weight: 400;
-        @media #{$min720} {
-            font-size: calc(var(--typo-pc-size-head-md) / 16 * 1rem);
-            line-height: calc(var(--typo-pc-line-height-head-md) / 16 * 1rem);
-        }
-    }
-    h4 {
-        font-size: calc(var(--typo-mo-size-head-sm) / 16 * 1rem);
-        line-height: calc(var(--typo-mo-line-height-head-sm) / 16 * 1rem);
-        letter-spacing: calc(0.05 / 16 * 1rem);
-        font-weight: 400;
-        @media #{$min720} {
-            font-size: calc(var(--typo-pc-size-head-sm) / 16 * 1rem);
-            line-height: calc(var(--typo-pc-line-height-head-sm) / 16 * 1rem);
-        }
-    }
-    h5 {
-        font-size: calc(var(--typo-mo-size-body-lg) / 16 * 1rem);
-        line-height: calc(var(--typo-mo-line-height-body-lg) / 16 * 1rem);
-        letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
-        font-weight: 400;
-        @media #{$min720} {
-            font-size: calc(var(--typo-pc-size-body-lg) / 16 * 1rem);
-            line-height: calc(var(--typo-pc-line-height-body-lg) / 16 * 1rem);
-        }
-    }
-    h6 {
-        font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);
-        line-height: calc(var(--typo-mo-line-height-body-md) / 16 * 1rem);
-        letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
-        font-weight: 400;
-        @media #{$min720} {
-            font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
-            line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
-        }
-    }
-    strong {
-        font-size: calc(var(--typo-mo-size-body-xl) / 16 * 1rem);
-        line-height: calc(var(--typo-mo-line-height-body-xl) / 16 * 1rem);
-        letter-spacing: calc(0.2 / 16 * 1rem);
-        font-weight: 600;
-        @media #{$min720} {
-            font-size: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
-            line-height: calc(var(--typo-pc-line-height-body-xl) / 16 * 1rem);
-        }
-    }
     b {
         font-size: inherit;
         line-height: inherit;
@@ -86,20 +16,7 @@
 
     }
     a {
-        font-size: calc(18 / 16 * 1rem);
-        line-height: calc(26 / 16 * 1rem);
-        font-weight: 500;
-        white-space: nowrap;
-        color: var(--colorCM-mode1-text-text-default);
-        font-size: calc(var(--typo-mo-size-caption-sm-ui) / 16 * 1rem);
-        line-height: calc(var(--typo-mo-line-height-caption-sm-ui) / 16 * 1rem);
-        letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
-        font-weight: 400;
         border-bottom: calc(1 / 16 * 1rem) solid var(--text-text-default);
-        @media #{$min720} {
-            font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
-            line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
-        }
         &[target="_blank"] {
             border-bottom: 0;
             padding-right: calc(20 / 16 * 1rem);
@@ -113,28 +30,12 @@
             }
         }
     }
-    p {
-        color: var(--colorCM-mode1-text-text-secondary);
-        font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
-        line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
-        letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
-        font-weight: 400;
-        @media #{$min720} {
-            font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
-            line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
-        }
-    }
     blockquote {
         text-decoration: underline;
     }
     ul {
         li {
             position: relative;
-            color: var(--colorCM-mode1-text-text-tertiary);
-            font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
-            line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
-            letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
-            font-weight: 400;
             padding-left: calc(10 / 16 * 1rem);
             &::before {
                 content: '';
@@ -147,24 +48,9 @@
                 top: 10px;
                 background-color: var(--colorCM-mode1-fill-fill-default5);
             }
-            @media #{$min720} {
-                font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
-                line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
-            }
         }
     }
     ol {
         list-style-type: decimal;
-        li {
-            color: var(--colorCM-mode1-text-text-secondary);
-            font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
-            line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
-            letter-spacing: calc(0.05 / 16 * 1rem);
-            font-weight: 400;
-            @media #{$min720} {
-                font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
-                line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
-            }
-        }
     }
 }
