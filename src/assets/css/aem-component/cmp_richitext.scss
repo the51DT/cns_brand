@@ -102,6 +102,15 @@
         }
         &[target="_blank"] {
             border-bottom: 0;
+            padding-right: calc(20 / 16 * 1rem);
+            background: url("#{$basePath}image/icon/icon_arrow_right_bl24.svg");
+            background-repeat: no-repeat;
+            background-position: 100% center;
+            background-size: calc(16 / 16 * 1rem) calc(16 / 16 * 1rem);
+            @media #{$min720} {
+                padding-right: calc(32 / 16 * 1rem);
+                background-size: calc(24 / 16 * 1rem) calc(24 / 16 * 1rem);
+            }
         }
     }
     p {
