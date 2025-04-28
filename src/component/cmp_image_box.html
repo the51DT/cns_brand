@@ -1,5 +1,5 @@
 <!-- 이미지 컴포넌트 -->
-<div class="cmp-wrap cmp-image-box">
+<div class="cmp-wrap cmp-image-box mb-<%- typeof marginbottom !== 'undefined' && marginbottom ? marginbottom : 'default' %>">
     <% 
         const data=(typeof jsonData !=='undefined' ? jsonData : []); 
         const isRound = typeof round !== 'undefined' ? round : false; 

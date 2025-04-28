@@ -48,6 +48,11 @@
                                 round: true // .img-box 에 이중클래스 .img-box--round 적용 (이미지에 border-radius 적용  (pc-32 / mo-16))
                             </p>
                         </li>
+                        <li>
+                            <p>
+                                marginbottom: 하단 간격 (default[120 / 64], small[32 / 24])
+                            </p>
+                        </li>
                     </ul>
 
                     <p class="guide-title-h3 mt-10">Image Box Component type 1. pc/mo 이미지가 같은 경우</p>
@@ -62,6 +67,7 @@
                             alt : '유통 산업 성장의 Key 최대 효율을 당성하는 성공 DX',
                             addClass: 'test2',
                             round: true,
+                            marginbottom: 'default',
                         }))%>
                     </div>
 
@@ -83,7 +89,8 @@
                         <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
                             jsonData : iamgeData4,
                             alt : '유통 산업 성장의 Key 최대 효율을 당성하는 성공 DX',
-                            addClass: 'img-box__only-pc'
+                            addClass: 'img-box__only-pc',
+                            marginbottom: 'small',
                         }))%>
                     </div>
 
