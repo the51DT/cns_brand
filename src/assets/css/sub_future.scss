@@ -188,11 +188,15 @@ $asset-paths: (
 
     &__inner {
         transition: width 0.5s cubic-bezier(0.64, -0.02, 0.16, 1);
-        overflow: hidden;
     }
 
     &__text {
+        display: inline-block;
+        transition: 0.7s cubic-bezier(0.64, -0.02, 0.16, 1);
+        transition-property: opacity, transform;
         padding: 0 rem(90) 0 rem(40);
+        opacity: 0;
+        transform: translateY(70%);
     }
 
     &__icon {
@@ -211,6 +215,12 @@ $asset-paths: (
         border: 6px solid var(--colorCM-mode1-fill-fill-default10);
     }
 
+    &.btn-glide--active {
+        .btn-glide__text {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
 
 }
 
