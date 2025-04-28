@@ -82,7 +82,8 @@
         if (!text) return
 
         const textInner = text.querySelector('.btn-glide__inner')
-        const textInnerWidth = textInner.offsetWidth
+        const textInnerText = textInner.querySelector('.btn-glide__text')
+        const textInnerWidth = textInnerText.offsetWidth
 
         const init = () => {
             textInner.style.width = `0px`
