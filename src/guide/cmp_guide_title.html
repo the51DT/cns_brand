@@ -17,15 +17,34 @@
             <div class="flex justify-between lnb-type">
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
-                    <p class="guide-title-h3">Title</p>                    
+                    <p class="guide-title-h3">Title</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>
+                                title: {
+                                    <ul class="pl-3">
+                                        <li>text : 텍스트</li>
+                                        <li>subTitle : 타이틀 상단 텍스트</li>
+                                        <li>size : font-size (typograph.scss 참고)</li>
+                                        <li>class : font-weight (tailwind-all.scss 참고)</li>
+                                    </ul>
+                                }
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                marginbottom: 하단 간격 (default[40 / 24]), 값이 없을 경우 mb-0 적용
+                            </p>
+                        </li>
+                    </ul>
                     <div class="cmp-exsample__wrap mt-10">
                         <!-- Title -->
                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                            title:
-                                {
+                            title: {
                                     text: '타이틀 기본 사이즈 lg',
                                     subTitle: 'sub-title',
                                 },
+                            marginbottom: 'default',
                         })) %>
                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                             title: {
@@ -37,8 +56,30 @@
                         <!-- //Title -->
                     </div>
 
-                    <p class="guide-title-h3 mt-10">Teaser Title</p>                    
-                    <div class="cmp-exsample__wrap mt-3">
+                    <p class="guide-title-h3 mt-32">Teaser Title</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>
+                                title: {
+                            <ul class="pl-3">
+                                <li>text : 텍스트</li>
+                                <li>subTitle : 타이틀 상단 텍스트</li>
+                                <li>size : font-size (typograph.scss 참고)</li>
+                                <li>class : font-weight (tailwind-all.scss 참고)</li>
+                            </ul>
+                            }
+                            </p>
+                        </li>
+                        <li>
+                            <p>textCon : 텍스트</p>
+                        </li>
+                        <li>
+                            <p>
+                                marginbottom: 하단 간격 (default[48 / 24], large[80 / 44]), 값이 없을 경우 mb-0 적용
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="cmp-exsample__wrap mt-10">
                         <!-- Teaser Title -->
                         <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
                             title: {
@@ -47,7 +88,17 @@
                             textCon: [
                                 '첫번째 내용 첫번째 내용<br>줄바꿈',
                                 '두번째 내용 두번째 내용 두번째 내용 두번째 내용',
-                            ]
+                            ],
+                            marginbottom: 'large',
+                        })) %>                        
+                        <!-- //Teaser Title -->
+                        <!-- Teaser Title -->
+                        <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                            title: {
+                                text: '티저타이틀 타이틀 영역 기본 사이즈 sm',
+                                subTitle: '티저타이틀 subTitle'
+                            },
+                            marginbottom: 'default',
                         })) %>                        
                         <!-- //Teaser Title -->
                     </div>
