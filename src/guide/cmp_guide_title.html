@@ -25,7 +25,7 @@
                                 <li>text : 텍스트</li>
                                 <li>subTitle : 타이틀 상단 텍스트</li>
                                 <li>size : font-size (typograph.scss 참고)</li>
-                                <li>class : font-weight (tailwind-all.scss 참고)</li>
+                                <li>class : font-weight, color (스타일 가이드, tailwind-all.scss 참고)</li>
                             </ul>
                         </li>
                         <li>
@@ -45,9 +45,9 @@
                         })) %>
                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                             title: {
-                                text: 'size md 타이틀<br>font-light 클래스',
+                                text: 'size md 타이틀<br>colorcm-primary font-light 클래스',
                                 size: 'md',
-                                class: 'font-light',
+                                class: 'colorcm-primary font-light',
                             },
                         })) %>
                         <!-- //Title -->
@@ -61,7 +61,7 @@
                                 <li>text : 텍스트</li>
                                 <li>subTitle : 타이틀 상단 텍스트</li>
                                 <li>size : font-size (typograph.scss 참고)</li>
-                                <li>class : font-weight (tailwind-all.scss 참고)</li>
+                                <li>class : font-weight, color (스타일 가이드, tailwind-all.scss 참고)</li>
                             </ul>
                         </li>
                         <li>
@@ -89,8 +89,9 @@
                         <!-- Teaser Title -->
                         <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
                             title: {
-                                text: '티저타이틀 타이틀 영역 기본 사이즈 sm',
-                                subTitle: '티저타이틀 subTitle'
+                                text: '티저타이틀 타이틀 영역 기본 사이즈 sm colorcm-primary',
+                                subTitle: '티저타이틀 subTitle',
+                                class: 'colorcm-primary'
                             },
                             marginbottom: 'default',
                         })) %>                        
