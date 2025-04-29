@@ -31,7 +31,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: calc(4 / 16 * 1rem); */
+    // gap: calc(12 / 16 * 1rem);
     font-family: var(--typo-pc-family-head);
     /* margin: 0 auto; */
     text-align: center;
@@ -39,6 +39,12 @@
     white-space: nowrap;
     border-radius: calc(100 / 16 * 1rem);
     box-sizing: border-box;
+    &:has(.btn__icon + .btn__text) {
+        padding-left: calc(16 / 16 * 1rem);
+    }
+    &:has(.btn__text + .btn__icon) {
+        padding-right: calc(16 / 16 * 1rem);
+    }
 }
 .button__wrap.align-left .btn, 
 .button__wrap.align-right .btn {
@@ -80,7 +86,7 @@
 
 /* .btn-secondary */
 .btn.btn-secondary {
-    background-color: var(--colorCM-mode1-fill-fill-default0);
+    // background-color: var(--colorCM-mode1-fill-fill-default0);
     color: var(--colorCM-mode1-text-text-default);
     border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default10);
 }
