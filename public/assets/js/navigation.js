@@ -42,7 +42,7 @@ const mainNavigation = (selector) => {
                     const subDepthMenus = navy.querySelectorAll('.sub-menu-list li');                    
                     subDepthMenus.forEach(menu => {
                         menu.addEventListener('click', (event) => {
-                            event.preventDefault();
+                            // event.preventDefault();
                             const activeItem = document.querySelector('.sub-menu-list > li.is-active');
                             if (activeItem) {
                                 activeItem.classList.remove('is-active');
