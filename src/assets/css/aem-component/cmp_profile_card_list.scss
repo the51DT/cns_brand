@@ -1,52 +1,70 @@
 .cmp-profile_card_list__wrap {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $gap-margin;
-    @media #{$tablet} {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    @media #{$phone} {
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: calc(13 / 16 * 1rem);
+    @media #{$min1280} {
+        row-gap: calc(40 / 16 * 1rem);
+        column-gap: calc(20 / 16 * 1rem);
+        grid-template-columns: repeat(3, 1fr);
     }
     .cmp-profile_card {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 100%;
-        padding: calc(40 / 16 * 1rem);
-        background-image: url('#{$basePath}image/sub/bg_profile_card_list.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        aspect-ratio: 428 / 377;
+        padding: calc(24 / 16 * 1rem) 0 0 calc(24 / 16 * 1rem);
+        border-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
+        // aspect-ratio: 428 / 377;
+        background: var(--colorCM-mode1-fill-fill-default2);
+        overflow: hidden;
+        @media #{$min1280} {
+            padding: calc(40 / 16 * 1rem) 0 0 calc(40 / 16 * 1rem);
+            border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+        }
         .item_text {
             &_wrap {
-                position: relative;
+                // position: relative;
+                position: absolute;
+                top: calc(24 / 16 * 1rem);
+                left: calc(24 / 16 * 1rem);
                 display: flex;
                 flex-direction: column;
-                gap: calc(24 / 16 * 1rem);
+                gap: calc(16 / 16 * 1rem);
+                max-width: calc(100% - calc(48 / 16 * 1rem));
+                width: 100%;
                 z-index: 2;
+                @media #{$min1280} {
+                    top: calc(40 / 16 * 1rem);
+                    left: calc(40 / 16 * 1rem);
+                    max-width: calc(100% - calc(270 / 16 * 1rem));
+                }
             }
             &_title {
-                font-weight: 700;
-                &_wrap {
-                    height: calc(72 / 16 * 1rem);
+                color: #1A1A1A;
+                &_sub {
+                    display: block;
                 }
             }
             &_detail {
+                color: #1A1A1A;
                 word-break: keep-all;
-                letter-spacing: var(--letter-spacing-small, -0.2px); // letter-spacing 임시 적용
-                &_wrap {
-                    width: 44.54022988506%;
-                }
             }
         }
         .item_img {
             &_wrap {
-                position: absolute;
-                bottom: 0;
-                right: calc(22 / 16 * 1rem); // 디자인 이미지마다 간격이 달라서 디자인 수정요청했음
-                width: 63.08411214953%;
+                // position: absolute;
+                // bottom: 0;
+                // right: calc(22 / 16 * 1rem); // 디자인 이미지마다 간격이 달라서 디자인 수정요청했음
+                // width: 63.08411214953%;
+                padding-top: calc(130 / 16 * 1rem);
+                margin-left: auto;
+                margin-right: 0;
                 max-width: calc(270 / 16 * 1rem);
                 z-index: 1;
+                @media #{$min1280} {
+                    padding-top: calc(60 / 16 * 1rem);
+                }
             }
         }
     }

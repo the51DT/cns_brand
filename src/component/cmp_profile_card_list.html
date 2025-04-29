@@ -10,12 +10,12 @@
             <div class="cmp-profile_card">
                 <div class="item_text_wrap">
                     <div class="item_text_title_wrap">
-                        <p class="item_text_title font-body-xl"><%- item.title %></p>
-                        <%- typeof item.subtitle !== 'undefined' ? `<p class="item_text_title_sub font-body-md">${item.subtitle}</p>` : `` %>
+                        <span class="item_text_title font-head-md-mode font-medium"><%- item.title %></span>
                     </div>
-                    <% if(typeof item.detail !== 'undefined') { %>
+                    <% if(typeof item.detail !== 'undefined' || typeof item.subtitle !=='undefined') { %>
                         <div class="item_text_detail_wrap">
-                            <p class="item_text_detail font-body-sm"><%- item.detail %></p>
+                            <%- typeof item.subtitle !=='undefined' ? `<span class="item_text_title_sub font-body-md">${item.subtitle}</span>` : `` %>
+                            <span class="item_text_detail font-body-md"><%- item.detail %></span>
                         </div>
                     <% } %>
                 </div>
@@ -31,11 +31,11 @@
             <div class="cmp-profile_card">
                 <div class="item_text_wrap">
                     <div class="item_text_title_wrap">
-                        <p class="item_text_title font-body-xl">현신균 이사</p>
-                        <p class="item_text_title_sub font-body-md">이사회 의장</p>
+                        <span class="item_text_title font-head-md-mode font-medium">현신균 이사</span>
                     </div>
                     <div class="item_text_detail_wrap">
-                        <p class="item_text_detail font-body-sm">(주)엘지씨엔에스 사장</p>
+                        <span class="item_text_title_sub font-body-md">이사회 의장</span>
+                        <span class="item_text_detail font-body-md">(주)엘지씨엔에스 사장</span>
                     </div>
                 </div>
                 <div class="item_img_wrap">
