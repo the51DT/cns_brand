@@ -161,4 +161,7 @@ $fileType: "svg";
     &.icon-check-bl24{
         @include iconFile(14, 9.5, 'icon_check_bl24');
     }
+    &.icon-play-bl20 {
+        @include iconFile(20, 20, 'icon_play_bl20');
+    }
 }

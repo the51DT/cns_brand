@@ -3,40 +3,31 @@
     .button-item-grid {        
         display: grid;
         gap: $gap-margin;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-auto-rows: 1fr;
-    
-        @media #{$tablet} {
-            grid-template-columns: 1fr 1fr;
-        }
-        @media #{$phone} {
-            grid-template-columns: 1fr;
-        }
-        &.three-buttons {
-            @media #{$tablet} {
-                grid-template-columns: 1fr 1fr;
-            }
-            @media #{$tabletMini} {
-                grid-template-columns: 1fr;
-            }
+        @media #{$min1280}{
+            grid-template-columns: 1fr 1fr 1fr;
         }
     }
     .cmp_button_item {
-        background-color: #FAFAFA;
-        padding: calc(32 / 16 * 1rem);
-
-        &__text-box {
-            margin-bottom: calc(60 / 16 * 1rem);
-            .title {
-                font-weight: 700;
-            }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: calc(102 / 16 * 1rem);
+        padding: calc(24 / 16 * 1rem);
+        background-color: #F7F8F9;
+        border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+        @media #{$min1280}{
+            gap: calc(140 / 16 * 1rem);
+            padding: calc(48 / 16 * 1rem);
+            border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
         }
         .button__wrap {
-            .flex {
-                @media #{$phone} {
-                    width: 100%;
-                }
-            }
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            min-height: calc(160 / 16 * 1rem);
         }
     }
 }

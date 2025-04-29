@@ -10,20 +10,26 @@
         <% data.slice(0, itemLimit).forEach((item, i) => { %>
             <div class="cmp_button_item">
                 <div class="cmp_button_item__text-box">
-                    <p class="title font-body-xl"><%- item.title %></p>
+                    <p class="title font-head-md font-medium color-text-default"><%- item.title %></p>
                 </div>
                 <% if(typeof item.buttonName !== 'undefined' && item.buttonName) { %>
-                    <div class="button__wrap align-right">
+                    <div class="button__wrap">
                         <% if(item.buttonName && Array.isArray(item.buttonName)) { %>
                             <% item.buttonName.slice(0, 3).forEach((name, index) => { %>
-                                <button type="button" class="btn btn-medium btn-secondary <%- type == 'default' ? 'flex' : '' %>">
-                                    <% if(name) { %>
+                                <button type="button" class="btn btn-secondary btn-small <%- type == 'default' ? 'flex' : '' %>">
+                                    <!-- <% if(name) { %>
                                         <span class="btn__text"><%= name %></span>
                                     <% } %>
-                                    <% if (index >= 2) { %> <!-- 3번째 버튼부터 다른 아이콘 적용 -->
+                                    <% if (index >= 2) { %>
                                         <i class="btn__icon ico icon-pagination-next"></i> 
                                     <% } else { %>
                                         <i class="btn__icon ico icon-download-bl24"></i> 
+                                    <% } %> -->
+                                    <span class="btn__text"><%= name %></span>
+                                    <% if(name == '방송듣기') { %>
+                                        <i class="btn__icon ico icon-play-bl20"></i>
+                                    <% } else { %>
+                                        <i class="btn__icon ico icon-download-bl20"></i>
                                     <% } %>
                                 </button>
                             <% }) %>
@@ -31,10 +37,10 @@
                         <% } %>
                     </div>
                 <% } else { %>
-                    <div class="button__wrap align-right">
-                        <button type="button" class="btn btn-medium btn-secondary">
+                    <div class="button__wrap">
+                        <button type="button" class="btn btn-small btn-secondary">
                             <span class="btn__text">다운로드</span>
-                            <i class="btn__icon ico icon-download-bl24"></i>
+                            <i class="btn__icon ico icon-download-bl20"></i>
                         </button>
                     </div>
                 <% } %>
@@ -45,7 +51,7 @@
         <% for(let i = 0; i < itemLimit; i++) { %>
             <div class="cmp_button_item">
                 <div class="cmp_button_item__text-box">
-                    <p class="title font-body-xl">2022~2023<br>지속가능경영보고서</p>
+                    <p class="title font-head-md font-medium">2022~2023<br>지속가능경영보고서</p>
                 </div>
                 <div class="button__wrap align-right">
                     <button type="button" class="btn btn-medium btn-secondary">
