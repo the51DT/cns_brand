@@ -9,10 +9,10 @@ const mainNavigation = (selector) => {
     }
     navyLists.forEach(navy => {
         navy.addEventListener('mouseenter', () => {
-            const navyBtn = navy.querySelector('.type-full');
-            const subMenu = navy.querySelector('.gnb-sub__wrap');
-            const subMenuDrop = navy.querySelector('.gnb-sub__wrap--drop');
-            // 초기화
+            const navyBtn = navy.querySelector('.type-full'); // .navy-left .navy-list li
+            const subMenu = navy.querySelector('.gnb-sub__wrap'); // 2depth menu wrap
+            const subMenuDrop = navy.querySelector('.gnb-sub__wrap--drop'); // .navy-right .navy-list li 의 2depth menu wrap
+            // 초기화 : header, li 에 .is-active 제거, 높이값 0
             navyLists.forEach(item => {
                 item.closest('.header').classList.remove('is-active');
                 item.classList.remove('is-active');
@@ -27,14 +27,15 @@ const mainNavigation = (selector) => {
             //     activeMenu.classList.remove('is-active');
             // }
 
-            if (navyBtn && subMenu) {
+            if (navyBtn && subMenu) { // .navy-left
                 if (!navy.closest('.header').classList.contains('is-active')) {
                     navy.closest('.header').classList.add('is-active');
                 }
 
                 // navy.classList.add('is-active');
                 
-                console.log(subMenu)
+                // console.log(subMenu)
+                // 2depth menu높이값 계산
                 subMenuHeight = subMenu ? subMenu.scrollHeight : 0;
                 navy.closest('.header').style.setProperty('--gnb-bg-height', `${subMenuHeight + 80}px`);
                 
@@ -51,8 +52,8 @@ const mainNavigation = (selector) => {
                         });
                     });    
                 } 
-            } else if(subMenuDrop) {
-                console.log('test')
+            } else if(subMenuDrop) { // .navy-right
+                // console.log('test')
                 navy.closest('.header').classList.add('is-active');
                 navy.closest('.header').style.setProperty('--gnb-bg-height', 0);                    
                 navy.classList.add('is-active');
