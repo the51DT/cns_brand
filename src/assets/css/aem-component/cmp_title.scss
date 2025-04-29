@@ -8,4 +8,10 @@
     .title-sub {
         margin-bottom: calc(8 / 16 * 1rem);
     }
+    .title-sub-desc {
+        margin-top: calc(8 / 16 * 1rem);
+        @media #{$min1280} {
+            margin-top: calc(12 / 16 * 1rem);
+        }
+    }
 }

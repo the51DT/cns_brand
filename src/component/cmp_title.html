@@ -4,5 +4,8 @@
             <div class="font-body-sm title-sub"><%- title.subTitle %></div>
         <% } %>
         <div class="font-head-<%= typeof title.size !== 'undefined' ? title.size : 'lg' %> <%= typeof title.class !== 'undefined' ? title.class : '' %>"><%- title.text %></div>
+        <% if (typeof title.subDesc !=='undefined' && title.subDesc) { %>
+            <div class="font-body-sm title-sub-desc"><%- title.subDesc %></div>
+        <% } %>
     <% } %>
 </div>
