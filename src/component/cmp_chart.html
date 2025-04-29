@@ -14,14 +14,14 @@
                         <% series.forEach((series, index)=> { %>
                             <% if(typeof categoryBarColor === 'string') { %>
                                 <li>
-                                    <span class="chart-wrap__yAxis-series__text font-body-sm font-bold">
+                                    <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
                                         <%- series %>
                                     </span>
                                     <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor %>;--yAxis-series-target-val: <%- series %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
                                 </li>
                             <% } else if (typeof categoryBarColor === 'object') { %>
                                 <li>
-                                    <span class="chart-wrap__yAxis-series__text font-body-sm font-bold">
+                                    <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
                                         <%- series %>
                                     </span>
                                     <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor[index] %>;--yAxis-series-target-val: <%- series %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
@@ -34,7 +34,7 @@
                     <ul class="chart-wrap__yAxis-categories">
                         <% categories.forEach((categories) => { %>
                             <li>
-                                <span class="font-body-sm font-bold">
+                                <span class="font-body-sm color-text-default">
                                     <%- categories %>
                                 </span>
                             </li>

@@ -23,15 +23,34 @@
                             <p class="guide-title-h3 mt-10">Chart > type: columnChart</p>
                             <ul class="guide-list type-dot mt-3">
                                 <li>
+                                    <p> type : 'columnChart' - 그래프 타입</p>
+                                </li>
+                                <li>
+                                    <p>categories : X 값</p>
+                                </li>
+                                <li>
+                                    <p>series : 차트의 실제 데이터</p>
+                                </li>
+                                <li>
+                                    <p>categoryBarColor : 차트 컬러</p>
+                                </li>
+                                <li>
+                                    <p>valueMax : <b>최대값 *</b></p>
+                                </li>
+                            </ul>
+
+                            <ul class="guide-list type-dot mt-5">
+                                <li>
                                     <p>기업정보 > 재무정보</p>
                                 </li>
                                 <li>
                                     <p>막대그래프 최대 5개 노출 (가운데 정렬)</p>
                                 </li>
                                 <li>
-                                    <p>막대바 높이값 계산을 위한 임의 최대값(valueMax) 입력 필수</p>
+                                    <p><b>막대바 높이값 계산을 위한 임의 최대값(valueMax) 입력 필수</b></p>
                                 </li>
                             </ul>
+                            
                             <p class="guide-title-h3 mt-10">막대그래프(column)</p>
                             <div class="cmp-exsample__wrap mt-3">
                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
@@ -39,7 +58,7 @@
                                     type: 'columnChart',
                                     categories: ['2019', '2020', '2021', '2022', '2023'],
                                     series: ['212', '246', '328', '385', '464'],
-                                    categoryBarColor : '#640202',
+                                    categoryBarColor : '#E156E2',
                                     valueMax: '600',
                                 })) %>
                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
@@ -47,7 +66,7 @@
                                     type: 'columnChart',
                                     categories: ['2019', '2020', '2021', '2022'],
                                     series: ['212', '246', '328', '385',],
-                                    categoryBarColor : ['#640202', '#850000', '#AC0202', '#ff0000'],
+                                    categoryBarColor : ['#f729c1', '#e54ddc', '#d371f6', '#b7b4ef'],
                                     valueMax: '1000',
                                 })) %>
                             </div>

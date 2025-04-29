@@ -3,22 +3,12 @@
         &__column-chart {
             position: relative;
             height: calc(273 / 16 * 1rem);
-            padding:0 calc(54.5 / 16 * 1rem);
-            border-top: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default7);
-            border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-all-stroke-stroke-default7);
+            padding:0 calc(10 / 16 * 1rem);
+            border-top: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+            border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
             box-sizing: border-box;
-            @media #{$pcMiddle} {
-                padding:0 calc(14.5 / 16 * 1rem);
-            }
-            @media #{$tablet} {
-                padding:0 calc(2.5 / 16 * 1rem);
-            }
-            @media #{$tabletMini} {
-                padding:0 calc(49 / 16 * 1rem);
-            }
-            @media #{$phone} {
-                padding:0 calc(19 / 16 * 1rem);
-                height: calc(150 / 16 * 1rem);
+            @media #{$min1280} {
+                padding: 0;
             }
         }
         &__xAxis-area {
@@ -27,7 +17,7 @@
                 display: block;
                 width: 100%;
                 height: calc(1 / 16 * 1rem);
-                background: var(--colorCM-all-stroke-stroke-default7);
+                background: var(--colorCM-mode1-stroke-stroke-default2);
                 &:first-child {
                     top: 33.333%;
                     left: 0;
@@ -58,28 +48,21 @@
                 align-items: center;
                 flex-direction: column;
                 gap: calc(4 / 16 * 1rem);
-                // padding: 0 calc(16 / 16 * 1rem);
                 width: 100%;
                 height: 100%;
                 z-index: 1;
                 box-sizing: border-box;
             }
-            &__text {
-                color: var(--colorCM-mode1-text-text-tertiary);
-            }
             &__bar {
                 display: block;
-                width: calc(55 / 16 * 1rem);
+                width: calc(36 / 16 * 1rem);
                 height: calc(var(--yAxis-series-target-val) / var(--yAxis-series-target-max-val) * 100%);
                 background: var(--yAxis-series-bg);
                 box-sizing: border-box;
                 border-top-left-radius: calc(26 / 16 * 1rem);
                 border-top-right-radius: calc(26 / 16 * 1rem);
-                @media #{$tabletMini} {
-                    width: calc(65 / 16 * 1rem);
-                }
-                @media #{$phone} {
-                    width: calc(28 / 16 * 1rem);
+                @media #{$min1280} {
+                    width: calc(55 / 16 * 1rem);
                 }
             }
         }
