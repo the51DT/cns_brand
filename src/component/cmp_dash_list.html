@@ -12,8 +12,8 @@
         <% data.forEach((item) => { %>
             <li class="dash-list__item <%- typeof itemType !== 'undefined' && itemType ? itemType : '' %>">
                 <div class="dash-list__text-box">
-                    <span class="dash-list__small-text font-body-md"><%- item.smallText %></span>
-                    <span class="dash-list__big-text font-head-xs"><%- item.bigText %></span>
+                    <span class="dash-list__small-text font-body-sm color-text-secondary"><%- item.smallText %></span>
+                    <span class="dash-list__big-text font-head-md color-text-default"><%- item.bigText %></span>
                 </div>
             </li>
         <% }) %>
