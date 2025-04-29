@@ -3,9 +3,8 @@
     <% 
         const data = (typeof jsonData !== 'undefined' ? jsonData : []);
         const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
-        const type = typeof itemType !== 'undefined' ? itemType : 'default';
     %>
-    <div class="button-item-grid  <%- type == '3buttons' ? 'three-buttons' : '' %>">
+    <div class="button-item-grid">
     <% if(data.length > 0) { %>
         <% data.slice(0, itemLimit).forEach((item, i) => { %>
             <div class="cmp_button_item">
