@@ -122,7 +122,7 @@
                 if (rect.top <= thresholdBottom && rect.top >= thresholdTop) {
                     const ratio = (rect.top - thresholdTop) / (thresholdBottom - thresholdTop)
 
-                    futureText.style.opacity = ratio.toFixed(2)
+                    futureText.style.opacity = ratio.toFixed(5)
 
                     const translateY = 5 * (1 - ratio)
                     futureText.style.transform = `translateY(${translateY}%)`
