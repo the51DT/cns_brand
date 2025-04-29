@@ -15,7 +15,9 @@
                     <img src="<%= imgSrc %>" alt="이미지" />
                 </div>
                 <div class="text-info">
-                    <h3 class="info-title font-head-sm"><%- item.title %></h3>
+                    <h3 class="info-title font-head-<%= item.title.size !== 'undefined' && item.title.size ? item.title.size : 'sm' %> <%= item.title.class !== 'undefined' && item.title.class ? item.class : 'font-medium color-text-default' %>">
+                        <%- item.title.text ? item.title.text : item.title %>
+                    </h3>
                     <% if (item.content && Array.isArray(item.content)) { %>
                         <ul class="info-list">
                             <% item.content.forEach((content) => { %>

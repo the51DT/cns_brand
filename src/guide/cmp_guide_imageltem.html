@@ -29,7 +29,19 @@
                             <p>imageRound : true 일 때 border-radius 적용 (기본 [32 / 20], type-left,right [32 / 16])</p>
                         </li>
                         <li>
-                            <p>title : text</p>
+                            <p>title : text (기본 스타일 클래스 적용 : .font-head-sm.font-medium.color-text-default)</p>
+                            <p class="mt-2">title 커스텀이 필요한 경우</p>
+                            <ul>
+                                <li>
+                                    <p>{ text : text</p>
+                                </li>
+                                <li>
+                                    <p>size : font-size (typograph.scss 참고)</p>
+                                </li>
+                                <li>
+                                    <p>class : font-weight 외 등등 (tailwind-all.scss, color.scss) 사용 시 컬러/font-weight 지정 필요}</p>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <p>content : text</p>
@@ -48,7 +60,11 @@
                                     typeClass: 'type-default',
                                     imageUrl: '/src/assets/image/temp/full_imag01.png',
                                     imageRound: true,
-                                    title: 'Workforce',
+                                    title: {
+                                        text : 'Workforce',
+                                        size: 'md',
+                                        class: 'font-semibold color-text-default',
+                                    },
                                     content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
                                 },
                                 {
