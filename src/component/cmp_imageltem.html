@@ -29,6 +29,17 @@
                             <%- item.content %>
                         </div>
                     <% } %>
+                    <% if(item.button) { %>
+                        <div class="button__wrap <%- item.typeClass == 'type-left' ? 'align-left' : '' %> <%- item.typeClass=='type-right' ? 'align-right' : '' %>">
+                            <% item.button.forEach((button) => { %>
+                                <% console.log(button) %>
+                                <a href="<%- button.href ? button.href : '#' %>"
+                                    class="btn <%- button.style ? button.style : 'btn-primary' %> <%- button.size ? button.size : 'btn-small' %>">
+                                    <span class="btn__text"><%- button.text %></span>
+                                </a>
+                            <% }) %>
+                        </div>
+                    <% } %>
                 </div>
             </div>
         <% }) %>
