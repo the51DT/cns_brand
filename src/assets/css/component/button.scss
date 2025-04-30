@@ -1,6 +1,36 @@
+@use "sass:math";
+@use "sass:map";
+
 :root {
     --border-radius: 0; 
 }
+
+//이미지 경로
+$asset-paths: (
+    icon: '/src/assets/image/icon/',
+    sub: '/src/assets/image/sub/'
+);
+
+// @param $type: 위 맵에서 정의된 키값
+// @param $name: 파일명 (확장자 제외)
+// @param $ext: 확장자 (기본 'png')
+@mixin image-path($type, $name, $ext: 'png') {
+    $base-path: map.get($asset-paths, $type);
+    @if $base-path {
+        background-image: url("#{$base-path}#{$name}.#{$ext}");
+    }
+}
+
+
+// px -> rem 변환 mixin (base 16px)
+@function rem($px, $base: 16) {
+    @return math.div($px, $base) * 1rem;
+}
+
+@function font-size($fs, $base: 16) {
+    @return calc(var($fs) / 16 * 1rem);
+}
+
 /* 버튼 */
 .button__wrap {
     display: flex;
@@ -173,6 +203,71 @@
     padding: calc(6 / 16 * 1rem);
     min-width: fit-content;
     height: auto;
+}
+
+// 애니메이션 버튼
+.btn-glide {
+    //@extend .btn;
+    //@extend .btn-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--typo-pc-family-head);
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: calc(100 / 16 * 1rem);
+    box-sizing: border-box;
+    background-color: var(--colorCM-mode1-fill-fill-default10);
+    color: var(--colorCM-mode1-text-text-on-bg);
+
+    position: relative;
+    margin-top: rem(40);
+    min-width: rem(64);
+    height: rem(64);
+
+    @media #{$tabletMini} {
+        margin-top: rem(24);
+    }
+
+    &__inner {
+        transition: width 0.8s cubic-bezier(0.64, -0.02, 0.16, 1);
+        width: 0;
+    }
+
+    &__text {
+        display: inline-block;
+        transition-delay: .3s;
+        transition: 1s cubic-bezier(0.64, -0.02, 0.16, 1);
+        transition-property: opacity, transform;
+        padding: 0 rem(90) 0 rem(40);
+        opacity: 0;
+        transform: translateY(70%);
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: rem(64);
+        height: rem(64);
+        display: inline-block;
+        @include image-path(icon, 'ico_arrow_right_bl64', 'svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: var(--colorCM-mode1-icon-icon-on-bg);
+        border-radius: 50%;
+        border: 6px solid var(--colorCM-mode1-fill-fill-default10);
+    }
+
+    &.btn-glide--active {
+        .btn-glide__text {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
 }
 
 
