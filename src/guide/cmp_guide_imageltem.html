@@ -103,7 +103,8 @@
                                     content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>',
                                     button: [
                                         {
-                                            href: 'https://www.naver.com',
+                                            type: 'link',
+                                            href: '#',
                                             target: '_blank',
                                             style: 'btn-primary',
                                             size: 'btn-small',
@@ -124,11 +125,26 @@
                                     imageUrl: '',
                                     title: 'Workforce',
                                     content: ['테스트1', '테스트2', '테스트<br>3']
-                                }   
+                                },
+                                {
+                                    id: 5,
+                                    typeClass: 'type-full',
+                                    imageUrl: 'https://placehold.co/736x416',
+                                    content: '<p>LG CNS는 2017년부터 매년 지속가능경영보고서를 발간해 2024년이 여덟 번째입니다.</p><p>이번 보고서는 LG CNS가 고객의 Digital Business Innovator로서, IT기술 리더십과 전문 역량을 기반으로 어떻게 고객의 디지털 전환(DX, Digital Transformation)을 선도하고 있는지와 ESG 영역에서의 지속가능경영 활동과 성과를 소개하고자 했습니다.</p><p>LG CNS는 DX 전문기업으로서 실력으로 정정당당하게 경쟁하는 정도경영과 기업의 사회적 책임에도 소홀함이 없도록 최선을 다하겠습니다.</p>',
+                                    button: [
+                                        {
+                                            type: 'button',
+                                            style: 'btn-primary',
+                                            size: 'btn-small',
+                                            modalId:"modal-moa01",
+                                            text: '다운로드',
+                                        }
+                                    ]
+                                }
                             ];
                         %> 
                         <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {                             
-                            itemCount: 5,
+                            itemCount: 7,
                             jsonData: imageItemData
                         })) %>
                     </div>

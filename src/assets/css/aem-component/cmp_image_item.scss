@@ -242,6 +242,30 @@
                 overflow: hidden;
             }
         }
+        &.type-full {
+            flex-direction: column;
+            .text-info {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
+                @media #{$min1280} {
+                    margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+                }
+                p {
+                    & + p {
+                        margin-top: calc(12 / 16 * 1rem);
+                        @media #{$min1280} {
+                            margin-top: calc(16 / 16 * 1rem);
+                        }
+                    }
+                }
+                .info-text {
+                    & + .button__wrap {
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        }
 
         &:has(.info-list) + .cmp_imageitem:has(.info-list) {
             margin-top: calc(16 / 16 * 1rem);
