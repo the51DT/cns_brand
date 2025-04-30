@@ -87,8 +87,13 @@
                                 <div>
                                     <div class="bizinfo-ir-activity__year-container">
                                         <%- include('src/component/cmp_title_select.html', {
-                                            titleText: '2024년',
+                                            title : {
+                                                text: '2025년',
+                                                size: 'lg',
+                                                addClass: 'color-text-default font-medium',
+                                            },
                                             showSelect: true,
+                                            rowJustify: 'is-column',
                                             selectedValue: '연도선택',
                                             options: ['2025년', '2024년', '2023년', '2022년']
                                         }) %>
