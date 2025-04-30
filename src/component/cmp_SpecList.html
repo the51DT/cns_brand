@@ -1,4 +1,4 @@
-<div class="cmp-wrap cmp-speclist__wrap">
+<div class="cmp-wrap cmp-speclist__wrap <%- typeof borderTop !== 'undefined' && borderTop && borderTop === 'used' ? 'cmp-speclist__wrap--border-top' : '' %>">
     <% 
         const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
         const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
@@ -6,48 +6,29 @@
 
     <% if (data.length > 0) { %>
         <% data.slice(0, itemLimit).forEach((item, i) => { %>    
-            <div class="spec-item <%- typeof styleType !=='undefined' && styleType ? styleType : '' %>">  
-                <% if(typeof item.smallTitle !=='undefined' && item.smallTitle) { %>      
-                    <div class="font-body-md spec-title">
-                        <div class="spec-num"><%- typeof item.subTitle !== 'undefined' ? item.subTitle : (i + 1).toString().padStart(2, '0') %></div>
-                        <%- item.smallTitle ? item.smallTitle : ' ' %>
-                    </div>
-                <% } else { %>
-                    <div class="font-body-md spec-title">
-                        <div class="spec-num"><%- typeof item.subTitle !== 'undefined' ? item.subTitle : (i + 1).toString().padStart(2, '0') %></div>
-                        <%- item.title ? item.title : ' ' %>
-                    </div>
-                <% } %>
-                <% if(typeof styleType !=='undefined' && typeof item.smallContent !== 'undefined' && item.smallContent) { %>
-                    <div class="font-body-md spec-text">
-                        <p>
-                            <%- item.smallContent %>
-                        </p>
-                    </div>
-                <% } else if(typeof styleType !=='undefined' && (styleType == 'type-box' || styleType == 'type-box-row') && item.content && item.content.length > 1) { %>
-                    <ul class="spec-item__list">
-                        <% item.content.forEach((content) => { %>
-                            <li class="font-body-sm spec-text">
-                                <%- content %>
-                            </li>
+            <div class="spec-item">
+                <div class="spec-title color-text-default font-head-sm font-medium">
+                    <% if(item.subTitle) {%>
+                        <span class="spec-num color-text-default font-head-sm font-medium"><%- item.subTitle %></span>
+                    <% } %>
+                    <%- item.title %>
+                </div>
+                <ul class="spec-text">
+                    <% if(item.content && item.content.text && Array.isArray(item.content.text)) { %>
+                        <% item.content.text.forEach((el, i)=> { %>
+                            <li class="<%- item.content.color !== 'undefined' && item.content.color ? item.content.color : 'color-text-secondary' %> <%- item.content.size !== 'undefined' && item.content.size ? item.content.size : 'font-body-md' %> <%- item.content.addClass !== 'undefined' && item.content.addClass ? item.content.addClass : 'font-normal'%>"><%- el %></li>
                         <% }) %>
-                    </ul>
-                <% } else { %>
-                    <div class="font-body-md spec-text">
-                        <% if(item.content) {%>
-                            <p>
-                                <%- item.content %>
-                            </p>
-                        <% } %>
-                    </div>
-                <% } %>
+                    <% } else { %>
+                        <li class="color-text-secondary font-body-md font-normal">내용이 없습니다.</li>
+                    <% } %>
+                </ul>
             </div>
         <% }) %>
     <% } else { %>
         <% for (let i = 0; i < itemLimit; i++) { %>    
             <div class="spec-item <%- typeof styleType !=='undefined' && styleType ? styleType : '' %>">        
                 <div class="font-body-lg spec-title">
-                    <div class="spec-num"><%- (i + 1).toString().padStart(2, '0') %></div>
+                    <div class="spec-num color-text-default font-head-sm font-medium"><%- (i + 1).toString().padStart(2, '0') %></div>
                     복잡한 클라우드 환경,<br>
                     미들웨어 관리의 중요성
                 </div>
