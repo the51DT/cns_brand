@@ -1,6 +1,6 @@
 const headerWrap = document.querySelector('.header');
 const bodyWrap = document.querySelector('body');
-let subMenuHeight = 0
+// let subMenuHeight = 0
 
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
@@ -23,7 +23,8 @@ const getHeaderHeight = (el) => {
 
   const maxHeight = Math.max(detailHeight, leftHeight)
 
-  return `${maxHeight + 80}px`
+  // return `${maxHeight + 80}px`
+  return `${maxHeight}px`
 }
 
 
