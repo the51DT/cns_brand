@@ -76,6 +76,113 @@ const mainNavigation = (selector) => {
     });
 };
 
+
+/*utils*/
+// const setClass = (element, className, isAdd) => {
+//   if (!element) return
+//   if (isAdd) {
+//     element.classList.add(className)
+//   } else {
+//     element.classList.remove(className)
+//   }
+// }
+// const addClass = (element, className) => element?.classList.add(className)
+// const removeClass = (element, className) => element?.classList.remove(className)
+// const setStyle = (element, property, value) => element?.style.setProperty(property, value)
+// const resetStyle = (element, property) => element?.style.removeProperty(property)
+// const getElHeight = (element) => element ? element.scrollHeight : 0
+
+//header 높이 달라지는 이슈
+//원인: mouseleave 이벤트 시, click-bound is-active 클래스 전체를 지우면서 내부 컨텐츠를 읽지 못해 재호출 시 필요한 높이만큼 읽어오지 못함
+//해결 방안: click-bound를 전체 리스트를 돌면서 지우는 코드 수정.
+// -> 결론: mouseleave 이벤트 시 클래스 전체 삭제 X / 필요하다면 요소의 첫번째로 초기화
+
+// const mainNavigation = (selector) => {
+//   const navyLists = document.querySelectorAll(selector)
+//   const bodyWrap = document.querySelector('body')
+//   const header = document.querySelector('.header')
+//   const navyWrap = document.querySelector('.gnb-navy__wrap')
+//
+//   if (!navyLists.length) return
+//
+//   let activeNavy = null
+//
+//   navyLists.forEach(navy => {
+//     navy.addEventListener('mouseenter', () => {
+//       if (activeNavy === navy) {
+//         return
+//       }
+//
+//       // 1. 전체 초기화
+//       navyLists.forEach(item => {
+//         removeClass(item, 'is-active')
+//         removeClass(header, 'is-active')
+//         setStyle(header, '--gnb-bg-height', '0px')
+//       })
+//
+//       // 2. 현재 활성화
+//       addClass(navy, 'is-active')
+//       addClass(header, 'is-active')
+//       addClass(bodyWrap, 'overflow')
+//
+//       const navyBtn = navy.querySelector('.type-full')
+//       const subMenu = navy.querySelector('.gnb-sub__wrap')
+//       const subMenuDrop = navy.querySelector('.gnb-sub__wrap--drop')
+//
+//       if (navyBtn && subMenu) {
+//         setStyle(header, '--gnb-bg-height', `${getElHeight(subMenu) + 80}px`)
+//         console.log(getElHeight(subMenu), navy.innerText)
+//
+//         const subDepthMenus = navy.querySelectorAll('.sub-menu-list li')
+//         subDepthMenus.forEach(menu => {
+//           if (!menu.classList.contains('click-bound')) {
+//             menu.addEventListener('click', (event) => {
+//               event.preventDefault()
+//
+//               const activeItem = navy.querySelector('.sub-menu-list > li.is-active')
+//               if (activeItem) {
+//                 removeClass(activeItem, 'is-active')
+//               }
+//               addClass(menu, 'is-active')
+//             })
+//             addClass(menu, 'click-bound')
+//           }
+//         })
+//       } else if (subMenuDrop) {
+//         addClass(header, 'is-active')
+//         setStyle(header, '--gnb-bg-height', '0px')
+//         addClass(navy, 'is-active')
+//         setStyle(navy, 'position', 'relative')
+//       }
+//       activeNavy = navy
+//     })
+//
+//     navyWrap?.addEventListener('mouseleave', (e) => {
+//       if (!navyWrap.contains(e.relatedTarget)) {
+//         removeClass(bodyWrap, 'overflow')
+//         setStyle(navy.parentElement, 'position', '')
+//
+//         removeClass(header, 'is-active')
+//         setStyle(header, '--gnb-bg-height', '0px')
+//
+//         const activeItem = navy.querySelector('.sub-menu-list > li.is-active')
+//         if (activeItem) {
+//           // removeClass(activeItem, 'is-active')
+//         }
+//
+//         const activeNavyItem = navy.parentElement.querySelector('.navy-list > li.is-active')
+//         if (activeNavyItem) {
+//           removeClass(activeNavyItem, 'is-active')
+//         }
+//
+//         activeNavy = null
+//       }
+//     })
+//   })
+// }
+
+
+
 const moNavigationToggle = (button) => {
     const moNavigation = document.querySelector('.mo-gnb-navy__wrap');
     const moMenu = document.querySelector(button);

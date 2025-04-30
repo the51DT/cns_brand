@@ -446,7 +446,7 @@ body {
                     display: flex;
                     height: var(--gnb-bg-height);
                     max-height: var(--gnb-bg-height);
-                    transition: height 0.3s linear;
+                    //transition: height 0.3s linear; //중복옵션
                 }
                 .gnb-sub-inner {
                     position: relative;
