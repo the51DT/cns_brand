@@ -89,6 +89,10 @@ $asset-paths: (
 }
 .btn .btn__text {
     display: block;
+    font-size: calc(18 / 16 * 1rem);
+    line-height: calc(26 / 16 * 1rem);
+    font-weight: 500;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
 }
 .btn .btn__icon + .btn__text {
     margin-left: calc(8 / 16 * 1rem);
@@ -137,6 +141,12 @@ $asset-paths: (
     height: calc(36 / 16 * 1rem);
     border-radius: calc(50 / 16 * 1rem);
 }
+.btn.btn-ultra-small .btn__text {
+    font-size: calc(16 / 16 * 1rem);
+    line-height: calc(26 / 16 * 1rem);
+    font-weight: 400;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+}
 /* btn-small */
 .btn.btn-small {
     /* gap: calc(4 / 16 * 1rem); */
@@ -144,6 +154,12 @@ $asset-paths: (
     width: fit-content;
     min-width: calc(140 / 16 * 1rem);
     height: calc(48 / 16 * 1rem);
+}
+.btn.btn-small .btn__text {
+    font-size: calc(16 / 16 * 1rem);
+    line-height: calc(26 / 16 * 1rem);
+    font-weight: 400;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
 }
 /* btn-medium */
 .btn.btn-medium {
@@ -153,6 +169,12 @@ $asset-paths: (
     min-width: calc(160 / 16 * 1rem);
     height: calc(56 / 16 * 1rem);
 }
+.btn.btn-medium .btn__text {
+    font-size: calc(18 / 16 * 1rem);
+    line-height: calc(26 / 16 * 1rem);
+    font-weight: 500;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+}
 /* btn-large */
 .btn.btn-large {
     /* gap: calc(8 / 16 * 1rem); */
@@ -160,6 +182,12 @@ $asset-paths: (
     width: fit-content;
     min-width: calc(140 / 16 * 1rem);
     height: calc(56 / 16 * 1rem);
+}
+.btn.btn-medium .btn__text {
+    font-size: calc(18 / 16 * 1rem);
+    line-height: calc(27 / 16 * 1rem);
+    font-weight: 400;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
 }
 
 /* btn-text - 텍스트 버튼 */
@@ -171,6 +199,8 @@ $asset-paths: (
     min-width: fit-content;
     height: auto;
     color: var(--colorCM-mode1-text-text-default);
+}
+.btn.btn-text .btn__text {
     font-size: calc(var(--typo-mo-size-caption-sm-ui) / 16 * 1rem);
     line-height: calc(var(--typo-mo-line-height-caption-sm-ui) / 16 * 1rem);
     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
