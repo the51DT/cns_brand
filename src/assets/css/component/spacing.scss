@@ -1,0 +1,92 @@
+// @param $vertical : margin-top/bottom (top / bottom)
+// @param $valPc : pc margin
+// @param $valMo : mo margin
+@mixin custom-margin-vertical($vertical, $valPc, $valMo) {
+    @if($vertical == 'top') {
+        margin-top: calc($valMo / 16 * 1rem);
+        @media #{$min1280} {
+            margin-top: calc($valPc / 16 * 1rem);
+        }
+    }
+    @else if($vertical == 'bottom') {
+        margin-bottom: calc($valMo / 16 * 1rem);
+        @media #{$min1280} {
+            margin-bottom: calc($valPc / 16 * 1rem);
+        }
+    }
+}
+// margin-top
+.mt-spacing01 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing01), var(--spacing-mo-spacing01));
+}
+.mt-spacing02 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing01), var(--spacing-mo-spacing01));
+}
+.mt-spacing03 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing03), var(--spacing-mo-spacing03));
+}
+.mt-spacing04 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing04), var(--spacing-mo-spacing04));
+}
+.mt-spacing05 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing05), var(--spacing-mo-spacing05));
+}
+.mt-spacing06 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing06), var(--spacing-mo-spacing06));
+}
+.mt-spacing07 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing07), var(--spacing-mo-spacing07));
+}
+.mt-spacing08 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing08), var(--spacing-mo-spacing08));
+}
+.mt-spacing09 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing09), var(--spacing-mo-spacing09));
+}
+.mt-spacing10 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing10), var(--spacing-mo-spacing10));
+}
+.mt-spacing11 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing11), var(--spacing-mo-spacing11));
+}
+.mt-spacing12 {
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing12), var(--spacing-mo-spacing12));
+}
+
+// margin-bottom
+.mb-spacing01 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing01), var(--spacing-mo-spacing01));
+}
+.mb-spacing02 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing01), var(--spacing-mo-spacing01));
+}
+.mb-spacing03 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing03), var(--spacing-mo-spacing03));
+}
+.mb-spacing04 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing04), var(--spacing-mo-spacing04));
+}
+.mb-spacing05 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing05), var(--spacing-mo-spacing05));
+}
+.mb-spacing06 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing06), var(--spacing-mo-spacing06));
+}
+.mb-spacing07 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing07), var(--spacing-mo-spacing07));
+}
+.mb-spacing08 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing08), var(--spacing-mo-spacing08));
+}
+.mb-spacing09 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing09), var(--spacing-mo-spacing09));
+}
+.mb-spacing10 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing10), var(--spacing-mo-spacing10));
+}
+.mb-spacing11 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing11), var(--spacing-mo-spacing11));
+}
+.mb-spacing12 {
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing12), var(--spacing-mo-spacing12));
+}
