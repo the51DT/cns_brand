@@ -195,7 +195,23 @@
             "magentaSky300": "#c19df4",
             "magentaSky100": "#aecbe9",
             "grey500": "#1f1f1f",
-            "grey50": "#f7f8f9"
+            "grey50": "#f7f8f9",
+            "visualColor50": "#87caff",
+            "visualColor100": "#9eb6fb",
+            "visualColor150": "#b5a1f6",
+            "visualColor200": "#cc8df2",
+            "visualColor250": "#e379ee",
+            "visualColor300": "#4fe4ed",
+            "visualColor350": "#60cbf1",
+            "visualColor400": "#71b2f6",
+            "visualColor450": "#8399fa",
+            "visualColor500": "#9480ff",
+            "visualColor550": "#b541fc",
+            "visualColor600": "#9c48fd",
+            "visualColor650": "#824efd",
+            "visualColor700": "#6955fd",
+            "visualColor750": "#505bfd",
+            "visualColor800": "#36369d"
         }
     },
     "colorCM": {
@@ -268,7 +284,23 @@
             "primaryPrimaryEnabled": "#9b002e",
             "primaryPrimaryPressed": "#610024",
             "primaryPrimaryDisabled": "#ff6b98",
-            "textTextQuaternary": "#afafaf"
+            "textTextQuaternary": "#afafaf",
+            "visualVisual01": "#87caff",
+            "visualVisual02": "#9eb6fb",
+            "visualVisual03": "#b5a1f6",
+            "visualVisual04": "#cc8df2",
+            "visualVisual05": "#e379ee",
+            "visualVisual06": "#4fe4ed",
+            "visualVisual07": "#60cbf1",
+            "visualVisual08": "#71b2f6",
+            "visualVisual09": "#8399fa",
+            "visualVisual10": "#9480ff",
+            "visualVisual11": "#b541fc",
+            "visualVisual12": "#9c48fd",
+            "visualVisual13": "#824efd",
+            "visualVisual14": "#6955fd",
+            "visualVisual15": "#505bfd",
+            "visualVisual16": "#36369d"
         }
     },
     "radius": {
@@ -280,6 +312,36 @@
             "xL": 40,
             "circular": 999,
             "s": 16
+        }
+    },
+    "spacing": {
+        "pc": {
+            "spacing04": 32,
+            "spacing05": 40,
+            "spacing06": 48,
+            "spacing07": 64,
+            "spacing08": 80,
+            "spacing10": 120,
+            "spacing11": 180,
+            "spacing12": 280,
+            "spacing02": 16,
+            "spacing01": 12,
+            "spacing09": 96,
+            "spacing03": 24
+        },
+        "mo": {
+            "spacing04": 24,
+            "spacing05": 24,
+            "spacing06": 32,
+            "spacing07": 40,
+            "spacing08": 48,
+            "spacing10": 56,
+            "spacing11": 96,
+            "spacing12": 178,
+            "spacing02": 12,
+            "spacing01": 8,
+            "spacing09": 56,
+            "spacing03": 12
         }
     }
 }
