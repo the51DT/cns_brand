@@ -1,4 +1,4 @@
-<div class="cmp-wrap cmp_teaser_title__wrap mb-<%- typeof marginbottom !== 'undefined' && marginbottom ? marginbottom : '0' %>">
+<div class="cmp-wrap cmp_teaser_title__wrap <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : '' %>">
     <% if (typeof title !== 'undefined' && title) { %>
         <div class="teaser-title <%= typeof arrowButton !== 'undefined' ? 'type-button-flex' : '' %>">
             <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
