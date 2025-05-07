@@ -1,14 +1,28 @@
 .cmp-title-select{
     .cmp-title__row {
         display: flex;
-        gap: calc(var(--spacing-mode1-vertical2-x-l)/16*1rem);
+        gap: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
         flex-direction: row; 
+        align-items: center;
+        @media #{$min1280} {
+            gap: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
+        }
         &.is-between {
             justify-content: space-between;
             align-items: center;
         }
+        &.is-column {
+            flex-direction: column;
+            align-items: flex-start;
+            .cmp-title__wrap {
+                margin-top: 0;
+            }
+        }
         .dropdown-menu{
             align-items: flex-start;
+        }
+        .cmp-select {
+            margin-bottom: 0;
         }
     }
 }

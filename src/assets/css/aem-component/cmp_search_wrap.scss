@@ -11,96 +11,6 @@
             min-width: calc(40 / 16 * 1rem);
         }
     }
-    // &:has(.search-thumbnail-wrap) {
-    //     padding-top: calc(606 / 16 * 1rem);
-    //     @media #{$pcMiddle} {
-    //         padding-top: calc(539 / 16 * 1rem);
-    //     }
-    //     @media #{$tablet} {
-    //         padding-top: calc(563 / 16 * 1rem);
-    //     }
-    //     @media #{$tabletMini} {
-    //         padding-top: calc(420 / 16 * 1rem);
-    //     }
-    //     @media #{$phone} {
-    //         padding-top: calc(301 / 16 * 1rem);
-    //     }
-    // }
-    // .search-thumbnail-wrap {
-    //     position: absolute;
-    //     top: calc(-250 / 16 * 1rem);
-    //     left: 50%;
-    //     transform: translateX(-50%);
-    //     width: 100%;
-    //     max-width: calc(1760 / 16 * 1rem);
-    //     margin: 0 auto;
-    //     @media #{$pcMiddle} {
-    //         max-width: calc(1520 / 16 * 1rem);
-    //     }
-    //     @media #{$tablet} {
-    //         max-width: 100%;
-    //         overflow: hidden;
-    //     }
-    //     @media #{$tabletMini} {
-    //         max-width: 100%;
-    //     }
-    //     @media #{$phone} {
-    //         top: calc(-160 / 16 * 1rem);
-    //     }
-    //     .cmp-thumbnail {
-    //         @media #{$tablet} {
-    //             overflow-x: scroll;
-    //              -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    //             scrollbar-width: none; /* for Firefox */
-    //         }
-    //         &::-webkit-scrollbar {
-    //             @media #{$tablet} {
-    //                 display:none;
-    //             }
-    //         }
-    //     }
-    //     .content-list__wrap {
-    //         &.thumbnail-type {
-    //             &.pc-col2-big {
-    //                 @media #{$tablet} {
-    //                     width: max-content;
-    //                     padding: 0 calc((100% - (960 / 16 * 1rem)) / 2);
-    //                     flex-wrap: nowrap;
-    //                 }
-    //                 @media #{$tabletMini} {
-    //                     padding: 0 calc((100%  - (704 / 16 * 1rem)) / 2);
-    //                 }
-    //                 @media #{$phone} {
-    //                     padding: 0 calc(20 / 16 * 1rem);
-    //                     flex-direction: row;
-    //                 }
-    //                 li {
-    //                     @media #{$tablet} {
-    //                         flex-shrink: 0;
-    //                         width: calc(960 / 16 * 1rem);
-    //                     }
-    //                     @media #{$tabletMini} {
-    //                         width: calc(704 / 16 * 1rem);
-    //                     }
-    //                     @media #{$phone} {
-    //                         width: calc(100vw - (40 / 16 * 1rem));
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    // .text-wrap {
-    //     width: 100%;
-    //     max-width: calc(1168 / 16 * 1rem);
-    //     margin: 0 auto;
-    //     @media #{$tablet} {
-    //         max-width: calc(960 / 16 * 1rem);
-    //     }
-    //     @media #{$tabletMini} {
-    //         max-width: calc(704 / 16 * 1rem);
-    //     }
-    // }
     .search-text {
         display: block;
         margin-bottom: calc(24 / 16 * 1rem);
@@ -117,9 +27,13 @@
         margin-top: calc(32 / 16*1rem);
         display: flex;
         flex-wrap: wrap;
-        gap: calc(16/16*1rem);
+        flex-direction: column;
         justify-content: center;
+        align-items: flex-start;
+        gap: calc(16/16*1rem);
         @media #{$min1280}{
+            flex-direction: row;
+            padding: 0 calc(140 / 16 * 1rem);
             margin-top: calc(48 / 16*1rem);
         }
     }

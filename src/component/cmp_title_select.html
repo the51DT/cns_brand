@@ -1,24 +1,24 @@
 <div class="cmp-title-select">
-  <% const useSpaceBetween = typeof rowJustify === 'string' && rowJustify === 'space-between'; %>
-  <div class="cmp-title__row <%= useSpaceBetween ? 'is-between' : '' %>">
-    <div class="font-head-md">
-      <% if (typeof titleText !== 'undefined') { %>
-        <strong class="title-text"><%- titleText %></strong>
-      <% } %>
-      <% if (typeof titlePrimary2 !== 'undefined') { %>
-        <strong class="title-text colorcm-primary"><%- titlePrimary2 %></strong>
-      <% } %>
+    <div class="cmp-title__row <%= typeof rowJustify !== 'undefined' && rowJustify ? rowJustify : '' %>">
+        <% if(typeof title !== 'undefined' && title) { %>
+            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                title: {
+                    text: title.text,
+                    size: typeof title.size !== 'undefined' && title.size ? title.size : 'font-head-lg',
+                    class: typeof title.addClass !== 'undefined' && title.addClass ? title.addClass : 'color-text-default font-medium',
+                },
+            })) %>
+        <% } %>
+
+        <% if (typeof showSelect !== 'undefined' && showSelect === true) { %>
+            <%
+                const safeOptions = Array.isArray(options) ? options : [];
+                const placeholder = typeof selectedValue !=='undefined' && selectedValue ? selectedValue : '연도선택' 
+            %>
+            <%- include('src/component/cmp_select.html', Object.assign({}, locals, { 
+                selectedValue: placeholder , 
+                options: safeOptions
+            })) %>
+        <% } %>
     </div>
-  
-    <% if (typeof showSelect !== 'undefined' && showSelect === true) { %>
-      <%
-        const safeOptions = Array.isArray(options) ? options : [];
-        const placeholder = typeof selectedValue !=='undefined' && selectedValue ? selectedValue : '연도선택' 
-      %>
-      <%- include('src/component/cmp_select.html', Object.assign({}, locals, { 
-        selectedValue: placeholder , 
-        options: safeOptions
-      })) %>
-    <% } %>
-  </div>
 </div>

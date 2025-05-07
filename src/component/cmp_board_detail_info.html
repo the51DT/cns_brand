@@ -5,12 +5,12 @@
         const categoryValue = typeof category !== 'undefined' ? category : '';
         const dateValue = typeof date !== 'undefined' ? date : '';
         const likeCountValue = typeof likeCount !== 'undefined' ? likeCount : '';
+        const likeStateValue = typeof likeState !== 'undefined' && likeState == 'is-active' ? 'btn--is-active' : '';
         const titleValue = typeof title !== 'undefined' ? title : '';
         const prefixText = typeof prefix !== 'undefined' ? prefix : '보도자료';
     %>
 
     <div class="detail-info <%= typeof contentType !== 'undefined' && contentType ? contentType : '' %>">
-        
         <% if (categoryValue) { %>
             <div class="chip__wrap detail-info__category">
                 <div class="chip bg-basic font-caption-xl font-semibold">
@@ -18,15 +18,12 @@
                 </div>
             </div>
         <% } %>
-
         <strong class="detail-info__title <%= locals.contentType ? (locals.contentType === 'type-wide' ? 'font-head-md-mode' : locals.contentType === 'type-card' ? 'font-head-xs' : 'font-head-xs') : 'font-head-xs' %>">
             <%= titleValue %>
         </strong>
-
         <% if (typeof text !== 'undefined' && text) { %>
             <p class="detail-info__text font-body-sm"><%= text %></p>
         <% } %>
-
         <% if (tagList.length > 0 && contentType === 'type-wide') { %>
             <div class="tag-box">
                 <% tagList.forEach((tag) => { %>
@@ -34,7 +31,6 @@
                 <% }) %>
             </div>
         <% } %>
-
         <% if (data.length > 0) { %>
             <% data.forEach((item) => { %>
                 <dl class="detail-info__desc">
@@ -43,7 +39,6 @@
                 </dl>
             <% }) %>
         <% } %>
-
         <% if (tagList.length > 0 && contentType === 'type-card') { %>
             <dl class="detail-info__desc mt-5">
                 <dt class="detail-info__desc__tit">연관 태그</dt>
@@ -56,7 +51,6 @@
                 </dd>
             </dl>
         <% } %>
-
         <% if (dateValue || likeCountValue) { %>
             <div class="detail-info__util">
                 <% if (dateValue) { %>
@@ -64,15 +58,17 @@
                 <% } %>
                 <% if (likeCountValue) { %>
                     <span class="detail-info__util__item detail-info__like font-caption-sm">
-                        <a href="#" class="btn btn-medium btn-icon">
-                            <i class="ico icon-heart-line"></i>
+                        <a href="#" class="btn btn-medium btn-icon <%- likeStateValue %>"><!-- 버튼 활성화 시 .btn--active 추가 -->
+                            <!-- 비활설화 시 버튼 아이콘 : .icon-heart-line  -->
+                            <i class="ico icon-heart-line btn__icon"></i>
+                            <!-- 활설화 시 버튼 아이콘 : .icon-heart-red400  -->
+                            <i class="ico icon-heart-red400 btn__icon--is-active"></i>
                             <span><%= likeCountValue %></span>
                         </a>
                     </span>
                 <% } %>
             </div>
         <% } %>
-
         <% if (typeof contentType !== 'undefined' && contentType === 'type-card') { %>
             <div class="button__wrap">
                 <button type="button" class="btn btn-medium btn-radius">
@@ -83,6 +79,5 @@
                 </button>
             </div>
         <% } %>
-
     </div>
 </div>

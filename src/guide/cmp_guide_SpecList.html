@@ -17,43 +17,36 @@
             <div class="flex justify-between lnb-type">
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
-                    <p class="guide-title-h3">SpecList</p>                    
-                    <div class="cmp-exsample__wrap mt-3">
-                        <!-- cmp_SpecList -->
-                        <%- include('src/component/cmp_SpecList.html', {
-                            itemCount: 3
-                        }) %>                          
-                        <!-- //cmp_SpecList -->
-                    </div>
-
-                    <p class="guide-title-h3">SpecList subTitle 값 추가</p>                    
-                    <div class="cmp-exsample__wrap mt-3">
-                        <!-- cmp_SpecList -->
-                        <% const specListData = [ 
-                            { 
-                                id: 0,
-                                subTitle: '가',
-                            }, 
-                            { 
-                                id: 1, 
-                                subTitle: 'II',
-                                title: '서브타이틀이 길어져도 타이틀 영역과 텍스트 영역의 비율은 유지',
-                                content: '텍스트 영역'
-                            }, 
-                            { 
-                                id: 2,
-                                title: '서브타이틀 값 없을 시<br>순서에 맞는 순자가 들어감'
-                            },
-                        ]; 
-                        %>
-                        <%- include('src/component/cmp_SpecList.html', {
-                            itemCount: 3,
-                            jsonData: specListData,
-                        }) %>
-                        <!-- //cmp_SpecList -->
-                    </div>
-
-                    <p class="guide-title-h3 mt-10">SpecList styleType : type-column : 기업정보 > 사회공헌</p>                    
+                    <p class="guide-title-h3">SpecList</p>  
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>subTitle : text</p>
+                        </li>
+                        <li>
+                            <p>title : text</p>
+                        </li>
+                        <li>
+                            <p>content</p>
+                            <ul class="guide-list type-dot mt-1 ml-3">
+                                <li>
+                                    <p>size : title의 폰트 사이즈 (typograph.scss 참고)</p>
+                                </li>
+                                <li>
+                                    <p>color : title의 폰트 컬러 (스타일 가이드, tailwind-all.scss 참고)</p>
+                                </li>
+                                <li>
+                                    <p>addClass : title의 font-weight 등 클래스 추가(스타일 가이드, tailwind-all.scss 참고)</p>
+                                </li>
+                                <li>
+                                    <p>text : text (배열 : 1개 초과 시 bullet 타입으로 적용)</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            borderTop : 'used' (border-top 사용 여부)
+                        </li>
+                    </ul>
+                    <p class="guide-title-h3 mt-10">SpecList : 기업정보 > 환경경영, 인권경영, 사회공헌, 동반성장/공정거래</p>                    
                     <div class="cmp-exsample__wrap mt-10">
                         <!-- cmp_SpecList -->
                         <% const specListData2 = [ 
@@ -65,10 +58,15 @@
                                 id: 1, 
                                 subTitle: '01',
                                 title: '신고/접수',
-                                content: [
-                                    '다양한 신고채널을 통해 신고 접수(사내 익명 신고 게시판, 임직원 상담 프로그램, 설문조사, 고충상담센터 등)', 
-                                    '정식 조사대항 여부 검토',
-                                ]
+                                content: {
+                                    size: 'font-body-sm',
+                                    color: '',
+                                    addClass: 'font-normal',
+                                    text: [
+                                        '다양한 신고채널을 통해 신고 접수(사내 익명 신고 게시판, 임직원 상담 프로그램, 설문조사, 고충상담센터 등)', 
+                                        '정식 조사대항 여부 검토',
+                                    ]
+                                }
                             }, 
                             { 
                                 id: 2, 
@@ -93,153 +91,9 @@
                         <%- include('src/component/cmp_SpecList.html', {
                             itemCount: 4,
                             jsonData: specListData2,
-                            styleType: 'type-column',
+                            borderTop: 'used',
                         }) %>
                         <!-- //cmp_SpecList -->
-                    </div>
-
-                    <p class="guide-title-h3 mt-10">SpecList styleType : type-box : 기업정보 > 환경경영, 인권경영</p>                    
-                    <div class="cmp-exsample__wrap mt-10">
-                        <!-- cmp_SpecList -->
-                        <% const specListData3 = [ 
-                            { 
-                                id: 0,
-                                subTitle: '가',
-                                content: [
-                                    '다양한 신고채널을 통해 신고 접수(사내 익명 신고 게시판, 임직원 상담 프로그램, 설문조사, 고충상담센터 등)', 
-                                ]
-                            },
-                            { 
-                                id: 1,
-                                subTitle: '가',
-                                smallContent: [
-                                    '다양한 신고채널을 통해 신고 접수(사내 익명 신고 게시판, 임직원 상담 프로그램, 설문조사, 고충상담센터 등)', 
-                                ]
-                            },  
-                            { 
-                                id: 2, 
-                                subTitle: '02',
-                                content: [
-                                    '다양한 신고채널을 통해 신고 접수(사내 익명 신고 게시판, 임직원 상담 프로그램, 설문조사, 고충상담센터 등)', 
-                                    '정식 조사대항 여부 검토',
-                                ]
-                            }, 
-                            { 
-                                id: 3,
-                                title: '초동조치',
-                                content: [
-                                    '신고인 요청사항 확인',
-                                    '신고인 보호조치',
-                                    '(필요 시) 피신고인 인사조치',
-                                ]
-                            },
-                        ]; 
-                        %>
-                        <%- include('src/component/cmp_SpecList.html', {
-                            itemCount: 4,
-                            jsonData: specListData3,
-                            styleType: 'type-box',
-                        }) %>
-                        <!-- //cmp_SpecList -->
-                    </div>
-
-                    <p class="guide-title-h3 mt-10">SpecList styleType : type-box-row : 기업정보 > 인권경영</p> 
-                    <div class="cmp-exsample__wrap mt-10">
-                        <!-- cmp_SpecList -->
-                        <% const specListData4 = [ 
-                        { 
-                            id: 0,
-                            title: '초동조치',
-                            content: [
-                                '신고인 요청사항 확인',
-                                '신고인 보호조치',
-                                '(필요 시) 피신고인 인사조치',
-                            ]
-                        },
-                        { 
-                            id: 1,
-                            title: '초동조치',
-                            content: [
-                                '신고인 요청사항 확인',
-                                '신고인 보호조치',
-                                '(필요 시) 피신고인 인사조치',
-                            ]
-                        },  
-                        { 
-                            id: 2, 
-                            title: '초동조치',
-                            content: [
-                                '신고인 요청사항 확인',
-                                '신고인 보호조치',
-                                '(필요 시) 피신고인 인사조치',
-                            ]
-                        }, 
-                        { 
-                            id: 3, 
-                            title: '초동조치',
-                            content: [
-                                '신고인 요청사항 확인',
-                                '신고인 보호조치',
-                                '(필요 시) 피신고인 인사조치',
-                            ]
-                        }, 
-                        ]; 
-                        %>
-                        <%- include('src/component/cmp_SpecList.html', {
-                            itemCount: 4,
-                            jsonData: specListData4,
-                            styleType: 'type-box-row',
-                        }) %>
-                        <!-- //cmp_SpecList -->
-                    </div>
-
-                    <p class="guide-title-h3 mt-10">SpecList styleType : type-num-sub : 기업정보 > IR 활동</p>
-                    <ul class="guide-list type-dot mt-3">
-                        <li>
-                            <p>SpecList styleType : type-num-sub 의 경우 margin-bottom:0 적용 (content.scss)</p>
-                        </li>
-                    </ul>
-                    <div class="cmp-exsample__wrap mt-10">
-                        <!-- cmp_SpecList -->
-                        <% const specListData5 = [ 
-                            { 
-                                id: 0,
-                                subTitle: '01',
-                                smallTitle: '일시',
-                                smallContent: [
-                                    '2025년 03월 20일 (목) 오전 09시 00분',
-                                ]
-                            },
-                            { 
-                                id: 1,
-                                subTitle: '02',
-                                smallTitle: '장소',
-                                smallContent: [
-                                    '서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀',
-                                ]
-                            },
-                        ]; 
-                        %>
-                        <%- include('src/component/cmp_SpecList.html', {
-                            itemCount: 4,
-                            jsonData: specListData5,
-                            styleType: 'type-num-sub',
-                        }) %>
-                        <!-- //cmp_SpecList -->
-                        <div class="button__wrap align-left mt-4">
-                            <button type="button" class="btn btn-medium btn-secondary">
-                                <span class="btn__text">다운로드</span>
-                                <i class="btn__icon ico icon-download-bl24"></i>
-                            </button>
-                            <button type="button" class="btn btn-medium btn-secondary">
-                                <span class="btn__text">다운로드</span>
-                                <i class="btn__icon ico icon-download-bl24"></i>
-                            </button>
-                            <button type="button" class="btn btn-medium btn-secondary">
-                                <span class="btn__text">다운로드</span>
-                                <i class="btn__icon ico icon-download-bl24"></i>
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>

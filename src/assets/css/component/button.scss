@@ -1,6 +1,36 @@
+@use "sass:math";
+@use "sass:map";
+
 :root {
     --border-radius: 0; 
 }
+
+//이미지 경로
+$asset-paths: (
+    icon: '/src/assets/image/icon/',
+    sub: '/src/assets/image/sub/'
+);
+
+// @param $type: 위 맵에서 정의된 키값
+// @param $name: 파일명 (확장자 제외)
+// @param $ext: 확장자 (기본 'png')
+@mixin image-path($type, $name, $ext: 'png') {
+    $base-path: map.get($asset-paths, $type);
+    @if $base-path {
+        background-image: url("#{$base-path}#{$name}.#{$ext}");
+    }
+}
+
+
+// px -> rem 변환 mixin (base 16px)
+@function rem($px, $base: 16) {
+    @return math.div($px, $base) * 1rem;
+}
+
+@function font-size($fs, $base: 16) {
+    @return calc(var($fs) / 16 * 1rem);
+}
+
 /* 버튼 */
 .button__wrap {
     display: flex;
@@ -59,6 +89,10 @@
 }
 .btn .btn__text {
     display: block;
+    font-size: calc(18 / 16 * 1rem);
+    line-height: calc(26 / 16 * 1rem);
+    font-weight: 500;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
 }
 .btn .btn__icon + .btn__text {
     margin-left: calc(8 / 16 * 1rem);
@@ -107,6 +141,12 @@
     height: calc(36 / 16 * 1rem);
     border-radius: calc(50 / 16 * 1rem);
 }
+.btn.btn-ultra-small .btn__text {
+    font-size: calc(16 / 16 * 1rem);
+    line-height: calc(26 / 16 * 1rem);
+    font-weight: 400;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+}
 /* btn-small */
 .btn.btn-small {
     /* gap: calc(4 / 16 * 1rem); */
@@ -114,6 +154,12 @@
     width: fit-content;
     min-width: calc(140 / 16 * 1rem);
     height: calc(48 / 16 * 1rem);
+}
+.btn.btn-small .btn__text {
+    font-size: calc(16 / 16 * 1rem);
+    line-height: calc(26 / 16 * 1rem);
+    font-weight: 400;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
 }
 /* btn-medium */
 .btn.btn-medium {
@@ -123,6 +169,12 @@
     min-width: calc(160 / 16 * 1rem);
     height: calc(56 / 16 * 1rem);
 }
+.btn.btn-medium .btn__text {
+    font-size: calc(18 / 16 * 1rem);
+    line-height: calc(26 / 16 * 1rem);
+    font-weight: 500;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+}
 /* btn-large */
 .btn.btn-large {
     /* gap: calc(8 / 16 * 1rem); */
@@ -130,6 +182,12 @@
     width: fit-content;
     min-width: calc(140 / 16 * 1rem);
     height: calc(56 / 16 * 1rem);
+}
+.btn.btn-large .btn__text {
+    font-size: calc(18 / 16 * 1rem);
+    line-height: calc(27 / 16 * 1rem);
+    font-weight: 400;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
 }
 
 /* btn-text - 텍스트 버튼 */
@@ -141,7 +199,10 @@
     min-width: fit-content;
     height: auto;
     color: var(--colorCM-mode1-text-text-default);
+}
+.btn.btn-text .btn__text {
     font-size: calc(var(--typo-mo-size-caption-sm-ui) / 16 * 1rem);
+    font-weight: 400;
     line-height: calc(var(--typo-mo-line-height-caption-sm-ui) / 16 * 1rem);
     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
     @media #{$min1280} {
@@ -173,6 +234,71 @@
     padding: calc(6 / 16 * 1rem);
     min-width: fit-content;
     height: auto;
+}
+
+// 애니메이션 버튼
+.btn-glide {
+    //@extend .btn;
+    //@extend .btn-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--typo-pc-family-head);
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: calc(100 / 16 * 1rem);
+    box-sizing: border-box;
+    background-color: var(--colorCM-mode1-fill-fill-default10);
+    color: var(--colorCM-mode1-text-text-on-bg);
+
+    position: relative;
+    margin-top: rem(40);
+    min-width: rem(64);
+    height: rem(64);
+
+    @media #{$tabletMini} {
+        margin-top: rem(24);
+    }
+
+    &__inner {
+        transition: width 0.8s cubic-bezier(0.64, -0.02, 0.16, 1);
+        width: 0;
+    }
+
+    &__text {
+        display: inline-block;
+        transition-delay: .3s;
+        transition: 1s cubic-bezier(0.64, -0.02, 0.16, 1);
+        transition-property: opacity, transform;
+        padding: 0 rem(90) 0 rem(40);
+        opacity: 0;
+        transform: translateY(70%);
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: rem(64);
+        height: rem(64);
+        display: inline-block;
+        @include image-path(icon, 'ico_arrow_right_bl64', 'svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: var(--colorCM-mode1-icon-icon-on-bg);
+        border-radius: 50%;
+        border: 6px solid var(--colorCM-mode1-fill-fill-default10);
+    }
+
+    &.btn-glide--active {
+        .btn-glide__text {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
 }
 
 

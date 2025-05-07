@@ -29,10 +29,12 @@
         </div>
     </div>
     <% if (typeof tagType !== 'undefined' && Array.isArray(tagList) && tagList.length > 0) { %>
-        <div class="tag-button-wrap">
+        <div class="button__wrap tag-button-wrap">
             <% tagList.forEach(function(tag) { %>
-                <button class="tag-button font-body-xs"># <%= tag %></button>
+                <button type="button" class="btn btn-large btn-secondary">
+                    <span class="btn__text"><%- tag %></span>
+                </button>
             <% }) %>
-            </div>
+        </div>
     <% } %>
 </div>

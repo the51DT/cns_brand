@@ -1,187 +1,114 @@
 const headerWrap = document.querySelector('.header');
 const bodyWrap = document.querySelector('body');
-let subMenuHeight = 0
-const mainNavigation = (selector) => {
-    console.log(selector);
-    const navyLists = document.querySelectorAll(selector); 
-    if (!navyLists.length) {
-        return;
-    }
-    navyLists.forEach(navy => {
-        navy.addEventListener('mouseenter', () => {
-            const navyBtn = navy.querySelector('.type-full'); // .navy-left .navy-list li
-            const subMenu = navy.querySelector('.gnb-sub__wrap'); // 2depth menu wrap
-            const subMenuDrop = navy.querySelector('.gnb-sub__wrap--drop'); // .navy-right .navy-list li 의 2depth menu wrap
-            // 초기화 : header, li 에 .is-active 제거, 높이값 0
-            navyLists.forEach(item => {
-                item.closest('.header').classList.remove('is-active');
-                item.classList.remove('is-active');
-                item.closest('.header').style.setProperty('--gnb-bg-height', '0px');
-            })
-            navy.classList.add('is-active');
-            bodyWrap.classList.add('overflow');
+// let subMenuHeight = 0
 
-            console.log('mouseenter');
-            // const activeMenu = document.querySelector('.navy-list > li.is-active');
-            // if (activeMenu) {
-            //     activeMenu.classList.remove('is-active');
-            // }
+/*utils */
+const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
+const addClass = (element, className) => element?.classList.add(className)
+const removeClass = (element, className) => element?.classList.remove(className)
+const setStyle = (element, property, value) => element?.style.setProperty(property, value)
 
-            if (navyBtn && subMenu) { // .navy-left
-                if (!navy.closest('.header').classList.contains('is-active')) {
-                    navy.closest('.header').classList.add('is-active');
-                }
+const removeClassFromActives = (elements, className = 'is-active') => {
+  Array.from(elements)
+    .filter(el => el.classList.contains(className))
+    .forEach(el => el.classList.remove(className))
+}
 
-                // navy.classList.add('is-active');
-                
-                // console.log(subMenu)
-                // 2depth menu높이값 계산
-                subMenuHeight = subMenu ? subMenu.scrollHeight : 0;
-                navy.closest('.header').style.setProperty('--gnb-bg-height', `${subMenuHeight + 80}px`);
-                
-                if (navy.classList.contains('is-active'))  {
-                    const subDepthMenus = navy.querySelectorAll('.sub-menu-list li');                    
-                    subDepthMenus.forEach(menu => {
-                        menu.addEventListener('click', (event) => {
-                            // event.preventDefault();
-                            const activeItem = document.querySelector('.sub-menu-list > li.is-active');
-                            if (activeItem) {
-                                activeItem.classList.remove('is-active');
-                            } 
-                            menu.classList.add('is-active');
-                        });
-                    });    
-                } 
-            } else if(subMenuDrop) { // .navy-right
-                // console.log('test')
-                navy.closest('.header').classList.add('is-active');
-                navy.closest('.header').style.setProperty('--gnb-bg-height', 0);                    
-                navy.classList.add('is-active');
-                navy.style.position = 'relative';
-            }            
-        });
+const getHeaderHeight = (el) => {
+  const gnbSubLeft = el.closest('.gnb-sub-left')
+  const subMenuDetail = el.parentNode.querySelector('.sub-menu-detail')
 
-        const navyWrap = navy.closest('.gnb-navy__wrap');
-        navyWrap.addEventListener('mouseleave', () => {
-            console.log('mouseleave');
-            bodyWrap.classList.remove('overflow');      
-            navy.parentElement.style.position = '';
-            navy.closest('.header').classList.remove('is-active'); 
-            navy.closest('.header').style.setProperty('--gnb-bg-height', 0);
-            const activeItem = document.querySelector('.navy-list > li.is-active');
-            if (activeItem) {
-                activeItem.classList.remove('is-active');
-            }
-        });
-    });
-};
+  const leftHeight = gnbSubLeft?.getBoundingClientRect().height || 0
+  const detailHeight = subMenuDetail ? subMenuDetail.getBoundingClientRect().height : 0
+
+  const maxHeight = Math.max(detailHeight, leftHeight)
+
+  // return `${maxHeight + 80}px`
+  return `${maxHeight}px`
+}
 
 
-/*utils*/
-// const setClass = (element, className, isAdd) => {
-//   if (!element) return
-//   if (isAdd) {
-//     element.classList.add(className)
-//   } else {
-//     element.classList.remove(className)
-//   }
-// }
-// const addClass = (element, className) => element?.classList.add(className)
-// const removeClass = (element, className) => element?.classList.remove(className)
-// const setStyle = (element, property, value) => element?.style.setProperty(property, value)
-// const resetStyle = (element, property) => element?.style.removeProperty(property)
-// const getElHeight = (element) => element ? element.scrollHeight : 0
+function mainNavigation(elements) {
+  const navyLists = document.querySelectorAll(elements)
+  if (!navyLists.length) return
 
-//header 높이 달라지는 이슈
-//원인: mouseleave 이벤트 시, click-bound is-active 클래스 전체를 지우면서 내부 컨텐츠를 읽지 못해 재호출 시 필요한 높이만큼 읽어오지 못함
-//해결 방안: click-bound를 전체 리스트를 돌면서 지우는 코드 수정.
-// -> 결론: mouseleave 이벤트 시 클래스 전체 삭제 X / 필요하다면 요소의 첫번째로 초기화
+  const bodyWrap = document.querySelector('body')
+  const header = bodyWrap.querySelector('.header')
+  const navyWrap = header.querySelector('.gnb-navy__wrap')
 
-// const mainNavigation = (selector) => {
-//   const navyLists = document.querySelectorAll(selector)
-//   const bodyWrap = document.querySelector('body')
-//   const header = document.querySelector('.header')
-//   const navyWrap = document.querySelector('.gnb-navy__wrap')
-//
-//   if (!navyLists.length) return
-//
-//   let activeNavy = null
-//
-//   navyLists.forEach(navy => {
-//     navy.addEventListener('mouseenter', () => {
-//       if (activeNavy === navy) {
-//         return
-//       }
-//
-//       // 1. 전체 초기화
-//       navyLists.forEach(item => {
-//         removeClass(item, 'is-active')
-//         removeClass(header, 'is-active')
-//         setStyle(header, '--gnb-bg-height', '0px')
-//       })
-//
-//       // 2. 현재 활성화
-//       addClass(navy, 'is-active')
-//       addClass(header, 'is-active')
-//       addClass(bodyWrap, 'overflow')
-//
-//       const navyBtn = navy.querySelector('.type-full')
-//       const subMenu = navy.querySelector('.gnb-sub__wrap')
-//       const subMenuDrop = navy.querySelector('.gnb-sub__wrap--drop')
-//
-//       if (navyBtn && subMenu) {
-//         setStyle(header, '--gnb-bg-height', `${getElHeight(subMenu) + 80}px`)
-//         console.log(getElHeight(subMenu), navy.innerText)
-//
-//         const subDepthMenus = navy.querySelectorAll('.sub-menu-list li')
-//         subDepthMenus.forEach(menu => {
-//           if (!menu.classList.contains('click-bound')) {
-//             menu.addEventListener('click', (event) => {
-//               event.preventDefault()
-//
-//               const activeItem = navy.querySelector('.sub-menu-list > li.is-active')
-//               if (activeItem) {
-//                 removeClass(activeItem, 'is-active')
-//               }
-//               addClass(menu, 'is-active')
-//             })
-//             addClass(menu, 'click-bound')
-//           }
-//         })
-//       } else if (subMenuDrop) {
-//         addClass(header, 'is-active')
-//         setStyle(header, '--gnb-bg-height', '0px')
-//         addClass(navy, 'is-active')
-//         setStyle(navy, 'position', 'relative')
-//       }
-//       activeNavy = navy
-//     })
-//
-//     navyWrap?.addEventListener('mouseleave', (e) => {
-//       if (!navyWrap.contains(e.relatedTarget)) {
-//         removeClass(bodyWrap, 'overflow')
-//         setStyle(navy.parentElement, 'position', '')
-//
-//         removeClass(header, 'is-active')
-//         setStyle(header, '--gnb-bg-height', '0px')
-//
-//         const activeItem = navy.querySelector('.sub-menu-list > li.is-active')
-//         if (activeItem) {
-//           // removeClass(activeItem, 'is-active')
-//         }
-//
-//         const activeNavyItem = navy.parentElement.querySelector('.navy-list > li.is-active')
-//         if (activeNavyItem) {
-//           removeClass(activeNavyItem, 'is-active')
-//         }
-//
-//         activeNavy = null
-//       }
-//     })
-//   })
-// }
+  let subHeight = 0
 
+  //이벤트 정의
+  //1. header mouse enter
+  navyLists.forEach(nav => {
+    const navyBtn = nav.querySelector('.type-full')
+    const subMenu = nav.querySelector('.gnb-sub__wrap')
+    const subMenuDrop = nav.querySelector('.gnb-sub__wrap--drop')
 
+    //마우스 클릭
+    const deps2Btns = nav.querySelectorAll('.gnb-sub__menu')
+    deps2Btns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const targetParent = btn.closest('li')
+
+        addClass(targetParent, 'is-active')
+        removeClassFromActives(siblings(targetParent), 'is-active')
+
+        setStyle(header, '--gnb-bg-height', `${getHeaderHeight(btn)}`)
+
+      })
+    })
+
+    //마우스 엔터
+    nav.addEventListener('mouseenter', () => {
+      const listLi = document.querySelectorAll('.navy-list > li')
+
+      // 1. 전체 초기화
+      navyLists.forEach(item => {
+        removeClass(item, 'is-active')
+        removeClass(header, 'is-active')
+        setStyle(header, '--gnb-bg-height', '0px')
+      })
+
+      addClass(header, 'is-active')
+      addClass(bodyWrap, 'overflow')
+      removeClassFromActives(listLi, 'is-active')
+      addClass(nav, 'is-active')
+
+      const activeBtn = nav.querySelector('.sub-menu-list > li.is-active >  .gnb-sub__menu')
+      if (navyBtn && subMenu) {
+        setStyle(header, '--gnb-bg-height', `${getHeaderHeight(activeBtn)}`)
+      } else if (subMenuDrop) {
+        addClass(header, 'is-active')
+        setStyle(header, '--gnb-bg-height', '0px')
+        addClass(nav, 'is-active')
+        setStyle(nav, 'position', 'relative')
+      }
+    })
+
+    //마우스 리브
+    navyWrap.addEventListener('mouseleave', (e) => {
+      if (!navyWrap.contains(e.relatedTarget)) {
+        removeClass(bodyWrap, 'overflow')
+        setStyle(nav.parentElement, 'position', '')
+
+        removeClass(header, 'is-active')
+        setStyle(header, '--gnb-bg-height', '0px')
+
+        const activeItem = nav.querySelector('.sub-menu-list > li.is-active')
+        if (activeItem) {
+          // removeClass(activeItem, 'is-active')
+        }
+
+        const activeNavyItem = nav.parentElement.querySelector('.navy-list > li.is-active')
+        if (activeNavyItem) {
+          removeClass(activeNavyItem, 'is-active')
+        }
+      }
+    })
+
+  })
+}
 
 const moNavigationToggle = (button) => {
     const moNavigation = document.querySelector('.mo-gnb-navy__wrap');

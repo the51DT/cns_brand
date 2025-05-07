@@ -15,9 +15,11 @@
                     <img src="<%= imgSrc %>" alt="이미지" />
                 </div>
                 <div class="text-info">
-                    <h3 class="info-title <%= item.title.size !== 'undefined' && item.title.size ? item.title.size : 'font-head-sm' %> <%= item.title.class !== 'undefined' && item.title.class ? item.title.class : 'font-medium color-text-default' %>">
-                        <%- item.title.text ? item.title.text : item.title %>
-                    </h3>
+                    <% if(item.title) { %>
+                        <h3 class="info-title <%= item.title.size !== 'undefined' && item.title.size ? item.title.size : 'font-head-sm' %> <%= item.title.class !== 'undefined' && item.title.class ? item.title.class : 'font-medium color-text-default' %>">
+                            <%- item.title.text ? item.title.text : item.title %>
+                        </h3>
+                    <% } %>
                     <% if (item.content && Array.isArray(item.content)) { %>
                         <ul class="info-list">
                             <% item.content.forEach((content) => { %>
@@ -27,6 +29,22 @@
                     <% } else { %>
                         <div class="info-text font-body-md">
                             <%- item.content %>
+                        </div>
+                    <% } %>
+                    <% if(item.button) { %>
+                        <div class="button__wrap <%- item.typeClass == 'type-left' ? 'align-left' : '' %> <%- item.typeClass=='type-right' ? 'align-right' : '' %>">
+                            <% item.button.forEach((button) => { %>
+                                <% if(button.type == 'link') {%>
+                                    <a href="<%- button.href ? button.href : '#' %>"
+                                        class="btn <%- button.style ? button.style : 'btn-primary' %> <%- button.size ? button.size : 'btn-small' %>">
+                                        <span class="btn__text"><%- button.text %></span>
+                                    </a>
+                                <% } else if(button.type == 'button') { %>
+                                    <button type="button" modal-id="<%- button.modalId ? button.modalId : '#' %>" class="btn <%- button.style ? button.style : 'btn-primary' %> <%- button.size ? button.size : 'btn-small' %>" onclick="openModal(event)">
+                                        <span class="btn__text"><%- button.text %></span>
+                                    </button>
+                                <% } %>
+                            <% }) %>
                         </div>
                     <% } %>
                 </div>

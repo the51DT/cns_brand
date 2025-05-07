@@ -526,36 +526,6 @@
       "fileName": "",
       "Level2": [
         {
-          "name": "기업정보 - 경영정보",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "bizInfo_mgmtInfo.html"
-        },
-        {
-          "name": "기업정보 - 재무정보",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "bizInfo_financial.html"
-        },
-        {
-          "name": "기업정보 - 공시정보",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "bizInfo_disclosureInfo.html"
-        },
-        {
-          "name": "기업정보 - IR자료",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "bizInfo_ir.html"
-        },
-        {
-          "name": "기업정보 - 기업소개",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "bizInfo_compOvw.html"
-        },
-        {
           "name": "기업정보 - CEO",
           "screenId": "",
           "path": "/src/page/",
@@ -572,6 +542,48 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "bizInfo_LGway.html"
+        },
+        {
+          "name": "기업정보 - 경영정보",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_mgmtInfo.html"
+        },
+        {
+          "name": "기업정보 - 재무정보",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_financial.html"
+        },
+        {
+          "name": "기업정보 - 주주현황/배당정보",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_shareholder.html"
+        },
+        {
+          "name": "기업정보 - 공시정보",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_disclosureInfo.html"
+        },
+        {
+          "name": "기업정보 - IR자료",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_ir.html"
+        },
+        {
+          "name": "기업정보 - IR 활동",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_irActivity.html"
+        },
+        {
+          "name": "기업정보 - 기업소개",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "bizInfo_compOvw.html"
         },
         {
           "name": "기업정보 - LG Way",
@@ -626,12 +638,6 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "bizInfo_esg.html"
-        },
-        {
-          "name": "기업정보 - IR 활동",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "bizInfo_irActivity.html"
         }
       ]
     },

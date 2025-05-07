@@ -93,11 +93,51 @@
                             title: {
                                 text: '티저타이틀 타이틀 영역 기본 사이즈 sm colorcm-primary',
                                 subTitle: '티저타이틀 subTitle',
-                                class: 'colorcm-primary'
+                                addClass: 'colorcm-primary'
                             },
                             marginbottom: 'default',
                         })) %>                        
                         <!-- //Teaser Title -->
+                    </div>
+
+                    <p class="guide-title-h3 mt-32">title_select</p>
+                    <div class="cmp-exsample__wrap mt-10">
+                        <%- include('src/component/cmp_title_select.html', {
+                            title : {
+                                text: '2024년',
+                                size: 'lg',
+                                addClass: 'color-text-default font-medium',
+                            },
+                            showSelect: true,
+                            selectedValue: '연도선택',
+                            options: ['2025년', '2024년', '2023년', '2022년']
+                        }) %>
+                    </div>
+                    <div class="cmp-exsample__wrap mt-10">
+                        <%- include('src/component/cmp_title_select.html', {
+                            title : {
+                                text: '2024년',
+                                size: 'lg',
+                                addClass: 'color-text-default font-medium',
+                            },
+                            showSelect: true,
+                            rowJustify: 'is-between',
+                            selectedValue: '연도선택',
+                            options: ['2025년', '2024년', '2023년', '2022년']
+                        }) %>
+                    </div>
+                    <div class="cmp-exsample__wrap mt-10">
+                        <%- include('src/component/cmp_title_select.html', {
+                            title : {
+                                text: '2024년',
+                                size: 'lg',
+                                addClass: 'color-text-default font-medium',
+                            },
+                            showSelect: true,
+                            rowJustify: 'is-column',
+                            selectedValue: '연도선택',
+                            options: ['2025년', '2024년', '2023년', '2022년']
+                        }) %>
                     </div>
 
                     <!-- 2025.04.15 사용안함으로 주석 처리 -->
