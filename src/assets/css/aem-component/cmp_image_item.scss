@@ -9,6 +9,18 @@
                 border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
             }
         }
+        &__only-pc {
+            display: none;
+            @media #{$min1280} {
+                display: block;
+            }
+        }
+        &__only-mo {
+            display: block;
+            @media #{$min1280} {
+                display: none;
+            }
+        }
         img {
             width: 100%;
             height: 100%;
@@ -88,7 +100,9 @@
                 }
                 .info-title {
                     width: 100%;
-                    max-width: 48%;
+                    @media #{$min1280} {
+                        max-width: 48%;
+                    }
                 }
                 .info-text {
                     flex: 1;

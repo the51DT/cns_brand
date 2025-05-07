@@ -1,45 +1,4 @@
 .bizinfo- {
-    &comp-ovw {
-        .inner-wrap {            
-            &-item {
-                display: flex;
-                justify-content: center;
-                gap: calc(80 / 16 * 1rem);
-                margin-top: calc(120 / 16 * 1rem);
-                .teaser-title {
-                    min-width: calc(650 / 16 * 1rem);
-                }
-                @media #{$phone} {
-                    display: block;
-                    margin-top: calc(64 / 16 * 1rem);
-                    .teaser-title {
-                        min-width: 100%;
-                        .cmp-title__wrap {
-                            margin-bottom: calc(24 / 16 * 1rem);
-
-                        }
-                    }                    
-                }
-            }
-        }
-        .cmp-dash-list {
-            margin-bottom: calc(180 / 16 * 1rem);            
-            @media #{$phone} {
-                margin-bottom: calc(96 / 16 * 1rem);
-            }
-            .cmp-dash-list__wrap {
-                @media #{$phone} {
-                    gap: calc(40 / 16 * 1rem);
-                }
-            }
-        }
-        .cmp_image-item-column {
-            margin-bottom: calc(160 / 16 * 1rem);         
-            @media #{$phone} {
-                margin-bottom: calc(80 / 16 * 1rem);
-            }
-        }        
-    }
     // .bizInfo_enviroMgmt
     &enviro-mgmt {
         .cmp_image-item-2col,

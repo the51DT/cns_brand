@@ -12,7 +12,10 @@
         %>
             <div class="cmp_imageitem <%= typeof item.typeClass !== 'undefined' ? item.typeClass : 'type-default' %>">
                 <div class="img-box <%- item.imageRound === true && item.imageRound ? 'img-box--round' : ''%>">
-                    <img src="<%= imgSrc %>" alt="이미지" />
+                    <img src="<%= imgSrc %>" alt="이미지" class="<%- typeof item.ImageUrlMo !== 'undefined' && item.ImageUrlMo ? 'img-box__only-pc' : '' %>"/>
+                    <% if(item.ImageUrlMo) { %>
+                        <img src="<%= item.ImageUrlMo %>" alt="" class="img-box__only-mo"/>
+                    <% } %>
                 </div>
                 <div class="text-info">
                     <% if(item.title) { %>

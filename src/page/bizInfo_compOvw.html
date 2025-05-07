@@ -21,124 +21,189 @@
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap wide">
-                <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
-                    pcImg: 'https://placehold.co/1760x480', 
-                    moImg: 'https://placehold.co/320x240',
-                    pageTitle: 'IT 서비스 전문기업에서 <br>DX NO.1 기업으로',
-                    bannerSize : 'wide'
-                })) %>
+                <!-- Image Box -->
+                <% 
+                    const iamgeData=[{
+                        pc: 'https://placehold.co/1920x540', 
+                        mo: 'https://placehold.co/360x240', 
+                    }] 
+                %>
+                <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                    jsonData : iamgeData,
+                    alt : '',
+                    marginVertical: 'mb-exc-spacing-120-64',
+                }))%>
+                <!-- // Image Box -->
             </div>
             <div class="inner-wrap">                
-                <div class="inner-wrap-item">
-                    <div class="cmp-wrap cmp-feature-grid">
-                    <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                        title: {
-                            text: 'IT 서비스 전문기업에서 <br>DX NO.1 기업으로',
-                            size: 'lg',
-                            subDesc: '(2024년 1월 기준)'
-                        },
-                    })) %>  
-                    <%
-                        const dashListData = [
-                            {
-                                id: 0,
-                                type: 'type-default',
-                                smallText: 'IT경험 (1987년 EDS와 합작 설립)',
-                                bigText: '38년'
+                <div class="cmp-wrap cmp-feature-grid">
+                    <div>
+                        <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                            title: {
+                                text: 'IT 서비스 전문기업에서 <br>DX NO.1 기업으로',
+                                size: 'lg',
+                                subDesc: '(2024년 1월 기준)'
                             },
-                            {
-                                id: 1,
-                                type: 'type-default',
-                                smallText: '매출 (‘20~’23 CAGR : 18.6%)',
-                                bigText: '56,053억원'
-                            },
-                            {
-                                id: 2,
-                                type: 'type-default',
-                                smallText: '이익 (’20~’23 CAGR : 23.6%)',
-                                bigText: '4,640억원'
-                            },
-                            {
-                                id: 3,
-                                type: 'type-default',
-                                smallText: '글로벌 매출 비중',
-                                bigText: '19.0%'
-                            },
-                            {
-                                id: 4,
-                                type: 'type-default',
-                                smallText: '직원 수',
-                                bigText: '7,000명+'
-                            },
-                            {
-                                id: 51,
-                                type: 'type-default',
-                                smallText: '해외 법인 / 지사 근무인원',
-                                bigText: '1,200명+'
-                            },
-                            {
-                                id: 6,
-                                type: 'type-default',
-                                smallText: '확보 특허권',
-                                bigText: '426건'
-                            },
-                            {
-                                id: 7,
-                                type: 'type-default',
-                                smallText: '확보 S/W 저작권',
-                                bigText: '1,323건'
-                            },
-                        ]
-                    %> 
-                    <%- include('src/component/cmp_dash_list.html', Object.assign({}, locals, { 
-                        jsonData: dashListData,
-                        itemType: 'type-dash-top',
-                    })) %>
+                        })) %>  
+                    </div>
+                    <div>
+                        <%
+                            const dashListData = [
+                                {
+                                    id: 0,
+                                    type: 'type-default',
+                                    smallText: 'IT경험 (1987년 EDS와 합작 설립)',
+                                    bigText: '38년'
+                                },
+                                {
+                                    id: 1,
+                                    type: 'type-default',
+                                    smallText: '매출 (‘20~’23 CAGR : 18.6%)',
+                                    bigText: '56,053억원'
+                                },
+                                {
+                                    id: 2,
+                                    type: 'type-default',
+                                    smallText: '이익 (’20~’23 CAGR : 23.6%)',
+                                    bigText: '4,640억원'
+                                },
+                                {
+                                    id: 3,
+                                    type: 'type-default',
+                                    smallText: '글로벌 매출 비중',
+                                    bigText: '19.0%'
+                                },
+                                {
+                                    id: 4,
+                                    type: 'type-default',
+                                    smallText: '직원 수',
+                                    bigText: '7,000명+'
+                                },
+                                {
+                                    id: 51,
+                                    type: 'type-default',
+                                    smallText: '해외 법인 / 지사 근무인원',
+                                    bigText: '1,200명+'
+                                },
+                                {
+                                    id: 6,
+                                    type: 'type-default',
+                                    smallText: '확보 특허권',
+                                    bigText: '426건'
+                                },
+                                {
+                                    id: 7,
+                                    type: 'type-default',
+                                    smallText: '확보 S/W 저작권',
+                                    bigText: '1,323건'
+                                },
+                            ]
+                        %> 
+                        <%- include('src/component/cmp_dash_list.html', Object.assign({}, locals, { 
+                            jsonData: dashListData,
+                            itemType: 'type-dash-top',
+                            marginVertical: 'mb-0',
+                        })) %>
                     </div>
                 </div>
+                <!-- Title -->
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    title: {
+                            text: '고객 비즈니스의 성공을 돕는 신념',
+                            subTitle: 'Pursuing Excellence',
+                        },
+                    marginVertical: 'mb-spacing05',
+                })) %>
+                <!-- // Title -->
+                <!-- ImageItem -->
                 <%
-                    const imageItemColumnData = [
+                    const imageItemData1 = [
                         {
                             id: 0,
-                            type: 'type-radius',
-                            imageUrl: '/src/assets/image/temp/full_imag01.png',
-                            imageAlt: 'temp',
-                            title: '고객 비즈니스의 성공을 돕는 신념',
-                            desc: 'Pursuing Excellence',
-                            subTitle: '혁신(革新, Innovation)은 아주 작은 변화에서 시작됩니다.',
-                            content: [
-                                '임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.',
-                            ],
+                            typeClass: 'type-default',
+                            imageUrl: 'https://placehold.co/1440x464',
+                            ImageUrlMo: 'https://placehold.co/320x104',
+                            imageRound: true,
+                            title: {
+                                text : '혁신(革新, Innovation)은 아주 작은변화에서 시작됩니다.',
+                                size: 'font-body-lg',
+                                class: 'font-semibold color-text-default',
+                            },
+                            content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>',
                         },
-                        {
-                            id: 1,
-                            type: 'type-radius',
-                            imageUrl: '/src/assets/image/temp/full_imag01.png',
-                            imageAlt: 'temp',
-                            title: '변화를 넘어 혁신을 이끄는 DX 기술',
-                            desc: 'Digital Leadership',
-                            subTitle: 'LG CNS는 단순한 IT 기술 회사가 아닙니다.',
-                            content: [
-                                'IT 기술로 급변하는 환경에 대응할 뿐만 아니라 DX 기술로 보이지 않는 세상 곳곳을 디지털화합니다. 공공, 금융, 제조, 서비스 등 다양한 산업 영역에 걸쳐 차별화된 경험과 가치를 제공함으로써 더 나은 미래를 만드는 원동력이 됩니다.',
-                            ],
-                        },
-                        {
-                            id: 2,
-                            type: 'type-radius',
-                            imageUrl: '/src/assets/image/temp/full_imag01.png',
-                            imageAlt: 'temp',
-                            title: '지속 가능한 미래를 위한 성장 가속화',
-                            desc: 'Flywheel Framework',
-                            subTitle: '모두에게 이로운 지속 가능한 미래를 위하여',
-                            content: [
-                                '고객의 비즈니스가 성장할 수 있도록 최고의 IT 전문가들이 과감한 도전과 실행으로 미래의 기술을 앞당겨 실현하고 있습니다.',
-                            ],
-                        },
-                    ]
+                    ];
                 %> 
-                <%- include('src/component/cmp_image_item_column.html', Object.assign({}, locals, {
-                    jsonData: imageItemColumnData
+                <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {                             
+                    itemCount: 2,
+                    jsonData: imageItemData1
                 })) %>
+                <!-- // ImageItem -->
+                <!-- Title -->
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    title: {
+                            text: '변화를 넘어 혁신을 이끄는 DX 기술',
+                            subTitle: 'Digital Leadership',
+                        },
+                    marginVertical: 'mb-spacing05',
+                })) %>
+                <!-- // Title -->
+                <!-- ImageItem -->
+                <%
+                    const imageItemData2 = [
+                        {
+                            id: 0,
+                            typeClass: 'type-default',
+                            imageUrl: 'https://placehold.co/1440x464',
+                            ImageUrlMo: 'https://placehold.co/320x104',
+                            imageRound: true,
+                            title: {
+                                text : 'LG CNS는 단순한 IT 기술 회사가 아닙니다.',
+                                size: 'font-body-lg',
+                                class: 'font-semibold color-text-default',
+                            },
+                            content: '<p>IT 기술로 급변하는 환경에 대응할 뿐만 아니라 DX 기술로 보이지 않는 세상 곳곳을 디지털화합니다. 공공, 금융, 제조, 서비스 등 다양한 산업 영역에 걸쳐 차별화된 경험과 가치를 제공함으로써 더 나은 미래를 만드는 원동력이 됩니다.</p>',
+                        },
+                    ];
+                %> 
+                <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {                             
+                    itemCount: 2,
+                    jsonData: imageItemData2
+                })) %>
+                <!-- // ImageItem -->
+                <!-- Title -->
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    title: {
+                            text: '지속 가능한 미래를 위한 성장 가속화',
+                            subTitle: 'Flywheel Framework',
+                        },
+                    marginVertical: 'mb-spacing05',
+                })) %>
+                <!-- // Title -->
+                <!-- ImageItem -->
+                <%
+                    const imageItemData3 = [
+                        {
+                            id: 0,
+                            typeClass: 'type-default',
+                            imageUrl: 'https://placehold.co/1440x464',
+                            ImageUrlMo: 'https://placehold.co/320x104',
+                            imageRound: true,
+                            title: {
+                                text : '모두에게 이로운 지속 가능한 미래를 위하여',
+                                size: 'font-body-lg',
+                                class: 'font-semibold color-text-default',
+                            },
+                            content: '<p>고객의 비즈니스가 성장할 수 있도록 최고의 IT 전문가들이 과감한 도전과 실행으로 미래의 기술을 앞당겨 실현하고 있습니다.</p>',
+                        },
+                    ];
+                %> 
+                <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {                             
+                    itemCount: 2,
+                    jsonData: imageItemData3
+                })) %>
+                <!-- // ImageItem -->
+                <!-- mobile quick button -->
+                <!-- // mobile quick button -->
             </div>
         </div>
         <%- include('src/_inc/footer.html') %>
