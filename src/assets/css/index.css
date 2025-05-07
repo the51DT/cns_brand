@@ -3,7 +3,6 @@
 /* component */
 @import './component/typograph.scss';
 @import './component/color.scss';
-@import './component/spacing.scss';
 @import './component/modal.scss';
 @import './component/tabs.scss';
 @import './component/button.scss';
@@ -65,6 +64,8 @@
 
 /* icon */
 @import 'icon.scss';
+/* custom spacing(BX guide) */
+@import 'spacing.scss';
 /* tailwind */
 @import '/public/assets/bundle/tailwindcss/tailwind-all.min.scss';
 /* main content*/
