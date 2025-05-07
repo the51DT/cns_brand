@@ -44,7 +44,23 @@
                     &.detail-info__like {
                         .btn {
                             padding: 0;
-                            gap: calc(4 / 16 * 1rem)
+                            gap: calc(4 / 16 * 1rem);
+                            // LIKE 버튼 비활성화 시
+                            .btn__icon {
+                                display: block;
+                                &--is-active {
+                                    display: none;
+                                }
+                            }
+                            // LIKE 버튼 활성화 시
+                            &--is-active {
+                                .btn__icon {
+                                    display: none;
+                                    &--is-active {
+                                        display: block;
+                                    }
+                                }
+                            }
                         }
                     }
                     & + .detail-info__util__item {
