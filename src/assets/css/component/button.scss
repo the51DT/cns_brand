@@ -202,6 +202,7 @@ $asset-paths: (
 }
 .btn.btn-text .btn__text {
     font-size: calc(var(--typo-mo-size-caption-sm-ui) / 16 * 1rem);
+    font-weight: 400;
     line-height: calc(var(--typo-mo-line-height-caption-sm-ui) / 16 * 1rem);
     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
     @media #{$min1280} {
