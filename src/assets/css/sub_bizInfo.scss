@@ -1,32 +1,44 @@
 .bizinfo- {
     &comp-ovw {
-        .sub-visual__wrap {
-            margin-bottom: calc(40 / 16 * 1rem);
+        .inner-wrap {            
+            &-item {
+                display: flex;
+                justify-content: center;
+                gap: calc(80 / 16 * 1rem);
+                margin-top: calc(120 / 16 * 1rem);
+                .teaser-title {
+                    min-width: calc(650 / 16 * 1rem);
+                }
+                @media #{$phone} {
+                    display: block;
+                    margin-top: calc(64 / 16 * 1rem);
+                    .teaser-title {
+                        min-width: 100%;
+                        .cmp-title__wrap {
+                            margin-bottom: calc(24 / 16 * 1rem);
+
+                        }
+                    }                    
+                }
+            }
         }
         .cmp-dash-list {
-            margin-bottom: calc(200 / 16 * 1rem);
-            @media #{$tablet} {
-                margin-bottom: calc(160 / 16 * 1rem);
-            }
-            @media #{$tabletMini} {
-                margin-bottom: calc(120 / 16 * 1rem);
-            }
+            margin-bottom: calc(180 / 16 * 1rem);            
             @media #{$phone} {
-                margin-bottom: calc(80 / 16 * 1rem);
+                margin-bottom: calc(96 / 16 * 1rem);
+            }
+            .cmp-dash-list__wrap {
+                @media #{$phone} {
+                    gap: calc(40 / 16 * 1rem);
+                }
             }
         }
         .cmp_image-item-column {
-            margin-bottom: calc(160 / 16 * 1rem);
-            @media #{$tablet} {
-                margin-bottom: calc(120 / 16 * 1rem);
-            }
-            @media #{$tabletMini} {
-                margin-bottom: calc(100 / 16 * 1rem);
-            }
+            margin-bottom: calc(160 / 16 * 1rem);         
             @media #{$phone} {
                 margin-bottom: calc(80 / 16 * 1rem);
             }
-        }
+        }        
     }
     // .bizInfo_enviroMgmt
     &enviro-mgmt {
@@ -35,12 +47,6 @@
             margin-bottom: calc(200 / 16 * 1rem);
             @media #{$pcMiddle} {
                 margin-bottom: calc(160 / 16 * 1rem);
-            }
-            @media #{$tablet} {
-                margin-bottom: calc(120 / 16 * 1rem);
-            }
-            @media #{$tabletMini} {
-                margin-bottom: calc(100 / 16 * 1rem);
             }
             @media #{$phone} {
                 margin-bottom: calc(80 / 16 * 1rem);
@@ -80,28 +86,6 @@
 
         p {
             margin-bottom: 2rem;
-        }
-
-        @media #{$tablet} {
-            &__container {
-                flex-direction: column;
-                padding: calc(80 / 16 * 1rem) 0;
-            }
-            
-            .text-area {
-                width: 100%;
-            }
-            
-            .pc-image {
-                display: none; /* 모바일에서는 PC 이미지 숨김 */
-            }
-            
-            .mobile-image {
-                display: block; /* 모바일에서는 모바일 이미지 표시 */
-                width: 100%;
-                margin: 2rem 0;
-                text-align: center;
-            }
         }
     }
 
@@ -148,12 +132,6 @@
             @media #{$pcMiddle} {
                 margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
             }
-            @media #{$tablet} {
-                margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
-            }
-            @media #{$tabletMini} {
-                margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
-            }
             @media #{$phone} {
                 margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
             }
@@ -195,59 +173,6 @@
                 border-bottom: 1px solid var(--stroke-stroke-default-1, #1a1a1a);
             }
         }
-
-        @media #{$tabletMini} {
-            .table-container {
-                overflow-x: hidden;
-            }
-
-            .data-table {
-                min-width: auto;
-                display: block;
-                border-top: 2px solid var(--colorCM-all-stroke-stroke-default1);
-
-                thead {
-                    display: none;
-                }
-
-                tbody,
-                tr {
-                    display: block;
-                    width: 100%;
-                }
-
-                tr {
-                    border-bottom: 1px solid var(--colorCM-all-stroke-stroke-default7);
-                    padding: 16px;
-                }
-
-                tr:last-child {
-                    border-bottom: 1px solid var(--stroke-stroke-default-1, #1a1a1a);
-                }
-
-                td {
-                    display: block;
-                    border: none;
-                    text-align: left !important;
-                    padding: 0;
-                    padding-bottom: 8px;
-                }
-
-                td:first-child {
-                    display: none;
-                }
-
-                td:nth-child(4) {
-                    text-align: left !important;
-                    padding-bottom: 0;
-                    padding-top: 8px;
-                }
-
-                tr:last-child td {
-                    border-bottom: none;
-                }
-            }
-        }
     }
     &human-rights {
     }
@@ -260,15 +185,7 @@
             justify-content: center;
             gap: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
             margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
-            clear: both;
-            @media #{$tablet} {
-                grid-template-columns: 1fr 1fr;
-                row-gap: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
-            }
-            @media #{$tabletMini} {
-                grid-template-columns: 1fr;
-                align-items: flex-start;
-            }
+            clear: both;            
             @media #{$phone} {
                 row-gap: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
             }
@@ -408,10 +325,6 @@
                         line-height: calc(var(--typo-pc-line-height-head-xl) / 16 * 1rem);
                         cursor: pointer;
 
-                        @media #{$tablet} {
-                            font-size: calc(var(--typo-pc-size-head-xs) / 16 * 1rem);
-                        }
-
                         @media #{$phone} {
                             font-size: calc(var(--typo-mo-size-body-lg) / 16 * 1rem);
                         }
@@ -419,11 +332,7 @@
                     span {
                         font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
                         font-weight: 700;
-                        line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
-
-                        @media #{$tablet} {
-                            font-size: calc(var(--typo-mo-size-head-lg) / 16 * 1rem);
-                        }
+                        line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);                        
                     }
                     p {
                         font-size: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
@@ -471,11 +380,6 @@
             overflow: visible;
             height: auto;
             gap: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
-
-            @media #{$tablet} {
-                gap: calc(var(--spacing-mode1-horizontal4-x-l) / 16 * 1rem);
-            }
-
             @media #{$phone} {
                 padding-top: calc(var(--spacing-mode1-horizontal5-x-l) / 16 * 1rem);
             }
@@ -489,11 +393,6 @@
                 height: 100%;
                 background: linear-gradient(to bottom, #f729c1 0%, #e156e2 35%, #c19df4 65%, #a9d7e6 100%);
                 overflow: hidden;
-
-                @media #{$tablet} {
-                    // height: 40020px;
-                }
-
                 .bar {
                     position: absolute;
                     height: 100%;
@@ -524,11 +423,7 @@
                 padding-left: calc(77 / 16 * 1rem); //수치 수정 해주세요
                 width: calc(600 / 16 * 1rem);
                 letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
-                // overflow-y: auto;
-
-                @media #{$tablet} {
-                    width: calc(385 / 16 * 1rem);
-                }
+                // overflow-y: auto;                
 
                 @media #{$phone} {
                     width: calc(526 / 16 * 1rem);
@@ -565,10 +460,6 @@
 
                 .year-container {
                     position: relative;
-
-                    @media #{$tablet} {
-                    }
-
                     span {
                         display: contents;
                         // color: #F729C1;
@@ -610,11 +501,7 @@
                         // display: flex;
                         // align-items: center;
                         // justify-content: center;
-                        margin-right: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);
-
-                        @media #{$tablet} {
-                            margin-right: calc(var(--spacing-mode1-horizontal4-x-l) / 16 * 1rem);
-                        }
+                        margin-right: calc(var(--spacing-mode1-horizontal6-x-l) / 16 * 1rem);                        
 
                         //엘리먼트 제거 ㅜㅠ
                         // .outer-glow {
@@ -673,32 +560,20 @@
         }
 
         .cmp-title-select{
-            margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
-            @media #{$tablet} {
-                margin-bottom: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
-            }
+            margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);            
         }
     }
 
     &soc-contrib {
         .cmp-feature-grid {
-            margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-            @media #{$tablet} {
-                margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
-            }
+            margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);            
             .detail_text {
-                margin-bottom: calc(60 / 16 * 1rem);
-                @media #{$tabletMini} {
-                    margin-bottom: calc(32 / 16 * 1rem);
-                }
+                margin-bottom: calc(60 / 16 * 1rem);                
             }
             .cmp-wrap {
                 margin-bottom: 0;
             }
             .mo-100 {
-            @media #{$tablet} {
-                flex-wrap: wrap;
-            }
             @media #{$phone} {
                 .btn {
                 width: 100%;
@@ -717,9 +592,6 @@
                 margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
             }
             .mo-100 {
-                @media #{$tablet} {
-                    flex-wrap: wrap;
-                }
                 @media #{$phone} {
                     .btn {
                         width: 100%;
@@ -734,9 +606,6 @@
         }
         .detail-text {
             margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
-            @media #{$tabletMini} {
-                margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
-            }
             @media #{$phone} {
                 margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
             }
@@ -749,9 +618,6 @@
     &grow-fair {
         .detail-text {
             margin-bottom: calc(60 / 16 * 1rem);
-            @media #{$tabletMini} {
-                margin-bottom: calc(32 / 16 * 1rem);
-            }
             &-specialist {
                 margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
             }
@@ -767,25 +633,7 @@
             // .table-container {
             //   max-width: 100%;
             //   overflow-x: auto;
-            // }
-            &.add-table {
-                @media #{$tablet} {
-                    grid-template-columns: calc(350 / 16 * 1rem) calc(594 / 16 * 1rem);
-                }
-                @media #{$tabletMini} {
-                    grid-template-columns: repeat(1, 100%);
-                    gap: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
-                    & > div:last-child .cmp-wrap:first-child:not(.cmp-table__wrap) {
-                        margin-top: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
-                    }
-                }
-            }
-            @media #{$tablet} {
-                margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
-            }
-            @media #{$tabletMini} {
-                margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
-            }
+            // }            
             @media #{$phone} {
                 margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
             }
@@ -817,51 +665,27 @@
 
     // LGWay 페이지 마크업을 위한 임시 스타일 적용
     &LG-way {
-        background-color: var(--colorCM-mode1-background-background-default10);
-        color: var(--colorCM-mode1-text-text-on-bg);
+        background-color: #ffffff;
+        color: #121212;
         &__section {
             display: flex;
             align-items: center;
-            @media #{$tabletMini} {
-                padding-top: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-                align-items: flex-start;
-            }
             @media #{$phone} {
                 padding-top: calc((var(--spacing-mode1-vertical5-x-l)) / 16 * 1rem);
             }
-            &--01 {
-                background: url('#{$basePath}image/sub/bg_lgway_sec01_pc.png') no-repeat center / cover;
-                @media #{$tabletMini} {
-                    overflow: hidden;
-                    padding-top: calc(calc(var(--spacing-mode1-vertical7-x-l) + 80) / 16 * 1rem);
-                    background: url('#{$basePath}image/sub/bg_lgway_sec01_mo.png') no-repeat center / cover;
+            &__img {
+                img {
+                    width: calc(837 / 16 * 1rem);
+                    height: calc(759 / 16 * 1rem);
                 }
+            }
+            &--01 {                
                 @media #{$phone} {
                     padding-top: calc(calc(var(--spacing-mode1-vertical5-x-l) + 80) / 16 * 1rem);
                 }
-                &:before {
-                    display: block;
-                    content: '';
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    width: calc(2241 / 16 * 1rem);
-                    height: calc(1250 / 16 * 1rem);
-                    background: url('#{$basePath}image/sub/bg_lgway_sec01_sub_pc.png') no-repeat center / cover;
-                    @media #{$tabletMini} {
-                        top: initial;
-                        left: 50%;
-                        right: initial;
-                        bottom: 0;
-                        transform: translateX(-50%);
-                        width: calc(702.9 / 16 * 1rem);
-                        height: calc(392 / 16 * 1rem);
-                        background: url('#{$basePath}image/sub/bg_lgway_sec01_sub_mo.png') no-repeat center / cover;
-                    }
-                }
                 .inner-wrap {
                     z-index: 1;
-                }
+                }                
             }
             &.full-sec {
                 position: relative;
@@ -874,11 +698,6 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                @media #{$tabletMini} {
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: calc(40 / 16 * 1rem);
-                }
                 .button__wrap {
                     width: fit-content;
                 }
@@ -887,8 +706,8 @@
                 &--scroll-down {
                     position: absolute;
                     left: 50%;
-                    bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
-                    transform: translateX(-50%);
+                    bottom: calc(140 / 16 * 1rem);
+                    transform: translateX(-50%);                    
                     @media #{$phone} {
                         bottom: calc(40 / 16 * 1rem);
                     }
@@ -929,7 +748,7 @@
             }
             &--item {
                 padding: calc(5 / 16 * 1rem) calc(19 / 16 * 1rem);
-                border: calc(1 / 16 * 1rem) solid var(--colorGL-all-white100);
+                border: calc(1 / 16 * 1rem) solid var(--colorGL-all-black100);
                 border-radius: calc(50 / 16 * 1rem);
                 &:not(.is-active) {
                     font-size: 0;
@@ -946,15 +765,6 @@
             
             @media #{$pcMiddle} {
                 width: 63.15789473684%;
-            }
-            @media #{$tablet} {
-                width: 64.53125%;
-            }
-            @media #{$tabletMini} {
-                width: 100%;
-                right: auto;
-                left: 50%;
-                transform: translateX(-50%);
             }
             @media #{$phone} {
                 width: 144.44444444444%;
@@ -997,66 +807,11 @@
         }
         .LG-way-swiper {
             height: 100vh;
-            .parallax-bg {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                bottom: 40%;
-                right: calc(57 / 16 * 1rem);
-                z-index: 0;
-                width: 64.53125%;
-                height: auto;
-                max-height: 100vh;
-                will-change: transform, opacity;
-                opacity: 0;
-                transition: bottom 0.3s ease-out, opacity 0.3s ease-in-out;
-                .full-sec__img {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100%;
-                    height: auto;
-                    aspect-ratio: 1652 / 2030;
-                    opacity: 0;
-                    transform: translateY(-100%);
-                    transition: opacity 0.8s ease-in-out;
-                    &--01 {
-                        background: url('#{$basePath}image/sub/img_history_sec02_pc.png') no-repeat 100% center / contain;
-                        @media #{$tabletMini} {
-                            background: url('#{$basePath}image/sub/img_history_sec02_mo.png') no-repeat center 100% / contain;
-                        }
-                    }
-                    &--02 {
-                        background: url('#{$basePath}image/sub/img_history_sec03_pc.png') no-repeat 100% center / contain;
-                        @media #{$tabletMini} {
-                            background: url('#{$basePath}image/sub/img_history_sec03_mo.png') no-repeat center 100% / contain;
-                        }
-                    }
-                    &--03 {
-                        background: url('#{$basePath}image/sub/img_history_sec04_pc.png') no-repeat 100% center / contain;
-                        @media #{$tabletMini} {
-                            background: url('#{$basePath}image/sub/img_history_sec04_mo.png') no-repeat center 100% / contain;
-                        }
-                    }
-                    &.is-active {
-                        opacity: 1;
-                    }
-                }
-            }
         }
     }
     &esg {
         .cmp-feature-grid {
             margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-            @media #{$tablet} {
-                margin-bottom: calc(var(--spacing-mode1-vertical6-x-l) / 16 * 1rem);
-            }
-            @media #{$phone} {
-                margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
-            }
             .cmp-wrap {
                 margin-bottom: 0;
             }
@@ -1074,14 +829,6 @@
             .cmp-select{
                 margin-top: calc(var(--typo-pc-size-body-xl) / 16 * 1rem);
             }
-            @media #{$tablet} {
-                grid-template-columns: auto 50%;
-            }
-            @media #{$tabletMini} {
-                // justify-content: none;
-                display: flex;
-                flex-direction: column;
-            }
             .event-text{
                 // position: sticky;
                 // top: 20px;
@@ -1090,10 +837,6 @@
                 .event-period {
                     font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
                     line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
-                    @media #{$tablet} {
-                        font-size: calc(var(--typo-tablet-size-head-lg)/16*1rem);
-                        line-height: calc(var(--typo-tablet-line-height-head-lg) / 16 * 1rem);
-                    }
                     @media #{$phone} {
                         font-size: calc(var(--typo-mo-size-head-lg)/16*1rem);
                         line-height: calc(var(--typo-mo-line-height-head-lg) / 16 * 1rem);

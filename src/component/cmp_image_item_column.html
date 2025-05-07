@@ -6,23 +6,81 @@
 
     <% if (data.length > 0) { %>
         <% data.forEach((item, i) => { %>
-            <div class="image-item-column__wrap <%- item.type !== 'undefined' && item.type ? item.type : 'type-default'  %>">
-                <div class="image-item-column__container">
-                    <% if(item.title || item.desc) { %>
-                        <div class="image-item-column__text-box">
-                            <% if(item.title) { %>
-                                <span class="image-item-column__text-box__big-title font-head-md">
-                                    <%- item.title %>
-                                </span>
-                            <% } %>
-                            <% if(item.desc) { %>
-                                <span class="image-item-column__text-box__desc font-body-md">
-                                    <%- item.desc %>
-                                </span>
-                            <% } %>
+            <% if (item.type === "type-default") { %>
+                <div class="image-item-column__wrap <%- item.type !== 'undefined' && item.type ? item.type : 'type-default'  %>">
+                    <div class="image-item-column__container">
+                        <% if(item.title || item.desc) { %>
+                            <div class="image-item-column__text-box">
+                                <% if(item.title) { %>
+                                    <span class="image-item-column__text-box__big-title font-head-md">
+                                        <%- item.title %>
+                                    </span>
+                                <% } %>
+                                <% if(item.desc) { %>
+                                    <span class="image-item-column__text-box__desc font-body-md">
+                                        <%- item.desc %>
+                                    </span>
+                                <% } %>
+                            </div>
+                        <% } %>
+                        <% if(item.subTitle || item.content) { %>
+                            <div class="image-item-column__text-box">
+                                <% if(item.subTitle) { %>
+                                    <span class="image-item-column__text-box__sub-title font-body-lg">
+                                        <%- item.subTitle %>
+                                    </span>
+                                <% } %>
+                                <% if(item.content) { %>
+                                    <% item.content.forEach((item) => { %>
+                                        <p class="image-item-column__text-box__text font-body-sm">
+                                            <%- item %>
+                                        </p>
+                                    <% }) %>
+                                <% } %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <% if(item.imageUrl) { %>
+                        <div class="image-item-column__container image-item-column__container--image-container">
+                            <div class="img-box">
+                                <img src="<%- item.imageUrl %>" alt="<%- item.imageAlt %>">
+                            </div>
+                            <p class="img-box__desc font-body-xs color-gl-gray700">
+                                <%- item.imgDesc %>
+                            </p>
                         </div>
                     <% } %>
-                    <% if(item.subTitle || item.content) { %>
+                </div>
+            <% } else if (item.type === "type-radius") { %>
+                <div class="image-item-column__wrap <%- item.type !== 'undefined' && item.type ? item.type : 'type-default'  %>">
+                    <div class="image-item-column__container">
+                        <% if(item.title || item.desc) { %>
+                            <div class="image-item-column__text-box">
+                                <% if(item.desc) { %>
+                                    <span class="image-item-column__text-box__desc font-body-md">
+                                        <%- item.desc %>
+                                    </span>
+                                <% } %>
+                                <% if(item.title) { %>
+                                    <span class="image-item-column__text-box__big-title font-head-md">
+                                        <%- item.title %>
+                                    </span>
+                                <% } %>                                
+                            </div>
+                        <% } %>                                            
+                    </div> <!--//image-item-column__container -->
+                    <% if(item.imageUrl) { %>
+                    <div class="image-item-column__container image-item-column__container--image-container">
+                        <div class="img-box">
+                            <img src="<%- item.imageUrl %>" alt="<%- item.imageAlt %>">
+                        </div>
+                        <p class="img-box__desc font-body-xs color-gl-gray700">
+                            <%- item.imgDesc %>
+                        </p>
+                    </div>
+                    <% } %>                    
+                    <div class="image-item-column__text-wrap">
+                        <% if(item.subTitle || item.content) { %>
                         <div class="image-item-column__text-box">
                             <% if(item.subTitle) { %>
                                 <span class="image-item-column__text-box__sub-title font-body-lg">
@@ -37,19 +95,10 @@
                                 <% }) %>
                             <% } %>
                         </div>
-                    <% } %>
-                </div>
-                <% if(item.imageUrl) { %>
-                    <div class="image-item-column__container image-item-column__container--image-container">
-                        <div class="img-box">
-                            <img src="<%- item.imageUrl %>" alt="<%- item.imageAlt %>">
-                        </div>
-                        <p class="img-box__desc font-body-xs color-gl-gray700">
-                            <%- item.imgDesc %>
-                        </p>
+                        <% } %>
                     </div>
-                <% } %>
-            </div>
+                </div>
+            <% } %>                
         <% }) %>
     <% } else { %>
         <div class="image-item-column__wrap">
