@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title><%= data.title %></title>
-  <meta name="description" content="<%= data.description %>">
-  <link rel="stylesheet" href="/src/assets/css/index.css" />
-  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title><%= data.title %></title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
 </head>
 <body>
     <div class="wrap has-hero">
@@ -69,9 +69,10 @@
             <div class="inner-wrap">
                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                         title:
-                        {
-                            text: '관련 스토리',
-                        },
+                            {
+                                text: '관련 스토리',
+                            },
+                        marginVertical: 'mb-0',
                 })) %>
                 <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, { 
                     thumType: 'list',
