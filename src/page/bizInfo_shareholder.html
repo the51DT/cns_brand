@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>
+        <%= data.title %>
+    </title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+
+<body>
+    <div class="wrap bizinfo-financial">
+        <%- include('src/_inc/header.html') %>
+            <!-- //헤더 영역 -->
+            <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+                pcImg: 'empty' , 
+                moImg: 'empty' ,
+                subText: 'IR' , 
+                pageTitle: '주주현황/배당정보' , 
+                rightDesc: '' 
+            })) %>
+            <!-- //비주얼 영역 -->
+            <div class="sub-content__wrap">
+                <div class="inner-wrap">
+                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                        title : {
+                            text: '주주현황',
+                            size: 'lg',
+                            addClass: 'color-text-default font-medium',
+                        },
+                    })) %>
+                    <div class="cmp-wrap cmp-feature-grid">
+                        <div>
+                            <!-- 그래프 영역 --> 
+                            <img src="https://placehold.co/710x380" alt="">
+                            <!-- // 그래프 영역 --> 
+                        </div>
+                        <div>
+                            <!-- 테이블 영역 -->
+                            <div class="cmp-wrap cmp-table__wrap">
+                                <div class="table-container">
+                                    <table class="data-table">
+                                        <caption>LG CNS 요약 주주현황</caption>
+                                        <thead>
+                                            <tr class="text-right">
+                                                <th scope="col" width="238" class="text-center">구분</th>
+                                                <th scope="col" width="238" class="text-center">주주명</th>
+                                                <th scope="col" width="238" class="text-center">지분율</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="text-right">
+                                                <td rowspan="2" class="text-center">5% 이상 주주</td>
+                                                <td class="text-left">(주)LG</td>
+                                                <td class="text-center">49.95%</td>
+                                            </tr>
+                                            <tr class="text-right">
+                                                <td class="text-left">크리스탈코리아(유)</td>
+                                                <td class="text-center">35.00%</td>
+                                            </tr>
+                                            <tr class="text-right">
+                                                <td colspan="2" class="text-center">우리사주조합(원)</td>
+                                                <td class="text-center">1.44%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- // 테이블 영역 -->
+                        </div>
+                    </div>
+                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
+                        title : {
+                            text: '배당현황',
+                            size: 'lg',
+                            addClass: 'color-text-default font-medium',
+                        },
+                    })) %>
+                    <!-- 테이블 영역 -->
+                    <div class="cmp-wrap cmp-table__wrap">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <caption>LG CNS 요약 배당현황</caption>
+                                <thead>
+                                    <tr class="text-right">
+                                        <th scope="col" width="325" class="text-left">구분</th>
+                                        <th scope="col" width="223">2019년</th>
+                                        <th scope="col" width="223">2020년</th>
+                                        <th scope="col" width="223">2021년</th>
+                                        <th scope="col" width="223">2022년</th>
+                                        <th scope="col" width="223">2023년</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-right">
+                                        <td class="text-left font-bold">연결 당기순이익</td>
+                                        <td>163,843</td>
+                                        <td>163,843</td>
+                                        <td>163,843</td>
+                                        <td>163,843</td>
+                                        <td>163,843</td>
+                                    </tr>
+                                    <tr class="text-right">
+                                        <td class="text-left font-bold">배당 총금액</td>
+                                        <td>99,405</td>
+                                        <td>99,405</td>
+                                        <td>99,405</td>
+                                        <td>99,405</td>
+                                        <td>99,405</td>
+                                    </tr>
+                                    <tr class="text-right">
+                                        <td class="text-left font-bold">주당액면가액(원)</td>
+                                        <td>1,140</td>
+                                        <td>1,140</td>
+                                        <td>1,140</td>
+                                        <td>1,140</td>
+                                        <td>1,140</td>
+                                    </tr>
+                                    <tr class="text-right">
+                                        <td class="text-left font-bold">배당성향(%)</td>
+                                        <td>61%</td>
+                                        <td>61%</td>
+                                        <td>61%</td>
+                                        <td>61%</td>
+                                        <td>61%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- // 테이블 영역 -->
+                </div>
+            </div>
+            <%- include('src/_inc/footer.html') %>
+    </div>
+    <script>
+        tabMenu('.basic-type', 'tab');
+    </script>
+</body>
+</html>
