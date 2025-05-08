@@ -1,4 +1,4 @@
-<div class="cmp-wrap cmp_imageltem__wrap <%- marginVertical %>">
+<div class="cmp-wrap cmp_imageltem__wrap <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : '' %>">
     <% 
         const data = typeof jsonData !== 'undefined' ? jsonData : []; 
         const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1; 
