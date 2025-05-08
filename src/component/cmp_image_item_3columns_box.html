@@ -8,52 +8,27 @@
         <ul class="image-item-3col <%- itemTypeValue %>">
             <% data.forEach((item)=> { %>
                 <li>
-                    <% if(item.imageUrl) { %>
-                        <div class="img-box">
-                            <img src="<%- item.imageUrl %>" alt="<%- item.imageAlt %>">
+                    <% if(item.title || item.text) { %>
+                        <div class="text-box">
+                            <% if(item.title) { %>
+                                <span class="image-item-3col__title font-head-sm font-medium color-text-default">
+                                    <%- item.title %>
+                                </span>
+                            <% } %>
+                            <% if(item.text) {%>
+                                <p class="image-item-3col__text font-body-lg color-text-secondary">
+                                    <%- item.text %>
+                                </p>
+                            <% } %>
                         </div>
                     <% } %>
-                    <% if(item.title || item.text) { %>
-                        <% if(itemTypeValue && item.textBoxAlign == 'left') { %>
-                            <div class="text-box type-left">
-                                <% if(item.title) { %>
-                                    <span class="image-item-3col__title font-body-lg font-bold">
-                                        <%- item.title %>
-                                    </span>
-                                <% } %>
-                                <% if(item.text) {%>
-                                    <p class="image-item-3col__text font-body-sm">
-                                        <%- item.text %>
-                                    </p>
-                                <% } %>
-                            </div>
-                        <% } else if (itemTypeValue && item.textBoxAlign == 'right') { %>
-                            <div class="text-box type-right">
-                                <% if(item.title) { %>
-                                    <span class="image-item-3col__title font-body-lg font-bold">
-                                        <%- item.title %>
-                                    </span>
-                                <% } %>
-                                <% if(item.text) {%>
-                                    <p class="image-item-3col__text font-body-sm">
-                                        <%- item.text %>
-                                    </p>
-                                <% } %>
-                            </div>
-                        <% } else { %>
-                            <div class="text-box">
-                                <% if(item.title) { %>
-                                    <span class="image-item-3col__title font-body-lg font-bold">
-                                        <%- item.title %>
-                                    </span>
-                                <% } %>
-                                <% if(item.text) {%>
-                                    <p class="image-item-3col__text font-body-sm">
-                                        <%- item.text %>
-                                    </p>
-                                <% } %>
-                            </div>
-                        <% } %>
+                    <% if(item.imageUrlPc) { %>
+                        <div class="img-box">
+                            <img src="<%- item.imageUrlPc %>" alt="<%- item.imageAlt %>" class="<%- typeof item.imageUrlMo !== 'undefined' && item.imageUrlMo ? 'img-box__only-pc' : '' %>">
+                            <% if(item.imageUrlMo) { %>
+                                <img src="<%- item.imageUrlMo %>" alt="<%- item.imageAlt %>" class="img-box__only-mo">
+                            <% } %>
+                        </div>
                     <% } %>
                 </li>
             <% }) %>

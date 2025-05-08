@@ -3,76 +3,38 @@
         display: flex;
         gap: $gap-margin;
         flex-wrap: wrap;
-        @media #{$tablet} {
-            flex-direction: column;
-        }
-        &.type-bg-none {
-            @media #{$tablet} {
-                flex-direction: row;
-            }
-            li {
-                padding: 0;
-                background: none;
-                @media #{$tablet} {
-                    padding: 0;
-                    width: calc(33.33% - calc(($gap-margin * 2) / 3));
-                }
-                @media #{$phone} {
-                    width: calc(50% - calc(($gap-margin) / 2));
-                }
-            }
-            .img-box {
-                img {
-                    width: 100%;
-                }
-                & + .text-box {
-                    margin-top: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
-                }
-            }
-            .text-box {
-                color: #281D1B;
-                &.type-left {
-                    .image-item-3col__title,
-                    .image-item-3col__text {
-                        text-align: left;
-                    }
-                }
-                &.type-right {
-                    .image-item-3col__title,
-                    .image-item-3col__text {
-                        text-align: right;
-                    }
-                }
-            }
+        flex-direction: column;
+        @media #{$min1280} {
+            flex-direction: row;
         }
         li {
-            padding: calc(60 / 16 * 1rem) calc(32 / 16 * 1rem);
-            width: calc(33.33% - calc(($gap-margin * 2) / 3));
-            background: #FAFAFA;
-            @media #{$tablet} {
-                padding: calc(32 / 16 * 1rem);
-                width: 100%;
+            padding: calc(24 / 16 * 1rem);
+            width: 100%;
+            background: var(--colorCM-mode1-fill-fill-default2);
+            border-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
+            @media #{$min1280} {
+                padding: calc(40 / 16 * 1rem);
+                width: calc(33.33% - calc(($gap-margin * 2) / 3));
+                border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
             }
         }
         .img-box {
-            margin: 0 auto;
-            text-align: center;
-            img {
-                margin: 0 auto;
+            margin-top: calc(32 / 16 * 1rem);
+            &__only-pc {
+                display: none;
+                @media #{$min1280} {
+                    display: block;
+                }
             }
-            & + .text-box {
-                margin-top: calc(12 / 16 * 1rem);
+            &__only-mo {
+                display: block;
+                @media #{$min1280} {
+                    display: none;
+                }
             }
         }
         &__title {
             display: block;
-            text-align: center;
-            & + .image-item-3col__text {
-                margin-top: calc(12 / 16 * 1rem);
-            }
-        }
-        &__text {
-            text-align: center;
         }
     }
 }

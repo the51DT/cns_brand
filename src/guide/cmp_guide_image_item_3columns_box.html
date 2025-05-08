@@ -17,68 +17,52 @@
             <div class="flex justify-between lnb-type">
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
-                    <p class="guide-title-h3">ImageItem3Column : 기업정보 > 인권경영</p>                    
+                    <p class="guide-title-h3">ImageItem3Column : 기업정보 > 인권경영</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>imageUrlPc : pc 이미지 url (모바일 분기 이미지가 없을 경우 해당 이미지만 노출)</p>
+                        </li>
+                        <li>
+                            <p>imageUrlMo : mo 이미지 url</p>
+                        </li>
+                        <li>
+                            <p>imageAlt : text</p>
+                        </li>
+                        <li>
+                            <p>title : text</p>
+                        </li>
+                        <li>
+                            <p>text : text</p>
+                        </li>
+                    </ul>
                     <div class="cmp-exsample__wrap mt-3">
                         <%
                             const itemList3Col = [
                                 {
-                                    imageUrl: 'https://placehold.co/360x360',
-                                    imageAlt: '장애인 고용 우수사업주 선정 (2021)',
-                                    title: '장애인 고용 <br>우수사업주 선정 <br>(2021)',
+                                    imageUrlPc: 'https://placehold.co/300x300',
+                                    imageUrlMo: 'https://placehold.co/200x200',
+                                    imageAlt: '일자리 으뜸기업 선정',
+                                    title: '일자리 <br>으뜸기업 선정',
+                                    text: '(2020, 2023)'
                                 },
                                 {
-                                    imageUrl: 'https://placehold.co/360x360',
-                                    imageAlt: 'test',
-                                    title: '장애인 고용 <br>우수사업주 선정 <br>(2021)',
-                                    text: '테스트 텍스트',
+                                    imageUrlPc: 'https://placehold.co/300x300',
+                                    imageUrlMo: 'https://placehold.co/200x200',
+                                    imageAlt: '장애인 고용 촉진대회 고용노동부 장관 표창 수상',
+                                    title: '장애인 고용 촉진대회 <br>고용노동부 장관 표창 수상',
+                                    text: '(2018, 2022)',
                                 },
                                 {
-                                    imageUrl: 'https://placehold.co/360x360',
-                                    imageAlt: '장애인 고용 우수사업주 선정 (2021)',
-                                    title: '장애인 고용 <br>우수사업주 선정 <br>(2021)',
+                                    imageUrlPc: 'https://placehold.co/300x300',
+                                    imageUrlMo: 'https://placehold.co/200x200',
+                                    imageAlt: '장애인 고용 우수사업주 선정',
+                                    title: '장애인 고용 <br>우수사업주 선정',
+                                    text: '(2021)',
                                 },
                             ]
                         %>
                         <%- include('src/component/cmp_image_item_3columns_box.html', {
                             jsonData: itemList3Col               
-                        }) %>                            
-                    </div>
-
-                    <p class="guide-title-h3">ImageItem3Column 기업정보 > 사회공헌</p>
-                    <ul class="guide-list type-dot mt-3">
-                        <li>
-                            itemType: 'type-bg-none'
-                        </li>
-                        <li>
-                            <p>textBoxAlign: 'left / right'/ 기본으로 적용(center)</p>
-                        </li>
-                    </ul>
-                    <div class="cmp-exsample__wrap mt-3">
-                        <%
-                            const itemList3Col2 = [
-                                {
-                                    imageUrl: 'https://placehold.co/360x360',
-                                    imageAlt: '장애인 고용 우수사업주 선정 (2021)',
-                                    title: '장애인 고용 <br>우수사업주 선정 <br>(2021)',
-                                    textBoxAlign: 'left'
-                                },
-                                {
-                                    imageUrl: 'https://placehold.co/360x360',
-                                    imageAlt: 'test',
-                                    title: '장애인 고용 <br>우수사업주 선정 <br>(2021)',
-                                    text: '테스트 텍스트',
-                                    textBoxAlign: 'right'
-                                },
-                                {
-                                    imageUrl: 'https://placehold.co/360x360',
-                                    imageAlt: '장애인 고용 우수사업주 선정 (2021)',
-                                    title: '장애인 고용 <br>우수사업주 선정 <br>(2021)',
-                                },
-                            ]
-                        %>
-                        <%- include('src/component/cmp_image_item_3columns_box.html', {
-                            jsonData: itemList3Col2,
-                            itemType: 'type-bg-none',         
                         }) %>                            
                     </div>
                 </div>
