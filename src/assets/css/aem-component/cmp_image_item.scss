@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: column;
     .img-box {
-        overflow: hidden;
         &--round {
-            border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
-            @media #{$min1280} {
-                border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+            img {
+                overflow: hidden;
+                border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+                @media #{$min1280} {
+                    border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+                }
             }
         }
         &__only-pc {
