@@ -1263,6 +1263,12 @@ body {
             max-width: 100%;
         }
     }
+    &:last-child > .cmp-wrap:last-child {
+        margin-bottom: calc(246 / 16 * 1rem);
+        @media #{$min1280} {
+            margin-bottom: calc(280 / 16 * 1rem);
+        }
+    }
 }
 
 .layout_ {
