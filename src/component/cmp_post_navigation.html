@@ -1,4 +1,4 @@
-<div class="cmp-wrap cmp-post-navigation">
+<div class="cmp-wrap cmp-post-navigation <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : ''%>">
     <% 
         const prevValue = typeof pagenationPrev !=='undefined' ? pagenationPrev : '' ; 
         const nextValue = typeof  pagenationNext !=='undefined' ? pagenationNext : '' ; 

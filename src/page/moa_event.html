@@ -16,7 +16,7 @@
             pcImg: 'empty',
             moImg: 'empty',
             subText: 'MOA', 
-            pageTitle: '행사/이벤트' 
+            pageTitle: '행사' 
         })) %>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
@@ -90,7 +90,8 @@
             <!-- // Swiper -->
             <div class="inner-wrap">
                 <%- include('src/component/cmp_search.html', Object.assign({}, locals, { 
-                    title: 'LG CNS가 추천하는 행사와<br>이벤트를 살펴보세요.',
+                    title: 'LG CNS의 DX기술을 만나 비즈니스 혁신을 경험한 <br>고객의 스토리를 살펴보세요.',
+                    marginVertical: 'mb-spacing07',
                 })) %>
                 <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, { 
                     title: {
@@ -119,7 +120,8 @@
                             tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                             category: '세미나 · 2025.01.10',
                         },
-                    ]
+                    ],
+                    marginVertical : 'mb-spacing10',
                 })) %>
                 <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, { 
                     title: {
@@ -175,7 +177,8 @@
                             tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                             category: '세미나 · 2025.01.10',
                         },
-                    ]
+                    ],
+                    marginVertical : 'mb-exc-spacing-64-48',
                 })) %>
                 <%- include('src/component/cmp_pagination.html') %>
             </div>

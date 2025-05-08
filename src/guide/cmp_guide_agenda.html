@@ -17,7 +17,12 @@
             <div class="flex justify-between lnb-type">
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
-                    <p class="guide-title-h3">Agenda</p>                    
+                    <p class="guide-title-h3">Agenda</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>marginVertical : margin-top/bottom 간격에 대한 이중클래스 적용(spacing.scss, tailwind-all.scss 참고)</p>
+                        </li>
+                    </ul>
                     <div class="cmp-exsample__wrap mt-5">
                         <%
                             const agendaData = [
@@ -49,6 +54,7 @@
                         %>
                         <%- include('src/component/cmp_agenda.html', Object.assign({}, locals, { 
                             jsonData: agendaData,
+                            marginVertical : 'mb-exc-spacing-60-32',
                         })) %>
                     </div>
                 </div>

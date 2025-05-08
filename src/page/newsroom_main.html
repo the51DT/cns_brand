@@ -103,7 +103,8 @@
             <!-- //Swiper -->
             <div class="inner-wrap">
                 <%- include('src/component/cmp_search.html', Object.assign({}, locals, { 
-                    title: 'LG CNS의 보도자료를 확인해 보세요.' , 
+                    title: 'LG CNS의 보도자료를 확인해 보세요.' ,
+                    marginVertical: 'mb-spacing07',
                 })) %>
                 <!-- search-result : 검색 결과가 없는 경우 -->
                 <div class="cmp-wrap cmp-search-result">
@@ -202,7 +203,8 @@
                             description: '인니 시나르마스 그룹과 합작투자 계약 체결',
                             category: '보도자료 · 2025.01.10'
                         },
-                    ]
+                    ],
+                    marginVertical: 'mb-exc-spacing-64-22',
                 })) %>
                 <%- include('src/component/cmp_pagination.html') %>
             </div>

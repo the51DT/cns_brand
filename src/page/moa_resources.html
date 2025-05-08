@@ -24,6 +24,7 @@
                 <%- include('src/component/cmp_search.html', Object.assign({}, locals, {
                     title: 'DX 전문기업 LG CNS의 DX 기술을 공유합니다.<br>DX Contents를 다운받아보시고 Insight를 얻어보세요.',
                     placeholder: '검색어를 입력하세요.',
+                    marginVertical: 'mb-spacing07',
                 })) %>
                 <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, { 
                     allCountData: '883',
@@ -101,7 +102,8 @@
                             description: 'Global NO.1 데이터센터 컨설팅/설계/구축/운영까지 Total Lifecycle 전문 서비스를 제공합니다.',
                             tag: ['# 제조', '화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                         },
-                    ]
+                    ],
+                    marginVertical : 'mb-exc-spacing-64-48',
                 })) %>
                 <%- include('src/component/cmp_pagination.html') %>
             </div>

@@ -34,6 +34,7 @@
                         size: 'sm',
                         class: 'font-medium',
                     },
+                    marginVertical: 'mb-exc-spacing-48-24',
                 })) %>
                 <%- include('src/component/cmp_video.html', Object.assign({}, locals, { 
                     id: 1,
@@ -41,11 +42,9 @@
                     videoUrl: 'https://www.youtube.com/embed/B3u8O4CwV9M',
                     videoTitle: 'test',
                     addClass: 'test1',
+                    marginVertical: 'mb-exc-spacing-60-32',
                 })) %>
-                <div class="cmp-wrap" style="height: 600px; background-color: whitesmoke;">컨텐츠 들어가는 영역</div>
-                <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                    teaserTitle: '관련 스토리',
-                })) %>
+                <div class="cmp-wrap mb-spacing11" style="height: 600px; background-color: whitesmoke;">컨텐츠 들어가는 영역</div>
             </div>
             <div class="inner-wrap wide background-color-default1">
                 <%- include('src/component/cmp_user_case_ref.html', {
@@ -63,7 +62,8 @@
                     button: {
                         btnIcon: "download",
                         btnText: "다운로드",
-                    }
+                    },
+                    marginVertical: 'mb-spacing11',
                 }) %>
             </div>
             <div class="inner-wrap">
@@ -107,7 +107,8 @@
                             description: '사이버 공격이 갈수록 정교해지고 있습니다. 해커들은 공공기관, 방위산업, 민간기업을 가리지 않고 공격 대상으로 삼고 있으며, 이로 인한 피해도 전 세계적으로 급증하고 있습니다.',
                             tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                         },
-                    ]
+                    ],
+                    marginVertical: 'mb-exc-spacing-60-32',
                 })) %>
                 <div class="button__wrap mo-100">
                     <a href="#" class="btn btn-primary btn-large">

@@ -10,12 +10,12 @@
         }
     }
     &.cmp-richtext {
-        &:has( + .cmp-title__wrap) {
-            margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-            @media #{$min1280} {
-                margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
-            }
-        }
+        // &:has( + .cmp-title__wrap) {
+        //     margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+        //     @media #{$min1280} {
+        //         margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+        //     }
+        // }
     }
     &.cmp-customer-case {
         &+.button__wrap {
@@ -73,18 +73,18 @@
         margin-bottom: 0;
     }
     &.cmp-search__wrap {
-        margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
-        @media #{$min1280} {
-            margin-bottom: calc(66 / 16 * 1rem);
-        }
+        // margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+        // @media #{$min1280} {
+        //     margin-bottom: calc(66 / 16 * 1rem);
+        // }
     }
     &.cmp-thumbnail {
-        &:has( + .cmp-pagination__wrap) {
-            margin-bottom: calc(48 / 16 * 1rem);
-            @media #{$min1280} {
-                margin-bottom: calc(64 / 16 * 1rem);
-            }
-        }
+        // &:has( + .cmp-pagination__wrap) {
+        //     margin-bottom: calc(48 / 16 * 1rem);
+        //     @media #{$min1280} {
+        //         margin-bottom: calc(64 / 16 * 1rem);
+        //     }
+        // }
     }
     &.cmp-board-detail-info {
         margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
@@ -217,10 +217,12 @@
         max-width: calc(1480 / 16 * 1rem);
     }
     .swiper-wrapper {
+        margin-bottom: calc(88 / 16 * 1rem);
         @media #{$min1280} {
             display: flex;
             gap: calc(12 / 16 * 1rem);
             justify-content: space-between;
+            margin-bottom: calc(180 / 16 * 1rem);
         }
     }
     .swiper-card {

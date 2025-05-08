@@ -1,5 +1,5 @@
 <!-- 썸네일 유형 -->
-<div class="cmp-wrap cmp-thumbnail <%= typeof thumType !== 'undefined' && thumType === 'card' ? 'card' : '' %> <%= typeof thumType !== 'undefined' && thumType === 'list' ? 'list' : '' %>">
+<div class="cmp-wrap cmp-thumbnail <%= typeof thumType !== 'undefined' && thumType === 'card' ? 'card' : '' %> <%= typeof thumType !== 'undefined' && thumType === 'list' ? 'list' : '' %> <%- locals.marginVertical %>">
     <% 
         const data=(typeof jsonData !=='undefined' ? jsonData : []); 
         const itemLimit=typeof itemCount !=='undefined' ? itemCount : 1;
@@ -16,7 +16,7 @@
                     },
                 })) %>
             <% } %>
-            <% if(allCountData) { %>
+            <% if(typeof allCountData !== 'undefined' && allCountData) { %>
                 <span class="content-list__count">
                     총 <strong class="font-semibold"><%- allCountData %></strong> 건</span>
                 </span>

@@ -1,4 +1,4 @@
-<div class="cmp-wrap cmp-video__wrap <%- typeof addClass !== 'undefined' && addClass ? addClass : '' %>">
+<div class="cmp-wrap cmp-video__wrap <%- typeof addClass !== 'undefined' && addClass ? addClass : '' %> <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : '' %>">
     <% const videoType=typeof type !=='undefined' ? type : '' ; %>
     <% if(videoType == 'iframe' && typeof videoUrl !== 'undefined' && videoUrl) { %>
         <div class="cmp-video__iframe">

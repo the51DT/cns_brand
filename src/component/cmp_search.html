@@ -1,4 +1,4 @@
-<div class="cmp-wrap cmp-search__wrap">
+<div class="cmp-wrap cmp-search__wrap <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : ''%>">
     <!-- <% if (typeof thumbnailType !== 'undefined' && typeof thumbnailData !== 'undefined') { %>
         <div class="search-thumbnail-wrap">
             <%- include('src/component/cmp_thumbnail_type.html', { 
