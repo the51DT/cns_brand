@@ -504,22 +504,18 @@
             }
         }
     }
-
+    // .bizinfo-mgmt-info
     &mgmt-info {
         .cmp-accordion {
             .accordion-list {
                 .terms_orderList {
                     li {
-                    margin-left: calc(28 / 16 * 1rem);
-                    padding: 0;
-                    border-bottom: none;
+                        margin-left: calc(28 / 16 * 1rem);
+                        padding: 0;
+                        border-bottom: none;
                     }
                 }
             }
-        }
-
-        .cmp-title-select{
-            margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);            
         }
     }
 

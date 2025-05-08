@@ -3,115 +3,112 @@
     width: 100%;
     background: var(--colorGL-all-white100);
     /* margin-bottom: calc(var(--spacing-mode1-horizontal7-x-l) / 16 * 1rem); */
-}
-.cmp-accordion .accordion-list {
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
-}
-.cmp-accordion .accordion-list li {
-    border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
-}
-
-.cmp-accordion .accordion-list li .accordion-title {
-    display: flex;
-    align-items: center; 
-    padding: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem) 0;
-}
-.cmp-accordion .accordion-list li .accordion-title i {
-    display: inline-flex;
-    position: relative;
-    width: calc(16 / 16 * 1rem);
-    min-width: calc(16 / 16 * 1rem);
-    height: calc(16 / 16 * 1rem);    
-    margin-top: calc(5 / 16 * 1rem);
-}
-.cmp-accordion .accordion-list li .accordion-title i::before,
-.cmp-accordion .accordion-list li .accordion-title i::after {
-    content: '';
-    display: inline-flex;
-    position: absolute;
-    background-color: #000;
-    /* background-color: var(--colorCM-mode1-primary-primary-enabled); */
-}
-.cmp-accordion .accordion-list li .accordion-title i::before {
-    width: 100%;
-    height: calc(2 / 16 * 1rem);
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.cmp-accordion .accordion-list li .accordion-title i::after {
-    width: calc(2 / 16 * 1rem);
-    height: 100%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.3s;
-}
-.cmp-accordion .accordion-list li .accordion-title button {
-    width: 100%;
-    display: flex;                
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: calc(8 / 16 * 1rem);    
-}
-.cmp-accordion .accordion-list li .accordion-title .tit {
-    font-style: normal;
-    color: var(--colorCM-mode1-text-text-default);
-    text-align: left;     
-}
-.cmp-accordion .accordion-list li .accordion-content {
-    display: none;
-    padding: 0 calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
-}
-
-/* .is-active*/
-.cmp-accordion .accordion-list li.is-active i::before {
-    display: none;
-}
-.cmp-accordion .accordion-list li.is-active i::after {
-    transform: translateX(-50%) rotate(90deg);
-    transition: all 0.3s;
-    background-color: var(--colorCM-mode1-text-text-default);
-}
-.cmp-accordion .accordion-list li.is-active .accordion-title {
-    padding: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem) 0 calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-}
-.cmp-accordion .accordion-list li.is-active .accordion-title .tit {
-    color: var(--colorCM-mode1-text-text-default);
-}
-.cmp-accordion .accordion-list li.is-active .accordion-content {
-    display: block;
-    color: var(--colorCM-mode1-text-text-secondary);
-    padding: 0 calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
-    letter-spacing: var(--letter-spacing-small);
-}
-
-/* PC */
-@media screen and (min-width : 1280px) {
-    .cmp-accordion .accordion-list li:last-child {
-        border-bottom: none !important;
+    .accordion-list {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
+        li {
+            border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
+            &:last-child {
+                @media #{$min1280} {
+                    border-bottom: none !important;
+                }
+            }
+            /* .is-active*/
+            &.is-active {
+                i {
+                    &::before {
+                        display: none;
+                    }
+                    &::after {
+                        transform: translateX(-50%) rotate(90deg);
+                        transition: all 0.3s;
+                        background-color: var(--colorCM-mode1-text-text-default);
+                    }
+                }
+                .accordion-title {
+                    padding: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem) 0 calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
+                    @media #{$min1280} {
+                        padding: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0 calc(27 / 16 * 1rem);
+                    }
+                    .tit {
+                        color: var(--colorCM-mode1-text-text-default);
+                    }
+                }
+                .accordion-content {
+                    display: block;
+                    color: var(--colorCM-mode1-text-text-secondary);
+                    padding: 0 calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
+                    letter-spacing: var(--letter-spacing-small);
+                    @media #{$min1280} {
+                        padding: 0 calc(96 / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
+                    }
+                }
+            }
+        }
     }
-    .cmp-accordion .accordion-list li .accordion-title {
-        padding: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
+    .accordion-title {
+        display: flex;
+        align-items: center; 
+        padding: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem) 0;
+        @media #{$min1280} {
+            padding: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
+        }
+        i {
+            display: inline-flex;
+            position: relative;
+            width: calc(16 / 16 * 1rem);
+            min-width: calc(16 / 16 * 1rem);
+            height: calc(16 / 16 * 1rem);    
+            margin-top: calc(5 / 16 * 1rem);
+            @media #{$min1280} {
+                width: calc(24 / 16 * 1rem);
+                min-width: calc(24 / 16 * 1rem);
+                height: calc(24 / 16 * 1rem);    
+            }
+            &::before,
+            &::after {
+                content: '';
+                display: inline-flex;
+                position: absolute;
+                background-color: #000;
+                /* background-color: var(--colorCM-mode1-primary-primary-enabled); */
+            }
+            &::before {
+                width: 100%;
+                height: calc(2 / 16 * 1rem);
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            &::after {
+                width: calc(2 / 16 * 1rem);
+                height: 100%;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: all 0.3s;
+            }
+        }
+        button {
+            width: 100%;
+            display: flex;                
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: calc(8 / 16 * 1rem);
+            @media #{$min1280} {
+                align-items: center;
+                gap: calc(var(--spacing-mode1-horizontal-m) / 16 * 1rem);    
+            } 
+        }
+        .tit {
+            font-style: normal;
+            color: var(--colorCM-mode1-text-text-default);
+            text-align: left;     
+        }
     }
-
-    .cmp-accordion .accordion-list li .accordion-title i {
-        width: calc(24 / 16 * 1rem);
-        min-width: calc(24 / 16 * 1rem);
-        height: calc(24 / 16 * 1rem);    
-    }
-    .cmp-accordion .accordion-list li .accordion-title button {
-        align-items: center;
-        gap: calc(var(--spacing-mode1-horizontal-m) / 16 * 1rem);    
-    } 
-    
-    /* .is-active*/
-    .cmp-accordion .accordion-list li.is-active .accordion-title {
-       padding: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0 calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
-    }
-    .cmp-accordion .accordion-list li.is-active .accordion-content {
-        padding: 0 calc(96 / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
+    .accordion-content {
+        display: none;
+        padding: 0 calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
     }
 }

@@ -1,5 +1,5 @@
-<div class="cmp-wrap cmp-contents-title__wrap">
+<div class="cmp-wrap cmp-contents-title__wrap <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : ''%>">
     <% if (typeof contentsTitle !=='undefined' ) { %>
-        <div class="font-head-sm color-gl-gray700 font-bold"><%- contentsTitle %></div>
+        <div class="font-head-md font-medium color-text-secondary"><%- contentsTitle %></div>
     <% } %>
 </div>

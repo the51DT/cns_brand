@@ -21,11 +21,30 @@
         .cmp-title__wrap {
             margin-bottom: 0;
         }
-        .dropdown-menu{
-            align-items: flex-start;
-        }
         .cmp-select {
             margin-bottom: 0;
+        }
+        .dropdown-menu {
+            align-items: flex-start;
+            .dropdown_list {
+                padding: 0;
+                border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+                border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+                box-shadow: unset;
+                @media #{$min1280} {
+                    border-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
+                }
+                li {
+                    padding: calc(11 / 16 * 1rem) calc(24 / 16 * 1rem);
+                    @media #{$min1280} {
+                        padding: calc(15 / 16 * 1rem) calc(24 / 16 * 1rem);
+                    }
+                }
+                button {
+                    font-size: calc(16 / 16 * 1rem);
+                    line-height: calc(26 / 16 * 1rem);
+                }
+            }
         }
     }
 }

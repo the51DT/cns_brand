@@ -1,4 +1,4 @@
-<div class="cmp-title-select">
+<div class="cmp-title-select <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : '' %>">
     <div class="cmp-title__row <%= typeof rowJustify !== 'undefined' && rowJustify ? rowJustify : '' %>">
         <% if(typeof title !== 'undefined' && title) { %>
             <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
