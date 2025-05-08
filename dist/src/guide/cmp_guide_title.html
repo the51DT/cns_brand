@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/guide/cmp_guide_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="page-location text-2xl font-bold">
+        <span id="pagesTitle"></span>
+      </div>
+      <div class="guide-content">
+        <div class="flex justify-between lnb-type">
+          <div class="lnb-side__wrap">
+            <button type="button" class="lnb-trigger">아코디언</button>
+          </div>
+          <div class="page-cont flex-1">
+            <p class="guide-title-h3">Title</p>
+            <ul class="guide-list type-dot mt-3">
+              <li>
+                <p>title:</p>
+                <ul class="pl-4">
+                  <li>text : 텍스트</li>
+                  <li>subTitle : 타이틀 상단 텍스트</li>
+                  <li>subDesc : 타이틀 하단 텍스트(subTitle과 동일한 스타일)</li>
+                  <li>size : font-size (typograph.scss 참고)</li>
+                  <li>class : font-weight, color (스타일 가이드, tailwind-all.scss 참고)</li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  marginVertical: margin-top/bottom 간격에 대한 이중클래스 적용(spacing.scss, tailwind-all.scss 참고)
+                </p>
+              </li>
+            </ul>
+            <div class="cmp-exsample__wrap mt-10">
+
+              <!-- Title -->
+              <div class="cmp-wrap cmp-title__wrap mb-spacing05">
+                <div class="font-body-sm title-sub color-text-secondary">sub-title</div>
+                <div class="font-head-lg ">타이틀 기본 사이즈 lg</div>
+                <div class="font-body-sm title-sub-desc color-text-secondary">하단텍스트 subDesc</div>
+              </div>
+              <div class="cmp-wrap cmp-title__wrap ">
+                <div class="font-head-md colorcm-primary font-light">size md 타이틀<br>colorcm-primary font-light 클래스</div>
+              </div> <!-- //Title -->
+            </div>
+            <p class="guide-title-h3 mt-32">Teaser Title</p>
+            <ul class="guide-list type-dot mt-3">
+              <li>
+                <p>title: </p>
+                <ul class="pl-3">
+                  <li>text : 텍스트</li>
+                  <li>subTitle : 타이틀 상단 텍스트</li>
+                  <li>size : font-size (typograph.scss 참고)</li>
+                  <li>class : font-weight, color (스타일 가이드, tailwind-all.scss 참고)</li>
+                </ul>
+              </li>
+              <li>
+                <p>textCon : 텍스트</p>
+              </li>
+              <li>
+                <p>
+                  marginVertical: margin-top/bottom 간격에 대한 이중클래스 적용(spacing.scss, tailwind-all.scss 참고)
+                </p>
+              </li>
+            </ul>
+            <div class="cmp-exsample__wrap mt-10">
+
+              <!-- Teaser Title -->
+              <div class="cmp-wrap cmp_teaser_title__wrap mb-spacing08">
+                <div class="teaser-title ">
+                  <div class="cmp-wrap cmp-title__wrap mb-spacing08">
+                    <div class="font-head-sm ">티저타이틀 타이틀 영역 기본 사이즈 sm</div>
+                  </div>
+
+                  <!-- 04.15 자세히 보기 버튼 임시 비활성화 -->
+
+                  <!--  --> <!-- // 04.15 자세히 보기 버튼 임시 비활성화 -->
+                </div>
+                <div class="teaser-text">
+                  <p class="font-body-md">첫번째 내용 첫번째 내용<br>줄바꿈</p>
+                  <p class="font-body-md">두번째 내용 두번째 내용 두번째 내용 두번째 내용</p>
+                </div>
+              </div> <!-- //Teaser Title -->
+
+              <!-- Teaser Title -->
+              <div class="cmp-wrap cmp_teaser_title__wrap mb-spacing03">
+                <div class="teaser-title ">
+                  <div class="cmp-wrap cmp-title__wrap mb-spacing03">
+                    <div class="font-body-sm title-sub color-text-secondary">티저타이틀 subTitle</div>
+                    <div class="font-head-sm ">티저타이틀 타이틀 영역 기본 사이즈 sm colorcm-primary</div>
+                  </div>
+
+                  <!-- 04.15 자세히 보기 버튼 임시 비활성화 -->
+
+                  <!--  --> <!-- // 04.15 자세히 보기 버튼 임시 비활성화 -->
+                </div>
+              </div> <!-- //Teaser Title -->
+            </div>
+            <p class="guide-title-h3 mt-32">title_select</p>
+            <div class="cmp-exsample__wrap mt-10">
+              <div class="cmp-title-select">
+                <div class="cmp-title__row ">
+                  <div class="cmp-wrap cmp-title__wrap ">
+                    <div class="font-head-lg color-text-default font-medium">2024년</div>
+                  </div>
+                  <div class="cmp-wrap cmp-select">
+                    <div class="dropdown-menu cmp-input__item--dropdown">
+                      <div class="cmp-select__item">
+                        <button class="btn-dropdown no-select font-body-xs font-semibold">
+                          연도선택
+                        </button>
+                      </div>
+                      <ul class="dropdown_list">
+                        <li><button class="font-body-xs">2025년</button></li>
+                        <li><button class="font-body-xs">2024년</button></li>
+                        <li><button class="font-body-xs">2023년</button></li>
+                        <li><button class="font-body-xs">2022년</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cmp-exsample__wrap mt-10">
+              <div class="cmp-title-select">
+                <div class="cmp-title__row is-between">
+                  <div class="cmp-wrap cmp-title__wrap ">
+                    <div class="font-head-lg color-text-default font-medium">2024년</div>
+                  </div>
+                  <div class="cmp-wrap cmp-select">
+                    <div class="dropdown-menu cmp-input__item--dropdown">
+                      <div class="cmp-select__item">
+                        <button class="btn-dropdown no-select font-body-xs font-semibold">
+                          연도선택
+                        </button>
+                      </div>
+                      <ul class="dropdown_list">
+                        <li><button class="font-body-xs">2025년</button></li>
+                        <li><button class="font-body-xs">2024년</button></li>
+                        <li><button class="font-body-xs">2023년</button></li>
+                        <li><button class="font-body-xs">2022년</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cmp-exsample__wrap mt-10">
+              <div class="cmp-title-select">
+                <div class="cmp-title__row is-column">
+                  <div class="cmp-wrap cmp-title__wrap ">
+                    <div class="font-head-lg color-text-default font-medium">2024년</div>
+                  </div>
+                  <div class="cmp-wrap cmp-select">
+                    <div class="dropdown-menu cmp-input__item--dropdown">
+                      <div class="cmp-select__item">
+                        <button class="btn-dropdown no-select font-body-xs font-semibold">
+                          연도선택
+                        </button>
+                      </div>
+                      <ul class="dropdown_list">
+                        <li><button class="font-body-xs">2025년</button></li>
+                        <li><button class="font-body-xs">2024년</button></li>
+                        <li><button class="font-body-xs">2023년</button></li>
+                        <li><button class="font-body-xs">2022년</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2025.04.15 사용안함으로 주석 처리 -->
+
+            <!-- <p class="guide-title-h3 mt-10">Contents Title</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <div class="cmp-wrap cmp-contents-title__wrap">
+        <div class="font-head-sm color-gl-gray700 font-bold">LG CNS의 전 구성원은 업무를 수행함에 있어<br>관련 법령을 준수하고 있습니다.</div>
+</div>
+                    </div>
+                    <p class="guide-title-h3 mt-10">cmp_title_select : select 추가</p>
+                    <div class="cmp-title-select">
+    <div class="cmp-title__row ">
+            <div class="cmp-wrap cmp-select">
+  <div class="dropdown-menu cmp-input__item--dropdown">
+    <div class="cmp-select__item">
+      <button class="btn-dropdown no-select font-body-xs font-semibold">
+        연도선택
+      </button>
+    </div>
+    <ul class="dropdown_list">
+          <li><button class="font-body-xs">2025년</button></li>
+          <li><button class="font-body-xs">2024년</button></li>
+          <li><button class="font-body-xs">2023년</button></li>
+          <li><button class="font-body-xs">2022년</button></li>
+    </ul>
+  </div>
+</div>
+    </div>
+</div>
+                    <p class="guide-title-h3 mt-10">cmp_title_select : select + space-between</p>
+                    <div class="cmp-title-select">
+    <div class="cmp-title__row space-between">
+            <div class="cmp-wrap cmp-select">
+  <div class="dropdown-menu cmp-input__item--dropdown">
+    <div class="cmp-select__item">
+      <button class="btn-dropdown no-select font-body-xs font-semibold">
+        2024년
+      </button>
+    </div>
+    <ul class="dropdown_list">
+          <li><button class="font-body-xs">2025년</button></li>
+          <li><button class="font-body-xs">2024년</button></li>
+          <li><button class="font-body-xs">2023년</button></li>
+    </ul>
+  </div>
+</div>
+    </div>
+</div>
+ --> <!-- // 2025.04.15 사용안함으로 주석 처리 -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/ui_common.js"></script>
+  </body>
+</html>

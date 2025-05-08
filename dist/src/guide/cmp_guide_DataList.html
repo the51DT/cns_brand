@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/guide/cmp_guide_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="page-location text-2xl font-bold">
+        <span id="pagesTitle"></span>
+      </div>
+      <div class="guide-content">
+        <div class="flex justify-between lnb-type">
+          <div class="lnb-side__wrap">
+            <button type="button" class="lnb-trigger">아코디언</button>
+          </div>
+          <div class="page-cont flex-1">
+            <p class="guide-title-h3">DataList</p>
+            <div class="cmp-exsample__wrap mt-5">
+              <div class="inner-wrap py-4" style="background-color: beige;">
+
+                <!-- datalist -->
+
+                <!-- data list 유형 -->
+                <div class="cmp-wrap cmp-data-list">
+                  <div class="cmp-swiper data-list-swiper swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <a href="#" class="data-list-item ">
+                          <div class="data-list-img">
+                            <img src="https://placehold.co/980x564" alt="" class="type-pc" />
+                            <img src="https://placehold.co/980x564" alt="" class="type-mo" />
+                          </div>
+                          <div class="data-list-content">
+                            <div class="title font-head-sm-mode">
+                              Cloud 뉴스레터
+                            </div>
+                            <div class="description font-body-sm">
+                              LG CNS Cloud Service에 대한 모든 뉴스레터
+                            </div>
+                            <div class="data-list-bottom">
+                              <div class="font-caption-sm category-label">Category</div>
+                              <span class="btn btn-primary data-list-link ">
+                                        <span class="ir-text">자료보기</span>
+                              </span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="#" class="data-list-item data-list-item--disabled">
+                          <div class="data-list-img">
+                            <img src="https://placehold.co/980x564" alt="" class="type-pc" />
+                            <img src="https://placehold.co/980x564" alt="" class="type-mo" />
+                          </div>
+                          <div class="data-list-content">
+                            <div class="title font-head-sm-mode">
+                              Cloud 소개 영상
+                            </div>
+                            <div class="description font-body-sm">
+                              LG CNS Cloud Service에 대한 모든 것을 이해하기 쉽게 소개한 영상
+                            </div>
+                            <div class="data-list-bottom">
+                              <div class="font-caption-sm category-label">Category</div>
+                              <span class="btn btn-primary data-list-video is-disabled">
+                                        <span class="ir-text">자료보기</span>
+                              </span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="" class="data-list-item ">
+                          <div class="data-list-img">
+                            <img src="https://placehold.co/980x564" alt="" class="type-pc" />
+                            <img src="https://placehold.co/980x564" alt="" class="type-mo" />
+                          </div>
+                          <div class="data-list-content">
+                            <div class="title font-head-sm-mode">
+                              Cloud 소개 자료
+                            </div>
+                            <div class="description font-body-sm">
+                              LG CNS Cloud Service에 대한 모든 것을 이해하기 쉽게 소개한 자료
+                            </div>
+                            <div class="data-list-bottom">
+                              <div class="font-caption-sm category-label">Category</div>
+                              <span class="btn btn-primary data-list-download " modal-id="" onclick="openModal(event)">
+                                        <span class="ir-text">자료보기</span>
+                              </span>
+                            </div>
+                          </div>
+                        </a>
+                      </div> <!-- //썸네일 유형 -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- data list 유형 --> <!-- //datalist -->
+                <div class="button__wrap">
+                  <button class="btn btn-medium btn-secondary">
+                    <span class="btn__text">더 보기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/bundle/swiper-bundle.min.js"></script>
+    <script src="/assets/js/initializeSwipers.js"></script>
+    <script>
+      let customerSwiper = null;
+      function setupCustomerCaseSwiper() {
+        const swiperEl = document.querySelector('.data-list-swiper');
+        const isMobile = window.innerWidth < 720;
+        if (!swiperEl) return;
+        if (isMobile && !customerSwiper) {
+          customerSwiper = new Swiper(swiperEl, {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            slidesOffsetBefore: 20,
+            slidesOffsetAfter: 20,
+            breakpoints: {
+              720: {
+                spaceBetween: 0,
+                slidesOffsetBefore: 0,
+                slidesOffsetAfter: 0,
+              }
+            },
+          });
+        } else if (!isMobile && customerSwiper) {
+          customerSwiper.destroy(true, true);
+          customerSwiper = null;
+        }
+      }
+      setupCustomerCaseSwiper();
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          setupCustomerCaseSwiper();
+        }, 200);
+      });
+    </script>
+  </body>
+</html>
