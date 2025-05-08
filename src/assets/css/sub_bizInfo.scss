@@ -140,19 +140,18 @@
     &financial {
         .graph-container {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
             justify-content: center;
-            gap: calc(var(--spacing-mode1-horizontal-l) / 16 * 1rem);
-            margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
-            clear: both;            
-            @media #{$phone} {
-                row-gap: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+            gap: calc(56 / 16 * 1rem);
+            clear: both; 
+            @media #{$min1280} {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: calc(16 / 16 * 1rem);
             }
             &__wrap {
-                padding: calc(16 / 16 * 1rem);
-                .graph-title {
-                    display: block;
-                    margin-bottom: calc(var(--spacing-mode1-vertical-m-nudge) / 16 * 1rem);
+                padding: 0;
+                @media #{$min1280} {
+                    padding: 0 calc(16 / 16 * 1rem) calc(16 / 16 * 1rem);
                 }
             }
         }

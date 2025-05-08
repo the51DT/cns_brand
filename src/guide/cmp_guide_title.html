@@ -140,6 +140,17 @@
                         }) %>
                     </div>
 
+                    <p class="guide-title-h3 mt-32">title_unit</p>
+                    <%- include('src/component/cmp_title_unit.html', {
+                        title : {
+                            text: '재무상대표',
+                            size: 'lg',
+                            addClass: 'color-text-default font-medium',
+                        },
+                        unit : "[ 단위 : 십억원 ]",
+                        marginVertical: 'mb-spacing03',
+                    }) %>
+
                     <!-- 2025.04.15 사용안함으로 주석 처리 -->
                     <!-- <p class="guide-title-h3 mt-10">Contents Title</p>
                     <div class="cmp-exsample__wrap mt-3">

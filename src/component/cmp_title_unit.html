@@ -1,0 +1,18 @@
+<div class="cmp-wrap cmp-title-unit <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : '' %>">
+    <div class="cmp-title-unit__container">
+        <% if (typeof title !=='undefined' && title) { %>
+            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                title: {
+                    text: title.text,
+                    size: typeof title.size !== 'undefined' && title.size ? title.size : 'font-head-lg',
+                    class: typeof title.addClass !== 'undefined' && title.addClass ? title.addClass : 'color-text-default font-medium',
+                },
+            })) %>
+        <% } %>
+        <div class="title-unit__box">
+            <span class="block font-body-sm font-medium color-text-default">
+                <%= unit %>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 <!-- chart -->
-<div class="cmp-wrap cmp-chart">
+<div class="cmp-wrap cmp-chart <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : ''%>">
     <% const chartType = typeof type !=='undefined' ? type : '' ; %>
     <div class="chart-wrap">
     <% if(chartType && chartType == 'columnChart' && valueMax) { %>

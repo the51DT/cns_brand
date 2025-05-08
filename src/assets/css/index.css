@@ -23,6 +23,7 @@
 @import 'aem-component/cmp_over_view.scss';
 @import 'aem-component/cmp_title.scss';
 @import 'aem-component/cmp_teaser_title.scss';
+@import 'aem-component/cmp_title_unit.scss';
 @import 'aem-component/cmp_image_item.scss';
 @import 'aem-component/cmp_image_item_2columns.scss';
 @import 'aem-component/cmp_image_item_3columns_box.scss';
