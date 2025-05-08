@@ -12,91 +12,91 @@
                 <% if(typeof ImageAlign !== 'undefined' && ImageAlign) {%>
                     <% if(ImageAlign == 'left') {%>
                         <div class="item-image type-left">
-                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('<%- item.imageUrl %>');"></i>
+                            <i class="ico <%- item.icon %> item-list-icon"></i>
                         </div>
                     <% } else if(ImageAlign == 'right') { %>
                         <div class="item-image type-right">
-                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('<%- item.imageUrl %>');"></i>
+                            <i class="ico <%- item.icon %> item-list-icon"></i>
                         </div>
                     <% } else if(ImageAlign=='center' ) { %>
                         <div class="item-image type-center">
-                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('<%- item.imageUrl %>');"></i>
+                            <i class="ico <%- item.icon %> item-list-icon"></i>
                         </div>
                     <% } else { %>
                         <div class="item-image type-left">
-                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('<%- item.imageUrl %>');"></i>
+                            <i class="ico <%- item.icon %> item-list-icon"></i>
                         </div>
                     <% } %>
                 <% } else {%>
                     <div class="item-image type-left">
-                        <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('<%- item.imageUrl %>');"></i>
+                        <i class="ico <%- item.icon %> item-list-icon"></i>
                     </div>
                 <% }%>
 
                 <% if(typeof textAlign !== 'undefined' && textAlign) {%>
                     <% if(textAlign =='left') {%>
                         <div class="item-info__wrap type-left">
-                            <div class="font-body-lg info-title"><%- item.title %></div>
+                            <div class="font-body-lg info-title <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
                             <ul class="info-text">
                                 <% if (item.content && Array.isArray(item.content)) {%>
                                     <% item.content.forEach((content) => { %>
-                                        <li class="font-body-sm"><%- content %></li>
+                                        <li class="font-body-sm <%- typeof item.contentStyle !== 'undefined' && item.contentStyle ? item.contentStyle : '' %>"><%- content %></li>
                                     <%})%>
                                 <% } else {%>
-                                    <li class="font-body-sm"><%- item.content %></li>
+                                    <li class="font-body-sm <%- typeof item.contentStyle !== 'undefined' && item.contentStyle ? item.contentStyle : '' %>"><%- item.content %></li>
                                 <% } %>
                             </ul>
                         </div>
                     <% } else if(textAlign =='right') { %>
                         <div class="item-info__wrap type-right">
-                            <div class="font-body-lg info-title"><%- item.title %></div>
+                            <div class="font-body-lg info-title <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
                             <ul class="info-text">
                                 <% if (item.content && Array.isArray(item.content)) {%>
                                     <% item.content.forEach((content)=> { %>
-                                        <li class="font-body-sm"><%- content %></li>
+                                        <li class="font-body-sm <%- typeof item.contentStyle !== 'undefined' && item.contentStyle ? item.contentStyle : '' %>"><%- content %></li>
                                     <%})%>
                                 <% } else {%>
-                                    <li class="font-body-sm"><%- item.content %></li>
+                                    <li class="font-body-sm <%- typeof item.contentStyle !== 'undefined' && item.contentStyle ? item.contentStyle : '' %>"><%- item.content %></li>
                                 <% } %>
                             </ul>
                         </div>
                     <% } else if(textAlign=='center' ) { %>
                         <div class="item-info__wrap type-center">
-                            <div class="font-body-lg info-title"><%- item.title %></div>
+                            <div class="font-body-lg info-title <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
                             <ul class="info-text">
                                 <% if (item.content && Array.isArray(item.content)) {%>
                                     <% item.content.forEach((content)=> { %>
-                                        <li class="font-body-sm"><%- content %></li>
+                                        <li class="font-body-sm <%- typeof item.contentStyle !== 'undefined' && item.contentStyle ? item.contentStyle : '' %>"><%- content %></li>
                                     <%})%>
                                 <% } else {%>
-                                    <li class="font-body-sm"><%- item.content %></li>
+                                    <li class="font-body-sm <%- typeof item.contentStyle !== 'undefined' && item.contentStyle ? item.contentStyle : '' %>"><%- item.content %></li>
                                 <% } %>
                             </ul>
                         </div>
                     <% } else { %>
                         <div class="item-info__wrap type-left">
-                            <div class="font-body-lg info-title"><%- item.title %></div>
+                            <div class="font-body-lg info-title <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
                             <ul class="info-text">
                                 <% if (item.content && Array.isArray(item.content)) {%>
                                     <% item.content.forEach((content)=> { %>
-                                        <li class="font-body-sm"><%- content %></li>
+                                        <li class="font-body-sm <%- typeof item.contentStyle !== 'undefined' && item.contentStyle ? item.contentStyle : '' %>"><%- content %></li>
                                     <%})%>
                                 <% } else {%>
-                                    <li class="font-body-sm"><%- item.content %></li>
+                                    <li class="font-body-sm <%- typeof item.contentStyle !== 'undefined' && item.contentStyle ? item.contentStyle : '' %>"><%- item.content %></li>
                                 <% } %>
                             </ul>
                         </div>
                     <% } %>
                 <% } else {%>
                     <div class="item-info__wrap type-left">
-                        <div class="font-body-lg info-title"><%- item.title %></div>
+                        <div class="font-body-lg info-title <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
                         <ul class="info-text">
                             <% if (item.content && Array.isArray(item.content)) {%>
                                 <% item.content.forEach((content)=> { %>
-                                    <li class="font-body-sm"><%- content %></li>
+                                    <li class="font-body-sm <%- typeof item.contentStyle !== 'undefined' && item.contentStyle ? item.contentStyle : '' %>"><%- content %></li>
                                 <%})%>
                             <% } else {%>
-                                <li class="font-body-sm"><%- item.content %></li>
+                                <li class="font-body-sm <%- typeof item.contentStyle !== 'undefined' && item.contentStyle ? item.contentStyle : '' %>"><%- item.content %></li>
                             <% } %>
                         </ul>
                     </div>
@@ -109,20 +109,20 @@
                 <% if(typeof ImageAlign !== 'undefined' && ImageAlign) {%>
                     <% if(ImageAlign=='left') {%>
                         <div class="item-image type-left">
-                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('https://placehold.co/60x60');"></i>
+                            <i class="ico icon-_nodata_gl100 item-list-icon"></i>
                         </div>
                     <%} else if(ImageAlign=='right') { %>
                         <div class="item-image type-right">
-                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('https://placehold.co/60x60');"></i>
+                            <i class="ico icon-_nodata_gl100 item-list-icon"></i>
                         </div>
                     <% } else {%>
                         <div class="item-image type-left">
-                            <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('https://placehold.co/60x60');"></i>
+                            <i class="ico icon-_nodata_gl100 item-list-icon"></i>
                         </div>
                     <% } %>
                 <% } else {%>
                     <div class="item-image type-left">
-                        <i class="ico item-list-icon <%- size %>" style="--item-list-icon: url('https://placehold.co/60x60');"></i>
+                        <i class="ico icon-_nodata_gl100 item-list-icon"></i>
                     </div>
                 <% } %>
 

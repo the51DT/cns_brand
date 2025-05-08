@@ -2,28 +2,33 @@
 .cmp-itemlist_columns__wrap {
     gap: $gap-margin;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-auto-rows: 1fr;
-    @media #{$tablet} {
-        grid-template-columns: 1fr 1fr;
-    }
-    @media #{$phone} {
-        grid-template-columns: 1fr;         
+    @media #{$min1280} {
+        grid-template-columns: 1fr 1fr 1fr;
     }
     &:has(.item-wrap.type-border-bottom) {
         @media #{$phone} {
             grid-auto-rows: auto;         
         }
     }
+    &:has(.type-border-left) {
+        gap: 0;
+        grid-auto-rows: auto; 
+        @media #{$min1280} {
+            grid-auto-rows: 1fr;
+            row-gap: calc(48 / 16 * 1rem);
+        }
+    }
     .item-wrap {
         display: flex;
         flex-direction: column;
-        gap: calc(40 / 16 * 1rem);
-        padding: calc(47 / 16 * 1rem) calc(32 / 16 * 1rem);
-        border: 1px solid var(--colorGL-all-gray200);
-        @media #{$phone} {
-            padding: calc(32 / 16 * 1rem) calc(24 / 16 * 1rem);
-            gap: calc(36 / 16 * 1rem);
+        padding: calc(32 / 16 * 1rem) calc(24 / 16 * 1rem);
+        gap: calc(36 / 16 * 1rem);
+        border: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
+        @media #{$min1280} {
+            padding: calc(47 / 16 * 1rem) calc(32 / 16 * 1rem);
+            gap: calc(40 / 16 * 1rem);
         }
         .item-image {
             display: flex;
@@ -37,35 +42,14 @@
             &.type-center {
                 justify-content: center;
             }
-            .item-list-icon {
-                background-image: var(--item-list-icon);
-                background-repeat: no-repeat;
-                background-position: center;
-                &.default {
-                    width: calc(48 / 16 * 1rem);
-                    height: calc(48 / 16 * 1rem);
-                }
-                &.large {
-                    width: calc(60 / 16 * 1rem);
-                    height: calc(60 / 16 * 1rem);
-                    @media #{$phone} {
-                        width: calc(48 / 16 * 1rem);
-                        height: calc(48 / 16 * 1rem);
-                    }
-                }
-                &.x-large {
-                    width: calc(78 / 16 * 1rem);
-                    height: calc(78 / 16 * 1rem);
-                }
-            }
         }
         .item-info__wrap {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: calc(12 / 16 * 1rem);
-            @media #{$phone} {
-                gap: calc(8 / 16 * 1rem);
+            gap: calc(8 / 16 * 1rem);
+            @media #{$min1280} {
+                gap: calc(12 / 16 * 1rem);
             }
             &.type-left {
                 align-items: flex-start;
@@ -82,11 +66,9 @@
         }
         .info-title {
             color: var(--text-text-default);
-            font-weight: 600; 
         }    
         .info-text {
             li {
-                color: var(--colorGL-all-gray950);
                 padding-left: calc(13 / 16 * 1rem);
                 position: relative;
                 &::before {
@@ -109,28 +91,67 @@
             }
         }
         &.type-box {
-            border: 1px solid var(--colorGL-all-gray200);
+            border: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
         }
         &.type-border-bottom {
             gap: $gap-margin;
             padding: calc(24 / 16 * 1rem);
             border: 0;
-            border-bottom: 1px solid var(--colorGL-all-gray200);
+            border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
             .item-image {
                 width: calc(48 / 16 * 1rem);
             }
             .item-info__wrap {
                 gap: $gap-margin;
-                .info-title {
-                    font-weight: 700;
+                .info-text {
+                    color: var(--text-text-default);
+                    font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
+                    line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+                    @media #{$min1280} {
+                        font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+                        line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+                    }
+                }
+            }
+        }
+        &.type-border-left {
+            gap: calc(10 / 16 * 1rem);
+            padding: calc(24 / 16 * 1rem) 0 calc(32 / 16 * 1rem);
+            border: 0;
+            border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
+            @media #{$min1280} {
+                gap: calc(32 / 16 * 1rem);
+                padding: calc(16 / 16 * 1rem) calc(26 / 16 * 1rem);
+                border-left: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
+                border-bottom: 0;
+            }
+            &:first-child {
+                @media #{$min1280} {
+                    padding-left: calc(16 / 16 * 1rem);
+                    border: 0;
+                }
+            }
+            &:nth-child(3n + 1) {
+                @media #{$min1280} {
+                    padding-left: calc(16 / 16 * 1rem);
+                    border: 0;
+                }
+            }
+            .item-image {
+                width: calc(48 / 16 * 1rem);
+            }
+            .item-info__wrap {
+                gap: calc(8 / 16 * 1rem);
+                @media #{$min1280} {
+                    gap: $gap-margin;
                 }
                 .info-text {
                     color: var(--text-text-default);
-                    font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
-                    line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
-                    @media #{$phone} {
-                        font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
-                        line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+                    font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
+                    line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+                    @media #{$min1280} {
+                        font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+                        line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
                     }
                 }
             }
