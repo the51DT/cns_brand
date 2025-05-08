@@ -19,7 +19,7 @@
                 <div class="page-cont flex-1">
                     <p class="guide-title-h3">BX 가이드 적용 썸네일 유형 : type = card</p>
                     <div class="cmp-exsample__wrap mt-5">
-                        <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, { 
+                        <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, {
                             allCountData: '111',
                             thumType: 'card',
                             detailData: [
@@ -64,7 +64,12 @@
                     </div>
                     <p class="guide-title-h3">BX 가이드 적용 썸네일 유형 : type = list</p>
                     <div class="cmp-exsample__wrap mt-5">
-                        <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, { 
+                        <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, {
+                            title: {
+                                text: '진행중인 행사',
+                                size: 'md-mode',
+                                addClass: 'font-medium',
+                            },
                             allCountData: '222',
                             thumType: 'list',
                             detailData: [

@@ -93,7 +93,12 @@
                     title: 'LG CNS가 추천하는 행사와<br>이벤트를 살펴보세요.',
                 })) %>
                 <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, { 
-                    allCountData: '883',
+                    title: {
+                        text: '진행중인 행사',
+                        size: 'md-mode',
+                        addClass: 'font-medium',
+                    },
+                    allCountData: '2',
                     thumType: 'list',
                     detailData: [
                         {
@@ -102,7 +107,6 @@
                                 alt: '이미지알트'
                             },
                             title: '사람을 위한, 사람에 의한, 사람의 ESG 경영',
-                            description: '에이브러햄 링컨은 게티즈버그 연설문(Gettysburg Address)을 통해 ‘국민의, 국민에 의한, 국민을 위한 정부는 이 땅에서 사라지지 않을 것이다',
                             tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                             category: '세미나 · 2025.01.10',
                         },
@@ -112,7 +116,35 @@
                                 alt: '이미지알트'
                             },
                             title: '보안 강화를 위한 블록체인 기술',
-                            description: '디지털 시대에 정보의 안전한 관리는 필수이며, 블록체인은 이를 해결할 수 있는 혁신적인 기술로 자리매김하고 있습니다.',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
+                            category: '세미나 · 2025.01.10',
+                        },
+                    ]
+                })) %>
+                <%- include('src/component/cmp_thumbnail_type.html', Object.assign({}, locals, { 
+                    title: {
+                        text: '종료된 행사',
+                        size: 'md-mode',
+                        addClass: 'font-medium',
+                    },
+                    allCountData: '883',
+                    thumType: 'list',
+                    detailData: [
+                        {
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            title: '사람을 위한, 사람에 의한, 사람의 ESG 경영',
+                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
+                            category: '세미나 · 2025.01.10',
+                        },
+                        {
+                            img: {
+                                url: 'https://placehold.co/939x470',
+                                alt: '이미지알트'
+                            },
+                            title: '보안 강화를 위한 블록체인 기술',
                             tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                             category: '세미나 · 2025.01.10',
                         },
@@ -122,7 +154,6 @@
                                 alt: '이미지알트'
                             },
                             title: 'LG CNS가 제안하는 진화하는 사이버 공격 대처 방안',
-                            description: '사이버 공격이 갈수록 정교해지고 있습니다. 해커들은 공공기관, 방위산업, 민간기업을 가리지 않고 공격 대상으로 삼고 있으며, 이로 인한 피해도 전 세계적으로 급증하고 있습니다.',
                             tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                             category: '세미나 · 2025.01.10',
                         },
@@ -132,7 +163,6 @@
                                 alt: '이미지알트'
                             },
                             title: 'ESG 공시의 New Trend, 생물다양성과 자연 자본',
-                            description: '지난 시간에 살펴본 ESG 공시와 규제 환경의 변화를 기억하시나요? 변화하는 공시 체계와 함께 본격 시행 예정인 규제들을 알아보며',
                             tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                             category: '세미나 · 2025.01.10',
                         },
@@ -142,27 +172,6 @@
                                 alt: '이미지알트'
                             },
                             title: '불가능했던 서비스를 가능하게 만드는 ‘디바이스플랫폼’',
-                            description: '디바이스플랫폼은 다양한 제품을 제어하고 모니터링하는 것을 넘어, 우리가 상상하는 모든 것을 연결하며 새로운 세계를 열어가고 있습니다. ',
-                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
-                            category: '세미나 · 2025.01.10',
-                        },
-                        {
-                            img: {
-                                url: 'https://placehold.co/939x470',
-                                alt: '이미지알트'
-                            },
-                            title: 'LG CNS, 유가증권시장 상장 위한 증권신고서 제출',
-                            description: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
-                            tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
-                            category: '세미나 · 2025.01.10',
-                        },
-                        {
-                            img: {
-                                url: 'https://placehold.co/939x470',
-                                alt: '이미지알트'
-                            },
-                            title: 'LG CNS, 유가증권시장 상장 위한 증권신고서 제출',
-                            description: '현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것” 현신균 사장 “AI, 클라우드 기술 역량 강화 및 글로벌 사업 본격화를 통해 글로벌 DX시장 선도하는 ‘퍼스트 무버(First Mover)’로 도약할 것”',
                             tag: ['# 제조', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform', '# 화학', '# 통신', '# 경영관리', '# Digital Workplace Platform'],
                             category: '세미나 · 2025.01.10',
                         },

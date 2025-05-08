@@ -3,13 +3,24 @@
     <% 
         const data=(typeof jsonData !=='undefined' ? jsonData : []); 
         const itemLimit=typeof itemCount !=='undefined' ? itemCount : 1;
-        const contentTypeValue = typeof contentType !=='undefined' ? contentType : '' ; 
+        const contentTypeValue = typeof contentType !=='undefined' ? contentType : '' ;
     %>
-    <% if (typeof allCountData !=='undefined' && allCountData) { %>
-        <div class="content-list__util">
-            <span class="content-list__count">
-                총 <strong class="font-bold"><%- allCountData %></strong> 건</span>
-            </span>
+    <% if (typeof allCountData !=='undefined' && allCountData || locals.title) { %>
+        <div class="content-list__util <%- locals.title ? 'content-list__util--has-title' : '' %>">
+            <% if(locals.title) { %>
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    title: {
+                        text: locals.title.text,
+                        size: locals.title.size ? locals.title.size : '',
+                        class: locals.title.addClass ? locals.title.addClass : '',
+                    },
+                })) %>
+            <% } %>
+            <% if(allCountData) { %>
+                <span class="content-list__count">
+                    총 <strong class="font-semibold"><%- allCountData %></strong> 건</span>
+                </span>
+            <% } %>
         </div>
     <% } %>
     <ul class="content-list__wrap thumbnail-type type-box-line <%= typeof itemClass !== 'undefined' ? itemClass : 'pc-col3' %> <%= typeof contentType !== 'undefined' && contentType ? contentType : '' %>">

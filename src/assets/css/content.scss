@@ -105,21 +105,15 @@
         display: flex;
         align-items: center;
         color: var(--text-text-default);
-        font-size: calc(var(--typo-mo-size-body-xs) / 16 * 1rem);
-        line-height: calc(var(--typo-mo-line-height-body-xs) / 16 * 1rem);
+        font-size: calc(16 / 16 * 1rem);
+        line-height: calc(26 / 16 * 1rem);
         text-align: right;
         @media #{$min1280} {
-            font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
-            line-height: calc(var(--typo-pc-line-height-body-xs) / 16 * 1rem);
+            font-size: calc(20 / 16 * 1rem);
+            line-height: calc(30 / 16 * 1rem);
         }
-        .font-bold {
+        .font-semibold {
             padding: 0 calc(2 / 16 * 1rem) 0 calc(8 / 16 * 1rem);
-            font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);
-            line-height: calc(var(--typo-mo-line-height-body-md) / 16 * 1rem);
-            @media #{$min1280} {
-                font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
-                line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
-            }
         }
     }
     + .content-list__wrap {

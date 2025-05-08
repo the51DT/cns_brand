@@ -102,6 +102,13 @@
                     margin-top: calc(16 / 16 * 1rem);
                 }
             }
+            &--has-title {
+                justify-content: space-between;
+                align-items: center;
+            }
+            .cmp-title__wrap {
+                margin-bottom: 0;
+            }
         }
         .thumbnail-type {
             gap: calc(12 / 16 * 1rem);
@@ -214,6 +221,13 @@
                 @media #{$min1280} {
                     margin-top: calc(16 / 16 * 1rem);
                 }
+            }
+            &--has-title {
+                justify-content: space-between;
+                align-items: center;
+            }
+            .cmp-title__wrap {
+                margin-bottom: 0;
             }
         }
         .thumbnail-type.pc-col3 {
