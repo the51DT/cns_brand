@@ -5,6 +5,13 @@
     @media #{$min1280} {
         grid-template-columns: repeat(2, 1fr);
     }
+    &.cmp-feature-grid--gap-small {
+        gap: calc(40 / 16 * 1rem);
+        align-items: center;
+        @media #{$min1280} {
+            gap: calc(10 / 16 * 1rem);
+        }
+    }
     .cmp-title__wrap {
         &:last-child {
             margin-bottom: 0;
