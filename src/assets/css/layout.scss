@@ -1275,7 +1275,7 @@ body {
             }
             .tab-content__wrap {
                 padding: 0 calc(20 / 16 * 1rem); 
-                max-width: 100%;
+                width: 100%;
                 box-sizing: border-box;
                 @media #{$min1280} {
                     margin: 0 auto;
