@@ -15,36 +15,45 @@
         <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {
             pcImg: 'empty',
             moImg: 'empty',
-            subText: '기업정보',
+            subText: '지속가능경영',
             pageTitle: '추진방향',
             rightDesc: ''
         })) %>
-
-         <div class="sub-content__wrap">
+        <div class="sub-content__wrap">
             <div class="inner-wrap">
                 <%- include('src/component/cmp_contents_title.html', Object.assign({}, locals, { 
                     contentsTitle: 'LG CNS는 기업시민으로 사회적 책임을 다함으로써<br>지속적으로 성장이 가능한 DX 전문기업이 되겠습니다.',
+                    marginVertical: 'mb-spacing09',
                 })) %>
                 <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
-                    overviewTitle: '지속가능한 DX 전문기업', 
-                    overviewContent2: '<p>LG CNS는 ESG(환경·사회·지배구조) 경영을 위해 국제표준화기구(ISO)인증, DX사회공헌, 정도경영 등 실질적인 활동을 펼치고 있으며, 고객·협력사·주주·임직원 등 다양한 이해 관계자들과도 지속적으로 소통하고 있습니다.</p>'
-                })) %> 
-                <!-- <p class="subtitle">LG CNS는 ESG(환경·사회·지배구조) 경영을 위해 국제표준화기구(ISO)인증, DX사회공헌, 정도경영 등 실질적인 활동을 펼치고 있으며, 고객·협력사·주주·임직원 등 다양한 이해 관계자들과도 지속적으로 소통하고 있습니다.</p> -->
-
+                    overviewTitle : {
+                        text : '지속가능한 DX 전문기업',
+                        size: 'font-head-lg',
+                        style: 'color-text-default font-medium',
+                    }, 
+                    overviewContent : {
+                        text : [
+                            'LG CNS는 ESG(환경·사회·지배구조) 경영을 위해 국제표준화기구(ISO)인증, DX사회공헌, 정도경영 등 실질적인 활동을 펼치고 있으며, 고객·협력사·주주·임직원 등 다양한 이해 관계자들과도 지속적으로 소통하고 있습니다.'
+                        ],
+                        size: 'font-body-md',
+                        style: 'color-text-secondary font-normal',
+                    },
+                    marginVertical: 'mb-spacing07',
+                })) %>
                 <% 
                 const iamgeData=[{
-                    pc: 'https://placehold.co/1760x808', 
-                    mo: 'https://placehold.co/320x1073', 
+                    pc: 'https://placehold.co/1440x925', 
+                    mo: 'https://placehold.co/320x1020', 
                 }] 
                 %>
                 <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
                     jsonData : iamgeData,
                     alt : '유통 산업 성장의 Key 최대 효율을 당성하는 성공 DX',
-                    addClass: 'test' 
+                    addClass: 'test',
                 }))%>
             </div>
-         </div>
-         <%- include('src/_inc/footer.html') %>
+        </div>
+        <%- include('src/_inc/footer.html') %>
     </div>
 </body>
 </html>

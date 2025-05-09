@@ -4,11 +4,11 @@
     @media #{$min1280} {
         margin-bottom: calc(var(--spacing-mode1-vertical8-x-l) / 16 * 1rem);
     }
-    &.cmp-overview__wrap {
-        &+ .cmp-customer-case {
-            margin-bottom: calc(var(--spacing-mode1-horizontal3-x-l) / 16 * 1rem);
-        }
-    }
+    // &.cmp-overview__wrap {
+    //     &+ .cmp-customer-case {
+    //         margin-bottom: calc(var(--spacing-mode1-horizontal3-x-l) / 16 * 1rem);
+    //     }
+    // }
     &.cmp-customer-case {
         &+.button__wrap {
             display: none;
