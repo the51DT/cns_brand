@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/src/assets/css/guide.scss" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>
+        <div class="guide-content">
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3 mt-10">event-detail</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>
+                                기업정보 > IR활동 : 마크업으로 사용
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="cmp-exsample__wrap mt-5">
+                        <div class="cmp-wrap cmp-event-detail">
+                            <ul class="cmp-event-detail__list">
+                                <li>
+                                    <span class="cmp-event-detail__title color-text-secondary font-body-md">일시 :</span>
+                                    <p class="cmp-event-detail__desc color-text-secondary font-body-md">2024년 03월 25일 (월) 오전 11시 00분</p>
+                                </li>
+                                <li>
+                                    <span class="cmp-event-detail__title color-text-secondary font-body-md">장소 :</span>
+                                    <p class="cmp-event-detail__desc color-text-secondary font-body-md">서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀(구 대강당)</p>
+                                </li>
+                            </ul>
+                            <div class="cmp-event-detail__button-wrap button__wrap align-left">
+                                <button type="button" class="btn btn-secondary btn-small">
+                                    <span class="btn__text">CEO letter</span>
+                                    <i class="ico btn__icon icon-download-bl20"></i>
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-small">
+                                    <span class="btn__text">소집결과</span>
+                                    <i class="ico btn__icon icon-arrow-right-bl20"></i>
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-small">
+                                    <span class="btn__text">의안설명서</span>
+                                    <i class="ico btn__icon icon-download-bl20"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/assets/js/ui_common.js"></script>
+</body>
+
+</html>

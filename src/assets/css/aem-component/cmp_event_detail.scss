@@ -1,0 +1,20 @@
+.cmp-event-detail {
+    &__list {
+        li {
+            display: flex;
+            gap: calc(4 / 16 * 1rem);
+            & + li {
+                margin-top: calc(4 / 16 * 1rem);
+            }
+        }
+    }
+    &__title {
+        white-space: nowrap;
+    }
+    &__button-wrap {
+        margin-top: calc(16 / 16 * 1rem);
+        @media #{$min1280} {
+            margin-top: calc(24 / 16 * 1rem);
+        }
+    }
+}

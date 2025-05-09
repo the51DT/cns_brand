@@ -344,6 +344,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_title_text_icon.html"
+        },
+        {
+          "name": "event-detail",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_event_detail.html"
         }
       ]
     },

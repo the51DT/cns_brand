@@ -17,8 +17,11 @@
         }
     }
     &__title {
-    position: relative;
-    padding-bottom: calc(20 / 16 * 1rem);
+        position: relative;
+        padding-bottom: calc(16 / 16 * 1rem);
+        @media #{$min1280} {
+            padding-bottom: calc(20 / 16 * 1rem);
+        }
         &::before {
             content: '';
             position: absolute;
@@ -31,8 +34,11 @@
     &__details {
         display: flex;
         flex-direction: column;
-        gap: 6px;
-        margin-top: calc(20 / 16 * 1rem);
+        gap: calc(6 / 16 * 1rem);
+        margin-top: calc(18 / 16 * 1rem);
+        @media #{$min1280} {
+            margin-top: calc(20 / 16 * 1rem);
+        }
     }
     &__label {
         margin-right: calc(18 / 16 * 1rem);

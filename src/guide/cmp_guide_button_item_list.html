@@ -25,6 +25,11 @@
                         <li>
                             <p>buttonName : 아이콘 버튼명 (방송듣기 : 재생 아이콘 / 그 외 나머지 다운로드 아이콘 적용)</p>
                         </li>
+                        <li>
+                            <p>
+                                marginVertical: margin-top/bottom 간격에 대한 이중클래스 적용(spacing.scss, tailwind-all.scss 참고)
+                            </p>
+                        </li>
                     </ul>
                     <div class="cmp-exsample__wrap mt-3">
                         <!-- Title -->
@@ -86,6 +91,7 @@
                         <%- include('src/component/cmp_button_item_list.html', Object.assign({}, locals, {
                             itemCount: 7,
                             jsonData: buttonItemListData,
+                            marginVertical : 'mb-0',
                         })) %>
                         <!-- //Component -->
                     </div>

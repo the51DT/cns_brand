@@ -1,5 +1,5 @@
 <!-- cmp_button_item_list -->
-<div class="cmp-wrap cmp_button_item_list__wrap">
+<div class="cmp-wrap cmp_button_item_list__wrap <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : ''%>">
     <% 
         const data = (typeof jsonData !== 'undefined' ? jsonData : []);
         const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;

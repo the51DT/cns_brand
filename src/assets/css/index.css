@@ -63,6 +63,7 @@
 @import 'aem-component/cmp_title_text_icon.scss';
 @import 'aem-component/cmp_feature_grid.scss';
 @import 'aem-component/cmp_table_list.scss';
+@import 'aem-component/cmp_event_detail.scss';
 
 /* icon */
 @import 'icon.scss';
