@@ -29,7 +29,9 @@
     .button__wrap {
         margin-top: calc(24 / 16 * 1rem);
         .btn {
-            width: fit-content;
+            &.btn-icon {
+                width: fit-content;
+            }
         }
     }
 }
