@@ -167,7 +167,7 @@ $fileType: "svg";
     &.icon-play-bl20 {
         @include iconFile(20, 20, 'icon_play_bl20');
     }
-    &.icon-_nodata_gl100 {
-        @include iconFile(100, 100, 'icon-_nodata_gl100');
+    &.icon_nodata_gl100 {
+        @include iconFile(100, 100, 'icon_nodata_gl100');
     }
 }
