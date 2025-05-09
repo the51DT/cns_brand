@@ -83,19 +83,6 @@
             }
         }
     }
-
-    // .bizInfo_ir
-    &ir {
-        .sub-content__wrap {
-            margin-bottom: calc(var(--spacing-mode1-vertical9-x-l) / 16 * 1rem);
-            @media #{$pcMiddle} {
-                margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-            }
-            @media #{$phone} {
-                margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
-            }
-        }
-    }
     
     //.bizInfo_financial
     &financial {
