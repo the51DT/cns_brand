@@ -9,10 +9,12 @@
                 },
             })) %>
         <% } %>
-        <div class="title-unit__box">
-            <span class="block font-body-sm font-medium color-text-default">
-                <%= unit %>
-            </span>
-        </div>
+        <% if (typeof unit !== 'undefined' && unit) { %>
+            <div class="title-unit__box">
+                <span class="block font-body-sm font-medium color-text-default">
+                    <%= unit %>
+                </span>
+            </div>
+        <% } %>
     </div>
 </div>
