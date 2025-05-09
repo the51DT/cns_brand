@@ -85,6 +85,19 @@
         margin-bottom: 0;
     }
 }
+// pc & mo display
+.display-pc {
+    display: none;
+    @media #{$min1280} {
+        display: block;
+    }
+}
+.display-mo {
+    display: block;
+    @media #{$min1280} {
+        display: none;
+    }
+}
 //썸네일 유형 & DataList 공통 사용
 .content-list__util {
     display: flex;
