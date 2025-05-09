@@ -22,26 +22,29 @@
         <div class="sub-content__wrap">
             <div class="inner-wrap mt-20">
                 <!-- feature-grid -->
-                <div class="cmp-wrap cmp-feature-grid">
+                <div class="cmp-wrap cmp-feature-grid mb-exc-spacing-64-22">
                     <div>
                         <!-- Title -->
+                        <!-- Title -->
                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                            title:
-                                {
+                            title: {
                                     text: '클라우드, 그 모든 선택의 기준 <br>Cloud with LG CNS ',
+                                    size: 'lg',
+                                    class: 'color-text-default font-medium',
                                 },
+                            marginVertical: 'mb-0',
                         })) %>
                         <!-- // Title -->
                     </div>
                     <div>
-                        <p class="font-body-md">
+                        <p class="font-body-md color-text-secondary font-normal">
                             클라우드가 필요한 순간 언제나 LG CNS가 있습니다.​ 다양한 산업 분야에서 독보적인 클라우드 경험을 보유하고 있는 준비된 엔터프라이즈 전문 클라우드 파트너​로 LG CNS는 클라우드 컨설팅부터 전환,
                             구축, 혁신
                             가속화를 위한 애플리케이션 현대화, 운영, 보안, 변화 관리까지의 완결형 서비스와 기업 환경에 특화된 맞춤형 솔루션을 제공합니다. 또한 빠르고 복잡하게 변화하는 클라우드 환경에서 클라우드 최고의 전문가들이
                             비즈니스의
                             가치를 높여줄 AI, 데이터 등 최신 기술을 활용하여 기업이 가진 자원을 더 효과적으로 활용할 수 있는 로드맵을 제시합니다.
                         </p>
-                        <p class="font-body-md mt-4">
+                        <p class="font-body-md color-text-secondary font-normal mt-4">
                             탁월한 전문성과 혁신성을 바탕으로 국내 유일 Global 3대 CSP 프리미어 파트너 획득과 글로벌 테크 기업들과 긴밀한 파트너십을 통해 대한민국을 넘어 전 세계 고객들과 만나고 있습니다. 클라우드가 열어갈
                             더
                             새롭고 편리해진 비즈니스 세상, 그 처음과 끝을 LG CNS가 함께합니다.
@@ -60,6 +63,7 @@
                     jsonData : iamgeData,
                     alt : 'LG CNS Cloud Service Offering',
                     round: true,
+                    marginVertical: 'mb-spacing04',
                 }))%>
                 <!-- // Image Box -->
                 <!-- Image Box -->
@@ -73,8 +77,11 @@
                     jsonData : iamgeData2,
                     alt : 'DRIVE THE NEW INFRASTRUCTURE',
                     round: true,
+                    marginVertical: 'mb-exc-spacing-180-88',
                 }))%>
                 <!-- // Image Box -->
+            </div>
+            <div class="inner-wrap wide">
                 <div class="cmp-wrap cmp-tab basic-type align-left">
                     <div class="cmp-tab__header">
                         <ul class="tab__menu">
@@ -90,21 +97,24 @@
                         <div class="tab__content is-active">
                             <!-- Title -->
                             <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                title:
-                                    {
-                                        text: 'Total Cloud Service Framework <br>성공적인 클라우드 도입을 위한 조건',
-                                    },
+                                title: {
+                                    text: 'Total Cloud Service Framework <br>성공적인 클라우드 도입을 위한 조건',
+                                    size: 'lg',
+                                    class: 'color-text-default font-medium',
+                                },
+                                marginVertical: 'mb-exc-spacing-64-56',
                             })) %>
                             <!-- feature-grid -->
-                            <div class="cmp-wrap cmp-feature-grid">
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--border-top pt-exc-spacing-48-56 pb-exc-spacing-48-56 mb-0">
                                 <div>
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         title:
                                             {
                                                 text: '클라우드 통합 컨설팅',
                                                 size: 'md',
-                                                class: "font-medium"
+                                                class: 'color-text-default font-medium',
                                             },
+                                        marginVertical: 'mb-0',
                                     })) %>
                                 </div>
                                 <div>
@@ -112,22 +122,24 @@
                                     <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
                                         textCon: [
                                             'AI튜터는 LG CNS가 AI 기술로 만든 외국어 학습 애플리케이션입니다. AI 기반 영어교육 프로그램으로는 국내 최초로 한국영어교육학회(KATE)의 인증을 받으며 우수성을 입증했습니다. LG CNS는 서울, 경기, 인천, 대구, 전남 등 12개 교육청 산하 초중고 약 300만명의 학생들에게 LG CNS AI튜터 앱 ‘스피킹클래스’를 무상으로 제공하고 있습니다. 2022년부터는 교과서 출판사 8곳과 제휴를 맺고 LG CNS AI튜터 앱 ‘스피킹클래스’에 영어 교과서 80권을 탑재해, 전국 초·중·고교생이 스마트폰 앱에서 무료로 학습할 수 있는 서비스도 지원하고 있습니다.', 
-                                            ]
+                                            ],
+                                        marginVertical: 'mb-0',
                                     })) %>                        
                                     <!-- //Teaser Title -->
                                 </div>
                             </div>
                             <!-- // feature-grid -->
                             <!-- feature-grid -->
-                            <div class="cmp-wrap cmp-feature-grid">
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--border-top pt-exc-spacing-32-56 pb-exc-spacing-32-56 mb-0">
                                 <div>
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         title:
                                             {
                                                 text: '클라우드 통합 컨설팅',
                                                 size: 'md',
-                                                class: "font-medium"
+                                                class: 'color-text-default font-medium',
                                             },
+                                        marginVertical: 'mb-0',
                                     })) %>
                                 </div>
                                 <div>
@@ -140,7 +152,9 @@
                                                 content: [
                                                     '기업 관점에서 클라우드 도입 전략 수립 및 도입 방향성 설정'
                                                 ],
-                                                useList: false
+                                                useList: false,
+                                                borderTopNone: true,
+                                                paddingTopNone: true,
                                             },
                                             {
                                                 id: 0,
@@ -164,19 +178,22 @@
                                                 content: [
                                                     '비즈니스 효과 창출을 위한 생성형 AI 과제 발굴과 전환, 구축 등 중·장기 로드맵 수립'
                                                 ],
-                                                useList: false
+                                                useList: false,
+                                                borderBottomNone: true,
+                                                paddingBottomNone: true,
                                             },
                                         ];
                                         %>
                                     <%- include('src/component/cmp_title_text_icon.html', {
-                                        jsonData: iconSolutionColumnData1
+                                        jsonData: iconSolutionColumnData1,
+                                        marginVertical: 'mb-0',
                                     }) %>
                                     <!-- // title-text-icon -->
                                 </div>
                             </div>
                             <!-- // feature-grid -->
                             <!-- feature-grid -->
-                            <div class="cmp-wrap cmp-feature-grid">
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--border-top pt-exc-spacing-32-56 pb-exc-spacing-32-56 mb-0">
                                 <div>
                                     <!-- Title -->
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
@@ -186,6 +203,7 @@
                                                 size: 'md',
                                                 class: "font-medium"
                                             },
+                                        marginVertical: 'mb-0',
                                     })) %>
                                     <!-- // Title -->
                                 </div>
@@ -228,28 +246,32 @@
                                                     'PC/모바일 등 다양한 디바이스 접속 지원', 
                                                     '원하는 레거시 시스템 어디에나 Add 가능'
                                                 ],
-                                                useList: true
+                                                useList: true,
+                                                borderBottomNone: true,
+                                                paddingBottomNone: true,
                                             }
                                         ];
                                         %>
                                     <%- include('src/component/cmp_title_text_icon.html', {
-                                        jsonData: iconSolutionColumnData2
+                                        jsonData: iconSolutionColumnData2,
+                                        marginVertical: 'mb-0',
                                     }) %>
                                     <!-- // title-text-icon -->
                                 </div>
                             </div>
                             <!-- // feature-grid -->
                             <!-- feature-grid -->
-                            <div class="cmp-wrap cmp-feature-grid">
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--border-top cmp-feature-grid--border-bottom pt-exc-spacing-32-56 pb-exc-spacing-32-56">
                                 <div>
                                     <!-- Title -->
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         title:
                                             {
-                                                text: '글로벌 테크 기업과 협력 ',
+                                                text: 'LG CNS가 제공하는 AOS 범위',
                                                 size: 'md',
-                                                class: "font-medium"
+                                                class: 'color-text-default font-medium',
                                             },
+                                        marginVertical: 'mb-0',
                                     })) %>
                                     <!-- // Title -->
                                 </div>
@@ -266,6 +288,8 @@
                                                 buttonTarget: '_self',
                                                 type: 'large',
                                                 useList: false,
+                                                borderTopNone: true,
+                                                paddingTopNone: true,
                                             },
                                             {
                                                 id: 0,
@@ -289,12 +313,14 @@
                                                 content: [
                                                     '설정 중앙 관리, 서비스 자동 등록 및 모니터링, 이벤트 추적 기능 등 다양한 기능을 통해 안정적인 서비스 확장이 가능합니다.'
                                                 ],
-                                                useList: false
+                                                useList: false,
+                                                borderBottomNone: true,
+                                                paddingBottomNone: true,
                                             },
                                         ];
                                         %>
                                     <%- include('src/component/cmp_title_text_icon.html', {
-                                        jsonData: iconSolutionColumnData3
+                                        jsonData: iconSolutionColumnData3,
                                     }) %>
                                     <!-- // title-text-icon -->
                                 </div>
@@ -306,7 +332,9 @@
                                     {
                                         text: '인프라 표준',
                                         size: 'md',
+                                        class: 'color-text-default font-semibold',
                                     },
+                                marginVertical: 'mb-spacing05',
                             })) %>
                             <!-- // Title -->
                             <!-- ImageItem -->
@@ -333,7 +361,9 @@
                                     {
                                         text: '인프라 표준',
                                         size: 'md',
+                                        class: 'color-text-default font-semibold',
                                     },
+                                marginVertical: 'mb-spacing05',
                             })) %>
                             <!-- // Title -->
                             <!-- Teaser Title -->
@@ -346,7 +376,7 @@
                                 textCon: [
                                     'LG CNS의 MaaS 솔루션은 기본 서비스와 코어 서비스로 구성되며, 선택한 모빌리티에 따라 새롭게 패키징하여 제공됩니다. 이를 통해 다양한 모빌리티 제어 및 모니터링, 대여 및 반납 등 필수적인 서비스를 유연하게 적용할 수 있습니다.'
                                 ],
-                                marginVertical: 'mb-spacing06',
+                                marginVertical: 'mb-spacing04',
                             })) %>                        
                             <!-- //Teaser Title -->
                             <!-- ImageItem -->
@@ -373,7 +403,9 @@
                                     {
                                         text: 'LG CNS가 제공하는 Modern Workplace',
                                         size: 'md',
+                                        class: 'color-text-default font-semibold',
                                     },
+                                marginVertical: 'mb-exc-spacing-48-24',
                             })) %>
                             <!-- // Title -->
                             <!-- ImageItem -->
@@ -391,7 +423,8 @@
                             %> 
                             <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {
                                 itemCount: 3,
-                                jsonData: imageItemData3
+                                jsonData: imageItemData3,
+                                marginVertical: 'mb-spacing10',
                             })) %>
                             <!-- //ImageItem -->
                             <!-- ImageItem -->
@@ -418,7 +451,9 @@
                                     {
                                         text: 'LG CNS가 제공하는 Modern Workplace',
                                         size: 'md',
+                                        class: 'color-text-default font-semibold',
                                     },
+                                marginVertical: 'mb-exc-spacing-48-24',
                             })) %>
                             <!-- // Title -->
                             <!-- ImageItem -->
@@ -427,7 +462,8 @@
                                     {
                                         id: 2,
                                         typeClass: 'type-left',
-                                        imageUrl: '/src/assets/image/temp/temp_img_sr.png',
+                                        imageUrl: 'https://placehold.co/708x760/png',
+                                        ImageUrlMo: 'https://placehold.co/320x344/png',
                                         imageRound: true,
                                         title: 'Workforce',
                                         content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
@@ -435,7 +471,8 @@
                                     {
                                         id: 3,
                                         typeClass: 'type-right',
-                                        imageUrl: '/src/assets/image/temp/temp_img_sr.png',
+                                        imageUrl: 'https://placehold.co/708x760/png',
+                                        ImageUrlMo: 'https://placehold.co/320x344/png',
                                         imageRound: true,
                                         title: 'Workforce',
                                         content: '<p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p><p>임직원 디지털 경험 향상을 위한 Workflow 서비스와 관련 자동화 도구를 제공합니다. 회사 내 다양한 업무 시스템 및 정보가 통합된 View에서 제공되고 PC, 모바일, 태블릿 등 어떤 디바이스에서도 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무가 가능합니다. M365 도입, 업무 포탈 및 모바일 환경 개선, 업무 자동화 등을 통해 원활한 커뮤니케이션과 효율적 협업이 가능해집니다. 많은 기업에서 고민하는 라이프 사이클 기반 사내 문서와 업무 지식 축적 및 활용에 대한 해결책을 제안드립니다.</p>'
@@ -447,309 +484,324 @@
                                 jsonData: imageItemData5
                             })) %>
                             <!-- //ImageItem -->
-                            <div class="inner-wrap wide">
-
-                            </div>
-
-
-
-                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
-                                titlePrimary2: 'Digital Workplace<span class="color-text-default">를 완성하는</span>' , 
-                                titleText2: 'LG CNS 솔루션' 
-                            }))%>
-                            <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                                teaserTitle: 'DigitalTrans',
-                                teaserText1: '지털트랜스(DigitalTrans)는 AI 기반의 혁신적인 자동 통번역 IT 서비스입니다. 실시간 음성 및 텍스트 번역을 지원하며, 정확하고 자연스러운 번역 품질로 글로벌 소통을 강화합니다. 오렐로는 머신러닝과 자연어 처리 기술(NLP)을 활용해 다양한 언어와 문화적 맥락을 이해하고 반영합니다. 사용자 친화적인 인터페이스와 높은 정확도로 비즈니스 회의, 국제 컨퍼런스, 교육 등 다양한 환경에서 신속한 커뮤니케이션을 가능하게 합니다. 이제 언어의 장벽 없이 전 세계와 연결되는 스마트한 비즈니스 솔루션, 디지털트랜스와 함께하세요.',
-                            })) %>
-                            <%
-                                const digitalTransData = [
-                                    {
-                                        id: 0,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: 'Barrier-less',
-                                        content: [
-                                            'PC/모바일 등 다양한 디바이스 접속 지원',
-                                            '원하는 레거시 시스템 어디에나 Add 가능'
-                                        ]
-                                    },
-                                    {
-                                        id: 1,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: 'Fast & Easy',
-                                        content: [
-                                            '원하는 화상회의 솔루션 누구나 쉽게 이용',
-                                            '음성만으로 약 100개 언어를 구별'
-                                        ]
-                                    },
-                                    {
-                                        id: 2,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: 'Advanced',
-                                        content: [
-                                            '업종 별/회사 별 맞춤 용어 사전을 적용',
-                                            'AI 기반 자동 회의록 작성 가능'
-                                        ]
-                                    },
-                                ];
-                            %>
-                            <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
-                                jsonData: digitalTransData,
-                                itemCount: 3,
-                                iconSize: 'large'
-                            })) %>
-
-                            <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                                teaserTitle: 'i-KEP(포털)',
-                                teaserText1: 'i-Kep은 20년 이상 축적된 다양한 기업들의 업무환경에 대한 높은 이해도와 Best Practice를 반영한 임직원 경험 중심의 포털 서비스입니다. 기업내 다양한 업무시스템 및 정보들이 함께 연결되어 통합된 View에서 제공하고, 언제 어디서든 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무환경이 가능합니다. 직관적인 인터페이스를 통해 프로젝트 관리, 결재, 보고서 작성, 일정 관리 등을 빠르게 수행할 수 있으며, 실시간 알림으로 중요한업무를 놓치지 않습니다. i-Kep과 함께라면 사무실 밖에서도 업무의 연속성을 유지하며 효율적인 비즈니스 환경을 만들어 보세요. i-Kep, 스마트한 업무의 시작입니다',
-                            })) %>
-                            <%
-                                const iKepData = [
-                                    {
-                                        id: 0,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: '다양한 솔루션 Line-up 보유',
-                                        content: '복잡한 기간계시스템 유연한 연계 가능'
-                                    },
-                                    {
-                                        id: 1,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: '복잡한 기간계시스템 유연한 연계 가능',
-                                        content: '글로벌 솔루션은 물론 ERP, HR시스템 등 기간계시스템과 유연한 연계 가능'
-                                    },
-                                ];
-                            %>
-                            <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
-                                jsonData: iKepData,
-                                itemCount: 2,
-                                iconSize: 'large'
-                            })) %>
-
-                            <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                                teaserTitle: 'EMS(모바일오피스)',
-                                teaserText1: '모바일 서비스인 EMS는 언제 어디서나 모바일로 회사 내부 업무를 손쉽게 처리할 수 있는 스마트한 업무 관리 앱으로, 기업에서 필요로 하는 다양한 업무 서비스를 단일 앱으로 제공하고, 개인 별로 최적화된 모바일 서비스를 제공합니다. 직관적인 인터페이스와 모바일 환경에 맞춘 최적화된 UI/UX 설계로, 사용자 경험을 극대화 하여 최고의 효율성을 보장합니다. 또한, 모바일 오피스 내 일정, 메일 요약, 메일 초안 작성 등 업무에 유용한 AI 기능을 접목시켜 제공하고 있으며, 스마트한 비즈니스 파트너로서 더 빠르고 정확한 업무를 가능하게 합니다. 언제 어디서든 일의 한계를 초월하는 LG CNS의 모바일 오피스 서비스를 만나보세요!',
-                            })) %>
-                            <%
-                                const emsData = [
-                                    {
-                                        id: 0,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: '모든 업무를 한 손에!',
-                                        content: '기업 맞춤형 구성으로 모바일 앱 서비스를 제공하여, 모든 업무를 효율적으로 처리'
-                                    },
-                                ];
-                            %>
-                            <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
-                                jsonData: emsData,
-                                itemCount: 1,
-                                iconSize: 'large'
-                            })) %>
-
-                            <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                                teaserTitle: '오피스 통합 모바일 앱',
-                                teaserText1: 'LG CNS에서 제시하는 오피스 통합 모바일 앱은 <strong class="font-bold">스마트 오피스의 새로운 기준</strong>을 제시하며, 가장 현대적인 업무환경을 구현합니다. 임직원이 근무하는 공간을 디지털 기술로 연결하여 출근부터 퇴근하는 순간까지 임직원의 모든 오피스 라이프를 책임집니다. 임직원이 근무하는 오피스 공간을 보다 편리하고, 쾌적하게 이용할 수 있도록 오피스 통합 슈퍼 App을 제공하여 차별화된 업무환경을 지원합니다. 모바일 출입인증부터 좌석 및 회의실 예약과 같은 업무 지원 서비스와 <strong class="font-bold">주문, 예약, 결제 등</strong> 다양한 부대시설 이용까지 하나의 앱을 통해 업무 효율성과 편의성을 극대화합니다. 또한, AI 기반의 개인화 서비스로 자주 이용하는 서비스를 추천하며, 사옥 내 자원 활용을 최적화합니다',
-                                teaserText2: '<strong class="font-bold">LG CNS와 함께 기존 오피스를 디지털 기반으로 현대화한 혁신적인 스마트 오피스 환경을 경험해보세요!</strong>'
-                            })) %>
-                            <%
-                                const officeAppData = [
-                                    {
-                                        id: 0,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: '원스톱 스마트 오피스 경험',
-                                        content: '출근부터 퇴근까지 임직원의 오피스라이프를 고려해 최적화된 스마트오피스 구현'
-                                    },
-                                    {
-                                        id: 1,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: '오피스 내 모든 시설과 서비스 간편 이용',
-                                        content: '오피스 내 카페, 식당 등 부대시설의 주문, 예약, 결제까지 하나의 앱으로 손쉽게 처리'
-                                    },
-                                    {
-                                        id: 2,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: '오피스 운영관리 지원',
-                                        content: '빌딩 운영 전반에 대하여 주요 의사 결정 시 필요한 모니터링 대시보드 제공'
-                                    },
-                                ];
-                            %>
-                            <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
-                                jsonData: officeAppData,
-                                itemCount: 3,
-                                iconSize: 'large'
-                            })) %>
-
-                            <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                                teaserTitle: 'AI for MWP',
-                                teaserText1: 'AI for MWP는 임직원들이 수행하는 메일 작성, 회의실 예약, 문서 검색 등 임직원들이 수행하는 공통 업무에 AI를 활용하여 업무 생산성을 획기적으로 향상시킬 수 있는 다양한 시나리오를 발굴하고, 서비스화하여 고객들에게 일하는 방식의 새로운 차원을 제시합니다. 반복적이고, 귀찮은 작업은 자동화하고, 지능형 추천으로 필요한 정보를 정확히 제공하며, 협업 과정의 효율성을 극대화하여 중요한 일에 더욱 집중할 수 있는 환경을 만듭니다. LG CNS의 AI for MWP와 함께 업무의 경계를 넘어선 인텔리전스한 모던워크플레이스를 경험해보세요!',
-                            })) %>
-                            <%
-                                const mwpData = [
-                                    {
-                                        id: 0,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: '회의실 예약도 AI로 손쉽게!',
-                                        content: 'AI가 참석자 일정 조회부터 빈 회의실 찾아 등록까지 복잡한 작업을 간편하게 자동화 하는 서비스입니다.'
-                                    },
-                                    {
-                                        id: 1,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: '신속, 정확! Search with AI!',
-                                        content: '사내 산재되어 있는 지식을 빠르고 정확하게 검색/활용할 수 있으며, 필요 시 사외 지식까지 확인할 수 있는 Gen AI 기반 지식 관리 서비스입니다.'
-                                    },
-                                    {
-                                        id: 2,
-                                        imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                                        title: 'AI로 완성하는 문서 작업의 혁신!',
-                                        content: '다양한 문서 양식에서 보고서 초안을 작성하고, 필요한 도표 추천부터 문구 수정까지 지원하는 Document Assistant 서비스입니다.'
-                                    },
-                                ];
-                            %>
-                            <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
-                                jsonData: mwpData,
-                                itemCount: 3,
-                                iconSize: 'large'
-                            })) %>
-
-                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                titleText: 'FAQ'
-                            })) %>
-                            <%
-                                const faqData = [
-                                    {
-                                        id: 0,
-                                        faqTitle: "스마트 워크를 위한 MWP 도입할 때 가장 고려해야 할 사항은 무엇인가요?",
-                                        faqContent: "가능한 많은 임직원이 잘 사용할 수 있도록 쉽고 간단한 기능 위주로 먼저 임직원이 사용해 볼 수 있도록 오픈하고 사용해본 임직원의 의견을 취합하여 개선하고 수정하여 좀더 많은 임직원이 사용할 수 있도록 하는 것이 중요하며, 필요한 교육과 캠페인은 과하다 싶을 정도로 실행하여 회사 임직원에게 내재화 하는 것이 중요합니다."
-                                    },
-                                    {
-                                        id: 1,
-                                        faqTitle: "망분리 환경에서도 MWP 도입이 가능한가요?",
-                                        faqContent: "2"
-                                    },
-                                    {
-                                        id: 2,
-                                        faqTitle: "MWP 도입 시 임직원의 PainPoint 파악과 임직원의 설득은 어떻게 해야 할까요?",
-                                        faqContent: "3"
-                                    },
-                                ];
-                            %>
-                            <%- include('src/component/cmp_accordion.html', {
-                                typeClass: 'open-type',
-                                openIndex: 0,
-                                itemCount: 3,
-                                jsonData: faqData
-                            }) %>
-
-                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                titleText: '고객 사례'
-                            })) %>
-                            <%
-                                const customerData = [
-                                    {
-                                        id: 0,
-                                        category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
-                                        name: 'LG 이노텍',
-                                        content: '임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축 임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축',
-                                        logoPC: 'https://placehold.co/95x28',
-                                        logoMO: 'https://placehold.co/95x48',
-                                    },
-                                    {
-                                        id: 1,
-                                        category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
-                                        name: 'LG 전자',
-                                        content: 'DigitalTrans 사례',
-                                        logoPC: 'https://placehold.co/96x28',
-                                        logoMO: 'https://placehold.co/95x48',
-                                    },
-                                    {
-                                        id: 2,
-                                        category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
-                                        name: '한국 거래소',
-                                        content: '회사의 첫 인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’',
-                                        logoPC: 'https://placehold.co/140x25',
-                                        logoMO: 'https://placehold.co/95x48',
-                                    },
-                                    {
-                                        id: 3,
-                                        category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
-                                        name: 'SK하이닉스',
-                                        content: '회사의 첫 인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’',
-                                        logoPC: 'https://placehold.co/108x28',
-                                        logoMO: 'https://placehold.co/95x48',
-                                    },
-                                ];
-                            %>
-                            <%- include('src/component/cmp_customer-case.html', Object.assign({}, locals, {
-                                jsonData: customerData,
-                                itemCount: 4
-                            })) %>
-                            <div class="button__wrap">
-                                <a href="#" class="btn btn-primary btn-medium">
-                                    <span class="btn__text">고객 사례 더 보기</span>
-                                    <i class="btn__icon ico icon-arrow-right-wt16"></i>
-                                </a>
-                            </div>
-
-                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                titleText: '연관 자료실'
-                            })) %>
-                            <%
-                                const relatedData = [
-                                    {
-                                        id: 0,
-                                        imgPc: 'https://placehold.co/980x564',
-                                        imgMo: 'https://placehold.co/980x564',
-                                        label: 'Category',
-                                        title: 'Cloud 뉴스레터',
-                                        content: 'LG CNS Cloud Service에 대한 모든 뉴스레터',
-                                        button: {
-                                            type: 'link',
-                                            target: 'blank',
-                                            href: '#',
-                                        }
-                                    },
-                                    {
-                                        id: 1,
-                                        imgPc: 'https://placehold.co/980x564',
-                                        imgMo: 'https://placehold.co/980x564',
-                                        label: 'Category',
-                                        title: 'Cloud 소개 영상',
-                                        content: 'LG CNS Cloud Service에 대한 모든 것을 이해하기 쉽게 소개한 영상',
-                                        button: {
-                                            type: 'video',
-                                            target: 'blank',
-                                            disabled: true,
-                                            href: '#',
-                                        }
-                                    },
-                                    {
-                                        id: 2,
-                                        imgPc: 'https://placehold.co/980x564',
-                                        imgMo: 'https://placehold.co/980x564',
-                                        label: 'Category',
-                                        title: 'Cloud 소개 자료',
-                                        content: 'LG CNS Cloud Service에 대한 모든 것을 이해하기 쉽게 소개한 자료',
-                                        button: {
-                                            type: 'download',
-                                            modalId: '',
-                                        }
-                                    },
-                                ];
-                            %>
-                            <%- include('src/component/cmp_DataList.html', Object.assign({}, locals, {
-                                jsonData: relatedData,
-                                itemClass: 'pc-col3',
-                                itemCount: 3
-                            })) %>
-                            <div class="button__wrap">
-                                <a href="#" class="btn btn-primary btn-medium">
-                                    <span class="btn__text">DX 자료실로 이동</span>
-                                    <i class="btn__icon ico icon-arrow-right-wt16"></i>
-                                </a>
-                            </div>
                         </div>
                         <div class="tab__content">
                             <div style="height: 300px;">Digital EX</div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="inner-wrap wide pt-spacing11 pb-spacing11 background-color-default1">
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    title: {
+                            text: '인사관리의 DX 혁신을 이루는 LG CNS 솔루션',
+                            size: 'lg',
+                            class: 'color-text-default font-medium',
+                        },
+                    marginVertical: 'mb-spacing08',
+                })) %>
+                <div class="cmp-wrap cmp-feature-grid mb-spacing05">
+                    <div>
+                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                            title: {
+                                    text: 'SINGLEX HR 한국형',
+                                    size: 'md',
+                                    class: 'color-text-default font-semibold',
+                                },
+                            marginVertical: 'mb-0',
+                        })) %>
+                    </div>
+                    <div>
+                        <p class="font-body-md color-text-secondary font-normal">
+                            지털트랜스(DigitalTrans)는 AI 기반의 혁신적인 자동 통번역 IT 서비스입니다. 실시간 음성 및 텍스트 번역을 지원하며, 정확하고 자연스러운 번역 품질로 글로벌 소통을 강화합니다. 오렐로는 머신러닝과
+                            자연어 처리 기술(NLP)을 활용해 다양한 언어와 문화적 맥락을 이해하고 반영합니다. 사용자 친화적인 인터페이스와 높은 정확도로 비즈니스 회의, 국제 컨퍼런스, 교육 등 다양한 환경에서 신속한 커뮤니케이션을 가능하게
+                            합니다. 이제 언어의 장벽 없이 전 세계와 연결되는 스마트한 비즈니스 솔루션, 디지털트랜스와 함께하세요.
+                        </p>
+                    </div>
+                </div>
+                <%
+                    const digitalTransData = [
+                        {
+                            id: 0,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: 'Barrier-less',
+                            content: [
+                                'PC/모바일 등 다양한 디바이스 접속 지원',
+                                '원하는 레거시 시스템 어디에나 Add 가능'
+                            ]
+                        },
+                        {
+                            id: 1,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: 'Fast & Easy',
+                            content: [
+                                '원하는 화상회의 솔루션 누구나 쉽게 이용',
+                                '음성만으로 약 100개 언어를 구별'
+                            ]
+                        },
+                        {
+                            id: 2,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: 'Advanced',
+                            content: [
+                                '업종 별/회사 별 맞춤 용어 사전을 적용',
+                                'AI 기반 자동 회의록 작성 가능'
+                            ]
+                        },
+                    ];
+                %>
+                <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
+                    jsonData: digitalTransData,
+                    itemCount: 3,
+                    iconSize: 'large',
+                })) %>
+
+                <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                    teaserTitle: 'i-KEP(포털)',
+                    teaserText1: 'i-Kep은 20년 이상 축적된 다양한 기업들의 업무환경에 대한 높은 이해도와 Best Practice를 반영한 임직원 경험 중심의 포털 서비스입니다. 기업내 다양한 업무시스템 및 정보들이 함께 연결되어 통합된 View에서 제공하고, 언제 어디서든 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무환경이 가능합니다. 직관적인 인터페이스를 통해 프로젝트 관리, 결재, 보고서 작성, 일정 관리 등을 빠르게 수행할 수 있으며, 실시간 알림으로 중요한업무를 놓치지 않습니다. i-Kep과 함께라면 사무실 밖에서도 업무의 연속성을 유지하며 효율적인 비즈니스 환경을 만들어 보세요. i-Kep, 스마트한 업무의 시작입니다',
+                })) %>
+                <%
+                    const iKepData = [
+                        {
+                            id: 0,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: '다양한 솔루션 Line-up 보유',
+                            content: '복잡한 기간계시스템 유연한 연계 가능'
+                        },
+                        {
+                            id: 1,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: '복잡한 기간계시스템 유연한 연계 가능',
+                            content: '글로벌 솔루션은 물론 ERP, HR시스템 등 기간계시스템과 유연한 연계 가능'
+                        },
+                    ];
+                %>
+                <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
+                    jsonData: iKepData,
+                    itemCount: 2,
+                    iconSize: 'large'
+                })) %>
+
+                <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                    teaserTitle: 'EMS(모바일오피스)',
+                    teaserText1: '모바일 서비스인 EMS는 언제 어디서나 모바일로 회사 내부 업무를 손쉽게 처리할 수 있는 스마트한 업무 관리 앱으로, 기업에서 필요로 하는 다양한 업무 서비스를 단일 앱으로 제공하고, 개인 별로 최적화된 모바일 서비스를 제공합니다. 직관적인 인터페이스와 모바일 환경에 맞춘 최적화된 UI/UX 설계로, 사용자 경험을 극대화 하여 최고의 효율성을 보장합니다. 또한, 모바일 오피스 내 일정, 메일 요약, 메일 초안 작성 등 업무에 유용한 AI 기능을 접목시켜 제공하고 있으며, 스마트한 비즈니스 파트너로서 더 빠르고 정확한 업무를 가능하게 합니다. 언제 어디서든 일의 한계를 초월하는 LG CNS의 모바일 오피스 서비스를 만나보세요!',
+                })) %>
+                <%
+                    const emsData = [
+                        {
+                            id: 0,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: '모든 업무를 한 손에!',
+                            content: '기업 맞춤형 구성으로 모바일 앱 서비스를 제공하여, 모든 업무를 효율적으로 처리'
+                        },
+                    ];
+                %>
+                <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
+                    jsonData: emsData,
+                    itemCount: 1,
+                    iconSize: 'large'
+                })) %>
+
+                <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                    teaserTitle: '오피스 통합 모바일 앱',
+                    teaserText1: 'LG CNS에서 제시하는 오피스 통합 모바일 앱은 <strong class="font-bold">스마트 오피스의 새로운 기준</strong>을 제시하며, 가장 현대적인 업무환경을 구현합니다. 임직원이 근무하는 공간을 디지털 기술로 연결하여 출근부터 퇴근하는 순간까지 임직원의 모든 오피스 라이프를 책임집니다. 임직원이 근무하는 오피스 공간을 보다 편리하고, 쾌적하게 이용할 수 있도록 오피스 통합 슈퍼 App을 제공하여 차별화된 업무환경을 지원합니다. 모바일 출입인증부터 좌석 및 회의실 예약과 같은 업무 지원 서비스와 <strong class="font-bold">주문, 예약, 결제 등</strong> 다양한 부대시설 이용까지 하나의 앱을 통해 업무 효율성과 편의성을 극대화합니다. 또한, AI 기반의 개인화 서비스로 자주 이용하는 서비스를 추천하며, 사옥 내 자원 활용을 최적화합니다',
+                    teaserText2: '<strong class="font-bold">LG CNS와 함께 기존 오피스를 디지털 기반으로 현대화한 혁신적인 스마트 오피스 환경을 경험해보세요!</strong>'
+                })) %>
+                <%
+                    const officeAppData = [
+                        {
+                            id: 0,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: '원스톱 스마트 오피스 경험',
+                            content: '출근부터 퇴근까지 임직원의 오피스라이프를 고려해 최적화된 스마트오피스 구현'
+                        },
+                        {
+                            id: 1,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: '오피스 내 모든 시설과 서비스 간편 이용',
+                            content: '오피스 내 카페, 식당 등 부대시설의 주문, 예약, 결제까지 하나의 앱으로 손쉽게 처리'
+                        },
+                        {
+                            id: 2,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: '오피스 운영관리 지원',
+                            content: '빌딩 운영 전반에 대하여 주요 의사 결정 시 필요한 모니터링 대시보드 제공'
+                        },
+                    ];
+                %>
+                <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
+                    jsonData: officeAppData,
+                    itemCount: 3,
+                    iconSize: 'large'
+                })) %>
+
+                <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
+                    teaserTitle: 'AI for MWP',
+                    teaserText1: 'AI for MWP는 임직원들이 수행하는 메일 작성, 회의실 예약, 문서 검색 등 임직원들이 수행하는 공통 업무에 AI를 활용하여 업무 생산성을 획기적으로 향상시킬 수 있는 다양한 시나리오를 발굴하고, 서비스화하여 고객들에게 일하는 방식의 새로운 차원을 제시합니다. 반복적이고, 귀찮은 작업은 자동화하고, 지능형 추천으로 필요한 정보를 정확히 제공하며, 협업 과정의 효율성을 극대화하여 중요한 일에 더욱 집중할 수 있는 환경을 만듭니다. LG CNS의 AI for MWP와 함께 업무의 경계를 넘어선 인텔리전스한 모던워크플레이스를 경험해보세요!',
+                })) %>
+                <%
+                    const mwpData = [
+                        {
+                            id: 0,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: '회의실 예약도 AI로 손쉽게!',
+                            content: 'AI가 참석자 일정 조회부터 빈 회의실 찾아 등록까지 복잡한 작업을 간편하게 자동화 하는 서비스입니다.'
+                        },
+                        {
+                            id: 1,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: '신속, 정확! Search with AI!',
+                            content: '사내 산재되어 있는 지식을 빠르고 정확하게 검색/활용할 수 있으며, 필요 시 사외 지식까지 확인할 수 있는 Gen AI 기반 지식 관리 서비스입니다.'
+                        },
+                        {
+                            id: 2,
+                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
+                            title: 'AI로 완성하는 문서 작업의 혁신!',
+                            content: '다양한 문서 양식에서 보고서 초안을 작성하고, 필요한 도표 추천부터 문구 수정까지 지원하는 Document Assistant 서비스입니다.'
+                        },
+                    ];
+                %>
+                <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
+                    jsonData: mwpData,
+                    itemCount: 3,
+                    iconSize: 'large'
+                })) %>
+
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    titleText: 'FAQ'
+                })) %>
+                <%
+                    const faqData = [
+                        {
+                            id: 0,
+                            faqTitle: "스마트 워크를 위한 MWP 도입할 때 가장 고려해야 할 사항은 무엇인가요?",
+                            faqContent: "가능한 많은 임직원이 잘 사용할 수 있도록 쉽고 간단한 기능 위주로 먼저 임직원이 사용해 볼 수 있도록 오픈하고 사용해본 임직원의 의견을 취합하여 개선하고 수정하여 좀더 많은 임직원이 사용할 수 있도록 하는 것이 중요하며, 필요한 교육과 캠페인은 과하다 싶을 정도로 실행하여 회사 임직원에게 내재화 하는 것이 중요합니다."
+                        },
+                        {
+                            id: 1,
+                            faqTitle: "망분리 환경에서도 MWP 도입이 가능한가요?",
+                            faqContent: "2"
+                        },
+                        {
+                            id: 2,
+                            faqTitle: "MWP 도입 시 임직원의 PainPoint 파악과 임직원의 설득은 어떻게 해야 할까요?",
+                            faqContent: "3"
+                        },
+                    ];
+                %>
+                <%- include('src/component/cmp_accordion.html', {
+                    typeClass: 'open-type',
+                    openIndex: 0,
+                    itemCount: 3,
+                    jsonData: faqData
+                }) %>
+
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    titleText: '고객 사례'
+                })) %>
+                <%
+                    const customerData = [
+                        {
+                            id: 0,
+                            category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
+                            name: 'LG 이노텍',
+                            content: '임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축 임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축',
+                            logoPC: 'https://placehold.co/95x28',
+                            logoMO: 'https://placehold.co/95x48',
+                        },
+                        {
+                            id: 1,
+                            category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
+                            name: 'LG 전자',
+                            content: 'DigitalTrans 사례',
+                            logoPC: 'https://placehold.co/96x28',
+                            logoMO: 'https://placehold.co/95x48',
+                        },
+                        {
+                            id: 2,
+                            category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
+                            name: '한국 거래소',
+                            content: '회사의 첫 인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’',
+                            logoPC: 'https://placehold.co/140x25',
+                            logoMO: 'https://placehold.co/95x48',
+                        },
+                        {
+                            id: 3,
+                            category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
+                            name: 'SK하이닉스',
+                            content: '회사의 첫 인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’',
+                            logoPC: 'https://placehold.co/108x28',
+                            logoMO: 'https://placehold.co/95x48',
+                        },
+                    ];
+                %>
+                <%- include('src/component/cmp_customer-case.html', Object.assign({}, locals, {
+                    jsonData: customerData,
+                    itemCount: 4
+                })) %>
+                <div class="button__wrap">
+                    <a href="#" class="btn btn-primary btn-medium">
+                        <span class="btn__text">고객 사례 더 보기</span>
+                        <i class="btn__icon ico icon-arrow-right-wt16"></i>
+                    </a>
+                </div>
+
+                <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                    titleText: '연관 자료실'
+                })) %>
+                <%
+                    const relatedData = [
+                        {
+                            id: 0,
+                            imgPc: 'https://placehold.co/980x564',
+                            imgMo: 'https://placehold.co/980x564',
+                            label: 'Category',
+                            title: 'Cloud 뉴스레터',
+                            content: 'LG CNS Cloud Service에 대한 모든 뉴스레터',
+                            button: {
+                                type: 'link',
+                                target: 'blank',
+                                href: '#',
+                            }
+                        },
+                        {
+                            id: 1,
+                            imgPc: 'https://placehold.co/980x564',
+                            imgMo: 'https://placehold.co/980x564',
+                            label: 'Category',
+                            title: 'Cloud 소개 영상',
+                            content: 'LG CNS Cloud Service에 대한 모든 것을 이해하기 쉽게 소개한 영상',
+                            button: {
+                                type: 'video',
+                                target: 'blank',
+                                disabled: true,
+                                href: '#',
+                            }
+                        },
+                        {
+                            id: 2,
+                            imgPc: 'https://placehold.co/980x564',
+                            imgMo: 'https://placehold.co/980x564',
+                            label: 'Category',
+                            title: 'Cloud 소개 자료',
+                            content: 'LG CNS Cloud Service에 대한 모든 것을 이해하기 쉽게 소개한 자료',
+                            button: {
+                                type: 'download',
+                                modalId: '',
+                            }
+                        },
+                    ];
+                %>
+                <%- include('src/component/cmp_DataList.html', Object.assign({}, locals, {
+                    jsonData: relatedData,
+                    itemClass: 'pc-col3',
+                    itemCount: 3
+                })) %>
+                <div class="button__wrap">
+                    <a href="#" class="btn btn-primary btn-medium">
+                        <span class="btn__text">DX 자료실로 이동</span>
+                        <i class="btn__icon ico icon-arrow-right-wt16"></i>
+                    </a>
                 </div>
             </div>
         </div>

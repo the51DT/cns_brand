@@ -15,6 +15,20 @@
         }
     }
 }
+@mixin custom-padding-vertical($vertical, $valPc, $valMo) {
+    @if($vertical == 'top') {
+        padding-top: calc($valMo / 16 * 1rem);
+        @media #{$min1280} {
+            padding-top: calc($valPc / 16 * 1rem);
+        }
+    }
+    @else if($vertical == 'bottom') {
+        padding-bottom: calc($valMo / 16 * 1rem);
+        @media #{$min1280} {
+            padding-bottom: calc($valPc / 16 * 1rem);
+        }
+    }
+}
 // margin-top
 .mt-spacing01 {
     @include custom-margin-vertical('top', var(--spacing-pc-spacing01), var(--spacing-mo-spacing01));
@@ -91,11 +105,17 @@
 }
 // margin 예외 케이스
 // margin-bottom
+.mb-exc-spacing-180-88 {
+    @include custom-margin-vertical('bottom', 180, 88);
+}
 .mb-exc-spacing-120-64 {
     @include custom-margin-vertical('bottom', 120, 64);
 }
 .mb-exc-spacing-64-48 {
     @include custom-margin-vertical('bottom', 64, 48);
+}
+.mb-exc-spacing-64-56 {
+    @include custom-margin-vertical('bottom', 64, 56);
 }
 .mb-exc-spacing-64-22 {
     @include custom-margin-vertical('bottom', 64, 22);
@@ -111,4 +131,26 @@
 }
 .mb-exc-spacing-24-16 {
     @include custom-margin-vertical('bottom', 24, 16);
+}
+// padding 
+// padding-top
+.pt-spacing11 {
+    @include custom-padding-vertical('top', var(--spacing-pc-spacing11), var(--spacing-mo-spacing11));
+}
+// padding-bottom
+.pb-spacing11 {
+    @include custom-padding-vertical('bottom', var(--spacing-pc-spacing11), var(--spacing-mo-spacing11));
+}
+// padding 예외 케이스
+.pt-exc-spacing-32-56 {
+    @include custom-padding-vertical('top', 48, 56);
+}
+.pt-exc-spacing-48-56 {
+    @include custom-padding-vertical('top', 48, 56);
+}
+.pb-exc-spacing-32-56 {
+    @include custom-padding-vertical('bottom', 48, 56);
+}
+.pb-exc-spacing-48-56 {
+    @include custom-padding-vertical('bottom', 48, 56);
 }

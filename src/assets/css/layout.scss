@@ -1258,28 +1258,41 @@ body {
         // padding: 0 calc(80 / 16 * 1rem); 
     }
     &.wide {
-        padding: 0;
+        padding-left: 0;
+        padding-right: 0;
         @media #{$min1280} {
             max-width: 100%;
         }
-        & > .cmp-tab {
-            .cmp-tab__header {
-                padding: 0 calc(20 / 16 * 1rem);
-                width: 100%;
-                box-sizing: border-box;
-                @media #{$min1280} {
-                    padding: 0;
-                    margin: 0 auto calc(80 / 16 * 1rem);
-                    max-width: calc(1440 / 16 * 1rem);
-                }
+        & > .cmp-wrap {
+            padding: 0 calc(20 / 16 * 1rem); 
+            max-width: 100%;
+            box-sizing: border-box;
+            @media #{$min1280} {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: calc(1480 / 16 * 1rem);
+                // padding: 0 calc(80 / 16 * 1rem); 
             }
-            .tab-content__wrap {
-                padding: 0 calc(20 / 16 * 1rem); 
-                width: 100%;
-                box-sizing: border-box;
-                @media #{$min1280} {
-                    margin: 0 auto;
-                    max-width: calc(1480 / 16 * 1rem);
+            &.cmp-tab {
+                padding: 0;
+                .cmp-tab__header {
+                    padding: 0 calc(20 / 16 * 1rem);
+                    width: 100%;
+                    box-sizing: border-box;
+                    @media #{$min1280} {
+                        padding: 0;
+                        margin: 0 auto calc(80 / 16 * 1rem);
+                        max-width: calc(1440 / 16 * 1rem);
+                    }
+                }
+                .tab-content__wrap {
+                    padding: 0 calc(20 / 16 * 1rem); 
+                    width: 100%;
+                    box-sizing: border-box;
+                    @media #{$min1280} {
+                        margin: 0 auto;
+                        max-width: calc(1480 / 16 * 1rem);
+                    }
                 }
             }
         }

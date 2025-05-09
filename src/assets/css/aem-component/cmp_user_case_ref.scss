@@ -1,12 +1,12 @@
 .cmp-user-case-ref {
     // background-color: var(--colorCM-mode1-fill-fill-default1);
     &__container {
-        margin: 0 auto;
-        padding: calc(56 / 16 * 1rem) calc(20 / 16 * 1rem);
-        max-width: calc(1480 / 16 * 1rem);
-        width: 100%;
+        // margin: 0 auto;
+        padding: calc(56 / 16 * 1rem) 0;
+        // max-width: calc(1480 / 16 * 1rem);
+        // width: 100%;
         @media #{$min1280} {
-            padding: calc(120 / 16 * 1rem) calc(20 / 16 * 1rem);
+            padding: calc(120 / 16 * 1rem) 0;
         }
     }
     &__title {

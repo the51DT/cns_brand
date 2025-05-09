@@ -1,76 +1,79 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Title Text Icon Guide</title>
-  <link rel="stylesheet" href="/src/assets/css/guide.scss" />
-  <link rel="shortcut icon" href="/src/assets/image/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title Text Icon Guide</title>
+    <link rel="stylesheet" href="/src/assets/css/guide.scss" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico" />
 </head>
 <body>
-  <div class="guide__wrap">
-    <%- include('src/guide/header.html') %>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
 
-    <div class="page-location text-2xl font-bold">
-      <span id="pagesTitle">타이틀 텍스트 아이콘</span>
-    </div>
-
-    <div class="guide-content">
-      <div class="flex justify-between lnb-type">
-        <%- include('src/component/cmp_lnb.html') %>
-
-        <div class="page-cont flex-1">
-          <div class="cmp-exsample__wrap mt-5">
-            <%
-              const iconSolutionColumnData3 = [
-                {
-                  id: 0,
-                  imageUrl: 'https://placehold.co/345x129/png',
-                  title: '기본',
-                  content: ['LENA는 LG CNS의 축적된 운영 노하우를 바탕으로 개발된 클라우드 향 웹 애플리케이션 서버(WAS)입니다. 기존 온프레미스 환경뿐만 아니라 클라우드, 컨테이너 환경 등 다양한 IT 환경에 최적화된 서비스를 제공하며, 안정적인 운영 환경을 통해 금융, 공공, IT, 서비스 등 여러 산업에서 성공적인 구축 사례를 보유하고 있습니다.'],
-                  useList: false
-                },
-                {
-                  id: 1,
-                  imageUrl: 'https://placehold.co/345x129/png',
-                  title: 'List',
-                  content: ['PC/모바일 등 다양한 디바이스 접속 지원 PC/모바일 등 다양한 디바이스 접속 지원 PC/모바일 등 다양한 디바이스 접속 지원 PC/모바일 등 다양한 디바이스 접속 지원 PC/모바일 등 다양한 디바이스 접속 지원', 'PC/모바일 등 다양한 디바이스 접속 지원'],
-                  useList: true
-                  },
-                {
-                  id: 2,
-                  title: '이미지 없을 때',
-                  content: ['AI튜터는 LG CNS가 AI 기술로 만든 외국어 학습 애플리케이션입니다. AI 기반 영어교육 프로그램으로는 국내 최초로 한국영어교육학회(KATE)의 인증을 받으며 우수성을 입증했습니다. LG CNS는 서울, 경기, 인천, 대구, 전남 등 12개 교육청 산하 초중고 약 300만명의 학생들에게 LG CNS AI튜터 앱 ‘스피킹클래스’를 무상으로 제공하고 있습니다. 2022년부터는 교과서 출판사 8곳과 제휴를 맺고 LG CNS AI튜터 앱 ‘스피킹클래스’에 영어 교과서 80권을 탑재해, 전국 초·중·고교생이 스마트폰 앱에서 무료로 학습할 수 있는 서비스도 지원하고 있습니다.'],
-                  useList: false
-                },
-                {
-                  id: 3,
-                  title: 'type: large',
-                  content: ['LENA는 LG CNS의 축적된 운영 노하우를 바탕으로 개발된 클라우드 향 웹 애플리케이션 서버(WAS)입니다. 기존 온프레미스 환경뿐만 아니라 클라우드, 컨테이너 환경 등 다양한 IT 환경에 최적화된 서비스를 제공하며, 안정적인 운영 환경을 통해 금융, 공공, IT, 서비스 등 여러 산업에서 성공적인 구축 사례를 보유하고 있습니다.'],
-                  useList: false,
-                  type: 'large',
-                },
-                {
-                  id: 4,
-                  title: '버튼',
-                  content: ['LENA는 LG CNS의 축적된 운영 노하우를 바탕으로 개발된 클라우드 향 웹 애플리케이션 서버(WAS)입니다. 기존 온프레미스 환경뿐만 아니라 클라우드, 컨테이너 환경 등 다양한 IT 환경에 최적화된 서비스를 제공하며, 안정적인 운영 환경을 통해 금융, 공공, IT, 서비스 등 여러 산업에서 성공적인 구축 사례를 보유하고 있습니다.'],
-                  imageUrl: 'https://placehold.co/345x129/png',
-                  buttonName: '더 자세히 알아보기',
-                  buttonUrl: 'naver.com',
-                  buttonTarget: '_blank',
-                  useList: false
-                }
-              ];
-            %>
-
-            <%- include('src/component/cmp_title_text_icon.html', {
-            jsonData: iconSolutionColumnData3
-            }) %>
-          </div>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle">타이틀 텍스트 아이콘</span>
         </div>
-      </div>
+
+        <div class="guide-content">
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+
+                <div class="page-cont flex-1">
+                    <div class="cmp-exsample__wrap mt-5">
+                        <%
+                            const iconSolutionColumnData3 = [
+                            {
+                                id: 0,
+                                imageUrl: 'https://placehold.co/345x129/png',
+                                title: '기본',
+                                content: ['LENA는 LG CNS의 축적된 운영 노하우를 바탕으로 개발된 클라우드 향 웹 애플리케이션 서버(WAS)입니다. 기존 온프레미스 환경뿐만 아니라 클라우드, 컨테이너 환경 등 다양한 IT 환경에 최적화된 서비스를 제공하며, 안정적인 운영 환경을 통해 금융, 공공, IT, 서비스 등 여러 산업에서 성공적인 구축 사례를 보유하고 있습니다.'],
+                                useList: false,
+                                borderNone: true,
+                                paddingTopNone: true,
+                            },
+                            {
+                                id: 1,
+                                imageUrl: 'https://placehold.co/345x129/png',
+                                title: 'List',
+                                content: ['PC/모바일 등 다양한 디바이스 접속 지원 PC/모바일 등 다양한 디바이스 접속 지원 PC/모바일 등 다양한 디바이스 접속 지원 PC/모바일 등 다양한 디바이스 접속 지원 PC/모바일 등 다양한 디바이스 접속 지원', 'PC/모바일 등 다양한 디바이스 접속 지원'],
+                                useList: true,
+                                paddingBottomNone: true,
+                                },
+                            {
+                                id: 2,
+                                title: '이미지 없을 때',
+                                content: ['AI튜터는 LG CNS가 AI 기술로 만든 외국어 학습 애플리케이션입니다. AI 기반 영어교육 프로그램으로는 국내 최초로 한국영어교육학회(KATE)의 인증을 받으며 우수성을 입증했습니다. LG CNS는 서울, 경기, 인천, 대구, 전남 등 12개 교육청 산하 초중고 약 300만명의 학생들에게 LG CNS AI튜터 앱 ‘스피킹클래스’를 무상으로 제공하고 있습니다. 2022년부터는 교과서 출판사 8곳과 제휴를 맺고 LG CNS AI튜터 앱 ‘스피킹클래스’에 영어 교과서 80권을 탑재해, 전국 초·중·고교생이 스마트폰 앱에서 무료로 학습할 수 있는 서비스도 지원하고 있습니다.'],
+                                useList: false
+                            },
+                            {
+                                id: 3,
+                                title: 'type: large',
+                                content: ['LENA는 LG CNS의 축적된 운영 노하우를 바탕으로 개발된 클라우드 향 웹 애플리케이션 서버(WAS)입니다. 기존 온프레미스 환경뿐만 아니라 클라우드, 컨테이너 환경 등 다양한 IT 환경에 최적화된 서비스를 제공하며, 안정적인 운영 환경을 통해 금융, 공공, IT, 서비스 등 여러 산업에서 성공적인 구축 사례를 보유하고 있습니다.'],
+                                useList: false,
+                                type: 'large',
+                            },
+                            {
+                                id: 4,
+                                title: '버튼',
+                                content: ['LENA는 LG CNS의 축적된 운영 노하우를 바탕으로 개발된 클라우드 향 웹 애플리케이션 서버(WAS)입니다. 기존 온프레미스 환경뿐만 아니라 클라우드, 컨테이너 환경 등 다양한 IT 환경에 최적화된 서비스를 제공하며, 안정적인 운영 환경을 통해 금융, 공공, IT, 서비스 등 여러 산업에서 성공적인 구축 사례를 보유하고 있습니다.'],
+                                imageUrl: 'https://placehold.co/345x129/png',
+                                buttonName: '더 자세히 알아보기',
+                                buttonUrl: 'naver.com',
+                                buttonTarget: '_blank',
+                                useList: false
+                            }
+                            ];
+                        %>
+
+                        <%- include('src/component/cmp_title_text_icon.html', {
+                        jsonData: iconSolutionColumnData3
+                        }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>
