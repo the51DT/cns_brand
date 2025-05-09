@@ -129,6 +129,9 @@
 .mb-exc-spacing-40-16 {
     @include custom-margin-vertical('bottom', 40, 16);
 }
+.mb-exc-spacing-40-32 {
+    @include custom-margin-vertical('bottom', 40, 32);
+}
 .mb-exc-spacing-24-16 {
     @include custom-margin-vertical('bottom', 24, 16);
 }
@@ -142,12 +145,17 @@
     @include custom-padding-vertical('bottom', var(--spacing-pc-spacing11), var(--spacing-mo-spacing11));
 }
 // padding 예외 케이스
+// padding-top
 .pt-exc-spacing-32-56 {
     @include custom-padding-vertical('top', 48, 56);
 }
 .pt-exc-spacing-48-56 {
     @include custom-padding-vertical('top', 48, 56);
 }
+.pt-exc-spacing-32-0 {
+    @include custom-padding-vertical('top', 48, 0);
+}
+// padding-bottom
 .pb-exc-spacing-32-56 {
     @include custom-padding-vertical('bottom', 48, 56);
 }

@@ -15,12 +15,10 @@
         <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {
             pcImg: 'empty',
             moImg: 'empty',
-            subText: '기업정보',
+            subText: '지속가능경영',
             pageTitle: '환경경영',
             rightDesc: ''
         })) %>
-
-
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
@@ -43,190 +41,325 @@
                     </div>
                     <div class="tab-content__wrap">
                         <div class="tab__content is-active">
-                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, {
-                                overviewTitle : {
-                                    text : '안전보건방침',
-                                    size: 'font-head-lg',
-                                    style: 'color-text-default font-medium',
-                                }, 
-                                overviewContent : {
-                                    text : [
-                                        'LG CNS는 “임직원 및 협력사 직원의 건강과 공동체 안전”을 최우선 가치로 인식하며, 안전보건 성과의 지속적인 개선을 통해 안전하고 건강한 일터를 조성한다.'
-                                    ],
-                                    size: 'font-body-md',
-                                    style: 'color-text-secondary font-normal',
-                                }
-                            })) %>
-
-                            <% const specListData1 = [ 
-                                { 
-                                    id: 0,
-                                    title: '타협 불가한 제1의 가치',
-                                    content: [
-                                        '안전보건을 경영의 최우선 가치로 한다.', 
-                                    ]
-                                }, 
-                                { 
-                                    id: 1, 
-                                    title: '원칙 준수',
-                                    content: [
-                                        '안전보건에 관한 법규 및 이해관계자의 요구사항을 준수하고 기본과 원칙에 의한 안전보건경영 시스템을 운영한다.',
-                                    ]
-                                }, 
-                                { 
-                                    id: 2,
-                                    title: '참여와 공개',
-                                    content: [
-                                        '구성원은 안전보건 활동에 능동적으로 참여하며 안전보건성과는 이해관계자들에게 투명하게 공개한다.',
-                                    ]
-                                },
-                                { 
-                                    id: 3,
-                                    title: '지속적 개선',
-                                    content: [
-                                        '안전보건을 확보하기 위한 내부 및 외부의 피드백을 통해 안전보건 관리체계의 지속적인 개선을 추구한다.',
-                                    ]
-                                },
-                            ]; 
-                            %>
-                            <%- include('src/component/cmp_SpecList.html', {
-                                itemCount: 4,
-                                jsonData: specListData1,
-                                styleType: 'type-box',
+                            <div class="cmp-wrap cmp-feature-grid">
+                                <div>
+                                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                        title : {
+                                            text: '안전보건방침',
+                                            size: 'lg',
+                                            class: 'color-text-default font-medium',
+                                        },
+                                        marginVertical: 'mb-0',
+                                    })) %>
+                                </div>
+                                <div>
+                                    <p class="font-body-md font-normal color-text-secondary mb-exc-spacing-40-32">
+                                        LG CNS는 “임직원 및 협력사 직원의 건강과 공동체 안전”을 최우선 가치로 인식하며, 안전보건 성과의 지속적인 개선을 통해 안전하고 건강한 일터를 조성한다.
+                                    </p>
+                                    <% const specListData = [ 
+                                        { 
+                                            id: 1, 
+                                            subTitle: '01',
+                                            title: '타협 불가한 제1의 가치',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '안전보건을 경영의 최우선 가치로 한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 2, 
+                                            subTitle: '02',
+                                            title: '원칙 준수',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '안전보건에 관한 법규 및 이해관계자의 요구사항을 준수하고 기본과 원칙에 의한 안전보건경영 시스템을 운영한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 3, 
+                                            subTitle: '03',
+                                            title: '참여와 공개',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '구성원은 안전보건 활동에 능동적으로 참여하며 안전보건성과는 이해관계자들에게 투명하게 공개한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 4, 
+                                            subTitle: '04',
+                                            title: '지속적 개선',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '안전보건을 확보하기 위한 내부 및 외부의 피드백을 통해 안전보건 관리체계의 지속적인 개선을 추구한다.',
+                                                ]
+                                            }
+                                        }, 
+                                    ]; 
+                                    %>
+                                    <%- include('src/component/cmp_SpecList.html', {
+                                        itemCount: 4,
+                                        jsonData: specListData,
+                                        borderTop: 'used',
+                                        marginVertical: 'mb-0',
+                                    }) %>
+                                </div>
+                            </div>
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--border-top pt-exc-spacing-32-0">
+                                <div>
+                                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                        title : {
+                                            text: '안전보건목표',
+                                            size: 'lg',
+                                            class: 'color-text-default font-medium',
+                                        },
+                                        marginVertical: 'mb-0',
+                                    })) %>
+                                </div>
+                                <div>
+                                    <p class="font-body-md font-normal color-text-secondary mb-exc-spacing-40-32">
+                                        LG CNS는 “임직원 및 협력사 직원의 건강과 공동체 안전”을 최우선 가치로 인식하며, 안전보건 성과의 지속적인 개선을 통해 안전하고 건강한 일터를 조성한다.
+                                    </p>
+                                    <% const specListData3 = [ 
+                                        { 
+                                            id: 1, 
+                                            subTitle: '01',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '경영진은 사업장의 안전보건 활동을 위해 정기적으로 검하며 구성원의 의견을 청취하고 개선한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 2, 
+                                            subTitle: '02',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '구성원은 규정된 안전보건 활동에 주도적으로 참여하고 실행한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 3, 
+                                            subTitle: '03',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '산업재해를 예방하기 위한 예산을 수립하고, 집행의 적정성을 점검한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 4, 
+                                            subTitle: '04',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '유해위험요인에 대한 사전발굴 및 사후대책을 적기 이행한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 4, 
+                                            subTitle: '05',
+                                            title: '지속적 개선',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '정기적으로 안전보건 경영성과를 평가하여 투명하게 정보를 공개하고 경영진에게 보고한다.',
+                                                ]
+                                            }
+                                        }, 
+                                    ]; 
+                                    %>
+                                    <%- include('src/component/cmp_SpecList.html', {
+                                        itemCount: 5,
+                                        jsonData: specListData3,
+                                        borderTop: 'used',
+                                        marginVertical: 'mb-0',
+                                    }) %>
+                                </div>
+                            </div>
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--border-top pt-exc-spacing-32-0">
+                                <div>
+                                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                        title : {
+                                            text: '환경방침',
+                                            size: 'lg',
+                                            class: 'color-text-default font-medium',
+                                        },
+                                        marginVertical: 'mb-0',
+                                    })) %>
+                                </div>
+                                <div>
+                                    <p class="font-body-md font-normal color-text-secondary mb-exc-spacing-40-32">
+                                        LG CNS는 인간존중의 경영 이념 아래, 안전보건환경을 회사의 지속 가능한 경영 요소로
+                                        인식하여 경영활동 전과정(Life Cycle)에서 적극 실천한다.
+                                    </p>
+                                    <% const specListData4 = [ 
+                                        { 
+                                            id: 1, 
+                                            subTitle: '01',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '모든 경영활동으로 인한 환경오염을 최소화하고 환경보호에 적극 동참한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 2, 
+                                            subTitle: '02',
+                                            title: '원칙 준수',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '국내 · 외 환경법규 및 이해관계자의 요구사항을 준수하고 글로벌 수준의 환경경영 시스템을 운영한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 3, 
+                                            subTitle: '03',
+                                            title: '참여와 공개',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '모든 구성원은 기후변화에 대응하고 환경경영성과를 평가하여 투명하게 정보를 공개하고, 이해관계자들과 성실히 소통한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 4, 
+                                            subTitle: '04',
+                                            title: '지속적 개선',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '환경변화 등 외부위험요인에 대해 Risk관리체계를 정착하고, 지속적인 개선을 추구한다.',
+                                                ]
+                                            }
+                                        }, 
+                                    ]; 
+                                    %>
+                                    <%- include('src/component/cmp_SpecList.html', {
+                                        itemCount: 4,
+                                        jsonData: specListData4,
+                                        borderTop: 'used',
+                                        marginVertical: 'mb-0',
+                                    }) %>
+                                </div>
+                            </div>
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--border-top pt-exc-spacing-32-0">
+                                <div>
+                                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                        title : {
+                                            text: '안전보건목표',
+                                            size: 'lg',
+                                            class: 'color-text-default font-medium',
+                                        },
+                                        marginVertical: 'mb-0',
+                                    })) %>
+                                </div>
+                                <div>
+                                    <% const specListData5 = [ 
+                                        { 
+                                            id: 1, 
+                                            subTitle: '01',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '경영진은 사업장의 환경오염을 예방하기 위해 정기적으로 점검하며 구성원의 의견을 청취하고 개선한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 2, 
+                                            subTitle: '02',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '구성원은 기후변화 대응을 위해 저탄소 · 친환경 · 자원절약에 적극 참여한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 3, 
+                                            subTitle: '03',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '대 · 내외 환경적 요인 등 모든 Risk를 사전에 검토하고 대책을 수립한다.',
+                                                ]
+                                            }
+                                        }, 
+                                        { 
+                                            id: 4, 
+                                            subTitle: '04',
+                                            content: {
+                                                size: 'font-body-md',
+                                                color: '',
+                                                addClass: 'font-normal',
+                                                text: [
+                                                    '환경경영성과를 평가하여 투명하게 정보를 공개하고 경영진에게 보고한다.',
+                                                ]
+                                            }
+                                        },
+                                    ]; 
+                                    %>
+                                    <%- include('src/component/cmp_SpecList.html', {
+                                        itemCount: 4,
+                                        jsonData: specListData5,
+                                        marginVertical: 'mb-0',
+                                    }) %>
+                                </div>
+                            </div>
+                            <!-- cmp_seperator -->
+                            <%- include('src/component/cmp_seperator.html', {
+                                displayOnly: 'pc',
                             }) %>
-
-                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                titleText: '안전보건목표', 
-                            })) %>
-
-                            <% const specListData2 = [ 
-                                { 
-                                    id: 0,
-                                    content: [
-                                        '경영진은 사업장의 안전보건 활동을 위해 정기적으로 검하며 구성원의 의견을 청취하고 개선한다.', 
-                                    ]
-                                }, 
-                                { 
-                                    id: 1, 
-                                    content: [
-                                        '구성원은 규정된 안전보건 활동에 주도적으로 참여하고 실행한다.',
-                                    ]
-                                }, 
-                                { 
-                                    id: 2,
-                                    content: [
-                                        '산업재해를 예방하기 위한 예산을 수립하고, 집행의 적정성을 점검한다.',
-                                    ]
-                                },
-                                { 
-                                    id: 3,
-                                    content: [
-                                        '유해위험요인에 대한 사전발굴 및 사후대책을 적기 이행한다.',
-                                    ]
-                                },
-                                { 
-                                    id: 4,
-                                    content: [
-                                        '정기적으로 안전보건 경영성과를 평가하여 투명하게 정보를 공개하고 경영진에게 보고한다.',
-                                    ]
-                                },
-                            ]; 
-                            %>
-                            <%- include('src/component/cmp_SpecList.html', {
-                                itemCount: 5,
-                                jsonData: specListData2,
-                                styleType: 'type-box',
-                            }) %>
-
-                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, {
-                                overviewTitle : {
-                                    text : '환경방침',
-                                    size: 'font-head-lg',
-                                    style: 'color-text-default font-medium',
-                                }, 
-                                overviewContent : {
-                                    text : [
-                                        'LG CNS는 인간존중의 경영 이념 아래, 안전보건환경을 회사의 지속 가능한 경영 요소로 인식하여 경영활동 전과정(Life Cycle)에서 적극 실천한다.'
-                                    ],
-                                    size: 'font-body-md',
-                                    style: 'color-text-secondary font-normal',
-                                }
-                            })) %>
-
-                            <% const specListData3 = [ 
-                                { 
-                                    id: 0,
-                                    content: [
-                                        '모든 경영활동으로 인한 환경오염을 최소화하고 환경보호에 적극 동참한다.', 
-                                    ]
-                                }, 
-                                { 
-                                    id: 1, 
-                                    title: '원칙 준수',
-                                    content: [
-                                        '국내 · 외 환경법규 및 이해관계자의 요구사항을 준수하고 글로벌 수준의 환경경영 시스템을 운영한다.',
-                                    ]
-                                }, 
-                                { 
-                                    id: 2,
-                                    title: '참여와 공개',
-                                    content: [
-                                        '모든 구성원은 기후변화에 대응하고 환경경영성과를 평가하여 투명하게 정보를 공개하고, 이해관계자들과 성실히 소통한다.',
-                                    ]
-                                },
-                                { 
-                                    id: 3,
-                                    title: '지속적 개선',
-                                    content: [
-                                        '환경변화 등 외부위험요인에 대해 Risk관리체계를 정착하고, 지속적인 개선을 추구한다.',
-                                    ]
-                                },
-                            ]; 
-                            %>
-                            <%- include('src/component/cmp_SpecList.html', {
-                                itemCount: 4,
-                                jsonData: specListData3,
-                                styleType: 'type-box',
-                            }) %>
-
-                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                titleText: '환경목표', 
-                            })) %>
-
-                            <% const specListData4 = [ 
-                                { 
-                                    id: 0,
-                                    content: [
-                                        '경영진은 사업장의 환경오염을 예방하기 위해 정기적으로 점검하며 구성원의 의견을 청취하고 개선한다.', 
-                                    ]
-                                }, 
-                                { 
-                                    id: 1, 
-                                    content: [
-                                        '구성원은 기후변화 대응을 위해 저탄소 · 친환경 · 자원절약에 적극 참여한다.',
-                                    ]
-                                }, 
-                                { 
-                                    id: 2,
-                                    content: [
-                                        '대 · 내외 환경적 요인 등 모든 Risk를 사전에 검토하고 대책을 수립한다.',
-                                    ]
-                                },
-                                { 
-                                    id: 3,
-                                    content: [
-                                        '환경경영성과를 평가하여 투명하게 정보를 공개하고 경영진에게 보고한다.',
-                                    ]
-                                },
-                            ]; 
-                            %>
-                            <%- include('src/component/cmp_SpecList.html', {
-                                itemCount: 4,
-                                jsonData: specListData4,
-                                styleType: 'type-box',
-                            }) %>
-
-                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, {
+                            <!-- //cmp_seperator -->
+                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
                                 overviewTitle : {
                                     text : '안전보건환경 관리체계',
                                     size: 'font-head-lg',
@@ -238,60 +371,82 @@
                                     ],
                                     size: 'font-body-md',
                                     style: 'color-text-secondary font-normal',
-                                }
+                                },
+                                marginVertical: 'mb-spacing07',
                             })) %>
-
                             <% 
-                            const iamgeData=[{
-                                pc: 'https://placehold.co/1760x1210', 
-                                mo: 'https://placehold.co/296x377', 
-                            }] 
+                                const iamgeData = [{
+                                    pc: 'https://placehold.co/1440x1210', 
+                                    mo: 'https://placehold.co/320x264', 
+                                }] 
                             %>
                             <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
                                 jsonData : iamgeData,
-                                alt : '안전보건환경 관리체계 콘텐츠'
+                                alt : '안전보건환경 관리체계',
                             }))%>
                         </div>
                         <div class="tab__content">
                             <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                titleText: '환경경영시스템, <br>안전보건경영시스템 「ISO」 인증', 
+                                title : {
+                                    text: '환경경영시스템, <br>안전보건경영시스템 「ISO」 인증',
+                                    size: 'lg',
+                                    class: 'color-text-default font-medium',
+                                },
+                                marginVertical: 'mb-spacing05',
                             })) %>
                             <%
-                                const itemList2Col = [
+                                const imageItemData = [
                                     {
-                                        imageUrl: 'https://placehold.co/872x490',
-                                        imageAlt: 'ISO 14001',
-                                        title: '환경경영시스템(ISO 14001)',   
-                                        text: 'LG CNS는 환경경영시스템 인증을 취득해 유지하고 있습니다. 모든 기업 활동과정에서 환경에 영향을 미치는 요인을 파악하고 환경성과를 개선하는 환경경영시스템이 국제표준화기구(ISO) 요건을 준수하는지 평가하는 인증입니다.',    
+                                        id: 1,
+                                        typeClass: 'type-left',
+                                        imageUrl: 'https://placehold.co/708x760',
+                                        imageRound: true,
+                                        title: '환경경영시스템(ISO 14001)',
+                                        content: '<p>LG CNS는 환경경영시스템 인증을 취득해 유지하고 있습니다. 모든 기업 활동과정에서 환경에 영향을 미치는 요인을 파악하고 환경성과를 개선하는 환경경영시스템이 국제표준화기구(ISO) 요건을 준수하는지 평가하는 인증입니다.</p>',
+                                    }, 
+                                    {
+                                        id: 2,
+                                        typeClass: 'type-right',
+                                        imageUrl: 'https://placehold.co/708x760',
+                                        imageRound: true,
+                                        title: '안전보건경영시스템(ISO 45001)',
+                                        content: '<p>LG CNS는 안전보건경영시스템을 인증도 취득해 유지하고 있습니다. 안전보건 정책의 수립, 실행, 점검 ,시정, 검토 등을 통해 안전보건성과를 개선하는 시스템이 ISO의 국제적 기준을 갖췄는지 인증합니다.</p>',
                                     },
-                                    {
-                                        imageUrl: 'https://placehold.co/872x490',
-                                        imageAlt: 'ISO 45001',
-                                        title: '안전보건경영시스템(ISO 45001)',   
-                                        text: 'LG CNS는 안전보건경영시스템을 인증도 취득해 유지하고 있습니다. 안전보건 정책의 수립, 실행, 점검 ,시정, 검토 등을 통해 안전보건성과를 개선하는 시스템이 ISO의 국제적 기준을 갖췄는지 인증합니다.',    
-                                    },
-                                ]
-                            %>
-                            <%- include('src/component/cmp_image_item_2columns.html', {
-                                jsonData: itemList2Col
-                            }) %>               
-                            <%
-                                const imageItemColumnDataPremier = [
-                                    {
-                                        id: 0,
-                                        type: 'type-default',
-                                        imageUrl: '/src/assets/image/temp/full_imag01.png',
-                                        imageAlt: 'test',
-                                        title: '브릴어워즈(Brill Awards) 수상',
-                                        content: [
-                                            'LG CNS 부산 데이터센터는 ‘업타임인스티튜트(Uptime Institute)’가 매년 선정하는 데이터센터 업계 최고 권위상인 브릴어워즈(Brill Awards) 디자인분야 우수 데이터센터로 선정됐습니다. 디자인 단계부터 에너지 효율과 안전을 고려한 점을 높이 평가받았습니다. 부산 데이터센터는 당시 국제 유일의 데이터센터 굴뚝 ‘풍도’, 세계최초로 특허 출원한 ‘빌트업 외기냉방 시스템’을 적용했습니다. 국내최초로 면진 설비도 도입해 리히터 규모 8.0 지진에도 고객사에게 무중단 서비스를 제공할 수 있습니다.',
-                                        ],
-                                        imgDesc: '2014년 브릴어워즈 디자인분야 우수 센터로 선정된 LG CNS 부산 데이터센터 전경'
-                                    },                                                       
                                 ]
                             %> 
-                            <%- include('src/component/cmp_image_item_column.html', Object.assign({}, locals, {                             
-                                jsonData: imageItemColumnDataPremier
+                            <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {                             
+                                itemCount: 7,
+                                jsonData: imageItemData,
+                            })) %>
+                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                title : {
+                                    text: '브릴어워즈(Brill Awards) 수상',
+                                    size: 'lg',
+                                    class: 'color-text-default font-medium',
+                                },
+                                marginVertical: 'mb-spacing05',
+                            })) %>
+                            <%
+                                const imageItemData2 = [
+                                    {
+                                        id: 0,
+                                        typeClass: 'type-default',
+                                        imageUrl: 'https://placehold.co/1440x540',
+                                        ImageUrlMo: 'https://placehold.co/320x120',
+                                        imageRound: true,
+                                        title: {
+                                            text : '2014년 브릴어워즈 디자인분야 우수 센터로 선정된 LG CNS 부산 데이터센터 전경',
+                                            size: 'font-body-md',
+                                            class: 'font-normal color-text-tertiary',
+                                        },
+                                        content: '<p>LG CNS 부산 데이터센터는 ‘업타임인스티튜트(Uptime Institute)’가 매년 선정하는 데이터센터 업계 최고 권위상인 브릴어워즈(Brill Awards) 디자인분야 우수 데이터센터로 선정됐습니다. 디자인 단계부터 에너지 효율과 안전을 고려한 점을 높이 평가받았습니다. 부산 데이터센터는 당시 국제 유일의 데이터센터 굴뚝 ‘풍도’, 세계최초로 특허 출원한 ‘빌트업 외기냉방 시스템’을 적용했습니다. 국내최초로 면진 설비도 도입해 리히터 규모 8.0 지진에도 고객사에게 무중단 서비스를 제공할 수 있습니다.</p>',
+                                    },
+                                ]
+                            %> 
+                            <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {                             
+                                itemCount: 7,
+                                jsonData: imageItemData2,
+                                marginVertical: 'mb-0',
                             })) %>
                         </div>
                         <div class="tab__content">

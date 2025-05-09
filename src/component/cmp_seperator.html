@@ -1,3 +1,4 @@
-<div class="cmp-wrap cmp-seperator">
+<% if (typeof displayOnly === 'undefined') { displayOnly = null; } %>
+<div class="cmp-wrap cmp-seperator<%= typeof displayOnly !== 'undefined' && displayOnly == 'pc' ? ' display-pc' : '' %><%= typeof displayOnly !== 'undefined' && displayOnly == 'mo' ? ' display-mo' : '' %>">
     <hr class="cmp-separator__horizontal" />
 </div>
