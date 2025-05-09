@@ -15,14 +15,19 @@
         <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {
             pcImg: 'empty',
             moImg: 'empty',
-            subText: '기업정보',
+            subText: 'IR',
             pageTitle: 'IR자료',
         })) %>
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                    titleText: '감사보고서' ,
+                    title : {
+                        text: '감사보고서',
+                        size: 'lg',
+                        class: 'color-text-default font-medium',
+                    },
+                    marginVertical: 'mb-spacing05',
                 })) %>
                 <% 
                     const buttonItemListData = [
