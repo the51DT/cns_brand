@@ -1,0 +1,35 @@
+// table-list
+.cmp-table-list {
+    &__content {
+        border-top: calc(2 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default7);
+        li {
+            padding: calc(24 / 16 * 1rem) calc(16 / 16 * 1rem);
+            border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+            box-sizing: border-box;
+        }
+    }
+    &__title {
+        display: block;
+        font-size: calc(18 / 16 * 1rem);
+        line-height: calc(26 / 16 * 1rem);
+        letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+        &--min {
+            min-height: calc(52 / 16 * 1rem);
+        }
+        & + .cmp-table-list__date {
+            margin-top: calc(12 / 16 * 1rem);
+        }
+    }
+    &__date {
+        display: block;
+        font-size: calc(18 / 16 * 1rem);
+        line-height: calc(26 / 16 * 1rem);
+        letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+    }
+    .button__wrap {
+        margin-top: calc(24 / 16 * 1rem);
+        .btn {
+            width: fit-content;
+        }
+    }
+}

@@ -62,6 +62,7 @@
 @import 'aem-component/cmp_agenda.scss';
 @import 'aem-component/cmp_title_text_icon.scss';
 @import 'aem-component/cmp_feature_grid.scss';
+@import 'aem-component/cmp_table_list.scss';
 
 /* icon */
 @import 'icon.scss';

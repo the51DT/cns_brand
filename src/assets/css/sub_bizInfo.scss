@@ -96,46 +96,7 @@
             }
         }
     }
-
-    // bizInfo_disclosureInfo
-    &disclosure-info {
-        .data-table {
-            table-layout: auto;
-            td {
-                padding: calc(28.5 / 16 * 1rem) calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-            }
-
-            td:nth-child(2) {
-                text-align: left;
-            }
-
-            td:nth-child(3) {
-                color: var(--text-text-tertiary, #6b6b6b);
-            }
-
-            td:nth-child(4) {
-                position: relative;
-                text-align: center;
-
-                a {
-                    display: inline-block;
-                    text-align: center;
-                }
-
-                button {
-                    vertical-align: middle;
-                    display: inline-block;
-                }
-            }
-
-            tr:last-child td {
-                border-bottom: 1px solid var(--stroke-stroke-default-1, #1a1a1a);
-            }
-        }
-    }
-    &human-rights {
-    }
-
+    
     //.bizInfo_financial
     &financial {
         .graph-container {

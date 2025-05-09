@@ -18,8 +18,6 @@
             subText: '기업정보',
             pageTitle: '공시정보',
         })) %>
-
-
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
@@ -37,25 +35,30 @@
                     <div class="tab-content__wrap">
                         <div class="tab__content is-active">
                             <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                titleText: '전자공고' ,
+                                title : {
+                                    text: '전자공고',
+                                    size: 'lg',
+                                    class: 'color-text-default font-medium',
+                                },
+                                marginVertical: 'mb-spacing05',
                             })) %>
-                            <div class="cmp-wrap cmp-table__wrap">
+                            <div class="cmp-wrap cmp-table__wrap mb-exc-spacing-64-22 display-pc">
                                 <div class="table-container">
-                                    <table class="data-table text-center">
+                                    <table class="data-table mo-list text-center">
                                         <caption>LG CNS 공시정보 전자공고</caption>
                                         <thead>
                                             <tr>
-                                                <th scope="col" width="112">번호</th>
-                                                <th scope="col" width="928">공고명</th>
-                                                <th scope="col" width="240">등록일</th>
-                                                <th scope="col" width="240">자료 다운로드</th>
+                                                <th scope="col" width="102" class="text-center font-semibold color-text-default">번호</th>
+                                                <th scope="col" width="892" class="text-center font-semibold color-text-default">공고명</th>
+                                                <th scope="col" width="223" class="text-center font-semibold color-text-default">등록일</th>
+                                                <th scope="col" width="223" class="text-center font-semibold color-text-default">자료 다운로드</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>외부감사인 선임 공고</td>
-                                                <td>2024.12.31</td>
+                                                <td class="text-center font-normal color-text-secondary">1</td>
+                                                <td class="text-left font-normal color-text-secondary">외부감사인 선임 공고</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
                                                 <td>
                                                     <button type="button" class="btn btn-icon">
                                                         <i class="ico icon-download-bl24"></i>
@@ -64,9 +67,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>2</td>
-                                                <td>외부감사인 선임 공고</td>
-                                                <td>2024.12.31</td>
+                                                <td class="text-center font-normal color-text-secondary">2</td>
+                                                <td class="text-left font-normal color-text-secondary">제4기 결산공고</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
                                                 <td>
                                                     <button type="button" class="btn btn-icon">
                                                         <i class="ico icon-download-bl24"></i>
@@ -75,9 +78,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>3</td>
-                                                <td>외부감사인 선임 공고</td>
-                                                <td>2024.12.31</td>
+                                                <td class="text-center font-normal color-text-secondary">3</td>
+                                                <td class="text-left font-normal color-text-secondary">제3기 결산공고</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
                                                 <td>
                                                     <button type="button" class="btn btn-icon">
                                                         <i class="ico icon-download-bl24"></i>
@@ -86,9 +89,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>4</td>
-                                                <td>외부감사인 선임 공고</td>
-                                                <td>2024.12.31</td>
+                                                <td class="text-center font-normal color-text-secondary">4</td>
+                                                <td class="text-left font-normal color-text-secondary">제2기 결산공고</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
                                                 <td>
                                                     <button type="button" class="btn btn-icon">
                                                         <i class="ico icon-download-bl24"></i>
@@ -97,9 +100,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>5</td>
-                                                <td>외부감사인 선임 공고</td>
-                                                <td>2024.12.31</td>
+                                                <td class="text-center font-normal color-text-secondary">5</td>
+                                                <td class="text-left font-normal color-text-secondary">유가증권시장 상장 주식공모 청약 안내</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
                                                 <td>
                                                     <button type="button" class="btn btn-icon">
                                                         <i class="ico icon-download-bl24"></i>
@@ -108,9 +111,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>6</td>
-                                                <td>외부감사인 선임 공고</td>
-                                                <td>2024.12.31</td>
+                                                <td class="text-center font-normal color-text-secondary">6</td>
+                                                <td class="text-left font-normal color-text-secondary">명의개서대리인 선임 공고</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
                                                 <td>
                                                     <button type="button" class="btn btn-icon">
                                                         <i class="ico icon-download-bl24"></i>
@@ -119,9 +122,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>7</td>
-                                                <td>외부감사인 선임 공고</td>
-                                                <td>2024.12.31</td>
+                                                <td class="text-center font-normal color-text-secondary">7</td>
+                                                <td class="text-left font-normal color-text-secondary">전자증권공고</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
                                                 <td>
                                                     <button type="button" class="btn btn-icon">
                                                         <i class="ico icon-download-bl24"></i>
@@ -130,9 +133,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>8</td>
-                                                <td>외부감사인 선임 공고</td>
-                                                <td>2024.12.31</td>
+                                                <td class="text-center font-normal color-text-secondary">8</td>
+                                                <td class="text-left font-normal color-text-secondary">제1기 결산공고</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
                                                 <td>
                                                     <button type="button" class="btn btn-icon">
                                                         <i class="ico icon-download-bl24"></i>
@@ -141,9 +144,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>9</td>
-                                                <td>외부감사인 선임 공고</td>
-                                                <td>2024.12.31</td>
+                                                <td class="text-center font-normal color-text-secondary">9</td>
+                                                <td class="text-left font-normal color-text-secondary">명의개서대리인 선임 공고</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
                                                 <td>
                                                     <button type="button" class="btn btn-icon">
                                                         <i class="ico icon-download-bl24"></i>
@@ -152,9 +155,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>10</td>
-                                                <td>외부감사인 선임 공고</td>
-                                                <td>2024.12.31</td>
+                                                <td class="text-center font-normal color-text-secondary">10</td>
+                                                <td class="text-left font-normal color-text-secondary">전자증권공고</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
                                                 <td>
                                                     <button type="button" class="btn btn-icon">
                                                         <i class="ico icon-download-bl24"></i>
@@ -166,21 +169,170 @@
                                     </table>
                                 </div>
                             </div>
-
-                            <div class="cmp-exsample__wrap mt-3">
-                                <!-- pagination -->
-                                <%- include('src/component/cmp_pagination.html') %>
-                                <!-- //pagination -->
+                            <div class="cmp-wrap cmp-table-list mb-exc-spacing-64-22 display-mo">
+                                <ul class="cmp-table-list__content">
+                                    <li>
+                                        <span class="cmp-table-list__title color-text-secondary">외부감사인 선임 공고</span>
+                                        <span class="cmp-table-list__date color-text-tertiary">2024.12.31</span>
+                                        <div class="button__wrap align-left">
+                                            <button type="button" class="btn btn-icon">
+                                                <i class="ico icon-download-bl24"></i>
+                                                <span class="ir-text">다운로드</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="cmp-table-list__title color-text-secondary">제4기 결산공고</span>
+                                        <span class="cmp-table-list__date color-text-tertiary">2024.12.31</span>
+                                        <div class="button__wrap align-left">
+                                            <button type="button" class="btn btn-icon">
+                                                <i class="ico icon-download-bl24"></i>
+                                                <span class="ir-text">다운로드</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="cmp-table-list__title color-text-secondary">제3기 결산공고</span>
+                                        <span class="cmp-table-list__date color-text-tertiary">2024.12.31</span>
+                                        <div class="button__wrap align-left">
+                                            <button type="button" class="btn btn-icon">
+                                                <i class="ico icon-download-bl24"></i>
+                                                <span class="ir-text">다운로드</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="cmp-table-list__title color-text-secondary">제2기 결산공고</span>
+                                        <span class="cmp-table-list__date color-text-tertiary">2024.12.31</span>
+                                        <div class="button__wrap align-left">
+                                            <button type="button" class="btn btn-icon">
+                                                <i class="ico icon-download-bl24"></i>
+                                                <span class="ir-text">다운로드</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="cmp-table-list__title color-text-secondary">유가증권시장 상장 주식공모 청약 안내</span>
+                                        <span class="cmp-table-list__date color-text-tertiary">2024.12.31</span>
+                                        <div class="button__wrap align-left">
+                                            <button type="button" class="btn btn-icon">
+                                                <i class="ico icon-download-bl24"></i>
+                                                <span class="ir-text">다운로드</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
+                            <!-- pagination -->
+                            <%- include('src/component/cmp_pagination.html', { 
+                                marginVertical: 'mb-0',
+                            }) %>
+                            <!-- //pagination -->
                         </div>
                         <div class="tab__content">
                             <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                titleText: 'LG CNS의 사업 성과를 공개합니다' ,
+                                title : {
+                                    text: 'LG CNS의 사업 성과를 공개합니다',
+                                    size: 'lg',
+                                    class: 'color-text-default font-medium',
+                                },
+                                marginVertical: 'mb-spacing05',
                             })) %>
-                            <div class="api-container" style="width: 100%; height: 1000px; background-color: lightgray; margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);">
-                                API 연동 예정 (table)
+                            <div class="cmp-wrap cmp-table__wrap mb-exc-spacing-64-22 display-pc">
+                                <div class="table-container">
+                                    <table class="data-table mo-list text-center">
+                                        <caption>LG CNS 공시정보 전자공고</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" width="102" class="text-center font-semibold color-text-default">번호</th>
+                                                <th scope="col" width="1115" class="text-center font-semibold color-text-default">공고명</th>
+                                                <th scope="col" width="223" class="text-center font-semibold color-text-default">등록일</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center font-normal color-text-secondary">1</td>
+                                                <td class="text-left font-normal color-text-secondary">풍문또는보도에대한해명(미확정)</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center font-normal color-text-secondary">2</td>
+                                                <td class="text-left font-normal color-text-secondary">기업설명회(IR)개최(안내공시)</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center font-normal color-text-secondary">3</td>
+                                                <td class="text-left font-normal color-text-secondary">연결재무제표기준영업(잠정)실적(공정공시)</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center font-normal color-text-secondary">4</td>
+                                                <td class="text-left font-normal color-text-secondary">[기재정정]타법인주식및출자증권취득결정</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center font-normal color-text-secondary">5</td>
+                                                <td class="text-left font-normal color-text-secondary">유형자산취득결정(종속회사의주요경영사항)</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center font-normal color-text-secondary">6</td>
+                                                <td class="text-left font-normal color-text-secondary">유형자산취득결정(종속회사의주요경영사항)</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center font-normal color-text-secondary">7</td>
+                                                <td class="text-left font-normal color-text-secondary">[기재정정]임원・주요주주특정증권등 소유상황 보고서</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center font-normal color-text-secondary">8</td>
+                                                <td class="text-left font-normal color-text-secondary">임원・주요주주특정증권등 소유상황 보고서</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center font-normal color-text-secondary">9</td>
+                                                <td class="text-left font-normal color-text-secondary">[기재정정]타인에대한채무보증결정</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center font-normal color-text-secondary">10</td>
+                                                <td class="text-left font-normal color-text-secondary">[기재정정]타인에대한채무보증결정</td>
+                                                <td class="text-center font-normal color-text-tertiary">2024.12.31</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <%- include('src/component/cmp_pagination.html') %>
+                            <div class="cmp-wrap cmp-table-list mb-exc-spacing-64-22 display-mo">
+                                <ul class="cmp-table-list__content">
+                                    <li>
+                                        <span class="cmp-table-list__title cmp-table-list__title--min color-text-secondary">풍문또는보도에대한해명(미확정)</span>
+                                        <span class="cmp-table-list__date color-text-tertiary">2024.12.31</span>
+                                    </li>
+                                    <li>
+                                        <span class="cmp-table-list__title cmp-table-list__title--min color-text-secondary">기업설명회(IR)개최(안내공시)</span>
+                                        <span class="cmp-table-list__date color-text-tertiary">2024.12.31</span>
+                                    </li>
+                                    <li>
+                                        <span class="cmp-table-list__title cmp-table-list__title--min color-text-secondary">연결재무제표기준영업(잠정)실적 <br>(공정공시)</span>
+                                        <span class="cmp-table-list__date color-text-tertiary">2024.12.31</span>
+                                    </li>
+                                    <li>
+                                        <span class="cmp-table-list__title cmp-table-list__title--min color-text-secondary">[기재정정] <br>타법인주식및출자증권취득결정</span>
+                                        <span class="cmp-table-list__date color-text-tertiary">2024.12.31</span>
+                                    </li>
+                                    <li>
+                                        <span class="cmp-table-list__title cmp-table-list__title--min color-text-secondary">유형자산취득결정 <br>(종속회사의주요경영사항)</span>
+                                        <span class="cmp-table-list__date color-text-tertiary">2024.12.31</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- pagination -->
+                            <%- include('src/component/cmp_pagination.html', { 
+                                marginVertical: 'mb-0',
+                            }) %>
+                            <!-- //pagination -->
                         </div>
                     </div>
                 </div>
