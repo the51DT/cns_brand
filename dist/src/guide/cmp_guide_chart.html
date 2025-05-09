@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/guide/cmp_guide_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="page-location text-2xl font-bold">
+        <span id="pagesTitle"></span>
+      </div>
+      <div class="guide-content">
+        <div class="flex justify-between lnb-type">
+          <div class="lnb-side__wrap">
+            <button type="button" class="lnb-trigger">아코디언</button>
+          </div>
+          <div class="page-cont flex-1">
+            <p class="guide-title-h3">Chart</p>
+            <p class="guide-title-h3 mt-10">Chart > type: columnChart</p>
+            <ul class="guide-list type-dot mt-3">
+              <li>
+                <p> type : 'columnChart' - 그래프 타입</p>
+              </li>
+              <li>
+                <p>categories : X 값</p>
+              </li>
+              <li>
+                <p>series : 차트의 실제 데이터</p>
+              </li>
+              <li>
+                <p>categoryBarColor : 차트 컬러</p>
+              </li>
+              <li>
+                <p>valueMax : <b>최대값 *</b></p>
+              </li>
+            </ul>
+            <ul class="guide-list type-dot mt-5">
+              <li>
+                <p>기업정보 > 재무정보</p>
+              </li>
+              <li>
+                <p>막대그래프 최대 5개 노출 (가운데 정렬)</p>
+              </li>
+              <li>
+                <p><b>막대바 높이값 계산을 위한 임의 최대값(valueMax) 입력 필수</b></p>
+              </li>
+            </ul>
+            <p class="guide-title-h3 mt-10">막대그래프(column)</p>
+            <div class="cmp-exsample__wrap mt-3">
+
+              <!-- chart -->
+              <div class="cmp-wrap cmp-chart ">
+                <div class="chart-wrap">
+                  <div class="chart-wrap__column-chart">
+                    <div class="chart-wrap__xAxis-area">
+                      <span class="chart-wrap__xAxis-area__line"></span>
+                      <span class="chart-wrap__xAxis-area__line"></span>
+                    </div>
+                    <div class="chart-wrap__yAxis-area">
+                      <ul class="chart-wrap__yAxis-series">
+                        <li>
+                          <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
+                                        212
+                                    </span>
+                          <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: #E156E2;--yAxis-series-target-val: 212;--yAxis-series-target-max-val: 600"></span>
+                        </li>
+                        <li>
+                          <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
+                                        246
+                                    </span>
+                          <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: #E156E2;--yAxis-series-target-val: 246;--yAxis-series-target-max-val: 600"></span>
+                        </li>
+                        <li>
+                          <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
+                                        328
+                                    </span>
+                          <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: #E156E2;--yAxis-series-target-val: 328;--yAxis-series-target-max-val: 600"></span>
+                        </li>
+                        <li>
+                          <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
+                                        385
+                                    </span>
+                          <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: #E156E2;--yAxis-series-target-val: 385;--yAxis-series-target-max-val: 600"></span>
+                        </li>
+                        <li>
+                          <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
+                                        464
+                                    </span>
+                          <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: #E156E2;--yAxis-series-target-val: 464;--yAxis-series-target-max-val: 600"></span>
+                        </li>
+                      </ul>
+                      <ul class="chart-wrap__yAxis-categories">
+                        <li>
+                          <span class="font-body-sm color-text-default">
+                                    2019
+                                </span>
+                        </li>
+                        <li>
+                          <span class="font-body-sm color-text-default">
+                                    2020
+                                </span>
+                        </li>
+                        <li>
+                          <span class="font-body-sm color-text-default">
+                                    2021
+                                </span>
+                        </li>
+                        <li>
+                          <span class="font-body-sm color-text-default">
+                                    2022
+                                </span>
+                        </li>
+                        <li>
+                          <span class="font-body-sm color-text-default">
+                                    2023
+                                </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- chart -->
+              <div class="cmp-wrap cmp-chart ">
+                <div class="chart-wrap">
+                  <div class="chart-wrap__column-chart">
+                    <div class="chart-wrap__xAxis-area">
+                      <span class="chart-wrap__xAxis-area__line"></span>
+                      <span class="chart-wrap__xAxis-area__line"></span>
+                    </div>
+                    <div class="chart-wrap__yAxis-area">
+                      <ul class="chart-wrap__yAxis-series">
+                        <li>
+                          <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
+                                        212
+                                    </span>
+                          <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: #f729c1;--yAxis-series-target-val: 212;--yAxis-series-target-max-val: 1000"></span>
+                        </li>
+                        <li>
+                          <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
+                                        246
+                                    </span>
+                          <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: #e54ddc;--yAxis-series-target-val: 246;--yAxis-series-target-max-val: 1000"></span>
+                        </li>
+                        <li>
+                          <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
+                                        328
+                                    </span>
+                          <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: #d371f6;--yAxis-series-target-val: 328;--yAxis-series-target-max-val: 1000"></span>
+                        </li>
+                        <li>
+                          <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
+                                        385
+                                    </span>
+                          <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: #b7b4ef;--yAxis-series-target-val: 385;--yAxis-series-target-max-val: 1000"></span>
+                        </li>
+                      </ul>
+                      <ul class="chart-wrap__yAxis-categories">
+                        <li>
+                          <span class="font-body-sm color-text-default">
+                                    2019
+                                </span>
+                        </li>
+                        <li>
+                          <span class="font-body-sm color-text-default">
+                                    2020
+                                </span>
+                        </li>
+                        <li>
+                          <span class="font-body-sm color-text-default">
+                                    2021
+                                </span>
+                        </li>
+                        <li>
+                          <span class="font-body-sm color-text-default">
+                                    2022
+                                </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const cmpChart = document.querySelectorAll('.cmp-chart');
+      cmpChart.forEach(chart => {
+        const chartColumn = chart.querySelector('.chart-wrap--column-chart');
+        const chartColumnBar = chartColumn.querySelectorAll('.chart-wrap__yAxis-series li');
+        // rem으로 높이값 계산
+        // const cmpChartHeight = (chartColumn.clientHeight + 2) / 16;
+        const cmpChartHeight = chartColumn.clientHeight;
+        chartColumnBar.forEach(bar => {
+          const chartBarVal = bar.getAttribute('data-yaxis-value');
+          console.log(chartBarVal);
+        });
+      });
+    </script>
+  </body>
+</html>
