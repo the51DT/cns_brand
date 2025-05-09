@@ -1,4 +1,7 @@
-<div class="cmp-wrap cmp-pagination__wrap">
+<%
+    const margin = locals.marginVertical ? locals.marginVertical : '';
+%>
+<div class="cmp-wrap cmp-pagination__wrap <%- margin %>">
     <div class="paging">
         <a href="#none" class="btn-move first is-disabled">
             <i class="ico icon-pagination-first"><span class="ir-text">맨처음으로</span></i>
