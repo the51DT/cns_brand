@@ -9,14 +9,6 @@
             margin-bottom: calc(var(--spacing-mode1-horizontal3-x-l) / 16 * 1rem);
         }
     }
-    &.cmp-richtext {
-        // &:has( + .cmp-title__wrap) {
-        //     margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-        //     @media #{$min1280} {
-        //         margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
-        //     }
-        // }
-    }
     &.cmp-customer-case {
         &+.button__wrap {
             display: none;

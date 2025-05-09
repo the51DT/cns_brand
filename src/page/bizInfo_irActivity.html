@@ -12,332 +12,338 @@
 <body>
     <div class="wrap bizinfo-ir-activity">
         <%- include('src/_inc/header.html') %>
-
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {
+            pcImg: 'empty',
+            moImg: 'empty',
+            subText: 'IR',
+            pageTitle: 'IR 활동',
+        })) %>
+        <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
-            <div class="inner-wrap">
-                <div class="bizinfo-ir-activity__container">
-                    <div class="cmp-exsample__wrap mt-3">
-                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                            subTitle: 'IR', titleText: 'IR 활동' 
-                        })) %>
+            <div class="inner-wrap wide">
+                <div class="cmp-wrap cmp-tab basic-type align-left">
+                    <div class="cmp-tab__header">
+                        <ul class="tab__menu">
+                            <li class="is-active"><a href="#">IR 행사</a></li>
+                            <li><a href="#">실적발표</a></li>
+                            <li><a href="#">주주총회</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content__wrap">
+                        <!-- IR 행사 탭 -->
+                        <div class="tab__content is-active">
+                            <div class="bizinfo-ir-activity__event-container cmp-wrap cmp-feature-grid mb-0">
+                                <div class="event-text">
+                                    <%- include('src/component/cmp_title_select.html', {
+                                        title : {
+                                            text: '기간별 IR 행사를 <br>확인해보세요',
+                                            size: 'lg',
+                                            addClass: 'color-text-default font-medium',
+                                        },
+                                        marginVertical: 'mb-0',
+                                        showSelect: true,
+                                        rowJustify: 'is-column',
+                                        selectedValue: '2025년',
+                                        options: ['2025년', '2024년', '2023년', '2022년']
+                                    }) %>
+                                </div>
 
-                        <!-- 기본 탭 -->
-                        <div class="cmp-wrap cmp-tab basic-type align-left">
-                            <div class="cmp-tab__header">
-                                <ul class="tab__menu">
-                                    <li class="is-active"><a href="#">IR 행사</a></li>
-                                    <li><a href="#">실적발표</a></li>
-                                    <li><a href="#">주주총회</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="tab-content__wrap">
-                            <!-- IR 행사 탭 -->
-                            <div class="tab__content is-active">
-                                <div class="bizinfo-ir-activity__event-container cmp-wrap cmp-feature-grid">
-                                    <div class="event-text">
-                                        <span class="event-period font-head-lg">
-                                            기간별 IR 행사를<br />확인해 보세요.
-                                        </span>
-                                        <%- include('src/component/cmp_select.html', Object.assign({}, locals, {
-                                            selectedValue: '연도선택',
-                                            options: ['2025년', '2024년', '2023년', '2022년']
+                                <div class="events-flex">
+                                    <div class="progress-bar">
+                                        <div class="bar"></div>
+                                    </div>
+                                    <div class="event-area">
+                                        <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
+                                            month: '11월', events: [
+                                                { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
+                                            ]
                                         })) %>
-                                        </div>
 
-                                    <div class="events-flex">
-                                        <div class="progress-bar">
-                                            <div class="bar"></div>
-                                        </div>
-                                        <div class="event-area">
-                                            <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
-                                                month: '11월', events: [
-                                                    { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
-                                                ]
-                                            })) %>
-
-                                            <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
-                                                month: '10월', events: [
-                                                    { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
-                                                    { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
-                                                ]
-                                            })) %>
-
-                                            <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
-                                                month: '09월', events: [
-                                                    { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
-                                                    { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
-                                                    { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
-                                                ]
-                                            })) %>
-
-                                            <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
-                                                month: '08월', events: [
-                                                    { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
-                                                    { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
-                                                ]
-                                            })) %>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 실적발표 탭 -->
-                            <div class="tab__content">
-                                <div>
-                                    <div class="bizinfo-ir-activity__year-container">
-                                        <%- include('src/component/cmp_title_select.html', {
-                                            title : {
-                                                text: '2025년',
-                                                size: 'lg',
-                                                addClass: 'color-text-default font-medium',
-                                            },
-                                            showSelect: true,
-                                            rowJustify: 'is-column',
-                                            selectedValue: '연도선택',
-                                            options: ['2025년', '2024년', '2023년', '2022년']
-                                        }) %>
-                
-                                    </div>
-
-                                        <% const buttonItemListData = [
-                                            { id: 0, title: '2024년<br>4분기 실적설명회', buttonName: ['자막', '별도 PDF', '방송듣기'] },
-                                            { id: 1, title: '2024년<br>3분기 실적설명회', buttonName: ['자막', '별도 PDF', '방송듣기'] },
-                                            { id: 2, title: '2024년<br>2분기 실적설명회', buttonName: ['자막', '별도 PDF', '방송듣기'] },
-                                            { id: 3, title: '2024년<br>1분기 실적설명회', buttonName: ['자막', '별도 PDF', '방송듣기'] }
-                                        ]; %>
-
-                                        <%- include('src/component/cmp_button_item_list.html', Object.assign({}, locals, {
-                                            itemCount: 7, 
-                                            jsonData: buttonItemListData
+                                        <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
+                                            month: '10월', events: [
+                                                { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
+                                                { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
+                                            ]
                                         })) %>
-                                </div>
-                            </div>
 
-                            <!-- 주주총회 탭 -->
-                            <div class="tab__content">
-                                <div>
-                                    <div class="bizinfo-ir-activity__year-container">
-                                        <%- include('src/component/cmp_title_select.html', {
-                                            titleText: '2024년',
-                                            showSelect: true,
-                                            selectedValue: '연도선택',
-                                            options: ['2025년', '2024년', '2023년', '2022년']
-                                        }) %>
-                
-                                    </div>
+                                        <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
+                                            month: '09월', events: [
+                                                { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
+                                                { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
+                                                { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
+                                            ]
+                                        })) %>
 
-                                    <div class="bizinfo-ir-activity__accodion">
-                                        <% const irData = [
-                                        { 
-                                            id: 0, faqTitle: '제 5회 정기 주주총회', 
-                                            faqContent: 
-                                                `
-                                                    <div class="cmp-wrap cmp-speclist__wrap">
-                                                        <div class="spec-item type-num-sub">
-                                                            <div class="font-body-sm spec-title">
-                                                                <div class="spec-num">01</div>
-                                                                일시
-                                                            </div>
-                                                            <div class="font-body-sm spec-text">
-                                                                <p>2025년 03월 20일 (목) 오전 09시 00분</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="spec-item type-num-sub">
-                                                            <div class="font-body-sm spec-title">
-                                                                <div class="spec-num">02</div>
-                                                                장소
-                                                                </div>
-                                                                <div class="font-body-sm spec-text">
-                                                                <p>서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀</p>
-                                                                </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- //cmp_SpecList -->
-                                                    <div class="button__wrap align-left mt-4">
-                                                        <button type="button" class="btn btn-small btn-secondary">
-                                                            <span class="btn__text">CEO letter</span>
-                                                            <i class="btn__icon ico icon-download-bl24"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-small btn-secondary">
-                                                            <span class="btn__text">의안설명서</span>
-                                                            <i class="btn__icon ico icon-download-bl24"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-small btn-secondary">
-                                                            <span class="btn__text">소집결과</span>
-                                                            <i class="btn__icon ico icon-arrow-right-bl16"></i>
-                                                        </button>
-                                                    </div>
-                                        ` },
-                                        { 
-                                            id: 1, faqTitle: '제 4회 정기 주주총회', 
-                                            faqContent: `                                       
-                                                <div class="cmp-wrap cmp-speclist__wrap">
-                                                    <div class="spec-item type-num-sub">
-                                                        <div class="font-body-sm spec-title">
-                                                            <div class="spec-num">01</div>
-                                                            일시
-                                                        </div>
-                                                        <div class="font-body-sm spec-text">
-                                                            <p>2025년 03월 20일 (목) 오전 09시 00분</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="spec-item type-num-sub">
-                                                        <div class="font-body-sm spec-title">
-                                                            <div class="spec-num">02</div>
-                                                            장소
-                                                            </div>
-                                                            <div class="font-body-sm spec-text">
-                                                            <p>서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀</p>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                                <!-- //cmp_SpecList -->
-                                                <div class="button__wrap align-left mt-4">
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">CEO letter</span>
-                                                        <i class="btn__icon ico icon-download-bl24"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">의안설명서</span>
-                                                        <i class="btn__icon ico icon-download-bl24"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">소집결과</span>
-                                                        <i class="btn__icon ico icon-arrow-right-bl16"></i>
-                                                    </button>
-                                                </div>
-                                            ` },
-                                        { 
-                                            id: 2, faqTitle: '제 3회 정기 주주총회', 
-                                            faqContent: `                                       
-                                                <div class="cmp-wrap cmp-speclist__wrap">
-                                                    <div class="spec-item type-num-sub">
-                                                        <div class="font-body-sm spec-title">
-                                                            <div class="spec-num">01</div>
-                                                            일시
-                                                        </div>
-                                                        <div class="font-body-sm spec-text">
-                                                            <p>2025년 03월 20일 (목) 오전 09시 00분</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="spec-item type-num-sub">
-                                                        <div class="font-body-sm spec-title">
-                                                            <div class="spec-num">02</div>
-                                                            장소
-                                                            </div>
-                                                            <div class="font-body-sm spec-text">
-                                                            <p>서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀</p>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                                <!-- //cmp_SpecList -->
-                                                <div class="button__wrap align-left mt-4">
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">CEO letter</span>
-                                                        <i class="btn__icon ico icon-download-bl24"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">의안설명서</span>
-                                                        <i class="btn__icon ico icon-download-bl24"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">소집결과</span>
-                                                        <i class="btn__icon ico icon-arrow-right-bl16"></i>
-                                                    </button>
-                                                </div>
-                                            ` },
-                                        { 
-                                            id: 3, faqTitle: '제 2회 정기 주주총회', 
-                                            faqContent: `                                       
-                                                <div class="cmp-wrap cmp-speclist__wrap">
-                                                    <div class="spec-item type-num-sub">
-                                                        <div class="font-body-sm spec-title">
-                                                            <div class="spec-num">01</div>
-                                                            일시
-                                                        </div>
-                                                        <div class="font-body-sm spec-text">
-                                                            <p>2025년 03월 20일 (목) 오전 09시 00분</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="spec-item type-num-sub">
-                                                        <div class="font-body-sm spec-title">
-                                                            <div class="spec-num">02</div>
-                                                            장소
-                                                            </div>
-                                                            <div class="font-body-sm spec-text">
-                                                            <p>서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀</p>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                                <!-- //cmp_SpecList -->
-                                                <div class="button__wrap align-left mt-4">
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">CEO letter</span>
-                                                        <i class="btn__icon ico icon-download-bl24"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">의안설명서</span>
-                                                        <i class="btn__icon ico icon-download-bl24"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">소집결과</span>
-                                                        <i class="btn__icon ico icon-arrow-right-bl16"></i>
-                                                    </button>
-                                                </div>
-                                            ` },
-                                        { 
-                                            id: 4, faqTitle: '제 1회 정기 주주총회', 
-                                            faqContent: `                                       
-                                                <div class="cmp-wrap cmp-speclist__wrap">
-                                                    <div class="spec-item type-num-sub">
-                                                        <div class="font-body-sm spec-title">
-                                                            <div class="spec-num">01</div>
-                                                            일시
-                                                        </div>
-                                                        <div class="font-body-sm spec-text">
-                                                            <p>2025년 03월 20일 (목) 오전 09시 00분</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="spec-item type-num-sub">
-                                                        <div class="font-body-sm spec-title">
-                                                            <div class="spec-num">02</div>
-                                                            장소
-                                                            </div>
-                                                            <div class="font-body-sm spec-text">
-                                                            <p>서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀</p>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                                <!-- //cmp_SpecList -->
-                                                <div class="button__wrap align-left mt-4">
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">CEO letter</span>
-                                                        <i class="btn__icon ico icon-download-bl24"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">의안설명서</span>
-                                                        <i class="btn__icon ico icon-download-bl24"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-small btn-secondary">
-                                                        <span class="btn__text">소집결과</span>
-                                                        <i class="btn__icon ico icon-arrow-right-bl16"></i>
-                                                    </button>
-                                                </div>
-                                            ` }
-                                        ]; %>
-
-                                        <%- include('src/component/cmp_accordion.html', {
-                                        typeClass: 'open-type', openIndex: '0', itemCount: 5, jsonData: irData 
-                                        }) %>
+                                        <%- include('src/component/cmp_yearEvent.html', Object.assign({}, locals, {
+                                            month: '08월', events: [
+                                                { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' },
+                                                { title: 'Google Cloud Partner of the Year 2년 연속 수상', date: '2024.11.12', location: '뉴욕' }
+                                            ]
+                                        })) %>
                                     </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
-                        <!-- //기본 탭 -->
+
+                        <!-- 실적발표 탭 -->
+                        <div class="tab__content">
+                            <div>
+                                <div class="bizinfo-ir-activity__year-container">
+                                    <%- include('src/component/cmp_title_select.html', {
+                                        title : {
+                                            text: '2025년',
+                                            size: 'lg',
+                                            addClass: 'color-text-default font-medium',
+                                        },
+                                        showSelect: true,
+                                        rowJustify: 'is-column',
+                                        selectedValue: '연도선택',
+                                        options: ['2025년', '2024년', '2023년', '2022년']
+                                    }) %>
+            
+                                </div>
+
+                                    <% const buttonItemListData = [
+                                        { id: 0, title: '2024년<br>4분기 실적설명회', buttonName: ['자막', '별도 PDF', '방송듣기'] },
+                                        { id: 1, title: '2024년<br>3분기 실적설명회', buttonName: ['자막', '별도 PDF', '방송듣기'] },
+                                        { id: 2, title: '2024년<br>2분기 실적설명회', buttonName: ['자막', '별도 PDF', '방송듣기'] },
+                                        { id: 3, title: '2024년<br>1분기 실적설명회', buttonName: ['자막', '별도 PDF', '방송듣기'] }
+                                    ]; %>
+
+                                    <%- include('src/component/cmp_button_item_list.html', Object.assign({}, locals, {
+                                        itemCount: 7, 
+                                        jsonData: buttonItemListData
+                                    })) %>
+                            </div>
+                        </div>
+
+                        <!-- 주주총회 탭 -->
+                        <div class="tab__content">
+                            <div>
+                                <div class="bizinfo-ir-activity__year-container">
+                                    <%- include('src/component/cmp_title_select.html', {
+                                        titleText: '2024년',
+                                        showSelect: true,
+                                        selectedValue: '연도선택',
+                                        options: ['2025년', '2024년', '2023년', '2022년']
+                                    }) %>
+            
+                                </div>
+
+                                <div class="bizinfo-ir-activity__accodion">
+                                    <% const irData = [
+                                    { 
+                                        id: 0, faqTitle: '제 5회 정기 주주총회', 
+                                        faqContent: 
+                                            `
+                                                <div class="cmp-wrap cmp-speclist__wrap">
+                                                    <div class="spec-item type-num-sub">
+                                                        <div class="font-body-sm spec-title">
+                                                            <div class="spec-num">01</div>
+                                                            일시
+                                                        </div>
+                                                        <div class="font-body-sm spec-text">
+                                                            <p>2025년 03월 20일 (목) 오전 09시 00분</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="spec-item type-num-sub">
+                                                        <div class="font-body-sm spec-title">
+                                                            <div class="spec-num">02</div>
+                                                            장소
+                                                            </div>
+                                                            <div class="font-body-sm spec-text">
+                                                            <p>서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀</p>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //cmp_SpecList -->
+                                                <div class="button__wrap align-left mt-4">
+                                                    <button type="button" class="btn btn-small btn-secondary">
+                                                        <span class="btn__text">CEO letter</span>
+                                                        <i class="btn__icon ico icon-download-bl24"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-small btn-secondary">
+                                                        <span class="btn__text">의안설명서</span>
+                                                        <i class="btn__icon ico icon-download-bl24"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-small btn-secondary">
+                                                        <span class="btn__text">소집결과</span>
+                                                        <i class="btn__icon ico icon-arrow-right-bl16"></i>
+                                                    </button>
+                                                </div>
+                                    ` },
+                                    { 
+                                        id: 1, faqTitle: '제 4회 정기 주주총회', 
+                                        faqContent: `                                       
+                                            <div class="cmp-wrap cmp-speclist__wrap">
+                                                <div class="spec-item type-num-sub">
+                                                    <div class="font-body-sm spec-title">
+                                                        <div class="spec-num">01</div>
+                                                        일시
+                                                    </div>
+                                                    <div class="font-body-sm spec-text">
+                                                        <p>2025년 03월 20일 (목) 오전 09시 00분</p>
+                                                    </div>
+                                                </div>
+                                                <div class="spec-item type-num-sub">
+                                                    <div class="font-body-sm spec-title">
+                                                        <div class="spec-num">02</div>
+                                                        장소
+                                                        </div>
+                                                        <div class="font-body-sm spec-text">
+                                                        <p>서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀</p>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <!-- //cmp_SpecList -->
+                                            <div class="button__wrap align-left mt-4">
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">CEO letter</span>
+                                                    <i class="btn__icon ico icon-download-bl24"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">의안설명서</span>
+                                                    <i class="btn__icon ico icon-download-bl24"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">소집결과</span>
+                                                    <i class="btn__icon ico icon-arrow-right-bl16"></i>
+                                                </button>
+                                            </div>
+                                        ` },
+                                    { 
+                                        id: 2, faqTitle: '제 3회 정기 주주총회', 
+                                        faqContent: `                                       
+                                            <div class="cmp-wrap cmp-speclist__wrap">
+                                                <div class="spec-item type-num-sub">
+                                                    <div class="font-body-sm spec-title">
+                                                        <div class="spec-num">01</div>
+                                                        일시
+                                                    </div>
+                                                    <div class="font-body-sm spec-text">
+                                                        <p>2025년 03월 20일 (목) 오전 09시 00분</p>
+                                                    </div>
+                                                </div>
+                                                <div class="spec-item type-num-sub">
+                                                    <div class="font-body-sm spec-title">
+                                                        <div class="spec-num">02</div>
+                                                        장소
+                                                        </div>
+                                                        <div class="font-body-sm spec-text">
+                                                        <p>서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀</p>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <!-- //cmp_SpecList -->
+                                            <div class="button__wrap align-left mt-4">
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">CEO letter</span>
+                                                    <i class="btn__icon ico icon-download-bl24"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">의안설명서</span>
+                                                    <i class="btn__icon ico icon-download-bl24"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">소집결과</span>
+                                                    <i class="btn__icon ico icon-arrow-right-bl16"></i>
+                                                </button>
+                                            </div>
+                                        ` },
+                                    { 
+                                        id: 3, faqTitle: '제 2회 정기 주주총회', 
+                                        faqContent: `                                       
+                                            <div class="cmp-wrap cmp-speclist__wrap">
+                                                <div class="spec-item type-num-sub">
+                                                    <div class="font-body-sm spec-title">
+                                                        <div class="spec-num">01</div>
+                                                        일시
+                                                    </div>
+                                                    <div class="font-body-sm spec-text">
+                                                        <p>2025년 03월 20일 (목) 오전 09시 00분</p>
+                                                    </div>
+                                                </div>
+                                                <div class="spec-item type-num-sub">
+                                                    <div class="font-body-sm spec-title">
+                                                        <div class="spec-num">02</div>
+                                                        장소
+                                                        </div>
+                                                        <div class="font-body-sm spec-text">
+                                                        <p>서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀</p>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <!-- //cmp_SpecList -->
+                                            <div class="button__wrap align-left mt-4">
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">CEO letter</span>
+                                                    <i class="btn__icon ico icon-download-bl24"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">의안설명서</span>
+                                                    <i class="btn__icon ico icon-download-bl24"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">소집결과</span>
+                                                    <i class="btn__icon ico icon-arrow-right-bl16"></i>
+                                                </button>
+                                            </div>
+                                        ` },
+                                    { 
+                                        id: 4, faqTitle: '제 1회 정기 주주총회', 
+                                        faqContent: `                                       
+                                            <div class="cmp-wrap cmp-speclist__wrap">
+                                                <div class="spec-item type-num-sub">
+                                                    <div class="font-body-sm spec-title">
+                                                        <div class="spec-num">01</div>
+                                                        일시
+                                                    </div>
+                                                    <div class="font-body-sm spec-text">
+                                                        <p>2025년 03월 20일 (목) 오전 09시 00분</p>
+                                                    </div>
+                                                </div>
+                                                <div class="spec-item type-num-sub">
+                                                    <div class="font-body-sm spec-title">
+                                                        <div class="spec-num">02</div>
+                                                        장소
+                                                        </div>
+                                                        <div class="font-body-sm spec-text">
+                                                        <p>서울특별시 영등포구 여의대로 128 LG트윈타워 동관 지하1층 커넥트홀</p>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <!-- //cmp_SpecList -->
+                                            <div class="button__wrap align-left mt-4">
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">CEO letter</span>
+                                                    <i class="btn__icon ico icon-download-bl24"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">의안설명서</span>
+                                                    <i class="btn__icon ico icon-download-bl24"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-small btn-secondary">
+                                                    <span class="btn__text">소집결과</span>
+                                                    <i class="btn__icon ico icon-arrow-right-bl16"></i>
+                                                </button>
+                                            </div>
+                                        ` }
+                                    ]; %>
+
+                                    <%- include('src/component/cmp_accordion.html', {
+                                        typeClass: 'open-type', 
+                                        openIndex: '0', 
+                                        itemCount: 5, 
+                                        jsonData: irData 
+                                    }) %>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- <div class="bizinfo-ir-activity__container">
+                </div> -->
             </div>
         </div>
 

@@ -109,3 +109,6 @@
 .mb-exc-spacing-40-16 {
     @include custom-margin-vertical('bottom', 40, 16);
 }
+.mb-exc-spacing-24-16 {
+    @include custom-margin-vertical('bottom', 24, 16);
+}
