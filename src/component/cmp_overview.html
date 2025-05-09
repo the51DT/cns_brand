@@ -1,29 +1,22 @@
-<div class="cmp-wrap cmp-overview__wrap <%= typeof isRow !== 'undefined' && isRow ? 'cmp-overview__wrap--row' : '' %>">
-    <div class="font-head-lg cmp-overview-title"><%- typeof overviewTitle !== 'undefined' ? overviewTitle : 'overview 타이틀' %>
-    </div>
-
+<div class="cmp-wrap cmp-overview <%= typeof isRow !== 'undefined' && isRow ? 'cmp-overview--row' : '' %> <%- typeof marginVertical !=='undefined' && marginVertical ? marginVertical : '' %>">
+    <% if(typeof overviewTitle !== 'undefined' && overviewTitle) { %>
+        <span class="cmp-overview__title <%- typeof overviewTitle.size !== 'undefined' && overviewTitle.size ? overviewTitle.size : 'font-head-lg' %> <% typeof overviewTitle.style !=='undefined' && overviewTitle.style ? overviewTitle.style : 'font-medium color-text-default' %>">
+            <%- overviewTitle.text ? overviewTitle.text : '' %>
+        </span>
+    <% } %>
     <% if(typeof overviewContent !== 'undefined' && overviewContent) { %>
-        <div class="font-body-sm cmp-overview-text">
-            <%- typeof overviewContent !== 'undefined' ? `${overviewContent}` : `<p>overview 문구 길게 들어갈수 있음</p>` %>
-        </div>
-    <% } else if(typeof overviewContent2 !== 'undefined' && overviewContent2) { %>
-        <div class="font-body-sm cmp-overview-text2">
-            <%- typeof overviewContent2 !== 'undefined' ? `${overviewContent2}` : `<p>overview2 문구 길게 들어갈수 있음</p>` %>
-        </div>
-    <% } else if(typeof overviewContent3 !== 'undefined' && overviewContent3) { %>
-        <div class="font-body-lg cmp-overview-text">
-            <%- typeof overviewContent3 !== 'undefined' ? `${overviewContent3}` : `<p>overview3 문구 길게 들어갈수 있음</p>` %>
-        </div>
-    <% } else if(typeof overviewContent4 !== 'undefined' && overviewContent4) { %>
-        <div class="font-body-md cmp-overview-text4">
-            <% if(typeof overviewContent4 !== 'undefined') { %>
-                <% overviewContent4.forEach((text) => { %>
-                    <p><%- text %></p>
-                <% }); %>
+        <div class="cmp-overview__text-box <%- typeof overviewContent.size !== 'undefined' && overviewContent.size ? overviewContent.size : 'font-body-md' %> <%- typeof overviewContent.style !=='undefined' && overviewContent.style ? overviewContent.style : 'font-normal color-text-secondary' %>">
+            <% if(Array.isArray(overviewContent.text)) { %>
+                <% overviewContent.text.forEach((item) => { %>
+                    <p class="cmp-overview__text">
+                        <%- item ? item : '' %>
+                    </p>
+                <% }) %>
             <% } else { %>
-                <p>overview3 문구 길게 들어갈수 있음</p>
-            <% }; %>
+                <p class="cmp-overview__text">
+                    <%- overviewContent.text ? overviewContent.text : '' %>
+                </p>
+            <% } %>
         </div>
     <% } %>
-
 </div>

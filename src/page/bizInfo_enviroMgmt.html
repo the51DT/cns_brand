@@ -43,9 +43,19 @@
                     </div>
                     <div class="tab-content__wrap">
                         <div class="tab__content is-active">
-                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
-                                overviewTitle: '안전보건방침', 
-                                overviewContent3: 'LG CNS는 “임직원 및 협력사 직원의 건강과 공동체 안전”을 최우선 가치로 인식하며, 안전보건 성과의 지속적인 개선을 통해 안전하고 건강한 일터를 조성한다.'
+                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, {
+                                overviewTitle : {
+                                    text : '안전보건방침',
+                                    size: 'font-head-lg',
+                                    style: 'color-text-default font-medium',
+                                }, 
+                                overviewContent : {
+                                    text : [
+                                        'LG CNS는 “임직원 및 협력사 직원의 건강과 공동체 안전”을 최우선 가치로 인식하며, 안전보건 성과의 지속적인 개선을 통해 안전하고 건강한 일터를 조성한다.'
+                                    ],
+                                    size: 'font-body-md',
+                                    style: 'color-text-secondary font-normal',
+                                }
                             })) %>
 
                             <% const specListData1 = [ 
@@ -128,9 +138,19 @@
                                 styleType: 'type-box',
                             }) %>
 
-                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
-                                overviewTitle: '환경방침', 
-                                overviewContent3: 'LG CNS는 인간존중의 경영 이념 아래, 안전보건환경을 회사의 지속 가능한 경영 요소로 인식하여 경영활동 전과정(Life Cycle)에서 적극 실천한다.'
+                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, {
+                                overviewTitle : {
+                                    text : '환경방침',
+                                    size: 'font-head-lg',
+                                    style: 'color-text-default font-medium',
+                                }, 
+                                overviewContent : {
+                                    text : [
+                                        'LG CNS는 인간존중의 경영 이념 아래, 안전보건환경을 회사의 지속 가능한 경영 요소로 인식하여 경영활동 전과정(Life Cycle)에서 적극 실천한다.'
+                                    ],
+                                    size: 'font-body-md',
+                                    style: 'color-text-secondary font-normal',
+                                }
                             })) %>
 
                             <% const specListData3 = [ 
@@ -206,9 +226,19 @@
                                 styleType: 'type-box',
                             }) %>
 
-                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
-                                overviewTitle: '안전보건환경 관리체계', 
-                                overviewContent3: 'LG CNS는 회사의 발전과 임직원을 안전보건환경을 위해 전사 차원의 관리조직을 운영하고 있습니다.'
+                            <%- include('src/component/cmp_overview.html', Object.assign({}, locals, {
+                                overviewTitle : {
+                                    text : '안전보건환경 관리체계',
+                                    size: 'font-head-lg',
+                                    style: 'color-text-default font-medium',
+                                }, 
+                                overviewContent : {
+                                    text : [
+                                        'LG CNS는 회사의 발전과 임직원을 안전보건환경을 위해 전사 차원의 관리조직을 운영하고 있습니다.'
+                                    ],
+                                    size: 'font-body-md',
+                                    style: 'color-text-secondary font-normal',
+                                }
                             })) %>
 
                             <% 

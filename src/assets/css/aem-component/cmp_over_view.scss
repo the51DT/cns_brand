@@ -1,7 +1,15 @@
-.cmp-overview__wrap {
+.cmp-overview {
     display: flex;
     flex-direction: column; 
+    &__title {
 
+    }
+    &__text-box {
+        margin-top: calc(24 / 16 * 1rem);
+        @media #{$min1280} {
+            margin-top: calc(40 / 16 * 1rem);
+        }
+    }
     &--row {
         flex-direction: column;
         gap: calc(20 / 16 * 1rem);
@@ -16,47 +24,6 @@
             .cmp-overview-title {
                 flex: 0 0 50%;
             }
-        }
-    }
-
-    .cmp-overview-title {
-        color: var(--text-text-default);
-        font-weight: 500;
-
-        & + .cmp-overview-text {
-            margin-top: calc(24 / 16 * 1rem);
-
-            @media #{$min720} {
-                margin-top: calc(32 / 16 * 1rem);
-            }
-        }
-
-        & + .cmp-overview-text2 {
-            margin-top: calc(16 / 16 * 1rem);  
-        }
-
-        & + .cmp-overview-text4 {
-            color: var(--colorCM-mode1-text-text-secondary);
-        }
-    }
-
-    .cmp-overview-text {
-        color: var(--colorCM-mode1-text-text-secondary);
-
-        p + p {
-            margin-top: calc(12 / 16 * 1rem);  
-
-            @media #{$min720} {
-                margin-top: calc(16 / 16 * 1rem);
-            }
-        }
-    }
-    .cmp-overview-text4 {
-        display: flex;
-        flex-direction: column;
-        gap: calc(12 / 16 * 1rem);
-        @media #{$min720} {
-            gap: #{$gap-margin};
         }
     }
 }

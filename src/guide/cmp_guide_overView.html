@@ -21,40 +21,56 @@
                     <div class="cmp-exsample__wrap mt-3">
                         <!-- overview -->
                         <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
-                            overviewTitle: 'SCM DX 트렌드', 
-                            overviewContent: '<p>최근 공급망 운영에 있어 디지털 기술을 활용하여 시장을 예측하고, 사전에 대응하여 운영 효율성을 높이고자 하는 노력이 가속화되고 있습니다. 다양한 소비자 요구에 대응하기 위한 제품 종류의 증가와 글로벌화에 따른 사업 범위 확대로 인하여 공급망 운영 복잡도가 높아지고 있는 상황에서 자연재해, 전쟁 및 테러, 파업, 노동력 부족 등 공급망을 마비시키는 요인들 또한 증가하고 있습니다.<br>이러한 상황에서 공급망 관리 리더는 안정적인 공급망 운영을 위하여 아래와 같은 업무를 추진하고 있습니다.</p><p>AI, 최적화 등 디지털 기술을 활용하여 ① 공급망 다변화 및 현지화를 통해 리스크 해소 및 대응력 강화 ② 변화에 신속히 대응할 수 있는 유연한 공급망 구축 ③ 고객데이터를 분석을 통한 맞춤형 서비스 제공 ④ 공급망 운영 효율성 극대화를 위하여 다양한 이해관계자들과 협력을 강화해 나가고 있습니다.<br>LG CNS는 공급망 전략, 계획, 실행 영역에 대해 SCM 서비스를 제공하고 있습니다. 실제로 제조, 유통, 물류 등 다양한 산업에서 디지털 기술을 활용한 SCM 컨설팅 및 시스템 구축을 수행하고 있습니다. </p>'
+                            overviewTitle : {
+                                text : '지속가능한 DX 전문기업',
+                                size: 'font-head-lg',
+                                style: 'color-text-default font-medium',
+                            }, 
+                            overviewContent : {
+                                text : [
+                                    'LG CNS는 ESG(환경·사회·지배구조) 경영을 위해 국제표준화기구(ISO)인증, DX사회공헌, 정도경영 등 실질적인 활동을 펼치고 있으며, 고객·협력사·주주·임직원 등 다양한 이해 관계자들과도 지속적으로 소통하고 있습니다.'
+                                ],
+                                size: 'font-body-md',
+                                style: 'color-text-secondary font-normal',
+                            },
+                            marginVertical: 'mb-spacing07',
                         })) %>
                         <!-- //overview -->
                     </div>
 
-                    <p class="guide-title-h3">Overview (기업정보 > 추진방향 에서 사용)</p>                    
+                    <!-- <p class="guide-title-h3">Overview (기업정보 > 추진방향 에서 사용)</p>                    
                     <div class="cmp-exsample__wrap mt-3">
-                        <!-- overview -->
                         <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
                             overviewTitle: '지속가능한 DX 전문기업', 
                             overviewContent2: '<p>LG CNS는 ESG(환경·사회·지배구조) 경영을 위해 국제표준화기구(ISO)인증, DX사회공헌, 정도경영 등 실질적인 활동을 펼치고 있으며, 고객·협력사·주주·임직원 등 다양한 이해 관계자들과도 지속적으로 소통하고 있습니다.</p>'
                         })) %>
-                        <!-- //overview -->
                     </div>
 
                     <p class="guide-title-h3">Overview (기업정보 > 환경경영 에서 사용)</p>                    
                     <div class="cmp-exsample__wrap mt-3">
-                        <!-- overview -->
                         <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
                             overviewTitle: '지속가능한 DX 전문기업', 
                             overviewContent3: '<p>LG CNS는 ESG(환경·사회·지배구조) 경영을 위해 국제표준화기구(ISO)인증, DX사회공헌, 정도경영 등 실질적인 활동을 펼치고 있으며, 고객·협력사·주주·임직원 등 다양한 이해 관계자들과도 지속적으로 소통하고 있습니다.</p>'
                         })) %>
-                        <!-- //overview -->
-                    </div>
+                    </div> -->
+                    
                     <p class="guide-title-h3">Overview (가로형)</p>                    
                     <div class="cmp-exsample__wrap mt-3">
-                        <!-- overview -->
                         <%- include('src/component/cmp_overview.html', Object.assign({}, locals, { 
-                            overviewTitle: '클라우드, 그 모든 선택의 기준 <br/> Cloud with LG CNS', 
-                            overviewContent4: ['클라우드가 필요한 순간 언제나 LG CNS가 있습니다. 다양한 산업 분야에서 독보적인 클라우드 경험을 보유하고 있는 준비된 엔터프라이즈 전문 클라우드 파트너​로 LG CNS는 클라우드 컨설팅부터 전환, 구축, 혁신 가속화를 위한 애플리케이션 현대화, 운영, 보안, 변화 관리까지의 완결형 서비스와 기업 환경에 특화된 맞춤형 솔루션을 제공합니다. 또한 빠르고 복잡하게 변화하는 클라우드 환경에서 클라우드 최고의 전문가들이 비즈니스의 가치를 높여줄 AI, 데이터 등 최신 기술을 활용하여 기업이 가진 자원을 더 효과적으로 활용할 수 있는 로드맵을 제시합니다.', '탁월한 전문성과 혁신성을 바탕으로 국내 유일 Global 3대 CSP 프리미어 파트너 획득과 글로벌 테크 기업들과 긴밀한 파트너십을 통해 대한민국을 넘어 전 세계 고객들과 만나고 있습니다. 클라우드가 열어갈 더 새롭고 편리해진 비즈니스 세상, 그 처음과 끝을 LG CNS가 함께합니다.'],
-                            isRow: true
+                            isRow: true,
+                            overviewTitle : {
+                                text : '지속가능한 DX 전문기업',
+                                size: 'font-head-lg',
+                                style: 'color-text-default font-medium',
+                            }, 
+                            overviewContent : {
+                                text : [
+                                    'LG CNS는 ESG(환경·사회·지배구조) 경영을 위해 국제표준화기구(ISO)인증, DX사회공헌, 정도경영 등 실질적인 활동을 펼치고 있으며, 고객·협력사·주주·임직원 등 다양한 이해 관계자들과도 지속적으로 소통하고 있습니다.'
+                                ],
+                                size: 'font-body-md',
+                                style: 'color-text-secondary font-normal',
+                            }
                         })) %>
-                        <!-- //overview -->
                     </div>
                     
                 </div>
