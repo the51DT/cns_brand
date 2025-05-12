@@ -564,8 +564,8 @@
             }
             &--01 {                                
                 .inner-wrap {
-                    z-index: 1;
-                }                
+                    z-index: 10;
+                }  
             }
             &.full-sec {
                 position: relative;
@@ -575,7 +575,7 @@
                 }
             }
             &.last-sec {
-                margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
+                padding-top: 0;
             }
             .inner-wrap {
                 display: flex;
@@ -595,9 +595,6 @@
                     bottom: calc(140 / 16 * 1rem);
                     transform: translateX(-50%);
                     z-index: 50;
-                    button {
-                        cursor: pointer;
-                    }
                     button {
                         cursor: pointer;
                     }
@@ -700,45 +697,78 @@
         .LG-way-swiper {
             height: 100vh;
             .swiper-slide {
+                .bizinfo-LG-way {
+                    position: relative;
+                    &__section__img {
+                        position: absolute;
+                        top: calc(60 / 16 * 1rem);
+                        right: calc(240 / 16 * 1rem);
+                        width: 50%;
+                        @media #{$phone}, #{$tablet} {
+                            position: static;
+                            width: 100%;
+                        }
+                        // img {
+                        //     width: calc(837 / 16 * 1rem);
+                        //     height: calc(759 / 16 * 1rem);
+                        // }
+                    }
+                    &__textarea {
+                        width: 100%;
+                        margin-right: auto;
+                    }
+                }
                 &:first-child {
                     .bizinfo-LG-way__section__img {
+                        position: static;
+                        width: 100%;
+                        height: 100%;
                         img {
-                            width: calc(837 / 16 * 1rem);
-                            height: calc(759 / 16 * 1rem);
-                            @media #{$phone} {
-                                width: calc(100%);
-                                height: calc(100%);
+                            min-width: calc(837 / 16 * 1rem);
+                            height: auto;
+                            @media #{$phone}, #{$tablet} {                            
+                                min-width: 100%;
                             }
                         }
                     }
                 }
-                &:not(:first-child) {
-                    .bizinfo-LG-way {
-                        position: relative;
-                        &__section__img {
-                            position: absolute;
-                            top: 0;
-                            bottom: 0;
-                            right: 0;
-                            @media #{$phone} {
-                                position: static;
-                                width: 100%;
-                            }
-                            img {
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                            }
-                        }
-                        &__textarea {
-                            width: 100%;
-                            margin-right: auto;
-                        }
-                    }
-                }               
+                // &:first-child {
+                //     .bizinfo-LG-way__section__img {
+                //         img {
+                //             width: calc(837 / 16 * 1rem);
+                //             height: calc(759 / 16 * 1rem);
+                //             @media #{$phone} {
+                //                 width: calc(100%);
+                //                 height: calc(100%);
+                //             }
+                //         }
+                //     }
+                // }
+                // &:not(:first-child) {
+                //     .bizinfo-LG-way {
+                //         position: relative;
+                //         &__section__img {
+                //             position: absolute;
+                //             top: 0;
+                //             bottom: 0;
+                //             right: 120px;
+                //             width: 50%;
+
+                //             @media #{$phone} {
+                //                 position: static;
+                //                 width: 100%;
+                //             }
+                            
+                //         }
+                //         &__textarea {
+                //             width: 100%;
+                //             margin-right: auto;
+                //         }
+                //     }
+                // }               
                 .bizinfo-LG-way__section__img {
                     opacity: 0;
-                    transition: opacity 1s ease-in;
+                    transition: opacity 2s ease-in;
                 }
                 &.is-active {                    
                     .bizinfo-LG-way__section__img {
