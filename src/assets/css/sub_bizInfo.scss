@@ -561,12 +561,6 @@
             @media #{$phone} {
                 padding-top: calc((var(--spacing-mode1-vertical5-x-l)) / 16 * 1rem);
             }
-            &__img {
-                img {
-                    width: calc(837 / 16 * 1rem);
-                    height: calc(759 / 16 * 1rem);
-                }
-            }
             &--01 {                
                 @media #{$phone} {
                     padding-top: calc(calc(var(--spacing-mode1-vertical5-x-l) + 80) / 16 * 1rem);
@@ -598,6 +592,9 @@
                     transform: translateX(-50%);                    
                     @media #{$phone} {
                         bottom: calc(40 / 16 * 1rem);
+                    }
+                    button {
+                        cursor: pointer;
                     }
                     .ico {
                         @media #{$phone} {
@@ -643,6 +640,8 @@
                     width: calc(10 / 16 * 1rem);
                     height: calc(10 / 16 * 1rem);
                     padding: 0;
+                    background-color : var(--colorGL-all-grey200);
+                    border: 0;
                 }
             }
             @media #{$phone} {
@@ -695,6 +694,42 @@
         }
         .LG-way-swiper {
             height: 100vh;
+            .swiper-slide {
+                &:first-child {
+                    .bizinfo-LG-way__section__img {
+                        img {
+                            width: calc(837 / 16 * 1rem);
+                            height: calc(759 / 16 * 1rem);
+                        }
+                    }
+                }
+                &:not(:first-child) {
+                    .bizinfo-LG-way {
+                        position: relative;
+                        &__section__img {
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            right: 15rem;
+                            width: 50%;
+                            height: 100%;
+                        }
+                        &__textarea {
+                            width: 100%;
+                            margin-right: auto;
+                        }
+                    }
+                }               
+                .bizinfo-LG-way__section__img {
+                    opacity: 0;
+                    transition: opacity 1s ease-in;
+                }
+                &.is-active {                    
+                    .bizinfo-LG-way__section__img {
+                        opacity: 1;                        
+                    }
+                }
+            }            
         }
     }
     &esg {
