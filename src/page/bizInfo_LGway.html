@@ -36,7 +36,7 @@
                                         ‘일등LG’를 달성하자는 것입니다.
                                     </p>
                                 </div>
-                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="0">
+                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="50">
                                     <img src="../assets/image/sub/bg_lgway_sec01.png" alt="">
                                 </div>
                             </div>
@@ -60,13 +60,14 @@
                                         선도기업이 되는 것 입니다.
                                     </p>
                                     <button type="button" class="popupBtn btn-glide">
+
                                         <span class="btn-glide__inner">
                                             <span class="btn-glide__text">LG 비전</span>
                                         </span>
                                         <i class="btn-glide__icon"></i>
                                     </button>
                                 </div>
-                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="40%">
+                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="50">
                                     <img src="../assets/image/sub/bg_lgway_sec02.png" alt="">
                                 </div>
                             </div>
@@ -90,7 +91,7 @@
                                         <i class="btn-glide__icon"></i>
                                     </button>
                                 </div>
-                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="60%">
+                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="50">
                                     <img src="../assets/image/sub/bg_lgway_sec03.png" alt="">
                                 </div>
                             </div>
@@ -112,7 +113,7 @@
                                         <i class="btn-glide__icon"></i>
                                     </button>
                                 </div>
-                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="80%">
+                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="50">
                                     <img src="../assets/image/sub/bg_lgway_sec04.png" alt="">
                                 </div>
                             </div>
@@ -129,25 +130,17 @@
             </div>
 
             <div class="bizinfo-LG-way__section last-sec">
-                <div class="inner-wrap">
-                    <div class="bizinfo-LG-way__textarea">
-                        <h2 class="font-head-sm font-bold">LG 임직원의 부당한 요구,</h2>
-                        <p class="font-body-lg font-medium">
-                            또는 불공정 업무처리로 불편함을 겪고있다면, 사이버 신문고를 두드려 보세요!<br>
-                            고객님의 소중한 한마디가 새로운 기업문화의 밑거름이 됩니다.
-                        </p>
-                    </div>
-                    <div class="button__wrap align-left">
-                        <a href="#" class="btn btn-reversal btn-large"> <!-- 버튼패딩 다름 -->
-                            사이버 신문고 바로가기
-                            <i class="ico icon-arrow-right-wt16"></i>
-                        </a>
-                    </div>
-                </div>
+                <%- include('src/component/cmp_buttonBanner.html', Object.assign({}, locals, {
+                    pcImg: 'https://placehold.co/1920x540',
+                    moImg: 'https://placehold.co/360x390',
+                    subtitle: '상담신청',
+                    title: 'LG CNS의 전문 역량을 귀사의 비즈니스와 접목시켜 혁신적인 시너지로 만들어 나가고 싶다면 지금 상담신청 하세요.',
+                    buttonText: '바로가기',
+                })) %>
             </div>
         </div>
         <%- include('src/_inc/footer.html', Object.assign({}, locals, {
-            type : 'transparent-color-wh',
+            type : 'transparent-color-bl',
         }))%>
     </div>
     <script type="module" src="/src/main.js"></script>
@@ -156,6 +149,7 @@
     <script>      
         const parallaxPagination = document.querySelector(".full-sec__pagination");
         const parallaxPaginationItem = document.querySelectorAll(".full-sec__pagination .full-sec__pagination--item");
+        
         waySwiper = new Swiper(".LG-way-swiper", {
             direction: 'vertical',
             followFinger: false,
@@ -164,7 +158,7 @@
             mousewheel: true,
             clickable: true,
             speed: 800,
-            parallax: true,
+            // parallax: true,
             pagination: {
                 el: '.swiper-pagination',
                     clickable: true,
@@ -176,7 +170,7 @@
                         waySwiper.params.mousewheel.releaseOnEdges = false;
                         
                         parallaxPaginationItem.forEach(function(item) {
-                            item.classList.remove("is-active");                                
+                            item.classList.remove("is-active");
                         });
                         waySwiper.slides.forEach(function(item) {
                             item.classList.remove("is-active");
@@ -184,7 +178,8 @@
                         waySwiper.slides[(waySwiper.activeIndex)].classList.add("is-active");
                         if(waySwiper.activeIndex > 0) {
                             parallaxPagination.classList.add("is-active");
-                            // waySwiper.slides[(waySwiper.activeIndex)].querySelector(".bizinfo-LG-way__section__img").style.bottom = `-${(waySwiper.activeIndex + 1)  * 20}%`;
+                            // let pageData = waySwiper.slides[(waySwiper.activeIndex)].querySelector(".bizinfo-LG-way__section__img").getAttribute("data-swiper-parallax-y");
+                            // waySwiper.slides[(waySwiper.activeIndex)].querySelector(".bizinfo-LG-way__section__img").style.transform = `translateY(${pageData}%)`; //${(waySwiper.activeIndex + 1)  * pageData}%
                             parallaxPaginationItem[waySwiper.activeIndex - 1].classList.add("is-active");
                         } else {
                             parallaxPagination.classList.remove("is-active");
@@ -196,6 +191,7 @@
                     setTimeout(function () {
                         waySwiper.params.touchReleaseOnEdges = true;
                         waySwiper.params.mousewheel.releaseOnEdges = true;
+                        // waySwiper.slides[(waySwiper.activeIndex)].querySelector(".bizinfo-LG-way__section__img").style.transform = `translateY(-${(waySwiper.activeIndex + 1)  * 40}%)`;
                     }, 500);
                 },
                 reachBeginning: function() {
