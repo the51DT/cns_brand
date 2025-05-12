@@ -98,6 +98,9 @@ $fileType: "svg";
     &.icon-heart-red400 {
         @include iconFile(20,20,'icon_heart_red400');
     }
+    &.icon-navigation-up-w19 {
+        @include iconFile(19,16,'icon-navigation-up-w19');
+    }                       
     &.icon-navigation-up-w24 {
         @include iconFile(24,24,'icon_navigation_up_w24');
     }                       

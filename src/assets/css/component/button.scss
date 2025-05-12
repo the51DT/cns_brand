@@ -235,7 +235,22 @@ $asset-paths: (
     min-width: fit-content;
     height: auto;
 }
-
+// top 버튼
+.btn-top {
+    width: calc(48 / 16 * 1rem);
+    height: calc(48 / 16 * 1rem);
+    border-radius: 50%;
+    border: calc(1 / 16 * 1rem) solid #323232;
+    background: rgba(18, 18, 18, 0.90);
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    @media #{$min1280} {
+        display: none;
+    }
+}
 // 애니메이션 버튼
 .btn-glide {
     //@extend .btn;
