@@ -7,7 +7,10 @@
     background-position: left top;
 
     .inner-wrap {
-        padding: calc(72 / 16 * 1rem) calc(100 / 16 * 1rem) calc(79 / 16 * 1rem) calc(20 / 16 * 1rem);
+        padding: calc(72 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
+        @media #{$min1280} {
+            padding: calc(72 / 16 * 1rem) calc(100 / 16 * 1rem) calc(79 / 16 * 1rem) calc(20 / 16 * 1rem);
+        }
     }
 
     .banner_content {
@@ -19,6 +22,16 @@
         .cmp-buttonbanner-title {
             color: var(--colorGL-all-grey550);
             margin-bottom: calc(45 / 16 * 1rem);
+            width: 75%;
+            @media #{$min1280} {
+                width: 100%;
+            }
+        }
+        .button__wrap--btn-top {
+            display: flex;
+            @media #{$min1280} {
+                display: none;
+            }
         }
     }
 
