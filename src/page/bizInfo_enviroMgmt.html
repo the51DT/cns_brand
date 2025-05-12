@@ -119,7 +119,13 @@
                                     }) %>
                                 </div>
                             </div>
-                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--border-top pt-exc-spacing-32-0">
+                            <!-- cmp_seperator -->
+                            <%- include('src/component/cmp_seperator.html', {
+                                displayOnly: 'pc',
+                                marginVertical: 'mb-exc-spacing-32-0',
+                            }) %>
+                            <!-- //cmp_seperator -->
+                            <div class="cmp-wrap cmp-feature-grid">
                                 <div>
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         title : {
@@ -206,7 +212,13 @@
                                     }) %>
                                 </div>
                             </div>
-                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--border-top pt-exc-spacing-32-0">
+                            <!-- cmp_seperator -->
+                            <%- include('src/component/cmp_seperator.html', {
+                                displayOnly: 'pc',
+                                marginVertical: 'mb-exc-spacing-32-0',
+                            }) %>
+                            <!-- //cmp_seperator -->
+                            <div class="cmp-wrap cmp-feature-grid">
                                 <div>
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         title : {
@@ -284,11 +296,17 @@
                                     }) %>
                                 </div>
                             </div>
-                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--border-top pt-exc-spacing-32-0">
+                            <!-- cmp_seperator -->
+                            <%- include('src/component/cmp_seperator.html', {
+                                displayOnly: 'pc',
+                                marginVertical: 'mb-exc-spacing-32-0',
+                            }) %>
+                            <!-- //cmp_seperator -->
+                            <div class="cmp-wrap cmp-feature-grid">
                                 <div>
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         title : {
-                                            text: '안전보건목표',
+                                            text: '환경목표',
                                             size: 'lg',
                                             class: 'color-text-default font-medium',
                                         },
@@ -383,6 +401,7 @@
                             <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
                                 jsonData : iamgeData,
                                 alt : '안전보건환경 관리체계',
+                                marginVertical: 'mb-0'
                             }))%>
                         </div>
                         <div class="tab__content">
@@ -450,134 +469,138 @@
                             })) %>
                         </div>
                         <div class="tab__content">
+                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                title : {
+                                    text: '온실가스 감축',
+                                    size: 'lg',
+                                    class: 'color-text-default font-medium',
+                                },
+                                marginVertical: 'mb-spacing05',
+                            })) %>
                             <%
-                                const imageItemColumnDataChange = [
+                                const imageItemData3 = [
                                     {
                                         id: 0,
-                                        type: 'type-default',
-                                        imageUrl: '/src/assets/image/temp/full_imag01.png',
-                                        imageAlt: 'test',
-                                        title: '온실가스 감축',
-                                        content: [
-                                            '온실가스 배출권거래제는 저탄소녹생성장기본법에 의거, 정부가 기업에 온실가스를 배출할 수 있는 총량을 사전에 할당하고, 기업은 자체적인 온실가스 감축 및 배출권 거래를 통해 온실가스 감축 목표를 달성할 수 있도록 하는 제도입니다.',
-                                            'LG CNS는 이러한 에너지 제도에 효율적으로 대응하기 위해 데이터센터 소비전력을 자동 측정하고 온실가스 배출량을 실시간 집계 할 수 있는 온실가스 인벤토리 시스템을 구축하여 운영중입니다. 환경 관련 국제 인증인 CDP(Carbon Disclosure Project)에 맞춰 외부의 친환경 강화 요구에 적극적으로 대응하고 있습니다.',
-                                        ],
-                                        imgDesc: '온실가스 배출권 거래제 대상 사업장으로 지정된 LG CNS 상암데이터 센터 전경'
+                                        typeClass: 'type-default',
+                                        imageUrl: 'https://placehold.co/1440x540',
+                                        ImageUrlMo: 'https://placehold.co/320x120',
+                                        imageRound: true,
+                                        title: {
+                                            text : '온실가스 배출권 거래제 대상 사업장으로 지정된 LG CNS 상암데이터 센터 전경',
+                                            size: 'font-body-md',
+                                            class: 'font-normal color-text-tertiary',
+                                        },
+                                        content: '<p class="mb-exc-spacing-16-12">온실가스 배출권거래제는 저탄소녹생성장기본법에 의거, 정부가 기업에 온실가스를 배출할 수 있는 총량을 사전에 할당하고, 기업은 자체적인 온실가스 감축 및 배출권 거래를 통해 온실가스 감축 목표를 달성할 수 있도록 하는 제도입니다.</p><p>LG CNS는 이러한 에너지 제도에 효율적으로 대응하기 위해 데이터센터 소비전력을 자동 측정하고 온실가스 배출량을 실시간 집계 할 수 있는 온실가스 인벤토리 시스템을 구축하여 운영중입니다. 환경 관련 국제 인증인 CDP(Carbon Disclosure Project)에 맞춰 외부의 친환경 강화 요구에 적극적으로 대응하고 있습니다.</p>',
                                     },
-                                    {
-                                        id: 1,
-                                        type: 'type-default',
-                                        imageAlt: 'test',
-                                        title: '친환경 그린데이터 센터',
-                                        content: [
-                                            'LG CNS는 전력사용량이 높은 데이터센터의 에너지 절감을 위해 다양한 솔루션을 개발·적용하여 데이터센터를 운영하고 있습니다. 또한 신재생 및 에너지 효율향상 설비 도입을 통한 건물 내 소비 효율화도 진행하고 있습니다. LG CNS는 온실가스 배출량 감소를 위한 솔루션을 개발·적용하여 친환경 데이터센터를 운영하고 있으며, 데이터센터의 기반설비 통합운영을 위해 친환경 IT 시스템을 개발해 구축/운영하고 있습니다.',
-                                            '친환경 IT 시스템은 기반설비(전기, 기계, 온/습도, 조명 등) 및 보안설비를 통합 모니터링해 장애 감지, 분석, 제어 등을 통해 전산실 에너지를 효율적으로 관리함으로써 온실가스 배출량 절감에 기여합니다. 또한, 자연외기를 이용한 친환경 제품인 빌트업 외기 냉방시스템을 세계 최초로 특허출원하여 전 센터에 적용하고 있으며, 서버 집중 냉각 장치인 집중공조시스템 개발 및 고효율UPS, LED 조명등을 전 센터에 적용하여 온실가스 배출량 감소에 기여하고 있습니다.',
-                                        ],
-                                    },                                                            
                                 ]
                             %> 
-                            <%- include('src/component/cmp_image_item_column.html', Object.assign({}, locals, {                             
-                                jsonData: imageItemColumnDataChange
+                            <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {                             
+                                itemCount: 7,
+                                jsonData: imageItemData3,
                             })) %>
-
-                            <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                                teaserTitle: '친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과 (상암IT센터)'
-                            })) %>
+                            <%- include('src/component/cmp_title_unit.html', {
+                                title : {
+                                    text: '친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과 (상암IT센터)',
+                                    size: 'md',
+                                    addClass: 'color-text-default font-medium',
+                                },
+                                unit : "[ 절감량 / 단위 : tCO2eq ]",
+                                marginVertical: 'mb-spacing03',
+                            }) %>
                             <div class="cmp-wrap cmp-table__wrap">
-                                <span class="unit-text font-body-sm font-bold">[ 절감량 / 단위 : tCO2eq ]</span>
                                 <div class="cmp-wrap table-container font-body-sm">
                                     <table class="text-center data-table">
                                         <caption>친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과</caption>
                                         <thead>
                                             <tr>
-                                                <th width="428"></th>
-                                                <th scope="col" width="126.5">2014</th>
-                                                <th scope="col" width="126.5">2015</th>
-                                                <th scope="col" width="126.5">2016</th>
-                                                <th scope="col" width="126.5">2017</th>
-                                                <th scope="col" width="126.5">2018</th>
-                                                <th scope="col" width="126.5">2019</th>
-                                                <th scope="col" width="126.5">2020</th>
-                                                <th scope="col" width="126.5">누계</th>
+                                                <th width="352"></th>
+                                                <th scope="col" width="136" class="text-right font-semibold color-text-default">2014</th>
+                                                <th scope="col" width="136" class="text-right font-semibold color-text-default">2015</th>
+                                                <th scope="col" width="136" class="text-right font-semibold color-text-default">2016</th>
+                                                <th scope="col" width="136" class="text-right font-semibold color-text-default">2017</th>
+                                                <th scope="col" width="136" class="text-right font-semibold color-text-default">2018</th>
+                                                <th scope="col" width="136" class="text-right font-semibold color-text-default">2019</th>
+                                                <th scope="col" width="136" class="text-right font-semibold color-text-default">2020</th>
+                                                <th scope="col" width="136" class="text-right font-semibold color-text-default">누계</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="text-left font-bold">LED 조명등 (전층) 교체</td>
-                                                <td>223</td>
-                                                <td>446</td>
-                                                <td>446</td>
-                                                <td>446</td>
-                                                <td>446</td>
-                                                <td>446</td>
-                                                <td>446</td>
-                                                <td>2,899</td>
+                                                <td class="text-left font-semibold color-text-default">LED 조명등 (전층) 교체</td>
+                                                <td class="text-right font-normal color-text-secondary">223</td>
+                                                <td class="text-right font-normal color-text-secondary">446</td>
+                                                <td class="text-right font-normal color-text-secondary">446</td>
+                                                <td class="text-right font-normal color-text-secondary">446</td>
+                                                <td class="text-right font-normal color-text-secondary">446</td>
+                                                <td class="text-right font-normal color-text-secondary">446</td>
+                                                <td class="text-right font-normal color-text-secondary">446</td>
+                                                <td class="text-right font-normal color-text-secondary">2,899</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-left font-bold">기계실(B3-4층) 외기 공조</td>
-                                                <td>150</td>
-                                                <td>404</td>
-                                                <td>404</td>
-                                                <td>404</td>
-                                                <td>404</td>
-                                                <td>404</td>
-                                                <td>404</td>
-                                                <td>2,574</td>
+                                                <td class="text-left font-semibold color-text-default">기계실(B3-4층) 외기 공조</td>
+                                                <td class="text-right font-normal color-text-secondary">150</td>
+                                                <td class="text-right font-normal color-text-secondary">404</td>
+                                                <td class="text-right font-normal color-text-secondary">404</td>
+                                                <td class="text-right font-normal color-text-secondary">404</td>
+                                                <td class="text-right font-normal color-text-secondary">404</td>
+                                                <td class="text-right font-normal color-text-secondary">404</td>
+                                                <td class="text-right font-normal color-text-secondary">404</td>
+                                                <td class="text-right font-normal color-text-secondary">2,574</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-left font-bold">전산실(2-9층) 외기 공조</td>
-                                                <td>AA</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>560</td>
-                                                <td>1,366</td>
-                                                <td>1,366</td>
-                                                <td>1,366</td>
-                                                <td>6,024</td>
+                                                <td class="text-left font-semibold color-text-default">전산실(2-9층) 외기 공조</td>
+                                                <td class="text-right font-normal color-text-secondary">AA</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">560</td>
+                                                <td class="text-right font-normal color-text-secondary">1,366</td>
+                                                <td class="text-right font-normal color-text-secondary">1,366</td>
+                                                <td class="text-right font-normal color-text-secondary">1,366</td>
+                                                <td class="text-right font-normal color-text-secondary">6,024</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-left font-bold">고효율 UPS(2-9층) 교체</td>
-                                                <td>-</td>
-                                                <td>69</td>
-                                                <td>278</td>
-                                                <td>278</td>
-                                                <td>278</td>
-                                                <td>278</td>
-                                                <td>278</td>
-                                                <td>1,461</td>
+                                                <td class="text-left font-semibold color-text-default">고효율 UPS(2-9층) 교체</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">69</td>
+                                                <td class="text-right font-normal color-text-secondary">278</td>
+                                                <td class="text-right font-normal color-text-secondary">278</td>
+                                                <td class="text-right font-normal color-text-secondary">278</td>
+                                                <td class="text-right font-normal color-text-secondary">278</td>
+                                                <td class="text-right font-normal color-text-secondary">278</td>
+                                                <td class="text-right font-normal color-text-secondary">1,461</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-left font-bold">태양광 설치</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>6</td>
-                                                <td>6</td>
-                                                <td>12</td>
+                                                <td class="text-left font-semibold color-text-default">태양광 설치</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">6</td>
+                                                <td class="text-right font-normal color-text-secondary">6</td>
+                                                <td class="text-right font-normal color-text-secondary">12</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-left font-bold">전산실(2-9층) 고효율 항온기 교체</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>49</td>
-                                                <td>256</td>
-                                                <td>305</td>
+                                                <td class="text-left font-semibold color-text-default">전산실(2-9층) 고효율 항온기 교체</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">-</td>
+                                                <td class="text-right font-normal color-text-secondary">49</td>
+                                                <td class="text-right font-normal color-text-secondary">256</td>
+                                                <td class="text-right font-normal color-text-secondary">305</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-left font-bold">총계</td>
-                                                <td>373</td>
-                                                <td>919</td>
-                                                <td>1,688</td>
-                                                <td>2,494</td>
-                                                <td>2,494</td>
-                                                <td>2,494</td>
-                                                <td>2,494</td>
-                                                <td>13,276</td>
+                                                <td class="text-left font-semibold color-text-default">총계</td>
+                                                <td class="text-right font-normal color-text-secondary">373</td>
+                                                <td class="text-right font-normal color-text-secondary">919</td>
+                                                <td class="text-right font-normal color-text-secondary">1,688</td>
+                                                <td class="text-right font-normal color-text-secondary">2,494</td>
+                                                <td class="text-right font-normal color-text-secondary">2,494</td>
+                                                <td class="text-right font-normal color-text-secondary">2,494</td>
+                                                <td class="text-right font-normal color-text-secondary">2,494</td>
+                                                <td class="text-right font-normal color-text-secondary">13,276</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -586,65 +609,83 @@
 
                         </div>  
                         <div class="tab__content">
-                            <% 
-                            const imageItemColumnData4 = [
-                                {
-                                    id: 0,
-                                    type: 'type-default',
-                                    imageUrl: 'https://placehold.co/1760x480',
-                                    imageAlt: '1760x480',
-                                    title: '산업안전보건위원회 운영',
-                                    content: [
-                                        '직원들의 적극적인 참여를 통해 사업장의 안전과 보건 증진을 위해 산업안전보건위원회를 운영하고 있습니다.<br>위원회에서는 경영진과 사원대표가 분기별로 모여 사업장의 안전과 보건에 관한 중요사항을 의논하고 결정하고 있습니다.'
-                                    ],
-                                },
-                                {
-                                    id: 1,
-                                    type: 'type-default',
-                                    imageUrl: 'https://placehold.co/1760x480',
-                                    imageAlt: '1760x480',
-                                    title: '코로나19 예방 대응체계 정착',
-                                    content: [
-                                        'LG CNS는 2019년 감염병 위기대응 실무 매뉴얼을 마련하고 조직별 R&R(역할과 책임)과 비상 대응프로세스를 수립했습니다.<br>이를 바탕으로 코로나19 상황 발생 시 정부의 위기 대응 절차에 따라 현장 가이드 및 모니터링, 비상상황실 운영, 임직원과 협력사 직원의 재택근무와 자가격리 조치를 시행하는 등 체계적으로 대응할 수 있었습니다. 사업장 내 출입 시 발열체크 및 통제, 주기적인 방역 및 실내외 마스크 필수 착용과 더불어 정부의 거리두기 지침보다 강화된 단계별 대응지침을 적용해 안전한 사업장을 구축하고 있습니다.'
-                                    ],
-                                },
-                                {
-                                    id: 2,
-                                    type: 'type-default',
-                                    imageUrl: 'https://placehold.co/1760x480',
-                                    imageAlt: '1760x480',
-                                    title: '임직원 심폐소생술 교육',
-                                    content: [
-                                        'LG CNS는 임직원의 안전보건 의식을 높이기 위해 임직원의 특성을 반영한 맟춤형 온·오프라인 안전보건교육을 실시하고 있습니다.<br>2020년 이후에는 심폐소생술 실습 체험장을 구축하여 운영하고 있습니다. 응급상황 발생 시 임직원들의 위기대응능력을 높이기 위해 자기주도 학습형 인공지능 VR(Virtual Reality) 심폐소생술 교육 솔루션을 도입, 임직원 대상 심폐소생술 교육을 실시하고 있습니다.'
-                                    ],
-                                },
-                                {
-                                    id: 3,
-                                    type: 'type-default',
-                                    imageUrl: 'https://placehold.co/1760x480',
-                                    imageAlt: '1760x480',
-                                    title: '사무환경 모니터링',
-                                    content: [
-                                        'LG CNS는 임직원이 쾌적한 사무환경에서 근무할 수 있도록 사업장 내 실내 공기질 측정장비를 도입해 상시 모니터링 체계를 운영하고 있습니다.<br>또한 임직원의 육체적·정신적 건강을 위해 심리상담실, 마사지 서비스, 간호사 상담 등 건강 케어 프로그램을 운영하고 있으며, 간호사 자격을 갖춘 보건전문가의 철저한 관리를 통해 건강관리 전문성을 강화했습니다.'
-                                    ],
-                                },
-                                {
-                                    id: 4,
-                                    type: 'type-default',
-                                    imageUrl: 'https://placehold.co/1760x480',
-                                    imageAlt: '1760x480',
-                                    title: '산업안전 예방',
-                                    content: [
-                                        '전 사업장의 무재해·무사고 달성을 위해 전사 안전환경 진단체계를 구축하고 주기적으로 진단을 실시하고 있습니다.<br>이를 통해 사전에 안전환경 위험 요소를 발굴하고 제거하는 예방 체계를 정착시키고 있습니다.'
-                                    ],
-                                }
-                            ]
-                        %>
-                        <%- include('src/component/cmp_image_item_column.html', Object.assign({}, locals, {                             
-                            jsonData: imageItemColumnData4
-                        })) %>
+                            <%
+                                const imageItemData4 = [
+                                    {
+                                        id: 1,
+                                        typeClass: 'type-left',
+                                        imageUrl: 'https://placehold.co/708x760',
+                                        imageRound: true,
+                                        title: {
+                                            text : '산업안전보건위원회 운영',
+                                            size: 'font-head-lg',
+                                            class: 'font-medium color-text-default',
+                                        },
+                                        content: '<p class="mb-exc-spacing-16-12">직원들의 적극적인 참여를 통해 사업장의 안전과 보건 증진을 위해 산업안전보건위원회를 운영하고 있습니다.</p><p>위원회에서는 경영진과 사원대표가 분기별로 모여 사업장의 안전과 보건에 관한 중요사항을 의논하고 결정하고 있습니다.</p>',
+                                    }, 
+                                    {
+                                        id: 2,
+                                        typeClass: 'type-right',
+                                        imageUrl: 'https://placehold.co/708x760',
+                                        imageRound: true,
+                                        title: {
+                                            text : '코로나19 예방 대응체계 정착',
+                                            size: 'font-head-lg',
+                                            class: 'font-medium color-text-default',
+                                        },
+                                        content: '<p class="mb-exc-spacing-16-12">LG CNS는 2019년 감염병 위기대응 실무 매뉴얼을 마련하고 조직별 R&R(역할과 책임)과 비상 대응프로세스를 수립했습니다.</p><p>이를 바탕으로 코로나19 상황 발생 시 정부의 위기 대응 절차에 따라 현장 가이드 및 모니터링, 비상상황실 운영, 임직원과 협력사 직원의 재택근무와 자가격리 조치를 시행하는 등 체계적으로 대응할 수 있었습니다.</p>',
+                                    },
+                                    {
+                                        id: 3,
+                                        typeClass: 'type-left',
+                                        imageUrl: 'https://placehold.co/708x760',
+                                        imageRound: true,
+                                        title: {
+                                            text : '임직원 심폐소생술 교육',
+                                            size: 'font-head-lg',
+                                            class: 'font-medium color-text-default',
+                                        },
+                                        content: '<p class="mb-exc-spacing-16-12">LG CNS는 임직원의 안전보건 의식을 높이기 위해 임직원의 특성을 반영한 맟춤형 온·오프라인 안전보건교육을 실시하고 있습니다.</p><p>2020년 이후에는 심폐소생술 실습 체험장을 구축하여 운영하고 있습니다. 응급상황 발생 시 임직원들의 위기대응능력을 높이기 위해 자기주도 학습형 인공지능 VR(Virtual Reality) 심폐소생술 교육 솔루션을 도입, 임직원 대상 심폐소생술 교육을 실시하고 있습니다.</p>',
+                                    }, 
+                                    {
+                                        id: 4,
+                                        typeClass: 'type-right',
+                                        imageUrl: 'https://placehold.co/708x760',
+                                        imageRound: true,
+                                        title: {
+                                            text : '사무환경 모니터링',
+                                            size: 'font-head-lg',
+                                            class: 'font-medium color-text-default',
+                                        },
+                                        content: '<p class="mb-exc-spacing-16-12">LG CNS는 임직원이 쾌적한 사무환경에서 근무할 수 있도록 사업장 내 실내 공기질 측정장비를 도입해 상시 모니터링 체계를 운영하고 있습니다.</p><p>또한 임직원의 육체적·정신적 건강을 위해 심리상담실, 마사지 서비스, 간호사 상담 등 건강 케어 프로그램을 운영하고 있으며, 간호사 자격을 갖춘 보건전문가의 철저한 관리를 통해 건강관리 전문성을 강화했습니다.</p>',
+                                    },
+                                    {
+                                        id: 4,
+                                        typeClass: 'type-left',
+                                        imageUrl: 'https://placehold.co/708x760',
+                                        imageRound: true,
+                                        title: {
+                                            text : '산업안전 예방',
+                                            size: 'font-head-lg',
+                                            class: 'font-medium color-text-default',
+                                        },
+                                        content: '<p class="mb-exc-spacing-16-12">전 사업장의 무재해·무사고 달성을 위해 전사 안전환경 진단체계를 구축하고 주기적으로 진단을 실시하고 있습니다.</p><p>이를 통해 사전에 안전환경 위험 요소를 발굴하고 제거하는 예방 체계를 정착시키고 있습니다.</p>',
+                                    },
+                                ]
+                            %> 
+                            <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {                             
+                                itemCount: 7,
+                                jsonData: imageItemData4,
+                                marginVertical: 'mb-0',
+                            })) %>
                         </div>                                                                 
                     </div>
+                </div>
+                <div class="button__wrap align-right mb-5">
+                    <button type="button" class="btn-icon btn-top">
+                        <i class="ico icon-navigation-up-w19"></i>
+                        <span class="ir-text">최상위로 이동</span>
+                    </button>
                 </div>
             </div>
         </div>
