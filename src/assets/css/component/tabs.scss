@@ -116,6 +116,30 @@
             width: calc(100% / var(--tab-count));
         }
     }
+    &.cmp-tab--sub {
+        .tab__menu {
+            a {
+                font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);
+                line-height: calc(var(--typo-mo-line-height-body-md) / 16 * 1rem);
+                letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+                @media #{$min1280} {
+                    font-size: calc(var(--typo-pc-size-body-md) / 16 * 1rem);
+                    line-height: calc(var(--typo-pc-line-height-body-md) / 16 * 1rem);
+                }
+            }
+            li {
+                &.is-active {
+                    a {
+                        color: var(--colorCM-mode1-text-text-secondary);
+                        &::after {
+                            height: calc(2 / 16 * 1rem);
+                            background: var(--colorCM-mode1-text-text-secondary);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // .cmp-tab:has(.tab-content__wrap .tab__content .cmp-contents-title__wrap:first-child) .cmp-tab__header {
