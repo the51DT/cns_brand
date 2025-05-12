@@ -1257,6 +1257,12 @@ body {
         max-width: calc(1480 / 16 * 1rem);
         // padding: 0 calc(80 / 16 * 1rem); 
     }
+    &:has(.button__wrap--btn-top) {
+        padding-bottom: calc(20 / 16 * 1rem);
+        @media #{$min1280} {
+            padding-bottom: 0;
+        }
+    }
     &.wide {
         padding-left: 0;
         padding-right: 0;
@@ -1294,6 +1300,12 @@ body {
                         max-width: calc(1480 / 16 * 1rem);
                     }
                 }
+            }
+        }
+        .button__wrap--btn-top {
+            padding: 0 calc(20 / 16 * 1rem);
+            @media #{$min1280} {
+                padding: 0;
             }
         }
     }

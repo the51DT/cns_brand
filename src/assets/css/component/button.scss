@@ -38,6 +38,7 @@ $asset-paths: (
     align-items: center;
     gap: calc(12 / 16 * 1rem);
     width: 100%;
+    box-sizing: border-box;
 }
 .button__wrap:has(.btn.btn-text) {
     width: fit-content;
