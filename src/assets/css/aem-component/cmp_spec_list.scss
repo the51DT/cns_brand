@@ -10,6 +10,12 @@
                 padding-top: calc(24 / 16 * 1rem);
             }
         }
+        &-pc {
+            border-top: 0;
+            @media #{$min1280}{
+                border-top: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+            }
+        }
     }
     .spec-item {
         padding: calc(32 / 16 * 1rem) 0;

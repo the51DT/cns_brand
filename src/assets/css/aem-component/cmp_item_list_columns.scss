@@ -3,20 +3,20 @@
     gap: $gap-margin;
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: 1fr;
+    // grid-auto-rows: 1fr;
     @media #{$min1280} {
         grid-template-columns: 1fr 1fr 1fr;
     }
     &:has(.item-wrap.type-border-bottom) {
         @media #{$phone} {
-            grid-auto-rows: auto;         
+            // grid-auto-rows: auto;         
         }
     }
     &:has(.type-border-left) {
         gap: 0;
-        grid-auto-rows: auto; 
+        // grid-auto-rows: auto; 
         @media #{$min1280} {
-            grid-auto-rows: 1fr;
+            // grid-auto-rows: 1fr;
             row-gap: calc(48 / 16 * 1rem);
         }
     }
