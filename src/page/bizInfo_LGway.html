@@ -66,7 +66,7 @@
                                         <i class="btn-glide__icon"></i>
                                     </button>
                                 </div>
-                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="0%">
+                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="40%">
                                     <img src="../assets/image/sub/bg_lgway_sec02.png" alt="">
                                 </div>
                             </div>
@@ -184,7 +184,7 @@
                         waySwiper.slides[(waySwiper.activeIndex)].classList.add("is-active");
                         if(waySwiper.activeIndex > 0) {
                             parallaxPagination.classList.add("is-active");
-                            waySwiper.slides[(waySwiper.activeIndex)].querySelector(".bizinfo-LG-way__section__img").style.bottom = `-${(waySwiper.activeIndex + 1)  * 20}%`;
+                            // waySwiper.slides[(waySwiper.activeIndex)].querySelector(".bizinfo-LG-way__section__img").style.bottom = `-${(waySwiper.activeIndex + 1)  * 20}%`;
                             parallaxPaginationItem[waySwiper.activeIndex - 1].classList.add("is-active");
                         } else {
                             parallaxPagination.classList.remove("is-active");
@@ -213,7 +213,6 @@
                 waySwiper.slideNext();
             });
         })
-
     </script>
 </body>
 </html>
