@@ -15,13 +15,13 @@
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="swiper LG-way-swiper">
-                <div class="parallax-bg" data-swiper-parallax-y="-300">
+                <!-- <div class="parallax-bg" data-swiper-parallax-y="-300">
                     <div class="full-sec__img full-sec__img--01"></div>
                     <div class="full-sec__img full-sec__img--02"></div>
                     <div class="full-sec__img full-sec__img--03 is-active"></div>
-                </div>
+                </div> -->
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide is-active">
                         <div class="bizinfo-LG-way__section full-sec bizinfo-LG-way__section--01">
                             <div class="inner-wrap">
                                 <div class="bizinfo-LG-way__textarea">
@@ -36,10 +36,13 @@
                                         ‘일등LG’를 달성하자는 것입니다.
                                     </p>
                                 </div>
+                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="0">
+                                    <img src="../assets/image/sub/bg_lgway_sec01.png" alt="">
+                                </div>
                             </div>
                             <div class="button__wrap button__wrap--scroll-down">
                                 <button type="button" class="">
-                                    <i class="ico icon-navigation-down-wh48"></i>
+                                    <i class="ico icon-navigation-down-gr100"></i>
                                     <span class="ir-text">다음 화면 보기</span>
                                 </button>
                             </div>
@@ -56,12 +59,15 @@
                                         시장에서 인정받으며 시장을 리드하는<br/>
                                         선도기업이 되는 것 입니다.
                                     </p>
-                                    <div class="button__wrap">
-                                        <button type="button" class="popupBtn">
-                                            <i class="ico icon-plus-wh24"></i>
-                                            <span class="ir-text">LG 비전</span>
-                                        </button> 
-                                    </div>
+                                    <button type="button" class="popupBtn btn-glide">
+                                        <span class="btn-glide__inner">
+                                            <span class="btn-glide__text">LG 비전</span>
+                                        </span>
+                                        <i class="btn-glide__icon"></i>
+                                    </button>
+                                </div>
+                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="0%">
+                                    <img src="../assets/image/sub/bg_lgway_sec02.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -77,12 +83,15 @@
                                         꾸준히 실력을 배양해 정정당당하게<br/>
                                         승부하는 LG만의 행동방식 입니다.
                                     </p>
-                                    <div class="button__wrap">
-                                        <button type="button" class="popupBtn">
-                                            <i class="ico icon-plus-wh24"></i>
-                                            <span class="ir-text">정도경영</span>
-                                        </button>
-                                    </div>
+                                    <button type="button" class="popupBtn btn-glide">
+                                        <span class="btn-glide__inner">
+                                            <span class="btn-glide__text">행동방식</span>
+                                        </span>
+                                        <i class="btn-glide__icon"></i>
+                                    </button>
+                                </div>
+                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="60%">
+                                    <img src="../assets/image/sub/bg_lgway_sec03.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -96,12 +105,15 @@
                                     <p class="font-body-lg font-medium">
                                         기업의 존립근거이자 회사운영의 원칙입니다.
                                     </p>
-                                    <div class="button__wrap">
-                                        <button type="button" class="popupBtn">
-                                            <i class="ico icon-plus-wh24"></i>
-                                            <span class="ir-text">경영이념</span>
-                                        </button>
-                                    </div>
+                                    <button type="button" class="popupBtn btn-glide">
+                                        <span class="btn-glide__inner">
+                                            <span class="btn-glide__text">경영이념</span>
+                                        </span>
+                                        <i class="btn-glide__icon"></i>
+                                    </button>
+                                </div>
+                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="80%">
+                                    <img src="../assets/image/sub/bg_lgway_sec04.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -109,8 +121,8 @@
                 </div>
                 <!-- 내비 -->
                 <div class="full-sec__pagination">
-                    <div class="full-sec__pagination--item font-caption-xl is-active">LG 비전</div>
-                    <div class="full-sec__pagination--item font-caption-xl">행동방식</div>
+                    <div class="full-sec__pagination--item font-caption-xl">LG 비전</div>
+                    <div class="full-sec__pagination--item font-caption-xl">행동방식</div> 
                     <div class="full-sec__pagination--item font-caption-xl">경영이념</div>
                 </div>
                 <!-- //내비 -->
@@ -142,45 +154,66 @@
     <script src="/assets/bundle/swiper-bundle.min.js"></script>
     <script src="/assets/js/initializeSwipers.js"></script>
     <script>      
-        const parallaxBg = document.querySelector(".parallax-bg");
-
-        const swiperOptions = [
-            { 
-                direction: 'vertical',
-                followFinger: false,
-                slidesPerView: 1,
-                loop: false,
-                mousewheel: true,
-                clickable: true,
-                speed: 1000,
-                parallax: true,
-                pagination: {
-                    el: '.swiper-pagination',
+        const parallaxPagination = document.querySelector(".full-sec__pagination");
+        const parallaxPaginationItem = document.querySelectorAll(".full-sec__pagination .full-sec__pagination--item");
+        waySwiper = new Swiper(".LG-way-swiper", {
+            direction: 'vertical',
+            followFinger: false,
+            slidesPerView: 1,
+            loop: false,
+            mousewheel: true,
+            clickable: true,
+            speed: 800,
+            parallax: true,
+            pagination: {
+                el: '.swiper-pagination',
                     clickable: true,
                 },
-                on: {
-                    slideChange: function() {
-                        setTimeout(function () {
-                        swiper.params.touchReleaseOnEdges = false;  
-                        swiper.params.mousewheel.releaseOnEdges = false;
+            on: {
+                slideChange: function() {
+                    setTimeout(function () {
+                        waySwiper.params.touchReleaseOnEdges = false;  
+                        waySwiper.params.mousewheel.releaseOnEdges = false;
+                        
+                        parallaxPaginationItem.forEach(function(item) {
+                            item.classList.remove("is-active");                                
                         });
-                    },
-                    reachEnd: function() {
-                        setTimeout(function () {
-                            swiper.params.touchReleaseOnEdges = true;
-                            swiper.params.mousewheel.releaseOnEdges = true;
-                        }, 500);
-                    },
-                    reachBeginning: function() {
-                        setTimeout(function () {
-                            swiper.params.touchReleaseOnEdges = true;
-                            swiper.params.mousewheel.releaseOnEdges = true;
-                        }, 500);
-                    }
+                        waySwiper.slides.forEach(function(item) {
+                            item.classList.remove("is-active");
+                        });
+                        waySwiper.slides[(waySwiper.activeIndex)].classList.add("is-active");
+                        if(waySwiper.activeIndex > 0) {
+                            parallaxPagination.classList.add("is-active");
+                            waySwiper.slides[(waySwiper.activeIndex)].querySelector(".bizinfo-LG-way__section__img").style.bottom = `-${(waySwiper.activeIndex + 1)  * 20}%`;
+                            parallaxPaginationItem[waySwiper.activeIndex - 1].classList.add("is-active");
+                        } else {
+                            parallaxPagination.classList.remove("is-active");
+                        }
+                        glideText();
+                    });
+                },
+                reachEnd: function() {
+                    setTimeout(function () {
+                        waySwiper.params.touchReleaseOnEdges = true;
+                        waySwiper.params.mousewheel.releaseOnEdges = true;
+                    }, 500);
+                },
+                reachBeginning: function() {
+                    setTimeout(function () {
+                        waySwiper.params.touchReleaseOnEdges = true;
+                        waySwiper.params.mousewheel.releaseOnEdges = true;
+                    }, 500);
                 }
-            },
-        ];
-        initializeSwipers(swiperOptions);
+            }
+        });
+
+        /*실행*/
+        window.addEventListener('load', () => {            
+            document.querySelector('.button__wrap--scroll-down button').addEventListener('click', function() {
+                waySwiper.slideNext();
+            });
+        })
+
     </script>
 </body>
 </html>

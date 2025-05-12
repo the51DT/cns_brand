@@ -601,27 +601,29 @@ const inputSearch  = (target) => {
 }
 //버튼 스타일 스크립트
 const glideText = (() => {
-    const text = document.querySelector('.btn-glide')
+    const text = document.querySelectorAll('.btn-glide');
     if (!text) return
 
-    const textInner = text.querySelector('.btn-glide__inner')
-    const textInnerText = textInner.querySelector('.btn-glide__text')
-    const textInnerWidth = textInnerText.offsetWidth
+    text.forEach((text) => {
+        const textInner = text.querySelector('.btn-glide__inner')
+        const textInnerText = textInner.querySelector('.btn-glide__text')
+        const textInnerWidth = textInnerText.offsetWidth
 
-    const init = () => {
-        textInner.style.width = `0px`
+        const init = () => {
+            textInner.style.width = `0px`
 
-        setTimeout(() => {
-            animate(true)
-        }, 300)
-    }
+            setTimeout(() => {
+                animate(true)        
+            }, 500)
+        }
 
-    const animate = (isVisible) => {
-        textInner.style.width = `${isVisible? textInnerWidth : 0}px`
-        text.classList.toggle('btn-glide--active', isVisible)
-    }
+        const animate = (isVisible) => {
+            textInner.style.width = `${isVisible? textInnerWidth : 0}px`
+            text.classList.toggle('btn-glide--active', isVisible)
+        }
 
-    init() // 실행
+        init() // 실행
+    });
 })
 // document.addEventListener("DOMContentLoaded", sidebarCmp);
 document.addEventListener("DOMContentLoaded", () => {

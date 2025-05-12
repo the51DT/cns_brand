@@ -107,6 +107,9 @@ $fileType: "svg";
     &.icon-navigation-down-wh48{
         @include iconFile(48,48,'icon-navigation-down-wh48');
     } 
+    &.icon-navigation-down-gr100{
+        @include iconFile(100,100,'icon-navigation-down-gr100');
+    } 
     &.icon-navigation-right-bl24 {
         @include iconFile(24,24,'icon_navigation_right_bl24');
     }
