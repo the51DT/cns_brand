@@ -1,18 +1,4 @@
 .bizinfo- {
-    // .bizInfo_enviroMgmt
-    &enviro-mgmt {
-        .cmp_image-item-2col,
-        .cmp_image-item-column:not(:last-child) {
-            margin-bottom: calc(200 / 16 * 1rem);
-            @media #{$pcMiddle} {
-                margin-bottom: calc(160 / 16 * 1rem);
-            }
-            @media #{$phone} {
-                margin-bottom: calc(80 / 16 * 1rem);
-            }
-        }
-    }
-
     &ceo {
         &__container {
             display: flex;
