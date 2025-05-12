@@ -701,17 +701,13 @@
                     position: relative;
                     &__section__img {
                         position: absolute;
-                        top: calc(60 / 16 * 1rem);
                         right: calc(240 / 16 * 1rem);
+                        transform: translateY(999%);
                         width: 50%;
                         @media #{$phone}, #{$tablet} {
                             position: static;
                             width: 100%;
                         }
-                        // img {
-                        //     width: calc(837 / 16 * 1rem);
-                        //     height: calc(759 / 16 * 1rem);
-                        // }
                     }
                     &__textarea {
                         width: 100%;
@@ -732,18 +728,6 @@
                         }
                     }
                 }
-                // &:first-child {
-                //     .bizinfo-LG-way__section__img {
-                //         img {
-                //             width: calc(837 / 16 * 1rem);
-                //             height: calc(759 / 16 * 1rem);
-                //             @media #{$phone} {
-                //                 width: calc(100%);
-                //                 height: calc(100%);
-                //             }
-                //         }
-                //     }
-                // }
                 // &:not(:first-child) {
                 //     .bizinfo-LG-way {
                 //         position: relative;
@@ -765,14 +749,18 @@
                 //             margin-right: auto;
                 //         }
                 //     }
-                // }               
+                // } 
                 .bizinfo-LG-way__section__img {
                     opacity: 0;
-                    transition: opacity 2s ease-in;
+                    transition: 1s ease-in-out;
                 }
                 &.is-active {                    
                     .bizinfo-LG-way__section__img {
-                        opacity: 1;                        
+                        opacity: 1;
+                        transform: translateY(0);
+                        @media #{$phone}, #{$tablet} {                            
+                            transform: translateY(0);
+                        }
                     }
                 }
             }            
