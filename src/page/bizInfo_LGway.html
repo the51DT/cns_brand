@@ -15,11 +15,15 @@
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="swiper LG-way-swiper">
-                <!-- <div class="parallax-bg" data-swiper-parallax-y="-300">
-                    <div class="full-sec__img full-sec__img--01"></div>
-                    <div class="full-sec__img full-sec__img--02"></div>
-                    <div class="full-sec__img full-sec__img--03 is-active"></div>
-                </div> -->
+                
+                <div class="parallax-bg">
+                    <div class="inner-wrap parallax-bg-wrap">
+                        <div class="full-sec__img full-sec__img--01"></div>
+                        <div class="full-sec__img full-sec__img--02"></div>
+                        <div class="full-sec__img full-sec__img--03"></div>
+                    </div>
+                </div>
+                
                 <div class="swiper-wrapper">
                     <div class="swiper-slide is-active">
                         <div class="bizinfo-LG-way__section full-sec bizinfo-LG-way__section--01">
@@ -27,12 +31,12 @@
                                 <div class="bizinfo-LG-way__textarea">
                                     <h2 class="font-head-xl font-bold">LG Way</h2>
                                     <p class="font-head-sm font-medium">
-                                        LG 고유의 경영철학이자, 전 임직원이 지키고<br/>
-                                        실천해야 할 사고와 행동의 기반입니다.
+                                        LG 고유의 경영철학이자, 전 임직원이<br class="display-mo"> 지키고<br class="display-pc">
+                                        실천해야 할 사고와 행동의<br class="display-mo"> 기반입니다.
                                     </p>
                                     <p class="font-body-sm">
-                                        경영이념인 ‘고객을 위한 가치창조’와 ‘인간존중의 경영’을<br/>
-                                        LG의 행동방식인 ‘정도경영’으로 실천함으로써 LG의 비전인<br/>
+                                        경영이념인 ‘고객을 위한 가치창조’와 ‘인간존중의 경영’을<br class="display-pc">
+                                        LG의 행동방식인 ‘정도경영’으로 실천함으로써 LG의 비전인<br class="display-pc">
                                         ‘일등LG’를 달성하자는 것입니다.
                                     </p>
                                 </div>
@@ -55,20 +59,16 @@
                                 <div class="bizinfo-LG-way__textarea">
                                     <h2 class="font-head-lg font-bold">일등 LG</h2>
                                     <p class="font-body-lg font-medium">
-                                        LG의 궁극적인 지향점으로<br/>
-                                        시장에서 인정받으며 시장을 리드하는<br/>
-                                        선도기업이 되는 것 입니다.
+                                        LG의 궁극적인 지향점으로<br class="display-pc">
+                                        시장에서<br class="display-mo"> 인정받으며 시장을 리드하는<br class="display-pc">
+                                        선도기업이<br class="display-mo"> 되는 것 입니다.
                                     </p>
-                                    <button type="button" class="popupBtn btn-glide">
-
+                                    <button type="button" class="popupBtn btn-glide" modal-id="modal-way01" onclick="openModal(event)">
                                         <span class="btn-glide__inner">
                                             <span class="btn-glide__text">LG 비전</span>
                                         </span>
                                         <i class="btn-glide__icon"></i>
                                     </button>
-                                </div>
-                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="50">
-                                    <img src="../assets/image/sub/bg_lgway_sec02.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -80,19 +80,16 @@
                                 <div class="bizinfo-LG-way__textarea">
                                     <h2 class="font-head-lg font-bold">정도경영</h2>
                                     <p class="font-body-lg font-medium">
-                                        윤리경영을 기반으로<br/>
-                                        꾸준히 실력을 배양해 정정당당하게<br/>
+                                        윤리경영을 기반으로<br>
+                                        꾸준히 실력을 배양해 정정당당하게<br>
                                         승부하는 LG만의 행동방식 입니다.
                                     </p>
-                                    <button type="button" class="popupBtn btn-glide">
+                                    <button type="button" class="popupBtn btn-glide" modal-id="modal-way02" onclick="openModal(event)">
                                         <span class="btn-glide__inner">
                                             <span class="btn-glide__text">행동방식</span>
                                         </span>
                                         <i class="btn-glide__icon"></i>
                                     </button>
-                                </div>
-                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="50">
-                                    <img src="../assets/image/sub/bg_lgway_sec03.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -106,15 +103,12 @@
                                     <p class="font-body-lg font-medium">
                                         기업의 존립근거이자 회사운영의 원칙입니다.
                                     </p>
-                                    <button type="button" class="popupBtn btn-glide">
+                                    <button type="button" class="popupBtn btn-glide" modal-id="modal-way03" onclick="openModal(event)">
                                         <span class="btn-glide__inner">
                                             <span class="btn-glide__text">경영이념</span>
                                         </span>
                                         <i class="btn-glide__icon"></i>
                                     </button>
-                                </div>
-                                <div class="bizinfo-LG-way__section__img" data-swiper-parallax-y="50">
-                                    <img src="../assets/image/sub/bg_lgway_sec04.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -143,10 +137,226 @@
             type : 'transparent-color-bl',
         }))%>
     </div>
+
+    <!-- [Start] modal-way01 : pc-size: large & full , mo-size: full -->
+    <div class="cmp-modal bizinfo-modal-way" id="modal-way01">
+        <div class="modal modal--type-large modal--type-full-pc">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <div class="modal__content">
+                        <div class="modal__scroll">
+                            <div class="modal__body inner-wrap">
+                                <div class="modal__body--content">
+                                    <div class="modal__body--content__title">
+                                        <h2 class="font-head-lg font-bold">LG 비전</h2>
+                                        <p class="font-body-lg font-medium">
+                                             일등LG는 LG의 궁극적인 지향점으로 시장에서<br class="display-pc"> 인정받으며<br class="display-pc"> 시장을 리드하는 선도기업이 되는 것을 의미합니다.
+                                        </p>
+                                    </div>
+                                    <div class="modal__body--content__detail">
+                                        <ul class="modal__body--content__detail__list">
+                                            <li class="modal__body--content__detail__list__item">                                                    
+                                                <h3 class="font-head-md font-bold">고객들이<br> 신뢰하는 LG</h3>
+                                                <p class="font-body-md">
+                                                    탁월한 품질과 브랜드 가치로<br class="display-mo"> 고객을 감동시켜<br> 고객 스스로 LG가 최고라고<br class="display-mo"> 인정하게 만드는 것
+                                                </p>
+                                            </li>
+                                            <li class="modal__body--content__detail__list__item">                                                    
+                                                <h3 class="font-head-md font-bold">인재들이<br> 선망하는 LG</h3>
+                                                <p class="font-body-md">
+                                                    최고의 인재가 모여 주인의식을 가지고<br class="display-mo"> 신명나게 일할 수 있는<br> 최고의 직장이 되는 것
+                                                </p>
+                                            </li>                                            
+                                        </ul>
+                                        <ul class="modal__body--content__detail__list">
+                                            <li class="modal__body--content__detail__list__item">                                                    
+                                                <h3 class="font-head-md font-bold">투자자들에게<br> 가장 매력적인 LG</h3>
+                                                <p class="font-body-md">
+                                                    높은 투자수익률로<br class="display-mo"> 투자자들에게 가장 매력적인<br> 가치를 지닌 회사로 인정받는 것
+                                                </p>
+                                            </li>
+                                            <li class="modal__body--content__detail__list__item">                                                    
+                                                <h3 class="font-head-md font-bold">경쟁사들이 두려워하면서도<br> 배우고 싶어하는 LG</h3>
+                                                <p class="font-body-md">
+                                                    일등 경영을 통해 탁월한 성과를 창출함으로써<br class="display-mo"> 경쟁사들이 두려워하면서도<br> 배우고 싶어하는 기업이 되는 것
+                                                </p>
+                                            </li>                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__close">
+                        <div class="button__wrap">
+                            <button type="button" class="btn" onclick="closeModal(event)">
+                                <i class="ico icon-close-wh24"></i>
+                                <span class="ir-text">모달 닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal-way01 -->
+
+    <!-- [Start] modal-way02 : pc-size: large & full , mo-size: full -->
+    <div class="cmp-modal bizinfo-modal-way" id="modal-way02">
+        <div class="modal modal--type-large modal--type-full-pc">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <div class="modal__content">
+                        <div class="modal__scroll">
+                            <div class="modal__body inner-wrap">
+                                <div class="modal__body--content">
+                                    <div class="modal__body--content__title">
+                                        <h2 class="font-head-lg font-bold">행동방식</h2>
+                                        <p class="font-body-lg font-medium">
+                                            정도경영은 윤리경영을 기반으로 꾸준히 실력을 배양해<br class="display-pc"> 정정당당하게 승부하는 LG만의 행동방식입니다.
+                                        </p>
+                                    </div>
+                                    <div class="modal__body--content__detail diagram-type">
+                                        <ul class="modal__body--content__detail__list">
+                                            <li class="modal__body--content__detail__list__item">                                                
+                                                <h3 class="font-head-md font-bold">정직</h3>
+                                                <p class="font-body-md">
+                                                    원칙과 기준에 따라<br> 투명하게 일한다.
+                                                </p>
+                                            </li>
+                                            <li class="modal__body--content__detail__list__item">
+                                                <h3 class="font-head-md font-bold">공정한 대우</h3>
+                                                <p class="font-body-md">
+                                                    모든 거래관계에서 공평하게<br> 기회를 제공하고 공정하게<br class="display-mo"> 대우한다.
+                                                </p>
+                                            </li>
+                                            <li class="modal__body--content__detail__list__item">
+                                                <h3 class="font-head-md font-bold">실력을 통한 정당한 경쟁</h3>
+                                                <p class="font-body-md">
+                                                    정정당당하게 경쟁하여<br> 이길 수 있는 실력을 키운다.
+                                                </p>
+                                            </li>
+                                        </ul>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__close">
+                        <div class="button__wrap">
+                            <button type="button" class="btn" onclick="closeModal(event)">
+                                <i class="ico icon-close-wh24"></i>
+                                <span class="ir-text">모달 닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal-way02 -->
+
+    <!-- [Start] modal-way03 : pc-size: large & full , mo-size: full -->
+    <div class="cmp-modal bizinfo-modal-way" id="modal-way03">
+        <div class="modal modal--type-large modal--type-full-pc">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <div class="modal__content">
+                        <div class="modal__scroll">
+                            <div class="modal__body inner-wrap">
+                                <div class="modal__body--content">
+                                    <div class="modal__body--content__title">
+                                        <h2 class="font-head-lg font-bold">경영이념</h2>
+                                        <p class="font-body-lg font-medium">
+                                            LG의 경영이념은 기업활동의 목적인 고객을 위한 가치창조와<br class="display-pc">회사 운영 원칙인 인간존중의 경영 입니다.
+                                        </p>
+                                    </div>
+                                    <div class="modal__body--content__detail card-type">
+                                        <h2 class="font-head-md font-bold">1. 고객을 위한 가치창조</h2>
+                                        <ul class="modal__body--content__detail__list">                                            
+                                            <li class="modal__body--content__detail__list__item">                                                    
+                                                <h3 class="font-head-sm font-bold">고객중시</h3>
+                                                <div class="description">
+                                                    <p class="font-body-sm">- 경영의 출발점이 되는 고객을 최우선으로 생각한다.</p>
+                                                    <p class="font-body-sm">- 항상 최종 소비자 관점을 중시하여 판단하고 평가한다.</p>
+                                                </div>
+                                            </li>
+                                            <li class="modal__body--content__detail__list__item">                                                    
+                                                <h3 class="font-head-sm font-bold">실질적 가치제공</h3>
+                                                <div class="description">
+                                                    <p class="font-body-sm">- 고객의 잠재적 요구까지도 한 발 앞서 찾아낸다.</p>
+                                                    <p class="font-body-sm">- 고객의 기대를 뛰어넘는 최고의 제품과 서비스를 제공한다.</p>
+                                                </div>
+                                            </li>
+                                            <li class="modal__body--content__detail__list__item">
+                                                <h3 class="font-head-sm font-bold">혁신을 통한 창조</h3>
+                                                <div class="description">
+                                                    <p class="font-body-sm">- 기존의 틀을 깨는 차별화된 아이디어를 창출한다.</p>
+                                                    <p class="font-body-sm">- 끊임없이 더 나은 방식을 찾아 실행한다.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="modal__body--content__detail__list__group">                                            
+                                            <h2 class="font-head-md font-bold">2. 인간존중의 경영</h2>
+                                            <ul class="modal__body--content__detail__list">
+                                                <li class="modal__body--content__detail__list__item">                                                    
+                                                    <h3 class="font-head-sm font-bold">창의&middot;자율</h3>
+                                                    <div class="description">
+                                                        <p class="font-body-sm">- 고정관념에서 탈피하여 새로운 생각과 시도를 추구한다.</p>
+                                                        <p class="font-body-sm">- 자기 책임과 권한에 따라 주인의식을 가지고 일한다.</p>
+                                                    </div>
+                                                </li>
+                                                <li class="modal__body--content__detail__list__item">                                                    
+                                                    <h3 class="font-head-sm font-bold">인간중시</h3>
+                                                    <div class="description">
+                                                        <p class="font-body-sm">- 개개인의 인격과 다양성을 존중한다.</p>
+                                                        <p class="font-body-sm">- 고객가치 창출의 원천인 구성원을 가장 중요한 자산으로 여긴다.</p>
+                                                    </div>
+                                                </li>                                            
+                                            </ul>
+                                            <ul class="modal__body--content__detail__list">
+                                                <li class="modal__body--content__detail__list__item">                                                    
+                                                    <h3 class="font-head-sm font-bold">능력개발 및 발휘 극대화</h3>
+                                                    <div class="description">
+                                                        <p class="font-body-sm">- 스스로 세계 최고가 되겠다는 신념으로 일하고 능력을 개발한다.</p>
+                                                        <p class="font-body-sm">- 개개인의 잠재력이 최대한 발휘될 수 있도록 기회를 제공한다.</p>
+                                                    </div>
+                                                </li>
+                                                <li class="modal__body--content__detail__list__item">
+                                                    <h3 class="font-head-sm font-bold">성과주의</h3>
+                                                    <div class="description">
+                                                        <p class="font-body-sm">- 도전적인 목표를 세우고 지속적인 성과 창출에 노력한다.</p>
+                                                        <p class="font-body-sm">- 능력과 장단기 성과에 따라 공정하게 평가하고 보상한다.</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__close">
+                        <div class="button__wrap">
+                            <button type="button" class="btn" onclick="closeModal(event)">
+                                <i class="ico icon-close-wh24"></i>
+                                <span class="ir-text">모달 닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal-way03 -->
     <script type="module" src="/src/main.js"></script>
     <script src="/assets/bundle/swiper-bundle.min.js"></script>
     <script src="/assets/js/initializeSwipers.js"></script>
     <script>      
+        const parallaxBg = document.querySelectorAll(".parallax-bg .full-sec__img");
         const parallaxPagination = document.querySelector(".full-sec__pagination");
         const parallaxPaginationItem = document.querySelectorAll(".full-sec__pagination .full-sec__pagination--item");
         
@@ -158,7 +368,6 @@
             mousewheel: true,
             clickable: true,
             speed: 800,
-            // parallax: true,
             pagination: {
                 el: '.swiper-pagination',
                     clickable: true,
@@ -172,6 +381,9 @@
                         parallaxPaginationItem.forEach(function(item) {
                             item.classList.remove("is-active");
                         });
+                        parallaxBg.forEach(function(item) {
+                            item.classList.remove("is-active");
+                        });
                         waySwiper.slides.forEach(function(item) {
                             item.classList.remove("is-active");
                         });
@@ -181,6 +393,7 @@
                             // let pageData = waySwiper.slides[(waySwiper.activeIndex)].querySelector(".bizinfo-LG-way__section__img").getAttribute("data-swiper-parallax-y");
                             // waySwiper.slides[(waySwiper.activeIndex)].querySelector(".bizinfo-LG-way__section__img").style.transform = `translateY(${pageData}%)`; //${(waySwiper.activeIndex + 1)  * pageData}%
                             parallaxPaginationItem[waySwiper.activeIndex - 1].classList.add("is-active");
+                            parallaxBg[waySwiper.activeIndex - 1].classList.add("is-active");
                         } else {
                             parallaxPagination.classList.remove("is-active");
                         }

@@ -578,7 +578,7 @@
         }
     }
 
-    // LGWay 페이지 마크업을 위한 임시 스타일 적용
+    // LGWay 관련 스타일
     &LG-way {
         background-color: #ffffff;
         color: #121212;
@@ -589,7 +589,11 @@
                 padding-top: calc((var(--spacing-mode1-vertical5-x-l)) / 16 * 1rem);
                 align-items: flex-start;
             }
-            &--01 {                                
+            &--01 {
+                @media #{$phone} {
+                    padding-top: calc(56 / 16 * 1rem);
+                    align-items: flex-start;
+                }
                 .inner-wrap {
                     z-index: 10;
                 }  
@@ -723,19 +727,46 @@
         }
         .LG-way-swiper {
             height: 100vh;
-            .swiper-slide {
-                .bizinfo-LG-way {
-                    position: relative;
-                    &__section__img {
+            .parallax-bg {
+                &-wrap {
+                    .full-sec__img {                        
+                        width: calc(1480 / 16 * 1rem);
+                        height: 100%;
+                        margin-left: auto;
                         position: absolute;
-                        right: calc(240 / 16 * 1rem);
-                        transform: translateY(999%);
-                        width: 50%;
+                        top: 0;
+                        left: 0;
+                        right: calc(200 / 16 * 1rem);
+                        bottom: 0;                        
+                        background-size: contain;
+                        background-position: right center; 
+                        background-repeat: no-repeat;
+                        opacity: 0;
                         @media #{$phone}, #{$tablet} {
-                            position: static;
                             width: 100%;
+                            display: block;
+                            right: 0;
+                            transform: translateY(calc(80 / 16 * 1rem))
+                        }
+                        &.is-active {
+                            opacity: 1;
+                            transition: opacity 1s ease-in;
+
+                        }
+                        &--01 {
+                            background-image: url(#{$basePath}image/sub/bg_lgway_sec02.png);
+                        }
+                        &--02 {
+                            background-image: url(#{$basePath}image/sub/bg_lgway_sec03.png);
+                        }
+                        &--03 {
+                            background-image: url(#{$basePath}image/sub/bg_lgway_sec04.png);
                         }
                     }
+                }
+            }
+            .swiper-slide {
+                .bizinfo-LG-way {                    
                     &__textarea {
                         width: 100%;
                         margin-right: auto;
@@ -746,51 +777,210 @@
                         position: static;
                         width: 100%;
                         height: 100%;
+                        @media #{$phone} {
+                            margin-top: calc(40 / 16 * 1rem);
+                        }
                         img {
-                            min-width: calc(837 / 16 * 1rem);
+                            // min-width: calc(837 / 16 * 1rem);
                             height: auto;
                             @media #{$phone}, #{$tablet} {                            
                                 min-width: 100%;
                             }
                         }
                     }
-                }
-                // &:not(:first-child) {
-                //     .bizinfo-LG-way {
-                //         position: relative;
-                //         &__section__img {
-                //             position: absolute;
-                //             top: 0;
-                //             bottom: 0;
-                //             right: 120px;
-                //             width: 50%;
-
-                //             @media #{$phone} {
-                //                 position: static;
-                //                 width: 100%;
-                //             }
-                            
-                //         }
-                //         &__textarea {
-                //             width: 100%;
-                //             margin-right: auto;
-                //         }
-                //     }
-                // } 
-                .bizinfo-LG-way__section__img {
-                    opacity: 0;
-                    transition: 1s ease-in-out;
-                }
-                &.is-active {                    
-                    .bizinfo-LG-way__section__img {
-                        opacity: 1;
-                        transform: translateY(0);
-                        @media #{$phone}, #{$tablet} {                            
-                            transform: translateY(0);
+                }                
+            }            
+        }
+    }
+    // LGWay modal 관련 스타일
+    &modal-way {
+        .modal {
+            &__container {
+                background-image: url(#{$basePath}image/sub/bg_lgway_modal_img.png);
+                color: #fff;
+            }
+            &__body {
+                &--content {
+                    &__title {
+                        h2 {
+                            margin-bottom: 1rem;
+                        }
+                        &::after {
+                            content: "";
+                            width: 100%;
+                            height: calc(2 / 16 * 1rem);
+                            display: block;
+                            background-color: #F0F1F3;
+                            opacity: 0.4;
+                            margin: calc(48 / 16 * 1rem) 0;
+                            @media #{$min1280} {
+                                margin: calc(80 / 16 * 1rem) 0;
+                            }
+                        }
+                    }
+                    &__detail {
+                        h2 {
+                            margin-bottom: calc(24 / 16 * 1rem);
+                            @media #{$min1280} {
+                                margin-bottom: calc(32 / 16 * 1rem);
+                            }
+                        }
+                        &__list {                         
+                            padding-bottom: 0;
+                            @media #{$min1280} {
+                                display: flex;
+                                gap: calc(24 / 16 * 1rem);                                
+                                padding-bottom: calc(80 / 16 * 1rem);
+                            }
+                            &__item {
+                                text-align: center;
+                                width: 100%;
+                                padding-bottom: calc(40 / 16 * 1rem);
+                                @media #{$min1280} {
+                                    text-align: left;
+                                    flex-grow: 1;
+                                    width: calc(100% / 2 - calc(24 / 16 * 1rem));
+                                    padding-bottom: 0;
+                                }
+                                p {
+                                    &:before {
+                                        content: "";
+                                        width: calc(40 / 16 * 1rem);
+                                        height: calc(3 / 16 * 1rem);
+                                        display: block;
+                                        background-color: #AFAFAF;
+                                        margin: calc(24 / 16 * 1rem) auto;
+                                        @media #{$min1280} {
+                                            margin: calc(24 / 16 * 1rem) 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:not(.card-type) {
+                            @media #{$min1280} {
+                                padding-top: calc(36 / 16 * 1rem);
+                            }
+                        }
+                        &.card-type {
+                            // pc
+                            @media #{$min1280} {
+                                &__item {
+                                    width: calc(100% / 3 - calc(16 / 16 * 1rem));
+                                    margin-bottom: 0;
+                                }
+                                .modal__body--content__detail__list {
+                                    &__group {
+                                        .modal__body--content__detail__list { 
+                                            padding-bottom: calc(16 / 16 * 1rem);
+                                        }
+                                    }
+                                }
+                            }
+                            .modal__body--content__detail__list {
+                                gap: calc(16 / 16 * 1rem);
+                                &__item {
+                                    width: 100%;
+                                    padding: calc(28 / 16 * 1rem);
+                                    border-radius: calc(20 / 16 * 1rem);
+                                    background:rgba(255, 255, 255, 0.08);
+                                    backdrop-filter: blur(calc(40 / 16 * 1rem));
+                                    margin-bottom: calc(16 / 16 * 1rem);
+                                    text-align: left;
+                                    p {
+                                        &:before {
+                                            display: none;
+                                        }
+                                    }
+                                    .description {
+                                        margin-top: calc(16 / 16 * 1rem);
+                                        p:not(:last-child) {
+                                            margin-bottom: calc(6 / 16 * 1rem);
+                                        }
+                                    }                                
+                                }
+                                &__group {
+                                    margin-top: calc(48 / 16 * 1rem);
+                                }
+                            }
+                        }
+                        &.diagram-type {
+                            display: flex;
+                            justify-content: center;
+                            .modal__body--content__detail__list {
+                                gap: 0;                                
+                                display: flex;
+                                flex-direction: column;
+                                max-width: 100%;                               
+                                &__item {
+                                    padding-bottom: 0;
+                                    border-radius: 100%;
+                                    border: 1px solid #afafaf;
+                                    width: calc(280 / 16 * 1rem);
+                                    height: calc(280 / 16 * 1rem);
+                                    text-align: center; 
+                                    display: flex;      
+                                    flex-direction: column;                                       
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-top: -30px;
+                                    p {
+                                        padding-top: calc(12 / 16 * 1rem);
+                                        &:before {
+                                            display: none;
+                                        }
+                                    }
+                                    .description {
+                                        margin-top: calc(16 / 16 * 1rem);
+                                        p:not(:last-child) {
+                                            margin-bottom: calc(6 / 16 * 1rem);
+                                        }
+                                    }
+                                    &:first-child {
+                                        margin-top: 0;
+                                    }
+                                }
+                                &__group {
+                                    margin-top: calc(48 / 16 * 1rem);
+                                }
+                            }
+                            @media #{$min1280} {
+                                padding-top: calc(55 / 16 * 1rem);
+                                .modal__body--content__detail__list {
+                                    flex-direction: row;                                    
+                                    max-width: 1440px;
+                                    margin: 0 50px;
+                                    &__item {
+                                        width: calc(480 / 16 * 1rem);
+                                        height: calc(480 / 16 * 1rem);
+                                        margin-right: -50px;
+                                        margin-top: 0;
+                                        p {
+                                            padding-top: calc(24 / 16 * 1rem);
+                                        }
+                                        &:last-child {                                            
+                                            margin-right: 0;                                           
+                                        }
+                                    }    
+                                }
+                            }
+                            @media #{$min720} {
+                                .modal__body--content__detail__list {
+                                    &__item {
+                                        width: calc(480 / 16 * 1rem);
+                                        height: calc(480 / 16 * 1rem);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-            }            
+            }
+            &__close {
+                .btn {
+                    background: none;
+                }
+            }
         }
     }
     &esg {
