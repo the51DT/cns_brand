@@ -22,7 +22,7 @@
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
-                <div class="cmp-wrap cmp-tab basic-type align-left">
+                <div class="cmp-wrap cmp-tab basic-type align-left mb-exc-spacing-280-178">
                     <div class="cmp-tab__header">
                         <ul class="tab__menu">
                             <li class="is-active">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="tab-content__wrap">
                         <div class="tab__content is-active">
-                            <div class="cmp-wrap cmp-feature-grid">
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                                 <div>
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         title : {
@@ -125,7 +125,7 @@
                                 marginVertical: 'mb-exc-spacing-32-0',
                             }) %>
                             <!-- //cmp_seperator -->
-                            <div class="cmp-wrap cmp-feature-grid">
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                                 <div>
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         title : {
@@ -218,7 +218,7 @@
                                 marginVertical: 'mb-exc-spacing-32-0',
                             }) %>
                             <!-- //cmp_seperator -->
-                            <div class="cmp-wrap cmp-feature-grid">
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                                 <div>
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         title : {
@@ -302,7 +302,7 @@
                                 marginVertical: 'mb-exc-spacing-32-0',
                             }) %>
                             <!-- //cmp_seperator -->
-                            <div class="cmp-wrap cmp-feature-grid">
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                                 <div>
                                     <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                         title : {
@@ -498,6 +498,30 @@
                                 itemCount: 7,
                                 jsonData: imageItemData3,
                             })) %>
+                            <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-pc-none mb-exc-spacing-120-96">
+                                <div>
+                                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                        title : {
+                                            text: '친환경 그린데이터 센터 ',
+                                            size: 'lg',
+                                            class: 'color-text-default font-medium',
+                                        },
+                                        marginVertical: 'mb-0',
+                                    })) %>
+                                </div>
+                                <div>
+                                    <p class="font-body-md color-text-secondary mb-exc-spacing-16-12">
+                                        LG CNS는 전력사용량이 높은 데이터센터의 에너지 절감을 위해 다양한 솔루션을 개발·적용하여 데이터센터를 운영하고 있습니다. 또한 신재생 및 에너지 효율향상 설비 도입을 통한 건물 내 소비 효율화도 진행하고
+                                        있습니다. LG CNS는 온실가스 배출량 감소를 위한 솔루션을 개발·적용하여 친환경 데이터센터를 운영하고 있으며, 데이터센터의 기반설비 통합운영을 위해 친환경 IT 시스템을 개발해 구축/운영하고 있습니다.
+                                    </p>
+                                    <p class="font-body-md color-text-secondary">
+                                        친환경 IT 시스템은 기반설비(전기, 기계, 온/습도, 조명 등) 및 보안설비를 통합 모니터링해 장애 감지, 분석, 제어 등을 통해 전산실 에너지를 효율적으로 관리함으로써 온실가스 배출량 절감에 기여합니다. 또한,
+                                        자연외기를 이용한 친환경 제품인 빌트업 외기 냉방시스템을 세계 최초로 특허출원하여 전 센터에 적용하고 있으며, 서버 집중 냉각 장치인 집중공조시스템 개발 및 고효율UPS, LED 조명등을 전 센터에 적용하여 온실가스
+                                        배출량 감소에 기여하고 있습니다.
+                                    </p>
+                                </div>
+                            </div>
+
                             <%- include('src/component/cmp_title_unit.html', {
                                 title : {
                                     text: '친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과 (상암IT센터)',
