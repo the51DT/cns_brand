@@ -105,6 +105,14 @@
                         }
                     }
                 }
+                &__flex-sub {
+                    .btn {
+                        width: 100%;
+                        @media #{$min1280} {
+                            width: fit-content;
+                        }
+                    }
+                }
                 &.no-bottom,
                 &__flex.no-bottom {
                     margin-bottom: 0;

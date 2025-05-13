@@ -105,11 +105,17 @@
 }
 // margin 예외 케이스
 // margin-bottom
+.mb-exc-spacing-280-178 {
+    @include custom-margin-vertical('bottom', 280, 178);
+}
 .mb-exc-spacing-180-88 {
     @include custom-margin-vertical('bottom', 180, 88);
 }
 .mb-exc-spacing-120-64 {
     @include custom-margin-vertical('bottom', 120, 64);
+}
+.mb-exc-spacing-120-96 {
+    @include custom-margin-vertical('bottom', 120, 96);
 }
 .mb-exc-spacing-64-48 {
     @include custom-margin-vertical('bottom', 64, 48);
@@ -128,6 +134,9 @@
 }
 .mb-exc-spacing-40-16 {
     @include custom-margin-vertical('bottom', 40, 16);
+}
+.mb-exc-spacing-40-20 {
+    @include custom-margin-vertical('bottom', 40, 20);
 }
 .mb-exc-spacing-40-32 {
     @include custom-margin-vertical('bottom', 40, 32);

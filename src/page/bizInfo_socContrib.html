@@ -26,7 +26,7 @@
             <!-- //비주얼 영역 -->
             <div class="sub-content__wrap">
                 <div class="inner-wrap wide">
-                    <div class="cmp-wrap cmp-tab basic-type align-left">
+                    <div class="cmp-wrap cmp-tab basic-type align-left mb-exc-spacing-280-178">
                         <div class="cmp-tab__header">
                             <ul class="tab__menu">
                                 <li class="is-active">
@@ -47,7 +47,7 @@
                                     marginVertical: 'mb-spacing09' , 
                                 })) %>
 
-                                <div class="cmp-wrap cmp-feature-grid mb-spacing11">
+                                <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                                     <div>
                                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                             title : {
@@ -59,7 +59,7 @@
                                         })) %>
                                     </div>
                                     <div>
-                                        <p class="font-body-md font-normal color-text-secondary">LG CNS는 코로나19 백신접종예약시스템, EBS 온라인클래스 등 국민건강, 교육과 밀접한 시스템의 장애가 발생했을 때, 아키텍처최적화팀을 투입해 시스템 정상화를 이끄는 등 해결사 역할을 했습니다.</p>
+                                        <p class="font-body-md font-normal color-text-secondary mb-exc-spacing-40-20">LG CNS는 코로나19 백신접종예약시스템, EBS 온라인클래스 등 국민건강, 교육과 밀접한 시스템의 장애가 발생했을 때, 아키텍처최적화팀을 투입해 시스템 정상화를 이끄는 등 해결사 역할을 했습니다.</p>
                                         <%- include('src/component/cmp_video.html', Object.assign({}, locals, { 
                                             id: 2,
                                             type: 'link',
@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
 
-                                <div class="cmp-wrap cmp-feature-grid mb-spacing11">
+                                <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                                     <div>
                                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                             title : {
@@ -102,7 +102,7 @@
                                     </div>
                                 </div>
 
-                                <div class="cmp-wrap cmp-feature-grid mb-spacing11">
+                                <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                                     <div>
                                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                             title : {
@@ -133,7 +133,7 @@
                                     </div>
                                 </div>
 
-                                <div class="cmp-wrap cmp-feature-grid mb-spacing11 mb-0">
+                                <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large mb-0">
                                     <div>
                                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                             title : {
@@ -171,7 +171,7 @@
                                     marginVertical: 'mb-spacing09' , 
                                 })) %>
 
-                                <div class="cmp-wrap cmp-feature-grid">
+                                <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                                     <div>
                                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                                             title : {
@@ -184,7 +184,7 @@
                                     </div>
                                     <div>
                                         <p class="font-body-md font-normal color-text-secondary mb-spacing02">AI지니어스는 LG CNS가 자체 개발한 청소년 대상 교육 프로그램입니다. 2017년부터 시작해 학생들이 SW 및 AI 개념·원리 학습을 통해 사고력을 키우고, 문제 해결 능력을 배양할 수 있도록 돕고 있습니다.</p>
-                                        <p class="font-body-md font-normal color-text-secondary mb-spacing05">서울시 교육청, 경기도 교육청과 업무협약을 체결하며, 현재까지 18,000여명의 학생들에게 교육을 제공했습니다. 도서벽지 학교로 교육 대상을 점차 확대하고 있습니다.</p>
+                                        <p class="font-body-md font-normal color-text-secondary mb-exc-spacing-40-20">서울시 교육청, 경기도 교육청과 업무협약을 체결하며, 현재까지 18,000여명의 학생들에게 교육을 제공했습니다. 도서벽지 학교로 교육 대상을 점차 확대하고 있습니다.</p>
                                         <%- include('src/component/cmp_video.html', Object.assign({}, locals, { 
                                             id: 2,
                                             type: 'link',
@@ -196,185 +196,266 @@
                                     </div>
                                 </div>
 
-                                <div class="cmp-wrap cmp-feature-grid">
+                                <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                                     <div>
                                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                        titleText: 'AI지니어스 교육과정', 
+                                            title : {
+                                                text: 'AI지니어스 교육과정',
+                                                size: 'lg',
+                                                class: 'color-text-default font-medium',
+                                            },
+                                            marginVertical: 'mb-0',
                                         })) %>
                                     </div>
                                     <div>
-                                        <p class="font-body-sm detail_text">자유학년제 대상인 중학교의 정규수업시간에 편성돼 하루 6교시 동안 학생들이 필수로 알아야 할 AI를 교육합니다.<br>중학생들은 AI챗봇과 AI자율주행 물류로봇 만들기 뿐 아니라 마이데이터를 활용한 서비스 만들기까지 체험할 수 있습니다. </p>
+                                        <p class="font-body-md font-normal color-text-secondary mb-spacing02">자유학년제 대상인 중학교의 정규수업시간에 편성돼 하루 6교시 동안 학생들이 필수로 알아야 할 AI를 교육합니다.</p>
+                                        <p class="font-body-md font-normal color-text-secondary mb-exc-spacing-40-20">중학생들은 AI챗봇과 AI자율주행 물류로봇 만들기 뿐 아니라 마이데이터를 활용한 서비스 만들기까지 체험할 수 있습니다.</p>
                                         <%
-                                            const imageItemData = [
+                                            const iconSolutionColumnData = [
                                                 {
-                                                        id: 0,
-                                                        typeClass: 'type-left',
-                                                        imageUrl: 'https://placehold.co/584x250',
-                                                        title: ' AI 챗봇 만들기',
-                                                        content: ['‘AI 챗봇’ 이란?', '머신러닝포키즈 알아보기', '나만의 AI 챗봇 계획하고 만들기']
+                                                    id: 0,
+                                                    imageUrl: 'https://placehold.co/345x129/png',
+                                                    title: 'AI 챗봇 만들기',
+                                                    content: [
+                                                        '‘AI 챗봇’ 이란?',
+                                                        '머신러닝포키즈 알아보기',
+                                                        '나만의 AI 챗봇 계획하고 만들기',
+                                                    ],
+                                                    useList: true,
                                                 },
                                                 {
-                                                        id: 1,
-                                                        typeClass: 'type-left',
-                                                        imageUrl: 'https://placehold.co/584x250',
-                                                        title: 'AI자율주행 물류로봇',
-                                                        content: ['로봇 움직이기', 'AI로 이미지 학습하기', '내가 만드는 자율주행 물류로봇']
+                                                    id: 1,
+                                                    imageUrl: 'https://placehold.co/345x129/png',
+                                                    title: 'AI자율주행 물류로봇',
+                                                    content: [
+                                                        '로봇 움직이기',
+                                                        'AI로 이미지 학습하기',
+                                                        '내가 만드는 자율주행 물류로봇',
+                                                    ],
+                                                    useList: true,
                                                 },
                                                 {
-                                                        id: 2,
-                                                        typeClass: 'type-left',
-                                                        imageUrl: 'https://placehold.co/584x250',
-                                                        title: 'Smart Data Lab',
-                                                        content: ['데이터의 의미와 사례', '데이터 수집과 분석', '데이터를 활용한 서비스 만들기']
-                                                }
-                                            ];
-                                        %> 
-                                        <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {                             
-                                        itemCount: 3,
-                                        jsonData: imageItemData
-                                        })) %>
-                                    </div>
-                                </div>
-
-                                <div class="cmp-wrap cmp-feature-grid">
-                                    <div>
-                                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                        titleText: '특수학교 대상 교육과정', 
-                                        })) %>
-                                    </div>
-                                    <div>
-                                        <p class="font-body-sm detail_text">SW교육에 소외된 장애학생 대상 맞춤형 프로그램을 운영하고 있습니다.<br>△메타버스로 알아보는 SW/AI △AI와 예술체험 △AI 자율주행자동차 등 학생들이 직접 체험할 수 있는 교육으로 구성되어 있습니다.<br>LG CNS는 특수학교 범위를 확대하는 등 지속적으로 취약 계층의 SW교육 격차를 해소할 수 있는 방법을 고민하고 있습니다.</p>
-                                        <%- include('src/component/cmp_video.html', Object.assign({}, locals, { 
-                                            id: 0,
-                                            type: 'link',
-                                            videoUrl: 'https://youtu.be/wXSFGquXLX4?si=YcgjR9lHJKAR7A4u',
-                                            videoThumbUrl: 'https://placehold.co/1168x657',
-                                            videoTitle: 'AI지니어스2',
-                                        })) %>
-                                    </div>
-                                </div>
-
-                                <div class="cmp-wrap cmp-feature-grid">
-                                    <div>
-                                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                        titleText: '‘복지부 표창장’과<br>‘교육 기부 대상’으로 우수성<br>인정 받은 「AI지니어스」', 
-                                        })) %>
-                                    </div>
-                                    <div>
-                                        <p class="font-body-sm detail_text">AI 지니어스 전신 ‘코딩지니어스’는 ‘복지부 장관 표창장’ 과 ‘교육 기부 대상’ 및 부총리 겸 교육부장관상을 수상했습니다.<br>시작 첫 해 2017년에는 자유학기제 우수사례 공모전에서 부총리 겸 교육부장관상을 수상했고, 이듬해 교육부에서 시행하는 교육기부 진로체험 인증기관으로 선정되며, AI지니어스의 우수성도 입증했습니다.<br>2023에는 정보문화 유공 정부포상에서 국무총리 표창을 수상했습니다.<br>LG CNS의 DX 역량 기반의 사회공헌활동이 사회 발전에 기여하고 있음을 인정받았습니다.</p>
-                                        <%
-                                        const itemList3Col2 = [
-                                            {
-                                                    imageUrl: 'https://placehold.co/360x360',
-                                                    imageAlt: '2018년 사회공헌 유공자 포상 복지부장관 표창',
-                                                    title: '2018년 사회공헌<br>유공자 포상 복지부장관 표창',
-                                                    textBoxAlign: 'left'
-                                            },
-                                            {
-                                                    imageUrl: 'https://placehold.co/360x360',
-                                                    imageAlt: 'test',
-                                                    imageAlt: '2018년 교육기부대상 부총리 겸 교육부장관 표창',
-                                                    title: '2018년 교육기부대상<br>부총리 겸 교육부장관 표창',
-                                                    textBoxAlign: 'left'
-                                            },
-                                            {
-                                                    imageUrl: 'https://placehold.co/360x360',
-                                                    imageAlt: '2023년 정보문화 유공 정부포상 국무총리 표창',
-                                                    title: '2023년 정보문화 유공<br>정부포상 국무총리 표창',
-                                                    textBoxAlign: 'left'
-                                            },
-                                        ]
+                                                    id: 2,
+                                                    imageUrl: 'https://placehold.co/345x129/png',
+                                                    title: 'Smart Data Lab',
+                                                    content: [
+                                                        '데이터의 의미와 사례',
+                                                        '데이터 수집과 분석',
+                                                        '데이터를 활용한 서비스 만들기',
+                                                    ],
+                                                    useList: true,
+                                                },
+                                            ]
                                         %>
-                                        <%- include('src/component/cmp_image_item_3columns_box.html', {
-                                        jsonData: itemList3Col2,
-                                        itemType: 'type-bg-none',
+                                        <%- include('src/component/cmp_title_text_icon.html', {
+                                            jsonData: iconSolutionColumnData,
+                                            marginVertical: 'mb-0',
                                         }) %>
                                     </div>
                                 </div>
 
-                                <div class="cmp-wrap cmp-feature-grid">
+                                <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                                     <div>
                                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                        titleText: 'AI지니어스 SNS 채널 운영', 
+                                            title : {
+                                                text: '특수학교 대상 교육과정',
+                                                size: 'lg',
+                                                class: 'color-text-default font-medium',
+                                            },
+                                            marginVertical: 'mb-0',
+                                        })) %>
+                                    </div>
+                                    <div>
+                                        <p class="font-body-md font-normal color-text-secondary mb-spacing02">SW교육에 소외된 장애학생 대상 맞춤형 프로그램을 운영하고 있습니다.</p>
+                                        <p class="font-body-md font-normal color-text-secondary mb-spacing02">△메타버스로 알아보는 SW/AI △AI와 예술체험 △AI 자율주행자동차 등 학생들이 직접 체험할 수 있는 교육으로 구성되어 있습니다.</p>
+                                        <p class="font-body-md font-normal color-text-secondary mb-exc-spacing-40-20">LG CNS는 특수학교 범위를 확대하는 등 지속적으로 취약 계층의 SW교육 격차를 해소할 수 있는 방법을 고민하고 있습니다.</p>
+                                        <%- include('src/component/cmp_video.html', Object.assign({}, locals, { 
+                                            id: 3,
+                                            type: 'link',
+                                            videoUrl: 'https://youtu.be/wXSFGquXLX4?si=YcgjR9lHJKAR7A4u',
+                                            videoThumbUrl: 'https://placehold.co/710x399',
+                                            videoTitle: '특수학교 대상 교육과정',
+                                            marginVertical: 'mb-0',
+                                        })) %>
+                                    </div>
+                                </div>
+
+                                <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
+                                    <div>
+                                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                            title : {
+                                                text: '‘복지부 표창장’과 <br>‘교육 기부 대상’으로 우수성 <br>인정 받은 「AI지니어스」',
+                                                size: 'lg',
+                                                class: 'color-text-default font-medium',
+                                            },
+                                            marginVertical: 'mb-0',
+                                        })) %>
+                                    </div>
+                                    <div>
+                                        <p class="font-body-md font-normal color-text-secondary mb-spacing02">AI 지니어스 전신 ‘코딩지니어스’는 ‘복지부 장관 표창장’ 과 ‘교육 기부 대상’ 및
+                                            부총리 겸 교육부장관상을 수상했습니다.</p>
+                                        <p class="font-body-md font-normal color-text-secondary mb-spacing02">시작 첫 해 2017년에는 자유학기제 우수사례 공모전에서 부총리 겸 교육부장관상을
+                                            수상했고, 이듬해 교육부에서 시행하는 교육기부 진로체험 인증기관으로 선정되며, AI지니어스의 우수성도 입증했습니다.</p>
+                                        <p class="font-body-md font-normal color-text-secondary mb-spacing02">2023에는 정보문화 유공 정부포상에서 국무총리 표창을 수상했습니다.</p>
+                                        <p class="font-body-md font-normal color-text-secondary mb-exc-spacing-40-20">LG CNS의 DX 역량 기반의 사회공헌활동이 사회 발전에 기여하고 있음을
+                                            인정받았습니다.</p>
+                                        <%
+                                            const itemList3Col2 = [
+                                                {
+                                                    imageUrlPc: 'https://placehold.co/223x297',
+                                                    imageAlt: '2018년 사회공헌 유공자 포상 복지부장관 표창',
+                                                    title: '2018년 사회공헌<br>유공자 포상 복지부장관 표창',
+                                                    textBoxAlign: 'left'
+                                                },
+                                                {
+                                                    imageUrlPc: 'https://placehold.co/223x297',
+                                                    imageAlt: '2018년 교육기부대상 부총리 겸 교육부장관 표창',
+                                                    imageAlt: '2018년 교육기부대상 부총리 겸 교육부장관 표창',
+                                                    title: '2018년 교육기부대상<br>부총리 겸 교육부장관 표창',
+                                                    textBoxAlign: 'left'
+                                                },
+                                                {
+                                                    imageUrlPc: 'https://placehold.co/223x297',
+                                                    imageAlt: '2023년 정보문화 유공 정부포상 국무총리 표창',
+                                                    title: '2023년 정보문화 유공<br>정부포상 국무총리 표창',
+                                                    textBoxAlign: 'left'
+                                                },
+                                            ]
+                                        %>
+                                        <%- include('src/component/cmp_image_item_3columns_box.html', {
+                                            jsonData: itemList3Col2,
+                                            itemType: 'type-bg-none',
+                                            marginVertical: 'mb-0',
+                                        }) %>
+                                    </div>
+                                </div>
+
+                                <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large mb-0">
+                                    <div>
+                                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                            title : {
+                                                text: 'AI지니어스 SNS 채널 운영',
+                                                size: 'lg',
+                                                class: 'color-text-default font-medium',
+                                            },
+                                            marginVertical: 'mb-0',
                                         })) %>
                                     </div>
                                     <div>
                                         <%
-                                        const AIData1 = [
-                                            {
-                                                id: 0,
-                                                descText: 'LG CNS의 대표 사회공헌 활동인 ‘AI지니어스’는 4차 산업혁명시대의 주축이 될 청소년을 대상으로 SW 및 인공지능을 경험하게 하며, 다양한 경험과 자극을 통해 학생들의 꿈과 끼를 탐색하게 하는 무료교육 프로그램입니다.',
-                                                button1NameArrow: 'AI지니어스 유튜브 채널 바로가기',
-                                                button2Name: 'AI지니어스 블로그 바로가기',
-                                            }
-                                        ]
+                                            const AIData1 = [
+                                                {
+                                                    id: 0,
+                                                    descText: 'LG CNS의 대표 사회공헌 활동인 ‘AI지니어스’는 4차 산업혁명시대의 주축이 될 청소년을 대상으로 SW 및 인공지능을 경험하게 하며, 다양한 경험과 자극을 통해 학생들의 꿈과 끼를 탐색하게 하는 무료교육 프로그램입니다.',
+                                                    button1Name: 'AI지니어스 유튜브 채널 바로가기',
+                                                    button2Name: 'AI지니어스 블로그 채널 바로가기 ',
+                                                    buttonMoWide: 'true',
+                                                }
+                                            ]
                                         %>
                                         <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
                                             itemCount: 1,
                                             jsonData: AIData1,
+                                            buttonFlex: 'true',
+                                            marginVertical: 'mb-0',
                                         })) %>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="tab__content">
-                                <%- include('src/component/cmp_contents_title.html', Object.assign({}, locals, { 
-                                    contentsTitle: 'LG CNS는 미래 IT인재 육성을 위해<br>AI 심화교육 프로그램인 AI지니어스 아카데미를 운영하고 있습니다.',
+                                <%- include('src/component/cmp_contents_title.html', Object.assign({}, locals, {
+                                    contentsTitle: 'LG CNS는 미래 IT인재 육성을 위해 <br>AI 심화교육 프로그램인 AI지니어스 아카데미를 운영하고 있습니다.' ,
+                                    marginVertical: 'mb-spacing09' , 
                                 })) %>
 
-                                <div class="cmp-wrap cmp-feature-grid">
+                                <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                                     <div>
                                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                        titleText: 'AI 인재를 육성하는 「AI지니어스 아카데미」', 
+                                            title : {
+                                                text: 'AI 인재를 육성하는 <br>「AI지니어스 아카데미」',
+                                                size: 'lg',
+                                                class: 'color-text-default font-medium',
+                                            },
+                                            marginVertical: 'mb-0',
                                         })) %>
                                     </div>
                                     <div>
-                                        <p class="font-body-sm detail_text">AI지니어스 아카데미는 미래의 SW·AI인재를 육성하기 위한 고등학생 대상 교육 프로그램입니다.<br>SW·AI분야에 꿈과 재능이 있는 학생들을 선발하여 차별화된 IT신기술 교육과 멘토링을 제공하고, AI로봇 창작 프로젝트를 통해 미래 진로 학업 설계에 직접적인 도움을 주고 있습니다.</p>
+                                        <p class="font-body-md font-normal color-text-secondary mb-spacing02">
+                                            AI지니어스 아카데미는 <br>
+                                            미래의 SW·AI인재를 육성하기 위한 고등학생 대상 교육 프로그램입니다.
+                                        </p>
+                                        <p class="font-body-md font-normal color-text-secondary mb-exc-spacing-40-20">
+                                            SW·AI분야에 꿈과 재능이 있는 학생들을 선발하여 차별화된 IT신기술 교육과 멘토링을 제공하고, AI로봇 창작 프로젝트를 통해 미래 진로 학업 설계에 직접적인 도움을 주고 있습니다.
+                                        </p>
                                         <%- include('src/component/cmp_video.html', Object.assign({}, locals, { 
-                                            id: 0,
+                                            id: 3,
                                             type: 'link',
                                             videoUrl: 'https://youtu.be/wXSFGquXLX4?si=YcgjR9lHJKAR7A4u',
-                                            videoThumbUrl: 'https://placehold.co/1168x657',
-                                            videoTitle: 'DX사회공헌',
+                                            videoThumbUrl: 'https://placehold.co/710x399',
+                                            videoTitle: 'AI 인재를 육성하는「AI지니어스 아카데미」',
+                                            marginVertical: 'mb-0',
                                         })) %>
                                     </div>
                                 </div>
 
-                                <div class="cmp-wrap cmp-feature-grid">
+                                <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large mb-0">
                                     <div>
                                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                                        titleText: '인권침해 구제 프로세스', 
+                                            title : {
+                                                text: '인권침해 구제 프로세스',
+                                                size: 'lg',
+                                                class: 'color-text-default font-medium',
+                                            },
+                                            marginVertical: 'mb-0',
                                         })) %>
                                     </div>
                                     <div>
                                         <% const specListData = [ 
-                                        { 
-                                            id: 0, 
-                                            title: '전문가 진로 멘토링',
-                                            smallContent: [
-                                                    'LG CNS 임직원, 인공지능 교육 전문가, 자율주행, 로보틱스 전문가 등의 멘토링을 통해 학생들에게 미래 진로 가이드와 전문가 경험을 제공합니다.',
-                                            ]
-                                        }, 
-                                        { 
-                                            id: 1, 
-                                            title: 'AI 로봇 창작 프로젝트',
-                                            smallContent: [
-                                                    '연간 진행되는 AI 로봇 창작 프로젝트를 진행하며, 학생들에게 AI 심화과정 교육을 제공합니다. 스스로 주제를 정해 AI를 활용한 프로젝트를 계획하고, 산출물 완성을 위한 다양한 활동들을 진행합니다.',
-                                            ]
-                                        }, 
-                                        { 
-                                            id: 2,
-                                            title: '챌린지데이',
-                                            smallContent: [
-                                                    '최종 프로젝트 결과물을 공유하는 챌린지데이를 개최합니다. 학생들에게 실패를 통한 배움, 과정을 통한 성장, 성취감을 느낄 수 있는 기회를 제공하고, 서로를 격려하며 더 큰 미래를 준비할 수 있도록 지원합니다.',
-                                            ]
-                                        },
-                                        ]; 
+                                                { 
+                                                    id: 0, 
+                                                    subTitle: '01',
+                                                    title: '전문가 진로 멘토링',
+                                                    content: {
+                                                        size: 'font-body-md',
+                                                        color: 'color-text-secondary',
+                                                        text: [
+                                                            'LG CNS 임직원, 인공지능 교육 전문가, 자율주행, 로보틱스 전문가 등의 멘토링을 통해 학생들에게 미래 진로 가이드와 전문가 경험을 제공합니다.',
+                                                        ]
+                                                    }
+                                                }, 
+                                                { 
+                                                    id: 1, 
+                                                    subTitle: '02',
+                                                    title: 'AI 로봇 창작 프로젝트',
+                                                    content: {
+                                                        size: 'font-body-md',
+                                                        color: 'color-text-secondary',
+                                                        text: [
+                                                            '연간 진행되는 AI 로봇 창작 프로젝트를 진행하며, 학생들에게 AI 심화과정 교육을 제공합니다. 스스로 주제를 정해 AI를 활용한 프로젝트를 계획하고, 산출물 완성을 위한 다양한 활동들을 진행합니다.',
+                                                        ]
+                                                    }
+                                                }, 
+                                                { 
+                                                    id: 2, 
+                                                    subTitle: '03',
+                                                    title: '챌린지데이',
+                                                    content: {
+                                                        size: 'font-body-md',
+                                                        color: 'color-text-secondary',
+                                                        text: [
+                                                            '최종 프로젝트 결과물을 공유하는 챌린지데이를 개최합니다. 학생들에게 실패를 통한 배움, 과정을 통한 성장, 성취감을 느낄 수 있는 기회를 제공하고, 서로를 격려하며 더 큰 미래를 준비할 수 있도록 지원합니다.',
+                                                        ]
+                                                    }
+                                                }, 
+                                            ]; 
                                         %>
                                         <%- include('src/component/cmp_SpecList.html', {
-                                        itemCount: 4,
-                                        jsonData: specListData,
-                                        styleType: 'type-column',
+                                            itemCount: 4,
+                                            jsonData: specListData,
+                                            styleType: 'type-column',
+                                            borderTop : 'only-pc',
+                                            marginVertical: 'mb-0',
                                         }) %>
                                     </div>
                                 </div>

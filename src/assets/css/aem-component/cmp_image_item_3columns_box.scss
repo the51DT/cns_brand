@@ -36,5 +36,45 @@
         &__title {
             display: block;
         }
+        &.type-bg-none {
+            gap: calc(12 / 16 * 1rem);
+            row-gap: calc(32 / 16 * 1rem);
+            flex-direction: row;
+            @media #{$min1280} {
+                gap: calc(20 / 16 * 1rem);
+            }
+            li {
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: flex-end;
+                align-items: center;
+                padding: 0;
+                width: calc(50% - calc(calc(12 / 2) / 16 * 1rem));
+                border-radius: 0;
+                background: none;
+                flex-wrap: wrap;
+                @media #{$min1280} {
+                    width: calc(33.33% - calc(calc(40 / 3) / 16 * 1rem));
+                }
+            }
+            .text-box {
+                margin-top: calc(16 / 16 * 1rem);
+                .image-item-3col__title {
+                    color: var(--colorCM-mode1-text-text-default);
+                    font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
+                    line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+                    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+                    font-weight: 500;
+                    text-align: center;
+                    @media #{$min1280} {
+                        font-size: calc(var(--typo-pc-size-body-sm) / 16 * 1rem);
+                        line-height: calc(var(--typo-pc-line-height-body-sm) / 16 * 1rem);
+                    }
+                }
+            }
+            .img-box {
+                margin-top: 0;
+            }
+        }
     }
 }

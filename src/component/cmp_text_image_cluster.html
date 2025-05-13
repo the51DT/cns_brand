@@ -32,8 +32,7 @@
                     <% } %>
     
                     <% if(typeof item.button1Name !== 'undefined' && item.button1Name) { %>
-                        <div class="button-wrap<%- item.buttonFlex === 'true' ? '__flex' : '' %> <%- (typeof item.textTop === 'undefined' || item.textTop === false) ? 'no-bottom' : '' %>
-                            ">
+                        <div class="button-wrap<%- item.buttonFlex === 'true' ? '__flex' : '' %> <%- (typeof item.textTop === 'undefined' || item.textTop === false) ? 'no-bottom' : '' %><%- item.buttonMoWide === 'true' ? ' button-wrap__flex-sub' : '' %>">
                             <button type="button" class="btn btn-primary btn-small">
                                 <span class="btn__text"><%- item.button1Name %></span>
                             </button>
