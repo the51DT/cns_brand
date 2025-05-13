@@ -115,6 +115,16 @@
     opacity: 0.6;
     z-index: -1;
 }
+
+.modal--type-large.modal--type-full-pc .modal__container {
+    padding: 0;
+}
+.modal--type-large.modal--type-full-pc .modal__content {
+    padding-top: calc(64 / 16 * 1rem);
+}
+.modal--type-large.modal--type-full-pc .modal__close {
+    top:calc(20 / 16 * 1rem);
+}
 /* 1. modal - type large */
 .modal--type-large .modal__wrapper {
     padding: 0 0;
@@ -264,6 +274,43 @@
         max-width: 100%;
         border-radius: var(--radius-mode1-none);
     }
+
+    /* 6. modal - type full (pc) */
+    .modal--type-large.modal--type-full-pc {
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .modal--type-large.modal--type-full-pc .modal__wrapper {
+        padding: 0;
+    }
+    .modal--type-large.modal--type-full-pc .modal__content {
+        padding-top: calc(100 / 16 * 1rem);
+    }
+    .modal--type-large.modal--type-full-pc .modal__container {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding-bottom: revert;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        min-height: revert;
+        max-height: revert;
+        padding: 0;
+        border-radius: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;        
+    }
+    .modal--type-large.modal--type-full-pc .modal__close {
+        top: 2rem;
+    }
+    
 
     /* MOA */
     .cmp-modal--moa .cmp-warp:has( + .cmp-seperator) {
