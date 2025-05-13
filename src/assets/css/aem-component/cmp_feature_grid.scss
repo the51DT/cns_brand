@@ -5,11 +5,22 @@
     @media #{$min1280} {
         grid-template-columns: repeat(2, 1fr);
     }
+    &.cmp-feature-grid--gap-pc-none {
+        @media #{$min1280} {
+            gap: 0;
+        }
+    }
     &.cmp-feature-grid--gap-small {
         gap: calc(40 / 16 * 1rem);
         align-items: center;
         @media #{$min1280} {
             gap: calc(10 / 16 * 1rem);
+        }
+    }
+    &.cmp-feature-grid--gap-large {
+        @media #{$min1280} {
+            gap: calc(72 / 16 * 1rem);
+            grid-template-columns: minmax(auto, calc(658 / 16 * 1rem)) 1fr;
         }
     }
     &.cmp-feature-grid--border-top {
