@@ -8,7 +8,7 @@
         content: '';
         display: block;
         position: absolute;
-        width: calc(80 / 16 * 1rem);
+        width: calc(44 / 16 * 1rem);
         height: calc(50 / 16 * 1rem);
         right: 0;        
         top:0;
@@ -55,6 +55,9 @@
             /* padding: 0 calc(20 / 16 * 1rem); */
             @media #{$min1280} {
                 height: calc(74 / 16 * 1rem);
+            }
+            &:last-of-type {
+                margin-right: calc(24 / 16 * 1rem);
             }
             &.is-active {
                 a {
