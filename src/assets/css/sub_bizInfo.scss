@@ -1,4 +1,14 @@
 .bizinfo- {
+    &comp-ovw {
+        .inner-wrap {
+            &.wide {
+                .cmp-image-box {
+                    padding: 0;
+                    max-width: calc(1920 / 16 * 1rem);
+                }
+            }
+        }
+    }
     &ceo {
         &__container {
             display: flex;
