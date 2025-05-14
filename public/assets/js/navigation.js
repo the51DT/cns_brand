@@ -129,6 +129,7 @@ const moNavigationToggle = (button) => {
     function toggleMoNav() {
       console.log('toggleMoNav')
       moMenu.addEventListener('click', () => {
+        console.log('click mo nav btn');
           if(!moNavigation.classList.contains('is-active')) {
               bodyWrap.classList.add('overflow');
               bodyWrap.classList.add('gnb-open');
