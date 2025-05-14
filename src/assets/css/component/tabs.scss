@@ -37,7 +37,8 @@
             display:none;
         }
     }
-    .tab__menu {
+    .tab__menu,
+    .tab__sub-menu {
         display: flex;
         align-items: center;
         white-space: nowrap;  
@@ -107,20 +108,22 @@
             }
         }
     }
-    .tab__content {
+    .tab__content,
+    .tab__sub-content {
         display: none;
         &.is-active {
             display: block;
         }
     }
-    &.align-center .tab__menu {
+    &.align-center .tab__menu,
+    &.align-center .tab__sub-menu {
         justify-content: space-between;
         li {
             width: calc(100% / var(--tab-count));
         }
     }
     &.cmp-tab--sub {
-        .tab__menu {
+        .tab__sub-menu {
             a {
                 font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);
                 line-height: calc(var(--typo-mo-line-height-body-md) / 16 * 1rem);

@@ -444,6 +444,43 @@ const tabMenu = (el, type) => {
         });
     });
 };
+const tabSubMenu = (el, type) => {
+    if (!el || typeof el !== 'string') return;
+
+    if (type !== 'tab') {
+        sortingList();
+    }
+
+    document.querySelectorAll(el).forEach(wrap => {
+        const tabList = wrap.querySelectorAll('.tab__sub-menu li a');
+        const tabContents = wrap.querySelectorAll('.tab__sub-content');
+
+        if (!tabList.length || (type === 'tab' && !tabContents.length)) return;
+
+        if (type === 'tab' && tabList.length !== tabContents.length) return;
+
+        if(wrap.classList.contains('align-center')) {
+            let tabItemsCount = tabList.length; 
+            wrap.style.setProperty('--tab-count', tabItemsCount);               
+        }     
+
+        tabList.forEach((list, index) => {
+            list.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                wrap.querySelector('.tab__sub-menu li.is-active')?.classList.remove('is-active');
+                list.parentElement.classList.add('is-active');
+
+                if (type === 'tab') {
+                    wrap.querySelector('.tab__sub-content.is-active')?.classList.remove('is-active');
+                    tabContents[index]?.classList.add('is-active');
+                } else {
+                    sortingList();
+                }
+            }, { once: false });
+        });
+    });
+};
 
 // 툴팁
 const tooltip = (el) => {
