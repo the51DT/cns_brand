@@ -13,7 +13,7 @@
         <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
         <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {
-            subText: '기업정보',
+            subText: '지속가능경영',
             pageTitle: '지속가능경영보고서',
             rightDesc: ''
         })) %>
@@ -22,35 +22,53 @@
         <div class="sub-content__wrap">
             <div class="inner-wrap">
                 <div class="bizinfo-esg__container">
-                    <div class="cmp-wrap cmp-feature-grid">
+                    <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-large">
                         <div>
-                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
-                                titleText: '2023~2024 지속가능경영보고서',
+                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                title : {
+                                    text: '2023~2024 지속가능경영보고서',
+                                    size: 'lg',
+                                    class: 'color-text-default font-medium',
+                                },
+                                marginVertical: 'mb-0',
                             })) %>
                         </div>
                         <div>
-                            <%
-                                const esgData = [
-                                    {
-                                        id: 0,
-                                        pcImg: 'https://placehold.co/1168x876',
-                                        descText: `LG CNS는 2017년부터 매년 지속가능경영보고서를 발간해 2024년이 여덟 번째입니다.<br>
-                                        <br>
-                                        이번 보고서는 LG CNS가 고객의 Digital Business Innovator로서, IT기술 리더십과 전문 역량을 기반으로 어떻게 고객의 디지털 전환(DX, Digital Transformation)을 선도하고 있는지와 ESG 영역에서의 지속가능경영 활동과 성과를 소개하고자 했습니다.<br>
-                                        <br>
-                                        LG CNS는 DX 전문기업으로서 실력으로 정정당당하게 경쟁하는 정도경영과 기업의 사회적 책임에도 소홀함이 없도록 최선을 다하겠습니다.`,
-                                        button1NameArrow: '다운로드',
-                                    }
-                                ]
+                            <% 
+                                const iamgeData01=[{
+                                    pc: 'https://placehold.co/710x399', 
+                                    mo: 'https://placehold.co/320x180', 
+                                }] 
                             %>
-                            <%- include('src/component/cmp_text_image_cluster.html', Object.assign({}, locals, {
-                                itemCount: 1,
-                                jsonData: esgData,
-                            })) %>
+                            <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                                jsonData : iamgeData01,
+                                alt : 'DIGITAL BUSIMESS INNOVATOR LG CNS 2023-2024 LG CNS Sustainability Report 지속가능경영보고서',
+                                marginVertical: 'mb-exc-spacing-23-20',
+                            }))%>
+                            <p class="font-body-md color-text-secondary mb-spacing02">
+                                LG CNS는 2017년부터 매년 지속가능경영보고서를 발간해 2024년이 여덟 번째입니다.
+                            </p>
+                            <p class="font-body-md color-text-secondary mb-spacing02">
+                                이번 보고서는 LG CNS가 고객의 Digital Business Innovator로서, IT기술 리더십과 전문 역량을 기반으로 어떻게 고객의 디지털 전환(DX, Digital Transformation)을 선도하고
+                                있는지와 ESG 영역에서의 지속가능경영 활동과 성과를 소개하고자 했습니다.
+                            </p>
+                            <p class="font-body-md color-text-secondary mb-exc-spacing-40-20">
+                                LG CNS는 DX 전문기업으로서 실력으로 정정당당하게 경쟁하는 정도경영과 기업의 사회적 책임에도 소홀함이 없도록 최선을 다하겠습니다.
+                            </p>
+                            <div class="button__wrap bizinfo-esg__btn-wrap-download align-left">
+                                <button type="button" class="btn btn-small btn-primary" modal-id="" onclick="openModal(event)">
+                                    <span class="btn__text">다운로드</span>
+                                </button>
+                            </div>
                         </div>
                     </div>  
-                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, {
-                        titleText: '2023~2024 지속가능경영보고서',
+                    <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                        title : {
+                            text: '연도별 다운로드',
+                            size: 'lg',
+                            class: 'color-text-default font-medium',
+                        },
+                        marginVertical: 'mb-spacing05',
                     })) %>
                     <% 
                     const buttonItemListData = [

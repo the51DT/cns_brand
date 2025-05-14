@@ -911,10 +911,13 @@
         }
     }
     &esg {
-        .cmp-feature-grid {
-            margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-            .cmp-wrap {
-                margin-bottom: 0;
+        &__btn-wrap-download {
+            &.button__wrap {
+                &.align-left {
+                    .btn {
+                        width: fit-content;
+                    }
+                }
             }
         }
     }
