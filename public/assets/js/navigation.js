@@ -3,7 +3,7 @@ const bodyWrap = document.querySelector('body');
 // let subMenuHeight = 0
 
 /* mobile design size */
-const isMobile = window.matchMedia('only screen and (min-width : 1280px)').matches
+const isMobile = window.matchMedia('only screen and (min-width : 1280px)').matches;
 
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
@@ -45,6 +45,7 @@ function mainNavigation(elements) {
   //1. header mouse enter
   function mainNav() {
     if(!isMobile) {
+      console.log('mainNav')
       navyLists.forEach(nav => {
         const navyBtn = nav.querySelector('.type-full')
         const subMenu = nav.querySelector('.gnb-sub__wrap')
@@ -125,8 +126,8 @@ const moNavigationToggle = (button) => {
     const moMenuClose = document.querySelector('.btn-menu-close');
 
     function toggleMoNav() {
-      console.log('toggleMoNav11')
       if(isMobile) {
+        console.log('toggleMoNav')
         moMenu.addEventListener('click', () => {
             if(!moNavigation.classList.contains('is-active')) {
                 bodyWrap.classList.add('overflow');
