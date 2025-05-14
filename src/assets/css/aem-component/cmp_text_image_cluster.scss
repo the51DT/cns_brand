@@ -67,6 +67,14 @@
                         }
                     }
                 }
+                &  + .text-cluster {
+                    .button-wrap {
+                        margin-bottom: calc(20 / 16 * 1rem);
+                        @media #{$min1280} {
+                            margin-bottom: calc(40 / 16 * 1rem);
+                        }
+                    }
+                }
             }
         }
         .text-cluster {
