@@ -3,7 +3,7 @@ const bodyWrap = document.querySelector('body');
 // let subMenuHeight = 0
 
 /* mobile design size */
-const isMobile = window.matchMedia('only screen and (max-width: 1280px)').matches
+const isMobile = window.matchMedia('only screen and (min-width : 1280px)').matches
 
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
