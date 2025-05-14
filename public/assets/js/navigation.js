@@ -2,8 +2,8 @@ const headerWrap = document.querySelector('.header');
 const bodyWrap = document.querySelector('body');
 // let subMenuHeight = 0
 
-/* mobile design size */
-const isMobile = window.matchMedia('only screen and (min-width : 1280px)').matches;
+/* pc design size */
+const isPC = window.matchMedia('only screen and (min-width : 1280px)').matches;
 
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
@@ -44,7 +44,7 @@ function mainNavigation(elements) {
   //이벤트 정의
   //1. header mouse enter
   function mainNav() {
-    if(!isMobile) {
+    if(isPC) {
       console.log('mainNav')
       navyLists.forEach(nav => {
         const navyBtn = nav.querySelector('.type-full')
@@ -126,7 +126,7 @@ const moNavigationToggle = (button) => {
     const moMenuClose = document.querySelector('.btn-menu-close');
 
     function toggleMoNav() {
-      if(isMobile) {
+      if(!isPC) {
         console.log('toggleMoNav')
         moMenu.addEventListener('click', () => {
             if(!moNavigation.classList.contains('is-active')) {
