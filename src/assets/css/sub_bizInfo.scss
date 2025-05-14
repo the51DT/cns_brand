@@ -480,30 +480,17 @@
     }
 
     &jungdo-mgmt {
-        .cmp-wrap {
-            @media #{$phone} {
-                margin-bottom: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
-            }
-            .mo-100 {
-                @media #{$phone} {
+        .cmp_imageltem__wrap {
+            .cmp_imageitem {
+                .button__wrap {
+                    justify-content: flex-start;
                     .btn {
                         width: 100%;
+                        @media #{$min1280} {
+                            width: fit-content;
+                        }
                     }
                 }
-            }
-        }
-        .cmp-feature-grid {
-            @media #{$phone} {
-                margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
-            }
-        }
-        .detail-text {
-            margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
-            @media #{$phone} {
-                margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-            }
-            &-small-margin {
-                margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
             }
         }
     }

@@ -48,9 +48,9 @@
                 margin-top: 0;
             }
             & + .button__wrap {
-                margin-top: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
+                margin-top: 0;
                 @media #{$min1280} {
-                    margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+                    margin-top: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
                 }
             }
         }

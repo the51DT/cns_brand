@@ -35,7 +35,7 @@
                         </div>
                     <% } %>
                     <% if(item.button) { %>
-                        <div class="button__wrap <%- item.typeClass == 'type-left' ? 'align-left' : '' %> <%- item.typeClass=='type-right' ? 'align-right' : '' %>">
+                        <div class="button__wrap<%- item.typeClass == 'type-left' ? ' align-left' : '' %><%- item.typeClass == 'type-right' ? ' align-right' : '' %>">
                             <% item.button.forEach((button) => { %>
                                 <% if(button.type == 'link') {%>
                                     <a href="<%- button.href ? button.href : '#' %>"

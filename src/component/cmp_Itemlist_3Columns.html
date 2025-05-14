@@ -1,5 +1,5 @@
 <!-- cmp_Itemlist_3Columns -->
-<div class="cmp-wrap cmp-itemlist_columns__wrap">
+<div class="cmp-wrap cmp-itemlist_columns__wrap <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : '' %>">
     <% 
         const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
         const itemLimit = typeof itemCount !== 'undefined' ? itemCount : 1;
@@ -36,7 +36,7 @@
                 <% if(typeof textAlign !== 'undefined' && textAlign) {%>
                     <% if(textAlign =='left') {%>
                         <div class="item-info__wrap type-left">
-                            <div class="font-body-lg info-title <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
+                            <div class="info-title <%- typeof item.titleSize !== 'undefined' && item.titleSize ? item.titleSize : 'font-body-lg' %> <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
                             <ul class="info-text">
                                 <% if (item.content && Array.isArray(item.content)) {%>
                                     <% item.content.forEach((content) => { %>
@@ -49,7 +49,7 @@
                         </div>
                     <% } else if(textAlign =='right') { %>
                         <div class="item-info__wrap type-right">
-                            <div class="font-body-lg info-title <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
+                            <div class="info-title <%- typeof item.titleSize !== 'undefined' && item.titleSize ? item.titleSize : 'font-body-lg' %> <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
                             <ul class="info-text">
                                 <% if (item.content && Array.isArray(item.content)) {%>
                                     <% item.content.forEach((content)=> { %>
@@ -62,7 +62,7 @@
                         </div>
                     <% } else if(textAlign=='center' ) { %>
                         <div class="item-info__wrap type-center">
-                            <div class="font-body-lg info-title <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
+                            <div class="info-title <%- typeof item.titleSize !== 'undefined' && item.titleSize ? item.titleSize : 'font-body-lg' %> <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
                             <ul class="info-text">
                                 <% if (item.content && Array.isArray(item.content)) {%>
                                     <% item.content.forEach((content)=> { %>
@@ -75,7 +75,7 @@
                         </div>
                     <% } else { %>
                         <div class="item-info__wrap type-left">
-                            <div class="font-body-lg info-title <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
+                            <div class="info-title <%- typeof item.titleSize !== 'undefined' && item.titleSize ? item.titleSize : 'font-body-lg' %> <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
                             <ul class="info-text">
                                 <% if (item.content && Array.isArray(item.content)) {%>
                                     <% item.content.forEach((content)=> { %>
@@ -89,7 +89,7 @@
                     <% } %>
                 <% } else {%>
                     <div class="item-info__wrap type-left">
-                        <div class="font-body-lg info-title <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
+                        <div class="info-title <%- typeof item.titleSize !== 'undefined' && item.titleSize ? item.titleSize : 'font-body-lg' %> <%- typeof item.titleStyle !== 'undefined' && item.titleStyle ? item.titleStyle : '' %>"><%- item.title %></div>
                         <ul class="info-text">
                             <% if (item.content && Array.isArray(item.content)) {%>
                                 <% item.content.forEach((content)=> { %>
