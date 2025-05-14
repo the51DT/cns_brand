@@ -16,57 +16,69 @@
     <div class="wrap bizinfo-compliance">
         <%- include('src/_inc/header.html') %>
             <!-- //헤더 영역 -->
-            <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {subText: '기업정보' ,
-                pageTitle: '준법경영' , rightDesc: '' })) %>
-                <!-- //비주얼 영역 -->
-                <div class="sub-content__wrap">
-                    <div class="inner-wrap">
-                        <%- include('src/component/cmp_contents_title.html', Object.assign({}, locals, { 
-                            contentsTitle: 'LG CNS의 전 구성원은 업무를 수행함에 있어<br>관련 법령을 준수하고 있습니다.',
-                        })) %>                        
-                        <div class="compliance-text font-body-md">
-                            <p> LG CNS 임직원 여러분, 대표이사 현신균 사장입니다.</p>
-
-                            <p>​불확실한 경영환경 속에서도 압도적인 경쟁우위를 확보하기 위하여 국내외 사업현장에서 땀방울을
-                                흘리고 계시는 임직원 여러분의 노고에 감사의 말씀을 드립니다.</p>
-
-                            <p>2월 예정된 상장에 발맞춰 우리 회사는 상장회사로서의 준법경영 체계를 갖추고 사회적 책임과 의무를 다하고자 합니다.</p>
-
-                            <p>준법경영은 임직원에 대한 준법 교육 및 예방 활동을 통한 준법문화 정착을 목적으로 하며, 회사와 구성원을 보호할 수 있는 강력한 수단이 되는 중요한 의미를
-                                지닙니다.<br> 또한, 준법경영은 시장에서의 리더십을 지속적으로 확보하고 미래를 준비하기 위해 결코 간과해서는 안 될 중요한 경영원칙으로, <br>올해
-                                신년사에서 당부드린 ‘AX 리더십 확보’, ‘미래준비’, ‘사업방식의 혁신’을 실천하기 위해서도 반드시 필요한 요소입니다.</p>
-
-                            <p>​우리 회사는 이미 2014년부터 Compliance
-                                Program을
-                                도입하여 모든 국가의 법령과 규제는 물론 내부 규정을 준수하기 위한 사전 리스크 예방활동과 임직원에 대한 인식제고 ​교육을 지속적으로<br>시행하여 왔고,
-                                2024년부터는
-                                준법지원인 선임, 준법통제기준 마련, 준법점검 수행 등 상장사로서 요구되는 수준의 준법경영을 몸소 실천하여 왔습니다.</p>
-
-                            <p>임직원 여러분! </p>
-
-                            <p>경영진을 포함한 LG CNS의 전 구성원은 업무를 수행함에 있어 반드시 관련 법령을 준수하여야 하며, 그 어떠한 경우에도 예외가 용납되어서는 안됩니다.</p>
-
-                            <p>​작은 실수와 순간의
-                                잘못된
-                                판단,
-                                만연하고 안일한 생각들이 지금까지 쌓아온 성과와 고객에 ​대한 신뢰를 무너뜨리는 것은 물론 회사의 존속까지 위협하는 상황으로 이어진다는 사실을 우리 모두는
-                                너무나도
-                                잘 알고 있습니다.<br> 그 동안 소홀히 생각하거나 당연하게 여겨 지나쳤던 사항들에 대해서도 준법의 관점에서 꼼꼼하게 확인할 것을 당부드립니다. 회사는 상시
-                                점검과
-                                교육을
-                                통해 자율적인 준법문화가 정착될 수 있도록 노력할 것입니다.</p>
-                            <p>우리 회사의 준법경영에 적극 동참해주시기 바라며, 더 나은 LG CNS의 미래를 다 함께 만들어 나갑시다!</p>
+            <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {
+                subText: '지속가능경영' ,
+                pageTitle: '준법경영' , 
+                rightDesc: '' 
+            })) %>
+            <!-- //비주얼 영역 -->
+            <div class="sub-content__wrap">
+                <div class="inner-wrap">
+                    <%- include('src/component/cmp_contents_title.html', Object.assign({}, locals, { 
+                        contentsTitle: 'LG CNS의 전 구성원은 업무를 수행함에 있어 <br class="display-pc">관련 법령을 준수하고 있습니다.',
+                        marginVertical: 'mb-spacing09',
+                    })) %> 
+                    <div class="bizinfo-compliance__container mb-exc-spacing-280-178">
+                        <div class="compliance-text">
+                            <p class="font-body-md color-text-secondary mb-exc-spacing-40-20">
+                                LG CNS 임직원 여러분, 대표이사 현신균 사장입니다.
+                            </p>
+                            <p class="font-body-md color-text-secondary mb-exc-spacing-40-20">
+                                불확실한 경영환경 속에서도 압도적인 경쟁우위를 확보하기 위하여 국내외 사업현장에서 땀방울을 흘리고 계시는 임직원 여러분의 노고에 감사의 말씀을 드립니다.​
+                            </p>
+                            <p class="font-body-md color-text-secondary mb-exc-spacing-40-20">
+                                2월 예정된 상장에 발맞춰 우리 회사는 상장회사로서의 준법경영 체계를 갖추고 사회적 책임과 의무를 다하고자 합니다.
+                            </p>
+                            <p class="font-body-md color-text-secondary mb-exc-spacing-40-20">
+                                준법경영은 임직원에 대한 준법 교육 및 예방 활동을 통한 준법문화 정착을 목적으로 하며, 회사와 구성원을 보호할 수 있는 강력한 수단이 되는 중요한 의미를 지닙니다.
+                                또한, 준법경영은 시장에서의 리더십을 지속적으로 확보하고 미래를 준비하기 위해 결코 간과해서는 안 될 중요한 경영원칙으로, 올해 신년사에서 당부드린 ‘AX 리더십 확보’, ‘미래준비’, ‘사업방식의 혁신’을 실천하기
+                                위해서도 반드시 필요한 요소입니다.
+                            </p>
+                            <p class="font-body-md color-text-secondary mb-exc-spacing-40-20">
+                                우리 회사는 이미 2014년부터 Compliance Program을 도입하여 모든 국가의 법령과 규제는 물론 내부 규정을 준수하기 위한 사전 리스크 예방활동과 임직원에 대한 인식제고 ​교육을 지속적으로 시행하여
+                                왔고, 2024년부터는 준법지원인 선임, 준법통제기준 마련, 준법점검 수행 등 상장사로서 요구되는 수준의 준법경영을 몸소 실천하여 왔습니다. ​
+                            </p>
+                            <p class="font-body-md color-text-secondary mb-exc-spacing-40-20">임직원 여러분!</p>
+    
+                            <p class="font-body-md color-text-secondary mb-exc-spacing-40-20">
+                                경영진을 포함한 LG CNS의 전 구성원은 업무를 수행함에 있어 반드시 관련 법령을 준수하여야 하며, 그 어떠한 경우에도 예외가 용납되어서는 안됩니다.
+                            </p>
+                            <p class="font-body-md color-text-secondary mb-exc-spacing-40-20">
+                                작은 실수와 순간의 잘못된 판단, 만연하고 안일한 생각들이 지금까지 쌓아온 성과와 고객에 ​대한 신뢰를 무너뜨리는 것은 물론 회사의 존속까지 위협하는 상황으로 이어진다는 사실을 우리 모두는 너무나도 잘 알고
+                                있습니다. <br>
+                                그 동안 소홀히 생각하거나 당연하게 여겨 지나쳤던 사항들에 대해서도 준법의 관점에서 꼼꼼하게 확인할 것을 당부드립니다. 회사는 상시 점검과 교육을 통해 자율적인 준법문화가 정착될 수 있도록 노력할 것입니다.​
+                            </p>
+                            <p class="font-body-md color-text-secondary mb-spacing09">
+                                우리 회사의 준법경영에 적극 동참해주시기 바라며, 더 나은 LG CNS의 미래를 다 함께 만들어 나갑시다!
+                            </p>
                         </div>
                         <div class="compliance-ceo">
                             <div class="compliance-ceo__text">
-                                <span class="font-body-lg">2025년 1월 21일</span>
-                                <span class="font-head-sm font-medium">CEO 현 신 균</span>
+                                <span class="font-body-lg color-text-secondary">2025년 1월 21일</span>
+                                <span class="font-head-md color-text-default">CEO 현 신 균</span>
                             </div>
-                            <img src="https://placehold.co/358x85" alt="LG CNS CEO 현신균 서명" />
+                            <img src="https://placehold.co/358x85" alt="LG CNS CEO 현신균 서명" class="compliance-ceo__signature"/>
                         </div>
                     </div>
+                    <div class="button__wrap button__wrap--btn-top align-right">
+                        <button type="button" class="btn-icon btn-top">
+                            <i class="ico icon-navigation-up-w19"></i>
+                            <span class="ir-text">최상위로 이동</span>
+                        </button>
+                    </div>
                 </div>
-                <%- include('src/_inc/footer.html') %>
+            </div>
+            <%- include('src/_inc/footer.html') %>
     </div>
 </body>
 

@@ -63,36 +63,25 @@
 
     // .bizInfo_compliance
     &compliance {
-        .sub-content__wrap {
-            .inner-wrap {
-            margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
-            }
-        }
-
-        .compliance-preface {
-            color: var(--colorGL-all-gray700);
-            font-weight: var(--typo-pc-weight-bold700);
-            margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
-
-            @media #{$phone} {
-                margin-bottom: calc(32 / 16 * 1rem);
-            }
-        }
-
-        .compliance-text p {
-            margin-bottom: 1.5rem;
-        }
-
         .compliance-ceo {
-            margin-top: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: flex-start;
+            @media #{$min1280} {
+                align-items: flex-end;
+            }
             &__text {
                 display: flex;
                 align-items: center;
                 gap: 1rem;
                 margin-bottom: calc(var(--spacing-mode1-vertical-x-l) / 16 * 1rem);
+            }
+            &__signature {
+                max-width: 100%;
+                width: calc(272 / 16 * 1rem);
+                @media #{$min1280} {
+                    width: calc(358 / 16 * 1rem);
+                }
             }
         }
     }
