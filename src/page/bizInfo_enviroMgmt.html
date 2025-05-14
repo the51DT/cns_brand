@@ -137,9 +137,6 @@
                                     })) %>
                                 </div>
                                 <div>
-                                    <p class="font-body-md font-normal color-text-secondary mb-exc-spacing-40-32">
-                                        LG CNS는 “임직원 및 협력사 직원의 건강과 공동체 안전”을 최우선 가치로 인식하며, 안전보건 성과의 지속적인 개선을 통해 안전하고 건강한 일터를 조성한다.
-                                    </p>
                                     <% const specListData3 = [ 
                                         { 
                                             id: 1, 
@@ -151,7 +148,8 @@
                                                 text: [
                                                     '경영진은 사업장의 안전보건 활동을 위해 정기적으로 검하며 구성원의 의견을 청취하고 개선한다.',
                                                 ]
-                                            }
+                                            },
+                                            styleType: 'padding-top-0',
                                         }, 
                                         { 
                                             id: 2, 
@@ -192,7 +190,6 @@
                                         { 
                                             id: 4, 
                                             subTitle: '05',
-                                            title: '지속적 개선',
                                             content: {
                                                 size: 'font-body-md',
                                                 color: '',
@@ -207,7 +204,6 @@
                                     <%- include('src/component/cmp_SpecList.html', {
                                         itemCount: 5,
                                         jsonData: specListData3,
-                                        borderTop: 'used',
                                         marginVertical: 'mb-0',
                                     }) %>
                                 </div>
@@ -325,7 +321,8 @@
                                                 text: [
                                                     '경영진은 사업장의 환경오염을 예방하기 위해 정기적으로 점검하며 구성원의 의견을 청취하고 개선한다.',
                                                 ]
-                                            }
+                                            },
+                                            styleType: 'padding-top-0',
                                         }, 
                                         { 
                                             id: 2, 
@@ -529,9 +526,9 @@
                                     addClass: 'color-text-default font-medium',
                                 },
                                 unit : "[ 절감량 / 단위 : tCO2eq ]",
-                                marginVertical: 'mb-spacing03',
+                                marginVertical: 'mb-spacing05',
                             }) %>
-                            <div class="cmp-wrap cmp-table__wrap">
+                            <div class="cmp-wrap cmp-table__wrap mb-0">
                                 <div class="cmp-wrap table-container font-body-sm">
                                     <table class="text-center data-table">
                                         <caption>친환경 IT시스템 데이터센터 적용 시, 에너지 절감 효과</caption>
@@ -573,10 +570,10 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-left font-semibold color-text-default">전산실(2-9층) 외기 공조</td>
-                                                <td class="text-right font-normal color-text-secondary">AA</td>
                                                 <td class="text-right font-normal color-text-secondary">-</td>
                                                 <td class="text-right font-normal color-text-secondary">-</td>
                                                 <td class="text-right font-normal color-text-secondary">560</td>
+                                                <td class="text-right font-normal color-text-secondary">1,366</td>
                                                 <td class="text-right font-normal color-text-secondary">1,366</td>
                                                 <td class="text-right font-normal color-text-secondary">1,366</td>
                                                 <td class="text-right font-normal color-text-secondary">1,366</td>

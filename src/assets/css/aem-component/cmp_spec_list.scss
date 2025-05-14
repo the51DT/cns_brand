@@ -23,6 +23,20 @@
         @media #{$min1280}{
             padding: calc(24 / 16 * 1rem) 0;
         }
+        &--padding-top-0 {
+            padding-top: 0;
+        }
+        &--pc-padding-top-0 {
+            @media #{$min1280}{
+                padding-top: 0;
+            }
+        }
+        &--mo-padding-top-0 {
+            padding-top: 0;
+            @media #{$min1280}{
+                padding-top: calc(24 / 16 * 1rem);
+            }
+        }
         .spec-title {
             display: flex;
             gap: calc(12 / 16 * 1rem);

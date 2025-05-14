@@ -5,8 +5,8 @@
     %>
 
     <% if (data.length > 0) { %>
-        <% data.slice(0, itemLimit).forEach((item, i) => { %>    
-            <div class="spec-item">
+        <% data.slice(0, itemLimit).forEach((item, i) => { %>
+            <div class="spec-item spec-item--<%- item.styleType ? item.styleType : '' %>">
                 <div class="spec-title color-text-default font-head-sm font-medium">
                     <% if(item.subTitle) {%>
                         <span class="spec-num color-text-default font-head-sm font-medium"><%- item.subTitle %></span>

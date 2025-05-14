@@ -2,13 +2,10 @@
     &__container {
         width: 100%;
         display: flex;
-        align-items: flex-start;
-        flex-direction: column;
         flex-wrap: wrap;
+        align-items: center;
         gap: calc(12 / 16 * 1rem);
         @media #{$min1280} {
-            align-items: baseline;
-            flex-direction: row;
             justify-content: space-between;
         }
         &:not(:has(.cmp-title__wrap)) {
@@ -21,8 +18,10 @@
     }
     .cmp-title__wrap {
         margin-bottom: 0;
+        // width: 100%;
     }
     .title-unit__box {
+        // width: 100%;
         display: block;
         white-space: nowrap;
         text-align: right;

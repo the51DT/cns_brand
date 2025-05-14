@@ -15,22 +15,18 @@
                     <div class="button__wrap">
                         <% if(item.buttonName && Array.isArray(item.buttonName)) { %>
                             <% item.buttonName.slice(0, 3).forEach((name, index) => { %>
-                                <button type="button" class="btn btn-secondary btn-small">
-                                    <!-- <% if(name) { %>
-                                        <span class="btn__text"><%= name %></span>
-                                    <% } %>
-                                    <% if (index >= 2) { %>
-                                        <i class="btn__icon ico icon-pagination-next"></i> 
-                                    <% } else { %>
-                                        <i class="btn__icon ico icon-download-bl24"></i> 
-                                    <% } %> -->
-                                    <span class="btn__text"><%= name %></span>
-                                    <% if(name == '방송듣기') { %>
+                                <% if(name == '방송듣기') { %>
+                                    <button type="button" class="btn btn-secondary btn-small">
+                                        <span class="btn__text">방송듣기</span>
                                         <i class="btn__icon ico icon-play-bl20"></i>
-                                    <% } else { %>
+                                    </button>
+                                <% } else { %>
+                                    <button type="button" class="btn btn-secondary btn-small" modal-id="" onclick="openModal(event)">
+                                        <span class="btn__text"><%= name %></span>
                                         <i class="btn__icon ico icon-download-bl20"></i>
-                                    <% } %>
-                                </button>
+                                    </button>
+                                <% } %>
+                                
                             <% }) %>
                             
                         <% } %>
@@ -53,7 +49,7 @@
                     <p class="title font-head-md font-medium">2022~2023<br>지속가능경영보고서</p>
                 </div>
                 <div class="button__wrap align-right">
-                    <button type="button" class="btn btn-medium btn-secondary">
+                    <button type="button" class="btn btn-medium btn-secondary" modal-id="" onclick="openModal(event)">
                         <span class="btn__text">다운로드</span>
                         <i class="btn__icon ico icon-download-bl24"></i>
                     </button>

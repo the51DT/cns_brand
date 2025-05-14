@@ -63,7 +63,10 @@ $fileType: "svg";
         @include iconFile(24,24,'icon_arrow_down');
     }
     &.icon-arrow-down-bl20 {
-        @include iconFile(24,24,'icon-arrow-down-bl20');
+        @include iconFile(20,20,'icon-arrow-down-bl20');
+    }
+    &.icon-arrow-dropdown-sub-bl20 {
+        @include iconFile(20,20,'icon-arrow-dropdown-sub-bl20');
     }
     &.icon-arrow-up-bl24 {
         @include iconFile(24,24,'icon_arrow_up');
