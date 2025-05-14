@@ -2,9 +2,6 @@ const headerWrap = document.querySelector('.header');
 const bodyWrap = document.querySelector('body');
 // let subMenuHeight = 0
 
-/* pc design size */
-const isPC = window.matchMedia('only screen and (min-width : 1280px)').matches;
-
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
 const addClass = (element, className) => element?.classList.add(className)
@@ -44,80 +41,84 @@ function mainNavigation(elements) {
   //이벤트 정의
   //1. header mouse enter
   function mainNav() {
-    if(isPC) {
-      console.log('mainNav')
-      navyLists.forEach(nav => {
-        const navyBtn = nav.querySelector('.type-full')
-        const subMenu = nav.querySelector('.gnb-sub__wrap')
-        const subMenuDrop = nav.querySelector('.gnb-sub__wrap--drop')
-    
-        //마우스 클릭
-        const deps2Btns = nav.querySelectorAll('.gnb-sub__menu')
-        deps2Btns.forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            const targetParent = btn.closest('li')
-    
-            addClass(targetParent, 'is-active')
-            removeClassFromActives(siblings(targetParent), 'is-active')
-    
-            setStyle(header, '--gnb-bg-height', `${getHeaderHeight(btn)}`)
-    
-          })
+    console.log('mainNav')
+    navyLists.forEach(nav => {
+      const navyBtn = nav.querySelector('.type-full')
+      const subMenu = nav.querySelector('.gnb-sub__wrap')
+      const subMenuDrop = nav.querySelector('.gnb-sub__wrap--drop')
+  
+      //마우스 클릭
+      const deps2Btns = nav.querySelectorAll('.gnb-sub__menu')
+      deps2Btns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const targetParent = btn.closest('li')
+  
+          addClass(targetParent, 'is-active')
+          removeClassFromActives(siblings(targetParent), 'is-active')
+  
+          setStyle(header, '--gnb-bg-height', `${getHeaderHeight(btn)}`)
+  
         })
-    
-        //마우스 엔터
-        nav.addEventListener('mouseenter', () => {
-          const listLi = document.querySelectorAll('.navy-list > li')
-    
-          // 1. 전체 초기화
-          navyLists.forEach(item => {
-            removeClass(item, 'is-active')
-            removeClass(header, 'is-active')
-            setStyle(header, '--gnb-bg-height', '0px')
-          })
-    
-          addClass(header, 'is-active')
-          addClass(bodyWrap, 'overflow')
-          removeClassFromActives(listLi, 'is-active')
-          addClass(nav, 'is-active')
-    
-          const activeBtn = nav.querySelector('.sub-menu-list > li.is-active >  .gnb-sub__menu')
-          if (navyBtn && subMenu) {
-            setStyle(header, '--gnb-bg-height', `${getHeaderHeight(activeBtn)}`)
-          } else if (subMenuDrop) {
-            addClass(header, 'is-active')
-            setStyle(header, '--gnb-bg-height', '0px')
-            addClass(nav, 'is-active')
-            setStyle(nav, 'position', 'relative')
-          }
-        })
-    
-        //마우스 리브
-        navyWrap.addEventListener('mouseleave', (e) => {
-          if (!navyWrap.contains(e.relatedTarget)) {
-            removeClass(bodyWrap, 'overflow')
-            setStyle(nav.parentElement, 'position', '')
-    
-            removeClass(header, 'is-active')
-            setStyle(header, '--gnb-bg-height', '0px')
-    
-            const activeItem = nav.querySelector('.sub-menu-list > li.is-active')
-            if (activeItem) {
-              // removeClass(activeItem, 'is-active')
-            }
-    
-            const activeNavyItem = nav.parentElement.querySelector('.navy-list > li.is-active')
-            if (activeNavyItem) {
-              removeClass(activeNavyItem, 'is-active')
-            }
-          }
-        })
-    
       })
-    }
+  
+      //마우스 엔터
+      nav.addEventListener('mouseenter', () => {
+        const listLi = document.querySelectorAll('.navy-list > li')
+  
+        // 1. 전체 초기화
+        navyLists.forEach(item => {
+          removeClass(item, 'is-active')
+          removeClass(header, 'is-active')
+          setStyle(header, '--gnb-bg-height', '0px')
+        })
+  
+        addClass(header, 'is-active')
+        addClass(bodyWrap, 'overflow')
+        removeClassFromActives(listLi, 'is-active')
+        addClass(nav, 'is-active')
+  
+        const activeBtn = nav.querySelector('.sub-menu-list > li.is-active >  .gnb-sub__menu')
+        if (navyBtn && subMenu) {
+          setStyle(header, '--gnb-bg-height', `${getHeaderHeight(activeBtn)}`)
+        } else if (subMenuDrop) {
+          addClass(header, 'is-active')
+          setStyle(header, '--gnb-bg-height', '0px')
+          addClass(nav, 'is-active')
+          setStyle(nav, 'position', 'relative')
+        }
+      })
+  
+      //마우스 리브
+      navyWrap.addEventListener('mouseleave', (e) => {
+        if (!navyWrap.contains(e.relatedTarget)) {
+          removeClass(bodyWrap, 'overflow')
+          setStyle(nav.parentElement, 'position', '')
+  
+          removeClass(header, 'is-active')
+          setStyle(header, '--gnb-bg-height', '0px')
+  
+          const activeItem = nav.querySelector('.sub-menu-list > li.is-active')
+          if (activeItem) {
+            // removeClass(activeItem, 'is-active')
+          }
+  
+          const activeNavyItem = nav.parentElement.querySelector('.navy-list > li.is-active')
+          if (activeNavyItem) {
+            removeClass(activeNavyItem, 'is-active')
+          }
+        }
+      })
+  
+    })
   }
   mainNav();
-  window.addEventListener('resize', mainNav);
+  window.addEventListener('resize', () => {
+    const isPc  = window.matchMedia('only screen and (min-width: 1280px)').matches;
+    if(isPc) {
+      console.log('isPc:', isPc);
+      mainNav
+    }
+  });
 }
 
 const moNavigationToggle = (button) => {
@@ -126,28 +127,32 @@ const moNavigationToggle = (button) => {
     const moMenuClose = document.querySelector('.btn-menu-close');
 
     function toggleMoNav() {
-      if(!isPC) {
-        console.log('toggleMoNav')
-        moMenu.addEventListener('click', () => {
-            if(!moNavigation.classList.contains('is-active')) {
-                bodyWrap.classList.add('overflow');
-                bodyWrap.classList.add('gnb-open');
-                headerWrap.classList.add('is-active')
-                moNavigation.classList.add('is-active');
-            }
-        });
-        moMenuClose.addEventListener('click', () => {
-            if(moNavigation.classList.contains('is-active')) {
-                bodyWrap.classList.remove('overflow');
-                bodyWrap.classList.remove('gnb-open');
-                headerWrap.classList.remove('is-active')
-                moNavigation.classList.remove('is-active');
-            }
-        });
-      }
+      console.log('toggleMoNav')
+      moMenu.addEventListener('click', () => {
+          if(!moNavigation.classList.contains('is-active')) {
+              bodyWrap.classList.add('overflow');
+              bodyWrap.classList.add('gnb-open');
+              headerWrap.classList.add('is-active')
+              moNavigation.classList.add('is-active');
+          }
+      });
+      moMenuClose.addEventListener('click', () => {
+          if(moNavigation.classList.contains('is-active')) {
+              bodyWrap.classList.remove('overflow');
+              bodyWrap.classList.remove('gnb-open');
+              headerWrap.classList.remove('is-active')
+              moNavigation.classList.remove('is-active');
+          }
+      });
     }
     toggleMoNav();
-    window.addEventListener('resize', toggleMoNav);
+    window.addEventListener('resize', () => {
+      const checkPc2 = window.matchMedia('only screen and (min-width: 1280px)').matches;
+      if(!checkPc2) {
+        console.log('checkPc2:', checkPc2);
+        toggleMoNav
+      }
+    });
 }
 
 // mobile gnb
