@@ -1,7 +1,6 @@
 const headerWrap = document.querySelector('.header');
 const bodyWrap = document.querySelector('body');
 // let subMenuHeight = 0
-let currentGnbMode = null; // 'mo' or 'pc'
 
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
@@ -48,8 +47,6 @@ function mainNavigation(elements) {
 
     // 1depth 마우스 클릭
     nav.addEventListener('click', () => {
-      if (currentGnbMode === 'mo') return;
-      
       const naviLi = document.querySelectorAll('.navy-list > li')
 
       // 1. 전체 초기화
@@ -88,8 +85,6 @@ function mainNavigation(elements) {
 
     //마우스 엔터
     nav.addEventListener('mouseenter', () => {
-      if (currentGnbMode === 'mo') return;
-
       const listLi = document.querySelectorAll('.navy-list > li')
 
       // 1. 전체 초기화
@@ -153,7 +148,6 @@ const moNavigationToggle = (button) => {
     });
     moMenuClose.addEventListener('click', () => {
         if(moNavigation.classList.contains('is-active')) {
-            currentGnbMode = null; // <- 추가
             bodyWrap.classList.remove('overflow');
             bodyWrap.classList.remove('gnb-open');
             headerWrap.classList.remove('is-active')
@@ -279,20 +273,3 @@ moNavigationToggle('.mo-menu .btn-hamburger-menu');
 moNavigationAccordion('.mo-gnb-navy__wrap .mo-navy-list');
 mainNavigation('.navy-list > li');
 langTogglePC();
-
-window.addEventListener('resize', () => {
-  const isMobileToPC = window.innerWidth >= 1280 && currentGnbMode === 'mo';
-  const moNavigation = document.querySelector('.mo-gnb-navy__wrap');
-
-  if (isMobileToPC) {
-    currentGnbMode = null;
-
-    bodyWrap.classList.remove('overflow');
-    bodyWrap.classList.remove('gnb-open');
-    headerWrap.classList.remove('is-active');
-
-    if (moNavigation) {
-      moNavigation.classList.remove('is-active');
-    }
-  }
-});
