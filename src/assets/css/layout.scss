@@ -297,7 +297,8 @@ body {
                         // border-left: calc(1 / 16 * 1rem) solid #EBEBEB;
                         position: absolute;
                         // width: calc(996 / 16 * 1rem);
-                        width: calc(calc(1440 / 16 * 1rem) - calc(428 / 16 * 1rem));
+                        // width: calc(calc(1440 / 16 * 1rem) - calc(428 / 16 * 1rem));
+                        width: calc(100vw - calc(428 / 16 * 1rem));
                         left: calc(428 / 16 * 1rem);
                         top: 0;
                         padding: calc(40 / 16 * 1rem);
