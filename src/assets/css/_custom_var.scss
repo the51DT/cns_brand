@@ -7,8 +7,8 @@ $pcMiddle: "only screen and (max-width : 1919px)";
 $pcWide: "screen and (min-width : 1920px)";
 
 // min-width 사용 : mo -> pc 순서로 스타일 적용
-$min1280: "screen and (min-width : 1280px)";
-$min720: "screen and (min-width : 720px)";
+$min1280: "only screen and (min-width : 1280px)";
+$min720: "only screen and (min-width : 720px)";
 
 // url
 $basePath : '/src/assets/';
