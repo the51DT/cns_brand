@@ -69,6 +69,10 @@ body {
             }
         }
         .gnb-util {
+            gap: calc(40 / 16 * 1rem);
+            .gnb-util__container {
+                gap: calc(32 / 16 * 1rem);
+            }
             .btn-type {
                 display: flex;
             }
@@ -515,15 +519,15 @@ body {
         display: flex;
         align-items: center;
         gap: calc(4 / 16 * 1rem);
-        @media #{$min1280} {
-            gap: calc(40 / 16 * 1rem);
-        }
+        // @media #{$min1280} {
+        //     gap: calc(40 / 16 * 1rem);
+        // }
         .gnb-util__container {
             display: flex;
             gap: calc(4 / 16 * 1rem);
-            @media #{$min1280} {
-                gap: calc(32 / 16 * 1rem);
-            }
+            // @media #{$min1280} {
+            //     gap: calc(32 / 16 * 1rem);
+            // }
         }
         .btn-type {
             border: calc(1 / 16 * 1rem) solid var(--header-util-border-color);
