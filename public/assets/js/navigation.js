@@ -1,6 +1,7 @@
 const headerWrap = document.querySelector('.header');
 const bodyWrap = document.querySelector('body');
 // let subMenuHeight = 0
+let currentGnbMode = null; // 'mo' or 'pc'
 
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
@@ -27,6 +28,29 @@ const getHeaderHeight = (el) => {
   return `${maxHeight}px`
 }
 
+/* GNB 모드 설정 */
+const setGnbMode = (mode) => {
+  console.log('test')
+  const body = document.body;
+  body.classList.remove('gnb-mode--mo', 'gnb-mode--pc');
+
+  if (mode === 'mo' || mode === 'pc') {
+    body.classList.add(`gnb-mode--${mode}`);
+    currentGnbMode = mode;
+    console.log('setGnbMode called:', `gnb-mode--${mode}`);
+  } else {
+    currentGnbMode = null;
+    console.log('setGnbMode called: none');
+  }
+};
+
+const closeMoGnb = () => {
+  const moNavigation = document.querySelector('.mo-gnb-navy__wrap');
+  setGnbMode(null);
+  bodyWrap.classList.remove('overflow', 'gnb-open');
+  headerWrap.classList.remove('is-active');
+  moNavigation?.classList.remove('is-active');
+};
 
 function mainNavigation(elements) {
   const navyLists = document.querySelectorAll(elements)
@@ -47,6 +71,7 @@ function mainNavigation(elements) {
 
     // 1depth 마우스 클릭
     nav.addEventListener('click', () => {
+      if (currentGnbMode === 'mo') return;
       const naviLi = document.querySelectorAll('.navy-list > li')
 
       // 1. 전체 초기화
@@ -85,6 +110,7 @@ function mainNavigation(elements) {
 
     //마우스 엔터
     nav.addEventListener('mouseenter', () => {
+      if (currentGnbMode === 'mo') return;
       const listLi = document.querySelectorAll('.navy-list > li')
 
       // 1. 전체 초기화
@@ -140,6 +166,7 @@ const moNavigationToggle = (button) => {
     const moMenuClose = document.querySelector('.btn-menu-close');
     moMenu.addEventListener('click', () => {
         if(!moNavigation.classList.contains('is-active')) {
+          setGnbMode('mo');
             bodyWrap.classList.add('overflow');
             bodyWrap.classList.add('gnb-open');
             headerWrap.classList.add('is-active')
@@ -148,6 +175,7 @@ const moNavigationToggle = (button) => {
     });
     moMenuClose.addEventListener('click', () => {
         if(moNavigation.classList.contains('is-active')) {
+            closeMoGnb();
             bodyWrap.classList.remove('overflow');
             bodyWrap.classList.remove('gnb-open');
             headerWrap.classList.remove('is-active')
@@ -266,6 +294,25 @@ const gnbSwiper = new Swiper('.gnb-sub-swiper .swiper', {
         el: '.swiper-pagination',
         clickable: true,
     },
+});
+
+// 1. 초기 모드 설정
+window.addEventListener('DOMContentLoaded', () => {
+  const isPc = window.innerWidth >= 1280;
+  console.log('isPc:', isPc)
+  setGnbMode(isPc ? 'pc' : 'mo');
+});
+
+// 2. 리사이즈 감지
+window.addEventListener('resize', () => {
+  const isPc = window.innerWidth >= 1280;
+
+  if (isPc && currentGnbMode !== 'pc') {
+    closeMoGnb();
+    setGnbMode('pc');
+  } else if (!isPc && currentGnbMode !== 'mo') {
+    setGnbMode('mo');
+  }
 });
 
 window.addEventListener("scroll", scrollEventManage);

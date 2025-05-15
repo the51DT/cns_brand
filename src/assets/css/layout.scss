@@ -56,7 +56,19 @@ body {
             }
         }
     }
-    // mobile GNB
+    &.gnb-mode--pc {
+        .gnb-navy__wrap {
+            display: flex;
+        }
+    }
+    &.gnb-mode--mo {
+        &.gnb-open {
+            .mo-gnb-navy__wrap {
+                display: block;
+            }
+        }
+    }
+    // mobile GNB open
     &.gnb-open {
         .header-inner {
             .logo {
@@ -102,6 +114,7 @@ body {
             }
         }
     }
+    
 }
 .inner-wrap {
     width: 100%;
@@ -166,7 +179,7 @@ body {
         justify-content: space-between;
         height: 100%;     
         @media #{$min1280} {
-            display: flex;
+            // display: flex;
             padding: 0 calc(40 / 16 * 1rem) 0 calc(60 / 16 * 1rem);
         }
         .navy-left {
@@ -603,7 +616,7 @@ body {
     .mo-gnb-navy__wrap {
         display: none;
         &.is-active {
-            display: block;
+            // display: block;
             position: fixed;
             top: calc(64 / 16 * 1rem);
             left: 0;
