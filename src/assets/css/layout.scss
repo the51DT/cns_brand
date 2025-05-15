@@ -57,7 +57,21 @@ body {
         }
     }
     &.gnb-mode--pc {
+        .header {
+            height: calc(100 / 16 * 1rem);
+            // 로고
+            .logo_wt {
+                width: calc(118 / 16 * 1rem);
+                
+            }
+            .logo_bl {
+                width: calc(118 / 16 * 1rem);
+            }
+        }
         .gnb-util {
+            .btn-type {
+                display: flex;
+            }
             .lang-select {
                 display: flex;
             }
@@ -71,6 +85,9 @@ body {
     }
     &.gnb-mode--mo {
         .gnb-util {
+            .btn-type {
+                display: none;
+            }
             .mo-menu {
                 display: block;
                 .btn-hamburger-menu {
@@ -149,9 +166,9 @@ body {
     transform: translateY(0);
     background: var(--header-bg);
     position: relative;
-    @media #{$min1280} {
-        height: calc(100 / 16 * 1rem);
-    }
+    // @media #{$min1280} {
+    //     height: calc(100 / 16 * 1rem);
+    // }
     &-inner {
         padding: 0 calc(12 / 16 * 1rem) 0 calc(20 / 16 * 1rem);
         margin: 0 auto;
@@ -515,9 +532,6 @@ body {
             justify-content: center;
             align-items: center;
             color: var(--header-font-color);
-            @media #{$min1280} {
-                display: flex;
-            }
         }
         // 언어 선택
         .lang-select {
@@ -758,16 +772,16 @@ body {
     .logo_wt {
         display: var(--header-logo-wh-display);
         width: calc(90 / 16 * 1rem);
-        @media #{$min1280} {
-            width: calc(118 / 16 * 1rem);
-        }
+        // @media #{$min1280} {
+        //     width: calc(118 / 16 * 1rem);
+        // }
     }
     .logo_bl {
         display: var(--header-logo-bl-display);
         width: calc(90 / 16 * 1rem);
-        @media #{$min1280} {
-            width: calc(118 / 16 * 1rem);
-        }
+        // @media #{$min1280} {
+        //     width: calc(118 / 16 * 1rem);
+        // }
     }
     // 아이콘
     .icon-earth-wt24 {
