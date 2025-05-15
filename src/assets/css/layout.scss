@@ -62,59 +62,57 @@ body {
         }
     }
     &.gnb-mode--mo {
+        .gnb-util {
+            .mo-menu {
+                display: block;
+                width: calc(40 / 16 * 1rem);
+                height: calc(40 / 16 * 1rem);
+                .btn-hamburger-menu {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background: url("#{$basePath}image/icon/icon-hamburger-menu_bl40.svg") no-repeat center center / contain;
+                }
+                .btn-menu-close {
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                    background: var(--header-close-ico) no-repeat center center / contain;
+                }
+            }
+        }
+        // mobile GNB open
         &.gnb-open {
+            .logo {
+                display: none;
+            }
+            .gnb-util {
+                width: 100%;
+                height: 100%;
+                justify-content: space-between;
+                .btn-type {
+                    display: flex;
+                }
+                .lang-select {
+                    display: flex;
+                }
+                .btn-search {
+                    display: none;
+                }
+                .mo-menu {
+                    .btn-hamburger-menu {
+                        display: none;
+                    }
+                    .btn-menu-close {
+                        display: block;
+                    }
+                }
+            }
             .mo-gnb-navy__wrap {
                 display: block;
             }
         }
     }
-    // mobile GNB open
-    &.gnb-open {
-        .header-inner {
-            .logo {
-                display: none;
-                @media #{$min1280} {
-                    display: block;
-                }
-            }
-        }
-        .gnb-util {
-            width: 100%;
-            height: 100%;
-            justify-content: space-between;
-            @media #{$min1280} {
-                width: auto;
-            }
-            .btn-type {
-                display: block;
-                @media #{$min1280} {
-                    display: block;
-                }
-            }
-            .lang-select {
-                display: flex;
-            }
-            .btn-search {
-                display: none;
-                @media #{$min1280} {
-                    display: block;
-                }
-            }
-            .btn-hamburger-menu {
-                display: none;
-                @media #{$min1280} {
-                    display: none;
-                }
-            }
-            .btn-menu-close {
-                display: block;
-                @media #{$min1280} {
-                    display: none;
-                }
-            }
-        }
-    }
-    
 }
 .inner-wrap {
     width: 100%;
@@ -590,29 +588,6 @@ body {
     }
 
     // GNB Mobile
-    .mo-menu {
-        display: block;
-        width: calc(40 / 16 * 1rem);
-        height: calc(40 / 16 * 1rem);
-        @media #{$min1280} {
-            display: none;
-        }
-        .btn-hamburger-menu {
-            display: block;
-            width: 100%;
-            height: 100%;
-            background: url("#{$basePath}image/icon/icon-hamburger-menu_bl40.svg") no-repeat center center / contain;
-            @media #{$min1280} {
-                display: none;
-            }
-        }
-        .btn-menu-close {
-            display: none;
-            width: 100%;
-            height: 100%;
-            background: var(--header-close-ico) no-repeat center center / contain;
-        }
-    }
     .mo-gnb-navy__wrap {
         display: none;
         &.is-active {

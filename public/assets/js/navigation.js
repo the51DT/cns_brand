@@ -46,7 +46,7 @@ const setGnbMode = (mode) => {
 
 const closeMoGnb = () => {
   const moNavigation = document.querySelector('.mo-gnb-navy__wrap');
-  setGnbMode(null);
+  // setGnbMode(null);
   bodyWrap.classList.remove('overflow', 'gnb-open');
   headerWrap.classList.remove('is-active');
   moNavigation?.classList.remove('is-active');
