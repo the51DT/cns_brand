@@ -81,6 +81,7 @@ body {
         }
         .gnb-navy__wrap {
             display: flex;
+            padding: 0 calc(40 / 16 * 1rem) 0 calc(60 / 16 * 1rem);
         }
     }
     &.gnb-mode--mo {
@@ -194,10 +195,10 @@ body {
         flex: 1;
         justify-content: space-between;
         height: 100%;     
-        @media #{$min1280} {
-            // display: flex;
-            padding: 0 calc(40 / 16 * 1rem) 0 calc(60 / 16 * 1rem);
-        }
+        // @media #{$min1280} {
+        //     // display: flex;
+        //     padding: 0 calc(40 / 16 * 1rem) 0 calc(60 / 16 * 1rem);
+        // }
         .navy-left {
             height: 100%;
             display: flex;
