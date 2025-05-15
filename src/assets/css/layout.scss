@@ -57,6 +57,11 @@ body {
         }
     }
     &.gnb-mode--pc {
+        .gnb-util {
+            .lang-select {
+                display: flex;
+            }
+        }
         .gnb-navy__wrap {
             display: flex;
         }
@@ -523,9 +528,9 @@ body {
             position: relative;
             display: none;
             align-items: center;
-            @media #{$min1280} {
-                display: flex;
-            }
+            // @media #{$min1280} {
+            //     display: flex;
+            // }
             .btn-lang {
                 width: calc(40 / 16 * 1rem);
                 height: calc(40 / 16 * 1rem);
