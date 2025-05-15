@@ -30,7 +30,6 @@ const getHeaderHeight = (el) => {
 
 /* GNB 모드 설정 */
 const setGnbMode = (mode) => {
-  console.log('test')
   const body = document.body;
   body.classList.remove('gnb-mode--mo', 'gnb-mode--pc');
 
@@ -299,7 +298,6 @@ const gnbSwiper = new Swiper('.gnb-sub-swiper .swiper', {
 // 1. 초기 모드 설정
 window.addEventListener('DOMContentLoaded', () => {
   const isPc = window.innerWidth >= 1280;
-  console.log('isPc:', isPc)
   setGnbMode(isPc ? 'pc' : 'mo');
 });
 
