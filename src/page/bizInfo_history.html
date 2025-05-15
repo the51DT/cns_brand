@@ -28,9 +28,16 @@
                         </div>
                     </div>
                 </div>
+                <img class="bizinfo-history__visual--img" src="../assets/image/sub/bg_history_logo.png" alt="cns">
+                <div class="button__wrap button__wrap--scroll-down">
+                    <button type="button" class="" onclick="scrollDown('#history');">
+                        <i class="ico icon-navigation-down-gr100"></i>
+                        <span class="ir-text">다음 화면 보기</span>
+                    </button>
+                </div>
 
             </div>
-            <div class="bizinfo-history__history">
+            <div class="bizinfo-history__history" id="history">
                 <div class="inner-wrap">
                     <div class="bizinfo-history__scroll">
                         <div class="left-section">
@@ -42,21 +49,21 @@
                             <div class="left-section__item">
                                 <h3>도약과 발전</h3>
                                 <span>LG CNS,<br>도약과 발전의 시기</span>
-                                <p>2022년부터 2015년까지</p>
+                                <p>2015년부터 2002년까지</p>
                             </div>
                             <div class="left-section__item">
                                 <h3>성장과 도전</h3>
                                 <span>LG CNS,<br>성장과 도전의 시기</span>
-                                <p>1995년부터 2001년까지</p>
+                                <p>2001년부터 1995년까지</p>
                             </div>
                             <div class="left-section__item">
                                 <h3>탄생과 개척</h3>
                                 <span>LG CNS,<br>탄생과 개척의 시기</span>
-                                <p>1987년부터 1994년까지</p>
+                                <p>1994년부터 1987년까지</p>
                             </div>
                         </div>
                         <div class="right-section">
-                            <div class="progress-bar">
+                            <div class="progress-bar" id="progressBar">
                                 <div class="bar"></div>
                             </div>
                             <div class="right-section__item" id="right-section__item"></div>
@@ -70,7 +77,10 @@
     <%- include('src/_inc/footer.html', { type: 'dark' }) %>
     </div>
 
-    <script>
+<script>
+
+  const desktop = window.matchMedia('(min-width: 1280px)').matches;
+  
   document.addEventListener("DOMContentLoaded", () => {
     fetch('/assets/data/timeline.json')
         .then(res => res.json())
@@ -85,10 +95,10 @@
             };
 
             const sortedData = [
-                { className: "data-2020s", items: data.timelineData2020s },
-                { className: "data-2010s", items: data.timelineData2010s },
-                { className: "data-2000s", items: data.timelineData2000s },
-                { className: "data-1900s", items: data.timelineData1900s }
+                { className: "data-2020s", items: data.timelineData2020s, name: "group1" },
+                { className: "data-2010s", items: data.timelineData2010s, name: "group2" },
+                { className: "data-2000s", items: data.timelineData2000s, name: "group3" },
+                { className: "data-1900s", items: data.timelineData1900s, name: "group4" }
             ];
 
             const interpolateColor = (color1, color2, factor) => {
@@ -99,14 +109,14 @@
                 return `#${result.join('')}`;
             };
 
-            timelineContainer.innerHTML = sortedData.map(({ className, items }) => {
+            timelineContainer.innerHTML = sortedData.map(({ className, items, name}) => {
                 const [startColor, endColor] = colorRanges[className];
 
                 return `
-                    <div class="timeline-group ${className}">
+                    <div class="timeline-group ${className}" id="${name}">
                         ${items.map((yearItem, index) => {
                             const colorFactor = index / (items.length - 1);
-                            const currentColor = interpolateColor(startColor, endColor, colorFactor);
+                            currentColor = interpolateColor(startColor, endColor, colorFactor);
 
                             return `
                                 <div class="timeline-year">
@@ -147,6 +157,7 @@
 function initScrollEvents() {
     const scrollWrap = document.querySelector('.right-section');
     const progressBar = document.querySelector('.progress-bar .bar');
+    const progressBarContainer = document.querySelector('.progress-bar');
     const circles = document.querySelectorAll('.circle-container');
     const leftItems = document.querySelectorAll('.left-section__item');
     const rightSections = document.querySelectorAll('.timeline-group');
@@ -154,20 +165,49 @@ function initScrollEvents() {
     const updateProgressBar = () => {
         const scrollY = window.scrollY;
         const viewportHeight = window.innerHeight;
-
-        const scrollWrapTop = scrollWrap.offsetTop;
-        const scrollWrapBottom = scrollWrapTop + scrollWrap.offsetHeight;
-        const scrollPosition = scrollY + viewportHeight / 2;
-
-        circles.forEach(circle => {
-            const circleTop = circle.getBoundingClientRect().top + scrollY;
-            circle.classList.toggle('active', scrollPosition >= circleTop);
-        });
+        const scrollWrapTop = scrollWrap.getBoundingClientRect().top;
+        const progressBarWrapTop = scrollWrapTop + scrollY;        
 
         // 프로그레스바 높이 업데이트
         const firstCircleTop = circles[0].getBoundingClientRect().top + scrollY;
         const lastCircleTop = circles[circles.length - 1].getBoundingClientRect().top + scrollY;
+        const lastCircleBottom = circles[circles.length - 1].getBoundingClientRect().bottom + scrollY;
         const totalHeight = lastCircleTop - firstCircleTop;
+        const scrollPosition = scrollY + viewportHeight / 2;
+
+        progressBarContainer.style.top = `${firstCircleTop - progressBarWrapTop}px`;
+        progressBarContainer.style.height = `${lastCircleBottom - firstCircleTop}px`;
+
+        circles.forEach(circle => {
+            const circleTop = circle.getBoundingClientRect().top + scrollY;
+            circle.classList.toggle('active', scrollPosition >= circleTop);
+
+            const yearContainer = circle.closest(".year-container");
+            yearContainer.querySelectorAll("[style]").forEach(el => {
+                el.dataset.ogStyle = el.getAttribute("style");
+            });
+            const outerGlow = circle.querySelector(".outer-glow");
+            const outerCircle = circle.querySelector(".outer-circle");
+            const innerCircle = circle.querySelector(".inner-circle");
+            const yearTitle = circle.closest(".year-container").querySelector(".year-title")
+
+            const outerGlowOg = outerGlow.dataset.ogStyle;
+            const outerCircleOg = outerCircle.dataset.ogStyle;
+            const innerCircleOg = innerCircle.dataset.ogStyle;
+            const yearTitleOg = yearTitle.dataset.ogStyle;
+            if(circle.classList.contains('active')) {
+                outerGlow.setAttribute("style", outerGlowOg);
+                outerCircle.setAttribute("style", outerCircleOg);
+                innerCircle.setAttribute("style", innerCircleOg);
+                yearTitle.setAttribute("style", yearTitleOg);
+            
+            } else { 
+                yearContainer.querySelectorAll("[style]").forEach(el => {
+                    el.removeAttribute("style", "all : revert");
+                });
+            }
+        });
+
 
         if (scrollPosition >= firstCircleTop && scrollPosition <= lastCircleTop) {
             progressBar.style.height = `${lastCircleTop - scrollPosition}px`;
@@ -185,29 +225,85 @@ function initScrollEvents() {
             if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
                 leftItems.forEach(item => item.classList.remove('active'));
                 leftItems[index].classList.add('active');
+                // mobile일 경우에만,
+                if(!desktop) {                    
+                    if(leftItems[index].classList.contains("active")) {
+                        const targetScrollWidth = leftItems[index].closest(".left-section").scrollWidth;
+                        const targetOffsetWidth = leftItems[index].offsetWidth;
+                        //const targetWidth3 = targetScrollWidth - targetOffsetWidth;                        
+                        // console.log(targetScrollWidth, targetOffsetWidth, targetWidth3 );
+
+                        if(index == 0) {
+                            document.querySelector(".left-section").scrollTo({left: 0 , behavior : "smooth"});    
+                        } else if(index == (leftItems.length - 1)) {
+                            document.querySelector(".left-section").scrollTo({left: targetScrollWidth , behavior : "smooth"});
+                        } else {
+                            document.querySelector(".left-section").scrollTo({left: targetOffsetWidth , behavior : "smooth"});
+                        }
+                    }
+                }
             }
         });
+
+        checkingCSS();
     };
 
     window.addEventListener('scroll', updateProgressBar);
-    window.addEventListener('resize', updateProgressBar);
-    setTimeout(updateProgressBar, 200); // 초기 실행
+    window.addEventListener('resize', updateProgressBar, );
+    setTimeout(updateProgressBar, 200); // 초기 실행        
 }
 
 // 좌측 h3 클릭 시 오른쪽 섹션 이동
 function attachH3ClickEvents() {
     const leftItems = document.querySelectorAll('.left-section__item');
-    const rightSections = document.querySelectorAll('.timeline-group');
+    const leftSection = document.querySelector('.left-section');
+    const rightSections = document.querySelectorAll('.right-section__item .timeline-group');
 
     leftItems.forEach((item, index) => {
         const h3 = item.querySelector('h3');
         h3.addEventListener('click', () => {
-            rightSections[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const targetId = rightSections[index].getAttribute("id");
+            document.querySelector(`#${targetId}`).scrollIntoView({ behavior: 'smooth' , block: 'start'});
+
+            if(!desktop) { // 1280 미만일때,
+                const leftHeight = document.querySelector('.left-section').clientHeight;
+                // document.querySelector('.bizinfo-history__history .right-section').style.paddingTop = leftHeight + "px";               
+            } else {
+                // document.querySelector('.bizinfo-history__history .right-section').style.paddingTop = revert;
+            }
         });
     });
 }
 
-    </script>
+function scrollDown(target) {
+    const targetTop = document.querySelector(target).offsetTop;
+    window.scrollTo({
+        top: targetTop,
+        left: 0,
+        behavior: "smooth",
+    });   
+}
+
+function checkingCSS() {
+
+    if(desktop) { //pc (min-width:1280px)
+        if(document.querySelector('.bizinfo-history .header').classList.contains("is-fixed")) {
+            document.querySelector('.left-section').style.paddingTop = "100px";
+        } else {
+            document.querySelector('.left-section').style.paddingTop = "0";
+        }
+    } else {
+        if(document.querySelector('.bizinfo-history .header').classList.contains("is-fixed")) {
+            document.querySelector('.left-section').style.top = "64px";
+            document.querySelector('.left-section').style.paddingTop = "0";
+        } else {
+            document.querySelector('.left-section').style.top = "0";
+            // document.querySelector('.left-section').style.paddingTop = "40px";
+        }
+    }
+}
+
+</script>
 </body>
 
 </html>
