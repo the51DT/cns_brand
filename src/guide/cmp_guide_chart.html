@@ -57,7 +57,23 @@
                                     id: 1,
                                     type: 'columnChart',
                                     categories: ['2019', '2020', '2021', '2022', '2023'],
-                                    series: ['212', '246', '328', '385', '464'],
+                                    series: [
+                                        {
+                                            value: '212',
+                                        },
+                                        {
+                                            value: '246',
+                                        },
+                                        {
+                                            value: '328',
+                                        },
+                                        {
+                                            value: '385',
+                                        },
+                                        {
+                                            value: '464',
+                                        },
+                                    ],
                                     categoryBarColor : '#E156E2',
                                     valueMax: '600',
                                 })) %>
@@ -65,9 +81,179 @@
                                     id: 2,
                                     type: 'columnChart',
                                     categories: ['2019', '2020', '2021', '2022'],
-                                    series: ['212', '246', '328', '385',],
+                                    series: [
+                                        {
+                                            value: '212',
+                                        },
+                                        {
+                                            value: '246',
+                                        },
+                                        {
+                                            value: '328',
+                                        },
+                                        {
+                                            value: '385',
+                                        },
+                                    ],
                                     categoryBarColor : ['#f729c1', '#e54ddc', '#d371f6', '#b7b4ef'],
                                     valueMax: '1000',
+                                    marginVertical: 'mt-spacing11',
+                                })) %>
+                            </div>
+
+                            <p class="guide-title-h3 mt-spacing12">막대그래프(invert)</p>
+                            <ul class="guide-list type-dot mt-5">
+                                <li>
+                                    <p>type : invertChart - 음수가 있을 경우의 그래프</p>
+                                </li>
+                                <li>
+                                    <p>.chart-wrap__xAxis-area__line--y-intercept : Y좌표 0</p>
+                                </li>
+                                <li>
+                                    <p>series :</p>
+                                    <ul>
+                                        <li>
+                                            <p>type : negative(음수) / positive(양수) // type 이 없을 경우 자동으로 양수 처리 적용</p>
+                                        </li>
+                                        <li>
+                                            <p>value : 값</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="cmp-exsample__wrap mt-3">
+                                <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 1,
+                                    type: 'invertChart',
+                                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                                    series: [
+                                        {
+                                            type: 'positive',
+                                            value: '150'
+                                        },
+                                        {
+                                            type: 'positive',
+                                            value: '175'
+                                        },
+                                        {
+                                            type: 'positive',
+                                            value: '400'
+                                        },
+                                        {
+                                            type: 'negative',
+                                            value: '385'
+                                        },
+                                        {
+                                            type: 'negative',
+                                            value: '464'
+                                        },
+                                    ],
+                                    categoryBarColor : '#E156E2',
+                                    valueMax: '600',
+                                })) %>
+                                <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 2,
+                                    type: 'invertChart',
+                                    categories: ['2019', '2020', '2021', '2022'],
+                                    series: [
+                                        {
+                                            type: 'positive',
+                                            value: '150'
+                                        },
+                                        {
+                                            type: 'positive',
+                                            value: '175'
+                                        },
+                                        {
+                                            type: 'negative',
+                                            value: '385'
+                                        },
+                                        {
+                                            type: 'negative',
+                                            value: '400'
+                                        },
+                                    ],
+                                    categoryBarColor : ['#f729c1', '#e54ddc', '#d371f6', '#b7b4ef'],
+                                    valueMax: '1000',
+                                    marginVertical: 'mt-spacing11',
+                                })) %>
+                            </div>
+
+                            <p class="guide-title-h3 mt-spacing12">막대그래프(negative)</p>
+                            <ul class="guide-list type-dot mt-5">
+                                <li>
+                                    <p>type : negativeChart - 음수만 있을 경우의 그래프</p>
+                                </li>
+                                <li>
+                                    <p>.chart-wrap__xAxis-area__line--y-intercept : Y좌표 0</p>
+                                </li>
+                                <li>
+                                    <p>series :</p>
+                                    <ul>
+                                        <li>
+                                            <p>type : negative(음수)</p>
+                                        </li>
+                                        <li>
+                                            <p>value : 값</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="cmp-exsample__wrap mt-3">
+                                <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 1,
+                                    type: 'negativeChart',
+                                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                                    series: [
+                                        {
+                                            type: 'negative',
+                                            value: '150'
+                                        },
+                                        {
+                                            type: 'negative',
+                                            value: '175'
+                                        },
+                                        {
+                                            type: 'negative',
+                                            value: '400'
+                                        },
+                                        {
+                                            type: 'negative',
+                                            value: '385'
+                                        },
+                                        {
+                                            type: 'negative',
+                                            value: '464'
+                                        },
+                                    ],
+                                    categoryBarColor : '#E156E2',
+                                    valueMax: '600',
+                                })) %>
+                                <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
+                                    id: 2,
+                                    type: 'negativeChart',
+                                    categories: ['2019', '2020', '2021', '2022'],
+                                    series: [
+                                        {
+                                            type: 'negative',
+                                            value: '150'
+                                        },
+                                        {
+                                            type: 'negative',
+                                            value: '175'
+                                        },
+                                        {
+                                            type: 'negative',
+                                            value: '385'
+                                        },
+                                        {
+                                            type: 'negative',
+                                            value: '400'
+                                        },
+                                    ],
+                                    categoryBarColor : ['#f729c1', '#e54ddc', '#d371f6', '#b7b4ef'],
+                                    valueMax: '1000',
+                                    marginVertical: 'mt-spacing11',
                                 })) %>
                             </div>
                         </div>
@@ -75,7 +261,7 @@
             </div>
     </div>
     <script type="module" src="/src/main.js"></script>
-    <script>
+    <!-- <script>
         const cmpChart = document.querySelectorAll('.cmp-chart');
         cmpChart.forEach(chart => {
             const chartColumn = chart.querySelector('.chart-wrap--column-chart');
@@ -90,7 +276,7 @@
                 console.log(chartBarVal);
             });
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

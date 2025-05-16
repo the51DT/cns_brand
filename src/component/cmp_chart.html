@@ -1,30 +1,43 @@
 <!-- chart -->
 <div class="cmp-wrap cmp-chart <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : ''%>">
-    <% const chartType = typeof type !=='undefined' ? type : '' ; %>
+    <% 
+        const chartType = typeof type !=='undefined' ? type : '' ; 
+        let countNegative = 0;
+        series.forEach((series, index) => {
+            <!-- console.log('series type:', series.type); -->
+            if (series.type === 'negative') {
+                countNegative++;
+            }
+        });
+    %>
     <div class="chart-wrap">
-    <% if(chartType && chartType == 'columnChart' && valueMax) { %>
-        <div class="chart-wrap__column-chart">
+    <% if(chartType && valueMax) { %>
+        <div class="chart-wrap__chart-item<%- chartType == 'columnChart' ? ' chart-wrap__column-chart' : '' %><%- chartType == 'invertChart' ? ' chart-wrap__invert-chart' : '' %><%- chartType=='negativeChart' ? ' chart-wrap__negative-chart' : '' %>">
             <div class="chart-wrap__xAxis-area">
                 <span class="chart-wrap__xAxis-area__line"></span>
-                <span class="chart-wrap__xAxis-area__line"></span>
+                <span class="chart-wrap__xAxis-area__line<%- chartType == 'invertChart' ? ' chart-wrap__xAxis-area__line--y-intercept' : ''%>"></span>
+                <% if(chartType == 'invertChart') { %>
+                    <span class="chart-wrap__xAxis-area__line"></span>
+                <% } %>
             </div>
             <div class="chart-wrap__yAxis-area">
                 <% if(series) {%>
-                    <ul class="chart-wrap__yAxis-series">
+                    <ul class="chart-wrap__yAxis-series" style="--yAxis-series-item-length : <%- series.length %>;--yAxis-series-item-negative-length: <%- countNegative %>">
                         <% series.forEach((series, index)=> { %>
                             <% if(typeof categoryBarColor === 'string') { %>
-                                <li>
+                                <li class="<%- series.type == 'negative' ? 'chart-wrap__yAxis-series__val-negative' : '' %>" style="--yAxis-series-item-index : <%- index %>">
                                     <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
-                                        <%- series %>
+                                        <%- series.value %>
                                     </span>
-                                    <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor %>;--yAxis-series-target-val: <%- series %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
+                                    <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor %>;--yAxis-series-target-val: <%- series.value %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
                                 </li>
                             <% } else if (typeof categoryBarColor === 'object') { %>
-                                <li>
+                                <% console.log(series.value) %>
+                                <li class="<%- series.type == 'negative' ? 'chart-wrap__yAxis-series__val-negative' : '' %>" style="--yAxis-series-item-index : <%- index %>">
                                     <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
-                                        <%- series %>
+                                        <%- series.value %>
                                     </span>
-                                    <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor[index] %>;--yAxis-series-target-val: <%- series %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
+                                    <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor[index] %>;--yAxis-series-target-val: <%- series.value %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
                                 </li>
                             <% } %>
                         <% }) %>
@@ -40,9 +53,9 @@
                             </li>
                         <% }) %>
                     </ul>
-                    <% } %>
+                <% } %>
                 </div>
-            <% } %>
-        </div>
+            </div>
+        <% } %>
     </div>
 </div>

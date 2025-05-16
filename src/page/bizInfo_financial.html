@@ -54,9 +54,27 @@
                                         <span class="graph-title color-text-default font-medium text-center font-body-lg block mb-3">자산</span>
                                         <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
                                             id: 0,
-                                            type: 'columnChart',
+                                            type: 'invertChart',
                                             categories: ['2019', '2020', '2021', '2022', '2023'],
-                                            series: ['212', '246', '328', '385', '464'],
+                                            series: [
+                                                {
+                                                    value: '212',
+                                                },
+                                                {
+                                                    value: '246',
+                                                },
+                                                {
+                                                    value: '328',
+                                                },
+                                                {
+                                                    type: 'negative',
+                                                    value: '385',
+                                                },
+                                                {
+                                                    type: 'negative',
+                                                    value: '464',
+                                                },
+                                            ],
                                             categoryBarColor : '#B2C0EC',
                                             valueMax: '600',
                                         })) %>
@@ -65,9 +83,30 @@
                                         <span class="graph-title color-text-default font-medium text-center font-body-lg block mb-3">부채</span>
                                         <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
                                             id: 1,
-                                            type: 'columnChart',
+                                            type: 'negativeChart',
                                             categories: ['2019', '2020', '2021', '2022', '2023'],
-                                            series: ['212', '246', '328', '385', '464'],
+                                            series: [
+                                                {
+                                                    type: 'negative',
+                                                    value: '212',
+                                                },
+                                                {
+                                                    type: 'negative',
+                                                    value: '246',
+                                                },
+                                                {
+                                                    type: 'negative',
+                                                    value: '328',
+                                                },
+                                                {
+                                                    type: 'negative',
+                                                    value: '385',
+                                                },
+                                                {
+                                                    type: 'negative',
+                                                    value: '464',
+                                                },
+                                            ],
                                             categoryBarColor : '#C591F7',
                                             valueMax: '600',
                                         })) %>
@@ -78,7 +117,23 @@
                                             id: 2,
                                             type: 'columnChart',
                                             categories: ['2019', '2020', '2021', '2022', '2023'],
-                                            series: ['212', '246', '328', '385', '464'],
+                                            series: [
+                                                {
+                                                    value: '212',
+                                                },
+                                                {
+                                                    value: '246',
+                                                },
+                                                {
+                                                    value: '328',
+                                                },
+                                                {
+                                                    value: '385',
+                                                },
+                                                {
+                                                    value: '464',
+                                                },
+                                            ],
                                             categoryBarColor : '#E156E2',
                                             valueMax: '600',
                                         })) %>
@@ -237,7 +292,23 @@
                                             id: 0,
                                             type: 'columnChart',
                                             categories: ['2019', '2020', '2021', '2022', '2023'],
-                                            series: ['212', '246', '328', '385', '464'],
+                                            series: [
+                                                {
+                                                    value: '212',
+                                                },
+                                                {
+                                                    value: '246',
+                                                },
+                                                {
+                                                    value: '328',
+                                                },
+                                                {
+                                                    value: '385',
+                                                },
+                                                {
+                                                    value: '464',
+                                                },
+                                            ],
                                             categoryBarColor : '#B2C0EC',
                                             valueMax: '600',
                                         })) %>
@@ -248,7 +319,23 @@
                                             id: 1,
                                             type: 'columnChart',
                                             categories: ['2019', '2020', '2021', '2022', '2023'],
-                                            series: ['212', '246', '328', '385', '464'],
+                                            series: [
+                                                {
+                                                    value: '212',
+                                                },
+                                                {
+                                                    value: '246',
+                                                },
+                                                {
+                                                    value: '328',
+                                                },
+                                                {
+                                                    value: '385',
+                                                },
+                                                {
+                                                    value: '464',
+                                                },
+                                            ],
                                             categoryBarColor : '#C591F7',
                                             valueMax: '600',
                                         })) %>
@@ -259,7 +346,23 @@
                                             id: 2,
                                             type: 'columnChart',
                                             categories: ['2019', '2020', '2021', '2022', '2023'],
-                                            series: ['212', '246', '328', '385', '464'],
+                                            series: [
+                                                {
+                                                    value: '212',
+                                                },
+                                                {
+                                                    value: '246',
+                                                },
+                                                {
+                                                    value: '328',
+                                                },
+                                                {
+                                                    value: '385',
+                                                },
+                                                {
+                                                    value: '464',
+                                                },
+                                            ],
                                             categoryBarColor : '#E156E2',
                                             valueMax: '600',
                                         })) %>
@@ -338,7 +441,23 @@
                                             id: 0,
                                             type: 'columnChart',
                                             categories: ['2019', '2020', '2021', '2022', '2023'],
-                                            series: ['212', '246', '328', '385', '464'],
+                                            series: [
+                                                {
+                                                    value: '212',
+                                                },
+                                                {
+                                                    value: '246',
+                                                },
+                                                {
+                                                    value: '328',
+                                                },
+                                                {
+                                                    value: '385',
+                                                },
+                                                {
+                                                    value: '464',
+                                                },
+                                            ],
                                             categoryBarColor : '#B2C0EC',
                                             valueMax: '600',
                                         })) %>
@@ -349,7 +468,23 @@
                                             id: 1,
                                             type: 'columnChart',
                                             categories: ['2019', '2020', '2021', '2022', '2023'],
-                                            series: ['212', '246', '328', '385', '464'],
+                                            series: [
+                                                {
+                                                    value: '212',
+                                                },
+                                                {
+                                                    value: '246',
+                                                },
+                                                {
+                                                    value: '328',
+                                                },
+                                                {
+                                                    value: '385',
+                                                },
+                                                {
+                                                    value: '464',
+                                                },
+                                            ],
                                             categoryBarColor : '#C591F7',
                                             valueMax: '600',
                                         })) %>
@@ -360,7 +495,23 @@
                                             id: 2,
                                             type: 'columnChart',
                                             categories: ['2019', '2020', '2021', '2022', '2023'],
-                                            series: ['212', '246', '328', '385', '464'],
+                                            series: [
+                                                {
+                                                    value: '212',
+                                                },
+                                                {
+                                                    value: '246',
+                                                },
+                                                {
+                                                    value: '328',
+                                                },
+                                                {
+                                                    value: '385',
+                                                },
+                                                {
+                                                    value: '464',
+                                                },
+                                            ],
                                             categoryBarColor : '#E156E2',
                                             valueMax: '600',
                                         })) %>

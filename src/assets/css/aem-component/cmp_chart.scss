@@ -1,6 +1,6 @@
 .cmp-chart {
     .chart-wrap {
-        &__column-chart {
+        &__chart-item {
             position: relative;
             height: calc(273 / 16 * 1rem);
             padding:0 calc(10 / 16 * 1rem);
@@ -14,14 +14,12 @@
         &__xAxis-area {
             &__line {
                 position: absolute;
+                top: 33.333%;
+                left: 0;
                 display: block;
                 width: 100%;
                 height: calc(1 / 16 * 1rem);
                 background: var(--colorCM-mode1-stroke-stroke-default2);
-                &:first-child {
-                    top: 33.333%;
-                    left: 0;
-                }
                 &:last-child {
                     top: 66.666%;
                     left: 0;
@@ -86,6 +84,53 @@
                 // padding: 0 calc(16 / 16 * 1rem);
                 width: 100%;
                 box-sizing: border-box;
+            }
+        }
+        // type: 'negativeChart'
+        &__negative-chart {
+            .chart-wrap__yAxis-series {
+                align-items: flex-start;
+                li {
+                    flex-direction: column-reverse;
+                    &.chart-wrap__yAxis-series__val-negative {
+                        .chart-wrap__yAxis-series__bar {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+        // type: 'invertChart'
+        &__invert-chart {
+            .chart-wrap__xAxis-area {
+                &__line {
+                    top: 25%;
+                    left: 0;
+                    &:nth-of-type(2) {
+                        top: 50%;
+                        left: 0;
+                    }
+                    &:last-child {
+                        top: 75%;
+                        left: 0;
+                    }
+                }
+            }
+            .chart-wrap__yAxis-series {
+                li {
+                    position: absolute;
+                    top: 0;
+                    left: calc(calc(100% / var(--yAxis-series-item-length) * calc(var(--yAxis-series-item-index))));
+                    width: calc(100% / var(--yAxis-series-item-length));
+                    height: calc(calc(273 / 2) / 16 * 1rem);
+                    &.chart-wrap__yAxis-series__val-negative {
+                        top: 50%;
+                        flex-direction: column-reverse;
+                        .chart-wrap__yAxis-series__bar {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
             }
         }
     }
