@@ -1,4 +1,10 @@
 /* 타이포 그래프 */
+.font-head-x-xl-mode {
+    font-size: calc(68 / 16 * 1rem);
+    line-height: calc(80 / 16 * 1rem);
+    letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
+    font-weight: 400;
+}
 .font-head-x-xl {
     font-size: calc(var(--typo-pc-size-head-x-xl) / 16 * 1rem);
     line-height: calc(var(--typo-pc-line-height-head-xxl) / 16 * 1rem);
@@ -103,6 +109,10 @@
 }
 
 @media screen and (max-width: 720px) {
+    .font-head-x-xl-mode {
+        font-size: calc(34 / 16 * 1rem);
+        line-height: calc(42 / 16 * 1rem);
+    }
     .font-head-x-xl {
         font-size: calc(var(--typo-mo-size-head-x-xl) / 16 * 1rem);
         line-height: calc(var(--typo-mo-line-height-head-xxl) / 16 * 1rem);

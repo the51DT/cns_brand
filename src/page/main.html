@@ -11,266 +11,158 @@
 <body class="">
     <div class="wrap has-hero main">
         <%- include('src/_inc/header.html') %>
-        <!-- //헤더 영역 -->
-
-        <div class="main-visual__wrap">
-            <div class="cmp-wrap cmp-swiper__wrap slogan-swiper">
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <p class="font-body-lg">새로운 세상을 기.술.합니다.</p>
-                        </div>
-                        <div class="swiper-slide">
-                            <p class="font-body-lg">새로운 세상을 기.술.합니다.</p>
-                        </div>
-                    </div>
-                    <!-- swiper-slide 2개 이상일 시 버튼 노출 / 1개일 경우 미노출 -->
-                    <div class="swiper-button-wrap">
-                        <button class="swiper-button-prev"></button>
-                        <button class="swiper-button-next"></button>
-                    </div>
-                </div>
+        <div class="main-content__wrap">
+            <!-- notice + Interactive Hero + navigation list -->
+            <div class="main-content__inner">
             </div>
-            <div class="main-visual__flex">
-                <%
-                    const ctaSecData = {
-                        title: "Generative AI in your work",
-                        text: "생성형 AI. 이제 관망의 시기는 지났습니다.<br>인터넷이 없는 업무 환경을 이제 생각할 수가 없듯이,<br>생성형 AI가 적용되지 않은 업무 시스템을 생각하기는  이제 어려운 세상이 되었습니다.",
-                        button: {
-                            text: "생성형 AI 상세보기",
-                            href: "#",
-                        }
-                    }
-                %>
-                <%- include('src/component/cmp_cta_section.html', Object.assign({}, locals, { 
-                    jsonData: ctaSecData,
-                })) %>
-                <%
-                    const titleNavData = [
-                        {
-                            href: "#",
-                            tag: "고객스토리",
-                            title: "Vision AI로 철스크랩 판정의<br>정확성과 효율성을 모두 잡다",
-                        },
-                        {
-                            href: "#",
-                            tag: "행사",
-                            title: "[4월 D-Talks] ESG 경영 DX :<br>지속가능성을 높이는 게임체인저",
-                        },
-                        {
-                            href: "#",
-                            tag: "자료",
-                            title: "해킹 공격과 방어의 전쟁 :<br>PURPLE LAB 보안 심층분석 보고서",
-                        },
-                        {
-                            href: "#",
-                            tag: "Techlog",
-                            title: "생성형 AI의 모든 것",
-                        },
-                    ]
-                %>
-                <%- include('src/component/cmp_title_nav.html', Object.assign({}, locals, { 
-                    jsonData: titleNavData,
-                })) %>
+            <!-- notice + Interactive Hero + navigation list // -->
+            <!-- Search -->
+            <div class="main-content__inner">
             </div>
-        </div>
-        <!-- //비주얼 영역 -->
-
-        <div class="main-search__wrap">
-            <div class="main-search">
-                <p class="font-head-lg font-bold text-center">무엇을 알아보고 싶으신가요?</p>
-
-                <div class="form-element__wrap">
-                    <label class="ir-text">검색창</label>                          
-                    <span class="form-element__inner input-type input-search search-type-full">
-                        <input type="text" value="" placeholder="무엇이 궁금하세요?" />
-                        <button type="button" class="btn btn-remove">
-                            <i class="ico icon-remove-bl28"></i>
-                            <span class="ir-text">삭제</span>
-                        </button>                                
-                        <button type="button" class="btn btn-search">
-                            <i class="ico icon-search-bl35"></i>                                
-                            <span class="ir-text">검색</span>
-                        </button>                                  
-                    </span>
-                </div>
-
-                <div class="main-search__result-wrap">
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 클라우드 알아보기</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 클라우드보안은 어떻게 하나요?</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 현재 채용 중인 직군은?</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 물류 창고에 자동화 도입하기</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 투자를 위한 기업 정보</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 운송 계획 최적화를 위한 솔루션</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 운송 계획 최적화를 위한 솔루션</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 클라우드 알아보기</sapn></a>
-                </div>
+            <!-- Search // -->
+            <!-- Service -->
+            <div class="main-content__inner">
             </div>
-        </div>
-        <!-- //검색 영역 -->
-
-        <div class="main-service__wrap">
-            <p class="text-white">Sevice 영역</p>
-        </div>
-        <!-- //서비스 영역 -->
-
-        <div class="main-now__wrap">
-            <div class="inner-wrap">
-                <div class="cmp-wrap cmp-swiper__wrap main-now-swiper dataList">
-                    <div class="main-now-swiper__top">
-                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                            titleText: 'LG CNS Now', 
-                        })) %>
-                        <div class="swiper-button-wrap">
-                            <button class="swiper-button-prev"></button>
-                            <button class="swiper-button-next"></button>
-                        </div>
-                    </div>
-                    <div class="swiper">
+            <!-- Service // -->
+            <!-- News -->
+            <div class="main-content__inner news-swiper">
+                <span class="font-head-lg font-semibold color-text-default align-center">
+                    미래를 선도하는 LG CNS의 <br class="display-pc">
+                    소식을 전해드립니다
+                </span>
+                <div class="cmp-wrap cmp-swiper__wrap">
+                    <div class="swiper swiper-news" data-autoplay="false" data-pagination="false">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <ul class="content-list__wrap thumbnail-type type-box-line">
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="https://placehold.co/576x288" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label">News</div>
-                                                <div class="title font-body-lg">
-                                                    Awards 수상
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    MWP에 대한 내용을 5분만에 퀵하게 살펴볼 수 있는 필수 자료!
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <a href="#">
+                                    <div class="news-swiper__image">
+                                        <img src="https://placehold.co/467x262" alt="">
+                                    </div>
+                                    <div class="news-swiper__text">
+                                        <span class="news-swiper__title font-head-sm-mode color-text-default">Awards 수상</span>
+                                        <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                            세계 4대 디자인 어워드라 불리는 미국 'IDEA 디자인 어워드', 독일 'IF 디자인 어워드', 독일 '레드닷 디자인 어워드'를 수상
+                                        </p>
+                                        <span class="news-swiper__category font-body-sm color-text-secondary">News</span>
+                                    </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <ul class="content-list__wrap thumbnail-type type-box-line">
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="https://placehold.co/576x288" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label">동영상</div>
-                                                <div class="title font-body-lg">
-                                                    어떻게 DWP를 도입할 것인가?
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    24년 10월 웨비나 세션 자료
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <a href="#">
+                                    <div class="news-swiper__image">
+                                        <img src="https://placehold.co/467x262" alt="">
+                                    </div>
+                                    <div class="news-swiper__text">
+                                        <span class="news-swiper__title font-head-sm-mode color-text-default">DAP GenAI Platform</span>
+                                        <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                            DAP GenAI Platform은 기업특화 생성형AI플랫폼으로, 기업고객은 온프레미스, 클라우드 등 보유중인 인프라에 설치해 비즈니스에 필요한 생성형 AI서비스를 빠르게 만들어 즉각적인 가치 창출을 할 수
+                                            있습니다.
+                                        </p>
+                                        <span class="news-swiper__category font-body-sm color-text-secondary">동영상</span>
+                                    </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <ul class="content-list__wrap thumbnail-type type-box-line">
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="https://placehold.co/576x288" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label">아티클</div>
-                                                <div class="title font-body-lg">
-                                                    DWP 꼭 지금 도입해야하는가?
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    DWP 도입으로 기업의 생산성이 어떻게 좋아졌는지 글을 통해 살펴보세요.
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <a href="#">
+                                    <div class="news-swiper__image">
+                                        <img src="https://placehold.co/467x262" alt="">
+                                    </div>
+                                    <div class="news-swiper__text">
+                                        <span class="news-swiper__title font-head-sm-mode color-text-default">CloudXper</span>
+                                        <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                            CloudXper는 클라우드 진단과 컨설팅부터 전환, 운영까지 모든 클라우드 서비스를 ‘엔드 투 엔드(end-to-end)’로 제공하는 LG CNS 클라우드 브랜드입니다.
+                                        </p>
+                                        <span class="news-swiper__category font-body-sm color-text-secondary">아티클</span>
+                                    </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <ul class="content-list__wrap thumbnail-type type-box-line">
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="https://placehold.co/576x288" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label">아티클</div>
-                                                <div class="title font-body-lg">
-                                                    DWP를 사용하는 고객의 소리
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    고객들은 DWP를 어떻게 사용하고 있을까요
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <a href="#">
+                                    <div class="news-swiper__image">
+                                        <img src="https://placehold.co/467x262" alt="">
+                                    </div>
+                                    <div class="news-swiper__text">
+                                        <span class="news-swiper__title font-head-sm-mode color-text-default">CloudXper</span>
+                                        <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                            CloudXper는 클라우드 진단과 컨설팅부터 전환, 운영까지 모든 클라우드 서비스를 ‘엔드 투 엔드(end-to-end)’로 제공하는 LG CNS 클라우드 브랜드입니다.
+                                        </p>
+                                        <span class="news-swiper__category font-body-sm color-text-secondary">아티클</span>
+                                    </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <ul class="content-list__wrap thumbnail-type type-box-line">
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="https://placehold.co/576x288" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label">News</div>
-                                                <div class="title font-body-lg">
-                                                    Awards 수상
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    MWP에 대한 내용을 5분만에 퀵하게 살펴볼 수 있는 필수 자료!
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <a href="#">
+                                    <div class="news-swiper__image">
+                                        <img src="https://placehold.co/467x262" alt="">
+                                    </div>
+                                    <div class="news-swiper__text">
+                                        <span class="news-swiper__title font-head-sm-mode color-text-default">CloudXper</span>
+                                        <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                            CloudXper는 클라우드 진단과 컨설팅부터 전환, 운영까지 모든 클라우드 서비스를 ‘엔드 투 엔드(end-to-end)’로 제공하는 LG CNS 클라우드 브랜드입니다.
+                                        </p>
+                                        <span class="news-swiper__category font-body-sm color-text-secondary">아티클</span>
+                                    </div>
+                                </a>
                             </div>
+                        </div>
+                        <div class="news-swiper__navigation-wrap">
+                            <button type="button" class="news-swiper__navigation news-swiper__navigation--prev">
+                                <i class="ico icon-main-arrow-right-bl24 ico--default"></i>
+                                <i class="ico icon-main-arrow-left-gr24 ico--disabled"></i>
+                                <span class="ir-text">이전 보기</span>
+                            </button>
+                            <button type="button" class="news-swiper__navigation news-swiper__navigation--next">
+                                <i class="ico icon-main-arrow-right-bl24 ico--default"></i>
+                                <i class="ico icon-main-arrow-left-gr24 ico--disabled"></i>
+                                <span class="ir-text">다음 보기</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- News // -->
+            <!-- Button Banner (유사) -->
+            <div class="main-content__inner button-banner">
+                <div class="button-banner__box">
+                    <span class="font-head-x-xl-mode color-text-default">
+                        THE FOUNDATION OF <br class="display-pc">
+                        OUR BRAND EXPERIENCE
+                    </span>
+                    <div class="button__wrap button-banner__navigation">
+                        <a href="#" class="btn btn-text">
+                            <span class="btn__text">
+                                Brand Story
+                            </span>
+                            <i class="btn__icon ico icon-navigation-right-bl40"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="button__wrap button__wrap--btn-top align-right">
+                    <button type="button" class="btn-icon btn-top">
+                        <i class="ico icon-navigation-up-w19"></i>
+                        <span class="ir-text">최상위로 이동</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Button Banner (유사) // -->
         </div>
-        <!-- //LG CNS Now 영역 -->
         <%- include('src/_inc/footer.html') %>
     </div>
     <script src="/assets/bundle/swiper-bundle.min.js"></script>
     <script src="/assets/js/initializeSwipers.js"></script>
     <script>
-        // Swiper 옵션 배열
         const swiperOptions = [
             {
-                slidesPerView: 1,
-                loop: true,
-                navigation: { 
-                    prevEl: ".slogan-swiper .swiper-button-prev",
-                    nextEl: ".slogan-swiper .swiper-button-next",
-                },
-            },
-            {
-                speed: 500,
-                slidesPerView: "auto",
-                spaceBetween: 8,
-                slidesOffsetBefore: 20,
-                slidesOffsetAfter: 20,
-                navigation: { 
-                    prevEl: ".main-now-swiper .swiper-button-prev",
-                    nextEl: ".main-now-swiper .swiper-button-next",
-                },
-                breakpoints: {
-                    768: { //브라우저가 768보다 클 때
-                        slidesPerView: 3,  
-                        spaceBetween: 16,
-                        slidesOffsetBefore: 0,
-                        slidesOffsetAfter: 0,
-                    },
+                slidesPerView: 3,
+                spaceBetween: 12,
+                navigation: {
+                    nextEl: '.news-swiper__navigation--next',
+                    prevEl: '.news-swiper__navigation--prev',
                 },
             }
         ];
         // Swiper 초기화
-        initializeSwipers(swiperOptions); 
+        initializeSwipers(swiperOptions, '.swiper-news');       
     </script>
 </body>
 </html>
