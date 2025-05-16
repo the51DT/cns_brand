@@ -159,10 +159,8 @@ function initScrollEvents() {
     const circles = document.querySelectorAll('.circle-container');
     const leftItems = document.querySelectorAll('.left-section__item');
     const rightSections = document.querySelectorAll('.timeline-group');
+
     
-
-  
-
     const updateProgressBar = () => {
         const scrollY = window.scrollY;
         const viewportHeight = window.innerHeight;
@@ -175,6 +173,11 @@ function initScrollEvents() {
         const lastCircleBottom = circles[circles.length - 1].getBoundingClientRect().bottom + scrollY;
         const totalHeight = lastCircleTop - firstCircleTop;
         const scrollPosition = scrollY + viewportHeight / 2;
+
+        // 스크롤 시, timeline-group에 script로 적용된 모든 style값 초기화
+        rightSections.forEach(item => {            
+            item.removeAttribute("style");
+        });
 
         progressBarContainer.style.top = `${firstCircleTop - progressBarWrapTop}px`;
         progressBarContainer.style.height = `${lastCircleBottom - firstCircleTop}px`;
@@ -273,23 +276,34 @@ function attachH3ClickEvents() {
                 item.removeAttribute("style");
             });
             document.querySelector(`#${targetId}`).scrollIntoView({ behavior: 'smooth' , block: 'start'});            
-
+            var targetOffsetTop = document.querySelector(`#${targetId}`).offsetTop;
+            console.log(targetOffsetTop);
             if(document.querySelector("body").classList.contains("gnb-mode--pc")) {
-                setTimeout(function(){
-                    document.querySelector('.left-section').style.top = "100px";
+                setTimeout(function(){                    
                     if(targetId === "group1") {
                         document.querySelector(`#${targetId}`).style.paddingTop = "200px";
+                        document.querySelector('.left-section').style.top = "100px";
                     } else {
-                        document.querySelector(`#${targetId}`).style.paddingTop = "0";
+                        if(contentHeader.classList.contains("is-fixed")) {
+                            document.querySelector(`#${targetId}`).style.paddingTop = "200px";
+                            document.querySelector('.left-section').style.top = "100px";
+                        } else {
+                            document.querySelector(`#${targetId}`).style.paddingTop = "0";
+                            // document.querySelector('.left-section').style.top = "0";
+                        }
                     }
-                },1000);
+                },900);
             } else {
                 setTimeout(function(){
-                    historyHeader.classList.remove("is-motion");
-                    historyHeader.classList.add("is-fixed");
+                    if(historyHeader.classList.contains("is-motion")) {
+                        historyHeader.classList.remove("is-motion");
+                        historyHeader.classList.add("is-fixed");
+                    }
+                                
                     document.querySelector('.left-section').style.top = "64px";
                     document.querySelector(`#${targetId}`).style.paddingTop = totalClientHeight + "px";
-                },800);
+                    console.log(targetId, totalClientHeight);
+                },1000);
 
             }
             
@@ -315,8 +329,7 @@ function scrollCheckingCSS() {
             document.querySelector('.left-section').style.top = "0";
         }        
     }
-    //console.log(rightSectionTop);
-
+    
     setTimeout(function() {
         if(rightSectionTop > 0){
             document.querySelectorAll(".timeline-group").forEach(item => {
