@@ -599,8 +599,10 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                transform: translateY(-20%);
                 @media #{$phone} {
                     flex-direction: column;
+                    transform: revert;
                 }
                 .button__wrap {
                     // width: fit-content;
@@ -785,7 +787,7 @@
                         }
                         &.is-active {
                             opacity: 1;
-                            transition: opacity 1s ease-in;
+                            transition: opacity 0.5s;
 
                         }
                         &--01 {
