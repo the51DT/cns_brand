@@ -655,7 +655,7 @@
                             position: absolute;
                             top: 50%;
                             right: calc(24 / 16 * 1rem);
-                            transform: translateY(-55%);
+                            transform: translateY(-51%);
                             width: calc(40 / 16 * 1rem);
                             height: calc(40 / 16 * 1rem);
                             display: inline-block;
@@ -832,6 +832,9 @@
             &__container {
                 background-image: url(#{$basePath}image/sub/bg_lgway_modal_img.png);
                 color: #fff;
+            }
+            &__content {
+                padding-bottom: 6rem;
             }
             &__body {
                 &--content {
