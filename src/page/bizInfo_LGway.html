@@ -399,6 +399,12 @@
                         }
                         glideText();
                     });
+
+                    if(this.isEnd) { // 마지막 swiper일때
+                        document.querySelector(".LG-way-swiper").style.touchAction = "pan-y";
+                    } else {
+                        document.querySelector(".LG-way-swiper").style.touchAction = "pan-x";
+                    }
                 },
                 reachEnd : function() {
                     setTimeout(function () {
