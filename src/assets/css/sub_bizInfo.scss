@@ -761,7 +761,6 @@
         }
         .LG-way-swiper {
             height: 100vh;
-            // touch-action: pan-y;
             .parallax-bg {
                 &-wrap {
                     .full-sec__img {                        
@@ -776,6 +775,7 @@
                         background-size: contain;
                         background-position: right center; 
                         background-repeat: no-repeat;
+                        background-color: #fff;
                         opacity: 0;
                         @media #{$phone}, #{$tablet} {
                             width: 100%;
@@ -785,7 +785,7 @@
                         }
                         &.is-active {
                             opacity: 1;
-                            // transition: opacity 1s ease-in;
+                            transition: opacity 1s ease-in;
 
                         }
                         &--01 {
