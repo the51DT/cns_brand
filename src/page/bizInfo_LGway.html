@@ -373,6 +373,21 @@
                     clickable: true,
                 },
             on: {
+                init: function () {
+                    this.on('reachEnd', function(){
+                        setTimeout(function () {
+                            waySwiper.params.touchReleaseOnEdges = true;
+                            waySwiper.params.mousewheel.releaseOnEdges = true;
+                        }, 800);
+                    });
+
+                    this.on('reachBeginning', function() {
+                        setTimeout(function () {
+                            waySwiper.params.touchReleaseOnEdges = true;
+                            waySwiper.params.mousewheel.releaseOnEdges = true;
+                        }, 800);
+                    });
+                },
                 slideChange: function() {
                     setTimeout(function () {
                         waySwiper.params.touchReleaseOnEdges = false;  
@@ -400,18 +415,6 @@
                         glideText();
                     });
                 },
-                reachEnd: function() {
-                    setTimeout(function () {
-                        waySwiper.params.touchReleaseOnEdges = true;
-                        waySwiper.params.mousewheel.releaseOnEdges = true;
-                    }, 1000);
-                },             
-                reachBeginning: function() {
-                    setTimeout(function () {
-                        waySwiper.params.touchReleaseOnEdges = true;
-                        waySwiper.params.mousewheel.releaseOnEdges = true;
-                    }, 1000);
-                }
             }
         });
 

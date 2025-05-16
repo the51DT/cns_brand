@@ -761,6 +761,7 @@
         }
         .LG-way-swiper {
             height: 100vh;
+            touch-action: pan-y;
             .parallax-bg {
                 &-wrap {
                     .full-sec__img {                        
