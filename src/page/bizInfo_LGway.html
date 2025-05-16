@@ -375,8 +375,8 @@
             on: {
                 slideChange: function() {
                     setTimeout(function () {
-                        // waySwiper.params.touchReleaseOnEdges = false;  
-                        // waySwiper.params.mousewheel.releaseOnEdges = false;
+                        waySwiper.params.touchReleaseOnEdges = false;  
+                        waySwiper.params.mousewheel.releaseOnEdges = false;
                         
                         parallaxPaginationItem.forEach(function(item) {
                             item.classList.remove("is-active");
@@ -404,13 +404,13 @@
                     setTimeout(function () {
                         waySwiper.params.touchReleaseOnEdges = true;
                         waySwiper.params.mousewheel.releaseOnEdges = true;
-                    }, 500);
-                },
+                    }, 1000);
+                },             
                 reachBeginning: function() {
                     setTimeout(function () {
                         waySwiper.params.touchReleaseOnEdges = true;
                         waySwiper.params.mousewheel.releaseOnEdges = true;
-                    }, 500);
+                    }, 1000);
                 }
             }
         });
