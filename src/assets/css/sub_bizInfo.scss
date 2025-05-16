@@ -603,7 +603,7 @@
                     flex-direction: column;
                 }
                 .button__wrap {
-                    width: fit-content;
+                    // width: fit-content;
                 }
             }
             .button__wrap {
@@ -613,6 +613,9 @@
                     bottom: calc(140 / 16 * 1rem);
                     transform: translateX(-50%);
                     z-index: 50;
+                    @media #{$phone} {
+                        bottom: calc(80 / 16 * 1rem);
+                    }
                     button {
                         cursor: pointer;
                     }
@@ -620,7 +623,7 @@
                         @media #{$phone} {
                             width: calc(60 / 16 * 1rem);
                             min-width: calc(60 / 16 * 1rem);
-                            height: calc(60 / 16 * 1rem);
+                            height: calc(60 / 16 * 1rem);                            
                         }
                     }
                 }

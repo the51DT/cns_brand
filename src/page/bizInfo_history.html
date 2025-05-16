@@ -277,7 +277,7 @@ function attachH3ClickEvents() {
             });
             document.querySelector(`#${targetId}`).scrollIntoView({ behavior: 'smooth' , block: 'start'});            
             var targetOffsetTop = document.querySelector(`#${targetId}`).offsetTop;
-            console.log(targetOffsetTop);
+            // console.log(targetOffsetTop);
             if(document.querySelector("body").classList.contains("gnb-mode--pc")) {
                 setTimeout(function(){                    
                     if(targetId === "group1") {
@@ -302,7 +302,7 @@ function attachH3ClickEvents() {
                                 
                     document.querySelector('.left-section').style.top = "64px";
                     document.querySelector(`#${targetId}`).style.paddingTop = totalClientHeight + "px";
-                    console.log(targetId, totalClientHeight);
+                    // console.log(targetId, totalClientHeight);
                 },1000);
 
             }
