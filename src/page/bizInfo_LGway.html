@@ -375,8 +375,8 @@
             on: {
                 slideChange: function() {
                     setTimeout(function () {
-                        // waySwiper.params.touchReleaseOnEdges = false;  
-                        // waySwiper.params.mousewheel.releaseOnEdges = false;
+                        waySwiper.params.touchReleaseOnEdges = false;  
+                        waySwiper.params.mousewheel.releaseOnEdges = false;
                         
                         parallaxPaginationItem.forEach(function(item) {
                             item.classList.remove("is-active");
@@ -399,18 +399,24 @@
                         }
                         glideText();
                     });
+
+                    if(this.isEnd) { // 마지막 swiper일때
+                        document.querySelector(".LG-way-swiper").style.touchAction = "pan-y";
+                    } else {
+                        document.querySelector(".LG-way-swiper").style.touchAction = "pan-x";
+                    }
                 },
-                reachEnd: function() {
+                reachEnd : function() {
                     setTimeout(function () {
                         waySwiper.params.touchReleaseOnEdges = true;
                         waySwiper.params.mousewheel.releaseOnEdges = true;
-                    }, 500);
+                    }, 800);
                 },
-                reachBeginning: function() {
+                reachBeginning : function() {
                     setTimeout(function () {
                         waySwiper.params.touchReleaseOnEdges = true;
                         waySwiper.params.mousewheel.releaseOnEdges = true;
-                    }, 500);
+                    }, 800);
                 }
             }
         });
