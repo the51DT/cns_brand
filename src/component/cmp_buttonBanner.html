@@ -10,7 +10,7 @@
             </div>
             <div class="cmp-buttonbanner-btn">
                 <a href="#">
-                    <% if(buttonText) { %>
+                    <% if(typeof buttonText !== 'undefined' && buttonText) { %>
                         <span class="ir-text"></span>
                     <% } %>
                     <i class="btn__icon ico icon-arrow-right-bl48"></i>
