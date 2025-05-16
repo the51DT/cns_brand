@@ -627,6 +627,50 @@
                         }
                     }
                 }
+                &--detail {
+                    position: relative;
+                    .btn {
+                        justify-content: space-between;
+                        align-items: center;
+                        padding-right: 64px;                     
+                        min-width: calc(160 / 16 * 1rem);
+                        height: calc(64 / 16 * 1rem);
+                        @media #{$phone} {
+                            padding-right: 38px;
+                            min-width: 8.4rem;
+                            height: calc(48 / 16 * 1rem);
+                        }
+                        &__text {
+                            font-size: calc(20 / 16 * 1rem);
+                            line-height: calc(34 / 16 * 1rem);
+                            font-weight: 500;
+                            letter-spacing: -0.2px;
+                            @media #{$phone} {
+                                font-size: calc(16 / 16 * 1rem);
+                                line-height: calc(26 / 16 * 1rem);                                
+                                font-weight: 400;
+                            }
+                        }
+                        &-arrow__icon {
+                            position: absolute;
+                            top: 50%;
+                            right: calc(24 / 16 * 1rem);
+                            transform: translateY(-55%);
+                            width: calc(40 / 16 * 1rem);
+                            height: calc(40 / 16 * 1rem);
+                            display: inline-block;
+                            background-image: url(/src/assets/image/icon/ico_arrow_right_bl64.svg);
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            //background-color: var(--colorCM-mode1-icon-icon-on-bg);                        
+                            @media #{$phone} {
+                                width: calc(20 / 16 * 1rem);
+                                height: calc(20 / 16 * 1rem);
+                                right: calc(24 / 16 * 1rem);
+                            }
+                        }
+                    }                    
+                }
             }
         }
         &__container {

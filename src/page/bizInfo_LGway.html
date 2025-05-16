@@ -63,12 +63,12 @@
                                         시장에서<br class="display-mo"> 인정받으며 시장을 리드하는<br class="display-pc">
                                         선도기업이<br class="display-mo"> 되는 것 입니다.
                                     </p>
-                                    <button type="button" class="popupBtn btn-glide" modal-id="modal-way01" onclick="openModal(event)">
-                                        <span class="btn-glide__inner">
-                                            <span class="btn-glide__text">LG 비전</span>
-                                        </span>
-                                        <i class="btn-glide__icon"></i>
-                                    </button>
+                                    <div class="button__wrap flex-wrap button__wrap--detail">
+                                        <button type="button" class="btn btn-large btn-secondary" modal-id="modal-way01" onclick="openModal(event)">
+                                            <span class="btn__text">LG 비전</span>
+                                            <i class="btn-arrow__icon"></i>                                             
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -84,12 +84,12 @@
                                         꾸준히 실력을 배양해 정정당당하게<br>
                                         승부하는 LG만의 행동방식 입니다.
                                     </p>
-                                    <button type="button" class="popupBtn btn-glide" modal-id="modal-way02" onclick="openModal(event)">
-                                        <span class="btn-glide__inner">
-                                            <span class="btn-glide__text">행동방식</span>
-                                        </span>
-                                        <i class="btn-glide__icon"></i>
-                                    </button>
+                                    <div class="button__wrap flex-wrap button__wrap--detail">
+                                        <button type="button" class="btn btn-large btn-secondary" modal-id="modal-way02" onclick="openModal(event)">
+                                            <span class="btn__text">행동방식</span>
+                                            <i class="btn-arrow__icon"></i>                                             
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -103,12 +103,12 @@
                                     <p class="font-body-lg font-medium">
                                         기업의 존립근거이자 회사운영의 원칙입니다.
                                     </p>
-                                    <button type="button" class="popupBtn btn-glide" modal-id="modal-way03" onclick="openModal(event)">
-                                        <span class="btn-glide__inner">
-                                            <span class="btn-glide__text">경영이념</span>
-                                        </span>
-                                        <i class="btn-glide__icon"></i>
-                                    </button>
+                                    <div class="button__wrap flex-wrap button__wrap--detail">
+                                        <button type="button" class="btn btn-large btn-secondary" modal-id="modal-way03" onclick="openModal(event)">
+                                            <span class="btn__text">경영이념</span>
+                                            <i class="btn-arrow__icon"></i>                                             
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -375,8 +375,8 @@
             on: {
                 slideChange: function() {
                     setTimeout(function () {
-                        waySwiper.params.touchReleaseOnEdges = false;  
-                        waySwiper.params.mousewheel.releaseOnEdges = false;
+                        // waySwiper.params.touchReleaseOnEdges = false;  
+                        // waySwiper.params.mousewheel.releaseOnEdges = false;
                         
                         parallaxPaginationItem.forEach(function(item) {
                             item.classList.remove("is-active");
