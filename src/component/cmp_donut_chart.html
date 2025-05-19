@@ -2,7 +2,7 @@
     <div class="cmp-donut-chart__wrap">
         <% 
             let total=0; 
-            let gradientValues=chartData.map((item)=> {
+            let gradientValues = chartData.map((item)=> {
                 const angle = parseFloat(item.series) * 3.6;
                 const startAngle = total;
                 const endAngle = total + angle;
