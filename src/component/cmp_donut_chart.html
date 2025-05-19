@@ -1,6 +1,7 @@
-<div class="cmp-wrap cmp-donut-chart <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : ''%>">
-    <div class="cmp-donut-chart__wrap">
-        <% 
+<% if (typeof chartData !=='undefined' && Array.isArray(chartData)) { %>
+    <div class="cmp-wrap cmp-donut-chart <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : ''%>">
+        <div class="cmp-donut-chart__wrap">
+            <%
             let total=0; 
             let gradientValues = chartData.map((item)=> {
                 const angle = parseFloat(item.series) * 3.6;
@@ -9,22 +10,23 @@
                 total += angle;
                 return `${item.backgroundColor} ${startAngle}deg, ${item.backgroundColor} ${endAngle}deg`;
             }).join(', ');
-        
+            
             if (total < 360) {
                 const remainingAngle=360 - total;
                 gradientValues +=`, #f0f1f3 ${total}deg, #f0f1f3 360deg`; 
             } 
-        %>
-        <div class="cmp-donut-chart__box">
-            <div class="cmp-donut-chart__item" style="--gradient : <%- gradientValues %>;"></div>
+            %>
+            <div class="cmp-donut-chart__box">
+                <div class="cmp-donut-chart__item" style="--gradient : <%- gradientValues %>;"></div>
+            </div>
+            <ul class="cmp-donut-chart__category">
+                <% chartData.forEach((item)=> { %>
+                    <li>
+                        <i class="cmp-donut-chart__category__icon" style="--bg-color: <%- item.backgroundColor %>"></i>
+                        <span class="font-body-sm color-text-default"><%- item.category %></span>
+                    </li>
+                <% }) %>
+            </ul>
         </div>
-        <ul class="cmp-donut-chart__category">
-            <% chartData.forEach((item)=> { %>
-                <li>
-                    <i class="cmp-donut-chart__category__icon" style="--bg-color: <%- item.backgroundColor %>"></i>
-                    <span class="font-body-sm color-text-default"><%- item.category %></span>
-                </li>
-            <% }) %>
-        </ul>
     </div>
-</div>
+<% } %>
