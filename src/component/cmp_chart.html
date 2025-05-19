@@ -3,11 +3,13 @@
     <% 
         const chartType = typeof type !=='undefined' ? type : '' ; 
         let countNegative = 0;
-        series.forEach((series, index) => {
-            if (series.type === 'negative') {
-                countNegative++;
-            }
-        });
+        if(series) {
+            series.forEach((series, index) => {
+                if (series.type === 'negative') {
+                    countNegative++;
+                }
+            });
+        }
     %>
     <div class="chart-wrap">
         <% if(chartType && valueMax) { %>
