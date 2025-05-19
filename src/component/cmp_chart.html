@@ -3,7 +3,7 @@
     <% 
         const chartType = typeof type !=='undefined' ? type : '' ; 
         let countNegative = 0;
-        if(type series!=='undefined' && series) {
+        if(series) {
             series.forEach((series, index) => {
                 if (series.type === 'negative') {
                     countNegative++;
