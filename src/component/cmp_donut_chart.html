@@ -1,8 +1,11 @@
 <div class="cmp-wrap cmp-donut-chart <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : ''%>">
+    <% 
+        const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+    %>
     <div class="cmp-donut-chart__wrap">
         <% 
             let total=0; 
-            let gradientValues = chartData.map((item)=> {
+            let gradientValues = data.map((item)=> {
                 const angle = parseFloat(item.series) * 3.6;
                 const startAngle = total;
                 const endAngle = total + angle;
@@ -19,7 +22,7 @@
             <div class="cmp-donut-chart__item" style="--gradient : <%- gradientValues %>;"></div>
         </div>
         <ul class="cmp-donut-chart__category">
-            <% chartData.forEach((item)=> { %>
+            <% data.forEach((item)=> { %>
                 <li>
                     <i class="cmp-donut-chart__category__icon" style="--bg-color: <%- item.backgroundColor %>"></i>
                     <span class="font-body-sm color-text-default"><%- item.category %></span>

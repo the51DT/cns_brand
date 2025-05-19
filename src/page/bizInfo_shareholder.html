@@ -38,27 +38,29 @@
                     <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-small mb-exc-spacing-180-40">
                         <div>
                             <!-- 그래프 영역 --> 
-                            <%- include('src/component/cmp_donut_chart.html', Object.assign({}, locals, { 
-                                    id: 0,
-                                    chartData: [
-                                        {
-                                            category: '(주)LG', 
-                                            series: '10',
-                                            backgroundColor: '#D868F0',
-                                        },
-                                        {
-                                            category: '크리스탈코리아(유)', 
-                                            series: '60',
-                                            backgroundColor: '#C591F7',
-                                        },
-                                        {
-                                            category: '기타',
-                                            series : 30,
-                                            backgroundColor: '#B2C0EC',
-                                        },
-                                    ],
-                                    marginVertical: 'mb-0',
-                                })) %>
+                            <%
+                                const chartData = [
+                                    {
+                                        category: '(주)LG', 
+                                        series: '30',
+                                        backgroundColor: '#D868F0',
+                                    },
+                                    {
+                                        category: '크리스탈코리아(유)', 
+                                        series: '60',
+                                        backgroundColor: '#C591F7',
+                                    },
+                                    {
+                                        category: '기타',
+                                        series : 10,
+                                        backgroundColor: '#B2C0EC',
+                                    },
+                                ]
+                            %>
+                            <%- include('src/component/cmp_donut_chart.html', Object.assign({}, locals, {
+                                jsonData: chartData,
+                                marginVertical : 'mb-0',
+                            })) %>
                             <!-- // 그래프 영역 --> 
                         </div>
                         <div>

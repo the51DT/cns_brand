@@ -283,9 +283,8 @@
                             </ul>
                             <p class="guide-title-h3">도넛 그래프(100% 를 다 채운 상태)</p>
                             <div class="cmp-exsample__wrap mt-3">
-                                <%- include('src/component/cmp_donut_chart.html', Object.assign({}, locals, { 
-                                    id: 0,
-                                    chartData: [
+                                <%
+                                    const chartData = [
                                         {
                                             category: '(주)LG', 
                                             series: '10',
@@ -298,18 +297,21 @@
                                         },
                                         {
                                             category: '기타',
-                                            series : 30,
+                                            series : 90,
                                             backgroundColor: '#B2C0EC',
                                         },
-                                    ],
+                                    ]
+                                %>
+                                <%- include('src/component/cmp_donut_chart.html', Object.assign({}, locals, {
+                                    jsonData: chartData,
+                                    marginVertical : 'mb-0',
                                 })) %>
                             </div>
 
                             <p class="guide-title-h3 mt-10">도넛 그래프(100% 를 다 채우지 못한 상태)</p>
                             <div class="cmp-exsample__wrap mt-3">
-                                <%- include('src/component/cmp_donut_chart.html', Object.assign({}, locals, { 
-                                    id: 0,
-                                    chartData: [
+                                <%
+                                    const chartData2 = [
                                         {
                                             category: '(주)LG', 
                                             series: '10',
@@ -325,7 +327,11 @@
                                             series : 15,
                                             backgroundColor: '#B2C0EC',
                                         },
-                                    ],
+                                    ]
+                                %>
+                                <%- include('src/component/cmp_donut_chart.html', Object.assign({}, locals, {
+                                    jsonData: chartData2,
+                                    marginVertical : 'mb-0',
                                 })) %>
                             </div>
                         </div>
