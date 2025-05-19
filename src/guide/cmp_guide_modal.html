@@ -78,6 +78,12 @@
                                         <span class="btn__text" style="word-break: break-all;white-space: normal;">default modal medium : 오늘 하루 보지 않기</span>
                                     </button>
                                 </div>
+                                <div class="button_wrap mt-5">
+                                    <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default08-sub" onclick="openModal(event)">
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">default modal medium sub : 오늘 하루 보지
+                                            않기(main)</span>
+                                    </button>
+                                </div>
                             </div>
                             <p class="guide-title-h3 mt-10">Popup Component : .modal--type-alert (pc-size: small, mo-size: small) / header 없는 케이스</p>
                             <div class="cmp-exsample__wrap mt-10">
@@ -353,6 +359,68 @@
                                 required: true, }, ], }, ], }, ] %>
                                 <%- include('src/component/cmp_input.html', Object.assign({}, locals, { jsonData:
                                     inputData4, })) %>
+                        </div>
+                    </div>
+                    <div class="modal__close">
+                        <div class="button__wrap">
+                            <button type="button" class="btn" onclick="closeModal(event)">
+                                <!-- <i class="ico icon-close-bl32"></i> -->
+                                <span class="ir-text">모달 닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal - small / 오늘 하루 보지 않기 -->
+    <!-- [Start] modal - medium / 오늘 하루 보지 않기 : pc-size: medium, mo-size: medium -->
+    <div class="cmp-modal" id="modal-default08-sub">
+        <div class="modal modal--type-medium modal--type-medium--sub">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <div class="modal__header">
+                        <div class="modal__title font-head-sm font-bold">기업 검색</div>
+                    </div>
+                    <div class="modal__content">
+                        <!-- [Start] 모달 컨텐츠 영역 -->
+                        <% 
+                            const iamgeData=[{
+                                pc: 'https://placehold.co/520x338', 
+                                mo: 'https://placehold.co/320x338', 
+                            }] 
+                        %>
+                        <%- include('src/component/cmp_image_box.html', Object.assign({}, locals, { 
+                            jsonData : iamgeData,
+                            alt : '',
+                            marginVertical: 'mb-0',
+                        }))%>
+                        <!-- [End] 모달 컨텐츠 영역 -->
+                    </div>
+                    <div class="modal__footer">
+                        <div class="modal__checkbox-hidden">
+                            <% const inputData4Sub=[ 
+                                { 
+                                    id: 0, 
+                                    title: '' , 
+                                    inputData: [ 
+                                        { 
+                                            type: "checkbox" ,
+                                            name: "checkbox-guide" , 
+                                            dataList: [ 
+                                                { 
+                                                    label: "오늘 하루 보지 않기" , 
+                                                    value: "checkbox-default" ,
+                                                    required: true, 
+                                                }, 
+                                        ], 
+                                    },], 
+                                }, ] %>
+                                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                                    jsonData: inputData4Sub, 
+                                })) 
+                                %>
                         </div>
                     </div>
                     <div class="modal__close">
