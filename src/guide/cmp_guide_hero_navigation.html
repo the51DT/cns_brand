@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link rel="stylesheet" href="/src/assets/css/guide.scss" />
+<link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>        
+        <div class="guide-content">            
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3 mt-10">cmp-hero-navigation (color-mode-white)</p>
+                    <div class="cmp-exsample__wrap mt-3" style="background:#9C97DB; padding: 40px 0;">
+                        <%
+                            const titleNavData = [
+                                {
+                                    href: "#",
+                                    target: "_self",
+                                    tag: "고객스토리",
+                                    title: "Vision AI로 철스크랩 판정의 정확성과 효율성 모두 잡다",
+                                },
+                                {
+                                    href: "#",
+                                    target: "_self",
+                                    tag: "자료",
+                                    title: "해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서",
+                                },
+                                {
+                                    href: "#",
+                                    target: "_self",
+                                    tag: "행사",
+                                    title: "ESG 경영 DX : 지속가능성을 높이는 게임체인저",
+                                },
+                                {
+                                    href: "#",
+                                    target: "_self",
+                                    tag: "Techlog",
+                                    title: "생성형 AI의 모든 것",
+                                },
+                            ]
+                        %>
+                        <%- include('src/component/cmp_hero_navigation.html', Object.assign({}, locals, { 
+                            jsonData: titleNavData,
+                            colorMode:"white",
+                        })) %>
+                    </div>
+
+                    <p class="guide-title-h3 mt-10">cmp-hero-navigation (color-mode-black)</p>
+                    <div class="cmp-exsample__wrap mt-3" style="background:#F0E5D3; padding: 40px 0;">
+                        <%
+                            const titleNavData2 = [
+                                {
+                                    href: "#",
+                                    target: "_self",
+                                    tag: "고객스토리",
+                                    title: "Vision AI로 철스크랩 판정의 정확성과 효율성 모두 잡다",
+                                },
+                                {
+                                    href: "#",
+                                    target: "_self",
+                                    tag: "자료",
+                                    title: "해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서",
+                                },
+                                {
+                                    href: "#",
+                                    target: "_self",
+                                    tag: "행사",
+                                    title: "ESG 경영 DX : 지속가능성을 높이는 게임체인저",
+                                },
+                                {
+                                    href: "#",
+                                    target: "_self",
+                                    tag: "Techlog",
+                                    title: "생성형 AI의 모든 것",
+                                },
+                            ]
+                        %>
+                        <%- include('src/component/cmp_hero_navigation.html', Object.assign({}, locals, { 
+                            jsonData: titleNavData2,
+                            colorMode:"black",
+                        })) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/assets/js/ui_common.js"></script>
+</body>
+</html>

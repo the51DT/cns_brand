@@ -131,6 +131,12 @@ $fileType: "svg";
     &.icon-navigation-right-bl24 {
         @include iconFile(24,24,'icon_navigation_right_bl24');
     }
+    &.icon-main-navigation-right-wh24 {
+        @include iconFile(24,24,'icon-main-navigation-right-wh24');
+    }
+    &.icon-main-navigation-right-bl24 {
+        @include iconFile(24,24,'icon-main-navigation-right-bl24');
+    }
     &.icon-navigation-right-wh16 {
         @include iconFile(24,24,'icon_navigation_right_wh16');
     }

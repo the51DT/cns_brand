@@ -1,0 +1,134 @@
+.cmp-hero-navigation {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+        background: var(--colorCM-mode1-fill-fill-default3);
+        @media #{$min1280} {
+            flex-direction: row;
+            border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+            background: rgba(255,255,255,0.5);
+        }
+        li {
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            @media #{$min1280} {
+                width: 25%;
+            }
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: calc(24 / 16 * 1rem);
+                width: calc(100% - calc(48 / 16 * 1rem));
+                height: calc(1 / 16 * 1rem);
+                background: var(--colorCM-mode1-background-background-default2);
+                @media #{$min1280} {
+                    top: calc(40 / 16 * 1rem);
+                    bottom: initial;
+                    left: initial;
+                    right: 0;
+                    width: calc(1 / 16 * 1rem);
+                    height: calc(100% - calc(80 / 16 * 1rem));
+                    background: var(--colorCM-mode1-background-background-default0);
+                    opacity: 0.2;
+                }
+            }
+        }
+    }
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        gap: calc(12 / 16 * 1rem);
+        padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);
+        box-sizing: border-box;
+        @media #{$min1280} {
+            padding: calc(40 / 16 * 1rem);
+        }
+    }
+    &__title {
+        @include ellipsis(2);
+        max-width: calc(279 / 16 * 1rem);
+        min-height: calc(56 / 16 * 1rem);
+        color: var(--colorCM-mode1-text-text-default);
+        @media #{$min1280} {
+            min-height: calc(68 / 16 * 1rem);
+            color: var(--colorCM-mode1-text-text-on-bg);
+        }
+    }
+    &__tag {
+        margin-top: calc(8 / 16 * 1rem);
+        color: var(--colorCM-mode1-text-text-tertiary);
+        opacity: 0.6;
+        @media #{$min1280} {
+            color: var(--colorCM-mode1-text-text-on-bg);
+        }
+    }
+    &.color-mode-white {
+        .cmp-hero-navigation__list {
+            @media #{$min1280} {
+                background: rgba(18,18,18,0.15);
+            }
+            li {
+                &:after {
+                    @media #{$min1280} {
+                        background: var(--colorCM-mode1-background-background-default0);
+                    }
+                }
+            }
+        }
+        .cmp-hero-navigation__title {
+            @media #{$min1280} {
+                color: var(--colorCM-mode1-text-text-on-bg);
+            }
+        }
+        .cmp-hero-navigation__tag {
+            @media #{$min1280} {
+                color: var(--colorCM-mode1-text-text-on-bg);
+            }
+        }
+        .ico--mode-color-white {
+            display: none;
+            @media #{$min1280} {
+                display: block;
+            }
+        }
+        .ico--mode-color-black {
+            display: block;
+            @media #{$min1280} {
+                display: none;
+            }
+        }
+    }
+    &.color-mode-black {
+        .cmp-hero-navigation__list {
+            @media #{$min1280} {
+                background: rgba(255,255,255,0.5);
+            }
+            li {
+                &:after {
+                    @media #{$min1280} {
+                        opacity: 0.12;
+                        background: var(--colorCM-mode1-stroke-stroke-default10);
+                    }
+                }
+            }
+        }
+        .cmp-hero-navigation__title {
+            @media #{$min1280} {
+                color: var(--colorCM-mode1-text-text-default);
+            }
+        }
+        .cmp-hero-navigation__tag {
+            @media #{$min1280} {
+                color: var(--colorCM-mode1-text-text-default);
+            }
+        }
+        .ico--mode-color-white {
+            display: none;
+        }
+    }
+}
