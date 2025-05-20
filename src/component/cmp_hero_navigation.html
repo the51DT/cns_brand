@@ -1,0 +1,19 @@
+<div class="cmp-wrap cmp-hero-navigation color-mode-<%- typeof colorMode !== 'undefined' && colorMode ? colorMode : '' %> <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : '' %>">
+    <% 
+        const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
+    %>
+    <ul class="cmp-hero-navigation__list">
+        <% data.forEach((item)=> { %>
+            <li>
+                <a href="<%- item.href %>" target="<%- item.target %>" class="cmp-hero-navigation__nav">
+                    <div class="cmp-hero-navigation__text-box">
+                        <p class="cmp-hero-navigation__title font-head-sm-mode font-medium"><%- item.title %></p>
+                        <p class="cmp-hero-navigation__tag font-body-sm"><%- item.tag %></p>
+                    </div>
+                    <i class="ico icon-main-navigation-right-wh24 ico--mode-color-white"></i>
+                    <i class="ico icon-main-navigation-right-bl24 ico--mode-color-black"></i>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+</div>

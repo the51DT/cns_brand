@@ -108,6 +108,9 @@
 .mb-exc-spacing-280-178 {
     @include custom-margin-vertical('bottom', 280, 178);
 }
+.mb-exc-spacing-180-40 {
+    @include custom-margin-vertical('bottom', 180, 40);
+}
 .mb-exc-spacing-180-88 {
     @include custom-margin-vertical('bottom', 180, 88);
 }

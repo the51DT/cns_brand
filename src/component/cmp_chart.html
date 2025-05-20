@@ -3,57 +3,63 @@
     <% 
         const chartType = typeof type !=='undefined' ? type : '' ; 
         let countNegative = 0;
-        series.forEach((series, index) => {
-            <!-- console.log('series type:', series.type); -->
-            if (series.type === 'negative') {
-                countNegative++;
-            }
-        });
+        if(typeof series !=='undefined' && series) {
+            series.forEach((series, index) => {
+                if (series.type === 'negative') {
+                    countNegative++;
+                }
+            });
+        }
     %>
     <div class="chart-wrap">
-    <% if(chartType && valueMax) { %>
-        <div class="chart-wrap__chart-item<%- chartType == 'columnChart' ? ' chart-wrap__column-chart' : '' %><%- chartType == 'invertChart' ? ' chart-wrap__invert-chart' : '' %><%- chartType=='negativeChart' ? ' chart-wrap__negative-chart' : '' %>">
-            <div class="chart-wrap__xAxis-area">
-                <span class="chart-wrap__xAxis-area__line"></span>
-                <span class="chart-wrap__xAxis-area__line<%- chartType == 'invertChart' ? ' chart-wrap__xAxis-area__line--y-intercept' : ''%>"></span>
-                <% if(chartType == 'invertChart') { %>
+        <% if(chartType && valueMax) { %>
+            <div class="chart-wrap__chart-item<%- chartType == 'columnChart' ? ' chart-wrap__column-chart' : '' %><%- chartType == 'invertChart' ? ' chart-wrap__invert-chart' : '' %><%- chartType=='negativeChart' ? ' chart-wrap__negative-chart' : '' %>">
+                <div class="chart-wrap__xAxis-area">
                     <span class="chart-wrap__xAxis-area__line"></span>
-                <% } %>
-            </div>
-            <div class="chart-wrap__yAxis-area">
-                <% if(series) {%>
-                    <ul class="chart-wrap__yAxis-series" style="--yAxis-series-item-length : <%- series.length %>;--yAxis-series-item-negative-length: <%- countNegative %>">
-                        <% series.forEach((series, index)=> { %>
-                            <% if(typeof categoryBarColor === 'string') { %>
-                                <li class="<%- series.type == 'negative' ? 'chart-wrap__yAxis-series__val-negative' : '' %>" style="--yAxis-series-item-index : <%- index %>">
-                                    <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
-                                        <%- series.value %>
+                    <span class="chart-wrap__xAxis-area__line<%- chartType == 'invertChart' || chartType == 'negativeChart' ? ' chart-wrap__xAxis-area__line--y-intercept' : ''%>"></span>
+                    <% if(chartType == 'invertChart' || chartType == 'negativeChart') { %>
+                        <span class="chart-wrap__xAxis-area__line"></span>
+                    <% } %>
+                </div>
+                <div class="chart-wrap__yAxis-area">
+                    <% if(series) {%>
+                        <ul class="chart-wrap__yAxis-series" style="--yAxis-series-item-length : <%- series.length %>;--yAxis-series-item-negative-length: <%- countNegative %>">
+                            <% series.forEach((series, index)=> { %>
+                                <%
+                                    let yAxisValue = series.value;
+                                    if(yAxisValue < 0) {
+                                        yAxisValue = yAxisValue * -1;
+                                    }
+                                %>
+                                <% if(typeof categoryBarColor === 'string') { %>
+                                    <li class="<%- series.type == 'negative' ? 'chart-wrap__yAxis-series__val-negative' : '' %>" style="--yAxis-series-item-index : <%- index %>">
+                                        <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
+                                            <%- series.value %>
+                                        </span>
+                                        <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor %>;--yAxis-series-target-val: <%- yAxisValue %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
+                                    </li>
+                                <% } else if (typeof categoryBarColor === 'object') { %>
+                                    <li class="<%- series.type == 'negative' ? 'chart-wrap__yAxis-series__val-negative' : '' %>" style="--yAxis-series-item-index : <%- index %>">
+                                        <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
+                                            <%- series.value %>
+                                        </span>
+                                        <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor[index] %>;--yAxis-series-target-val: <%- yAxisValue %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
+                                    </li>
+                                <% } %>
+                            <% }) %>
+                        </ul>
+                    <% } %>
+                    <% if(categories) {%>
+                        <ul class="chart-wrap__yAxis-categories">
+                            <% categories.forEach((categories) => { %>
+                                <li>
+                                    <span class="font-body-sm color-text-default">
+                                        <%- categories %>
                                     </span>
-                                    <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor %>;--yAxis-series-target-val: <%- series.value %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
                                 </li>
-                            <% } else if (typeof categoryBarColor === 'object') { %>
-                                <% console.log(series.value) %>
-                                <li class="<%- series.type == 'negative' ? 'chart-wrap__yAxis-series__val-negative' : '' %>" style="--yAxis-series-item-index : <%- index %>">
-                                    <span class="chart-wrap__yAxis-series__text font-caption-sm color-text-secondary">
-                                        <%- series.value %>
-                                    </span>
-                                    <span class="chart-wrap__yAxis-series__bar" style="--yAxis-series-bg: <%- categoryBarColor[index] %>;--yAxis-series-target-val: <%- series.value %>;--yAxis-series-target-max-val: <%- valueMax %>"></span>
-                                </li>
-                            <% } %>
-                        <% }) %>
-                    </ul>
-                <% } %>
-                <% if(categories) {%>
-                    <ul class="chart-wrap__yAxis-categories">
-                        <% categories.forEach((categories) => { %>
-                            <li>
-                                <span class="font-body-sm color-text-default">
-                                    <%- categories %>
-                                </span>
-                            </li>
-                        <% }) %>
-                    </ul>
-                <% } %>
+                            <% }) %>
+                        </ul>
+                    <% } %>
                 </div>
             </div>
         <% } %>

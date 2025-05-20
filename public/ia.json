@@ -316,10 +316,10 @@
           "fileName": "cmp_guide_cta_section.html"
         },
         {
-          "name": "title-nav",
+          "name": "heroNavigation",
           "screenId": "",
           "path": "/src/guide/",
-          "fileName": "cmp_guide_title_nav.html"
+          "fileName": "cmp_guide_hero_navigation.html"
         },
         {
           "name": "user-case-ref",

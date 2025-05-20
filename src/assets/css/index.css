@@ -44,6 +44,7 @@
 @import 'aem-component/cmp_contents_title.scss';
 @import 'aem-component/cmp_video.scss';
 @import 'aem-component/cmp_chart.scss';
+@import 'aem-component/cmp_donut_chart.scss';
 @import 'aem-component/cmp_text_image_cluster.scss';
 @import 'aem-component/cmp_year_event.scss';
 @import 'aem-component/cmp_seperator.scss';
@@ -54,7 +55,7 @@
 @import 'aem-component/cmp_solution_imageL_1item.scss';
 @import 'aem-component/cmp_solution_icon.scss';
 @import 'aem-component/cmp_cta_section.scss';
-@import 'aem-component/cmp_title_nav.scss';
+@import 'aem-component/cmp_hero_navigation.scss';
 @import 'aem-component/cmp_select.scss';
 @import 'aem-component/cmp_title_select.scss';
 @import 'aem-component/cmp_user_case_ref.scss';

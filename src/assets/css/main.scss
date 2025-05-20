@@ -290,18 +290,58 @@
 //     }
 // }
 .main {
-    &-content {
-        &__wrap {}
-        &__inner {
+    .main-container {
+        padding: 0 calc(20 / 16 * 1rem);
+        margin: 0 auto;
+        @media #{$min1280} {
+            padding: 0 calc(40 / 16 * 1rem);
+            max-width: calc(1920 / 16 * 1rem);
+        }
+    }
+    .interactive-banner {
+    }
+    .notice-swiper {
+        .cmp-swiper__wrap {
+            .swiper-wrapper {
+                margin-bottom: 0;
+                padding: 0 calc(48 / 16 * 1rem);
+                @media #{$min1280} {
+                    padding: 0 calc(83 / 16 * 1rem);
+                }
+            }
+            .swiper-slide {
+                padding: calc(18 / 16 * 1rem) 0;
+                @media #{$min1280} {
+                    padding: calc(27 / 16 * 1rem) 0;
+                }
+            }
+        }
+        &__navigation {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            &--prev {
+                left: calc(16 / 16 * 1rem);
+                @media #{$min1280} {
+                    left: calc(40 / 16 * 1rem);
+                }
+            }
+            &--next {
+                right: calc(16 / 16 * 1rem);
+                @media #{$min1280} {
+                    right: calc(40 / 16 * 1rem);
+                }
+            }
+        }
+    }
+    .news-swiper {
+        .main-container {
             padding: 0 calc(20 / 16 * 1rem);
-            margin: 0 auto;
             @media #{$min1280} {
                 padding: 0 calc(40 / 16 * 1rem);
                 max-width: calc(1520 / 16 * 1rem);
             }
         }
-    }
-    .news-swiper {
         .cmp-swiper__wrap {
             padding: 0;
             .swiper-slide {
@@ -310,10 +350,39 @@
                 }
             }
         }
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: calc(24 / 16 * 1rem);
+            @media #{$min1280} {
+                gap: calc(20 / 16 * 1rem);
+            }
+        }
+        &__image {
+            border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+            overflow: hidden;
+            @media #{$min1280} {
+                border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+            }
+        }
         &__desc {
             @include ellipsis(2);
+            margin-top: calc(12 / 16 * 1rem);
+            @media #{$min1280} {
+                margin-top: calc(8 / 16 * 1rem);
+            }
+        }
+        &__category {
+            display: block;
+            margin-top: calc(16 / 16 * 1rem);
+            @media #{$min1280} {
+                margin-top: calc(12 / 16 * 1rem);
+            }
         }
         &__navigation-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             gap: calc(8 / 16 * 1rem);
             @media #{$min1280} {
                 gap: calc(16 / 16 * 1rem);
@@ -364,19 +433,24 @@
         }
     }
     .button-banner {
-        position: relative;
-        padding: 0;
-        max-width: none;
         background-color: #F5F7F9;
-        padding: calc(80 / 16 * 1rem) 0 calc(134 / 16 * 1rem);
-        @media #{$min1280} {
-            padding: calc(80 / 16 * 1rem) 0 calc(136 / 16 * 1rem);
+        .main-container {
+            position: relative;
+            padding: calc(80 / 16 * 1rem) 0 calc(134 / 16 * 1rem);
+            background-image: url('#{$basePath}image/main/bg_main_button-banner_mo.png');
+            background-repeat: no-repeat;
+            background-position: 100% 0;
+            background-size: contain;
+            @media #{$min1280} {
+                background-image: url('#{$basePath}image/main/bg_main_button-banner_pc.png');
+                padding: calc(80 / 16 * 1rem) 0 calc(136 / 16 * 1rem);
+            }
         }
         &__box {
             padding: 0 calc(20 / 16 * 1rem);
             margin: 0 auto;
-            max-width: calc(1480 / 16 * 1rem);
             @media #{$min1280} {
+                max-width: calc(1520 / 16 * 1rem);
                 padding: 0 calc(40 / 16 * 1rem);
             }
         }

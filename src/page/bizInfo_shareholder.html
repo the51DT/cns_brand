@@ -35,10 +35,32 @@
                         marginVertical: 'mb-exc-spacing-40-8',
                     })) %>
                     <p class="display-mo mb-spacing04 font-body-sm color-text-tertiary">2023년 12월 31일 기준 *</p>
-                    <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-small">
+                    <div class="cmp-wrap cmp-feature-grid cmp-feature-grid--gap-small mb-exc-spacing-180-40">
                         <div>
                             <!-- 그래프 영역 --> 
-                            <div style="max-width:710px;width:100%;height:380px;background-color:#afafaf;">그래프 영역</div>
+                            <%
+                                const chartData = [
+                                    {
+                                        category: '(주)LG', 
+                                        series: '30',
+                                        backgroundColor: '#D868F0',
+                                    },
+                                    {
+                                        category: '크리스탈코리아(유)', 
+                                        series: '60',
+                                        backgroundColor: '#C591F7',
+                                    },
+                                    {
+                                        category: '기타',
+                                        series : 10,
+                                        backgroundColor: '#B2C0EC',
+                                    },
+                                ]
+                            %>
+                            <%- include('src/component/cmp_donut_chart.html', Object.assign({}, locals, {
+                                jsonData: chartData,
+                                marginVertical : 'mb-0',
+                            })) %>
                             <!-- // 그래프 영역 --> 
                         </div>
                         <div>

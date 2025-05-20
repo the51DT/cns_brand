@@ -20,7 +20,26 @@
                     <%- include('src/component/cmp_lnb.html') %>
                         <div class="page-cont flex-1">
                             <p class="guide-title-h3">Chart</p>
-                            <p class="guide-title-h3 mt-10">Chart > type: columnChart</p>
+                            <p class="guide-title-h3 mt-10">막대그래프 / 도넛그래프</p>
+                            <ul class="guide-list type-dot mt-3">
+                                <li>
+                                    <p>막대그래프 - type : (columnChart / invertChart / negativeChart) </p>
+                                </li>
+                                <li>
+                                    <p>도넛그래프</p>
+                                </li>
+                                <li>
+                                    <p>기업정보 > 재무정보, 주주현황/배당정보</p>
+                                </li>
+                                <li>
+                                    <p>막대그래프 최대 5개 노출 (가운데 정렬)</p>
+                                </li>
+                                <li>
+                                    <p><b>막대바 높이값 계산을 위한 임의 최대값(valueMax) 입력 필수</b></p>
+                                </li>
+                            </ul>
+                            
+                            <p class="guide-title-h3 mt-10">막대그래프(columnChart)</p>
                             <ul class="guide-list type-dot mt-3">
                                 <li>
                                     <p> type : 'columnChart' - 그래프 타입</p>
@@ -38,20 +57,6 @@
                                     <p>valueMax : <b>최대값 *</b></p>
                                 </li>
                             </ul>
-
-                            <ul class="guide-list type-dot mt-5">
-                                <li>
-                                    <p>기업정보 > 재무정보</p>
-                                </li>
-                                <li>
-                                    <p>막대그래프 최대 5개 노출 (가운데 정렬)</p>
-                                </li>
-                                <li>
-                                    <p><b>막대바 높이값 계산을 위한 임의 최대값(valueMax) 입력 필수</b></p>
-                                </li>
-                            </ul>
-                            
-                            <p class="guide-title-h3 mt-10">막대그래프(column)</p>
                             <div class="cmp-exsample__wrap mt-3">
                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
                                     id: 1,
@@ -229,6 +234,7 @@
                                     categoryBarColor : '#E156E2',
                                     valueMax: '600',
                                 })) %>
+                                
                                 <%- include('src/component/cmp_chart.html', Object.assign({}, locals, { 
                                     id: 2,
                                     type: 'negativeChart',
@@ -254,6 +260,78 @@
                                     categoryBarColor : ['#f729c1', '#e54ddc', '#d371f6', '#b7b4ef'],
                                     valueMax: '1000',
                                     marginVertical: 'mt-spacing11',
+                                })) %>
+                            </div>
+
+                            <p class="guide-title-h3 mt-spacing11 mb-3">도넛 그래프</p>
+                            <ul class="guide-list type-dot mt-5 mb-10">
+                                <li>
+                                    <p>chartData: [</p>
+                                    <ul class="pl-2">
+                                        <li>
+                                            <p>category : 범례(text)</p>
+                                        </li>
+                                        <li>
+                                            <p>series : 값(text)</p>
+                                        </li>
+                                        <li>
+                                            <p>backgroundColor: 차트 컬러(rgb)</p>
+                                        </li>
+                                    </ul>
+                                    <p>]</p>
+                                </li>
+                            </ul>
+                            <p class="guide-title-h3">도넛 그래프(100% 를 다 채운 상태)</p>
+                            <div class="cmp-exsample__wrap mt-3">
+                                <%
+                                    const chartData = [
+                                        {
+                                            category: '(주)LG', 
+                                            series: '10',
+                                            backgroundColor: '#D868F0',
+                                        },
+                                        {
+                                            category: '크리스탈코리아(유)', 
+                                            series: '60',
+                                            backgroundColor: '#C591F7',
+                                        },
+                                        {
+                                            category: '기타',
+                                            series : 90,
+                                            backgroundColor: '#B2C0EC',
+                                        },
+                                    ]
+                                %>
+                                <%- include('src/component/cmp_donut_chart.html', Object.assign({}, locals, {
+                                    jsonData: chartData,
+                                    marginVertical : 'mb-0',
+                                })) %>
+                            </div>
+
+                            <p class="guide-title-h3 mt-10">도넛 그래프(100% 를 다 채우지 못한 상태)</p>
+                            <div class="cmp-exsample__wrap mt-3">
+                                <%
+                                    const chartData2 = [
+                                        {
+                                            category: '(주)LG', 
+                                            series: '10',
+                                            backgroundColor: '#D868F0',
+                                        },
+                                        {
+                                            category: '크리스탈코리아(유)', 
+                                            series: '60',
+                                            backgroundColor: '#C591F7',
+                                        },
+                                        {
+                                            category: '기타',
+                                            series : 15,
+                                            backgroundColor: '#B2C0EC',
+                                        },
+                                    ]
+                                %>
+                                <%- include('src/component/cmp_donut_chart.html', Object.assign({}, locals, {
+                                    jsonData: chartData2,
+                                    marginVertical : 'mb-0',
                                 })) %>
                             </div>
                         </div>
