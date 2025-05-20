@@ -188,6 +188,9 @@ $fileType: "svg";
     &.icon-arrow-right-bl48{
         @include iconFile(48, 48, 'icon_arrow_right_bl48');
     }
+    &.icon-arrow-right-wh24{
+        @include iconFile(24, 24, 'icon_arrow_right_wh24');
+    }
     &.icon-checkbox-disabled-unselected-gr12{
         @include iconFile(14, 9.5, 'ico_checkbox_disabled_unselected');
     }
