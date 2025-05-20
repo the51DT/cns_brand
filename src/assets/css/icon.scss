@@ -59,11 +59,17 @@ $fileType: "svg";
     &.icon-main-arrow-right-bl24 {
         @include iconFile(24,24,'icon-main-arrow-right-bl24');
     }
+    &.icon-arrow-right-wh24 {
+        @include iconFile(24,24,'icon-arrow-right-wh24');
+    }
     &.icon-arrow-right-wt16 {
         @include iconFile(16,16,'icon_arrow_wt16');
     }
     &.icon-main-arrow-left-gr24 {
         @include iconFile(24,24,'icon-main-arrow-left-gr24');
+    }
+    &.icon-arrow-left-wh24 {
+        @include iconFile(24,24,'icon-arrow-left-wh24');
     }
     &.icon-arrow-down-bl24 {
         @include iconFile(24,24,'icon_arrow_down');
