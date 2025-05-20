@@ -1,0 +1,242 @@
+// gsap
+.cmp-gsap {
+    &__carousel {
+        overflow: hidden;
+        .content {
+            @media #{$min1280} { 
+                display: block;
+            }
+        }
+        .carousel-wrap {
+            cursor: grab;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            margin-top: calc(56 / 16 * 1rem);
+            margin-bottom: calc(70 / 16 * 1rem);
+            overflow: visible;
+            will-change: transform;
+            opacity: 0;
+            @media #{$min1280} { 
+                opacity: 1;
+            }
+        }
+        .thumbs-wrapper {
+            display: flex;
+            position: absolute;
+            z-index: 1;
+            height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            @media #{$min1280} {
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(4, 230px);
+                grid-template-rows: repeat(4, 245px);
+                column-gap: 16px;
+                row-gap: 12px;
+                justify-content: center;
+            }
+        }
+
+        .card-context {            
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            width: 40vw;
+            max-width: 180px;
+            height: 0;
+            color: #fff;
+            @media #{$min1280} {
+                position: relative;                
+                width: 100%;
+                height: 100%;
+                max-width: 280px;                
+                &:nth-child(1) {
+                    order: 1;
+                    grid-row-start:2;
+                    grid-row-end:3;
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                }
+                &:nth-child(2) {
+                    order: 6;
+                    grid-row-start:2;
+                    grid-row-end:3;
+                    grid-column-start: 2;
+                    grid-column-end: 3;
+                    transform: translateY(100px);
+                }
+                &:nth-child(3) {
+                    order: 7;
+                    grid-row-start:2;
+                    grid-row-end:3;
+                    grid-column-start: 3;
+                    grid-column-end: 4;
+                    transform: translateY(35px);
+                }
+                &:nth-child(4) {
+                    order: 8;
+                    grid-row-start:3;
+                    grid-row-end:4;
+                    grid-column-start: 4;
+                    grid-column-end: 5;
+                    transform: translateY(-22px);
+                }
+                &:nth-child(5) {
+                    order: 2;
+                    grid-row-start:1;
+                    grid-row-end:2;
+                    grid-column-start: 2;
+                    grid-column-end: 3;
+                    transform: translateY(100px);
+                }
+                &:nth-child(6) {
+                    order: 3;
+                    grid-row-start:1;
+                    grid-row-end:2;
+                    grid-column-start: 3;
+                    grid-column-end: 4;
+                    transform: translateY(35px);
+                    
+                }
+                &:nth-child(7) {
+                    order: 4;
+                    grid-row-start:2;
+                    grid-row-end:3;
+                    grid-column-start: 4;
+                    grid-column-end: 5;
+                    transform: translateY(-22px);
+                }
+                &:nth-child(8) {
+                    order: 5;
+                    grid-row-start:3;
+                    grid-row-end:4;
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                }
+                &:nth-child(9) {
+                    order: 9;
+                    grid-row-start:3;
+                    grid-row-end:4;
+                    grid-column-start: 2;
+                    grid-column-end: 3;
+                    transform: translateY(100px);
+                }
+                &:nth-child(10) {
+                    order: 10;
+                    grid-row-start:3;
+                    grid-row-end:4;
+                    grid-column-start: 3;
+                    grid-column-end: 4;
+                    transform: translateY(35px);
+                }
+            }
+            &.active {
+                .card-inner {
+                    background-color: #36369D;
+                    // box-shadow: 0px 0px 0px 1px rgba(143, 136, 205, 1) inset;
+                    border:1px solid #8f88cd;
+                }
+            }            
+            &.on {
+                .txt {
+                    &-desc {
+                        display: block;
+                    }
+                }                    
+            }
+            .txt {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                word-break: break-word;
+                word-wrap: break-word;
+                z-index: 1;
+                padding: calc(20 / 16 * 1rem) calc(16 / 16 * 1rem);
+                @media #{$min1280} { 
+                    position: static;
+                }
+                &-title {
+                    font-weight: 500;
+                    font-size: calc(18 / 16 * 1rem);
+                    line-height: calc(28 / 16 * 1rem);
+                    letter-spacing: -0.2px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    word-break: break-all;
+                }                
+                &-desc {
+                    font-weight: 400;
+                    font-size: calc(14 / 16 * 1rem);
+                    line-height: calc(20 / 16 * 1rem);
+                    letter-spacing: -0.2px;
+                    margin-top: calc(8 / 16 * 1rem);;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    word-break: break-all;
+                    display: none;
+
+                }                
+            }
+            .card-inner {
+                position: absolute;
+                display: block;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                top: 0;
+                left: 0;
+                min-height: calc(256 / 16 * 1rem);
+                width: 100%;
+                z-index: 1;
+                border: 1px solid #565656;
+                background-image: none;
+                border-radius: calc(20 / 16 * 1rem);
+                background-color: #07050B;
+                cursor: pointer;
+                transform-origin: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                @media #{$min1280} { 
+                    position: static;
+                    min-height: calc(245 / 16 * 1rem);
+                }
+                * {
+                    user-select: none;
+                    pointer-events: none
+                }               
+            }
+            .card-link {
+                &-wrap {
+                    position: absolute;
+                    bottom: calc(16 / 16 * 1rem);
+                    right: calc(16 / 16 * 1rem);
+                    transform: translateY(calc(256 / 16 * 1rem)); //card-inner 높이값과 동일하게 적용 필요!
+                    z-index: 5;
+                    @media #{$min1280} {                        
+                        bottom: calc(24 / 16 * 1rem);
+                        right: calc(24 / 16 * 1rem);
+                        transform: revert;
+                    }
+                }
+                &-btn {
+                    display: block;
+                    width: calc(24 / 16 * 1rem);
+                    height: calc(24 / 16 * 1rem);
+                }
+            }
+        }
+    }
+}
