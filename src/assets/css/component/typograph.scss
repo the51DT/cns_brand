@@ -8,6 +8,13 @@
 .font-head-x-xxl {
     font-size: calc(var(--typo-pc-size-head-x-xxl) / 16 * 1rem);
     line-height: calc(var(--typo-pc-line-height-head-xxxl) / 16 * 1rem);
+    letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
+    font-weight: 600;
+}
+.font-head-x-xl-main-banner {
+    font-size: calc(72 / 16 * 1rem);
+    line-height: calc(86 / 16 * 1rem);
+    letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
     font-weight: 600;
 }
 .font-head-x-xl {
@@ -121,6 +128,11 @@
     .font-head-x-xxl {
         font-size: calc(var(--typo-mo-size-head-x-xxl) / 16 * 1rem);
         line-height: calc(var(--typo-mo-line-height-head-xxxl) / 16 * 1rem);
+    }
+    .font-head-x-xl-main-banner {
+        font-size: calc(36 / 16 * 1rem);
+        line-height: calc(40 / 16 * 1rem);
+        font-weight: 600;
     }
     .font-head-x-xl {
         font-size: calc(var(--typo-mo-size-head-x-xl) / 16 * 1rem);
