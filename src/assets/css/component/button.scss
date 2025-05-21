@@ -190,6 +190,30 @@ $asset-paths: (
     font-weight: 400;
     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
 }
+/* btn-x-large */
+.btn.btn-x-large {
+    /* gap: calc(8 / 16 * 1rem); */
+    padding: calc(11 / 16 * 1rem) calc(16 / 16 * 1rem);
+    width: fit-content;
+    // min-width: calc(140 / 16 * 1rem);
+    height: calc(48 / 16 * 1rem);
+    @media #{$min1280} {
+        padding: calc(15 / 16 * 1rem) calc(24 / 16 * 1rem);
+        height: calc(64 / 16 * 1rem);
+    }
+}
+.btn.btn-x-large .btn__text {
+    font-size: calc(16 / 16 * 1rem);
+    line-height: calc(26 / 16 * 1rem);
+    font-weight: 400;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+    @media #{$min1280} {
+        font-size: calc(20 / 16 * 1rem);
+        line-height: calc(34 / 16 * 1rem);
+        font-weight: 500;
+    }
+}
+
 
 /* btn-text - 텍스트 버튼 */
 .btn.btn-text {
