@@ -799,13 +799,15 @@
             const targetItemGroup = e.target.closest(".card-context").dataset.group;
 
             // mouseover 지정한 동일한 그룹 active 처리
-            document.querySelectorAll(".carousel-wrap .card-context").forEach(item => {
-                if(item.dataset.group === targetItemGroup){
-                    item.classList.add("active");                    
-                } else {
-                    item.classList.remove("active");                    
-                }
-            })
+            if(isPc) {
+                document.querySelectorAll(".carousel-wrap .card-context").forEach(item => {
+                    if(item.dataset.group === targetItemGroup){
+                        item.classList.add("active");                    
+                    } else {
+                        item.classList.remove("active");                    
+                    }
+                })
+            }
             if(e.target.closest(".card-context").classList.contains("on")){
                 e.target.closest(".card-context").classList.remove("on");
                 e.target.style.backgroundImage = "revert";
