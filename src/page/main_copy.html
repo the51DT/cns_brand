@@ -581,7 +581,6 @@
                 function groupChecking(){
                     if(isPc) {                        
                         if(timeflag == 0) {
-                            console.log("pc", timeflag);
                             setTimeout(() => {
                                 if(itemGroupTitle == "group1") {
                                     item.classList.add("active");
@@ -608,14 +607,13 @@
                                 requestAnimationFrame(groupChecking);
                             }, 1000 * 6);                    
                         } else {
-                            console.log("pc", timeflag);
-                            let timerId = setInterval(() => {           
+                            let timerId = setInterval(() => {
                                 setTimeout(() => {
                                     if(itemGroupTitle == "group1") {
-                                        item.classList.add("active");                                       
-                                    } else  {
-                                        item.classList.remove("active");                                        
-                                    }                    
+                                        item.classList.add("active");
+                                    } else {
+                                        item.classList.remove("active");
+                                    }
                                 }, 1000 * 1);
 
                                 setTimeout(() => {
@@ -714,7 +712,7 @@
             gsap.utils.toArray(".card-context", e).forEach((e => {
                 const cardInnerItem = e.querySelector(".card-inner");
                 // (mobile) touch시 카드 이벤트 제어
-                cardInnerItem.addEventListener("touchstart", ((e) => { cardEventCtrl(e); }))                
+                //cardInnerItem.addEventListener("touchstart", ((e) => { cardEventCtrl(e); }))
             }
             )),
             e.addEventListener("touchstart", S),
