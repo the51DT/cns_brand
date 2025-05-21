@@ -13,8 +13,132 @@
         <%- include('src/_inc/header.html') %>
         <div class="main-content__wrap">
             <!-- notice + Interactive Hero + navigation list -->
-            <div class="main-content__inner interactive-hero">
+            <div class="main-content__inner interactive-hero has-notice hero-style-01 color-mode-white">
                 <div class="main-container">
+                    <!-- interactive banner -->
+                    <div class="interactive-swiper">
+                        <div class="cmp-wrap cmp-swiper__wrap mb-0">
+                            <div class="swiper swiper-interactive-banner">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide interactive-swiper__slide--default">
+                                        <div class="interactive-swiper__container">
+                                            <div class="interactive-swiper__text-box">
+                                                <span class="font-head-x-xxl interactive-swiper__title">
+                                                    Generative AI <br>
+                                                    in your work
+                                                </span>
+                                                <p class="font-body-md interactive-swiper__desc">
+                                                    AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
+                                                    비즈니스의 빠른 성장을 이끌어갑니다.
+                                                </p>
+                                                <div class="button__wrap interactive-swiper__button">
+                                                    <a href="#" target="_self" class="btn btn-x-large btn-secondary">
+                                                        <span class="btn__text">생성형 AI 바로보기</span>
+                                                        <i class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
+                                                        <i class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="interactive-swiper__frame">
+                                                <video autoplay poster="/src/assets/image/main/main_interactive_hero_poster_01.png">
+                                                    <source src="/src/assets/image/main/main_interactive_hero_mv_01.webm" type="video/webm" />
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide interactive-swiper__slide--news">
+                                        <div class="interactive-swiper__container">
+                                            <div class="interactive-swiper__text-box">
+                                                <span class="font-head-x-xxl interactive-swiper__title">
+                                                    Generative AI <br>
+                                                    in your work
+                                                </span>
+                                                <p class="font-body-md interactive-swiper__desc">
+                                                    AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
+                                                    비즈니스의 빠른 성장을 이끌어갑니다.
+                                                </p>
+                                                <div class="button__wrap interactive-swiper__button">
+                                                    <a href="#" target="_self" class="btn btn-x-large btn-secondary">
+                                                        <span class="btn__text">생성형 AI 바로보기</span>
+                                                        <i class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
+                                                        <i class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="interactive-swiper__frame">
+                                                <img src="" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- interactive banner // -->
+                    <!-- 공지사항 -->
+                    <div class="notice-swiper">
+                        <div class="cmp-wrap cmp-swiper__wrap mb-0">
+                            <div class="swiper swiper-notice" data-autoplay="false" data-pagination="false">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운 세상을 기술합니다. 1</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운 세상을 기술합니다. 2</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운 세상을 기술합니다. 3</p>
+                                    </div>
+                                </div>
+                                <div class="notice-swiper__navigation-wrap">
+                                    <button type="button" class="notice-swiper__navigation notice-swiper__navigation--prev">
+                                        <i class="ico icon-arrow-left-wh24"></i>
+                                        <span class="ir-text">이전 보기</span>
+                                    </button>
+                                    <button type="button" class="notice-swiper__navigation notice-swiper__navigation--next">
+                                        <i class="ico icon-arrow-right-wh24"></i>
+                                        <span class="ir-text">다음 보기</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 공지사항 // -->
+                    <!-- heroNavigation -->
+                    <%
+                        const titleNavData = [
+                            {
+                                href: "#",
+                                target: "_self",
+                                tag: "고객스토리",
+                                title: "Vision AI로 철스크랩 판정의 정확성과 효율성 모두 잡다",
+                            },
+                            {
+                                href: "#",
+                                target: "_self",
+                                tag: "자료",
+                                title: "해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서",
+                            },
+                            {
+                                href: "#",
+                                target: "_self",
+                                tag: "행사",
+                                title: "ESG 경영 DX : 지속가능성을 높이는 게임체인저",
+                            },
+                            {
+                                href: "#",
+                                target: "_self",
+                                tag: "Techlog",
+                                title: "생성형 AI의 모든 것",
+                            },
+                        ]
+                    %>
+                    <%- include('src/component/cmp_hero_navigation.html', Object.assign({}, locals, { 
+                        jsonData: titleNavData,
+                        colorMode:"white",
+                        marginVertical: "mb-0"
+                    })) %>
+                    <!-- heroNavigation // -->
                 </div>
             </div>
             <!-- notice + Interactive Hero + navigation list // -->
@@ -173,47 +297,17 @@
     <script src="/assets/bundle/swiper-bundle.min.js"></script>
     <script src="/assets/js/initializeSwipers.js"></script>
     <script>
-        // const swiperOptions = [
-        //     {
-        //         slidesPerView: 1.1,
-        //         spaceBetween: 12,
-        //         navigation: {
-        //             nextEl: '.news-swiper__navigation--next',
-        //             prevEl: '.news-swiper__navigation--prev',
-        //         },
-        //         breakpoints: {
-        //             720: {
-        //                 slidesPerView: 3,
-        //                 spaceBetween: 20,
-        //             },
-        //             1280: {
-        //                 slidesPerView: 3,
-        //                 spaceBetween: 20,
-        //             }
-        //         }
-        //     },
-        //     {
-        //         loop: false,
-        //         slidesPerView: 1,
-        //         enabled: true,
-        //         navigation: {
-        //             nextEl: '.notice-swiper__navigation--next',
-        //             prevEl: '.notice-swiper__navigation--prev',
-        //         },
-        //     },
-        // ];
-        // // Swiper 초기화
-        // initializeSwipers(swiperOptions, '.main-swiper');
+        /* swiper-notice */
+        let swiperNotice = new Swiper('.swiper-notice', {
+            loop: false,
+            slidesPerView: 1,
+            navigation: {
+                nextEl: '.notice-swiper__navigation--next',
+                prevEl: '.notice-swiper__navigation--prev',
+            },
+        })
         
-        // let swiperNotice = new Swiper('.swiper-notice', {
-        //     loop: false,
-        //     slidesPerView: 1,
-        //     navigation: {
-        //         nextEl: '.notice-swiper__navigation--next',
-        //         prevEl: '.notice-swiper__navigation--prev',
-        //     },
-        // })
-        
+        /* swiper-news */ 
         let swiperNews = new Swiper('.swiper-news', {
             slidesPerView: 1.1,
             spaceBetween: 12,
@@ -232,6 +326,17 @@
                 }
             }
         })
+
+        /* swiper-interactive-banner */ 
+        // let swiperHero = new Swiper('.swiper-interactive-banner', {
+        //     autoplay: {
+        //         delay: 6000,
+        //     },
+        //     allowTouchMove: false,
+        //     touchRatio: 0,
+        //     slidesPerView: 1,
+        //     effect: 'fade',
+        // })
     </script>
 </body>
 </html>
