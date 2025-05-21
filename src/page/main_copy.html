@@ -821,15 +821,15 @@
         cardItemSetting();
 
         // resize 관련 delay, timer 변수
-        // let delay = 300;
-        // let timer = null;
-        // window.addEventListener('resize', function(){
-        //     clearTimeout(timer);
-        //     timer = setTimeout(function(){
-        //         // console.log('resize event!');
-        //         if(!isPc) { initCarousel(); }
-        //     }, delay);
-        // });  
+        let delay = 300;
+        let timer = null;
+        window.addEventListener('resize', function(){
+            clearTimeout(timer);
+            timer = setTimeout(function(){
+                // console.log('resize event!');
+                if(!isPc) { initCarousel(); }
+            }, delay);
+        });  
 
     </script>
 </body>
