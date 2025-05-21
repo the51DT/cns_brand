@@ -45,33 +45,41 @@
                 <%- include('src/component/cmp_cta_section.html', Object.assign({}, locals, { 
                     jsonData: ctaSecData,
                 })) %>
+                <!-- heroNavigation -->
                 <%
                     const titleNavData = [
                         {
                             href: "#",
+                            target: "_self",
                             tag: "고객스토리",
-                            title: "Vision AI로 철스크랩 판정의<br>정확성과 효율성을 모두 잡다",
+                            title: "Vision AI로 철스크랩 판정의 정확성과 효율성 모두 잡다",
                         },
                         {
                             href: "#",
-                            tag: "행사",
-                            title: "[4월 D-Talks] ESG 경영 DX :<br>지속가능성을 높이는 게임체인저",
-                        },
-                        {
-                            href: "#",
+                            target: "_self",
                             tag: "자료",
-                            title: "해킹 공격과 방어의 전쟁 :<br>PURPLE LAB 보안 심층분석 보고서",
+                            title: "해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서",
                         },
                         {
                             href: "#",
+                            target: "_self",
+                            tag: "행사",
+                            title: "ESG 경영 DX : 지속가능성을 높이는 게임체인저",
+                        },
+                        {
+                            href: "#",
+                            target: "_self",
                             tag: "Techlog",
                             title: "생성형 AI의 모든 것",
                         },
                     ]
                 %>
-                <%- include('src/component/cmp_title_nav.html', Object.assign({}, locals, { 
+                <%- include('src/component/cmp_hero_navigation.html', Object.assign({}, locals, { 
                     jsonData: titleNavData,
+                    colorMode:"white",
+                    marginVertical: "mb-0"
                 })) %>
+                <!-- heroNavigation // -->
             </div>
         </div>
         <!-- //비주얼 영역 -->
