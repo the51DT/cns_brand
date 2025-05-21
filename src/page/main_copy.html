@@ -11,274 +11,826 @@
 <body class="">
     <div class="wrap has-hero main">
         <%- include('src/_inc/header.html') %>
-        <!-- //헤더 영역 -->
-
-        <div class="main-visual__wrap">
-            <div class="cmp-wrap cmp-swiper__wrap slogan-swiper">
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <p class="font-body-lg">새로운 세상을 기.술.합니다.</p>
-                        </div>
-                        <div class="swiper-slide">
-                            <p class="font-body-lg">새로운 세상을 기.술.합니다.</p>
+        <div class="main-content__wrap">
+            <!-- notice + Interactive Hero + navigation list -->
+            <div class="main-content__inner interactive-hero has-notice hero-style-01 color-mode-white">
+                <div class="main-container">
+                    <!-- interactive banner -->
+                    <div class="interactive-swiper">
+                        <div class="cmp-wrap cmp-swiper__wrap mb-0">
+                            <div class="swiper swiper-interactive-banner">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide interactive-swiper__slide--default">
+                                        <div class="interactive-swiper__container">
+                                            <div class="interactive-swiper__text-box">
+                                                <span class="font-head-x-xxl interactive-swiper__title">
+                                                    Generative AI <br>
+                                                    in your work
+                                                </span>
+                                                <p class="font-body-md interactive-swiper__desc">
+                                                    AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
+                                                    비즈니스의 빠른 성장을 이끌어갑니다.
+                                                </p>
+                                                <div class="button__wrap interactive-swiper__button">
+                                                    <a href="#" target="_self" class="btn btn-x-large btn-secondary">
+                                                        <span class="btn__text">생성형 AI 바로보기</span>
+                                                        <i class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
+                                                        <i class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="interactive-swiper__frame">
+                                                <video autoplay poster="/src/assets/image/main/main_interactive_hero_poster_01.png">
+                                                    <source src="/src/assets/image/main/main_interactive_hero_mv_01.webm" type="video/webm" />
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide interactive-swiper__slide--news">
+                                        <div class="interactive-swiper__container">
+                                            <div class="interactive-swiper__text-box">
+                                                <span class="font-head-x-xxl interactive-swiper__title">
+                                                    Generative AI <br>
+                                                    in your work
+                                                </span>
+                                                <p class="font-body-md interactive-swiper__desc">
+                                                    AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
+                                                    비즈니스의 빠른 성장을 이끌어갑니다.
+                                                </p>
+                                                <div class="button__wrap interactive-swiper__button">
+                                                    <a href="#" target="_self" class="btn btn-x-large btn-secondary">
+                                                        <span class="btn__text">생성형 AI 바로보기</span>
+                                                        <i class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
+                                                        <i class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="interactive-swiper__frame">
+                                                <img src="" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- swiper-slide 2개 이상일 시 버튼 노출 / 1개일 경우 미노출 -->
-                    <div class="swiper-button-wrap">
-                        <button class="swiper-button-prev"></button>
-                        <button class="swiper-button-next"></button>
+                    <!-- interactive banner // -->
+                    <!-- 공지사항 -->
+                    <div class="notice-swiper">
+                        <div class="cmp-wrap cmp-swiper__wrap mb-0">
+                            <div class="swiper swiper-notice" data-autoplay="false" data-pagination="false">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운 세상을 기술합니다. 1</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운 세상을 기술합니다. 2</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운 세상을 기술합니다. 3</p>
+                                    </div>
+                                </div>
+                                <div class="notice-swiper__navigation-wrap">
+                                    <button type="button" class="notice-swiper__navigation notice-swiper__navigation--prev">
+                                        <i class="ico icon-arrow-left-wh24"></i>
+                                        <span class="ir-text">이전 보기</span>
+                                    </button>
+                                    <button type="button" class="notice-swiper__navigation notice-swiper__navigation--next">
+                                        <i class="ico icon-arrow-right-wh24"></i>
+                                        <span class="ir-text">다음 보기</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 공지사항 // -->
+                    <!-- heroNavigation -->
+                    <%
+                        const titleNavData = [
+                            {
+                                href: "#",
+                                target: "_self",
+                                tag: "고객스토리",
+                                title: "Vision AI로 철스크랩 판정의 정확성과 효율성 모두 잡다",
+                            },
+                            {
+                                href: "#",
+                                target: "_self",
+                                tag: "자료",
+                                title: "해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서",
+                            },
+                            {
+                                href: "#",
+                                target: "_self",
+                                tag: "행사",
+                                title: "ESG 경영 DX : 지속가능성을 높이는 게임체인저",
+                            },
+                            {
+                                href: "#",
+                                target: "_self",
+                                tag: "Techlog",
+                                title: "생성형 AI의 모든 것",
+                            },
+                        ]
+                    %>
+                    <%- include('src/component/cmp_hero_navigation.html', Object.assign({}, locals, { 
+                        jsonData: titleNavData,
+                        colorMode:"white",
+                        marginVertical: "mb-0"
+                    })) %>
+                    <!-- heroNavigation // -->
+                </div>
+            </div>
+            <!-- notice + Interactive Hero + navigation list // -->
+            <!-- Search -->
+            <div class="main-content__inner">
+            </div>
+            <!-- Search // -->
+            <!-- Service -->
+            <div class="main-content__inner">
+                <div class="service-area">
+                    <div class="main-container">
+                        <div class="service-content">
+                            <div class="service-content__text">
+                                <h2 class="title font-head-md font-semibold">기업에 최적화된<br>서비스로 더 나은 내일을<br>만들어 갑니다</h2>
+                            </div>
+                            <div class="service-content__list">
+                                <!-- gsap : carousel 형태 : cmp-gsap__carousel-->
+                                <div class="cmp-wrap cmp-gsap__carousel">
+                                    <div class="content">
+                                        <div class="carousel-wrap">
+                                            <div class="thumbs-wrapper">                       
+                                                <!-- 
+                                                * card-context 클래스명 정의
+                                                1. active 클래스 : 동일한 그룹 활성화 영역, active시 하이라이트 컬러 노출
+                                                2. on 클래스 : 카드 영역 touch(mobile), hover(pc)시 on 클래스 활성화되며 상세내용과 배경이미지 노출됨 -->
+                                                <div class="card-context active" data-group="group1"> <!-- active, on -->
+                                                    <div class="card-inner" data-style="">
+                                                        <div class="txt">
+                                                            <div class="txt-title">Business Data</div>
+                                                            <div class="txt-desc">데이터로부터 의미 있는 가치를 창출해 혁신적인 비즈니스 전략을 경험할 수 있습니다.</div>
+                                                        </div>
+                                                        <div class="card-bg"></div>
+                                                    </div>
+                                                    <div class="card-link-wrap">
+                                                        <a href="javascript:;" class="card-link-btn">
+                                                            <span class="ir-text">페이지 상세보기</span>                    
+                                                            <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-context active" data-group="group1">
+                                                    <div class="card-inner" data-style="">
+                                                        <div class="txt">
+                                                            <div class="txt-title">Modern IT Infra<br>on Cloud</div>
+                                                            <div class="txt-desc">클라우드 서비스로 고객 가치를 혁신하고 디지털 경험 제공합니다.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-link-wrap">
+                                                        <a href="javascript:;" class="card-link-btn">
+                                                            <span class="ir-text">페이지 상세보기</span>                    
+                                                            <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-context active" data-group="group1">
+                                                    <div class="card-inner" data-style=""> 
+                                                        <div class="txt">
+                                                            <div class="txt-title">AI for Business</div>
+                                                            <div class="txt-desc">빅데이터와 검증된 AI로 고객 비즈니스에 맞는 서비스를 제공합니다.</div>
+                                                        </div>                                               
+                                                    </div>
+                                                    <div class="card-link-wrap">
+                                                        <a href="javascript:;" class="card-link-btn">
+                                                            <span class="ir-text">페이지 상세보기</span>                    
+                                                            <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-context active" data-group="group1">
+                                                    <div class="card-inner" data-style="">
+                                                        <div class="txt">
+                                                            <div class="txt-title">Consulting</div>
+                                                            <div class="txt-desc">기업 분석을 통해 전문가의 시선으로 최적의 해결방법을 제안합니다.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-link-wrap">
+                                                        <a href="javascript:;" class="card-link-btn">
+                                                            <span class="ir-text">페이지 상세보기</span>                    
+                                                            <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-context" data-group="group2">
+                                                    <div class="card-inner" data-style="">
+                                                        <div class="txt">
+                                                            <div class="txt-title">City and Space</div>
+                                                            <div class="txt-desc">보다 나은 삶을 위해 도시 데이터를 분석하고 활용할 수 있는 환경을 제공합니다.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-link-wrap">
+                                                        <a href="javascript:;" class="card-link-btn">
+                                                            <span class="ir-text">페이지 상세보기</span>                    
+                                                            <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-context" data-group="group2">
+                                                    <div class="card-inner" data-style="">
+                                                        <div class="txt">
+                                                            <div class="txt-title">Logistics</div>
+                                                            <div class="txt-desc">물류센터의 모든 것을 책임지는 Total Logistics Solution Provider를 지향합니다. </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-link-wrap">
+                                                        <a href="javascript:;" class="card-link-btn">
+                                                            <span class="ir-text">페이지 상세보기</span>                    
+                                                            <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-context" data-group="group2">
+                                                    <div class="card-inner" data-style="">
+                                                        <div class="txt">
+                                                            <div class="txt-title">Smart Factory</div>
+                                                            <div class="txt-desc">AI, 빅데이터, IoT 등 IT신기술로 공장 지능화를 통해, 모든 제조 과정에서 최적화를 선도하고 있습니다.</div>
+                                                        </div> 
+                                                    </div>
+                                                    <div class="card-link-wrap">
+                                                        <a href="javascript:;" class="card-link-btn">
+                                                            <span class="ir-text">페이지 상세보기</span>                    
+                                                            <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-context" data-group="group3">
+                                                    <div class="card-inner" data-style="">
+                                                        <div class="txt">
+                                                            <div class="txt-title">Enterprise Solution</div>
+                                                            <div class="txt-desc">빅데이터와 검증된 AI로 고객 비즈니스에 맞는 서비스를 제공합니다.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-link-wrap">
+                                                        <a href="javascript:;" class="card-link-btn">
+                                                            <span class="ir-text">페이지 상세보기</span>                    
+                                                            <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>                                        
+                                                <div class="card-context" data-group="group3">
+                                                    <div class="card-inner" data-style="">
+                                                        <div class="txt">
+                                                            <div class="txt-title">Customer Experiences</div>
+                                                            <div class="txt-desc">DX신기술을 활용해 디지털 환경에서 고객경험을 혁신하고 있습니다. </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-link-wrap">
+                                                        <a href="javascript:;" class="card-link-btn">
+                                                            <span class="ir-text">페이지 상세보기</span>                    
+                                                            <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-context" data-group="group3">
+                                                    <div class="card-inner" data-style="">
+                                                        <div class="txt">
+                                                            <div class="txt-title">Biz Process Intelligence</div>
+                                                            <div class="txt-desc">기업이 효율적으로 일할 수 있도록 개선 및 도움을 주는 서비스 제공합니다.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-link-wrap">
+                                                        <a href="javascript:;" class="card-link-btn">
+                                                            <span class="ir-text">페이지 상세보기</span>                    
+                                                            <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- //content -->
+                                </div>
+                                <!-- //gsap : carousel 형태 -->
+                            </div>
+                         </div>
                     </div>
                 </div>
             </div>
-            <div class="main-visual__flex">
-                <%
-                    const ctaSecData = {
-                        title: "Generative AI in your work",
-                        text: "생성형 AI. 이제 관망의 시기는 지났습니다.<br>인터넷이 없는 업무 환경을 이제 생각할 수가 없듯이,<br>생성형 AI가 적용되지 않은 업무 시스템을 생각하기는  이제 어려운 세상이 되었습니다.",
-                        button: {
-                            text: "생성형 AI 상세보기",
-                            href: "#",
-                        }
-                    }
-                %>
-                <%- include('src/component/cmp_cta_section.html', Object.assign({}, locals, { 
-                    jsonData: ctaSecData,
-                })) %>
-                <!-- heroNavigation -->
-                <%
-                    const titleNavData = [
-                        {
-                            href: "#",
-                            target: "_self",
-                            tag: "고객스토리",
-                            title: "Vision AI로 철스크랩 판정의 정확성과 효율성 모두 잡다",
-                        },
-                        {
-                            href: "#",
-                            target: "_self",
-                            tag: "자료",
-                            title: "해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서",
-                        },
-                        {
-                            href: "#",
-                            target: "_self",
-                            tag: "행사",
-                            title: "ESG 경영 DX : 지속가능성을 높이는 게임체인저",
-                        },
-                        {
-                            href: "#",
-                            target: "_self",
-                            tag: "Techlog",
-                            title: "생성형 AI의 모든 것",
-                        },
-                    ]
-                %>
-                <%- include('src/component/cmp_hero_navigation.html', Object.assign({}, locals, { 
-                    jsonData: titleNavData,
-                    colorMode:"white",
-                    marginVertical: "mb-0"
-                })) %>
-                <!-- heroNavigation // -->
-            </div>
-        </div>
-        <!-- //비주얼 영역 -->
-
-        <div class="main-search__wrap">
-            <div class="main-search">
-                <p class="font-head-lg font-bold text-center">무엇을 알아보고 싶으신가요?</p>
-
-                <div class="form-element__wrap">
-                    <label class="ir-text">검색창</label>                          
-                    <span class="form-element__inner input-type input-search search-type-full">
-                        <input type="text" value="" placeholder="무엇이 궁금하세요?" />
-                        <button type="button" class="btn btn-remove">
-                            <i class="ico icon-remove-bl28"></i>
-                            <span class="ir-text">삭제</span>
-                        </button>                                
-                        <button type="button" class="btn btn-search">
-                            <i class="ico icon-search-bl35"></i>                                
-                            <span class="ir-text">검색</span>
-                        </button>                                  
+            <!-- Service // -->
+            <!-- News -->
+            <div class="main-content__inner news-swiper">
+                <div class="main-container">
+                    <span class="block font-head-lg font-semibold color-text-default text-center mb-spacing08">
+                        미래를 선도하는 <br class="display-mo">LG CNS의 <br class="display-pc">
+                        소식을 <br class="display-mo">전해드립니다
                     </span>
-                </div>
-
-                <div class="main-search__result-wrap">
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 클라우드 알아보기</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 클라우드보안은 어떻게 하나요?</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 현재 채용 중인 직군은?</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 물류 창고에 자동화 도입하기</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 투자를 위한 기업 정보</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 운송 계획 최적화를 위한 솔루션</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 운송 계획 최적화를 위한 솔루션</sapn></a>
-                    <a href="#" class="main-search__result font-body-lg text-center"><sapn># 클라우드 알아보기</sapn></a>
-                </div>
-            </div>
-        </div>
-        <!-- //검색 영역 -->
-
-        <div class="main-service__wrap">
-            <p class="text-white">Sevice 영역</p>
-        </div>
-        <!-- //서비스 영역 -->
-
-        <div class="main-now__wrap">
-            <div class="inner-wrap">
-                <div class="cmp-wrap cmp-swiper__wrap main-now-swiper dataList">
-                    <div class="main-now-swiper__top">
-                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                            titleText: 'LG CNS Now', 
-                        })) %>
-                        <div class="swiper-button-wrap">
-                            <button class="swiper-button-prev"></button>
-                            <button class="swiper-button-next"></button>
-                        </div>
-                    </div>
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <ul class="content-list__wrap thumbnail-type type-box-line">
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="https://placehold.co/576x288" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label">News</div>
-                                                <div class="title font-body-lg">
-                                                    Awards 수상
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    MWP에 대한 내용을 5분만에 퀵하게 살펴볼 수 있는 필수 자료!
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                    <div class="cmp-wrap cmp-swiper__wrap">
+                        <div class="swiper swiper-news" data-autoplay="false" data-pagination="false">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#" class="news-swiper__container">
+                                        <div class="news-swiper__image">
+                                            <img src="https://placehold.co/467x262" alt="">
+                                        </div>
+                                        <div class="news-swiper__text">
+                                            <span class="news-swiper__title font-head-sm-mode color-text-default">Awards 수상</span>
+                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                세계 4대 디자인 어워드라 불리는 미국 'IDEA 디자인 어워드', 독일 'IF 디자인 어워드', 독일 '레드닷 디자인 어워드'를 수상
+                                            </p>
+                                            <span class="news-swiper__category font-body-sm color-text-secondary">News</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="news-swiper__container">
+                                        <div class="news-swiper__image">
+                                            <img src="https://placehold.co/467x262" alt="">
+                                        </div>
+                                        <div class="news-swiper__text">
+                                            <span class="news-swiper__title font-head-sm-mode color-text-default">DAP GenAI Platform</span>
+                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                DAP GenAI Platform은 기업특화 생성형AI플랫폼으로, 기업고객은 온프레미스, 클라우드 등 보유중인 인프라에 설치해 비즈니스에 필요한 생성형 AI서비스를 빠르게 만들어 즉각적인 가치 창출을 할 수
+                                                있습니다.
+                                            </p>
+                                            <span class="news-swiper__category font-body-sm color-text-secondary">동영상</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="news-swiper__container">
+                                        <div class="news-swiper__image">
+                                            <img src="https://placehold.co/467x262" alt="">
+                                        </div>
+                                        <div class="news-swiper__text">
+                                            <span class="news-swiper__title font-head-sm-mode color-text-default">CloudXper</span>
+                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                CloudXper는 클라우드 진단과 컨설팅부터 전환, 운영까지 모든 클라우드 서비스를 ‘엔드 투 엔드(end-to-end)’로 제공하는 LG CNS 클라우드 브랜드입니다.
+                                            </p>
+                                            <span class="news-swiper__category font-body-sm color-text-secondary">아티클</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="news-swiper__container">
+                                        <div class="news-swiper__image">
+                                            <img src="https://placehold.co/467x262" alt="">
+                                        </div>
+                                        <div class="news-swiper__text">
+                                            <span class="news-swiper__title font-head-sm-mode color-text-default">Awards 수상</span>
+                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                세계 4대 디자인 어워드라 불리는 미국 'IDEA 디자인 어워드', 독일 'IF 디자인 어워드', 독일 '레드닷 디자인 어워드'를 수상
+                                            </p>
+                                            <span class="news-swiper__category font-body-sm color-text-secondary">News</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="news-swiper__container">
+                                        <div class="news-swiper__image">
+                                            <img src="https://placehold.co/467x262" alt="">
+                                        </div>
+                                        <div class="news-swiper__text">
+                                            <span class="news-swiper__title font-head-sm-mode color-text-default">DAP GenAI Platform</span>
+                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                DAP GenAI Platform은 기업특화 생성형AI플랫폼으로, 기업고객은 온프레미스, 클라우드 등 보유중인 인프라에 설치해 비즈니스에 필요한 생성형 AI서비스를 빠르게 만들어 즉각적인
+                                                가치 창출을 할 수
+                                                있습니다.
+                                            </p>
+                                            <span class="news-swiper__category font-body-sm color-text-secondary">동영상</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="news-swiper__container">
+                                        <div class="news-swiper__image">
+                                            <img src="https://placehold.co/467x262" alt="">
+                                        </div>
+                                        <div class="news-swiper__text">
+                                            <span class="news-swiper__title font-head-sm-mode color-text-default">CloudXper</span>
+                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                CloudXper는 클라우드 진단과 컨설팅부터 전환, 운영까지 모든 클라우드 서비스를 ‘엔드 투 엔드(end-to-end)’로 제공하는 LG CNS 클라우드 브랜드입니다.
+                                            </p>
+                                            <span class="news-swiper__category font-body-sm color-text-secondary">아티클</span>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="swiper-slide">
-                                <ul class="content-list__wrap thumbnail-type type-box-line">
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="https://placehold.co/576x288" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label">동영상</div>
-                                                <div class="title font-body-lg">
-                                                    어떻게 DWP를 도입할 것인가?
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    24년 10월 웨비나 세션 자료
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="swiper-slide">
-                                <ul class="content-list__wrap thumbnail-type type-box-line">
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="https://placehold.co/576x288" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label">아티클</div>
-                                                <div class="title font-body-lg">
-                                                    DWP 꼭 지금 도입해야하는가?
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    DWP 도입으로 기업의 생산성이 어떻게 좋아졌는지 글을 통해 살펴보세요.
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="swiper-slide">
-                                <ul class="content-list__wrap thumbnail-type type-box-line">
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="https://placehold.co/576x288" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label">아티클</div>
-                                                <div class="title font-body-lg">
-                                                    DWP를 사용하는 고객의 소리
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    고객들은 DWP를 어떻게 사용하고 있을까요
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="swiper-slide">
-                                <ul class="content-list__wrap thumbnail-type type-box-line">
-                                    <li>
-                                        <a href="#" class="content-list__inner">
-                                            <div class="thumbnail-wrap">
-                                                <img src="https://placehold.co/576x288" alt="" />
-                                            </div>
-                                            <div class="content-info">
-                                                <div class="font-body-xs category-label">News</div>
-                                                <div class="title font-body-lg">
-                                                    Awards 수상
-                                                </div>
-                                                <div class="description font-body-sm">
-                                                    MWP에 대한 내용을 5분만에 퀵하게 살펴볼 수 있는 필수 자료!
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                            <div class="news-swiper__navigation-wrap">
+                                <button type="button" class="news-swiper__navigation news-swiper__navigation--prev">
+                                    <i class="ico icon-main-arrow-right-bl24 ico--default"></i>
+                                    <i class="ico icon-main-arrow-left-gr24 ico--disabled"></i>
+                                    <span class="ir-text">이전 보기</span>
+                                </button>
+                                <button type="button" class="news-swiper__navigation news-swiper__navigation--next">
+                                    <i class="ico icon-main-arrow-right-bl24 ico--default"></i>
+                                    <i class="ico icon-main-arrow-left-gr24 ico--disabled"></i>
+                                    <span class="ir-text">다음 보기</span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- News // -->
+            <!-- Button Banner (유사) -->
+            <div class="main-content__inner button-banner">
+                <div class="main-container">
+                    <div class="button-banner__box">
+                        <span class="font-head-x-xl-mode color-text-default">
+                            THE FOUNDATION OF <br class="display-pc">
+                            OUR BRAND EXPERIENCE
+                        </span>
+                        <div class="button__wrap button-banner__navigation">
+                            <a href="#" class="btn btn-text">
+                                <span class="btn__text">
+                                    Brand Story
+                                </span>
+                                <i class="btn__icon ico icon-navigation-right-bl40"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="button__wrap button__wrap--btn-top align-right">
+                        <button type="button" class="btn-icon btn-top">
+                            <i class="ico icon-navigation-up-w19"></i>
+                            <span class="ir-text">최상위로 이동</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Button Banner (유사) // -->
         </div>
-        <!-- //LG CNS Now 영역 -->
         <%- include('src/_inc/footer.html') %>
     </div>
     <script src="/assets/bundle/swiper-bundle.min.js"></script>
     <script src="/assets/js/initializeSwipers.js"></script>
+    <script src="/assets/bundle/gsap.min.js"></script>
     <script>
-        // Swiper 옵션 배열
-        const swiperOptions = [
-            {
-                slidesPerView: 1,
-                loop: true,
-                navigation: { 
-                    prevEl: ".slogan-swiper .swiper-button-prev",
-                    nextEl: ".slogan-swiper .swiper-button-next",
-                },
+        /* swiper-notice */
+        let swiperNotice = new Swiper('.swiper-notice', {
+            loop: false,
+            slidesPerView: 1,
+            navigation: {
+                nextEl: '.notice-swiper__navigation--next',
+                prevEl: '.notice-swiper__navigation--prev',
             },
-            {
-                speed: 500,
-                slidesPerView: "auto",
-                spaceBetween: 8,
-                slidesOffsetBefore: 20,
-                slidesOffsetAfter: 20,
-                navigation: { 
-                    prevEl: ".main-now-swiper .swiper-button-prev",
-                    nextEl: ".main-now-swiper .swiper-button-next",
+        })
+        
+        /* swiper-news */ 
+        let swiperNews = new Swiper('.swiper-news', {
+            slidesPerView: 1.1,
+            spaceBetween: 12,
+            navigation: {
+                nextEl: '.news-swiper__navigation--next',
+                prevEl: '.news-swiper__navigation--prev',
+            },
+            breakpoints: {
+                720: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
                 },
-                breakpoints: {
-                    768: { //브라우저가 768보다 클 때
-                        slidesPerView: 3,  
-                        spaceBetween: 16,
-                        slidesOffsetBefore: 0,
-                        slidesOffsetAfter: 0,
-                    },
-                },
+                1280: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
             }
-        ];
-        // Swiper 초기화
-        initializeSwipers(swiperOptions); 
+        })
+
+        /* swiper-interactive-banner */ 
+        // let swiperHero = new Swiper('.swiper-interactive-banner', {
+        //     autoplay: {
+        //         delay: 6000,
+        //     },
+        //     allowTouchMove: false,
+        //     touchRatio: 0,
+        //     slidesPerView: 1,
+        //     effect: 'fade',
+        // })
+
+        //gsap 관련 script
+        const isPc = window.innerWidth >= 1280;
+        const cardItems = document.querySelectorAll(".carousel-wrap .card-context");           
+        
+        // card-context 셋팅
+        function cardItemSetting() {
+            const infoCardItems = [
+                {
+                    group1: [    
+                        {
+                            imgPC: '/src/assets/image/main/carousel/carousel_img_data_pc.png',
+                            imgMO: '/src/assets/image/main/carousel/carousel_img_data_mo.png'
+                        },                    
+                        {
+                            imgPC: '/src/assets/image/main/carousel/carousel_img_cloud_pc.png',
+                            imgMO: '/src/assets/image/main/carousel/carousel_img_cloud_mo.png'
+                        },
+                        {
+                            imgPC: '/src/assets/image/main/carousel/carousel_img_ai_pc.png',
+                            imgMO: '/src/assets/image/main/carousel/carousel_img_ai_mo.png'
+                        },
+                        {
+                            imgPC: '/src/assets/image/main/carousel/carousel_img_consulting_pc.png',
+                            imgMO: '/src/assets/image/main/carousel/carousel_img_consulting_mo.png'
+                        },                        
+                    ]
+                },
+                {
+                    group2: [
+                        {
+                            imgPC: '/src/assets/image/main/carousel/carousel_img_city_pc.png',
+                            imgMO: '/src/assets/image/main/carousel/carousel_img_city_mo.png'
+                        },
+                        {
+                            imgPC: '/src/assets/image/main/carousel/carousel_img_logistic_pc.png',
+                            imgMO: '/src/assets/image/main/carousel/carousel_img_logistic_mo.png'
+                        },
+                        {
+                            imgPC: '/src/assets/image/main/carousel/carousel_img_factory_pc.png',
+                            imgMO: '/src/assets/image/main/carousel/carousel_img_factory_mo.png'
+                        },                        
+                    ]
+                },
+                {
+                    group3: [
+                        {
+                            imgPC: '/src/assets/image/main/carousel/carousel_img_solution_pc.png',
+                            imgMO: '/src/assets/image/main/carousel/carousel_img_solution_mo.png'
+                        },
+                        {
+                            imgPC: '/src/assets/image/main/carousel/carousel_img_cx_pc.png',
+                            imgMO: '/src/assets/image/main/carousel/carousel_img_cx_mo.png'
+                        },
+                        {
+                            imgPC: '/src/assets/image/main/carousel/carousel_img_intelligence_pc.png',
+                            imgMO: '/src/assets/image/main/carousel/carousel_img_intelligence_mo.png'
+                        },
+                    ]
+                },                
+            ]
+            
+                        
+            cardItems.forEach((item, idx) => {
+                let itemGroupTitle = item.dataset.group;
+                let itemOgStyle = item.dataset.style;
+                let itemCardInnerItem = item.querySelector(".card-inner");
+                let timeflag = 0;
+                            
+                itemCardInnerItem.addEventListener("mouseover", ((e) => { cardEventCtrl(e); }))
+                itemCardInnerItem.addEventListener("mouseleave", ((e) => { cardEventCtrl(e); }))
+
+                requestAnimationFrame(groupChecking);
+                
+                function groupChecking(){
+                    if(isPc) {                        
+                        if(timeflag == 0) {
+                            console.log("pc", timeflag);
+                            setTimeout(() => {
+                                if(itemGroupTitle == "group1") {
+                                    item.classList.add("active");
+                                } else  {
+                                    item.classList.remove("active");
+                                }                    
+                            }, 1000 * 1);
+
+                            setTimeout(() => {
+                                if(itemGroupTitle == "group2") {
+                                    item.classList.add("active");
+                                } else  {
+                                    item.classList.remove("active");
+                                }
+                            }, 1000 * 3);
+
+                            setTimeout(() => {
+                                if(itemGroupTitle == "group3") {
+                                    item.classList.add("active");                                
+                                } else  {
+                                    item.classList.remove("active");
+                                }
+                                timeflag = 1;
+                                requestAnimationFrame(groupChecking);
+                            }, 1000 * 6);                    
+                        } else {
+                            console.log("pc", timeflag);
+                            let timerId = setInterval(() => {           
+                                setTimeout(() => {
+                                    if(itemGroupTitle == "group1") {
+                                        item.classList.add("active");                                       
+                                    } else  {
+                                        item.classList.remove("active");                                        
+                                    }                    
+                                }, 1000 * 1);
+
+                                setTimeout(() => {
+                                    if(itemGroupTitle == "group2") {
+                                        item.classList.add("active");                                       
+                                    } else  {
+                                        item.classList.remove("active");                                        
+                                    }
+                                }, 1000 * 3);
+
+                                setTimeout(() => {
+                                    if(itemGroupTitle == "group3") {
+                                        item.classList.add("active");                                       
+                                    } else  {
+                                        item.classList.remove("active");                                        
+                                    }                    
+                                }, 1000 * 6);
+                            },7000);
+                        }
+                    }
+                }
+                
+                if(itemGroupTitle == "group1") {
+                    if(!isPc) {
+                        itemCardInnerItem.dataset.style = `url("${infoCardItems[0].group1[idx].imgMO}")`;
+                    } else {
+                        itemCardInnerItem.dataset.style = `url("${infoCardItems[0].group1[idx].imgPC}")`;
+                    }
+                } else if(itemGroupTitle == "group2") {
+                    if(!isPc) {
+                        itemCardInnerItem.dataset.style = `url("${infoCardItems[1].group2[idx-4].imgMO}")`;
+                    } else {
+                        itemCardInnerItem.dataset.style = `url("${infoCardItems[1].group2[idx-4].imgPC}")`;
+                    }
+                    
+                } else if(itemGroupTitle == "group3") {
+                    if(!isPc) {
+                        itemCardInnerItem.dataset.style = `url("${infoCardItems[2].group3[idx-7].imgMO}")`;
+                    } else {
+                        itemCardInnerItem.dataset.style = `url("${infoCardItems[2].group3[idx-7].imgPC}")`;
+                    }
+                }                
+            });
+        }
+
+        
+        function initCarousel() {
+            gsap.set(".carousel-wrap", {
+                height: `${document.querySelector(".card-context .card-inner").clientHeight}px`,
+                onComplete: () => [carousel()]
+            })
+        }
+        function carousel() {
+            gsap.to(".carousel-wrap", {
+                opacity: 1,
+                duration: .3,
+                ease: "power1.inOut",
+                delay: .1
+            }),
+            gsap.ticker.fps(60);
+            const e = document.querySelector(".carousel-wrap")
+            , t = document.querySelectorAll(".card-context");
+            let n = e.clientWidth
+            , o = t[0].clientWidth + 10
+            , r = t.length * o
+            , i = 0
+            , s = 1
+            , a = 10
+            , c = 10
+            , l = 10
+            , p = !0
+            , u = !1;
+            let d, g = 0, y = 0, m = !1;
+            const w = () => {
+                p = !1,
+                clearTimeout(d)
+            }
+            , S = t => {
+                g = t.clientX || t.touches[0].clientX,
+                m = !0,
+                e.classList.add("is-dragging"),
+                p = !1,
+                w()
+            }
+            , h = e => {
+                m && (u && (u = !1),
+                y = e.clientX || e.touches[0].clientX,
+                c += 1.5 * (y - g),
+                g = y)
+            }
+            , v = () => {
+                m = !1,
+                e.classList.remove("is-dragging")
+            }
+            ;
+            gsap.utils.toArray(".card-context", e).forEach((e => {
+                const cardInnerItem = e.querySelector(".card-inner");
+                // (mobile) touch시 카드 이벤트 제어
+                cardInnerItem.addEventListener("touchstart", ((e) => { cardEventCtrl(e); }))                
+            }
+            )),
+            e.addEventListener("touchstart", S),
+            e.addEventListener("touchmove", h),
+            e.addEventListener("touchend", v),
+            e.addEventListener("mousedown", S),
+            e.addEventListener("mousemove", h),
+            e.addEventListener("mouseleave", v),
+            e.addEventListener("mouseup", v),
+            e.addEventListener("selectstart", ( () => !1));
+            const x = e => {
+                gsap.set(t, {
+                    x: t => t * o + e,
+                    y: e => {
+                        const n = e * o / o
+                        , r = gsap.utils.wrap(-1, t.length - 1, n);
+                        return 25 * Math.sin(1 * r - i)
+                    }
+                    ,
+                    modifiers: {
+                        x: (e, t) => `${gsap.utils.wrap(-o, r - o, parseInt(e))}px`
+                    }
+                })
+
+                // (mobile) 카드 그룹별 active 처리
+                const thumbsWrapRect = document.querySelector(".carousel-wrap .thumbs-wrapper").getBoundingClientRect();
+                const thumbsWrapWidth = thumbsWrapRect.width;
+                const thumbsWrapHalf = thumbsWrapWidth / 2;
+                const thumbsWrapMin = thumbsWrapHalf / 2;                
+
+                setTimeout(function(){
+                    for(let i = 0; i < t.length; i ++) {
+                        const itemTransform = t[i].style.transform;
+                        const itemTransformVal1 = itemTransform.replace("translate(", "");
+                        const itemTransformVal2 = itemTransformVal1.replace(")", "");
+                        const itemTransformVal = itemTransformVal2.split(",");
+                        const itemTransformX = itemTransformVal[0];
+                        const itemTransformY = itemTransformVal[1];
+                                                
+                        if(parseInt(itemTransformX) <= thumbsWrapMin) {
+                            const targetGroup = t[i].dataset.group;
+
+                            cardItems.forEach(item => {
+                                item.classList.remove("active");
+
+                                const itemGroup = item.dataset.group;
+                                if(itemGroup == targetGroup) {
+                                    item.classList.add("active");
+                                }
+                            })                                      
+                        }
+                    }
+                },1000)
+                
+            }
+            ;
+            x(0),
+            gsap.ticker.add(( () => {
+                var e;
+                u || (p && (c -= s),
+                l = l * (1 - (e = .1)) + c * e,
+                x(l),
+                p || (s = l - a, a = l),
+                p ? i += .05 : (i = .0075 * a, a = l))                
+            }
+            )),
+            window.addEventListener("1", ( () => {
+                document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`),
+                gsap.set(".carousel-wrap", {
+                    height: `${document.querySelector(".card-context .card-inner").clientHeight}px`
+                }),
+                n = e.clientWidth,
+                o = t[0].clientWidth + 10,
+                r = t.length * o           
+            }
+            ))
+        }
+
+
+        function cardEventCtrl(e) {
+            const targetItemStyle = e.target.dataset.style; 
+            const targetItemGroup = e.target.closest(".card-context").dataset.group;
+
+            // mouseover 지정한 동일한 그룹 active 처리
+            document.querySelectorAll(".carousel-wrap .card-context").forEach(item => {
+                if(item.dataset.group === targetItemGroup){
+                    item.classList.add("active");                    
+                } else {
+                    item.classList.remove("active");                    
+                }
+            })
+            if(e.target.closest(".card-context").classList.contains("on")){
+                e.target.closest(".card-context").classList.remove("on");
+                e.target.style.backgroundImage = "revert";
+                e.target.style.border = "1px solid #565656;";
+            } else {
+                e.target.closest(".card-context").classList.add("on");
+                e.target.style.backgroundImage = targetItemStyle;
+                e.target.style.border = "1px solid #8e8e8e";
+            }
+        }                
+        
+        if(!isPc) { initCarousel(); }
+        cardItemSetting();
+
+        // resize 관련 delay, timer 변수
+        let delay = 300;
+        let timer = null;
+        window.addEventListener('resize', function(){
+            clearTimeout(timer);
+            timer = setTimeout(function(){
+                // console.log('resize event!');
+                if(!isPc) { initCarousel(); }
+            }, delay);
+        });  
+
     </script>
 </body>
 </html>
