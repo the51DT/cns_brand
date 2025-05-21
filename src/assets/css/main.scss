@@ -387,6 +387,14 @@
                 margin-bottom: 0;
             }
         }
+        &__container {
+            display: flex;
+            flex-direction: column-reverse;
+            @media #{$min1280} {
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+        }
         &__text-box {
             text-align: center;
             padding: calc(40 / 16 * 1rem) calc(20 / 16 * 1rem) 0;
@@ -432,25 +440,45 @@
         }
         &__frame {
             max-width: calc(1200 / 16 * 1rem);
-        }
-        &__container {
-            display: flex;
-            flex-direction: column-reverse;
-            @media #{$min1280} {
-                flex-direction: row;
-                justify-content: flex-end;
+            &--image {
+                margin: 0 calc(22 / 16 * 1rem);
+                border: calc(3 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default0);
+                border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+                overflow: hidden;
+                box-sizing: border-box;
+                aspect-ratio: 270 / 150;
+                @media #{$min1280} {
+                    aspect-ratio: 820 / 458;
+                    margin: 0;
+                    width: calc(840 / 16 * 1rem);
+                    height: calc(478 / 16 * 1rem);
+                    border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+                    border: calc(10 / 16 * 1rem) solid rgba(255,255,255,0.60);
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
+        }
+        &__slide {
             // News Image Hero
             &--news {
-                @media #{$min1280} {
-                    justify-content: space-between;
-                    gap: calc(85 / 16 * 1rem);
-                    padding: 0 calc(107 / 16 * 1rem) 0 calc(96 / 16 * 1rem);
+                .interactive-swiper__container {
+                    @media #{$min1280} {
+                        justify-content: space-between;
+                        gap: calc(85 / 16 * 1rem);
+                        padding: 0 calc(107 / 16 * 1rem) 0 calc(96 / 16 * 1rem);
+                    }
                 }
                 .interactive-swiper__text-box {
                     position: relative;
                     top: initial;
                     left: initial;
+                    @media #{$min1280} {
+                        max-width: calc(652 / 16 * 1rem);
+                    }
                 }
             }
         }
@@ -470,7 +498,7 @@
                 padding: 0 calc(80 / 16 * 1rem);
             }
             .swiper {
-                border-bottom: calc(1 / 16 * 1rem) solid var(--notice-border-color-mode);
+                border-bottom: calc(1.5 / 16 * 1rem) solid var(--notice-border-color-mode);
             }
             .swiper-wrapper {
                 margin-bottom: 0;

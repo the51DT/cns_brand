@@ -13,14 +13,39 @@
         <%- include('src/_inc/header.html') %>
         <div class="main-content__wrap">
             <!-- notice + Interactive Hero + navigation list -->
-            <div class="main-content__inner interactive-hero has-notice hero-style-01 color-mode-white">
+            <div class="main-content__inner interactive-hero has-notice hero-style-01 color-mode-white" data-bg-color="#F0E5D3">
                 <div class="main-container">
                     <!-- interactive banner -->
                     <div class="interactive-swiper">
                         <div class="cmp-wrap cmp-swiper__wrap mb-0">
                             <div class="swiper swiper-interactive-banner">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide interactive-swiper__slide--default">
+                                    <div class="swiper-slide interactive-swiper__slide interactive-swiper__slide--news"  data-bg-color="#F0E5D3">
+                                        <div class="interactive-swiper__container">
+                                            <div class="interactive-swiper__text-box">
+                                                <span class="font-head-x-xl-main-banner interactive-swiper__title">
+                                                    LG CNS <br class="display-pc">
+                                                    1,300억 미래에셋생명 <br class="display-pc">
+                                                    차세대 시스템 구축
+                                                </span>
+                                                <p class="font-body-md interactive-swiper__desc">
+                                                    AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
+                                                    비즈니스의 빠른 성장을 이끌어갑니다.
+                                                </p>
+                                                <div class="button__wrap interactive-swiper__button">
+                                                    <a href="#" target="_self" class="btn btn-x-large btn-secondary">
+                                                        <span class="btn__text">기사 바로보기</span>
+                                                        <i class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
+                                                        <i class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="interactive-swiper__frame interactive-swiper__frame--image">
+                                                <img src="/src/assets/image/main/main_interactive_hero_news_thumb01.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide interactive-swiper__slide">
                                         <div class="interactive-swiper__container">
                                             <div class="interactive-swiper__text-box">
                                                 <span class="font-head-x-xxl interactive-swiper__title">
@@ -39,14 +64,14 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="interactive-swiper__frame">
+                                            <div class="interactive-swiper__frame interactive-swiper__frame--video">
                                                 <video autoplay poster="/src/assets/image/main/main_interactive_hero_poster_01.png">
                                                     <source src="/src/assets/image/main/main_interactive_hero_mv_01.webm" type="video/webm" />
                                                 </video>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide interactive-swiper__slide--news">
+                                    <div class="swiper-slide interactive-swiper__slide">
                                         <div class="interactive-swiper__container">
                                             <div class="interactive-swiper__text-box">
                                                 <span class="font-head-x-xxl interactive-swiper__title">
@@ -65,8 +90,10 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="interactive-swiper__frame">
-                                                <img src="" alt="">
+                                            <div class="interactive-swiper__frame interactive-swiper__frame--video">
+                                                <video autoplay poster="/src/assets/image/main/main_interactive_hero_poster_02.png">
+                                                    <source src="/src/assets/image/main/main_interactive_hero_mv_02.webm" type="video/webm" />
+                                                </video>
                                             </div>
                                         </div>
                                     </div>
@@ -328,15 +355,16 @@
         })
 
         /* swiper-interactive-banner */ 
-        // let swiperHero = new Swiper('.swiper-interactive-banner', {
-        //     autoplay: {
-        //         delay: 6000,
-        //     },
-        //     allowTouchMove: false,
-        //     touchRatio: 0,
-        //     slidesPerView: 1,
-        //     effect: 'fade',
-        // })
+        let swiperHero = new Swiper('.swiper-interactive-banner', {
+            autoplay: {
+                delay: 6000,
+            },
+            allowTouchMove: false,
+            touchRatio: 0,
+            slidesPerView: 1,
+            effect: 'fade',
+        })
+
     </script>
 </body>
 </html>
