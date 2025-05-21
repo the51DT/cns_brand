@@ -2,6 +2,7 @@
 .cmp-gsap {
     &__carousel {
         overflow: hidden;
+        margin-bottom: 0;
         .content {
             @media #{$min1280} { 
                 display: block;
@@ -38,6 +39,14 @@
                 row-gap: 12px;
                 justify-content: center;
             }
+            // carousel 카드 모바일 테스트용 가상선택자
+            // &::before {                
+            //     content: '';
+            //     width: calc(180 / 16 * 1rem);
+            //     height: 100%;
+            //     margin: 0 auto;
+            //     background: #ccc;
+            // }
         }
 
         .card-context {            
@@ -203,12 +212,11 @@
                 border: 1px solid #565656;
                 background-image: none;
                 border-radius: calc(20 / 16 * 1rem);
-                background-color: #07050B;
-                cursor: pointer;
+                background: rgba(255,255,255,0.06);
                 transform-origin: center;
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-position: center bottom;
+                background-position: center bottom;               
                 @media #{$min1280} { 
                     position: static;
                     min-height: calc(245 / 16 * 1rem);
@@ -235,6 +243,81 @@
                     display: block;
                     width: calc(24 / 16 * 1rem);
                     height: calc(24 / 16 * 1rem);
+                }
+            }
+        }
+    }
+}
+
+.service {
+    &-area {
+        margin-top: calc(96 / 16 * 1rem);
+        @media #{$min1280} {
+            margin-top: calc(200 / 16 * 1rem);
+            overflow: auto;
+        }
+    }
+    &-content {
+        background: url(#{$basePath}image/main/bg_main_service.png) right bottom no-repeat;
+        background-size: cover;
+        border-radius: calc(40 / 16 * 1rem);
+        padding: calc(56 / 16 * 1rem) 0 calc(70 / 16 * 1rem);
+        @media #{$pcMiddle}, #{$pcWide} {
+            border-radius: calc(24 / 16 * 1rem);
+            padding: 0 calc(200 / 16 * 1rem);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: calc(23 / 16 * 1rem);
+        }
+        @media #{$tablet} {
+            display: block;
+            width: 100%;
+            padding: calc(40 / 16 * 1rem) 0 calc(128 / 16 * 1rem);
+        }  
+        @media #{$tabletMini} {
+            padding: 0 0 calc(80 / 16 * 1rem);
+        }
+        @media #{$phone} {
+            padding: calc(56 / 16 * 1rem) 0 calc(70 / 16 * 1rem);
+        }
+        &__text {
+            @media #{$pcMiddle}, #{$pcWide} {
+                flex-grow: 1;
+            }
+            .title {
+                color: #fff;
+                @media #{$pcMiddle}, #{$pcWide} {
+                    text-align: left;
+                }
+                @media #{$tablet} {
+                    text-align: center;
+                    padding: calc(80 / 16 * 1rem) 0 calc(60 / 16 * 1rem);
+                }                             
+                @media #{$tabletMini} {
+                    padding-bottom: calc(46 / 16 * 1rem);
+                }
+                @media #{$phone} {
+                    text-align: center;
+                    padding: 0;
+                }
+            }
+        }
+        &__list {
+            .carousel-wrap {                
+                @media #{$pcMiddle}, #{$pcWide} {
+                    margin-top: calc(159 / 16 * 1rem);
+                    margin-bottom: 0;
+                }
+                @media #{$tablet} {
+                    margin: calc(30 / 16 * 1rem) 0;
+                }
+                @media #{$tabletMini} {
+                //    margin: calc(30 / 16 * 1rem) 0;                   
+                }   
+                @media #{$phone} {
+                    margin-top: 4rem;
+                    margin-bottom: 1.8rem;
                 }
             }
         }

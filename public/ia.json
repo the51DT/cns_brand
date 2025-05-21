@@ -364,6 +364,12 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_swiper.html"
+        },
+        {
+          "name": "Gsap",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_gsap.html"
         }
       ]
     },
