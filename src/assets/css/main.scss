@@ -366,16 +366,6 @@
                 }
             }
         }
-        // &:has(.interactive-swiper__slide--news.swiper-slide-active) {
-        //     .interactive-swiper {
-        //         background: var(--banner-news-bg, transparent);;
-        //         .cmp-swiper__wrap {
-        //             .swiper-slide {
-        //                 background: var(--banner-news-bg, transparent);;
-        //             }
-        //         }
-        //     }
-        // }
     }
     .interactive-swiper {
         position: relative;
@@ -560,6 +550,14 @@
             }
             &--next {
                 right: 0;
+            }
+            .ico {
+                &--color-white {
+                    display: var(--banner-color-display-white);
+                }
+                &--color-black {
+                    display: var(--banner-color-display-black);
+                }
             }
         }
     }
