@@ -366,6 +366,16 @@
                 }
             }
         }
+        // &:has(.interactive-swiper__slide--news.swiper-slide-active) {
+        //     .interactive-swiper {
+        //         background: var(--banner-news-bg, transparent);;
+        //         .cmp-swiper__wrap {
+        //             .swiper-slide {
+        //                 background: var(--banner-news-bg, transparent);;
+        //             }
+        //         }
+        //     }
+        // }
     }
     .interactive-swiper {
         position: relative;
@@ -376,7 +386,8 @@
         margin-bottom: calc(24 / 16 * 1rem);
         @media #{$min1280} {
             padding-top: calc(88 / 16 * 1rem);
-            padding-bottom: calc(249 / 16 * 1rem);
+            // padding-bottom: calc(249 / 16 * 1rem);
+            padding-bottom: calc(223 / 16 * 1rem);
             border-radius: calc(var(--radius-mode1-x-l) / 16 * 1rem);
         }
         .cmp-swiper__wrap {
@@ -408,6 +419,12 @@
         }
         &__title {
             color: var(--banner-color-mode);
+            .display-pc {
+                display: none;
+                @media (min-width: 1600px) {
+                    display: block;
+                }
+            }
         }
         &__desc {
             margin-top: calc(12 / 16 * 1rem);
@@ -439,7 +456,27 @@
             }
         }
         &__frame {
-            max-width: calc(1200 / 16 * 1rem);
+            &--video {
+                max-width: calc(1200 / 16 * 1rem);
+                display: flex;
+                justify-content: flex-end;
+                @media (min-width: 1000px) {
+                    margin-bottom: calc(26 / 16 * 1rem);
+                }
+                video {
+                    margin-right: 0;
+                    width: 100%;
+                    @media (min-width: 1000px) {
+                        width: 80%;
+                    }
+                    @media (min-width: 1400px) {
+                        width: 80%;
+                    }
+                    @media (min-width: 1600px) {
+                        width: 100%;
+                    }
+                }
+            }
             &--image {
                 margin: 0 calc(22 / 16 * 1rem);
                 border: calc(3 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default0);
@@ -449,7 +486,7 @@
                 aspect-ratio: 270 / 150;
                 @media #{$min1280} {
                     aspect-ratio: 820 / 458;
-                    margin: 0;
+                    margin: 0 0 calc(80 / 16 * 1rem);;
                     width: calc(840 / 16 * 1rem);
                     height: calc(478 / 16 * 1rem);
                     border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);

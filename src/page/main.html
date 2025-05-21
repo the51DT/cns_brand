@@ -1,325 +1,437 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title><%= data.title %></title>
+    <title>
+        <%= data.title %>
+    </title>
     <meta name="description" content="<%= data.description %>">
     <link rel="stylesheet" href="/src/assets/css/index.css" />
     <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
 </head>
+
 <body class="">
     <div class="wrap has-hero main">
         <%- include('src/_inc/header.html') %>
-        <div class="main-content__wrap">
-            <!-- notice + Interactive Hero + navigation list -->
-            <div class="main-content__inner interactive-hero has-notice hero-style-01 color-mode-white" data-bg-color="#F0E5D3">
-                <div class="main-container">
-                    <!-- interactive banner -->
-                    <div class="interactive-swiper">
-                        <div class="cmp-wrap cmp-swiper__wrap mb-0">
-                            <div class="swiper swiper-interactive-banner">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide interactive-swiper__slide interactive-swiper__slide--news"  data-bg-color="#F0E5D3">
-                                        <div class="interactive-swiper__container">
-                                            <div class="interactive-swiper__text-box">
-                                                <span class="font-head-x-xl-main-banner interactive-swiper__title">
-                                                    LG CNS <br class="display-pc">
-                                                    1,300억 미래에셋생명 <br class="display-pc">
-                                                    차세대 시스템 구축
-                                                </span>
-                                                <p class="font-body-md interactive-swiper__desc">
-                                                    AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
-                                                    비즈니스의 빠른 성장을 이끌어갑니다.
-                                                </p>
-                                                <div class="button__wrap interactive-swiper__button">
-                                                    <a href="#" target="_self" class="btn btn-x-large btn-secondary">
-                                                        <span class="btn__text">기사 바로보기</span>
-                                                        <i class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
-                                                        <i class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
-                                                    </a>
+            <div class="main-content__wrap">
+                <!-- notice + Interactive Hero + navigation list -->
+                <div class="main-content__inner interactive-hero has-notice hero-style-01 color-mode-white">
+                    <div class="main-container">
+                        <!-- interactive banner -->
+                        <div class="interactive-swiper">
+                            <div class="cmp-wrap cmp-swiper__wrap mb-0">
+                                <div class="swiper swiper-interactive-banner">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide interactive-swiper__slide">
+                                            <div class="interactive-swiper__container">
+                                                <div class="interactive-swiper__text-box">
+                                                    <span class="font-head-x-xxl interactive-swiper__title">
+                                                        1. Generative AI <br>
+                                                        in your work
+                                                    </span>
+                                                    <p class="font-body-md interactive-swiper__desc">
+                                                        AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
+                                                        비즈니스의 빠른 성장을 이끌어갑니다.
+                                                    </p>
+                                                    <div class="button__wrap interactive-swiper__button">
+                                                        <a href="#" target="_self"
+                                                            class="btn btn-x-large btn-secondary">
+                                                            <span class="btn__text">생성형 AI 바로보기</span>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="interactive-swiper__frame interactive-swiper__frame--image">
-                                                <img src="/src/assets/image/main/main_interactive_hero_news_thumb01.png" alt="">
+                                                <div class="interactive-swiper__frame interactive-swiper__frame--video">
+                                                    <video muted loop>
+                                                        <source
+                                                            src="/src/assets/image/main/main_interactive_hero_mv_01.webm"
+                                                            type="video/webm" />
+                                                    </video>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide interactive-swiper__slide">
-                                        <div class="interactive-swiper__container">
-                                            <div class="interactive-swiper__text-box">
-                                                <span class="font-head-x-xxl interactive-swiper__title">
-                                                    Generative AI <br>
-                                                    in your work
-                                                </span>
-                                                <p class="font-body-md interactive-swiper__desc">
-                                                    AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
-                                                    비즈니스의 빠른 성장을 이끌어갑니다.
-                                                </p>
-                                                <div class="button__wrap interactive-swiper__button">
-                                                    <a href="#" target="_self" class="btn btn-x-large btn-secondary">
-                                                        <span class="btn__text">생성형 AI 바로보기</span>
-                                                        <i class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
-                                                        <i class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
-                                                    </a>
+                                        <div class="swiper-slide interactive-swiper__slide">
+                                            <div class="interactive-swiper__container">
+                                                <div class="interactive-swiper__text-box">
+                                                    <span class="font-head-x-xxl interactive-swiper__title">
+                                                        2. Generative AI <br>
+                                                        in your work
+                                                    </span>
+                                                    <p class="font-body-md interactive-swiper__desc">
+                                                        AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
+                                                        비즈니스의 빠른 성장을 이끌어갑니다.
+                                                    </p>
+                                                    <div class="button__wrap interactive-swiper__button">
+                                                        <a href="#" target="_self"
+                                                            class="btn btn-x-large btn-secondary">
+                                                            <span class="btn__text">생성형 AI 바로보기</span>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="interactive-swiper__frame interactive-swiper__frame--video">
-                                                <video autoplay poster="/src/assets/image/main/main_interactive_hero_poster_01.png">
-                                                    <source src="/src/assets/image/main/main_interactive_hero_mv_01.webm" type="video/webm" />
-                                                </video>
+                                                <div class="interactive-swiper__frame interactive-swiper__frame--video">
+                                                    <video muted loop>
+                                                        <source
+                                                            src="/src/assets/image/main/main_interactive_hero_mv_02.webm"
+                                                            type="video/webm" />
+                                                    </video>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide interactive-swiper__slide">
-                                        <div class="interactive-swiper__container">
-                                            <div class="interactive-swiper__text-box">
-                                                <span class="font-head-x-xxl interactive-swiper__title">
-                                                    Generative AI <br>
-                                                    in your work
-                                                </span>
-                                                <p class="font-body-md interactive-swiper__desc">
-                                                    AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
-                                                    비즈니스의 빠른 성장을 이끌어갑니다.
-                                                </p>
-                                                <div class="button__wrap interactive-swiper__button">
-                                                    <a href="#" target="_self" class="btn btn-x-large btn-secondary">
-                                                        <span class="btn__text">생성형 AI 바로보기</span>
-                                                        <i class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
-                                                        <i class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
-                                                    </a>
+                                        <div class="swiper-slide interactive-swiper__slide">
+                                            <div class="interactive-swiper__container">
+                                                <div class="interactive-swiper__text-box">
+                                                    <span class="font-head-x-xxl interactive-swiper__title">
+                                                        3. Generative AI <br>
+                                                        in your work
+                                                    </span>
+                                                    <p class="font-body-md interactive-swiper__desc">
+                                                        AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
+                                                        비즈니스의 빠른 성장을 이끌어갑니다.
+                                                    </p>
+                                                    <div class="button__wrap interactive-swiper__button">
+                                                        <a href="#" target="_self"
+                                                            class="btn btn-x-large btn-secondary">
+                                                            <span class="btn__text">생성형 AI 바로보기</span>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="interactive-swiper__frame interactive-swiper__frame--video">
+                                                    <video muted loop>
+                                                        <source
+                                                            src="/src/assets/image/main/main_interactive_hero_mv_02.webm"
+                                                            type="video/webm" />
+                                                    </video>
                                                 </div>
                                             </div>
-                                            <div class="interactive-swiper__frame interactive-swiper__frame--video">
-                                                <video autoplay poster="/src/assets/image/main/main_interactive_hero_poster_02.png">
-                                                    <source src="/src/assets/image/main/main_interactive_hero_mv_02.webm" type="video/webm" />
-                                                </video>
+                                        </div>
+                                        <div class="swiper-slide interactive-swiper__slide">
+                                            <div class="interactive-swiper__container">
+                                                <div class="interactive-swiper__text-box">
+                                                    <span class="font-head-x-xxl interactive-swiper__title">
+                                                        4. Generative AI <br>
+                                                        in your work
+                                                    </span>
+                                                    <p class="font-body-md interactive-swiper__desc">
+                                                        AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
+                                                        비즈니스의 빠른 성장을 이끌어갑니다.
+                                                    </p>
+                                                    <div class="button__wrap interactive-swiper__button">
+                                                        <a href="#" target="_self"
+                                                            class="btn btn-x-large btn-secondary">
+                                                            <span class="btn__text">생성형 AI 바로보기</span>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="interactive-swiper__frame interactive-swiper__frame--video">
+                                                    <video muted loop>
+                                                        <source
+                                                            src="/src/assets/image/main/main_interactive_hero_mv_02.webm"
+                                                            type="video/webm" />
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide interactive-swiper__slide interactive-swiper__slide--news"
+                                            style="--banner-news-bg : none">
+                                            <div class="interactive-swiper__container">
+                                                <div class="interactive-swiper__text-box">
+                                                    <span class="font-head-x-xl-main-banner interactive-swiper__title">
+                                                        5. LG CNS <br class="display-pc">
+                                                        1,300억 미래에셋생명 <br class="display-pc">
+                                                        차세대 시스템 구축
+                                                    </span>
+                                                    <p class="font-body-md interactive-swiper__desc">
+                                                        AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
+                                                        비즈니스의 빠른 성장을 이끌어갑니다.
+                                                    </p>
+                                                    <div class="button__wrap interactive-swiper__button">
+                                                        <a href="#" target="_self"
+                                                            class="btn btn-x-large btn-secondary">
+                                                            <span class="btn__text">기사 바로보기</span>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="interactive-swiper__frame interactive-swiper__frame--image">
+                                                    <img src="/src/assets/image/main/main_interactive_hero_news_thumb01.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide interactive-swiper__slide interactive-swiper__slide--news"
+                                            style="--banner-news-bg : none">
+                                            <div class="interactive-swiper__container">
+                                                <div class="interactive-swiper__text-box">
+                                                    <span class="font-head-x-xl-main-banner interactive-swiper__title">
+                                                        6. LG CNS <br class="display-pc">
+                                                        1,300억 미래에셋생명 <br class="display-pc">
+                                                        차세대 시스템 구축
+                                                    </span>
+                                                    <p class="font-body-md interactive-swiper__desc">
+                                                        AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
+                                                        비즈니스의 빠른 성장을 이끌어갑니다.
+                                                    </p>
+                                                    <div class="button__wrap interactive-swiper__button">
+                                                        <a href="#" target="_self"
+                                                            class="btn btn-x-large btn-secondary">
+                                                            <span class="btn__text">기사 바로보기</span>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
+                                                            <i
+                                                                class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="interactive-swiper__frame interactive-swiper__frame--image">
+                                                    <img src="/src/assets/image/main/main_interactive_hero_news_thumb01.png"
+                                                        alt="">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- interactive banner // -->
-                    <!-- 공지사항 -->
-                    <div class="notice-swiper">
-                        <div class="cmp-wrap cmp-swiper__wrap mb-0">
-                            <div class="swiper swiper-notice" data-autoplay="false" data-pagination="false">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운 세상을 기술합니다. 1</p>
+                        <!-- interactive banner // -->
+                        <!-- 공지사항 -->
+                        <div class="notice-swiper">
+                            <div class="cmp-wrap cmp-swiper__wrap mb-0">
+                                <div class="swiper swiper-notice" data-autoplay="false" data-pagination="false">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운
+                                                세상을 기술합니다. 1</p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운
+                                                세상을 기술합니다. 2</p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운
+                                                세상을 기술합니다. 3</p>
+                                        </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운 세상을 기술합니다. 2</p>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <p class="font-head-sm-mode font-normal text-center notice-swiper__text">새로운 세상을 기술합니다. 3</p>
+                                    <div class="notice-swiper__navigation-wrap">
+                                        <button type="button"
+                                            class="notice-swiper__navigation notice-swiper__navigation--prev">
+                                            <i class="ico icon-arrow-left-wh24"></i>
+                                            <span class="ir-text">이전 보기</span>
+                                        </button>
+                                        <button type="button"
+                                            class="notice-swiper__navigation notice-swiper__navigation--next">
+                                            <i class="ico icon-arrow-right-wh24"></i>
+                                            <span class="ir-text">다음 보기</span>
+                                        </button>
                                     </div>
                                 </div>
-                                <div class="notice-swiper__navigation-wrap">
-                                    <button type="button" class="notice-swiper__navigation notice-swiper__navigation--prev">
-                                        <i class="ico icon-arrow-left-wh24"></i>
+                            </div>
+                        </div>
+                        <!-- 공지사항 // -->
+                        <!-- heroNavigation -->
+                        <% const titleNavData=[ { href: "#" , target: "_self" , tag: "고객스토리" ,
+                            title: "Vision AI로 철스크랩 판정의 정확성과 효율성 모두 잡다" , }, { href: "#" , target: "_self" , tag: "자료" ,
+                            title: "해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서" , }, { href: "#" , target: "_self" ,
+                            tag: "행사" , title: "ESG 경영 DX : 지속가능성을 높이는 게임체인저" , }, { href: "#" , target: "_self" ,
+                            tag: "Techlog" , title: "생성형 AI의 모든 것" , }, ] %>
+                            <%- include('src/component/cmp_hero_navigation.html', Object.assign({}, locals, { jsonData:
+                                titleNavData, colorMode:"white", marginVertical: "mb-0" })) %>
+                                <!-- heroNavigation // -->
+                    </div>
+                </div>
+                <!-- notice + Interactive Hero + navigation list // -->
+                <!-- Search -->
+                <div class="main-content__inner">
+                </div>
+                <!-- Search // -->
+                <!-- Service -->
+                <div class="main-content__inner">
+                </div>
+                <!-- Service // -->
+                <!-- News -->
+                <div class="main-content__inner news-swiper">
+                    <div class="main-container">
+                        <span class="block font-head-lg font-semibold color-text-default text-center mb-spacing08">
+                            미래를 선도하는 <br class="display-mo">LG CNS의 <br class="display-pc">
+                            소식을 <br class="display-mo">전해드립니다
+                        </span>
+                        <div class="cmp-wrap cmp-swiper__wrap">
+                            <div class="swiper swiper-news" data-autoplay="false" data-pagination="false">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="#" class="news-swiper__container">
+                                            <div class="news-swiper__image">
+                                                <img src="https://placehold.co/467x262" alt="">
+                                            </div>
+                                            <div class="news-swiper__text">
+                                                <span
+                                                    class="news-swiper__title font-head-sm-mode color-text-default">Awards
+                                                    수상</span>
+                                                <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                    세계 4대 디자인 어워드라 불리는 미국 'IDEA 디자인 어워드', 독일 'IF 디자인 어워드', 독일 '레드닷
+                                                    디자인 어워드'를 수상
+                                                </p>
+                                                <span
+                                                    class="news-swiper__category font-body-sm color-text-secondary">News</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#" class="news-swiper__container">
+                                            <div class="news-swiper__image">
+                                                <img src="https://placehold.co/467x262" alt="">
+                                            </div>
+                                            <div class="news-swiper__text">
+                                                <span
+                                                    class="news-swiper__title font-head-sm-mode color-text-default">DAP
+                                                    GenAI Platform</span>
+                                                <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                    DAP GenAI Platform은 기업특화 생성형AI플랫폼으로, 기업고객은 온프레미스, 클라우드 등 보유중인 인프라에
+                                                    설치해 비즈니스에 필요한 생성형 AI서비스를 빠르게 만들어 즉각적인 가치 창출을 할 수
+                                                    있습니다.
+                                                </p>
+                                                <span
+                                                    class="news-swiper__category font-body-sm color-text-secondary">동영상</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#" class="news-swiper__container">
+                                            <div class="news-swiper__image">
+                                                <img src="https://placehold.co/467x262" alt="">
+                                            </div>
+                                            <div class="news-swiper__text">
+                                                <span
+                                                    class="news-swiper__title font-head-sm-mode color-text-default">CloudXper</span>
+                                                <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                    CloudXper는 클라우드 진단과 컨설팅부터 전환, 운영까지 모든 클라우드 서비스를 ‘엔드 투
+                                                    엔드(end-to-end)’로 제공하는 LG CNS 클라우드 브랜드입니다.
+                                                </p>
+                                                <span
+                                                    class="news-swiper__category font-body-sm color-text-secondary">아티클</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#" class="news-swiper__container">
+                                            <div class="news-swiper__image">
+                                                <img src="https://placehold.co/467x262" alt="">
+                                            </div>
+                                            <div class="news-swiper__text">
+                                                <span
+                                                    class="news-swiper__title font-head-sm-mode color-text-default">Awards
+                                                    수상</span>
+                                                <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                    세계 4대 디자인 어워드라 불리는 미국 'IDEA 디자인 어워드', 독일 'IF 디자인 어워드', 독일 '레드닷
+                                                    디자인 어워드'를 수상
+                                                </p>
+                                                <span
+                                                    class="news-swiper__category font-body-sm color-text-secondary">News</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#" class="news-swiper__container">
+                                            <div class="news-swiper__image">
+                                                <img src="https://placehold.co/467x262" alt="">
+                                            </div>
+                                            <div class="news-swiper__text">
+                                                <span
+                                                    class="news-swiper__title font-head-sm-mode color-text-default">DAP
+                                                    GenAI Platform</span>
+                                                <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                    DAP GenAI Platform은 기업특화 생성형AI플랫폼으로, 기업고객은 온프레미스, 클라우드 등 보유중인 인프라에
+                                                    설치해 비즈니스에 필요한 생성형 AI서비스를 빠르게 만들어 즉각적인
+                                                    가치 창출을 할 수
+                                                    있습니다.
+                                                </p>
+                                                <span
+                                                    class="news-swiper__category font-body-sm color-text-secondary">동영상</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#" class="news-swiper__container">
+                                            <div class="news-swiper__image">
+                                                <img src="https://placehold.co/467x262" alt="">
+                                            </div>
+                                            <div class="news-swiper__text">
+                                                <span
+                                                    class="news-swiper__title font-head-sm-mode color-text-default">CloudXper</span>
+                                                <p class="news-swiper__desc font-body-sm color-text-secondary">
+                                                    CloudXper는 클라우드 진단과 컨설팅부터 전환, 운영까지 모든 클라우드 서비스를 ‘엔드 투
+                                                    엔드(end-to-end)’로 제공하는 LG CNS 클라우드 브랜드입니다.
+                                                </p>
+                                                <span
+                                                    class="news-swiper__category font-body-sm color-text-secondary">아티클</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="news-swiper__navigation-wrap">
+                                    <button type="button" class="news-swiper__navigation news-swiper__navigation--prev">
+                                        <i class="ico icon-main-arrow-right-bl24 ico--default"></i>
+                                        <i class="ico icon-main-arrow-left-gr24 ico--disabled"></i>
                                         <span class="ir-text">이전 보기</span>
                                     </button>
-                                    <button type="button" class="notice-swiper__navigation notice-swiper__navigation--next">
-                                        <i class="ico icon-arrow-right-wh24"></i>
+                                    <button type="button" class="news-swiper__navigation news-swiper__navigation--next">
+                                        <i class="ico icon-main-arrow-right-bl24 ico--default"></i>
+                                        <i class="ico icon-main-arrow-left-gr24 ico--disabled"></i>
                                         <span class="ir-text">다음 보기</span>
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- 공지사항 // -->
-                    <!-- heroNavigation -->
-                    <%
-                        const titleNavData = [
-                            {
-                                href: "#",
-                                target: "_self",
-                                tag: "고객스토리",
-                                title: "Vision AI로 철스크랩 판정의 정확성과 효율성 모두 잡다",
-                            },
-                            {
-                                href: "#",
-                                target: "_self",
-                                tag: "자료",
-                                title: "해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서",
-                            },
-                            {
-                                href: "#",
-                                target: "_self",
-                                tag: "행사",
-                                title: "ESG 경영 DX : 지속가능성을 높이는 게임체인저",
-                            },
-                            {
-                                href: "#",
-                                target: "_self",
-                                tag: "Techlog",
-                                title: "생성형 AI의 모든 것",
-                            },
-                        ]
-                    %>
-                    <%- include('src/component/cmp_hero_navigation.html', Object.assign({}, locals, { 
-                        jsonData: titleNavData,
-                        colorMode:"white",
-                        marginVertical: "mb-0"
-                    })) %>
-                    <!-- heroNavigation // -->
                 </div>
-            </div>
-            <!-- notice + Interactive Hero + navigation list // -->
-            <!-- Search -->
-            <div class="main-content__inner">
-            </div>
-            <!-- Search // -->
-            <!-- Service -->
-            <div class="main-content__inner">
-            </div>
-            <!-- Service // -->
-            <!-- News -->
-            <div class="main-content__inner news-swiper">
-                <div class="main-container">
-                    <span class="block font-head-lg font-semibold color-text-default text-center mb-spacing08">
-                        미래를 선도하는 <br class="display-mo">LG CNS의 <br class="display-pc">
-                        소식을 <br class="display-mo">전해드립니다
-                    </span>
-                    <div class="cmp-wrap cmp-swiper__wrap">
-                        <div class="swiper swiper-news" data-autoplay="false" data-pagination="false">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a href="#" class="news-swiper__container">
-                                        <div class="news-swiper__image">
-                                            <img src="https://placehold.co/467x262" alt="">
-                                        </div>
-                                        <div class="news-swiper__text">
-                                            <span class="news-swiper__title font-head-sm-mode color-text-default">Awards 수상</span>
-                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
-                                                세계 4대 디자인 어워드라 불리는 미국 'IDEA 디자인 어워드', 독일 'IF 디자인 어워드', 독일 '레드닷 디자인 어워드'를 수상
-                                            </p>
-                                            <span class="news-swiper__category font-body-sm color-text-secondary">News</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#" class="news-swiper__container">
-                                        <div class="news-swiper__image">
-                                            <img src="https://placehold.co/467x262" alt="">
-                                        </div>
-                                        <div class="news-swiper__text">
-                                            <span class="news-swiper__title font-head-sm-mode color-text-default">DAP GenAI Platform</span>
-                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
-                                                DAP GenAI Platform은 기업특화 생성형AI플랫폼으로, 기업고객은 온프레미스, 클라우드 등 보유중인 인프라에 설치해 비즈니스에 필요한 생성형 AI서비스를 빠르게 만들어 즉각적인 가치 창출을 할 수
-                                                있습니다.
-                                            </p>
-                                            <span class="news-swiper__category font-body-sm color-text-secondary">동영상</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#" class="news-swiper__container">
-                                        <div class="news-swiper__image">
-                                            <img src="https://placehold.co/467x262" alt="">
-                                        </div>
-                                        <div class="news-swiper__text">
-                                            <span class="news-swiper__title font-head-sm-mode color-text-default">CloudXper</span>
-                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
-                                                CloudXper는 클라우드 진단과 컨설팅부터 전환, 운영까지 모든 클라우드 서비스를 ‘엔드 투 엔드(end-to-end)’로 제공하는 LG CNS 클라우드 브랜드입니다.
-                                            </p>
-                                            <span class="news-swiper__category font-body-sm color-text-secondary">아티클</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#" class="news-swiper__container">
-                                        <div class="news-swiper__image">
-                                            <img src="https://placehold.co/467x262" alt="">
-                                        </div>
-                                        <div class="news-swiper__text">
-                                            <span class="news-swiper__title font-head-sm-mode color-text-default">Awards 수상</span>
-                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
-                                                세계 4대 디자인 어워드라 불리는 미국 'IDEA 디자인 어워드', 독일 'IF 디자인 어워드', 독일 '레드닷 디자인 어워드'를 수상
-                                            </p>
-                                            <span class="news-swiper__category font-body-sm color-text-secondary">News</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#" class="news-swiper__container">
-                                        <div class="news-swiper__image">
-                                            <img src="https://placehold.co/467x262" alt="">
-                                        </div>
-                                        <div class="news-swiper__text">
-                                            <span class="news-swiper__title font-head-sm-mode color-text-default">DAP GenAI Platform</span>
-                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
-                                                DAP GenAI Platform은 기업특화 생성형AI플랫폼으로, 기업고객은 온프레미스, 클라우드 등 보유중인 인프라에 설치해 비즈니스에 필요한 생성형 AI서비스를 빠르게 만들어 즉각적인
-                                                가치 창출을 할 수
-                                                있습니다.
-                                            </p>
-                                            <span class="news-swiper__category font-body-sm color-text-secondary">동영상</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#" class="news-swiper__container">
-                                        <div class="news-swiper__image">
-                                            <img src="https://placehold.co/467x262" alt="">
-                                        </div>
-                                        <div class="news-swiper__text">
-                                            <span class="news-swiper__title font-head-sm-mode color-text-default">CloudXper</span>
-                                            <p class="news-swiper__desc font-body-sm color-text-secondary">
-                                                CloudXper는 클라우드 진단과 컨설팅부터 전환, 운영까지 모든 클라우드 서비스를 ‘엔드 투 엔드(end-to-end)’로 제공하는 LG CNS 클라우드 브랜드입니다.
-                                            </p>
-                                            <span class="news-swiper__category font-body-sm color-text-secondary">아티클</span>
-                                        </div>
-                                    </a>
-                                </div>
+                <!-- News // -->
+                <!-- Button Banner (유사) -->
+                <div class="main-content__inner button-banner">
+                    <div class="main-container">
+                        <div class="button-banner__box">
+                            <span class="font-head-x-xl-mode color-text-default">
+                                THE FOUNDATION OF <br class="display-pc">
+                                OUR BRAND EXPERIENCE
+                            </span>
+                            <div class="button__wrap button-banner__navigation">
+                                <a href="#" class="btn btn-text">
+                                    <span class="btn__text">
+                                        Brand Story
+                                    </span>
+                                    <i class="btn__icon ico icon-navigation-right-bl40"></i>
+                                </a>
                             </div>
-                            <div class="news-swiper__navigation-wrap">
-                                <button type="button" class="news-swiper__navigation news-swiper__navigation--prev">
-                                    <i class="ico icon-main-arrow-right-bl24 ico--default"></i>
-                                    <i class="ico icon-main-arrow-left-gr24 ico--disabled"></i>
-                                    <span class="ir-text">이전 보기</span>
-                                </button>
-                                <button type="button" class="news-swiper__navigation news-swiper__navigation--next">
-                                    <i class="ico icon-main-arrow-right-bl24 ico--default"></i>
-                                    <i class="ico icon-main-arrow-left-gr24 ico--disabled"></i>
-                                    <span class="ir-text">다음 보기</span>
-                                </button>
-                            </div>
+                        </div>
+                        <div class="button__wrap button__wrap--btn-top align-right">
+                            <button type="button" class="btn-icon btn-top">
+                                <i class="ico icon-navigation-up-w19"></i>
+                                <span class="ir-text">최상위로 이동</span>
+                            </button>
                         </div>
                     </div>
                 </div>
+                <!-- Button Banner (유사) // -->
             </div>
-            <!-- News // -->
-            <!-- Button Banner (유사) -->
-            <div class="main-content__inner button-banner">
-                <div class="main-container">
-                    <div class="button-banner__box">
-                        <span class="font-head-x-xl-mode color-text-default">
-                            THE FOUNDATION OF <br class="display-pc">
-                            OUR BRAND EXPERIENCE
-                        </span>
-                        <div class="button__wrap button-banner__navigation">
-                            <a href="#" class="btn btn-text">
-                                <span class="btn__text">
-                                    Brand Story
-                                </span>
-                                <i class="btn__icon ico icon-navigation-right-bl40"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="button__wrap button__wrap--btn-top align-right">
-                        <button type="button" class="btn-icon btn-top">
-                            <i class="ico icon-navigation-up-w19"></i>
-                            <span class="ir-text">최상위로 이동</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Button Banner (유사) // -->
-        </div>
-        <%- include('src/_inc/footer.html') %>
+            <%- include('src/_inc/footer.html') %>
     </div>
     <script src="/assets/bundle/swiper-bundle.min.js"></script>
     <script src="/assets/js/initializeSwipers.js"></script>
@@ -333,8 +445,8 @@
                 prevEl: '.notice-swiper__navigation--prev',
             },
         })
-        
-        /* swiper-news */ 
+
+        /* swiper-news */
         let swiperNews = new Swiper('.swiper-news', {
             slidesPerView: 1.1,
             spaceBetween: 12,
@@ -354,7 +466,113 @@
             }
         })
 
-        /* swiper-interactive-banner */ 
+
+        /*
+            1. data를 받는다 ({color-mode, hero-style(bg, 영상)}, data-bg-color)
+            2. data-bg-color 가 있으면 1순위로 적용되고 color-mode 는 자동으로 color-mode-black 적용
+            3. {color-mode, hero-style} 가 tmffkdlem 1 ~ 4까지 랜덤으로 적용되며, hero-style 에 맞는 color-mode 가 그룹
+            4. 슬라이드 5 부터는 news 타입으로 적용 (.interactive-swiper__slide--news)
+            5. .interactive-swiper__slide 의 경우 data-bg-color 의 값을 가지고 적용 (data-bg-color 가 없으면 랜덤으로 적용된 {color-mode, hero-style} 으로 반영)
+            6. 슬라이드가 active 되면 동작이 적용
+            7. .interactive-swiper__frame--video 의 경우 슬라이드가 active 되면 video.play 처리 =  swiperHero
+        */
+        const interactiveHero = document.querySelector('.interactive-hero');
+        console.log('interactiveHero:', interactiveHero);
+
+        const styleGroup = ['hero-style-01', 'hero-style-02', 'hero-style-03', 'hero-style-04'];
+        const colorMode = ['color-mode-white', 'color-mode-black', 'color-mode-white', 'color-mode-black']; // 스타일에 따른 색상 모드
+        const videoGroup = [
+            '/src/assets/image/main/main_interactive_hero_mv_01.webm',
+            '/src/assets/image/main/main_interactive_hero_mv_02.webm',
+            '/src/assets/image/main/main_interactive_hero_mv_03.webm',
+            '/src/assets/image/main/main_interactive_hero_mv_04.webm'
+        ];
+        let currentStyles = []; // 현재 적용된 스타일을 저장할 배열
+
+        // 스타일 그룹을 랜덤하게 섞는 함수
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // 랜덤하게 스타일을 섞고 초기화
+        function initializeStyles() {
+            currentStyles = [...styleGroup]; // 스타일 그룹 복사
+            shuffleArray(currentStyles); // 랜덤하게 섞음
+        }
+
+        // 슬라이드 인덱스에 맞는 스타일을 적용
+        function applyStyleToSlide(index) {
+            // 현재 적용된 스타일을 제거
+            styleGroup.forEach(style => interactiveHero.classList.remove(style)); // 모든 스타일 제거
+
+            // 색상 모드도 제거
+            colorMode.forEach(mode => interactiveHero.classList.remove(mode)); // 모든 색상 모드 제거
+
+            // 주어진 인덱스에 맞는 스타일을 적용
+            const styleToApply = currentStyles[index]; // 랜덤으로 섞인 스타일
+            interactiveHero.classList.add(styleToApply);
+
+            // 중복 슬라이드의 비디오 요소 선택
+            const duplicateSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-duplicate video');
+            duplicateSlides.forEach(videoElement => {
+                videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 랜덤 스타일에 맞는 비디오 경로 설정
+                console.log('duplicateSlides:', videoElement.src);
+                // videoElement.load(); // 비디오 파일 로드
+                // videoElement.play().catch(error => {
+                //     console.error('비디오 재생 오류:', error);
+                // });
+            });
+
+            // 현재 활성 슬라이드의 비디오 요소 선택
+            const activeSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-active video');
+            activeSlides.forEach(videoElement => {
+                videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 랜덤 스타일에 맞는 비디오 경로 설정
+                console.log('activeSlides:', videoElement.src);
+                // videoElement.load(); // 비디오 파일 로드
+                // videoElement.play().catch(error => {
+                //     console.error('비디오 재생 오류:', error);
+                // });
+            });
+
+            // 슬라이드 인덱스가 4 이상일 경우 color-mode-black 추가
+            if (index >= 4) {
+                interactiveHero.classList.add('color-mode-black');
+            } else {
+                // 해당 색상 모드 추가
+                const colorModeToApply = colorMode[styleGroup.indexOf(styleToApply)];
+                interactiveHero.classList.add(colorModeToApply);
+            }
+        }
+
+        // 슬라이드 변경 이벤트 핸들러
+        function onSlideChange() {
+            // 중복 슬라이드의 비디오를 정지
+            const duplicateSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-duplicate video');
+            duplicateSlides.forEach(video => {
+                video.pause();
+            });
+
+            // 현재 활성 슬라이드의 비디오를 재생
+            const activeSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-active video');
+            activeSlides.forEach(video => {
+                video.play().catch(error => {
+                    console.error('비디오 재생 오류:', error);
+                });
+            });
+        }
+
+        // 슬라이드 변경 시작 이벤트 핸들러
+        function onSlideChangeStart() {
+            const activeIndex = swiperHero.activeIndex; // 현재 활성 슬라이드의 인덱스
+            if (activeIndex < currentStyles.length) { // 스타일 그룹 범위 내에서만 적용
+                applyStyleToSlide(activeIndex); // 스타일 적용
+            }
+        }
+
+        // Swiper 초기화
         let swiperHero = new Swiper('.swiper-interactive-banner', {
             autoplay: {
                 delay: 6000,
@@ -363,8 +581,33 @@
             touchRatio: 0,
             slidesPerView: 1,
             effect: 'fade',
-        })
+            on: {
+                slideChangeTransitionStart: onSlideChangeStart, // 슬라이드 전환 시작 시 스타일 적용
+                slideChangeTransitionEnd: onSlideChange, // 슬라이드 전환 종료 시 비디오 제어
+            },
+        });
+
+        // 초기 스타일 설정
+        initializeStyles(); // 스타일 초기화 및 랜덤화
+        applyStyleToSlide(0); // 첫 번째 슬라이드에 랜덤 스타일 적용
+
+        // 첫 번째 슬라이드의 비디오를 재생
+        const firstSlideVideo = document.querySelector('.swiper-slide-active video');
+        if (firstSlideVideo) {
+            firstSlideVideo.play().catch(error => {
+                console.error('비디오 재생 오류:', error);
+            });
+        }
+
+        // .notice-swiper가 하위 자식인지 확인하고 .has-notice 클래스 추가
+        const hasNoticeSwiper = interactiveHero.querySelector('.notice-swiper') !== null;
+        if (hasNoticeSwiper) {
+            interactiveHero.classList.add('has-notice');
+        } else {
+            console.log('.notice-swiper가 interactiveHero의 하위 자식이 아닙니다.');
+        }
 
     </script>
 </body>
+
 </html>
