@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/guide/cmp_guide_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="page-location text-2xl font-bold">
+        <span id="pagesTitle">GSAP</span>
+      </div>
+      <div class="guide-content">
+        <div class="flex justify-between lnb-type">
+          <div class="lnb-side__wrap">
+            <button type="button" class="lnb-trigger">아코디언</button>
+          </div>
+          <div class="page-cont flex-1">
+            <p class="guide-title-h3">GSAP 사용 - PC(grid) / Mobile(carousel)</p>
+            <div class="cmp-exsample__wrap mt-3">
+              <div class="cmp-bg" style="background: url('/assets/images/bg_main_service..png') right bottom no-repeat; background-size: cover;">
+
+                <!-- gsap : carousel 형태 : cmp-gsap__carousel-->
+                <div class="cmp-wrap cmp-gsap__carousel">
+                  <div class="content">
+                    <div class="carousel-wrap">
+                      <div class="thumbs-wrapper">
+
+                        <!-- 
+                                            * card-context 클래스명 정의
+                                            1. active 클래스 : 동일한 그룹 활성화 영역, active시 하이라이트 컬러 노출
+                                            2. on 클래스 : 카드 영역 touch(mobile), hover(pc)시 on 클래스 활성화되며 상세내용과 배경이미지 노출됨 -->
+                        <div class="card-context active" data-group="group1">
+ <!-- active, on -->
+                          <div class="card-inner" data-style="">
+                            <div class="txt">
+                              <div class="txt-title">Business Data</div>
+                              <div class="txt-desc">데이터로부터 의미 있는 가치를 창출해 혁신적인 비즈니스 전략을 경험할 수 있습니다.</div>
+                            </div>
+                            <div class="card-bg"></div>
+                          </div>
+                          <div class="card-link-wrap">
+                            <a href="javascript:;" class="card-link-btn">
+                              <span class="ir-text">페이지 상세보기</span>
+                              <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="card-context active" data-group="group1">
+                          <div class="card-inner" data-style="">
+                            <div class="txt">
+                              <div class="txt-title">Modern IT Infra<br>on Cloud</div>
+                              <div class="txt-desc">클라우드 서비스로 고객 가치를 혁신하고 디지털 경험 제공합니다.</div>
+                            </div>
+                          </div>
+                          <div class="card-link-wrap">
+                            <a href="javascript:;" class="card-link-btn">
+                              <span class="ir-text">페이지 상세보기</span>
+                              <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="card-context active" data-group="group1">
+                          <div class="card-inner" data-style="">
+                            <div class="txt">
+                              <div class="txt-title">AI for Business</div>
+                              <div class="txt-desc">빅데이터와 검증된 AI로 고객 비즈니스에 맞는 서비스를 제공합니다.</div>
+                            </div>
+                          </div>
+                          <div class="card-link-wrap">
+                            <a href="javascript:;" class="card-link-btn">
+                              <span class="ir-text">페이지 상세보기</span>
+                              <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="card-context active" data-group="group1">
+                          <div class="card-inner" data-style="">
+                            <div class="txt">
+                              <div class="txt-title">Consulting</div>
+                              <div class="txt-desc">기업 분석을 통해 전문가의 시선으로 최적의 해결방법을 제안합니다.</div>
+                            </div>
+                          </div>
+                          <div class="card-link-wrap">
+                            <a href="javascript:;" class="card-link-btn">
+                              <span class="ir-text">페이지 상세보기</span>
+                              <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="card-context" data-group="group2">
+                          <div class="card-inner" data-style="">
+                            <div class="txt">
+                              <div class="txt-title">City and Space</div>
+                              <div class="txt-desc">보다 나은 삶을 위해 도시 데이터를 분석하고 활용할 수 있는 환경을 제공합니다.</div>
+                            </div>
+                          </div>
+                          <div class="card-link-wrap">
+                            <a href="javascript:;" class="card-link-btn">
+                              <span class="ir-text">페이지 상세보기</span>
+                              <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="card-context" data-group="group2">
+                          <div class="card-inner" data-style="">
+                            <div class="txt">
+                              <div class="txt-title">Logistics</div>
+                              <div class="txt-desc">물류센터의 모든 것을 책임지는 Total Logistics Solution Provider를 지향합니다. </div>
+                            </div>
+                          </div>
+                          <div class="card-link-wrap">
+                            <a href="javascript:;" class="card-link-btn">
+                              <span class="ir-text">페이지 상세보기</span>
+                              <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="card-context" data-group="group2">
+                          <div class="card-inner" data-style="">
+                            <div class="txt">
+                              <div class="txt-title">Smart Factory</div>
+                              <div class="txt-desc">AI, 빅데이터, IoT 등 IT신기술로 공장 지능화를 통해, 모든 제조 과정에서 최적화를 선도하고 있습니다.</div>
+                            </div>
+                          </div>
+                          <div class="card-link-wrap">
+                            <a href="javascript:;" class="card-link-btn">
+                              <span class="ir-text">페이지 상세보기</span>
+                              <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="card-context" data-group="group3">
+                          <div class="card-inner" data-style="">
+                            <div class="txt">
+                              <div class="txt-title">Enterprise Solution</div>
+                              <div class="txt-desc">빅데이터와 검증된 AI로 고객 비즈니스에 맞는 서비스를 제공합니다.</div>
+                            </div>
+                          </div>
+                          <div class="card-link-wrap">
+                            <a href="javascript:;" class="card-link-btn">
+                              <span class="ir-text">페이지 상세보기</span>
+                              <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="card-context" data-group="group3">
+                          <div class="card-inner" data-style="">
+                            <div class="txt">
+                              <div class="txt-title">Customer Experiences</div>
+                              <div class="txt-desc">DX신기술을 활용해 디지털 환경에서 고객경험을 혁신하고 있습니다. </div>
+                            </div>
+                          </div>
+                          <div class="card-link-wrap">
+                            <a href="javascript:;" class="card-link-btn">
+                              <span class="ir-text">페이지 상세보기</span>
+                              <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="card-context" data-group="group3">
+                          <div class="card-inner" data-style="">
+                            <div class="txt">
+                              <div class="txt-title">Biz Process Intelligence</div>
+                              <div class="txt-desc">기업이 효율적으로 일할 수 있도록 개선 및 도움을 주는 서비스 제공합니다.</div>
+                            </div>
+                          </div>
+                          <div class="card-link-wrap">
+                            <a href="javascript:;" class="card-link-btn">
+                              <span class="ir-text">페이지 상세보기</span>
+                              <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> <!-- //content -->
+                </div> <!-- //gsap : carousel 형태 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/ui_common.js"></script>
+    <script src="/assets/bundle/gsap.min.js"></script>
+    <script>
+      //gsap 관련 script - S
+      const isPc = window.matchMedia('only screen and (min-width: 1280px)').matches
+      const carouselWrap = document.querySelector(".carousel-wrap");
+      const cardItems = document.querySelectorAll(".carousel-wrap .card-context");
+      let resizeTimer;
+      // card-context 셋팅
+      function cardItemSetting() {
+        const infoCardItems = [{
+            group1: [{
+                imgPC: '/src/assets/image/main/carousel/carousel_img_data_pc.png',
+                imgMO: '/src/assets/image/main/carousel/carousel_img_data_mo.png'
+              },
+              {
+                imgPC: '/src/assets/image/main/carousel/carousel_img_cloud_pc.png',
+                imgMO: '/src/assets/image/main/carousel/carousel_img_cloud_mo.png'
+              },
+              {
+                imgPC: '/src/assets/image/main/carousel/carousel_img_ai_pc.png',
+                imgMO: '/src/assets/image/main/carousel/carousel_img_ai_mo.png'
+              },
+              {
+                imgPC: '/src/assets/image/main/carousel/carousel_img_consulting_pc.png',
+                imgMO: '/src/assets/image/main/carousel/carousel_img_consulting_mo.png'
+              },
+            ]
+          },
+          {
+            group2: [{
+                imgPC: '/src/assets/image/main/carousel/carousel_img_city_pc.png',
+                imgMO: '/src/assets/image/main/carousel/carousel_img_city_mo.png'
+              },
+              {
+                imgPC: '/src/assets/image/main/carousel/carousel_img_logistic_pc.png',
+                imgMO: '/src/assets/image/main/carousel/carousel_img_logistic_mo.png'
+              },
+              {
+                imgPC: '/src/assets/image/main/carousel/carousel_img_factory_pc.png',
+                imgMO: '/src/assets/image/main/carousel/carousel_img_factory_mo.png'
+              },
+            ]
+          },
+          {
+            group3: [{
+                imgPC: '/src/assets/image/main/carousel/carousel_img_solution_pc.png',
+                imgMO: '/src/assets/image/main/carousel/carousel_img_solution_mo.png'
+              },
+              {
+                imgPC: '/src/assets/image/main/carousel/carousel_img_cx_pc.png',
+                imgMO: '/src/assets/image/main/carousel/carousel_img_cx_mo.png'
+              },
+              {
+                imgPC: '/src/assets/image/main/carousel/carousel_img_intelligence_pc.png',
+                imgMO: '/src/assets/image/main/carousel/carousel_img_intelligence_mo.png'
+              },
+            ]
+          },
+        ]
+        cardItems.forEach((item, idx) => {
+          let itemGroupTitle = item.dataset.group;
+          let itemOgStyle = item.dataset.style;
+          let itemCardInnerItem = item.querySelector(".card-inner");
+          let timeflag = 0;
+          itemCardInnerItem.addEventListener("mouseover", ((e) => {
+            cardEventCtrl(e);
+          }))
+          itemCardInnerItem.addEventListener("mouseleave", ((e) => {
+            cardEventCtrl(e);
+          }))
+          requestAnimationFrame(groupChecking);
+          function groupChecking() {
+            if (isPc) {
+              if (timeflag == 0) {
+                setTimeout(() => {
+                  if (itemGroupTitle == "group1") {
+                    item.classList.add("active");
+                  } else {
+                    item.classList.remove("active");
+                  }
+                }, 1000 * 1);
+                setTimeout(() => {
+                  if (itemGroupTitle == "group2") {
+                    item.classList.add("active");
+                  } else {
+                    item.classList.remove("active");
+                  }
+                }, 1000 * 3);
+                setTimeout(() => {
+                  if (itemGroupTitle == "group3") {
+                    item.classList.add("active");
+                  } else {
+                    item.classList.remove("active");
+                  }
+                  timeflag = 1;
+                  requestAnimationFrame(groupChecking);
+                }, 1000 * 6);
+              } else {
+                let timerId = setInterval(() => {
+                  setTimeout(() => {
+                    if (itemGroupTitle == "group1") {
+                      item.classList.add("active");
+                    } else {
+                      item.classList.remove("active");
+                    }
+                  }, 1000 * 1);
+                  setTimeout(() => {
+                    if (itemGroupTitle == "group2") {
+                      item.classList.add("active");
+                    } else {
+                      item.classList.remove("active");
+                    }
+                  }, 1000 * 3);
+                  setTimeout(() => {
+                    if (itemGroupTitle == "group3") {
+                      item.classList.add("active");
+                    } else {
+                      item.classList.remove("active");
+                    }
+                  }, 1000 * 6);
+                }, 7000);
+              }
+            }
+          }
+          if (itemGroupTitle == "group1") {
+            if (!isPc) {
+              itemCardInnerItem.dataset.style = `url("${infoCardItems[0].group1[idx].imgMO}")`;
+            } else {
+              itemCardInnerItem.dataset.style = `url("${infoCardItems[0].group1[idx].imgPC}")`;
+            }
+          } else if (itemGroupTitle == "group2") {
+            if (!isPc) {
+              itemCardInnerItem.dataset.style = `url("${infoCardItems[1].group2[idx-4].imgMO}")`;
+            } else {
+              itemCardInnerItem.dataset.style = `url("${infoCardItems[1].group2[idx-4].imgPC}")`;
+            }
+          } else if (itemGroupTitle == "group3") {
+            if (!isPc) {
+              itemCardInnerItem.dataset.style = `url("${infoCardItems[2].group3[idx-7].imgMO}")`;
+            } else {
+              itemCardInnerItem.dataset.style = `url("${infoCardItems[2].group3[idx-7].imgPC}")`;
+            }
+          }
+        });
+      }
+      function initCarousel() {
+        const intViewportWidth = window.innerWidth;
+        if (intViewportWidth < 1280) {
+          // mobile
+          gsap.set(".carousel-wrap", {
+            height: `${document.querySelector(".card-context .card-inner").clientHeight}px`,
+            onComplete: () => [carousel()]
+          })
+        } else {
+          // pc
+          gsap.set(".carousel-wrap", {
+            height: "100%",
+            onComplete: () => {
+              gsap.killTweensOf(cardItems)
+            }
+          })
+        }
+      }
+      function carousel() {
+        gsap.to(".carousel-wrap", {
+            opacity: 1,
+            duration: .3,
+            ease: "power1.inOut",
+            delay: .1
+          }),
+          gsap.ticker.fps(60);
+        const e = document.querySelector(".carousel-wrap"),
+          t = document.querySelectorAll(".card-context");
+        let n = e.clientWidth,
+          o = t[0].clientWidth + 10,
+          r = t.length * o,
+          i = 0,
+          s = 1,
+          a = 10,
+          c = 10,
+          l = 10,
+          p = !0,
+          u = !1;
+        let d, g = 0,
+          y = 0,
+          m = !1;
+        const w = () => {
+            p = !1,
+              clearTimeout(d)
+          },
+          S = t => {
+            g = t.clientX || t.touches[0].clientX,
+              m = !0,
+              e.classList.add("is-dragging"),
+              p = !1,
+              w()
+          },
+          h = e => {
+            m && (u && (u = !1),
+              y = e.clientX || e.touches[0].clientX,
+              c += 1.5 * (y - g),
+              g = y)
+          },
+          v = () => {
+            m = !1,
+              e.classList.remove("is-dragging")
+          };
+        gsap.utils.toArray(".card-context", e).forEach((e => {
+            const cardInnerItem = e.querySelector(".card-inner");
+            // (mobile) touch시 카드 이벤트 제어
+            cardInnerItem.addEventListener("touchstart", ((e) => {
+              cardEventCtrl(e);
+            }), {
+              passive: true
+            })
+          })),
+          e.addEventListener("touchstart", S, {
+            passive: true
+          }),
+          e.addEventListener("touchmove", h, {
+            passive: true
+          }),
+          e.addEventListener("touchend", v, {
+            passive: true
+          }),
+          e.addEventListener("mousedown", S),
+          e.addEventListener("mousemove", h),
+          e.addEventListener("mouseleave", v),
+          e.addEventListener("mouseup", v),
+          e.addEventListener("selectstart", (() => !1));
+        const x = e => {
+          gsap.set(t, {
+            x: t => t * o + e,
+            y: e => {
+              const n = e * o / o,
+                r = gsap.utils.wrap(-1, t.length - 1, n);
+              return 25 * Math.sin(1 * r - i)
+            },
+            modifiers: {
+              x: (e, t) => `${gsap.utils.wrap(-o, r - o, parseInt(e))}px`
+            }
+          })
+          // (mobile) 카드 그룹별 active 처리
+          const thumbsWrapRect = document.querySelector(".carousel-wrap .thumbs-wrapper").getBoundingClientRect();
+          const thumbsWrapWidth = thumbsWrapRect.width;
+          const thumbsWrapHalf = thumbsWrapWidth / 2;
+          const thumbsWrapMin = thumbsWrapHalf / 2;
+          setTimeout(function() {
+            for (let i = 0; i < t.length; i++) {
+              const itemTransform = t[i].style.transform;
+              const itemTransformVal1 = itemTransform.replace("translate(", "");
+              const itemTransformVal2 = itemTransformVal1.replace(")", "");
+              const itemTransformVal = itemTransformVal2.split(",");
+              const itemTransformX = itemTransformVal[0];
+              const itemTransformY = itemTransformVal[1];
+              if (parseInt(itemTransformX) <= thumbsWrapMin) {
+                const targetGroup = t[i].dataset.group;
+                cardItems.forEach(item => {
+                  item.classList.remove("active");
+                  const itemGroup = item.dataset.group;
+                  if (itemGroup == targetGroup) {
+                    item.classList.add("active");
+                  }
+                })
+              }
+            }
+          }, 1000)
+        };
+        x(0),
+          gsap.ticker.add((() => {
+            var e;
+            u || (p && (c -= s),
+              l = l * (1 - (e = .1)) + c * e,
+              x(l),
+              p || (s = l - a, a = l),
+              p ? i += .05 : (i = .0075 * a, a = l))
+          })),
+          window.addEventListener("resize", (() => {
+            document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`),
+              gsap.set(".carousel-wrap", {
+                height: `${document.querySelector(".card-context .card-inner").clientHeight}px`
+              }),
+              n = e.clientWidth,
+              o = t[0].clientWidth + 10,
+              r = t.length * o
+          }))
+      }
+      function cardEventCtrl(e) {
+        const targetItemStyle = e.target.dataset.style;
+        const targetItemGroup = e.target.closest(".card-context").dataset.group;
+        // [pc] mouseover시 동일한 그룹 active 처리
+        if (isPc) {
+          document.querySelectorAll(".carousel-wrap .card-context").forEach(item => {
+            if (item.dataset.group === targetItemGroup) {
+              item.classList.add("active");
+            } else {
+              item.classList.remove("active");
+            }
+          })
+        }
+        // [pc/mo 공통] mouseover, touch시 on클래스 이벤트 제어 (내용, 배경이미지 노출)
+        if (e.target.closest(".card-context").classList.contains("on")) {
+          e.target.closest(".card-context").classList.remove("on");
+          e.target.style.backgroundImage = "revert";
+          e.target.style.border = "1px solid #565656;";
+        } else {
+          e.target.closest(".card-context").classList.add("on");
+          e.target.style.backgroundImage = targetItemStyle;
+          e.target.style.border = "1px solid #8e8e8e";
+        }
+      }
+      cardItemSetting();
+      if (!isPc) {
+        initCarousel();
+      }
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          const intViewportWidth = window.innerWidth;
+          /*
+          (720 이상일때, pc / tablet 체크용 클래스 추가)
+          - PC에서 Mobile로 리사이징할때 체크하기 위해, 특정 중간 태블릿 조건일때, 
+          - css 다르게 처리되는 것이 있어, 720 이상일경우에는 tablet사이즈도 pc로 판단하여 체크하려고 클래스 추가하였음.
+          */
+          if (intViewportWidth > 720) {
+            carouselWrap.classList.add("type-pc");
+          } else {
+            carouselWrap.classList.remove("type-pc");
+          }
+          if (intViewportWidth >= 1280) {
+            // console.log("pc");
+            initCarousel();
+          } else {
+            if (carouselWrap.classList.contains("type-pc")) {
+              // console.log("pc -> mobile");
+              initCarousel();
+            }
+          }
+        }, 500);
+      });
+      //gsap 관련 script - E
+    </script>
+  </body>
+</html>
