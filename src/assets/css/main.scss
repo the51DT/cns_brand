@@ -386,6 +386,13 @@
             max-width: 100%;
             .swiper-wrapper {
                 margin-bottom: 0;
+                .swiper-slide {
+                    opacity: 0;
+                    transition: opacity 1s ease;
+                    &.swiper-slide-active {
+                        opacity: 1;
+                    }
+                }
             }
         }
         &__container {
@@ -405,6 +412,18 @@
                 left: calc(96 / 16 * 1rem);
                 padding: 0 0;
                 text-align: left;
+            }
+            &.fade-in {
+                opacity: 0;
+                animation: fadeIn 1s ease forwards;
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0;
+                        }
+                    100% {
+                        opacity: 1;
+                    }
+                }
             }
         }
         &__title {
@@ -490,6 +509,7 @@
             }
         }
         &__slide {
+            transition: all 3s;
             // News Image Hero
             &--news {
                 .interactive-swiper__container {
@@ -505,6 +525,29 @@
                     left: initial;
                     @media #{$min1280} {
                         max-width: calc(652 / 16 * 1rem);
+                    }
+                }
+            }
+        }
+        .active-effect {
+            overflow: hidden;
+            &__item {
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeInUp 1s ease forwards;
+            }
+            .fade-in-bottom {
+                .active-effect__item {
+                    animation: fadeInUp 1s ease forwards;
+                    @keyframes fadeInUp {
+                        0% {
+                            opacity: 0;
+                            transform: translateY(100px);
+                            }
+                        100% {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
                     }
                 }
             }
