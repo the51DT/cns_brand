@@ -32,6 +32,7 @@
         left: 0;
         transition: top 0.5s linear;
         background: var(--colorCM-mode1-background-background-default0);
+        z-index: 10;
         @media #{$min1280} {
             overflow: unset;
             overflow-x: unset;
