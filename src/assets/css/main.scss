@@ -730,20 +730,21 @@
     }
     // 효과
     .active-effect {
-        overflow: hidden;
+        &:has(.fade-in-bottom) {
+            overflow: hidden;
+        }
         &.fade-in-bottom {
             .active-effect__item {
                 animation: fadeInUp 1s ease forwards;
-                @keyframes fadeInUp {
-                    0% {
-                        opacity: 0;
-                        transform: translateY(100px);
-                        }
-                    100% {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
+                transition: opacity 1s, transform 1s;
+                
+            }
+        }
+        &.fade-in-right {
+            .active-effect__item {
+                animation: fadeInRight 1s ease forwards;
+                transition: opacity 1s, transform 1s;
+                
             }
         }
     }
@@ -751,13 +752,40 @@
         opacity: 0;
         animation: fadeIn 1s ease-in-out forwards;
         transition: all 1s;
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                }
-            100% {
-                opacity: 1;
+        
+    }
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(100px);
             }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInRight {
+        0% {
+            opacity: 0;
+            transform: translateX(300px);
+            }
+        30% {
+            opacity: 0;
+            transform: translateX(300px);
+            }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            }
+        100% {
+            opacity: 1;
         }
     }
 }

@@ -157,8 +157,8 @@ function onSlideChangeStart() {
     }
 }
 
-function handleActiveEffect(activeSlide) {
-    const hasEffect = activeSlide.querySelectorAll('.active-effect');
+function handleActiveEffect(el) {
+    const hasEffect = el.querySelectorAll('.active-effect');
     // const allSlides = document.querySelectorAll('.swiper-slide .active-effect');
     // allSlides.forEach((item) => {
     //     item.classList.remove('fade-in-bottom');
@@ -166,11 +166,15 @@ function handleActiveEffect(activeSlide) {
 
     if (hasEffect.length > 0) {
         hasEffect.forEach((activeItem) => {
-            console.log('hasEffect:', hasEffect)
+            const effectType = activeItem.getAttribute('data-effect');
             const effectTarget = activeItem.querySelector('.active-effect__item');
-            const effectDelayTime = effectTarget.getAttribute('data-effect-delay');
-            activeItem.classList.add('fade-in-bottom');
-            if (effectDelayTime) {
+            const effectDelayTime = effectTarget ? effectTarget.getAttribute('data-effect-delay') : null;
+            // console.log('hasEffect:', hasEffect, effectType)
+            if(effectType) {
+                activeItem.classList.add(effectType);
+            }
+            console.log('activeItem, effectType::', activeItem, effectType)
+            if (effectDelayTime !== null) {
                 // console.log(effectTarget);
                 effectTarget.style.animationDelay = effectDelayTime;
             }
@@ -180,7 +184,7 @@ function handleActiveEffect(activeSlide) {
     }
 }
 
-// active 슬라이드 감지 
+// active 슬라이드 감지 (swiper 용 handleActiveEffect)
 function checkActiveSlide(swiper) {
     // const activeIndex = swiper.activeIndex; // 현재 활성 슬라이드의 인덱스
     // const activeSlide = swiper.slides[activeIndex];
@@ -227,6 +231,9 @@ let swiperHero = new Swiper('.swiper-interactive-banner', {
         },
         slideChange: function () {
             checkActiveSlide(this); // 'this'를 통해 swiperHero 인스턴스를 전달
+            // const activeIndex = this.activeIndex; // 현재 활성 슬라이드의 인덱스
+            // const activeSlide = this.slides[activeIndex];
+            // handleActiveEffect(activeSlide); // 새로운 함수 호출
         },
         slideChangeTransitionStart: function() {
             onSlideChangeStart();
