@@ -317,6 +317,9 @@
             max-width: calc(1920 / 16 * 1rem);
         }
     }
+    // .header {
+    //     border-bottom: 0;
+    // }
     .interactive-hero {
         &.hero-style-01 {
             .interactive-swiper {
@@ -484,8 +487,8 @@
                 @media #{$min1280} {
                     aspect-ratio: 820 / 458;
                     margin: 0 0 calc(80 / 16 * 1rem);;
-                    width: calc(840 / 16 * 1rem);
-                    height: calc(478 / 16 * 1rem);
+                    max-width: calc(840 / 16 * 1rem);
+                    // height: calc(478 / 16 * 1rem);
                     border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
                     border: calc(10 / 16 * 1rem) solid rgba(255,255,255,0.60);
                 }
@@ -735,14 +738,13 @@
         }
         &.fade-in-bottom {
             .active-effect__item {
-                animation: fadeInUp 1s ease forwards;
+                animation: fadeInUp 1s ease-in-out forwards;
                 transition: opacity 1s, transform 1s;
-                
             }
         }
         &.fade-in-right {
             .active-effect__item {
-                animation: fadeInRight 1s ease forwards;
+                animation: fadeInRight 1s ease-in-out forwards;
                 transition: opacity 1s, transform 1s;
                 
             }
@@ -752,12 +754,11 @@
         opacity: 0;
         animation: fadeIn 1s ease-in-out forwards;
         transition: all 1s;
-        
     }
     @keyframes fadeInUp {
         0% {
             opacity: 0;
-            transform: translateY(100px);
+            transform: translateY(10px);
             }
         100% {
             opacity: 1;
@@ -770,7 +771,7 @@
             opacity: 0;
             transform: translateX(300px);
             }
-        30% {
+        10% {
             opacity: 0;
             transform: translateX(300px);
             }
@@ -788,4 +789,18 @@
             opacity: 1;
         }
     }
+
+    @media #{$min1280} {
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+                }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
 }

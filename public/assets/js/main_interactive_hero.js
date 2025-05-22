@@ -7,12 +7,17 @@
     6. 슬라이드가 active 되면 동작이 적용
     7. .interactive-swiper__frame--video 의 경우 슬라이드가 active 되면 video.play 처리 =  swiperHero
 */
+let isPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
+window.addEventListener('resize', function () {
+    isPc = window.matchMedia('(min-width: 1280px)').matches;
+});
+
 const interactiveHero = document.querySelector('.interactive-hero');
 const interactiveSwiper = interactiveHero.querySelector('.interactive-swiper');
 const interactiveSlide = interactiveSwiper.querySelectorAll('.interactive-swiper__slide');
 const interactiveSlideNews = interactiveSwiper.querySelectorAll('.interactive-swiper__slide--news');
 const heroNavigation = document.querySelector('.cmp-hero-navigation');
-const heroNavigationItem = heroNavigation.querySelectorAll('li');
+// const heroNavigationItem = heroNavigation.querySelectorAll('li');
 const noticeSwiper = document.querySelector('.notice-swiper');
 console.log('interactiveHero:', interactiveHero);
 
@@ -238,12 +243,16 @@ let swiperHero = new Swiper('.swiper-interactive-banner', {
         slideChangeTransitionStart: function() {
             onSlideChangeStart();
             // checkHeroNavigation()
-            heroNavigation.classList.remove('fade-in');
+            if(isPc) { // 슬라이드 전환 종료 시 비디오 제어
+                heroNavigation.classList.remove('fade-in');
+            }
             // console.log('slideChange:', heroNavigation)
         }, // 슬라이드 전환 시작 시 스타일 적용
         slideChangeTransitionEnd: function() {
-            onSlideChange, // 슬라이드 전환 종료 시 비디오 제어
-            heroNavigation.classList.add('fade-in');
+            onSlideChange(); // 슬라이드 전환 종료 시 비디오 제어
+            if(isPc) { // PC 분기에서만 적용
+                heroNavigation.classList.add('fade-in');
+            }
             // checkActiveSlide(this);
             // console.log('slideChangeTransitionEnd:', heroNavigation)
         }
