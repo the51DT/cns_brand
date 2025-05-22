@@ -413,18 +413,6 @@
                 padding: 0 0;
                 text-align: left;
             }
-            &.fade-in {
-                opacity: 0;
-                animation: fadeIn 1s ease-in-out forwards;
-                @keyframes fadeIn {
-                    0% {
-                        opacity: 0;
-                        }
-                    100% {
-                        opacity: 1;
-                    }
-                }
-            }
         }
         &__title {
             color: var(--banner-color-mode);
@@ -529,29 +517,6 @@
                 }
             }
         }
-        .active-effect {
-            overflow: hidden;
-            &__item {
-                opacity: 0;
-                // transform: translateY(30px);
-                animation: fadeInUp 1s ease forwards;
-            }
-            .fade-in-bottom {
-                .active-effect__item {
-                    animation: fadeInUp 1s ease forwards;
-                    @keyframes fadeInUp {
-                        0% {
-                            opacity: 0;
-                            transform: translateY(100px);
-                            }
-                        100% {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-                    }
-                }
-            }
-        }
     }
     .notice-swiper {
         position: absolute;
@@ -614,41 +579,6 @@
             width: 100%;
             transform: translateX(-50%);
             opacity: 0;
-        }
-        .active-effect {
-            overflow: hidden;
-            &__item {
-                opacity: 0;
-                // transform: translateY(30px);
-                animation: fadeInUp 1s ease forwards;
-            }
-            .fade-in-bottom {
-                .active-effect__item {
-                    animation: fadeInUp 1s ease forwards;
-                    @keyframes fadeInUp {
-                        0% {
-                            opacity: 0;
-                            transform: translateY(200px);
-                            }
-                        100% {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-                    }
-                }
-            }
-        }
-        &.fade-in {
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-            @keyframes fadeIn {
-                0% {
-                    opacity: 0;
-                    }
-                100% {
-                    opacity: 1;
-                }
-            }
         }
     }
     .news-swiper {
@@ -796,6 +726,66 @@
             @media #{$min1280} {
                 display: none;
             }
+        }
+    }
+    // 효과
+    .active-effect {
+        &:has(.fade-in-bottom) {
+            overflow: hidden;
+        }
+        &.fade-in-bottom {
+            .active-effect__item {
+                animation: fadeInUp 1s ease forwards;
+                transition: opacity 1s, transform 1s;
+                
+            }
+        }
+        &.fade-in-right {
+            .active-effect__item {
+                animation: fadeInRight 1s ease forwards;
+                transition: opacity 1s, transform 1s;
+                
+            }
+        }
+    }
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
+        transition: all 1s;
+        
+    }
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(100px);
+            }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInRight {
+        0% {
+            opacity: 0;
+            transform: translateX(300px);
+            }
+        30% {
+            opacity: 0;
+            transform: translateX(300px);
+            }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            }
+        100% {
+            opacity: 1;
         }
     }
 }

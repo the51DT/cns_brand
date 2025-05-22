@@ -4,7 +4,7 @@
     %>
     <ul class="cmp-hero-navigation__list">
         <% data.forEach((item)=> { %>
-            <li class="<%- item.hasEffect == true ? 'active-effect' : '' %>">
+            <li class="<%- item.hasEffect == true ? 'active-effect' : '' %>" data-effect="<%- typeof item.effectType !=='undefined' && item.effectType ? item.effectType : null %>">
                 <a href="<%- item.href %>" target="<%- item.target %>" class="cmp-hero-navigation__nav<%- item.hasEffect == true ? ' active-effect__item' : '' %>" data-effect-delay="<%- typeof item.effectDelay !== 'undefined' && item.effectDelay ? item.effectDelay : '' %>">
                     <div class="cmp-hero-navigation__text-box">
                         <p class="cmp-hero-navigation__title font-head-sm-mode font-medium"><%- item.title %></p>

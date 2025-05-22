@@ -28,12 +28,12 @@
                                             <div class="interactive-swiper__container">
                                                 <div class="interactive-swiper__text-box">
                                                     <div class="font-head-x-xxl interactive-swiper__title">
-                                                        <div class="active-effect">
+                                                        <div class="active-effect" data-effect="fade-in-bottom">
                                                             <span class="block active-effect__item">
                                                                 Generative AI
                                                             </span>
                                                         </div>
-                                                        <div class="active-effect">
+                                                        <div class="active-effect" data-effect="fade-in-bottom">
                                                             <span class="block active-effect__item" data-effect-delay="0.2s">
                                                                 in your work
                                                             </span>
@@ -150,13 +150,17 @@
                                             <div class="interactive-swiper__container">
                                                 <div class="interactive-swiper__text-box">
                                                     <div class="font-head-x-xl-main-banner interactive-swiper__title">
-                                                        <div class="active-effect">
+                                                        <div class="active-effect" data-effect="fade-in-bottom">
                                                             <span class="block active-effect__item">
                                                                 LG CNS
                                                             </span>
+                                                        </div>
+                                                        <div class="active-effect" data-effect="fade-in-bottom">
                                                             <span class="block active-effect__item" data-effect-delay="0.2s">
                                                                 1,300억 미래에셋생명
                                                             </span>
+                                                        </div>
+                                                        <div class="active-effect" data-effect="fade-in-bottom">
                                                             <span class="block active-effect__item" data-effect-delay="0.3s">
                                                                 차세대 시스템 구축
                                                             </span>
@@ -175,9 +179,10 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="interactive-swiper__frame interactive-swiper__frame--image">
-                                                    <img src="/src/assets/image/main/main_interactive_hero_news_thumb01.png"
-                                                        alt="">
+                                                <div class="active-effect" data-effect="fade-in-right">
+                                                    <div class="interactive-swiper__frame interactive-swiper__frame--image active-effect__item">
+                                                        <img src="/src/assets/image/main/main_interactive_hero_news_thumb01.png" alt="" >
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -380,6 +385,7 @@
                                 tag: "고객스토리" ,
                                 title: "Vision AI로 철스크랩 판정의 정확성과 효율성 모두 잡다" , 
                                 hasEffect : true,
+                                effectType: 'fade-in-bottom',
                             }, 
                             { 
                                 href: "#" , 
@@ -388,6 +394,7 @@
                                 title: "해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서" , 
                                 hasEffect : true,
                                 effectDelay: '0.1s',
+                                effectType: 'fade-in-bottom',
                             }, 
                             { 
                                 href: "#" , 
@@ -396,6 +403,7 @@
                                 title: "ESG 경영 DX : 지속가능성을 높이는 게임체인저" , 
                                 hasEffect : true,
                                 effectDelay: '0.2s',
+                                effectType: 'fade-in-bottom',
                             }, 
                             { 
                                 href: "#" , 
@@ -404,6 +412,7 @@
                                 title: "생성형 AI의 모든 것" , 
                                 hasEffect : true,
                                 effectDelay: '0.3s',
+                                effectType: 'fade-in-bottom',
                             }, 
                         ] %>
                         <%- include('src/component/cmp_hero_navigation.html', Object.assign({}, locals, { 

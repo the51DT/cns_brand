@@ -72,6 +72,30 @@
             color: var(--colorCM-mode1-text-text-on-bg);
         }
     }
+    // .active-effect : hasEffect : true 인 경우
+    .active-effect {
+        overflow: hidden;
+        &__item {
+            opacity: 0;
+            // transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        .fade-in-bottom {
+            .active-effect__item {
+                animation: fadeInUp 1s ease forwards;
+                @keyframes fadeInUp {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(200px);
+                        }
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+    }
     &.color-mode-white {
         .cmp-hero-navigation__list {
             @media #{$min1280} {
@@ -134,6 +158,18 @@
         }
         .ico--mode-color-white {
             display: none;
+        }
+    }
+    &.fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                }
+            100% {
+                opacity: 1;
+            }
         }
     }
 }
