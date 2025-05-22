@@ -1,11 +1,11 @@
-<div class="cmp-wrap cmp-hero-navigation color-mode-<%- typeof colorMode !== 'undefined' && colorMode ? colorMode : '' %> <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : '' %>">
+<div class="cmp-wrap cmp-hero-navigation fade-in color-mode-<%- typeof colorMode !== 'undefined' && colorMode ? colorMode : '' %> <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : '' %>">
     <% 
         const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
     %>
     <ul class="cmp-hero-navigation__list">
         <% data.forEach((item)=> { %>
-            <li>
-                <a href="<%- item.href %>" target="<%- item.target %>" class="cmp-hero-navigation__nav">
+            <li class="<%- item.hasEffect == true ? 'active-effect' : '' %>">
+                <a href="<%- item.href %>" target="<%- item.target %>" class="cmp-hero-navigation__nav<%- item.hasEffect == true ? ' active-effect__item' : '' %>" data-effect-delay="<%- typeof item.effectDelay !== 'undefined' && item.effectDelay ? item.effectDelay : '' %>">
                     <div class="cmp-hero-navigation__text-box">
                         <p class="cmp-hero-navigation__title font-head-sm-mode font-medium"><%- item.title %></p>
                         <p class="cmp-hero-navigation__tag font-body-sm"><%- item.tag %></p>

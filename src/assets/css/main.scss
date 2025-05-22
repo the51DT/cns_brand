@@ -415,7 +415,7 @@
             }
             &.fade-in {
                 opacity: 0;
-                animation: fadeIn 1s ease forwards;
+                animation: fadeIn 1s ease-in-out forwards;
                 @keyframes fadeIn {
                     0% {
                         opacity: 0;
@@ -533,7 +533,7 @@
             overflow: hidden;
             &__item {
                 opacity: 0;
-                transform: translateY(30px);
+                // transform: translateY(30px);
                 animation: fadeInUp 1s ease forwards;
             }
             .fade-in-bottom {
@@ -613,6 +613,42 @@
             max-width: calc(1920 / 16 * 1rem);
             width: 100%;
             transform: translateX(-50%);
+            opacity: 0;
+        }
+        .active-effect {
+            overflow: hidden;
+            &__item {
+                opacity: 0;
+                // transform: translateY(30px);
+                animation: fadeInUp 1s ease forwards;
+            }
+            .fade-in-bottom {
+                .active-effect__item {
+                    animation: fadeInUp 1s ease forwards;
+                    @keyframes fadeInUp {
+                        0% {
+                            opacity: 0;
+                            transform: translateY(200px);
+                            }
+                        100% {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+        }
+        &.fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                    }
+                100% {
+                    opacity: 1;
+                }
+            }
         }
     }
     .news-swiper {

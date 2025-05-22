@@ -34,7 +34,7 @@
                                                             </span>
                                                         </div>
                                                         <div class="active-effect">
-                                                            <span class="block active-effect__item" data-effect-delay="0.5s">
+                                                            <span class="block active-effect__item" data-effect-delay="0.2s">
                                                                 in your work
                                                             </span>
                                                         </div>
@@ -53,7 +53,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="interactive-swiper__frame interactive-swiper__frame--video">
-                                                    <video muted loop>
+                                                    <video muted loop preload="auto">
                                                         <source
                                                             src="/src/assets/image/main/main_interactive_hero_mv_01.webm"
                                                             type="video/webm" />
@@ -82,7 +82,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="interactive-swiper__frame interactive-swiper__frame--video">
-                                                    <video muted loop>
+                                                    <video muted loop preload="auto">
                                                         <source src="/src/assets/image/main/main_interactive_hero_mv_02.webm"
                                                             type="video/webm" />
                                                     </video>
@@ -110,7 +110,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="interactive-swiper__frame interactive-swiper__frame--video">
-                                                    <video muted loop>
+                                                    <video muted loop preload="auto">
                                                         <source
                                                             src="/src/assets/image/main/main_interactive_hero_mv_02.webm"
                                                             type="video/webm" />
@@ -139,7 +139,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="interactive-swiper__frame interactive-swiper__frame--video">
-                                                    <video muted loop>
+                                                    <video muted loop preload="auto">
                                                         <source src="/src/assets/image/main/main_interactive_hero_mv_02.webm"
                                                             type="video/webm" />
                                                     </video>
@@ -150,9 +150,17 @@
                                             <div class="interactive-swiper__container">
                                                 <div class="interactive-swiper__text-box">
                                                     <div class="font-head-x-xl-main-banner interactive-swiper__title">
-                                                        LG CNS <br class="display-pc">
-                                                        1,300억 미래에셋생명 <br class="display-pc">
-                                                        차세대 시스템 구축
+                                                        <div class="active-effect">
+                                                            <span class="block active-effect__item">
+                                                                LG CNS
+                                                            </span>
+                                                            <span class="block active-effect__item" data-effect-delay="0.2s">
+                                                                1,300억 미래에셋생명
+                                                            </span>
+                                                            <span class="block active-effect__item" data-effect-delay="0.3s">
+                                                                차세대 시스템 구축
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                     <p class="font-body-md interactive-swiper__desc">
                                                         AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
@@ -371,24 +379,31 @@
                                 target: "_self" , 
                                 tag: "고객스토리" ,
                                 title: "Vision AI로 철스크랩 판정의 정확성과 효율성 모두 잡다" , 
+                                hasEffect : true,
                             }, 
                             { 
                                 href: "#" , 
                                 target: "_self" , 
                                 tag: "자료" ,
                                 title: "해킹 공격과 방어의 전쟁 : PURPLE LAB 보안 심층분석 보고서" , 
+                                hasEffect : true,
+                                effectDelay: '0.1s',
                             }, 
                             { 
                                 href: "#" , 
                                 target: "_self" ,
                                 tag: "행사" , 
                                 title: "ESG 경영 DX : 지속가능성을 높이는 게임체인저" , 
+                                hasEffect : true,
+                                effectDelay: '0.2s',
                             }, 
                             { 
                                 href: "#" , 
                                 target: "_self" ,
                                 tag: "Techlog" , 
                                 title: "생성형 AI의 모든 것" , 
+                                hasEffect : true,
+                                effectDelay: '0.3s',
                             }, 
                         ] %>
                         <%- include('src/component/cmp_hero_navigation.html', Object.assign({}, locals, { 
@@ -574,8 +589,9 @@
             </div>
             <%- include('src/_inc/footer.html') %>
     </div>
-    <script src="/assets/bundle/swiper-bundle.min.js"></script>
-    <script src="/assets/js/initializeSwipers.js"></script>
+    <!-- <script src="/assets/bundle/swiper-bundle.min.js"></script> -->
+    <!-- <script src="/assets/js/initializeSwipers.js"></script> -->
+    <script src="/assets/js/main_interactive_hero.js"></script>
     <script>
         /* swiper-notice */
         let swiperNotice = new Swiper('.swiper-notice', {
@@ -607,231 +623,7 @@
             }
         })
 
-        /*
-            1. data를 받는다 ({color-mode, hero-style(bg, 영상)}, data-bg-color)
-            2. data-bg-color 가 있으면 1순위로 적용되고 color-mode 는 자동으로 color-mode-black 적용
-            3. {color-mode, hero-style} 가 tmffkdlem 1 ~ 4까지 랜덤으로 적용되며, hero-style 에 맞는 color-mode 가 그룹
-            4. 슬라이드 5 부터는 news 타입으로 적용 (.interactive-swiper__slide--news)
-            5. .interactive-swiper__slide 의 경우 data-bg-color 의 값을 가지고 적용 (data-bg-color 가 없으면 랜덤으로 적용된 {color-mode, hero-style} 으로 반영)
-            6. 슬라이드가 active 되면 동작이 적용
-            7. .interactive-swiper__frame--video 의 경우 슬라이드가 active 되면 video.play 처리 =  swiperHero
-        */
-        const interactiveHero = document.querySelector('.interactive-hero');
-        const interactiveSwiper = interactiveHero.querySelector('.interactive-swiper');
-        const interactiveSlide = interactiveSwiper.querySelectorAll('.interactive-swiper__slide');
-        const interactiveSlideNews = interactiveSwiper.querySelectorAll('.interactive-swiper__slide--news');
-        const heroNavigation = document.querySelector('.cmp-hero-navigation');
-        const noticeSwiper = document.querySelector('.notice-swiper');
-        console.log('interactiveHero:', interactiveHero);
-
-        const styleGroup = ['hero-style-01', 'hero-style-02', 'hero-style-03', 'hero-style-04'];
-        const colorMode = ['color-mode-white', 'color-mode-black', 'color-mode-white', 'color-mode-black']; // 스타일에 따른 색상 모드
-        const videoGroup = [
-            '/src/assets/image/main/main_interactive_hero_mv_01.webm',
-            '/src/assets/image/main/main_interactive_hero_mv_02.webm',
-            '/src/assets/image/main/main_interactive_hero_mv_03.webm',
-            '/src/assets/image/main/main_interactive_hero_mv_04.webm'
-        ];
-        const newsStyleGroup = ['#F0E5D3', '#DFE0E0', '#DDDAE2', '#EDE2F1', '#E7F4F7', '#EBF8F4', '#FFF0F1'];
-        let currentStyles = []; // 현재 적용된 스타일을 저장할 배열
-
-        // 스타일 그룹을 랜덤하게 섞는 함수
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-        }
-
-        // 랜덤하게 스타일을 섞고 초기화
-        function initializeStyles() {
-            currentStyles = [...styleGroup]; // 스타일 그룹 복사
-            shuffleArray(currentStyles); // 랜덤하게 섞음
-        }
-
-        // 슬라이드 인덱스에 맞는 스타일을 적용
-        function applyStyleToSlide(index) {
-            interactiveSwiper.removeAttribute('style') // newsStyleGroup 색상 적용 초기화
-
-            // 현재 적용된 스타일을 제거
-            styleGroup.forEach(style => interactiveHero.classList.remove(style)); // 모든 스타일 제거
-
-            // 색상 모드도 제거
-            colorMode.forEach(mode => interactiveHero.classList.remove(mode)); // 모든 색상 모드 제거
-
-            // cmp-hero-navigation 색상 모드 제거
-            if(heroNavigation.classList.contains('color-mode-black')) {
-                heroNavigation.classList.remove('color-mode-black'); // 모든 색상 모드 제거
-            }
-            if (heroNavigation.classList.contains('color-mode-white')) {
-                heroNavigation.classList.remove('color-mode-white'); // 모든 색상 모드 제거
-            }
-
-            // 공지사항 색상 모드 제거
-            if(noticeSwiper.classList.contains('color-mode-black')) {
-                noticeSwiper.classList.remove('color-mode-black'); // 모든 색상 모드 제거
-            }
-            if (noticeSwiper.classList.contains('color-mode-white')) {
-                noticeSwiper.classList.remove('color-mode-white'); // 모든 색상 모드 제거
-            }
-
-            // 주어진 인덱스에 맞는 스타일을 적용
-            const styleToApply = currentStyles[index]; // 랜덤으로 섞인 스타일
-            interactiveHero.classList.add(styleToApply);
-
-            // cmp-hero-navigation 색상 모드 적용
-            heroNavigation.classList.add(colorMode[styleGroup.indexOf(styleToApply)]);
-
-            // 공지사항 swiper 에 색상 모드 적용
-            noticeSwiper.classList.add(colorMode[styleGroup.indexOf(styleToApply)]);
-
-            // 중복 슬라이드의 비디오 요소 선택
-            const duplicateSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-duplicate video');
-            duplicateSlides.forEach(videoElement => {
-                videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 랜덤 스타일에 맞는 비디오 경로 설정
-                console.log('duplicateSlides:', videoElement.src);
-                // videoElement.load(); // 비디오 파일 로드
-                // videoElement.play().catch(error => {
-                //     console.error('비디오 재생 오류:', error);
-                // });
-            });
-
-            // 현재 활성 슬라이드의 비디오 요소 선택
-            const activeSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-active video');
-            activeSlides.forEach(videoElement => {
-                videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 랜덤 스타일에 맞는 비디오 경로 설정
-                console.log('activeSlides:', videoElement.src);
-                // videoElement.load(); // 비디오 파일 로드
-                // videoElement.play().catch(error => {
-                //     console.error('비디오 재생 오류:', error);
-                // });
-            });
-
-            // 슬라이드 인덱스가 4 이상일 경우 color-mode-black 추가
-            if (index >= 4) {
-                interactiveHero.classList.add('color-mode-black');
-                heroNavigation.classList.add('color-mode-black');
-                // 다섯 번째 슬라이드부터 newsStyleGroup 의 색상 적용
-                interactiveSwiper.style.backgroundColor = newsStyleGroup[index - 4];
-                interactiveSlideNews[index - 4].style.backgroundColor = newsStyleGroup[index - 4];
-            } else {
-                // 해당 색상 모드 추가
-                console.log('index:', index, colorMode[styleGroup.indexOf(styleToApply)], heroNavigation)
-                const colorModeToApply = colorMode[styleGroup.indexOf(styleToApply)];
-                interactiveHero.classList.add(colorModeToApply);
-            }
-        }
-
-        // 슬라이드 변경 이벤트 핸들러
-        function onSlideChange() {
-            // 중복 슬라이드의 비디오를 정지
-            const duplicateSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-duplicate video');
-            duplicateSlides.forEach(video => {
-                video.pause();
-            });
-
-            // 현재 활성 슬라이드의 비디오를 재생
-            const activeSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-active video');
-            activeSlides.forEach(video => {
-                video.play().catch(error => {
-                    console.error('비디오 재생 오류:', error);
-                });
-            });
-        }
-
-        // 슬라이드 변경 시작 이벤트 핸들러
-        function onSlideChangeStart() {
-            const activeIndex = swiperHero.activeIndex; // 현재 활성 슬라이드의 인덱스
-            const activeSlideTextGroup = interactiveSlide[activeIndex].querySelector('.interactive-swiper__text-box'); // 현재 활성 슬라이드의 텍스트 영역
-
-            interactiveSlide.forEach((slide) => {
-                const slideTextGroup = slide.querySelector('.interactive-swiper__text-box');
-                slideTextGroup.classList.remove('fade-in');
-            })
-            activeSlideTextGroup.classList.add('fade-in');
-            console.log('activeSlideTextGroup:', activeSlideTextGroup)
-
-            if (activeIndex < currentStyles.length) { // 스타일 그룹 범위 내에서만 적용
-                applyStyleToSlide(activeIndex); // 스타일 적용
-            } else {
-                // 다섯번 째 슬라이드 (News group)
-                applyStyleToSlide(activeIndex); // 스타일 적용
-                // 다섯 번째 슬라이드부터 newsStyleGroup 의 색상 적용 : interactive-swiper, interactive-swiper__slide--news
-                // interactiveSwiper.style.backgroundColor = newsStyleGroup[activeIndex - 4];
-                // interactiveSlideNews[activeIndex - 4].style.backgroundColor = newsStyleGroup[activeIndex - 4];
-            }
-        }
-
-        // active 슬라이드 감지 
-        function checkActiveSlide(swiper) {
-            const activeIndex = swiper.activeIndex; // 현재 활성 슬라이드의 인덱스
-            const activeSlide = swiper.slides[activeIndex];
-            const hasEffect = activeSlide.querySelectorAll('.active-effect');
-            if(hasEffect !== null) {
-                // console.log('has')
-                hasEffect.forEach((wrap) => {
-                    const effectTarget = wrap.querySelector('.active-effect__item');
-                    const effectDelayTime = effectTarget.getAttribute('data-effect-delay');
-                    wrap.classList.add('fade-in-bottom');
-                    if(effectDelayTime) {
-                        console.log(effectTarget)
-                        effectTarget.style.animationDelay = effectDelayTime;
-                    }
-                })
-
-            } else {
-                console.log('null')
-            }
-        }
-
-        // Swiper 초기화
-        let swiperHero = new Swiper('.swiper-interactive-banner', {
-            autoplay: {
-                delay: 6000,
-            },
-            allowTouchMove: false,
-            touchRatio: 0,
-            slidesPerView: 1,
-            effect: 'fade',
-            fadeEffect: { crossFade: true },
-            on: {
-                init: function () {
-                    checkActiveSlide(this); // 'this'를 통해 swiperHero 인스턴스를 전달
-                },
-                slideChange: function () {
-                    checkActiveSlide(this); // 'this'를 통해 swiperHero 인스턴스를 전달
-                },
-                slideChangeTransitionStart: onSlideChangeStart, // 슬라이드 전환 시작 시 스타일 적용
-                slideChangeTransitionEnd: onSlideChange, // 슬라이드 전환 종료 시 비디오 제어
-            },
-        });
-
-        // 초기 스타일 설정
-        initializeStyles(); // 스타일 초기화 및 랜덤화
-        applyStyleToSlide(0); // 첫 번째 슬라이드에 랜덤 스타일 적용
-
-        // 첫 번째 슬라이드의 비디오를 재생
-        const firstSlide = document.querySelector('.swiper-slide-active');
-        const firstSlideTextbox = document.querySelector('.swiper-slide-active .interactive-swiper__text-box');
-        const firstSlideVideo = document.querySelector('.swiper-slide-active video');
-        if(firstSlide) {
-            firstSlideTextbox.classList.add('fade-in'); 
-            console.log('firstSlideTextbox:', firstSlideTextbox)
-        }
-        if (firstSlideVideo) {
-            firstSlideVideo.play().catch(error => {
-                console.error('비디오 재생 오류:', error);
-            });
-        }
-
-        // .notice-swiper가 하위 자식인지 확인하고 .has-notice 클래스 추가
-        const hasNoticeSwiper = interactiveHero.querySelector('.notice-swiper') !== null;
-        if (hasNoticeSwiper) {
-            interactiveHero.classList.add('has-notice');
-        } else {
-            console.log('.notice-swiper가 interactiveHero의 하위 자식이 아닙니다.');
-        }
-
+        
 
     </script>
 </body>
