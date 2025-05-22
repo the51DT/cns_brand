@@ -724,12 +724,12 @@
             gsap.utils.toArray(".card-context", e).forEach((e => {
                 const cardInnerItem = e.querySelector(".card-inner");
                 // (mobile) touch시 카드 이벤트 제어
-                //cardInnerItem.addEventListener("touchstart", ((e) => { cardEventCtrl(e); }))
+                cardInnerItem.addEventListener("touchstart", ((e) => { cardEventCtrl(e); }), {passive: true})
             }
             )),
-            e.addEventListener("touchstart", S),
-            e.addEventListener("touchmove", h),
-            e.addEventListener("touchend", v),
+            e.addEventListener("touchstart", S, { passive: true }),
+            e.addEventListener("touchmove", h, { passive: true }),
+            e.addEventListener("touchend", v, { passive: true }),
             e.addEventListener("mousedown", S),
             e.addEventListener("mousemove", h),
             e.addEventListener("mouseleave", v),
