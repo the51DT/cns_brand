@@ -215,6 +215,7 @@ const subVisual = document.querySelector('.sub-visual__wrap');
 const mainVisual = document.querySelector('.main-visual__wrap');
 const subVisualHeight = subVisual ?  subVisual.offsetHeight : 0;
 const mainVisualHeight = mainVisual ? mainVisual.offsetHeight : 0;
+const contentTab = document.querySelectorAll('.cmp-tab');
 const scrollEventManage = () => {
     const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
     // if(subVisual || mainVisual || bodyDarkMode) {
@@ -246,12 +247,24 @@ const onDownScroll = () => {
     // console.log('down');
     headerWrap.classList.remove('is-fixed');
     headerWrap.classList.add('is-motion');
+    if(contentTab) {
+      contentTab.forEach((tab) => {
+        const tabHeader = tab.querySelector('.cmp-tab__header');
+        tabHeader.classList.remove('tab-move-position');
+      });
+    }
 }
 
 const onUpScroll = () => {
     // console.log('up');
     headerWrap.classList.add('is-fixed');
     headerWrap.classList.remove('is-motion');
+    if(contentTab) {
+      contentTab.forEach((tab) => {
+        const tabHeader = tab.querySelector('.cmp-tab__header');
+        tabHeader.classList.add('tab-move-position');
+      });
+    }
 }
 
 const onTopScroll = () => {
@@ -264,6 +277,12 @@ const onTopScroll = () => {
     // }
     headerWrap.classList.remove('is-fixed');
     headerWrap.classList.remove('is-motion');
+    if(contentTab) {
+      contentTab.forEach((tab) => {
+        const tabHeader = tab.querySelector('.cmp-tab__header');
+        tabHeader.classList.remove('tab-move-position');
+      });
+    }
 }
 
 // const scrollPos = window.scrollY || document.documentElement.scrollTop;

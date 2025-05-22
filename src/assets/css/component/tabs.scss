@@ -23,10 +23,15 @@
         margin-bottom: calc(48 / 16 * 1rem);
         overflow: hidden;
         overflow-x: scroll;
-        position: relative;
+        // position: relative;
         -ms-overflow-style:none;
         scrollbar-width:none;
         padding-right: calc(40 / 16 * 1rem);
+        position: sticky;
+        top: 0;
+        left: 0;
+        transition: top 0.5s linear;
+        background: var(--colorCM-mode1-background-background-default0);
         @media #{$min1280} {
             overflow: unset;
             overflow-x: unset;
@@ -35,6 +40,12 @@
         }
         &::-webkit-scrollbar {
             display:none;
+        }
+        &.tab-move-position {
+            top: calc(63 / 16 * 1rem);
+            @media #{$min1280} {
+                top: calc(100 / 16 * 1rem);
+            }
         }
     }
     .tab__menu,
