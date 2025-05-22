@@ -249,8 +249,10 @@ const onDownScroll = () => {
     headerWrap.classList.add('is-motion');
     if(contentTab) {
       contentTab.forEach((tab) => {
-        const tabHeader = tab.querySelector('.cmp-tab__header');
-        tabHeader.classList.remove('tab-move-position');
+        if(!tab.classList.contains('cmp-tab--sub')){
+          const tabHeader = tab.querySelector('.cmp-tab__header');
+          tabHeader.classList.remove('tab-move-position');
+        }
       });
     }
 }
@@ -261,8 +263,10 @@ const onUpScroll = () => {
     headerWrap.classList.remove('is-motion');
     if(contentTab) {
       contentTab.forEach((tab) => {
-        const tabHeader = tab.querySelector('.cmp-tab__header');
-        tabHeader.classList.add('tab-move-position');
+        if(!tab.classList.contains('cmp-tab--sub')){
+          const tabHeader = tab.querySelector('.cmp-tab__header');
+          tabHeader.classList.add('tab-move-position');
+        }
       });
     }
 }
@@ -279,8 +283,10 @@ const onTopScroll = () => {
     headerWrap.classList.remove('is-motion');
     if(contentTab) {
       contentTab.forEach((tab) => {
-        const tabHeader = tab.querySelector('.cmp-tab__header');
-        tabHeader.classList.remove('tab-move-position');
+        if(!tab.classList.contains('cmp-tab--sub')){
+          const tabHeader = tab.querySelector('.cmp-tab__header');
+          tabHeader.classList.remove('tab-move-position');
+        }
       });
     }
 }

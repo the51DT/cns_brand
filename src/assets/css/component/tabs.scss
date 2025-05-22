@@ -135,6 +135,10 @@
         }
     }
     &.cmp-tab--sub {
+        .cmp-tab__header {
+            position: relative;
+            z-index: initial;
+        }
         .tab__sub-menu {
             a {
                 font-size: calc(var(--typo-mo-size-body-md) / 16 * 1rem);
