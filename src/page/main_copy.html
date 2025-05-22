@@ -507,6 +507,7 @@
 
         //gsap 관련 script - S
         const isPc = window.matchMedia('only screen and (min-width: 1280px)').matches        
+        const carouselWrap = document.querySelector(".carousel-wrap");
         const cardItems = document.querySelectorAll(".carousel-wrap .card-context");           
         let resizeTimer;
 
@@ -669,6 +670,7 @@
                     onComplete: () => [carousel()]
                 })                
             } else {
+                // pc
                 gsap.set(".carousel-wrap", {
                     height: "100%",
                     onComplete: () => {
@@ -807,7 +809,7 @@
             const targetItemStyle = e.target.dataset.style; 
             const targetItemGroup = e.target.closest(".card-context").dataset.group;
 
-            // mouseover 지정한 동일한 그룹 active 처리
+            // [pc] mouseover시 동일한 그룹 active 처리
             if(isPc) {
                 document.querySelectorAll(".carousel-wrap .card-context").forEach(item => {
                     if(item.dataset.group === targetItemGroup){
@@ -817,6 +819,7 @@
                     }
                 })
             }
+            // [pc/mo 공통] mouseover, touch시 on클래스 이벤트 제어 (내용, 배경이미지 노출)
             if(e.target.closest(".card-context").classList.contains("on")){
                 e.target.closest(".card-context").classList.remove("on");
                 e.target.style.backgroundImage = "revert";
@@ -835,14 +838,26 @@
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
                 const intViewportWidth = window.innerWidth;
+
+                /*
+                (720 이상일때, pc 체크용 클래스 추가)
+                - PC에서 Mobile로 리사이징할때 체크하기 위해, 특정 중간 태블릿 조건일때, 
+                - css 다르게 처리되는 것이 있어, 720 이상일경우에는 tablet사이즈도 pc로 판단하여 체크하려고 클래스 추가하였음.
+                */
+                if(intViewportWidth > 720) {
+                    carouselWrap.classList.add("type-pc");
+                } else {
+                    carouselWrap.classList.remove("type-pc");
+                }
+
                 if (intViewportWidth >= 1280) {
-                    //pc
                     // console.log("pc");
                     initCarousel();
-                } else {
-                    //mobile
-                    // console.log("mobile");
-                    //initCarousel();
+                } else {                    
+                    if(carouselWrap.classList.contains("type-pc")) {
+                        // console.log("pc -> mobile");
+                        initCarousel();
+                    }
                 }
             }, 500);
         });
