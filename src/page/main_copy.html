@@ -317,7 +317,7 @@
             </div>
             <!-- Service // -->
             <!-- News -->
-            <div class="main-content__inner news-swiper">
+            <div class="main-content__inner news-swiper" style="margin-top:12.5rem;">
                 <div class="main-container">
                     <span class="block font-head-lg font-semibold color-text-default text-center mb-spacing08">
                         미래를 선도하는 <br class="display-mo">LG CNS의 <br class="display-pc">
@@ -505,10 +505,11 @@
         //     effect: 'fade',
         // })
 
-        //gsap 관련 script
-        const isPc = window.innerWidth >= 1280;
+        //gsap 관련 script - S
+        const isPc = window.matchMedia('only screen and (min-width: 1280px)').matches        
         const cardItems = document.querySelectorAll(".carousel-wrap .card-context");           
-        
+        let resizeTimer;
+
         // card-context 셋팅
         function cardItemSetting() {
             const infoCardItems = [
@@ -659,13 +660,24 @@
             });
         }
 
-        
-        function initCarousel() {
-            gsap.set(".carousel-wrap", {
-                height: `${document.querySelector(".card-context .card-inner").clientHeight}px`,
-                onComplete: () => [carousel()]
-            })
+        function initCarousel() {            
+            const intViewportWidth = window.innerWidth;            
+            if(intViewportWidth < 1280) {
+                // mobile
+                gsap.set(".carousel-wrap", {
+                    height: `${document.querySelector(".card-context .card-inner").clientHeight}px`,
+                    onComplete: () => [carousel()]
+                })                
+            } else {
+                gsap.set(".carousel-wrap", {
+                    height: "100%",
+                    onComplete: () => {
+                        gsap.killTweensOf(cardItems) // 이벤트가 kill처리가되지않음ㅠ 수정필요...
+                    }
+                })
+            }
         }
+        
         function carousel() {
             gsap.to(".carousel-wrap", {
                 opacity: 1,
@@ -707,8 +719,8 @@
             , v = () => {
                 m = !1,
                 e.classList.remove("is-dragging")
-            }
-            ;
+            };
+
             gsap.utils.toArray(".card-context", e).forEach((e => {
                 const cardInnerItem = e.querySelector(".card-inner");
                 // (mobile) touch시 카드 이벤트 제어
@@ -779,7 +791,7 @@
                 p ? i += .05 : (i = .0075 * a, a = l))                
             }
             )),
-            window.addEventListener("1", ( () => {
+            window.addEventListener("resize", ( () => {
                 document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`),
                 gsap.set(".carousel-wrap", {
                     height: `${document.querySelector(".card-context .card-inner").clientHeight}px`
@@ -788,9 +800,8 @@
                 o = t[0].clientWidth + 10,
                 r = t.length * o           
             }
-            ))
+            ))          
         }
-
 
         function cardEventCtrl(e) {
             const targetItemStyle = e.target.dataset.style; 
@@ -817,19 +828,25 @@
             }
         }                
         
-        if(!isPc) { initCarousel(); }
         cardItemSetting();
+        if(!isPc) { initCarousel(); }         
 
-        // resize 관련 delay, timer 변수
-        // let delay = 300;
-        // let timer = null;
-        // window.addEventListener('resize', function(){
-        //     clearTimeout(timer);
-        //     timer = setTimeout(function(){
-        //         // console.log('resize event!');
-        //         if(!isPc) { initCarousel(); }
-        //     }, delay);
-        // });  
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                const intViewportWidth = window.innerWidth;
+                if (intViewportWidth >= 1280) {
+                    //pc
+                    console.log("pc");
+                    initCarousel();
+                } else {
+                    //mobile
+                    console.log("mobile");
+                    initCarousel();
+                }
+            }, 500);
+        });
+        //gsap 관련 script - E
 
     </script>
 </body>

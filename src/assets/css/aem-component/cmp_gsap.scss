@@ -68,6 +68,7 @@
                     grid-row-end:3;
                     grid-column-start: 1;
                     grid-column-end: 2;
+                    transform: none !important;
                 }
                 &:nth-child(2) {
                     order: 6;
@@ -75,7 +76,7 @@
                     grid-row-end:3;
                     grid-column-start: 2;
                     grid-column-end: 3;
-                    transform: translateY(100px);
+                    transform: translateY(100px) !important;
                 }
                 &:nth-child(3) {
                     order: 7;
@@ -83,7 +84,7 @@
                     grid-row-end:3;
                     grid-column-start: 3;
                     grid-column-end: 4;
-                    transform: translateY(35px);
+                    transform: translateY(35px) !important;
                 }
                 &:nth-child(4) {
                     order: 8;
@@ -91,7 +92,7 @@
                     grid-row-end:4;
                     grid-column-start: 4;
                     grid-column-end: 5;
-                    transform: translateY(-22px);
+                    transform: translateY(-22px) !important;
                 }
                 &:nth-child(5) {
                     order: 2;
@@ -99,7 +100,7 @@
                     grid-row-end:2;
                     grid-column-start: 2;
                     grid-column-end: 3;
-                    transform: translateY(100px);
+                    transform: translateY(100px) !important;
                 }
                 &:nth-child(6) {
                     order: 3;
@@ -107,7 +108,7 @@
                     grid-row-end:2;
                     grid-column-start: 3;
                     grid-column-end: 4;
-                    transform: translateY(35px);
+                    transform: translateY(35px) !important;
                     
                 }
                 &:nth-child(7) {
@@ -116,7 +117,7 @@
                     grid-row-end:3;
                     grid-column-start: 4;
                     grid-column-end: 5;
-                    transform: translateY(-22px);
+                    transform: translateY(-22px) !important;
                 }
                 &:nth-child(8) {
                     order: 5;
@@ -124,6 +125,7 @@
                     grid-row-end:4;
                     grid-column-start: 1;
                     grid-column-end: 2;
+                    transform: none !important;
                 }
                 &:nth-child(9) {
                     order: 9;
@@ -131,7 +133,7 @@
                     grid-row-end:4;
                     grid-column-start: 2;
                     grid-column-end: 3;
-                    transform: translateY(100px);
+                    transform: translateY(100px) !important;
                 }
                 &:nth-child(10) {
                     order: 10;
@@ -139,7 +141,7 @@
                     grid-row-end:4;
                     grid-column-start: 3;
                     grid-column-end: 4;
-                    transform: translateY(35px);
+                    transform: translateY(35px) !important;
                 }
             }
             &.active {
