@@ -672,7 +672,7 @@
                 gsap.set(".carousel-wrap", {
                     height: "100%",
                     onComplete: () => {
-                        gsap.killTweensOf(cardItems) // 이벤트가 kill처리가되지않음ㅠ 수정필요...
+                        gsap.killTweensOf(cardItems)
                     }
                 })
             }
@@ -829,7 +829,7 @@
         }                
         
         cardItemSetting();
-        if(!isPc) { initCarousel(); }         
+        if(!isPc) { initCarousel(); }
 
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
@@ -837,12 +837,12 @@
                 const intViewportWidth = window.innerWidth;
                 if (intViewportWidth >= 1280) {
                     //pc
-                    console.log("pc");
+                    // console.log("pc");
                     initCarousel();
                 } else {
                     //mobile
-                    console.log("mobile");
-                    initCarousel();
+                    // console.log("mobile");
+                    //initCarousel();
                 }
             }, 500);
         });
