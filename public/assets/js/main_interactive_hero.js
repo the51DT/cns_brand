@@ -109,7 +109,7 @@ function applyStyleToSlide(index) {
         interactiveSlideNews[index - 4].style.backgroundColor = newsStyleGroup[index - 4];
     } else {
         // 해당 색상 모드 추가
-        console.log('index:', index, colorMode[styleGroup.indexOf(styleToApply)], heroNavigation)
+        // console.log('index:', index, colorMode[styleGroup.indexOf(styleToApply)], heroNavigation)
         const colorModeToApply = colorMode[styleGroup.indexOf(styleToApply)];
         interactiveHero.classList.add(colorModeToApply);
     }
@@ -144,9 +144,7 @@ function onSlideChangeStart() {
     activeSlideTextGroup.classList.add('fade-in');
     // heroNavigationItem.classList.add('fade-in');
     
-    console.log('activeSlideTextGroup:', activeSlideTextGroup)
-
-
+    // console.log('activeSlideTextGroup:', activeSlideTextGroup)
 
     if (activeIndex < currentStyles.length) { // 스타일 그룹 범위 내에서만 적용
         applyStyleToSlide(activeIndex); // 스타일 적용
@@ -161,6 +159,11 @@ function onSlideChangeStart() {
 
 function handleActiveEffect(activeSlide) {
     const hasEffect = activeSlide.querySelectorAll('.active-effect');
+    // const allSlides = document.querySelectorAll('.swiper-slide .active-effect');
+    // allSlides.forEach((item) => {
+    //     item.classList.remove('fade-in-bottom');
+    // });
+
     if (hasEffect.length > 0) {
         hasEffect.forEach((activeItem) => {
             console.log('hasEffect:', hasEffect)
@@ -168,7 +171,7 @@ function handleActiveEffect(activeSlide) {
             const effectDelayTime = effectTarget.getAttribute('data-effect-delay');
             activeItem.classList.add('fade-in-bottom');
             if (effectDelayTime) {
-                console.log(effectTarget);
+                // console.log(effectTarget);
                 effectTarget.style.animationDelay = effectDelayTime;
             }
         });
@@ -220,21 +223,22 @@ let swiperHero = new Swiper('.swiper-interactive-banner', {
     on: {
         init: function () {
             checkActiveSlide(this); // 'this'를 통해 swiperHero 인스턴스를 전달
+            handleActiveEffect(heroNavigation) // .cmp-hero-navigation 동작 적용
         },
         slideChange: function () {
             checkActiveSlide(this); // 'this'를 통해 swiperHero 인스턴스를 전달
-            
         },
         slideChangeTransitionStart: function() {
             onSlideChangeStart();
             // checkHeroNavigation()
             heroNavigation.classList.remove('fade-in');
-            console.log('slideChange:', heroNavigation)
+            // console.log('slideChange:', heroNavigation)
         }, // 슬라이드 전환 시작 시 스타일 적용
         slideChangeTransitionEnd: function() {
             onSlideChange, // 슬라이드 전환 종료 시 비디오 제어
             heroNavigation.classList.add('fade-in');
-            console.log('slideChangeTransitionEnd:', heroNavigation)
+            // checkActiveSlide(this);
+            // console.log('slideChangeTransitionEnd:', heroNavigation)
         }
     },
 });
@@ -242,7 +246,6 @@ let swiperHero = new Swiper('.swiper-interactive-banner', {
 // 초기 스타일 설정
 initializeStyles(); // 스타일 초기화 및 랜덤화
 applyStyleToSlide(0); // 첫 번째 슬라이드에 랜덤 스타일 적용
-handleActiveEffect(heroNavigation) // .cmp-hero-navigation 동작 적용
 
 // 첫 번째 슬라이드의 비디오를 재생
 const firstSlide = document.querySelector('.swiper-slide-active');
