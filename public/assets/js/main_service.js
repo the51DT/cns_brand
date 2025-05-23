@@ -107,12 +107,12 @@ function cardItemSetting() {
     if (!itemInner.dataset.bound) {
       if (chkPc) {
         itemInner.addEventListener('mouseover', (e) => {          
-          console.log('mouseover');
+          // console.log('mouseover');
           stopAutoGroupActive();
           cardEventCtrl(e);
         });
         itemInner.addEventListener('mouseleave', (e) => {
-          console.log('mouseleave');
+          // console.log('mouseleave');
           startAutoGroupActive();
           cardEventCtrl(e);
         });
@@ -263,8 +263,7 @@ function carousel() {
 function cardEventCtrl(e) {
   const targetItemStyle = e.target.dataset.style;
   targetItemGroup = e.target.closest('.card-context').dataset.group;
-
-  console.log(targetItemGroup);
+  
   // [pc] mouseover시 동일한 그룹 active 처리
   document.querySelectorAll('.carousel-wrap .card-context').forEach((item) => {      
     // item.classList.remove('active');
