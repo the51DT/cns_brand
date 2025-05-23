@@ -18,13 +18,15 @@ function startAutoGroupActive() {
       } else {
         item.classList.remove('active');
       }
-    });    groupIndex = (groupIndex + 1) % groupNames.length;
-  }, 2000);  
+    });
+
+    groupIndex = (groupIndex + 1) % groupNames.length;
+  }, 2000);
 }
 
 function stopAutoGroupActive() {
   if (autoActiveTimer) {
-    clearInterval(autoActiveTimer);    
+    clearInterval(autoActiveTimer);
     autoActiveTimer = null;
   }
 }
@@ -106,13 +108,11 @@ function cardItemSetting() {
 
     if (!itemInner.dataset.bound) {
       if (chkPc) {
-        itemInner.addEventListener('mouseover', (e) => {          
-          console.log('mouseover');
+        itemInner.addEventListener('mouseover', (e) => {
           stopAutoGroupActive();
           cardEventCtrl(e);
         });
         itemInner.addEventListener('mouseleave', (e) => {
-          console.log('mouseleave');
           startAutoGroupActive();
           cardEventCtrl(e);
         });
@@ -130,6 +130,7 @@ function cardItemSetting() {
     }
   });
 }
+
 function initCarousel() {
   const intViewportWidth = window.innerWidth;
   if (intViewportWidth < 1280) {
@@ -142,6 +143,9 @@ function initCarousel() {
     // pc
     gsap.set('.carousel-wrap', {
       height: '100%',
+      onComplete: () => {
+        gsap.killTweensOf(cardItems);
+      },
     });
   }
 }
@@ -153,7 +157,7 @@ function carousel() {
     ease: 'power1.inOut',
     delay: 0.1,
   }),
-  gsap.ticker.fps(60);
+    gsap.ticker.fps(60);
   const e = document.querySelector('.carousel-wrap'),
     t = document.querySelectorAll('.card-context');
   let n = e.clientWidth,
@@ -186,6 +190,7 @@ function carousel() {
     v = () => {
       (m = !1), e.classList.remove('is-dragging');
     };
+  
   e.addEventListener('touchstart', S, { passive: true }),
   e.addEventListener('touchmove', h, { passive: true }),
   e.addEventListener('touchend', v, { passive: true }),
@@ -264,19 +269,18 @@ function cardEventCtrl(e) {
   const targetItemStyle = e.target.dataset.style;
   targetItemGroup = e.target.closest('.card-context').dataset.group;
 
-  console.log(targetItemGroup);
   // [pc] mouseover시 동일한 그룹 active 처리
-  document.querySelectorAll('.carousel-wrap .card-context').forEach((item) => {      
-    // item.classList.remove('active');
-    if (item.dataset.group == targetItemGroup) {
-      // conle.log(item.dataset.group);
-      item.classList.add('active');        
-    } else {
+  if (chkPc) {
+    document.querySelectorAll('.carousel-wrap .card-context').forEach((item) => {
       item.classList.remove('active');
-    }
-  });
-
-  // [pc/mo 공통] mouseover, touch시 on클래스 이벤트 제어 (내용, 배경이미지 노출)  
+      if (item.dataset.group == targetItemGroup) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }
+  // [pc/mo 공통] mouseover, touch시 on클래스 이벤트 제어 (내용, 배경이미지 노출)
   if (e.target.closest('.card-context').classList.contains('on')) {
     e.target.closest('.card-context').classList.remove('on');
     e.target.style.backgroundImage = 'revert';
@@ -286,48 +290,56 @@ function cardEventCtrl(e) {
     e.target.style.backgroundImage = targetItemStyle;
     e.target.style.border = '1px solid #8e8e8e';
   }
-  
 }
+
 // 초기 실행
 cardItemSetting();
 if (!chkPc) {
+  initCarousel();
   stopAutoGroupActive();
-  initCarousel();  
 } else {
   startAutoGroupActive();
 }
 
+// 리사이즈 대응
+window.addEventListener('resize', () => {
+  clearTimeout(window.resizeTimer);
+  window.resizeTimer = setTimeout(() => {
+    const intViewportWidth = window.innerWidth;
+    const nowisPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
 
-// ResizeObserver 정의
-const resizeObserver = new ResizeObserver((entries) => {
-  for (let entry of entries) {
-    const width = entry.contentRect.width;
-    const nowIsPc = width >= 1280;
+    // PC <-> Mobile 전환 감지
+    if (nowisPc !== chkPc) {
+      chkPc = nowisPc;
+      cardItemSetting(); // 이벤트 재설정
 
-    // .type-pc 클래스 처리 (720 이상)
-    if (width > 720) {
+      if (chkPc) {
+        console.log(' PC 전환 - 자동 순환 시작' + chkPc);
+        startAutoGroupActive();
+      } else {
+        console.log('모바일 전환 - 자동 순환 중단' + chkPc);
+        stopAutoGroupActive();
+      }
+    }
+    /*
+    (720 이상일때, pc / tablet 체크용 클래스 (type-pc) 추가)
+    - PC에서 Mobile로 리사이징할때 체크하기 위해, 특정 중간 태블릿 이하 조건일때, 예외처리 추가
+    - 모바일에서 이벤트가 적용되어 스크롤시 옆으로 팅기는 문제가 있어, type-pc 클래스 있을 경우만 initCarousel 되도록 추가 조건 적용하였음
+    */
+    if (intViewportWidth > 720) {
       carouselWrap.classList.add('type-pc');
     } else {
       carouselWrap.classList.remove('type-pc');
     }
 
-    // PC/Mobile 전환 감지 시 처리
-    if (nowIsPc !== chkPc) {
-      chkPc = nowIsPc;
-      cardItemSetting(); // 이미지 및 이벤트 재설정
-    }
-
-    // 캐러셀 상태 재설정
-    if (chkPc) {
-      initCarousel();      
+    if (intViewportWidth >= 1280) {
+      startAutoGroupActive();
+      initCarousel();
     } else {
       if (carouselWrap.classList.contains('type-pc')) {
         initCarousel();
       }
-      initCarousel();
+      stopAutoGroupActive();
     }
-  }
+  }, 1000);
 });
-
-// .carousel-wrap 요소에만 ResizeObserver 적용
-resizeObserver.observe(carouselWrap);
