@@ -5,7 +5,7 @@
     4. 슬라이드 5 부터는 news 타입으로 적용 (.interactive-swiper__slide--news)
     5. .interactive-swiper__slide 의 경우 data-bg-color 의 값을 가지고 적용 (data-bg-color 가 없으면 랜덤으로 적용된 {color-mode, hero-style} 으로 반영)
     6. 슬라이드가 active 되면 동작이 적용
-    7. .interactive-swiper__frame--video 의 경우 슬라이드가 active 되면 video.play 처리 =  swiperHero
+    7. .interactive-swiper__frame__video 의 경우 슬라이드가 active 되면 video.play 처리 =  swiperHero
 */
 let isPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
 window.addEventListener('resize', function () {
@@ -57,19 +57,23 @@ function applyStyleToSlide(index) {
     colorMode.forEach(mode => interactiveHero.classList.remove(mode)); // 모든 색상 모드 제거
 
     // cmp-hero-navigation 색상 모드 제거
-    if(heroNavigation.classList.contains('color-mode-black')) {
-        heroNavigation.classList.remove('color-mode-black'); // 모든 색상 모드 제거
-    }
-    if (heroNavigation.classList.contains('color-mode-white')) {
-        heroNavigation.classList.remove('color-mode-white'); // 모든 색상 모드 제거
+    if(heroNavigation) {
+        if(heroNavigation.classList.contains('color-mode-black')) {
+            heroNavigation.classList.remove('color-mode-black'); // 모든 색상 모드 제거
+        }
+        if (heroNavigation.classList.contains('color-mode-white')) {
+            heroNavigation.classList.remove('color-mode-white'); // 모든 색상 모드 제거
+        }
     }
 
-    // 공지사항 색상 모드 제거
-    if(noticeSwiper.classList.contains('color-mode-black')) {
-        noticeSwiper.classList.remove('color-mode-black'); // 모든 색상 모드 제거
-    }
-    if (noticeSwiper.classList.contains('color-mode-white')) {
-        noticeSwiper.classList.remove('color-mode-white'); // 모든 색상 모드 제거
+    if(noticeSwiper) {
+        // 공지사항 색상 모드 제거
+        if(noticeSwiper.classList.contains('color-mode-black')) {
+            noticeSwiper.classList.remove('color-mode-black'); // 모든 색상 모드 제거
+        }
+        if (noticeSwiper.classList.contains('color-mode-white')) {
+            noticeSwiper.classList.remove('color-mode-white'); // 모든 색상 모드 제거
+        }
     }
 
     // 주어진 인덱스에 맞는 스타일을 적용
@@ -77,10 +81,14 @@ function applyStyleToSlide(index) {
     interactiveHero.classList.add(styleToApply);
 
     // cmp-hero-navigation 색상 모드 적용
-    heroNavigation.classList.add(colorMode[styleGroup.indexOf(styleToApply)]);
+    if(heroNavigation) {
+        heroNavigation.classList.add(colorMode[styleGroup.indexOf(styleToApply)]);
+    }
 
     // 공지사항 swiper 에 색상 모드 적용
-    noticeSwiper.classList.add(colorMode[styleGroup.indexOf(styleToApply)]);
+    if(noticeSwiper) {
+        noticeSwiper.classList.add(colorMode[styleGroup.indexOf(styleToApply)]);
+    }
 
     // 중복 슬라이드의 비디오 요소 선택
     const duplicateSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-duplicate video');
@@ -278,9 +286,11 @@ if (firstSlideVideo) {
 }
 
 // .notice-swiper가 하위 자식인지 확인하고 .has-notice 클래스 추가
-const hasNoticeSwiper = interactiveHero.querySelector('.notice-swiper') !== null;
+const hasNoticeSwiper = interactiveHero.querySelector('.notice-swiper');
+console.log(hasNoticeSwiper)
 if (hasNoticeSwiper) {
     interactiveHero.classList.add('has-notice');
 } else {
+    interactiveHero.classList.remove('has-notice');
     console.log('.notice-swiper가 interactiveHero의 하위 자식이 아닙니다.');
 }
