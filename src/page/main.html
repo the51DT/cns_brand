@@ -434,11 +434,74 @@
                 </div>
                 <!-- notice + Interactive Hero + navigation list // -->
                 <!-- Search -->
-                <div class="main-content__inner">
+                <div class="main-content__inner dynamic-search dynamic-search--collapsed">
+                    <div class="main-container">
+                        <div class="dynamic-search__collapsed-area">
+                            <div class="main-form-element">
+                                <div class="main-form-element__inner input-search">
+                                    <input type="text" value="" placeholder="키워드만으로 원하는 정보를 찾아보세요" class="input-search__item" disabled />
+                                    <!-- <button type="button" class="btn btn-remove">
+                                        <i class="ico icon-remove-bl28"></i>
+                                        <span class="ir-text">삭제</span>
+                                    </button> -->
+                                    <button type="button" class="btn btn-search">
+                                        <i class="ico icon-search-bl35"></i>
+                                        <span class="ir-text">검색</span>
+                                    </button>
+                                </div>
+                                <div class="main-form-element__inner search-keyword">
+                                    <div class="main-form-element__scroll">
+                                        <button type="button" class="search-keyword__button"># 클라우드</button>
+                                        <button type="button" class="search-keyword__button"># 채용</button>
+                                        <button type="button" class="search-keyword__button"># AI</button>
+                                        <button type="button" class="search-keyword__button"># 물류 창고 자동화</button>
+                                        <button type="button" class="search-keyword__button"># 운용 계획 솔루션</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dynamic-search__expanded-area">
+                            <span class="block font-head-lg font-semibold color-text-default text-center">
+                                키워드만으로 원하는 정보를 찾아보세요
+                            </span>
+                            <%
+                                const inputData = [
+                                    {
+                                        inputData: [
+                                            {
+                                                id: 10,
+                                                title: "search",
+                                                type: "search",
+                                                placeholder: "placeholder",
+                                            },
+                                        ],
+                                    },
+                                ]
+                            %>
+                            <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                                jsonData: inputData,
+                            })) %>
+                            <div class="dynamic-search__keyword-area">
+                                <div class="dynamic-search__keyword-area__scroll">
+                                    <button type="button" class="dynamic-search__keyword-button">클라우드 알아보기</button>
+                                    <button type="button" class="dynamic-search__keyword-button">클라우드 보안은 어떻게 하나요?</button>
+                                    <button type="button" class="dynamic-search__keyword-button">현재 채용 중인 직군은?</button>
+                                    <button type="button" class="dynamic-search__keyword-button">운송 계획 최적화를 위한 솔루션</button>
+                                    <button type="button" class="dynamic-search__keyword-button">투자를 위한 기업 정보</button>
+                                    <button type="button" class="dynamic-search__keyword-button">운송 계획 최적화를 위한 솔루션</button>
+                                    <button type="button" class="dynamic-search__keyword-button">클라우드 알아보기</button>
+                                    <button type="button" class="dynamic-search__keyword-button">물류 창고에 자동화 도입하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- Search // -->
                 <!-- Service -->
                 <div class="main-content__inner">
+                    <div class="main-container">
+
+                    </div>
                 </div>
                 <!-- Service // -->
                 <!-- News -->

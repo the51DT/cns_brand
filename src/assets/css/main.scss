@@ -320,6 +320,7 @@
     // .header {
     //     border-bottom: 0;
     // }
+    // 상단 interactive banner
     .interactive-hero {
         &.hero-style-01 {
             .interactive-swiper {
@@ -529,6 +530,7 @@
             }
         }
     }
+    // 공지사항
     .notice-swiper {
         position: absolute;
         top: 0;
@@ -580,6 +582,7 @@
             }
         }
     }
+    // heroNavigation
     .cmp-hero-navigation {
         @media #{$min1280} {
             position: absolute;
@@ -592,6 +595,41 @@
             opacity: 0;
         }
     }
+    //Search
+    .dynamic-search {
+        .main-container {
+            
+        }
+        &--collapsed {
+            .dynamic-search__collapsed-area {
+                display: block;
+            }
+            .dynamic-search__expanded-area {
+                display: none;
+            }
+            .main-container {
+                margin-bottom: calc(96 / 16 * 1rem);
+                @media #{$min1280} {
+                    margin-bottom: calc(160 / 16 * 1rem);
+                }
+            }
+        }
+        &--expanded {
+            .dynamic-search__collapsed-area {
+                display: none;
+            }
+            .dynamic-search__expanded-area {
+                display: block;
+            }
+            .main-container {
+                margin-bottom: calc(96 / 16 * 1rem);
+                @media #{$min1280} {
+                    margin-bottom: calc(199 / 16 * 1rem);
+                }
+            }
+        }
+    }
+    // News
     .news-swiper {
         .main-container {
             padding: 0 calc(20 / 16 * 1rem);
@@ -690,6 +728,7 @@
             }
         }
     }
+    //Button Banner
     .button-banner {
         background-color: #F5F7F9;
         .main-container {
