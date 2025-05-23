@@ -1,24 +1,36 @@
-//gsap 관련 script - S
-const isPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
+let isPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
 const carouselWrap = document.querySelector('.carousel-wrap');
 const cardItems = document.querySelectorAll('.carousel-wrap .card-context');
 
-let testVal;
-let timflag;
-let animationFlag;
-let groupActive;
-let targetItemGroup;
+let autoActiveTimer = null;
+let groupIndex = 0;
+const groupNames = ['group1', 'group2', 'group3'];
 
-var requestAnimationFrame =
-  window.requestAnimationFrame ||
-  window.mozRequestAnimationFrame ||
-  window.webkitRequestAnimationFrame ||
-  window.msRequestAnimationFrame;
-var cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
+// 자동 그룹 active 함수
+function startAutoGroupActive() {
+  if (autoActiveTimer !== null) return; // 이미 실행 중이면 재시작하지 않음
+  stopAutoGroupActive(); // 기존 타이머 제거
+  autoActiveTimer = setInterval(() => {
+    const currentGroup = groupNames[groupIndex];
 
-let resizeTimer;
+    cardItems.forEach((item) => {
+      if (item.dataset.group === currentGroup) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });    groupIndex = (groupIndex + 1) % groupNames.length;
+  }, 2000);  
+}
 
-// card-context 셋팅
+function stopAutoGroupActive() {
+  if (autoActiveTimer) {
+    clearInterval(autoActiveTimer);    
+    autoActiveTimer = null;
+  }
+}
+
+// 카드 초기화
 function cardItemSetting() {
   const infoCardItems = [
     {
@@ -76,127 +88,47 @@ function cardItemSetting() {
   ];
 
   cardItems.forEach((item, idx) => {
-    let itemGroupTitle = item.dataset.group;
-    let itemCardInnerItem = item.querySelector('.card-inner');
-    timeflag = 1;
+    const itemGroup = item.dataset.group;
+    const itemInner = item.querySelector('.card-inner');
 
-    itemCardInnerItem.addEventListener('mouseover', (e) => {      
-      timeflag = 0;
-      cardEventCtrl(e);
-    });
-    itemCardInnerItem.addEventListener('mouseleave', (e) => {       
-      timeflag = 1;
-      cardEventCtrl(e);
-    });
-
-    groupActive = function groupChecking() {
-      if (isPc) {
-        // if (timeflag == 0) {
-        //   console.log('1 timflag값 : ' + timeflag);
-        //   setTimeout(() => {
-        //     if (itemGroupTitle == 'group1') {
-        //       item.classList.add('active');
-        //     } else {
-        //       item.classList.remove('active');
-        //     }
-        //   }, 1000 * 1);
-
-        //   setTimeout(() => {
-        //     if (itemGroupTitle == 'group2') {
-        //       item.classList.add('active');
-        //     } else {
-        //       item.classList.remove('active');
-        //     }
-        //   }, 1000 * 3);
-
-        //   setTimeout(() => {
-        //     if (itemGroupTitle == 'group3') {
-        //       item.classList.add('active');
-        //     } else {
-        //       item.classList.remove('active');
-        //     }
-        //     timeflag = 1;
-        //     groupActive();
-        //     console.log('2 timflag값 : ' + timeflag);
-        //   }, 1000 * 6);
-        // } else if (timeflag == 1) {
-        //   animationFlag = setInterval(() => {
-        //     setTimeout(() => {
-        //       if (itemGroupTitle == 'group1') {
-        //         item.classList.add('active');
-        //       } else {
-        //         item.classList.remove('active');
-        //       }
-        //     }, 1000 * 1);
-
-        //     setTimeout(() => {
-        //       if (itemGroupTitle == 'group2') {
-        //         item.classList.add('active');
-        //       } else {
-        //         item.classList.remove('active');
-        //       }
-        //     }, 1000 * 3);
-
-        //     setTimeout(() => {
-        //       if (itemGroupTitle == 'group3') {
-        //         item.classList.add('active');
-        //       } else {
-        //         item.classList.remove('active');
-        //       }
-        //     }, 1000 * 6);
-
-        //     console.log('3 timflag값 : ' + timeflag);
-        //   }, 6000);
-        // }
-        
-        if(timeflag == 1) {
-          console.log('마우스오버아닐때 : 타임플래그 1이 나와야함 : ', timeflag);
-          var num = 1;
-          animationFlag = setInterval(() => {
-            item.classList.remove('active');
-            num++;
-            if (num <= infoCardItems.length) {
-              if (itemGroupTitle == `group${num}`) {
-                item.classList.add('active');
-              }
-            } else if(num > infoCardItems.length) {
-              num = 0;
-            }
-            console.log("돈다")
-          }, 2000);                       
-        } else if (timeFlag == 0) {
-          clearInterval(animationFlag);  
-        }
-      }
-    };
-
-    if (timeflag == 1) {      
-      console.log("최초, timflag값 : "+ timeflag);
-      groupActive();
+    if (itemGroup === 'group1') {
+      itemInner.dataset.style = isPc
+        ? `url('${infoCardItems[0].group1[idx].imgPC}')`
+        : `url('${infoCardItems[0].group1[idx].imgMO}')`;
+    } else if (itemGroup === 'group2') {
+      itemInner.dataset.style = isPc
+        ? `url('${infoCardItems[1].group2[idx - 4].imgPC}')`
+        : `url('${infoCardItems[1].group2[idx - 4].imgMO}')`;
+    } else if (itemGroup === 'group3') {
+      itemInner.dataset.style = isPc
+        ? `url('${infoCardItems[2].group3[idx - 7].imgPC}')`
+        : `url('${infoCardItems[2].group3[idx - 7].imgMO}')`;
     }
 
-    if (itemGroupTitle == 'group1') {
-      if (!isPc) {
-        itemCardInnerItem.dataset.style = `url("${infoCardItems[0].group1[idx].imgMO}")`;
+    if (!itemInner.dataset.bound) {
+      if (isPc) {
+        itemInner.addEventListener('mouseover', (e) => {
+          stopAutoGroupActive();
+          cardEventCtrl(e);
+        });
+        itemInner.addEventListener('mouseleave', (e) => {
+          startAutoGroupActive();
+          cardEventCtrl(e);
+        });
       } else {
-        itemCardInnerItem.dataset.style = `url("${infoCardItems[0].group1[idx].imgPC}")`;
+        itemInner.addEventListener('touchstart', (e) => {
+          carouselWrap.querySelectorAll('.card-context').forEach((card) => {
+            card.classList.remove('on');
+            card.querySelector('.card-inner').style.backgroundImage = 'revert';
+            card.querySelector('.card-inner').style.border = '1px solid #565656;';
+          });
+          cardEventCtrl(e);
+        });
       }
-    } else if (itemGroupTitle == 'group2') {
-      if (!isPc) {
-        itemCardInnerItem.dataset.style = `url("${infoCardItems[1].group2[idx - 4].imgMO}")`;
-      } else {
-        itemCardInnerItem.dataset.style = `url("${infoCardItems[1].group2[idx - 4].imgPC}")`;
-      }
-    } else if (itemGroupTitle == 'group3') {
-      if (!isPc) {
-        itemCardInnerItem.dataset.style = `url("${infoCardItems[2].group3[idx - 7].imgMO}")`;
-      } else {
-        itemCardInnerItem.dataset.style = `url("${infoCardItems[2].group3[idx - 7].imgPC}")`;
-      }
+      itemInner.dataset.bound = 'true'; // 이벤트 중복 방지
     }
   });
 }
-
 function initCarousel() {
   const intViewportWidth = window.innerWidth;
   if (intViewportWidth < 1280) {
@@ -209,9 +141,6 @@ function initCarousel() {
     // pc
     gsap.set('.carousel-wrap', {
       height: '100%',
-      onComplete: () => {
-        gsap.killTweensOf(cardItems);
-      },
     });
   }
 }
@@ -223,7 +152,7 @@ function carousel() {
     ease: 'power1.inOut',
     delay: 0.1,
   }),
-    gsap.ticker.fps(60);
+  gsap.ticker.fps(60);
   const e = document.querySelector('.carousel-wrap'),
     t = document.querySelectorAll('.card-context');
   let n = e.clientWidth,
@@ -256,20 +185,14 @@ function carousel() {
     v = () => {
       (m = !1), e.classList.remove('is-dragging');
     };
-
-  gsap.utils.toArray('.card-context', e).forEach((e) => {
-    const cardInnerItem = e.querySelector('.card-inner');
-    // (mobile) touch시 카드 이벤트 제어
-    cardInnerItem.addEventListener( 'touchstart', (e) => { cardEventCtrl(e);}, { passive: true });
-  }),
-    e.addEventListener('touchstart', S, { passive: true }),
-    e.addEventListener('touchmove', h, { passive: true }),
-    e.addEventListener('touchend', v, { passive: true }),
-    e.addEventListener('mousedown', S),
-    e.addEventListener('mousemove', h),
-    e.addEventListener('mouseleave', v),
-    e.addEventListener('mouseup', v),
-    e.addEventListener('selectstart', () => !1);
+  e.addEventListener('touchstart', S, { passive: true }),
+  e.addEventListener('touchmove', h, { passive: true }),
+  e.addEventListener('touchend', v, { passive: true }),
+  e.addEventListener('mousedown', S),
+  e.addEventListener('mousemove', h),
+  e.addEventListener('mouseleave', v),
+  e.addEventListener('mouseup', v),
+  e.addEventListener('selectstart', () => !1);
   const x = (e) => {
     gsap.set(t, {
       x: (t) => t * o + e,
@@ -339,24 +262,18 @@ function carousel() {
 function cardEventCtrl(e) {
   const targetItemStyle = e.target.dataset.style;
   targetItemGroup = e.target.closest('.card-context').dataset.group;
-  
-  // [pc] mouseover시 동일한 그룹 active 처리
-  if (isPc) {
-    console.log('mouseover' + timeflag);
-    console.log('타겟 그룹 : ' + targetItemGroup);
-    
-    document.querySelectorAll('.carousel-wrap .card-context').forEach((item) => {
-      item.classList.remove('active');
-      if (item.dataset.group == targetItemGroup) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
-    });
 
-    groupActive();
-  }
-  // [pc/mo 공통] mouseover, touch시 on클래스 이벤트 제어 (내용, 배경이미지 노출)
+  // [pc] mouseover시 동일한 그룹 active 처리
+  document.querySelectorAll('.carousel-wrap .card-context').forEach((item) => {      
+    item.classList.remove('active');
+    if (item.dataset.group == targetItemGroup) {
+      item.classList.add('active');        
+    } else {
+      item.classList.remove('active');
+    }
+  });
+
+  // [pc/mo 공통] mouseover, touch시 on클래스 이벤트 제어 (내용, 배경이미지 노출)  
   if (e.target.closest('.card-context').classList.contains('on')) {
     e.target.closest('.card-context').classList.remove('on');
     e.target.style.backgroundImage = 'revert';
@@ -366,38 +283,63 @@ function cardEventCtrl(e) {
     e.target.style.backgroundImage = targetItemStyle;
     e.target.style.border = '1px solid #8e8e8e';
   }
+  
 }
 
+function hoverTest() {  
+  carouselWrap.querySelectorAll('.card-context').forEach((item) => {
+    const cardInner = item.querySelector('.card-inner');
+    cardInner.addEventListener('mouseover', (e) => {      
+      stopAutoGroupActive();
+      cardEventCtrl(e);
+    });
+    cardInner.addEventListener('mouseleave', (e) => {
+      startAutoGroupActive();
+      cardEventCtrl(e);
+    });
+  });
+}
+// 초기 실행
 cardItemSetting();
 if (!isPc) {
-  initCarousel();
+  stopAutoGroupActive();
+  initCarousel();  
+} else {
+  startAutoGroupActive();
 }
 
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    const intViewportWidth = window.innerWidth;
 
-    /*
-    (720 이상일때, pc / tablet 체크용 클래스 추가)
-    - PC에서 Mobile로 리사이징할때 체크하기 위해, 특정 중간 태블릿 조건일때, 
-    - css 다르게 처리되는 것이 있어, 720 이상일경우에는 tablet사이즈도 pc로 판단하여 체크하려고 클래스 추가하였음.
-    */
-    if (intViewportWidth > 720) {
+// ResizeObserver 정의
+const resizeObserver = new ResizeObserver((entries) => {
+  for (let entry of entries) {
+    const width = entry.contentRect.width;
+    const nowIsPc = width >= 1280;
+
+    // .type-pc 클래스 처리 (720 이상)
+    if (width > 720) {
       carouselWrap.classList.add('type-pc');
     } else {
       carouselWrap.classList.remove('type-pc');
     }
 
-    if (intViewportWidth >= 1280) {
-      // console.log("pc");
+    // PC/Mobile 전환 감지 시 처리
+    if (nowIsPc !== isPc) {
+      isPc = nowIsPc;
+      cardItemSetting(); // 이미지 및 이벤트 재설정
+    }
+
+    // 캐러셀 상태 재설정
+    if (isPc) {
       initCarousel();
+      hoverTest(); // 이벤트 바인딩 검증
     } else {
       if (carouselWrap.classList.contains('type-pc')) {
-        // console.log("pc -> mobile");
         initCarousel();
       }
+      initCarousel(); // 모바일일 경우 두 번 호출 유지
     }
-  }, 500);
+  }
 });
-//gsap 관련 script - E
+
+// .carousel-wrap 요소에만 ResizeObserver 적용
+resizeObserver.observe(carouselWrap);
