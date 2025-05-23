@@ -266,7 +266,6 @@ function cardEventCtrl(e) {
 
   console.log(targetItemGroup);
   // [pc] mouseover시 동일한 그룹 active 처리
-  document.querySelectorAll('.carousel-wrap .card-context').
   document.querySelectorAll('.carousel-wrap .card-context').forEach((item) => {      
     // item.classList.remove('active');
     if (item.dataset.group == targetItemGroup) {
