@@ -1,4 +1,4 @@
-let isPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
+let chkPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
 const carouselWrap = document.querySelector('.carousel-wrap');
 const cardItems = document.querySelectorAll('.carousel-wrap .card-context');
 
@@ -91,26 +91,28 @@ function cardItemSetting() {
     const itemInner = item.querySelector('.card-inner');
 
     if (itemGroup === 'group1') {
-      itemInner.dataset.style = isPc
+      itemInner.dataset.style = chkPc
         ? `url('${infoCardItems[0].group1[idx].imgPC}')`
         : `url('${infoCardItems[0].group1[idx].imgMO}')`;
     } else if (itemGroup === 'group2') {
-      itemInner.dataset.style = isPc
+      itemInner.dataset.style = chkPc
         ? `url('${infoCardItems[1].group2[idx - 4].imgPC}')`
         : `url('${infoCardItems[1].group2[idx - 4].imgMO}')`;
     } else if (itemGroup === 'group3') {
-      itemInner.dataset.style = isPc
+      itemInner.dataset.style = chkPc
         ? `url('${infoCardItems[2].group3[idx - 7].imgPC}')`
         : `url('${infoCardItems[2].group3[idx - 7].imgMO}')`;
     }
 
     if (!itemInner.dataset.bound) {
-      if (isPc) {
-        itemInner.addEventListener('mouseover', (e) => {
+      if (chkPc) {
+        itemInner.addEventListener('mouseover', (e) => {          
+          console.log('mouseover');
           stopAutoGroupActive();
           cardEventCtrl(e);
         });
         itemInner.addEventListener('mouseleave', (e) => {
+          console.log('mouseleave');
           startAutoGroupActive();
           cardEventCtrl(e);
         });
@@ -262,10 +264,12 @@ function cardEventCtrl(e) {
   const targetItemStyle = e.target.dataset.style;
   targetItemGroup = e.target.closest('.card-context').dataset.group;
 
+  console.log(targetItemGroup);
   // [pc] mouseover시 동일한 그룹 active 처리
   document.querySelectorAll('.carousel-wrap .card-context').forEach((item) => {      
-    item.classList.remove('active');
+    // item.classList.remove('active');
     if (item.dataset.group == targetItemGroup) {
+      // conle.log(item.dataset.group);
       item.classList.add('active');        
     } else {
       item.classList.remove('active');
@@ -284,23 +288,9 @@ function cardEventCtrl(e) {
   }
   
 }
-
-function hoverTest() {  
-  carouselWrap.querySelectorAll('.card-context').forEach((item) => {
-    const cardInner = item.querySelector('.card-inner');
-    cardInner.addEventListener('mouseover', (e) => {      
-      stopAutoGroupActive();
-      cardEventCtrl(e);
-    });
-    cardInner.addEventListener('mouseleave', (e) => {
-      startAutoGroupActive();
-      cardEventCtrl(e);
-    });
-  });
-}
 // 초기 실행
 cardItemSetting();
-if (!isPc) {
+if (!chkPc) {
   stopAutoGroupActive();
   initCarousel();  
 } else {
@@ -322,20 +312,19 @@ const resizeObserver = new ResizeObserver((entries) => {
     }
 
     // PC/Mobile 전환 감지 시 처리
-    if (nowIsPc !== isPc) {
-      isPc = nowIsPc;
+    if (nowIsPc !== chkPc) {
+      chkPc = nowIsPc;
       cardItemSetting(); // 이미지 및 이벤트 재설정
     }
 
     // 캐러셀 상태 재설정
-    if (isPc) {
-      initCarousel();
-      hoverTest(); // 이벤트 바인딩 검증
+    if (chkPc) {
+      initCarousel();      
     } else {
       if (carouselWrap.classList.contains('type-pc')) {
         initCarousel();
       }
-      initCarousel(); // 모바일일 경우 두 번 호출 유지
+      initCarousel();
     }
   }
 });
