@@ -5,7 +5,7 @@
     4. 슬라이드 5 부터는 news 타입으로 적용 (.interactive-swiper__slide--news)
     5. .interactive-swiper__slide 의 경우 data-bg-color 의 값을 가지고 적용 (data-bg-color 가 없으면 랜덤으로 적용된 {color-mode, hero-style} 으로 반영)
     6. 슬라이드가 active 되면 동작이 적용
-    7. .interactive-swiper__frame--video 의 경우 슬라이드가 active 되면 video.play 처리 =  swiperHero
+    7. .interactive-swiper__frame__video 의 경우 슬라이드가 active 되면 video.play 처리 =  swiperHero
 */
 let isPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
 window.addEventListener('resize', function () {
@@ -17,7 +17,6 @@ const interactiveSwiper = interactiveHero.querySelector('.interactive-swiper');
 const interactiveSlide = interactiveSwiper.querySelectorAll('.interactive-swiper__slide');
 const interactiveSlideNews = interactiveSwiper.querySelectorAll('.interactive-swiper__slide--news');
 const heroNavigation = document.querySelector('.cmp-hero-navigation');
-// const heroNavigationItem = heroNavigation.querySelectorAll('li');
 const noticeSwiper = document.querySelector('.notice-swiper');
 console.log('interactiveHero:', interactiveHero);
 
@@ -57,19 +56,23 @@ function applyStyleToSlide(index) {
     colorMode.forEach(mode => interactiveHero.classList.remove(mode)); // 모든 색상 모드 제거
 
     // cmp-hero-navigation 색상 모드 제거
-    if(heroNavigation.classList.contains('color-mode-black')) {
-        heroNavigation.classList.remove('color-mode-black'); // 모든 색상 모드 제거
-    }
-    if (heroNavigation.classList.contains('color-mode-white')) {
-        heroNavigation.classList.remove('color-mode-white'); // 모든 색상 모드 제거
+    if(heroNavigation) {
+        if(heroNavigation.classList.contains('color-mode-black')) {
+            heroNavigation.classList.remove('color-mode-black'); // 모든 색상 모드 제거
+        }
+        if (heroNavigation.classList.contains('color-mode-white')) {
+            heroNavigation.classList.remove('color-mode-white'); // 모든 색상 모드 제거
+        }
     }
 
-    // 공지사항 색상 모드 제거
-    if(noticeSwiper.classList.contains('color-mode-black')) {
-        noticeSwiper.classList.remove('color-mode-black'); // 모든 색상 모드 제거
-    }
-    if (noticeSwiper.classList.contains('color-mode-white')) {
-        noticeSwiper.classList.remove('color-mode-white'); // 모든 색상 모드 제거
+    if(noticeSwiper) {
+        // 공지사항 색상 모드 제거
+        if(noticeSwiper.classList.contains('color-mode-black')) {
+            noticeSwiper.classList.remove('color-mode-black'); // 모든 색상 모드 제거
+        }
+        if (noticeSwiper.classList.contains('color-mode-white')) {
+            noticeSwiper.classList.remove('color-mode-white'); // 모든 색상 모드 제거
+        }
     }
 
     // 주어진 인덱스에 맞는 스타일을 적용
@@ -77,16 +80,19 @@ function applyStyleToSlide(index) {
     interactiveHero.classList.add(styleToApply);
 
     // cmp-hero-navigation 색상 모드 적용
-    heroNavigation.classList.add(colorMode[styleGroup.indexOf(styleToApply)]);
+    if(heroNavigation) {
+        heroNavigation.classList.add(colorMode[styleGroup.indexOf(styleToApply)]);
+    }
 
     // 공지사항 swiper 에 색상 모드 적용
-    noticeSwiper.classList.add(colorMode[styleGroup.indexOf(styleToApply)]);
+    if(noticeSwiper) {
+        noticeSwiper.classList.add(colorMode[styleGroup.indexOf(styleToApply)]);
+    }
 
     // 중복 슬라이드의 비디오 요소 선택
     const duplicateSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-duplicate video');
     duplicateSlides.forEach(videoElement => {
         videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 랜덤 스타일에 맞는 비디오 경로 설정
-        // videoElement.load(); // 비디오 로드
         console.log('duplicateSlides:', videoElement.src);
         videoElement.load(); // 비디오 파일 로드
         // videoElement.play().catch(error => {
@@ -114,7 +120,6 @@ function applyStyleToSlide(index) {
         interactiveSlideNews[index - 4].style.backgroundColor = newsStyleGroup[index - 4];
     } else {
         // 해당 색상 모드 추가
-        // console.log('index:', index, colorMode[styleGroup.indexOf(styleToApply)], heroNavigation)
         const colorModeToApply = colorMode[styleGroup.indexOf(styleToApply)];
         interactiveHero.classList.add(colorModeToApply);
     }
@@ -147,40 +152,28 @@ function onSlideChangeStart() {
         slideTextGroup.classList.remove('fade-in');
     })
     activeSlideTextGroup.classList.add('fade-in');
-    // heroNavigationItem.classList.add('fade-in');
-    
-    // console.log('activeSlideTextGroup:', activeSlideTextGroup)
 
     if (activeIndex < currentStyles.length) { // 스타일 그룹 범위 내에서만 적용
         applyStyleToSlide(activeIndex); // 스타일 적용
     } else {
         // 다섯번 째 슬라이드 (News group)
         applyStyleToSlide(activeIndex); // 스타일 적용
-        // 다섯 번째 슬라이드부터 newsStyleGroup 의 색상 적용 : interactive-swiper, interactive-swiper__slide--news
-        // interactiveSwiper.style.backgroundColor = newsStyleGroup[activeIndex - 4];
-        // interactiveSlideNews[activeIndex - 4].style.backgroundColor = newsStyleGroup[activeIndex - 4];
     }
 }
 
 function handleActiveEffect(el) {
     const hasEffect = el.querySelectorAll('.active-effect');
-    // const allSlides = document.querySelectorAll('.swiper-slide .active-effect');
-    // allSlides.forEach((item) => {
-    //     item.classList.remove('fade-in-bottom');
-    // });
 
     if (hasEffect.length > 0) {
         hasEffect.forEach((activeItem) => {
             const effectType = activeItem.getAttribute('data-effect');
             const effectTarget = activeItem.querySelector('.active-effect__item');
             const effectDelayTime = effectTarget ? effectTarget.getAttribute('data-effect-delay') : null;
-            // console.log('hasEffect:', hasEffect, effectType)
             if(effectType) {
                 activeItem.classList.add(effectType);
             }
             console.log('activeItem, effectType::', activeItem, effectType)
             if (effectDelayTime !== null) {
-                // console.log(effectTarget);
                 effectTarget.style.animationDelay = effectDelayTime;
             }
         });
@@ -191,33 +184,11 @@ function handleActiveEffect(el) {
 
 // active 슬라이드 감지 (swiper 용 handleActiveEffect)
 function checkActiveSlide(swiper) {
-    // const activeIndex = swiper.activeIndex; // 현재 활성 슬라이드의 인덱스
-    // const activeSlide = swiper.slides[activeIndex];
-    // const hasEffect = activeSlide.querySelectorAll('.active-effect');
-    // if(hasEffect !== null) {
-    //     // console.log('has')
-    //     hasEffect.forEach((wrap) => {
-    //         const effectTarget = wrap.querySelector('.active-effect__item');
-    //         const effectDelayTime = effectTarget.getAttribute('data-effect-delay');
-    //         wrap.classList.add('fade-in-bottom');
-    //         if(effectDelayTime) {
-    //             console.log(effectTarget)
-    //             effectTarget.style.animationDelay = effectDelayTime;
-    //         }
-    //     })
-
-    // } else {
-    //     console.log('null')
-    // }
     const activeIndex = swiper.activeIndex; // 현재 활성 슬라이드의 인덱스
     const activeSlide = swiper.slides[activeIndex];
+
     handleActiveEffect(activeSlide); // 새로운 함수 호출
 }
-
-// function checkHeroNavigation() {
-//     console.log(checkHeroNavigation)
-//     heroNavigation.classList.add('fade-in');
-// }
 
 // Swiper 초기화
 let swiperHero = new Swiper('.swiper-interactive-banner', {
@@ -236,25 +207,18 @@ let swiperHero = new Swiper('.swiper-interactive-banner', {
         },
         slideChange: function () {
             checkActiveSlide(this); // 'this'를 통해 swiperHero 인스턴스를 전달
-            // const activeIndex = this.activeIndex; // 현재 활성 슬라이드의 인덱스
-            // const activeSlide = this.slides[activeIndex];
-            // handleActiveEffect(activeSlide); // 새로운 함수 호출
         },
         slideChangeTransitionStart: function() {
             onSlideChangeStart();
-            // checkHeroNavigation()
             if(isPc) { // 슬라이드 전환 종료 시 비디오 제어
                 heroNavigation.classList.remove('fade-in');
             }
-            // console.log('slideChange:', heroNavigation)
         }, // 슬라이드 전환 시작 시 스타일 적용
         slideChangeTransitionEnd: function() {
             onSlideChange(); // 슬라이드 전환 종료 시 비디오 제어
             if(isPc) { // PC 분기에서만 적용
                 heroNavigation.classList.add('fade-in');
             }
-            // checkActiveSlide(this);
-            // console.log('slideChangeTransitionEnd:', heroNavigation)
         }
     },
 });
@@ -278,9 +242,11 @@ if (firstSlideVideo) {
 }
 
 // .notice-swiper가 하위 자식인지 확인하고 .has-notice 클래스 추가
-const hasNoticeSwiper = interactiveHero.querySelector('.notice-swiper') !== null;
+const hasNoticeSwiper = interactiveHero.querySelector('.notice-swiper');
+console.log(hasNoticeSwiper)
 if (hasNoticeSwiper) {
     interactiveHero.classList.add('has-notice');
 } else {
+    interactiveHero.classList.remove('has-notice');
     console.log('.notice-swiper가 interactiveHero의 하위 자식이 아닙니다.');
 }
