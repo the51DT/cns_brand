@@ -77,6 +77,12 @@
     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
     font-weight: 400;
 }
+.font-body-md-mode {
+    font-size: calc(var(--typo-pc-size-body-md-mode) / 16 * 1rem);
+    line-height: calc(var(--typo-pc-line-height-body-md-mode) / 16 * 1rem);
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+    font-weight: 400;
+}
 .font-caption-lg {
     font-size: calc(var(--typo-pc-size-caption-lg) / 16 * 1rem);
     line-height: calc(var(--typo-pc-line-height-caption-lg) / 16 * 1rem);
@@ -173,6 +179,10 @@
     .font-body-sm {
         font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
         line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+    }
+    .font-body-md-mode {
+        font-size: calc(var(--typo-mo-size-body-md-mode) / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-md-mode) / 16 * 1rem);
     }
     .font-caption-lg {
         font-size: calc(var(--typo-mo-size-caption-lg) / 16 * 1rem);

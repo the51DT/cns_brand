@@ -37,7 +37,10 @@ $fileType: "svg";
     }       
     &.icon-search-border-bl40 {
         @include iconFile(40,40,'icon_search_border_bl40');
-    }       
+    }
+    &.icon-search-bl56 {
+        @include iconFile(56,56,'icon_search_bl56');
+    }      
     &.icon-remove-bl24 {
         @include iconFile(24,24,'ico_remove_gray24');
     }   
