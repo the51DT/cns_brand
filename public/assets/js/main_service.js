@@ -9,7 +9,6 @@ const groupNames = ['group1', 'group2', 'group3'];
 // 자동 그룹 active 함수
 function startAutoGroupActive() {
   if (autoActiveTimer !== null) return; // 이미 실행 중이면 재시작하지 않음
-  stopAutoGroupActive(); // 기존 타이머 제거
   autoActiveTimer = setInterval(() => {
     const currentGroup = groupNames[groupIndex];
 
