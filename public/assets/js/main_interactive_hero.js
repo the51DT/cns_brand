@@ -77,7 +77,9 @@ function applyStyleToSlide(index) {
 
     // 주어진 인덱스에 맞는 스타일을 적용
     const styleToApply = currentStyles[index]; // 랜덤으로 섞인 스타일
-    interactiveHero.classList.add(styleToApply);
+    if(styleToApply) {
+        interactiveHero.classList.add(styleToApply);
+    }
 
     // cmp-hero-navigation 색상 모드 적용
     if(heroNavigation) {
