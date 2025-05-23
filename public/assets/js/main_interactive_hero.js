@@ -18,7 +18,7 @@ const interactiveSlide = interactiveSwiper.querySelectorAll('.interactive-swiper
 const interactiveSlideNews = interactiveSwiper.querySelectorAll('.interactive-swiper__slide--news');
 const heroNavigation = document.querySelector('.cmp-hero-navigation');
 const noticeSwiper = document.querySelector('.notice-swiper');
-console.log('interactiveHero:', interactiveHero);
+// console.log('interactiveHero:', interactiveHero);
 
 const styleGroup = ['hero-style-01', 'hero-style-02', 'hero-style-03', 'hero-style-04'];
 const colorMode = ['color-mode-white', 'color-mode-black', 'color-mode-white', 'color-mode-black']; // 스타일에 따른 색상 모드
@@ -95,7 +95,7 @@ function applyStyleToSlide(index) {
     const duplicateSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-duplicate video');
     duplicateSlides.forEach(videoElement => {
         videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 랜덤 스타일에 맞는 비디오 경로 설정
-        console.log('duplicateSlides:', videoElement.src);
+        // console.log('duplicateSlides:', videoElement.src);
         videoElement.load(); // 비디오 파일 로드
         // videoElement.play().catch(error => {
         //     console.error('비디오 재생 오류:', error);
@@ -106,7 +106,7 @@ function applyStyleToSlide(index) {
     const activeSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-active video');
     activeSlides.forEach(videoElement => {
         videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 랜덤 스타일에 맞는 비디오 경로 설정
-        console.log('activeSlides:', videoElement.src);
+        // console.log('activeSlides:', videoElement.src);
         videoElement.load(); // 비디오 파일 로드
         videoElement.play().catch(error => {
             console.error('비디오 재생 오류:', error);
@@ -174,13 +174,11 @@ function handleActiveEffect(el) {
             if(effectType) {
                 activeItem.classList.add(effectType);
             }
-            console.log('activeItem, effectType::', activeItem, effectType)
+            // console.log('activeItem, effectType::', activeItem, effectType)
             if (effectDelayTime !== null) {
                 effectTarget.style.animationDelay = effectDelayTime;
             }
         });
-    } else {
-        console.log('null');
     }
 }
 
@@ -235,7 +233,7 @@ const firstSlideTextbox = document.querySelector('.swiper-slide-active .interact
 const firstSlideVideo = document.querySelector('.swiper-slide-active video');
 if(firstSlide) {
     firstSlideTextbox.classList.add('fade-in'); 
-    console.log('firstSlideTextbox:', firstSlideTextbox)
+    // console.log('firstSlideTextbox:', firstSlideTextbox)
 }
 if (firstSlideVideo) {
     firstSlideVideo.play().catch(error => {
@@ -245,7 +243,7 @@ if (firstSlideVideo) {
 
 // .notice-swiper가 하위 자식인지 확인하고 .has-notice 클래스 추가
 const hasNoticeSwiper = interactiveHero.querySelector('.notice-swiper');
-console.log(hasNoticeSwiper)
+// console.log(hasNoticeSwiper)
 if (hasNoticeSwiper) {
     interactiveHero.classList.add('has-notice');
 } else {
