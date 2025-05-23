@@ -597,8 +597,11 @@
     }
     //Search
     .dynamic-search {
-        .main-container {
-            
+        &__title {
+            margin-bottom: calc(49 / 16 * 1rem);
+            @media #{$min1280} {
+                margin-bottom: calc(69 / 16 * 1rem);
+            }
         }
         &--collapsed {
             .dynamic-search__collapsed-area {
@@ -608,13 +611,21 @@
                 display: none;
             }
             .main-container {
+                margin-top: calc(40 / 16 * 1rem);
                 margin-bottom: calc(96 / 16 * 1rem);
                 @media #{$min1280} {
+                    margin-top: calc(23 / 16 * 1rem);
                     margin-bottom: calc(160 / 16 * 1rem);
                 }
             }
         }
         &--expanded {
+            .main-container {
+                max-width: none;
+                @media #{$min1280} {
+                    max-width: calc(1440 / 16 * 1rem);
+                }
+            }
             .dynamic-search__collapsed-area {
                 display: none;
             }
@@ -622,9 +633,50 @@
                 display: block;
             }
             .main-container {
+                margin-top: calc(96 / 16 * 1rem);
                 margin-bottom: calc(96 / 16 * 1rem);
                 @media #{$min1280} {
+                    margin-top: calc(200 / 16 * 1rem);
                     margin-bottom: calc(199 / 16 * 1rem);
+                }
+            }
+        }
+        // 펼침 상태의 검색 영역
+        .cmp-input {
+            &__item {
+                padding: calc(8 / 16 * 1rem) calc(32 / 16 * 1rem) calc(8 / 16 * 1rem) 0;
+                font-size: calc(var(--typo-mo-size-head-lg) / 16 * 1rem);
+                line-height: calc(var(--typo-mo-line-height-head-lg) / 16 * 1rem);
+                letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
+                font-weight: 500;
+                border-bottom-width: calc(2 / 16 * 1rem);
+                @media #{$min1280} {
+                    padding: calc(28 / 16 * 1rem) calc(56 / 16 * 1rem) calc(28 / 16 * 1rem) 0;
+                    font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
+                    line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
+                }
+            }
+            .btn {
+                &-remove {
+                    @media #{$min1280} {
+                        right: calc(86 / 16 * 1rem);
+                    }
+                    .ico {
+                        @media #{$min1280} {
+                            width: calc(56 / 16 * 1rem);
+                            min-width: calc(56 / 16 * 1rem);
+                            height: calc(56 / 16 * 1rem);
+                        }
+                    }
+                }
+                &-search {
+                    .ico {
+                        @media #{$min1280} {
+                            width: calc(56 / 16 * 1rem);
+                            min-width: calc(56 / 16 * 1rem);
+                            height: calc(56 / 16 * 1rem);
+                        }
+                    }
                 }
             }
         }

@@ -47,6 +47,9 @@ $fileType: "svg";
     &.icon-remove-bl28 {
         @include iconFile(28,28,'ico_remove_gray28');
     }   
+    &.icon-remove-bl56 {
+        @include iconFile(56,56,'icon-remove-bl56');
+    }   
     &.icon-arrow-right-bl16 {
         @include iconFile(16,16,'icon_arrow_right_bl16');
     }

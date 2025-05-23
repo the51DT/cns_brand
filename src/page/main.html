@@ -433,8 +433,12 @@
                     </div>
                 </div>
                 <!-- notice + Interactive Hero + navigation list // -->
-                <!-- Search -->
-                <div class="main-content__inner dynamic-search dynamic-search--collapsed">
+                <!-- 
+                    Search 
+                    1. .dynamic-search.dynamic-search--collapsed : 닫힘 상태
+                    2. .dynamic-search.dynamic-search--expanded : 펼침 상태
+                -->
+                <div class="main-content__inner dynamic-search dynamic-search--expanded">
                     <div class="main-container">
                         <div class="dynamic-search__collapsed-area">
                             <div class="main-form-element">
@@ -461,7 +465,7 @@
                             </div>
                         </div>
                         <div class="dynamic-search__expanded-area">
-                            <span class="block font-head-lg font-semibold color-text-default text-center">
+                            <span class="dynamic-search__title block font-head-lg font-semibold color-text-default text-center">
                                 키워드만으로 원하는 정보를 찾아보세요
                             </span>
                             <%
@@ -470,7 +474,6 @@
                                         inputData: [
                                             {
                                                 id: 10,
-                                                title: "search",
                                                 type: "search",
                                                 placeholder: "placeholder",
                                             },
