@@ -190,26 +190,15 @@ function carousel() {
     v = () => {
       (m = !1), e.classList.remove('is-dragging');
     };
-
-  gsap.utils.toArray('.card-context', e).forEach((e) => {
-    const cardInnerItem = e.querySelector('.card-inner');
-    // (mobile) touch시 카드 이벤트 제어
-    cardInnerItem.addEventListener(
-      'touchstart',
-      (e) => {
-        cardEventCtrl(e);
-      },
-      { passive: true },
-    );
-  }),
-    e.addEventListener('touchstart', S, { passive: true }),
-    e.addEventListener('touchmove', h, { passive: true }),
-    e.addEventListener('touchend', v, { passive: true }),
-    e.addEventListener('mousedown', S),
-    e.addEventListener('mousemove', h),
-    e.addEventListener('mouseleave', v),
-    e.addEventListener('mouseup', v),
-    e.addEventListener('selectstart', () => !1);
+  
+  e.addEventListener('touchstart', S, { passive: true }),
+  e.addEventListener('touchmove', h, { passive: true }),
+  e.addEventListener('touchend', v, { passive: true }),
+  e.addEventListener('mousedown', S),
+  e.addEventListener('mousemove', h),
+  e.addEventListener('mouseleave', v),
+  e.addEventListener('mouseup', v),
+  e.addEventListener('selectstart', () => !1);
   const x = (e) => {
     gsap.set(t, {
       x: (t) => t * o + e,
@@ -317,42 +306,40 @@ window.addEventListener('resize', () => {
   clearTimeout(window.resizeTimer);
   window.resizeTimer = setTimeout(() => {
     const intViewportWidth = window.innerWidth;
-    //const nowisPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
+    const nowisPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
 
     // PC <-> Mobile 전환 감지
-    // if (nowisPc !== chkPc) {
-    //   chkPc = nowisPc;
-    //   cardItemSetting(); // 이벤트 재설정
+    if (nowisPc !== chkPc) {
+      chkPc = nowisPc;
+      cardItemSetting(); // 이벤트 재설정
 
-    //   if (chkPc) {
-    //     console.log(' PC 전환 - 자동 순환 시작' + chkPc);
-    //     startAutoGroupActive();
-    //   } else {
-    //     console.log('모바일 전환 - 자동 순환 중단' + chkPc);
-    //     stopAutoGroupActive();
-    //   }
-    // }    
+      if (chkPc) {
+        console.log(' PC 전환 - 자동 순환 시작' + chkPc);
+        startAutoGroupActive();
+      } else {
+        console.log('모바일 전환 - 자동 순환 중단' + chkPc);
+        stopAutoGroupActive();
+      }
+    }
     /*
-    (720 이상일때, pc / tablet 체크용 클래스 추가)
-    - PC에서 Mobile로 리사이징할때 체크하기 위해, 특정 중간 태블릿 조건일때, 
-    - css 다르게 처리되는 것이 있어, 720 이상일경우에는 tablet사이즈도 pc로 판단하여 체크하려고 클래스 추가하였음.
+    (720 이상일때, pc / tablet 체크용 클래스 (type-pc) 추가)
+    - PC에서 Mobile로 리사이징할때 체크하기 위해, 특정 중간 태블릿 이하 조건일때, 예외처리 추가
+    - 모바일에서 이벤트가 적용되어 스크롤시 옆으로 팅기는 문제가 있어, type-pc 클래스 있을 경우만 initCarousel 되도록 추가 조건 적용하였음
     */
-    // if (intViewportWidth > 720) {
-    //   carouselWrap.classList.add('type-pc');
-    // } else {
-    //   carouselWrap.classList.remove('type-pc');
-    // }
+    if (intViewportWidth > 720) {
+      carouselWrap.classList.add('type-pc');
+    } else {
+      carouselWrap.classList.remove('type-pc');
+    }
 
     if (intViewportWidth >= 1280) {
       startAutoGroupActive();
-      initCarousel();      
-    } else {
-      // if (carouselWrap.classList.contains('type-pc')) {
-      //   initCarousel();
-      // }
-      stopAutoGroupActive();
       initCarousel();
-
+    } else {
+      if (carouselWrap.classList.contains('type-pc')) {
+        initCarousel();
+      }
+      stopAutoGroupActive();
     }
   }, 1000);
 });
