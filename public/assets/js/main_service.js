@@ -2,22 +2,27 @@ let chkPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
 const carouselWrap = document.querySelector('.carousel-wrap');
 const cardItems = document.querySelectorAll('.carousel-wrap .card-context');
 
+let tickerCallback = null;
 let autoActiveTimer = null;
 let groupIndex = 0;
 const groupNames = ['group1', 'group2', 'group3'];
 
+function resetGroupState() {
+  groupIndex = 0;
+  cardItems.forEach((item) => item.classList.remove('active'));
+}
+
 // 자동 그룹 active 함수
 function startAutoGroupActive() {
-  if (autoActiveTimer !== null) return; // 이미 실행 중이면 재시작하지 않음
+  if (autoActiveTimer !== null) return;
+
+  resetGroupState(); // 순서 초기화 및 active 제거
+
   autoActiveTimer = setInterval(() => {
     const currentGroup = groupNames[groupIndex];
 
     cardItems.forEach((item) => {
-      if (item.dataset.group === currentGroup) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
+      item.classList.toggle('active', item.dataset.group === currentGroup);
     });
 
     groupIndex = (groupIndex + 1) % groupNames.length;
@@ -90,43 +95,47 @@ function cardItemSetting() {
 
   cardItems.forEach((item, idx) => {
     const itemGroup = item.dataset.group;
-    const itemInner = item.querySelector('.card-inner');
+    const oldInner = item.querySelector('.card-inner');
 
+    // 기존 요소를 클론해서 이벤트 초기화 (이벤트 제거용)
+    const newInner = oldInner.cloneNode(true);
+    oldInner.replaceWith(newInner);
+
+    // 이미지 적용
     if (itemGroup === 'group1') {
-      itemInner.dataset.style = chkPc
+      newInner.dataset.style = chkPc
         ? `url('${infoCardItems[0].group1[idx].imgPC}')`
         : `url('${infoCardItems[0].group1[idx].imgMO}')`;
     } else if (itemGroup === 'group2') {
-      itemInner.dataset.style = chkPc
+      newInner.dataset.style = chkPc
         ? `url('${infoCardItems[1].group2[idx - 4].imgPC}')`
         : `url('${infoCardItems[1].group2[idx - 4].imgMO}')`;
     } else if (itemGroup === 'group3') {
-      itemInner.dataset.style = chkPc
+      newInner.dataset.style = chkPc
         ? `url('${infoCardItems[2].group3[idx - 7].imgPC}')`
         : `url('${infoCardItems[2].group3[idx - 7].imgMO}')`;
     }
 
-    if (!itemInner.dataset.bound) {
-      if (chkPc) {
-        itemInner.addEventListener('mouseover', (e) => {
-          stopAutoGroupActive();
-          cardEventCtrl(e);
+    // 이벤트 재등록
+    if (chkPc) {
+      newInner.addEventListener('mouseover', (e) => {
+        stopAutoGroupActive();
+        cardEventCtrl(e);
+      });
+
+      newInner.addEventListener('mouseleave', (e) => {
+        startAutoGroupActive();
+        cardEventCtrl(e);
+      });
+    } else {
+      newInner.addEventListener('touchstart', (e) => {
+        carouselWrap.querySelectorAll('.card-context').forEach((card) => {
+          card.classList.remove('on');
+          card.querySelector('.card-inner').style.backgroundImage = 'revert';
+          card.querySelector('.card-inner').style.border = '1px solid #565656';
         });
-        itemInner.addEventListener('mouseleave', (e) => {
-          startAutoGroupActive();
-          cardEventCtrl(e);
-        });
-      } else {
-        itemInner.addEventListener('touchstart', (e) => {
-          carouselWrap.querySelectorAll('.card-context').forEach((card) => {
-            card.classList.remove('on');
-            card.querySelector('.card-inner').style.backgroundImage = 'revert';
-            card.querySelector('.card-inner').style.border = '1px solid #565656;';
-          });
-          cardEventCtrl(e);
-        });
-      }
-      itemInner.dataset.bound = 'true'; // 이벤트 중복 방지
+        cardEventCtrl(e);
+      });
     }
   });
 }
@@ -138,14 +147,6 @@ function initCarousel() {
     gsap.set('.carousel-wrap', {
       height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
       onComplete: () => [carousel()],
-    });
-  } else {
-    // pc
-    gsap.set('.carousel-wrap', {
-      height: '100%',
-      onComplete: () => {
-        gsap.killTweensOf(cardItems);
-      },
     });
   }
 }
@@ -190,15 +191,15 @@ function carousel() {
     v = () => {
       (m = !1), e.classList.remove('is-dragging');
     };
-  
+
   e.addEventListener('touchstart', S, { passive: true }),
-  e.addEventListener('touchmove', h, { passive: true }),
-  e.addEventListener('touchend', v, { passive: true }),
-  e.addEventListener('mousedown', S),
-  e.addEventListener('mousemove', h),
-  e.addEventListener('mouseleave', v),
-  e.addEventListener('mouseup', v),
-  e.addEventListener('selectstart', () => !1);
+    e.addEventListener('touchmove', h, { passive: true }),
+    e.addEventListener('touchend', v, { passive: true }),
+    e.addEventListener('mousedown', S),
+    e.addEventListener('mousemove', h),
+    e.addEventListener('mouseleave', v),
+    e.addEventListener('mouseup', v),
+    e.addEventListener('selectstart', () => !1);
   const x = (e) => {
     gsap.set(t, {
       x: (t) => t * o + e,
@@ -244,50 +245,56 @@ function carousel() {
       }
     }, 1000);
   };
-  x(0),
-    gsap.ticker.add(() => {
-      var e;
-      u ||
-        (p && (c -= s),
-        (l = l * (1 - (e = 0.1)) + c * e),
-        x(l),
-        p || ((s = l - a), (a = l)),
-        p ? (i += 0.05) : ((i = 0.0075 * a), (a = l)));
-    }),
-    window.addEventListener('resize', () => {
-      document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`),
-        gsap.set('.carousel-wrap', {
-          height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
-        }),
-        (n = e.clientWidth),
-        (o = t[0].clientWidth + 10),
-        (r = t.length * o);
-    });
+  x(0);
+
+  tickerCallback = () => {
+    var e;
+    if (!u) {
+      if (p) c -= s;
+      l = l * (1 - (e = 0.1)) + c * e;
+      x(l);
+      if (!p) {
+        s = l - a;
+        a = l;
+      }
+      p ? (i += 0.05) : ((i = 0.0075 * a), (a = l));
+    }
+  };
+
+  gsap.ticker.add(tickerCallback);
+
+  window.addEventListener('resize', () => {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`),
+      gsap.set('.carousel-wrap', {
+        height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
+      }),
+      (n = e.clientWidth),
+      (o = t[0].clientWidth + 10),
+      (r = t.length * o);
+  });
 }
 
 function cardEventCtrl(e) {
+  const targetItem = e.target.closest('.card-context');
   const targetItemStyle = e.target.dataset.style;
-  targetItemGroup = e.target.closest('.card-context').dataset.group;
+  const targetItemGroup = targetItem.dataset.group;
 
-  // [pc] mouseover시 동일한 그룹 active 처리
+  // [pc] mouseover시 동일한 그룹만 active
   if (chkPc) {
-    document.querySelectorAll('.carousel-wrap .card-context').forEach((item) => {
-      item.classList.remove('active');
-      if (item.dataset.group == targetItemGroup) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
+    cardItems.forEach((item) => {
+      item.classList.toggle('active', item.dataset.group === targetItemGroup);
     });
   }
-  // [pc/mo 공통] mouseover, touch시 on클래스 이벤트 제어 (내용, 배경이미지 노출)
-  if (e.target.closest('.card-context').classList.contains('on')) {
-    e.target.closest('.card-context').classList.remove('on');
+
+  // [공통] on 클래스, 배경 이미지
+  if (targetItem.classList.contains('on')) {
+    targetItem.classList.remove('on');
     e.target.style.backgroundImage = 'revert';
-    e.target.style.border = '1px solid #565656;';
+    e.target.style.border = '1px solid #565656';
   } else {
-    e.target.closest('.card-context').classList.add('on');
-    e.target.style.backgroundImage = targetItemStyle;
+    document.querySelectorAll('.card-context').forEach((item) => item.classList.remove('on'));
+    targetItem.classList.add('on');
+    e.target.style.backgroundImage = `${targetItemStyle}`;
     e.target.style.border = '1px solid #8e8e8e';
   }
 }
@@ -298,6 +305,11 @@ if (!chkPc) {
   initCarousel();
   stopAutoGroupActive();
 } else {
+  // ticker 실행됐을 경우 정리
+  if (tickerCallback) {
+    gsap.ticker.remove(tickerCallback);
+    tickerCallback = null;
+  }
   startAutoGroupActive();
 }
 
@@ -305,41 +317,48 @@ if (!chkPc) {
 window.addEventListener('resize', () => {
   clearTimeout(window.resizeTimer);
   window.resizeTimer = setTimeout(() => {
-    const intViewportWidth = window.innerWidth;
     const nowisPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
 
-    // PC <-> Mobile 전환 감지
     if (nowisPc !== chkPc) {
+      stopAutoGroupActive();
       chkPc = nowisPc;
-      cardItemSetting(); // 이벤트 재설정
 
+      // 카드 다시 세팅
+      cardItemSetting();
+      resetGroupState(); // groupIndex와 active 초기화
+
+      // carousel ticker 제거
+      if (tickerCallback) {
+        gsap.ticker.remove(tickerCallback);
+        tickerCallback = null;
+      }
       if (chkPc) {
-        console.log(' PC 전환 - 자동 순환 시작' + chkPc);
+        console.log('PC 전환 - 자동 순환 시작');
         startAutoGroupActive();
+        carouselWrap.style.height = '100%';
       } else {
-        console.log('모바일 전환 - 자동 순환 중단' + chkPc);
+        console.log('모바일 전환 - 자동 순환 중단');
         stopAutoGroupActive();
+        initCarousel();
       }
     }
-    /*
+
+    /* (수정필요)
     (720 이상일때, pc / tablet 체크용 클래스 (type-pc) 추가)
     - PC에서 Mobile로 리사이징할때 체크하기 위해, 특정 중간 태블릿 이하 조건일때, 예외처리 추가
     - 모바일에서 이벤트가 적용되어 스크롤시 옆으로 팅기는 문제가 있어, type-pc 클래스 있을 경우만 initCarousel 되도록 추가 조건 적용하였음
     */
-    if (intViewportWidth > 720) {
+    if (window.innerWidth > 720) {
       carouselWrap.classList.add('type-pc');
     } else {
       carouselWrap.classList.remove('type-pc');
     }
 
-    if (intViewportWidth >= 1280) {
-      startAutoGroupActive();
-      initCarousel();
-    } else {
-      if (carouselWrap.classList.contains('type-pc')) {
-        initCarousel();
-      }
-      stopAutoGroupActive();
-    }
-  }, 1000);
+    // if (window.innerWidth < 1280) {
+    //   if (carouselWrap.classList.contains('type-pc')) {
+    //     initCarousel();
+    //   }
+    //   stopAutoGroupActive();
+    // }
+  }, 500);
 });
