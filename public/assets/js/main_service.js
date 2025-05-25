@@ -342,23 +342,5 @@ window.addEventListener('resize', () => {
         initCarousel();
       }
     }
-
-    /* (수정필요)
-    (720 이상일때, pc / tablet 체크용 클래스 (type-pc) 추가)
-    - PC에서 Mobile로 리사이징할때 체크하기 위해, 특정 중간 태블릿 이하 조건일때, 예외처리 추가
-    - 모바일에서 이벤트가 적용되어 스크롤시 옆으로 팅기는 문제가 있어, type-pc 클래스 있을 경우만 initCarousel 되도록 추가 조건 적용하였음
-    */
-    if (window.innerWidth > 720) {
-      carouselWrap.classList.add('type-pc');
-    } else {
-      carouselWrap.classList.remove('type-pc');
-    }
-
-    // if (window.innerWidth < 1280) {
-    //   if (carouselWrap.classList.contains('type-pc')) {
-    //     initCarousel();
-    //   }
-    //   stopAutoGroupActive();
-    // }
   }, 500);
 });
