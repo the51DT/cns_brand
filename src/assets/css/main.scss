@@ -362,15 +362,15 @@
         }
         // 펼침 상태의 검색 영역
         .cmp-input {
-            &__item {
-                padding: calc(8 / 16 * 1rem) calc(32 / 16 * 1rem) calc(8 / 16 * 1rem) 0;
+            &__item--search {
+                padding: calc(8 / 16 * 1rem) calc(64 / 16 * 1rem) calc(8 / 16 * 1rem) 0;
                 font-size: calc(var(--typo-mo-size-head-lg) / 16 * 1rem);
                 line-height: calc(var(--typo-mo-line-height-head-lg) / 16 * 1rem);
                 letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
                 font-weight: 500;
                 border-bottom-width: calc(2 / 16 * 1rem);
                 @media #{$min1840} {
-                    padding: calc(28 / 16 * 1rem) calc(56 / 16 * 1rem) calc(28 / 16 * 1rem) 0;
+                    padding: calc(28 / 16 * 1rem) calc(142 / 16 * 1rem) calc(28 / 16 * 1rem) 0;
                     font-size: calc(var(--typo-pc-size-head-lg) / 16 * 1rem);
                     line-height: calc(var(--typo-pc-line-height-head-lg) / 16 * 1rem);
                 }
