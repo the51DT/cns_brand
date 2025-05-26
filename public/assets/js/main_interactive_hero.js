@@ -23,10 +23,10 @@ const noticeSwiper = document.querySelector('.notice-swiper');
 const styleGroup = ['hero-style-01', 'hero-style-02', 'hero-style-03', 'hero-style-04'];
 const colorMode = ['color-mode-white', 'color-mode-black', 'color-mode-white', 'color-mode-black']; // 스타일에 따른 색상 모드
 const videoGroup = [
-    '/assets/image/main/main_interactive_hero_mv_01.mp4',
-    '/assets/image/main/main_interactive_hero_mv_02.mp4',
-    '/assets/image/main/main_interactive_hero_mv_03.mp4',
-    '/assets/image/main/main_interactive_hero_mv_04.mp4'
+    '/src/assets/image/main/main_interactive_hero_mv_01.mp4',
+    '/src/assets/image/main/main_interactive_hero_mv_02.mp4',
+    '/src/assets/image/main/main_interactive_hero_mv_03.mp4',
+    '/src/assets/image/main/main_interactive_hero_mv_04.mp4'
 ];
 const newsStyleGroup = ['#F0E5D3', '#DFE0E0', '#DDDAE2', '#EDE2F1', '#E7F4F7', '#EBF8F4', '#FFF0F1'];
 let currentStyles = []; // 현재 적용된 스타일을 저장할 배열
