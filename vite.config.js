@@ -83,7 +83,7 @@ export default defineConfig({
                     }
 
                     if (/\.(webp|webm|mp4)$/i.test(assetInfo.name)) {
-                      return 'assets/image/main/[name][extname]'; // 동영상파일를 assets/image/main/ 폴더로 저장
+                      return '/src/assets/image/main/[name][extname]'; // 동영상파일를 assets/image/main/ 폴더로 저장
                     }
 
                     // if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name)) {
