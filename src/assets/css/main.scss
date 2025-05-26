@@ -680,6 +680,47 @@
                 }
             }
         }
+        &__keyword-area {
+            margin-top: calc(32 / 16 * 1rem);
+            overflow: auto;
+            max-width: calc(1360 / 16 * 1rem);
+            @media #{$min1280} {
+                margin-top: calc(36 / 16 * 1rem);
+                padding: 0 calc(28 / 16 * 1rem);
+                overflow: hidden;
+            }
+            &__scroll {
+                display: flex;
+                // flex-wrap: nowrap;
+                gap: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem);
+                flex-wrap: wrap;
+                white-space: nowrap;
+                width: calc(1034 / 16 * 1rem);
+                @media #{$min1280} {
+                    justify-content: center;
+                    gap: calc(16 / 16 * 1rem);
+                    width: 100%;
+                }
+            }
+        }
+        &__keyword-button {
+            padding: calc(11 / 16 * 1rem) calc(24 / 16 * 1rem);
+            height: calc(48 / 16 * 1rem);
+            color: var(--colorCM-mode1-text-text-default);
+            font-size: calc(16 / 16 * 1rem);
+            line-height: calc(26 / 16 * 1rem);
+            font-weight: 400;
+            letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
+            box-sizing: border-box;
+            background: var(--colorCM-mode1-fill-fill-default3);
+            border-radius: calc(100 / 16 * 1rem);
+            @media #{$min1280} {
+                padding: calc(24 / 16 * 1rem) calc(32 / 16 * 1rem);
+                height: calc(88 / 16 * 1rem);
+                font-size: calc(28 / 16 * 1rem);
+                line-height: calc(40 / 16 * 1rem);
+            }
+        }
     }
     // News
     .news-swiper {
@@ -692,6 +733,7 @@
         }
         .cmp-swiper__wrap {
             padding: 0;
+            margin-bottom: calc(160 / 16 * 1rem);
             .swiper-slide {
                 @media #{$min1280} {
                     max-width: calc(33.33% - calc(calc(40 / 16 * 1rem) / 3));
