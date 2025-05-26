@@ -438,12 +438,12 @@
                     1. .dynamic-search.dynamic-search--collapsed : 닫힘 상태
                     2. .dynamic-search.dynamic-search--expanded : 펼침 상태
                 -->
-                <div class="main-content__inner dynamic-search dynamic-search--expanded">
+                <div class="main-content__inner dynamic-search dynamic-search--collapsed">
                     <div class="main-container">
                         <div class="dynamic-search__collapsed-area">
                             <div class="main-form-element">
                                 <div class="main-form-element__inner input-search">
-                                    <input type="text" value="" placeholder="키워드만으로 원하는 정보를 찾아보세요" class="input-search__item" disabled />
+                                    <input type="text" value="" placeholder="키워드만으로 원하는 정보를 찾아보세요" class="input-search__item" />
                                     <!-- <button type="button" class="btn btn-remove">
                                         <i class="ico icon-remove-bl28"></i>
                                         <span class="ir-text">삭제</span>
@@ -466,7 +466,7 @@
                         </div>
                         <div class="dynamic-search__expanded-area">
                             <span class="dynamic-search__title block font-head-lg font-semibold color-text-default text-center">
-                                키워드만으로 원하는 정보를 찾아보세요
+                                키워드만으로 원하는 <br class="display-mo">정보를 찾아보세요
                             </span>
                             <%
                                 const inputData = [
@@ -837,7 +837,7 @@
             <%- include('src/_inc/footer.html') %>
     </div>
     <!-- <script src="/assets/bundle/swiper-bundle.min.js"></script> -->
-     <script src="/assets/bundle/gsap.min.js"></script>
+    <script src="/assets/bundle/gsap.min.js"></script>
     <!-- <script src="/assets/js/initializeSwipers.js"></script> -->
     <script src="/assets/js/main_interactive_hero.js"></script>
     <script src="/assets/js/main_service.js"></script>
@@ -872,8 +872,51 @@
             }
         })
 
-        
-
+        /* search */
+        const dynamicSearch = document.querySelector('.dynamic-search');
+        if (dynamicSearch) {
+            // 클릭 이벤트로 상태 전환
+            dynamicSearch.addEventListener("click", () => {
+                if (dynamicSearch.classList.contains('dynamic-search--collapsed')) {
+                    dynamicSearch.classList.remove('dynamic-search--collapsed');
+                    dynamicSearch.classList.add('dynamic-search--expanded');
+                }
+            });
+        }
+        function checkSearch(target) {
+            if (target) {
+                const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
+                const dynamicSearchTop = target.getBoundingClientRect().top + window.pageYOffset;
+                const dynamicSearchHeight = target.offsetHeight;
+                // 닫힌 상태일 때
+                if (target.classList.contains('dynamic-search--collapsed')) {
+                    if (Yoffset >= dynamicSearchTop && Yoffset < dynamicSearchTop + dynamicSearchHeight) {
+                        // console.log('열림');
+                        target.classList.remove('dynamic-search--collapsed');
+                        target.classList.add('dynamic-search--expanded');
+                    }
+                }
+                // 펼친 상태일 때
+                else if (target.classList.contains('dynamic-search--expanded')) {
+                    if (Yoffset >= dynamicSearchTop + dynamicSearchHeight) {
+                        // 스크롤 위치가 dynamicSearch의 하단을 넘어가면
+                        // console.log('닫힘 1');
+                        target.classList.add('dynamic-search--collapsed');
+                        target.classList.remove('dynamic-search--expanded');
+                    } else if (Yoffset < target.getBoundingClientRect().top){
+                        // 스크롤 위치가 dynamicSearch보다 위에 있다면
+                        // console.log('닫힘 2');
+                        target.classList.add('dynamic-search--collapsed');
+                        target.classList.remove('dynamic-search--expanded');
+                    }
+                }
+            }
+        }
+        // 스크롤 이벤트 리스너 추가
+        window.addEventListener("scroll", () => {
+            checkSearch(dynamicSearch);
+        });
+        checkSearch(dynamicSearch);
     </script>
 </body>
 

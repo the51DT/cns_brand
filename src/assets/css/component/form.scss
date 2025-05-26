@@ -120,7 +120,7 @@
 }
 // main search
 .main-form-element {
-    @media #{$min1280} {
+    @media #{$min1840} {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -129,30 +129,32 @@
     }
     &__inner {
         display: flex;
-        flex-direction: row-reverse;
         align-items: center;
         background: #F0F1F3;
         height: calc(56 / 16 * 1rem);
         border-radius: calc(50 / 16 * 1rem);
-        @media #{$min1280} {
+        @media #{$min1840} {
             height: calc(110 / 16 * 1rem);
             background: transparent;
             border-radius: 0;
         }
         &.input-search {
+            flex-direction: row-reverse;
             gap: calc(8 / 16 * 1rem);
             padding: calc(10 / 16 * 1rem) calc(20 / 16 * 1rem);
-            @media #{$min1280} {
+            @media #{$min1840} {
                 padding: calc(25 / 16 * 1rem) calc(64 / 16 * 1rem);
             }
         }
         &.search-keyword {
+            justify-content: center;
             padding: 0 0;
             margin-top: calc(16 / 16 * 1rem);
             background: transparent;
             border-radius: 0;
             height: auto;
-            @media #{$min1280} {
+            @media #{$min1840} {
+                justify-content: flex-end;
                 margin-top: 0;
                 padding: calc(25 / 16 * 1rem) calc(62 / 16 * 1rem);
             }
@@ -168,7 +170,7 @@
         line-height: calc(var(--typo-mo-line-height-head-sm) / 16 * 1rem);
         letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
         font-weight: 400;
-        @media #{$min1280} {
+        @media #{$min1840} {
             min-width: calc(430 / 16 * 1rem);
             height: calc(40 / 16 * 1rem);
             font-size: calc(var(--typo-pc-size-head-sm) / 16 * 1rem);
@@ -181,7 +183,7 @@
     .btn-search {
         width: calc(32 / 16 * 1rem);
         height: calc(32 / 16 * 1rem);
-        @media #{$min1280} {
+        @media #{$min1840} {
             width: calc(56 / 16 * 1rem);
             height: calc(56 / 16 * 1rem);
         }
@@ -189,7 +191,7 @@
             width: calc(32 / 16 * 1rem);
             min-width: calc(32 / 16 * 1rem);
             height: calc(32 / 16 * 1rem);
-            @media #{$min1280} {
+            @media #{$min1840} {
                 width: calc(56 / 16 * 1rem);
                 min-width: calc(56 / 16 * 1rem);
                 height: calc(56 / 16 * 1rem);
@@ -201,7 +203,7 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: calc(8 / 16 * 1rem);
-        @media #{$min1280} {
+        @media #{$min1840} {
             justify-content: flex-end;
             flex-wrap: nowrap;
             gap: calc(16 / 16 * 1rem);
@@ -219,7 +221,7 @@
         border-radius: calc(100 / 16 * 1rem);
         box-sizing: border-box;
         white-space: nowrap;
-        @media #{$min1280} {
+        @media #{$min1840} {
             padding: calc(12 / 16 * 1rem) calc(32 / 16 * 1rem);
             height: calc(60 / 16 * 1rem);
             font-size: calc(var(--typo-pc-size-body-md-mode) / 16 * 1rem);
