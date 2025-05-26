@@ -437,6 +437,7 @@
                     Search 
                     1. .dynamic-search.dynamic-search--collapsed : 닫힘 상태
                     2. .dynamic-search.dynamic-search--expanded : 펼침 상태
+                    3. .dynamic-search.dynamic-search--expanded-important : 클릭 시 펼침 상태 - top/end 에 도달하면 해당 클래스 제거, 닫힘 상태로 변경
                 -->
                 <div class="main-content__inner dynamic-search dynamic-search--collapsed">
                     <div class="main-container">
@@ -880,24 +881,29 @@
                 if (dynamicSearch.classList.contains('dynamic-search--collapsed')) {
                     dynamicSearch.classList.remove('dynamic-search--collapsed');
                     dynamicSearch.classList.add('dynamic-search--expanded');
+                    dynamicSearch.classList.add('dynamic-search--expanded');
+                    dynamicSearch.classList.add('dynamic-search--expanded-important');
                 }
             });
         }
         function checkSearch(target) {
             if (target) {
+                const documentHeight = document.documentElement.scrollHeight;
+                const windowHeight = window.innerHeight;
+                const scrollPosition = window.scrollY;
                 const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
                 const dynamicSearchTop = target.getBoundingClientRect().top + window.pageYOffset;
                 const dynamicSearchHeight = target.offsetHeight;
-                // 닫힌 상태일 때
-                if (target.classList.contains('dynamic-search--collapsed')) {
+                // 닫힘 상태일 때
+                if (target.classList.contains('dynamic-search--collapsed') && !target.classList.contains('dynamic-search--expanded-important')) {
                     if (Yoffset >= dynamicSearchTop && Yoffset < dynamicSearchTop + dynamicSearchHeight) {
                         // console.log('열림');
                         target.classList.remove('dynamic-search--collapsed');
                         target.classList.add('dynamic-search--expanded');
                     }
                 }
-                // 펼친 상태일 때
-                else if (target.classList.contains('dynamic-search--expanded')) {
+                // 펼침 상태일 때
+                else if (target.classList.contains('dynamic-search--expanded') && !target.classList.contains('dynamic-search--expanded-important')) {
                     if (Yoffset >= dynamicSearchTop + dynamicSearchHeight) {
                         // 스크롤 위치가 dynamicSearch의 하단을 넘어가면
                         // console.log('닫힘 1');
@@ -908,6 +914,13 @@
                         // console.log('닫힘 2');
                         target.classList.add('dynamic-search--collapsed');
                         target.classList.remove('dynamic-search--expanded');
+                    }
+                } else if (target.classList.contains('dynamic-search--expanded-important')) {
+                    if (Yoffset == 0 || scrollPosition + windowHeight >= documentHeight) {
+                        // 클릭 시 스크롤 위치 0 또는 최하단일 때 닫힘
+                        target.classList.add('dynamic-search--collapsed');
+                        target.classList.remove('dynamic-search--expanded');
+                        target.classList.remove('dynamic-search--expanded-important');
                     }
                 }
             }
