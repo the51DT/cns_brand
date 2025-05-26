@@ -253,9 +253,9 @@
 
 .service {
     &-area {
-        margin-top: calc(96 / 16 * 1rem);
+        // margin-top: calc(96 / 16 * 1rem);
         @media #{$min1280} {
-            margin-top: calc(200 / 16 * 1rem);
+            // margin-top: calc(200 / 16 * 1rem);
             overflow: auto;
         }
     }
