@@ -5,22 +5,31 @@ const cardItems = document.querySelectorAll('.carousel-wrap .card-context');
 let tickerCallback = null;
 let autoActiveTimer = null;
 let groupIndex = 0;
+let lastHoveredGroupIndex = 0;
 const groupNames = ['group1', 'group2', 'group3'];
 
 function resetGroupState() {
   groupIndex = 0;
   cardItems.forEach((item) => item.classList.remove('active'));
+
+  //최초 진입시 group1 기본값 활성화 되도록 내용 추가
+  const currentGroup = groupNames[groupIndex];
+  cardItems.forEach((item) => {
+    if (item.dataset.group === currentGroup) {
+      item.classList.add('active');
+    }
+  });
 }
 
 // 자동 그룹 active 함수
 function startAutoGroupActive() {
   if (autoActiveTimer !== null) return;
 
-  resetGroupState(); // 순서 초기화 및 active 제거
+  groupIndex = lastHoveredGroupIndex; // 마지막 호버한 그룹 다음부터 시작되도록 groupIndex 변경
+  //resetGroupState(); // 순서 초기화 및 active 제거 - mouseleave 후 group 맨처음부터 반복 동작 원할 경우 해당 내용 활성화 (위의 groupIndex = lastHoveredGroupIndex;는 주석처리 할 것)
 
   autoActiveTimer = setInterval(() => {
     const currentGroup = groupNames[groupIndex];
-
     cardItems.forEach((item) => {
       item.classList.toggle('active', item.dataset.group === currentGroup);
     });
@@ -278,6 +287,14 @@ function cardEventCtrl(e) {
   const targetItem = e.target.closest('.card-context');
   const targetItemStyle = e.target.dataset.style;
   const targetItemGroup = targetItem.dataset.group;
+
+  // ✅ 마우스오버 시 그룹 인덱스 기억
+  if (chkPc && e.type === 'mouseover') {
+    const hoveredGroupIdx = groupNames.indexOf(targetItemGroup);
+    if (hoveredGroupIdx !== -1) {
+      lastHoveredGroupIndex = (hoveredGroupIdx + 1) % groupNames.length;
+    }
+  }
 
   // [pc] mouseover시 동일한 그룹만 active
   if (chkPc) {
