@@ -595,7 +595,7 @@
             opacity: 0;
         }
     }
-    //Search
+    // Search
     .dynamic-search {
         &__title {
             margin-bottom: calc(49 / 16 * 1rem);
@@ -719,6 +719,15 @@
                 height: calc(88 / 16 * 1rem);
                 font-size: calc(28 / 16 * 1rem);
                 line-height: calc(40 / 16 * 1rem);
+            }
+        }
+    }
+    // Service
+    .service-area {
+        .service-content {
+            margin-bottom: calc(96 / 16 * 1rem);
+            @media #{$min1280} {
+                margin-bottom: calc(160 / 16 * 1rem);
             }
         }
     }
