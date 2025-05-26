@@ -611,6 +611,13 @@
         &:has(.fade-in-bottom) {
             overflow: hidden;
         }
+        &.fade-in {
+            .active-effect__item {
+                opacity: 0;
+                animation: fadeIn 1s ease-in-out forwards;
+                transition: opacity 1s;
+            }
+        }
         &.fade-in-bottom {
             .active-effect__item {
                 animation: fadeInUp 1s ease-in-out forwards;
