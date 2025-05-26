@@ -333,11 +333,11 @@ window.addEventListener('resize', () => {
         tickerCallback = null;
       }
       if (chkPc) {
-        console.log('PC 전환 - 자동 순환 시작');
+        //console.log('PC 전환 - 자동 순환 시작');
         startAutoGroupActive();
         carouselWrap.style.height = '100%';
       } else {
-        console.log('모바일 전환 - 자동 순환 중단');
+        //console.log('모바일 전환 - 자동 순환 중단');
         stopAutoGroupActive();
         initCarousel();
       }

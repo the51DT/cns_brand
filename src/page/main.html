@@ -502,8 +502,171 @@
                 <!-- Search // -->
                 <!-- Service -->
                 <div class="main-content__inner">
-                    <div class="main-container">
-
+                    <div class="service-area">
+                        <div class="main-container">
+                            <div class="service-content">
+                                <div class="service-content__text">
+                                    <h2 class="title font-head-md font-semibold">기업에 최적화된<br>서비스로 더 나은 내일을<br>만들어 갑니다</h2>
+                                </div>
+                                <div class="service-content__list">
+                                    <!-- gsap : carousel 형태 : cmp-gsap__carousel-->
+                                    <div class="cmp-wrap cmp-gsap__carousel">
+                                        <div class="content">
+                                            <div class="carousel-wrap">
+                                                <div class="thumbs-wrapper">                       
+                                                    <!-- 
+                                                    * card-context 클래스명 정의
+                                                    1. active 클래스 : 동일한 그룹 활성화 영역, active시 하이라이트 컬러 노출 (첫번째 노출필요한 대상의 그룹에 active 클래스 추가 되어있어야함 - group1)
+                                                    2. on 클래스 : 카드 영역 touch(mobile), hover(pc)시 on 클래스 활성화되며 상세내용과 배경이미지 노출됨 -->
+                                                    <div class="card-context active" data-group="group1"> <!-- active, on  / data-group : group 구분 data 속성 -->
+                                                        <div class="card-inner" data-style=""> <!-- data-style : bg-img style 값 저장 하기 위한 data 속성 -->
+                                                            <div class="txt">
+                                                                <div class="txt-title">Business Data</div>
+                                                                <div class="txt-desc">데이터로부터 의미 있는 가치를 창출해 혁신적인 비즈니스 전략을 경험할 수 있습니다.</div>
+                                                            </div>
+                                                            <div class="card-bg"></div>
+                                                        </div>
+                                                        <div class="card-link-wrap">
+                                                            <a href="javascript:;" class="card-link-btn">
+                                                                <span class="ir-text">페이지 상세보기</span>                    
+                                                                <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-context active" data-group="group1">
+                                                        <div class="card-inner" data-style="">
+                                                            <div class="txt">
+                                                                <div class="txt-title">Modern IT Infra<br>on Cloud</div>
+                                                                <div class="txt-desc">클라우드 서비스로 고객 가치를 혁신하고 디지털 경험 제공합니다.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-link-wrap">
+                                                            <a href="javascript:;" class="card-link-btn">
+                                                                <span class="ir-text">페이지 상세보기</span>                    
+                                                                <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-context active" data-group="group1">
+                                                        <div class="card-inner" data-style=""> 
+                                                            <div class="txt">
+                                                                <div class="txt-title">AI for Business</div>
+                                                                <div class="txt-desc">빅데이터와 검증된 AI로 고객 비즈니스에 맞는 서비스를 제공합니다.</div>
+                                                            </div>                                               
+                                                        </div>
+                                                        <div class="card-link-wrap">
+                                                            <a href="javascript:;" class="card-link-btn">
+                                                                <span class="ir-text">페이지 상세보기</span>                    
+                                                                <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-context active" data-group="group1">
+                                                        <div class="card-inner" data-style="">
+                                                            <div class="txt">
+                                                                <div class="txt-title">Consulting</div>
+                                                                <div class="txt-desc">기업 분석을 통해 전문가의 시선으로 최적의 해결방법을 제안합니다.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-link-wrap">
+                                                            <a href="javascript:;" class="card-link-btn">
+                                                                <span class="ir-text">페이지 상세보기</span>                    
+                                                                <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-context" data-group="group2">
+                                                        <div class="card-inner" data-style="">
+                                                            <div class="txt">
+                                                                <div class="txt-title">City and Space</div>
+                                                                <div class="txt-desc">보다 나은 삶을 위해 도시 데이터를 분석하고 활용할 수 있는 환경을 제공합니다.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-link-wrap">
+                                                            <a href="javascript:;" class="card-link-btn">
+                                                                <span class="ir-text">페이지 상세보기</span>                    
+                                                                <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-context" data-group="group2">
+                                                        <div class="card-inner" data-style="">
+                                                            <div class="txt">
+                                                                <div class="txt-title">Logistics</div>
+                                                                <div class="txt-desc">물류센터의 모든 것을 책임지는 Total Logistics Solution Provider를 지향합니다. </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-link-wrap">
+                                                            <a href="javascript:;" class="card-link-btn">
+                                                                <span class="ir-text">페이지 상세보기</span>                    
+                                                                <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-context" data-group="group2">
+                                                        <div class="card-inner" data-style="">
+                                                            <div class="txt">
+                                                                <div class="txt-title">Smart Factory</div>
+                                                                <div class="txt-desc">AI, 빅데이터, IoT 등 IT신기술로 공장 지능화를 통해, 모든 제조 과정에서 최적화를 선도하고 있습니다.</div>
+                                                            </div> 
+                                                        </div>
+                                                        <div class="card-link-wrap">
+                                                            <a href="javascript:;" class="card-link-btn">
+                                                                <span class="ir-text">페이지 상세보기</span>                    
+                                                                <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-context" data-group="group3">
+                                                        <div class="card-inner" data-style="">
+                                                            <div class="txt">
+                                                                <div class="txt-title">Enterprise Solution</div>
+                                                                <div class="txt-desc">빅데이터와 검증된 AI로 고객 비즈니스에 맞는 서비스를 제공합니다.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-link-wrap">
+                                                            <a href="javascript:;" class="card-link-btn">
+                                                                <span class="ir-text">페이지 상세보기</span>                    
+                                                                <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>                                        
+                                                    <div class="card-context" data-group="group3">
+                                                        <div class="card-inner" data-style="">
+                                                            <div class="txt">
+                                                                <div class="txt-title">Customer Experiences</div>
+                                                                <div class="txt-desc">DX신기술을 활용해 디지털 환경에서 고객경험을 혁신하고 있습니다. </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-link-wrap">
+                                                            <a href="javascript:;" class="card-link-btn">
+                                                                <span class="ir-text">페이지 상세보기</span>                    
+                                                                <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-context" data-group="group3">
+                                                        <div class="card-inner" data-style="">
+                                                            <div class="txt">
+                                                                <div class="txt-title">Biz Process Intelligence</div>
+                                                                <div class="txt-desc">기업이 효율적으로 일할 수 있도록 개선 및 도움을 주는 서비스 제공합니다.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-link-wrap">
+                                                            <a href="javascript:;" class="card-link-btn">
+                                                                <span class="ir-text">페이지 상세보기</span>                    
+                                                                <i class="btn__icon ico icon-main-navigation-right-wh24"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> <!-- //content -->
+                                    </div>
+                                    <!-- //gsap : carousel 형태 -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Service // -->
@@ -674,8 +837,10 @@
             <%- include('src/_inc/footer.html') %>
     </div>
     <!-- <script src="/assets/bundle/swiper-bundle.min.js"></script> -->
+     <script src="/assets/bundle/gsap.min.js"></script>
     <!-- <script src="/assets/js/initializeSwipers.js"></script> -->
     <script src="/assets/js/main_interactive_hero.js"></script>
+    <script src="/assets/js/main_service.js"></script>
     <script>
         /* swiper-notice */
         let swiperNotice = new Swiper('.swiper-notice', {
