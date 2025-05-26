@@ -79,7 +79,7 @@ export default defineConfig({
                         return 'assets/css/index.css'; // 모든 CSS를 assets/css/index.css로 통합
                     }
                     if (/\.(png|jpe?g|gif|svg|webp|webm|mp4)$/i.test(assetInfo.name)) {
-                        return 'assets/images/[name].[extname]'; // 이미지를 assets/images/ 폴더로 저장
+                        return 'assets/images/[name][extname]'; // 이미지를 assets/images/ 폴더로 저장
                     }
                     // if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name)) {
                     //     return 'assets/fonts/[name].[hash][extname]'; // 폰트를 assets/fonts/ 폴더로 저장
