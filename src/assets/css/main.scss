@@ -178,10 +178,10 @@
                     margin-right: 0;
                     width: 100%;
                     @media (min-width: 1000px) {
-                        width: 80%;
+                        width: calc(840 / 16 * 1rem);
                     }
                     @media (min-width: 1400px) {
-                        width: 80%;
+                        max-width: calc(960 / 16 * 1rem);
                     }
                     @media (min-width: 1600px) {
                         width: 100%;
@@ -313,9 +313,11 @@
             transition: all 1s ease-in-out;
             .dynamic-search__collapsed-area {
                 display: block;
+                height: auto;
             }
             .dynamic-search__expanded-area {
                 display: none;
+                height: 0;
             }
             .main-container {
                 margin-top: calc(40 / 16 * 1rem);
@@ -336,20 +338,22 @@
             }
             .dynamic-search__collapsed-area {
                 display: none;
+                height: 0;
             }
             .dynamic-search__expanded-area {
                 display: block;
+                height: auto;
             }
             .main-container {
                 padding: 0 0;
                 margin-top: calc(96 / 16 * 1rem);
                 margin-bottom: calc(96 / 16 * 1rem);
+                @media #{$min1280} {
+                    padding: 0 calc(40 / 16 * 1rem);
+                }
                 @media #{$min1840} {
                     margin-top: calc(200 / 16 * 1rem);
                     margin-bottom: calc(199 / 16 * 1rem);
-                }
-                @media #{$min1280} {
-                    padding: 0 calc(40 / 16 * 1rem);
                 }
             }
             .dynamic-search__title,
@@ -487,6 +491,9 @@
             overflow: hidden;
             @media #{$min1280} {
                 border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+            }
+            img {
+                width: 100%;
             }
         }
         &__desc {

@@ -662,7 +662,7 @@
                             width: calc(40 / 16 * 1rem);
                             height: calc(40 / 16 * 1rem);
                             display: inline-block;
-                            background-image: url(/src/assets/image/icon/ico_arrow_right_bl64.svg);
+                            background-image: url("#{$basePath}image/icon/ico_arrow_right_bl64.svg");
                             background-repeat: no-repeat;
                             background-position: center center;
                             //background-color: var(--colorCM-mode1-icon-icon-on-bg);                        
