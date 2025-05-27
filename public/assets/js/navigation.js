@@ -234,7 +234,7 @@ const onDownScroll = () => {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          tabHeader.style.transform = "translateY(0)";
+          tabHeader.style.top = "0";
         }
       });
     }
@@ -248,7 +248,7 @@ const onUpScroll = () => {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          tabHeader.style.transform = "translateY("+headerHeight+")";
+          tabHeader.style.top = headerHeight;
         }
       });
     }
@@ -261,7 +261,7 @@ const onTopScroll = () => {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          tabHeader.style.transform = "translateY(0)";
+          tabHeader.style.top = "0";
         }
       });
     }

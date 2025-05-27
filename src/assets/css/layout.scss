@@ -302,8 +302,8 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    transition: transform 0.5s linear;
-    transform: translateY(0);
+    transition: top 0.5s linear;
+    // transform: translateY(0);
     background: var(--header-bg);
     // position: relative;
     position: fixed;
@@ -997,9 +997,11 @@ body {
     //     // transform: translateY(calc(-100 / 16 * 1rem));
     // }
     &.is-motion {
-        transform: translateY(calc(-64 / 16 * 1rem));
+        // transform: translateY(calc(-64 / 16 * 1rem));
+        top: calc(-64 / 16 * 1rem);
         @media #{$min1280} {
-            transform: translateY(calc(-100 / 16 * 1rem));
+            // transform: translateY(calc(-100 / 16 * 1rem));
+            top: calc(-100 / 16 * 1rem);
         }
     }
     // search
