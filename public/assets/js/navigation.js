@@ -2,6 +2,7 @@ const headerWrap = document.querySelector('.header');
 const bodyWrap = document.querySelector('body');
 // let subMenuHeight = 0
 let currentGnbMode = null; // 'mo' or 'pc'
+let initialPositions = [];
 
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
@@ -218,8 +219,18 @@ const scrollEventManage = () => {
     } else {
         if (Yoffset > lastScrollTop) {
             onDownScroll();
-        } else {
+          } else {
             onUpScroll();
+            contentTab.forEach((tab, index) => {
+              if (!tab.classList.contains('cmp-tab--sub')) {
+                const tabHeader = tab.querySelector('.cmp-tab__header');
+                // tabHeader의 초기 위치에 도달했는지 확인
+                console.log("up:", initialPositions[index], Yoffset, Yoffset + 75)
+                if ((Yoffset + 75) <= initialPositions[index]) {
+                  tabHeader.removeAttribute('style');
+                }
+              }
+          });
         }
     }
     lastScrollTop = Yoffset <= 0 ? 0 : Yoffset;
@@ -227,7 +238,7 @@ const scrollEventManage = () => {
 
 const onDownScroll = () => {
     // console.log('down');
-    // headerWrap.classList.remove('is-fixed');
+    headerWrap.classList.remove('is-fixed');
     headerWrap.classList.add('is-motion');
     if(contentTab) {
       contentTab.forEach((tab) => {
@@ -241,7 +252,7 @@ const onDownScroll = () => {
 
 const onUpScroll = () => {
     // console.log('up');
-    // headerWrap.classList.add('is-fixed');
+    headerWrap.classList.add('is-fixed');
     headerWrap.classList.remove('is-motion');
     if(contentTab) {
       contentTab.forEach((tab) => {
@@ -254,7 +265,7 @@ const onUpScroll = () => {
 }
 
 const onTopScroll = () => {
-    // headerWrap.classList.remove('is-fixed');
+    headerWrap.classList.remove('is-fixed');
     headerWrap.classList.remove('is-motion');
     if(contentTab) {
       contentTab.forEach((tab) => {
@@ -294,6 +305,13 @@ window.addEventListener('DOMContentLoaded', () => {
   const isPc = window.innerWidth >= 1280;
   setGnbMode(isPc ? 'pc' : 'mo');
   headerHeight = isPc ? '100px' : '64px'; 
+
+  contentTab.forEach((tab) => {
+      if (!tab.classList.contains('cmp-tab--sub')) {
+          const tabHeader = tab.querySelector('.cmp-tab__header');
+          initialPositions.push(tabHeader.getBoundingClientRect().top);
+      }
+  });
 });
 
 // 2. 리사이즈 감지
