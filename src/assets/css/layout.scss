@@ -997,7 +997,10 @@ body {
         // transform: translateY(calc(-100 / 16 * 1rem));
     }
     &.is-motion {
-        transform: translateY(calc(-100 / 16 * 1rem));
+        transform: translateY(calc(-64 / 16 * 1rem));
+        @media #{$min1280} {
+            transform: translateY(calc(-100 / 16 * 1rem));
+        }
     }
     // search
     .modal--type-search {
