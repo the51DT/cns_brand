@@ -2,7 +2,7 @@ const headerWrap = document.querySelector('.header');
 const bodyWrap = document.querySelector('body');
 // let subMenuHeight = 0
 let currentGnbMode = null; // 'mo' or 'pc'
-let initialPositions = [];
+// let initialPositions = [];
 
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
@@ -221,16 +221,6 @@ const scrollEventManage = () => {
             onDownScroll();
           } else {
             onUpScroll();
-            contentTab.forEach((tab, index) => {
-              if (!tab.classList.contains('cmp-tab--sub')) {
-                const tabHeader = tab.querySelector('.cmp-tab__header');
-                // tabHeader의 초기 위치에 도달했는지 확인
-                console.log("up:", initialPositions[index], Yoffset, (Yoffset + tabHeaderHeight), tabHeaderHeight)
-                if ((Yoffset + tabHeaderHeight) <= initialPositions[index]) {
-                  tabHeader.style.transform = "translateY(0)";
-                }
-              }
-          });
         }
     }
     lastScrollTop = Yoffset <= 0 ? 0 : Yoffset;
@@ -301,19 +291,19 @@ const gnbSwiper = new Swiper('.gnb-sub-swiper .swiper', {
 
 // 1. 초기 모드 설정
 let headerHeight;
-let tabHeaderHeight;
+// let tabHeaderHeight;
 window.addEventListener('DOMContentLoaded', () => {
   const isPc = window.innerWidth >= 1280;
   setGnbMode(isPc ? 'pc' : 'mo');
   headerHeight = isPc ? '100px' : '64px'; 
-  tabHeaderHeight = isPc ? 75 : 55;
+  // tabHeaderHeight = isPc ? 75 : 55;
 
-  contentTab.forEach((tab) => {
-      if (!tab.classList.contains('cmp-tab--sub')) {
-          const tabHeader = tab.querySelector('.cmp-tab__header');
-          initialPositions.push(tabHeader.getBoundingClientRect().top);
-      }
-  });
+  // contentTab.forEach((tab) => {
+  //     if (!tab.classList.contains('cmp-tab--sub')) {
+  //         const tabHeader = tab.querySelector('.cmp-tab__header');
+  //         initialPositions.push(tabHeader.getBoundingClientRect().top);
+  //     }
+  // });
 });
 
 // 2. 리사이즈 감지
@@ -324,11 +314,11 @@ window.addEventListener('resize', () => {
     closeMoGnb();
     setGnbMode('pc');
     headerHeight = '100px';
-    tabHeaderHeight = 75;
+    // tabHeaderHeight = 75;
   } else if (!isPc && currentGnbMode !== 'mo') {
     setGnbMode('mo');
     headerHeight = '64px';
-    tabHeaderHeight = 55;
+    // tabHeaderHeight = 55;
   }
 });
 
