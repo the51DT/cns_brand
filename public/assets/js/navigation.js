@@ -233,7 +233,6 @@ const onDownScroll = () => {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          // tabHeader.style.transition = "transform 0.5s linear";
           tabHeader.style.transform = "translateY(0)";
         }
       });
@@ -248,8 +247,7 @@ const onUpScroll = () => {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          // tabHeader.style.transition = "transform 0.5s linear";
-          tabHeader.style.transform = "translateY("+headerHeight+"px)";
+          tabHeader.style.transform = "translateY("+headerHeight+")";
         }
       });
     }
@@ -262,7 +260,6 @@ const onTopScroll = () => {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          // tabHeader.style.transition = "transform 0.5s linear";
           tabHeader.style.transform = "translateY(0)";
         }
       });
@@ -296,7 +293,7 @@ let headerHeight;
 window.addEventListener('DOMContentLoaded', () => {
   const isPc = window.innerWidth >= 1280;
   setGnbMode(isPc ? 'pc' : 'mo');
-  headerHeight = isPc ? 100 : 64; 
+  headerHeight = isPc ? '100px' : '64px'; 
 });
 
 // 2. 리사이즈 감지
@@ -306,10 +303,10 @@ window.addEventListener('resize', () => {
   if (isPc && currentGnbMode !== 'pc') {
     closeMoGnb();
     setGnbMode('pc');
-    headerHeight = 100;
+    headerHeight = '100px';
   } else if (!isPc && currentGnbMode !== 'mo') {
     setGnbMode('mo');
-    headerHeight = 64;
+    headerHeight = '64px';
   }
 });
 
