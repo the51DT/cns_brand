@@ -30,7 +30,8 @@
         position: sticky;
         top: 0;
         left: 0;
-        transition: top 0.5s linear;
+        transform: translateY(0);
+        transition: transform 0.5s linear;
         background: var(--colorCM-mode1-background-background-default0);
         z-index: 10;
         @media #{$min1280} {
@@ -42,12 +43,12 @@
         &::-webkit-scrollbar {
             display:none;
         }
-        &.tab-move-position {
-            top: calc(63 / 16 * 1rem);
-            @media #{$min1280} {
-                top: calc(100 / 16 * 1rem);
-            }
-        }
+        // &.tab-move-position {
+        //     top: calc(63 / 16 * 1rem);
+        //     @media #{$min1280} {
+        //         top: calc(100 / 16 * 1rem);
+        //     }
+        // }
     }
     .tab__menu,
     .tab__sub-menu {

@@ -218,21 +218,8 @@ const mainVisualHeight = mainVisual ? mainVisual.offsetHeight : 0;
 const contentTab = document.querySelectorAll('.cmp-tab');
 const scrollEventManage = () => {
     const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
-    // if(subVisual || mainVisual || bodyDarkMode) {
-    //     if(Yoffset < subVisualHeight || Yoffset < mainVisualHeight || bodyDarkMode) {
-    //         if(subVisual && !subVisual.classList.contains('type-empty')) {
-    //             headerWrap.classList.add('is-bg-transparent');
-    //             headerWrap.classList.add('is-fixed');
-    //         }
-    //     } else {
-    //         headerWrap.classList.remove('is-bg-transparent');
-    //         headerWrap.classList.remove('is-fixed');
-    //     }
-    // }
-
     if(Yoffset == 0) {
         onTopScroll();
-        // console.log('00')
     } else {
         if (Yoffset > lastScrollTop) {
             onDownScroll();
@@ -251,7 +238,8 @@ const onDownScroll = () => {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          tabHeader.classList.remove('tab-move-position');
+          tabHeader.style.transition = "transform 0.5s linear"
+          tabHeader.style.transform = "translateY(0)"
         }
       });
     }
@@ -265,38 +253,26 @@ const onUpScroll = () => {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          tabHeader.classList.add('tab-move-position');
+          tabHeader.style.transition = "transform 0.5s linear"
+          tabHeader.style.transform = "translateY(100px)"
         }
       });
     }
 }
 
 const onTopScroll = () => {
-    // console.log('00')
-    // if(subVisual && !subVisual.classList.contains('type-empty') || bodyDarkMode){
-    //     headerWrap.classList.add('is-bg-transparent');
-    //     headerWrap.classList.add('is-fixed');
-    // } else {
-    //     headerWrap.classList.remove('is-fixed');
-    // }
     headerWrap.classList.remove('is-fixed');
     headerWrap.classList.remove('is-motion');
     if(contentTab) {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          tabHeader.classList.remove('tab-move-position');
+          tabHeader.style.transition = "transform 0.5s linear"
+          tabHeader.style.transform = "translateY(0)"
         }
       });
     }
 }
-
-// const scrollPos = window.scrollY || document.documentElement.scrollTop;
-// // console.log(scrollPos)
-// if(subVisual && !subVisual.classList.contains('type-empty') || bodyDarkMode){
-//     headerWrap.classList.add('is-bg-transparent');
-//     headerWrap.classList.add('is-fixed');
-// }
 
 // PC 언어선택 토글
 const langTogglePC = () => {
