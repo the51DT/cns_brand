@@ -2,7 +2,6 @@ const headerWrap = document.querySelector('.header');
 const bodyWrap = document.querySelector('body');
 // let subMenuHeight = 0
 let currentGnbMode = null; // 'mo' or 'pc'
-let headerHeight = "0";
 
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
@@ -250,7 +249,7 @@ const onUpScroll = () => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
           // tabHeader.style.transition = "transform 0.5s linear";
-          tabHeader.style.transform = "translateY("+headerHeight+")";
+          tabHeader.style.transform = "translateY("+headerHeight+"px)";
         }
       });
     }
@@ -293,14 +292,11 @@ const gnbSwiper = new Swiper('.gnb-sub-swiper .swiper', {
 });
 
 // 1. 초기 모드 설정
+let headerHeight;
 window.addEventListener('DOMContentLoaded', () => {
   const isPc = window.innerWidth >= 1280;
   setGnbMode(isPc ? 'pc' : 'mo');
-  if(isPc) {
-    headerHeight = "6.25rem";
-  } else {
-    headerHeight = "4rem";
-  }
+  headerHeight = isPc ? 100 : 64; 
 });
 
 // 2. 리사이즈 감지
@@ -310,10 +306,10 @@ window.addEventListener('resize', () => {
   if (isPc && currentGnbMode !== 'pc') {
     closeMoGnb();
     setGnbMode('pc');
-    headerHeight = "6.25rem";
+    headerHeight = 100;
   } else if (!isPc && currentGnbMode !== 'mo') {
     setGnbMode('mo');
-    headerHeight = "4rem";
+    headerHeight = 64;
   }
 });
 
