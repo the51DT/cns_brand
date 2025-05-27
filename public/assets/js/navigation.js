@@ -210,11 +210,6 @@ const moNavigationAccordion = (selector) => {
 
 // 위 아래 구분을 위한 스크립트
 let lastScrollTop = 0;
-const bodyDarkMode = document.querySelector('body.dark-mode');
-const subVisual = document.querySelector('.sub-visual__wrap');
-const mainVisual = document.querySelector('.main-visual__wrap');
-const subVisualHeight = subVisual ?  subVisual.offsetHeight : 0;
-const mainVisualHeight = mainVisual ? mainVisual.offsetHeight : 0;
 const contentTab = document.querySelectorAll('.cmp-tab');
 const scrollEventManage = () => {
     const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
@@ -238,8 +233,8 @@ const onDownScroll = () => {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          tabHeader.style.transition = "transform 0.5s linear"
-          tabHeader.style.transform = "translateY(0)"
+          // tabHeader.style.transition = "transform 0.5s linear";
+          tabHeader.style.transform = "translateY(0)";
         }
       });
     }
@@ -253,8 +248,8 @@ const onUpScroll = () => {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          tabHeader.style.transition = "transform 0.5s linear"
-          tabHeader.style.transform = "translateY(100px)"
+          // tabHeader.style.transition = "transform 0.5s linear";
+          tabHeader.style.transform = "translateY(100px)";
         }
       });
     }
@@ -267,8 +262,8 @@ const onTopScroll = () => {
       contentTab.forEach((tab) => {
         if(!tab.classList.contains('cmp-tab--sub')){
           const tabHeader = tab.querySelector('.cmp-tab__header');
-          tabHeader.style.transition = "transform 0.5s linear"
-          tabHeader.style.transform = "translateY(0)"
+          // tabHeader.style.transition = "transform 0.5s linear";
+          tabHeader.style.transform = "translateY(0)";
         }
       });
     }
