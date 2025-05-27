@@ -1,7 +1,7 @@
 /*
     1. data를 받는다 ({color-mode, hero-style(bg, 영상)}, data-bg-color)
     2. data-bg-color 가 있으면 1순위로 적용되고 color-mode 는 자동으로 color-mode-black 적용
-    3. {color-mode, hero-style} 가 tmffkdlem 1 ~ 4까지 랜덤으로 적용되며, hero-style 에 맞는 color-mode 가 그룹
+    3. {color-mode, hero-style} 가 슬라이드 1 ~ 4까지 랜덤으로 적용되며, hero-style 에 맞는 color-mode 가 그룹
     4. 슬라이드 5 부터는 news 타입으로 적용 (.interactive-swiper__slide--news)
     5. .interactive-swiper__slide 의 경우 data-bg-color 의 값을 가지고 적용 (data-bg-color 가 없으면 랜덤으로 적용된 {color-mode, hero-style} 으로 반영)
     6. 슬라이드가 active 되면 동작이 적용
