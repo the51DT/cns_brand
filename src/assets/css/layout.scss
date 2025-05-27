@@ -989,13 +989,13 @@ body {
             --header-search-ico: url("#{$basePath}image/icon/ico_search.svg");
         }
     }
-    &.is-fixed {
-        // position: fixed;
-        // top: 0;
-        // left: 0;
-        z-index: 100;
-        // transform: translateY(calc(-100 / 16 * 1rem));
-    }
+    // &.is-fixed {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     z-index: 100;
+    //     // transform: translateY(calc(-100 / 16 * 1rem));
+    // }
     &.is-motion {
         transform: translateY(calc(-64 / 16 * 1rem));
         @media #{$min1280} {

@@ -227,7 +227,7 @@ const scrollEventManage = () => {
 
 const onDownScroll = () => {
     // console.log('down');
-    headerWrap.classList.remove('is-fixed');
+    // headerWrap.classList.remove('is-fixed');
     headerWrap.classList.add('is-motion');
     if(contentTab) {
       contentTab.forEach((tab) => {
@@ -241,7 +241,7 @@ const onDownScroll = () => {
 
 const onUpScroll = () => {
     // console.log('up');
-    headerWrap.classList.add('is-fixed');
+    // headerWrap.classList.add('is-fixed');
     headerWrap.classList.remove('is-motion');
     if(contentTab) {
       contentTab.forEach((tab) => {
@@ -254,7 +254,7 @@ const onUpScroll = () => {
 }
 
 const onTopScroll = () => {
-    headerWrap.classList.remove('is-fixed');
+    // headerWrap.classList.remove('is-fixed');
     headerWrap.classList.remove('is-motion');
     if(contentTab) {
       contentTab.forEach((tab) => {
