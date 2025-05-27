@@ -16,13 +16,13 @@ export default defineConfig({
                 description: 'IT신기술로 고객의 DX 경험을 혁신하는 Digital Business Innovator! LG CNS의 공식 홈페이지입니다.',
             },
         }),
-        // ViteImageOptimizer({
-        //     test: /\.(jpe?g|png|gif|webp|svg)$/i,
-        //     png: { quality: 80 },
-        //     jpeg: { quality: 80 },
-        //     svg: false,
-        //     webp: false,
-        // }),
+        ViteImageOptimizer({
+            test: /\.(jpe?g|png|gif|webp|svg)$/i,
+            png: { quality: 80 },
+            jpeg: { quality: 80 },
+            svg: { quality: 80 },
+            webp: false,
+        }),
         {
             name: 'html-formatter',
             apply: 'build', // 빌드 단계에서만 실행
