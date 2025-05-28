@@ -317,7 +317,7 @@
             .dynamic-search__expanded-area {
                 overflow: hidden;
                 max-height: 0;
-                height: 0;
+                // height: 0;
             }
             .main-container {
                 margin-top: calc(40 / 16 * 1rem);
@@ -343,7 +343,7 @@
             .dynamic-search__collapsed-area {
                 overflow: hidden;
                 max-height: 0;
-                height: 0;
+                // height: 0;
             }
             .dynamic-search__expanded-area {
                 max-height: 587px;
