@@ -16,11 +16,11 @@
                         <% item.content.forEach((content) => { %>
                             <li>
                                 <% if(content.title) { %>
-                                    <div class="cate-title font-body-xl font-semibold"><%= content.title %></div>
+                                    <div class="cate-title font-body-xl font-semibold"><%- content.title %></div>
                                 <% } %>
                                 <% if(content.text) { %>
                                     <div class="cate-text font-body-sm">
-                                        <%= content.text %>
+                                        <%- content.text %>
                                     </div>
                                 <% } %>
                             </li>

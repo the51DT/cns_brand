@@ -201,6 +201,12 @@ $asset-paths: (
         padding: calc(15 / 16 * 1rem) calc(24 / 16 * 1rem);
         height: calc(64 / 16 * 1rem);
     }
+    &:has(.btn__text + .btn__icon) {
+        padding-right: calc(11 / 16 * 1rem);
+        @media #{$min1280} {
+            padding-right: calc(24 / 16 * 1rem);
+        }
+    }
 }
 .btn.btn-x-large .btn__text {
     font-size: calc(16 / 16 * 1rem);
