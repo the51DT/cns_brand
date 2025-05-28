@@ -12,158 +12,157 @@
     <div class="wrap contact-us">
         <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
-        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, {
-            subText: '문의하기',
-            pageTitle: '상담 및 문의하기'
-        })) %>
-        <div class="contact-us__visual-box">
-            <p class="font-bold text-center font-head-md">궁금한 사항을 남겨주시면<br>빠른 시일 내에 답변드리겠습니다.</p>
-        </div>
-
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+            pcImg: 'https://placehold.co/1920x480',
+            moImg: 'https://placehold.co/360x284',
+            subText: '문의하기', 
+            pageTitle: '상담 및 문의하기',
+            bannerSize: 'wide'
+        })) %>  
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
-                    <%
+                <%
                     const inputData = [
                         {
-                            id: 0,
-                            title: { text: "성함", required: true },
                             inputData: [
                                 {
+                                    id: 1,
+                                    title: "성",
+                                    required: true,
                                     type: "text",
-                                    placeholder: "성함을 입력해 주세요",
+                                    placeholder: "성을 입력해주세요.",
                                 },
-                            ]
-                        },
-                        {
-                            id: 1,
-                            title: { text: "이메일", required: true },
-                            inputData: [
                                 {
+                                    id: 2,
+                                    title: "이름",
+                                    required: true,
                                     type: "text",
-                                    placeholder: "이메일을 입력해주세요.",
+                                    placeholder: "이름을 입력해주세요",
                                 },
                             ],
                         },
                         {
-                            id: 2,
-                            title: { text: "휴대전화", required: true },
                             inputData: [
                                 {
+                                    id: 3,
+                                    title: "이메일",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "이메일을 입력해주세요.",
+                                },
+                            ]
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 4,
+                                    title: "휴대전화",
+                                    required: true,
                                     type: "text",
                                     placeholder: "휴대전화 번호를 입력해주세요.",
                                 },
                             ]
                         },
                         {
-                            id: 3,
-                            title: { text: "부서명", required: true },
                             inputData: [
                                 {
-                                    type: "text",
-                                    placeholder: "부서명을 입력해 주세요",
-                                },
-                            ]
-                        },
-                        {
-                            id: 4,
-                            title: { text: "회사(소속)", required: true },
-                            inputData: [
-                                {
+                                    id: 5,
+                                    title: "회사(소속)",
+                                    required: true,
                                     type: "search",
                                     placeholder: "기업명 또는 사업자등록번호 입력",
-                                }
+                                },
                             ],
                         },
                         {
-                            id: 5,
-                            title: { text: "직급", required: true },
                             inputData: [
                                 {
+                                    id: 6,
+                                    title: "직급",
+                                    required: true,
                                     type: "text",
-                                    placeholder: "직급을 입력해 주세요",
+                                    placeholder: "직급을 입력해주세요.",
                                 },
                             ]
                         },
                         {
-                            id: 6,
-                            title: { text: "질문유형", required: true },
                             inputData: [
                                 {
+                                    id: 7,
+                                    title: "질문유형",
+                                    required: true,
                                     type: "dropdown",
                                     placeholder: "질문 유형을 선택해 주세요",
                                     option: [
                                         {
-                                            value: "클라우드",
+                                            value: "Selected",
                                         },
                                         {
-                                            value: "AI 빅데이터",
+                                            value: "Hover",
                                         },
                                         {
-                                            value: "스마트팩토리",
+                                            value: "Disabled",
+                                            disabled: true,
                                         },
                                         {
-                                            value: "스마트시티",
+                                            value: "Default",
                                         },
                                         {
-                                            value: "클라우드",
+                                            value: "Default",
                                         },
                                     ],
                                 },
                             ],
                         },
                         {
-                            id: 6,
-                            title: { text: "문의내용", required: true },
                             inputData: [
                                 {
+                                    id: 8,
+                                    title: "문의내용",
+                                    required: true,
                                     type: "textarea",
-                                    placeholder: "내용을 입력해 주세요 &#10; *주민번호, 연락처, 계좌번호 등 개인정보가 포함된 내용은 입력을 금합니다",
-                                    countMax: "1,000"
+                                    placeholder: "내용을 입력해주세요.",
+                                    countMax: "1,00",
+                                    info: "개인정보가 포함된 내용은 입력을 금합니다."
                                 },
                             ],
                         },
                     ]
-                    %>
-                    <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
-                        jsonData: inputData,
-                    })) %>
-                    <div class="check-box-container">
-                        <%
-                            const formGroupData = {
-                                box: {
-                                    name: "전체동의 인풋 네임",
-                                    value: "전체동의",
-                                    label: "전체 동의합니다. (선택항목 포함)",
-                                    checked: true,
-                                },
-                                name: "약관들 인풋 네임",
-                                acco: [
-                                    {
-                                        value: "필수약관",
-                                        label: "개인정보 수집·이용 동의 (필수)",
-                                        required: true,
-                                        text: "<strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br><strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br>",
-                                    },
-                                    {
-                                        value: "선택약관",
-                                        label: "개인정보 수집·이용 동의 (선택)",
-                                        disabeld: true,
-                                        text: "<strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br><strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br>",
-                                    },
-                                ],
-                            }
-                        %>
-                        <%- include('src/component/cmp_form-group.html', Object.assign({}, locals, { 
-                            jsonData: formGroupData,
-                        })) %>
-
-                    </div>
-                    <div class="button__wrap">
-                        <button type="button" class="btn btn-secondary btn-small">
-                            <span class="btn__text">문의하기</span>
-                        </button>
-                    </div>
+                %>
+                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                    jsonData: inputData,
+                })) %>
+                <%
+                    const formGroupData = {
+                        box: {
+                            name: "전체동의 인풋 네임",
+                            value: "전체동의",
+                            label: "전체 동의합니다. (선택항목 포함)",
+                        },
+                        name: "약관들 인풋 네임",
+                        acco: [
+                            {
+                                value: "필수약관",
+                                label: "개인정보 수집·이용 동의 (필수)",
+                                text: "<strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br><strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br>",
+                            },
+                            {
+                                value: "선택약관",
+                                label: "개인정보 수집·이용 동의 (선택)",
+                                text: "<strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br><strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br>",
+                            },
+                        ],
+                    }
+                %>
+                <%- include('src/component/cmp_form-group.html', Object.assign({}, locals, { 
+                    jsonData: formGroupData,
+                })) %>
+                <div class="button__wrap">
+                    <button type="button" class="btn btn-primary btn-medium">
+                        <span class="btn__text">문의하기</span>
+                    </button>
+                </div>
             </div>
         </div>
         <%- include('src/_inc/footer.html') %>

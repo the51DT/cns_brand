@@ -1,49 +1,28 @@
 .contact-us {
-    &__visual-box {
-        padding: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem) calc(var(--spacing-mode1-horizontal-x-l) / 16 * 1rem);
-        background-color: #F5F5F5;
-        margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
-        @media #{$tablet} {
-            margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
-        }
-        @media #{$phone} {
-            margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
-        }
-    }
     .sub-content__wrap {
         .inner-wrap {
-            margin: 0 auto calc(var(--spacing-mode1-vertical9-x-l) / 16 * 1rem);
-            max-width: calc(1168 / 16 * 1rem);
-            @media #{$pcMiddle} {
-                max-width: calc(1008 / 16 * 1rem);
-                margin-bottom: calc(var(--spacing-mode1-vertical7-x-l) / 16 * 1rem);
+            margin: 0 auto ;
+            padding: calc(56/ 16 * 1rem) calc(20 / 16 * 1rem) calc(220 / 16 * 1rem);
+            max-width: calc(996 / 16 * 1rem);
+            @media #{$min1280} {
+                padding: calc(120/ 16 * 1rem) calc(20 / 16 * 1rem) calc(280 / 16 * 1rem);
             }
-            @media #{$tablet} {
-                max-width: calc(896 / 16 * 1rem);
-                margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
+            .cmp-input {
+                margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
             }
-            @media #{$phone} {
-                margin-bottom: calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem);
-            }
-            .cmp-input__wrap {
-                margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
-                @media #{$tabletMini} {
-                    margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
-                }
-                @media #{$phone} {
+            .cmp-form-group {
+                margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
+                .cmp-input {
                     margin-bottom: calc(var(--spacing-mode1-vertical2-x-l) / 16 * 1rem);
+                    @media #{$min1280} {
+                        margin-bottom: calc(var(--spacing-mode1-vertical2-x-l-nudge) / 16 * 1rem);
+                    }
                 }
-            }
-            .check-box-container {
-                .cmp-form-group{
-                    .cmp-input__wrap{
+                .cmp-form-group__accordion {
+                    .cmp-input {
                         margin-bottom: 0;
                     }
                 }
-                // width: 100%;
-                // height: calc(148 / 16 * 1rem);
-                // background-color: lightgray;
-                // margin-bottom: calc(var(--spacing-mode1-vertical4-x-l) / 16 * 1rem);
             }
         }
     }

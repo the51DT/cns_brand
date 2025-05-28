@@ -39,7 +39,6 @@ const isEmptyStyle = isEmptyVisual || (typeof lifted !== 'undefined' && lifted);
           </p>
         </div>
       </div>
-
     <% } else { %>
       <div class="visual-text">
         <% if (typeof subText !== 'undefined' && subText) { %>
@@ -49,7 +48,7 @@ const isEmptyStyle = isEmptyVisual || (typeof lifted !== 'undefined' && lifted);
         <% } %>
 
         <% if (typeof bannerSize !== 'undefined' && bannerSize === 'wide') { %>
-          <span class="font-head-md font-bold"><%- pageTitle %></span>
+          <span class="font-head-xl"><%- pageTitle %></span>
         <% } else { %>
           <h2 class="font-head-xl">
             <%= typeof pageTitle !== 'undefined' ? pageTitle : '기본 타이틀 문구' %>
