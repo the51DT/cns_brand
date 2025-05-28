@@ -303,16 +303,10 @@ body {
     align-items: center;
     margin: 0 auto;
     transition: top 0.5s linear;
-    // transform: translateY(0);
     background: var(--header-bg);
-    // position: relative;
     position: fixed;
     top: 0;
     left: 0;
-    // transform: translateY(0);
-    // @media #{$min1280} {
-    //     height: calc(100 / 16 * 1rem);
-    // }
     &-inner {
         padding: 0 calc(12 / 16 * 1rem) 0 calc(20 / 16 * 1rem);
         margin: 0 auto;
@@ -997,10 +991,8 @@ body {
     //     // transform: translateY(calc(-100 / 16 * 1rem));
     // }
     &.is-motion {
-        // transform: translateY(calc(-64 / 16 * 1rem));
         top: calc(-64 / 16 * 1rem);
         @media #{$min1280} {
-            // transform: translateY(calc(-100 / 16 * 1rem));
             top: calc(-100 / 16 * 1rem);
         }
     }

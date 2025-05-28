@@ -23,14 +23,12 @@
         margin-bottom: calc(48 / 16 * 1rem);
         overflow: hidden;
         overflow-x: scroll;
-        // position: relative;
         -ms-overflow-style:none;
         scrollbar-width:none;
         padding-right: calc(40 / 16 * 1rem);
         position: sticky;
         top: 0;
         left: 0;
-        // transform: translateY(0);
         background: var(--colorCM-mode1-background-background-default0);
         z-index: 10;
         transition: top 0.5s linear;
