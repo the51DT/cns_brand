@@ -912,7 +912,6 @@
                 // 닫힘 상태일 때
                 if (target.classList.contains('dynamic-search--collapsed') && !target.classList.contains('dynamic-search--expanded-important')) {
                     if (Yoffset >= dynamicSearchTop && Yoffset < dynamicSearchTop + dynamicSearchHeight) {
-                        // console.log('열림');
                         target.classList.remove('dynamic-search--collapsed');
                         target.classList.add('dynamic-search--expanded');
                     }
@@ -921,12 +920,10 @@
                 else if (target.classList.contains('dynamic-search--expanded') && !target.classList.contains('dynamic-search--expanded-important')) {
                     if (Yoffset >= dynamicSearchTop + dynamicSearchHeight) {
                         // 스크롤 위치가 dynamicSearch의 하단을 넘어가면
-                        // console.log('닫힘 1');
                         target.classList.add('dynamic-search--collapsed');
                         target.classList.remove('dynamic-search--expanded');
                     } else if (Yoffset < target.getBoundingClientRect().top){
                         // 스크롤 위치가 dynamicSearch보다 위에 있다면
-                        // console.log('닫힘 2');
                         target.classList.add('dynamic-search--collapsed');
                         target.classList.remove('dynamic-search--expanded');
                     }
