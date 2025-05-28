@@ -759,6 +759,8 @@ body {
             position: fixed;
             top: calc(64 / 16 * 1rem);
             left: 0;
+            bottom: 0;
+            right: 0;
             width: 100%;
             height: calc(100vh - calc(64 / 16 * 1rem));
             background: var(--header-2depth-bg);
