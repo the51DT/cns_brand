@@ -862,6 +862,7 @@
     <script src="/assets/js/main_interactive_hero.js"></script>
     <script src="/assets/js/main_service.js"></script>
     <script>
+
         /* swiper-notice */
         let swiperNotice = new Swiper('.swiper-notice', {
             loop: false,
@@ -890,15 +891,21 @@
 
         /* search */
         const dynamicSearch = document.querySelector('.dynamic-search');
+        const targetPosition = dynamicSearch.offsetTop;
+
         if (dynamicSearch) {
             // 클릭 이벤트로 상태 전환
-            dynamicSearch.addEventListener("click", () => {
+            dynamicSearch.addEventListener("click", (target) => {
                 if (dynamicSearch.classList.contains('dynamic-search--collapsed')) {
                     dynamicSearch.classList.remove('dynamic-search--collapsed');
                     dynamicSearch.classList.add('dynamic-search--expanded');
                     dynamicSearch.classList.add('dynamic-search--expanded');
-                    dynamicSearch.classList.add('dynamic-search--expanded-important');
+                    dynamicSearch.classList.add('dynamic-search--expanded-important');                                    
                 }
+                 window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth' // 부드러운 스크롤 동작
+                });
             });
         }
         function checkSearch(target) {
@@ -911,7 +918,7 @@
                 const dynamicSearchHeight = target.offsetHeight;
                 // 닫힘 상태일 때
                 if (target.classList.contains('dynamic-search--collapsed') && !target.classList.contains('dynamic-search--expanded-important')) {
-                    if (Yoffset >= dynamicSearchTop && Yoffset < dynamicSearchTop + dynamicSearchHeight) {
+                    if (Yoffset >= dynamicSearchTop - 181 && Yoffset < dynamicSearchTop + dynamicSearchHeight) {
                         target.classList.remove('dynamic-search--collapsed');
                         target.classList.add('dynamic-search--expanded');
                     }
