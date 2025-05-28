@@ -273,13 +273,15 @@ function carousel() {
   gsap.ticker.add(tickerCallback);
 
   window.addEventListener('resize', () => {
-    document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`),
-      gsap.set('.carousel-wrap', {
-        height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
-      }),
-      (n = e.clientWidth),
-      (o = t[0].clientWidth + 10),
-      (r = t.length * o);
+    if (window.innerWidth < 1280) {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`),
+        gsap.set('.carousel-wrap', {
+          height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
+        }),
+        (n = e.clientWidth),
+        (o = t[0].clientWidth + 10),
+        (r = t.length * o);
+    }
   });
 }
 
