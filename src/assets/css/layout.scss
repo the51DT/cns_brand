@@ -772,8 +772,8 @@ body {
             .mo-gnb-navy__container {
                 margin: 0 auto;
                 // padding: 0 calc(20 / 16 * 1rem); 
-                padding-bottom: calc(env(safe-area-inset-bottom) + 32 / 16 * 1rem) !important;
-                padding-bottom: calc(constant(safe-area-inset-bottom) + 32 / 16 * 1rem) !important;
+                padding-bottom: calc(env(safe-area-inset-bottom) + 64 / 16 * 1rem) !important;
+                padding-bottom: calc(constant(safe-area-inset-bottom) + 64 / 16 * 1rem) !important;
             }
             // mobile gnb 1depth
             .mo-navy-list {
