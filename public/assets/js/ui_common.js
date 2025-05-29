@@ -173,11 +173,10 @@ const setModal = (target) => { // target : 모달 아이디
     if(target.classList.contains('type-bottom')) {
         const modalHeadHeight = target.querySelector('.modal-header') ? target.querySelector('.modal-header').offsetHeight : 0;
         const modalFootHeight = target.querySelector('.modal-footer') ? target.querySelector('.modal-footer').offsetHeight : 0;
-        
         let modalHeight = modalHeadHeight + modalFootHeight + 50;
-
         target.querySelector('.modal-cont').style = `--modal-cont-height:${modalHeight}px`;
     };
+
 
     setTimeout(() => {
         target.classList.add('is-active');                
@@ -195,6 +194,10 @@ const openModal = (event, type) => {
     if (target) {     
         setModal(modalId); // ID =`${modal-id}` 에 해당되는 모달 열기
     }
+    const notchTop = getComputedStyle( document.documentElement,).getPropertyValue("--env-top");
+    const notchbottom = getComputedStyle( document.documentElement,).getPropertyValue("--env-bottom");
+    console.log('notchTop:', notchTop);
+    console.log('notchbottom:', notchbottom);
 };
 window.openModal = openModal;
 // 모달 외부 클릭 이벤트 핸들러
@@ -662,6 +665,7 @@ const glideText = (() => {
         init() // 실행
     });
 })
+
 // document.addEventListener("DOMContentLoaded", sidebarCmp);
 document.addEventListener("DOMContentLoaded", () => {
     sidebarCmp;

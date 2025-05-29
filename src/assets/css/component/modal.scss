@@ -14,8 +14,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
-    padding-bottom: env(safe-area-inset-bottom);
+    height: calc(100vh - var(--env-bottom));
     z-index: 100;
     box-sizing: border-box;
 }
@@ -35,7 +34,7 @@
     width: 100vw;
     /* min-width: 100%; */
     max-width: 100%;
-    height: 100%;
+    height: calc(100vh - var(--env-bottom));
     // min-height: 100%;
     // max-height: 100%;
     overflow: hidden;
@@ -201,8 +200,7 @@
 }
 .modal--type-large .modal__container {
     /* padding-bottom: calc(24 / 16 * 1rem); */
-    height: calc(100vh - env(safe-area-inset-bottom));
-    height: calc(100vh - constant(safe-area-inset-bottom));
+    height: calc(100vh - var(--env-bottom));
     border-radius: var(--radius-mode1-none);
     @media #{$min1280} {
         padding-bottom: calc(32 / 16 * 1rem);
