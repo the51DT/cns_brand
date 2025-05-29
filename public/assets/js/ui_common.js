@@ -194,10 +194,12 @@ const openModal = (event, type) => {
     if (target) {     
         setModal(modalId); // ID =`${modal-id}` 에 해당되는 모달 열기
     }
-    const root = document.documentElement;
-    const safeTop = getComputedStyle(root).getPropertyValue('--env-top');
-    const safeBottom = getComputedStyle(root).getPropertyValue('--env-bottom');
-    console.log('safe-are', safeTop.trim(), safeBottom.trim());
+    requestAnimationFrame(() => {
+        const root = document.documentElement;
+        const safeTop = getComputedStyle(root).getPropertyValue('--env-top');
+        const safeBottom = getComputedStyle(root).getPropertyValue('--env-bottom');
+        console.log('Safe area insets:', safeTop.trim(), safeBottom.trim());
+    });
 };
 window.openModal = openModal;
 // 모달 외부 클릭 이벤트 핸들러
