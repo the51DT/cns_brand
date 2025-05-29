@@ -210,6 +210,36 @@
 .modal--type-large .modal__content {
     /* padding-top : calc(44 / 16 * 1rem); */
 }
+
+.modal--type-large:not(.modal--type-full-pc) {
+    /* iOS only */
+    @supports (-webkit-touch-callout: none) { 
+    height: -webkit-fill-available;
+    }
+    .modal__container {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .modal__header {
+        padding-top: calc(32 / 16 * 1rem);
+        @media #{$min1280} {
+            padding-top: calc(32 / 16 * 1rem);
+        }
+    }
+    .modal__content {
+        height: 100vh;
+        @media #{$min1280} {
+            height: 100%;
+        }
+    }
+    .modal__footer {
+        padding-bottom: calc(24 / 16 * 1rem);
+        @media #{$min1280} {
+            padding-bottom: calc(32 / 16 * 1rem);
+        }
+    }
+}
+
 /* .modal--type-large .modal__header + .modal__content {
     padding-top: 0;
 } */
