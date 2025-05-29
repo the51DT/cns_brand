@@ -198,7 +198,7 @@ const openModal = (event, type) => {
         const root = document.documentElement;
         const safeTop = getComputedStyle(root).getPropertyValue('--env-top');
         const safeBottom = getComputedStyle(root).getPropertyValue('--env-bottom');
-        console.log('Safe area insets:', safeTop.trim(), safeBottom.trim());
+        console.log('Safe area insets 2:', safeTop.trim(), safeBottom.trim());
     });
 };
 window.openModal = openModal;

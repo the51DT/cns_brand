@@ -63,8 +63,6 @@ $basePathAssets : '/assets/';
     --spacing-mode1-horizontal7-x-l: 160;
     --spacing-mode1-horizontal8-x-l: 180;
     --spacing-mode1-horizontal9-x-l: 200;
-    --env-top: env(safe-area-inset-top);
-    --env-bottom: env(safe-area-inset-bottom);
 }
 @media #{$min1280} {
     :root {

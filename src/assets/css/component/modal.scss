@@ -1,3 +1,7 @@
+:root {
+  --env-bottom: env(safe-area-inset-bottom);
+  --env-top: env(safe-area-inset-top);
+}
 /* 모달 컴포넌트 */
 .cmp-modal {
     display: none;
