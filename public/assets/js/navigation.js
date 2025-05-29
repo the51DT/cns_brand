@@ -327,3 +327,8 @@ moNavigationToggle('.mo-menu .btn-hamburger-menu');
 moNavigationAccordion('.mo-gnb-navy__wrap .mo-navy-list');
 mainNavigation('.navy-list > li');
 langTogglePC();
+console.log('navigator.userAgent:', navigator.userAgent);
+const root = document.documentElement;
+const safeTop = getComputedStyle(root).getPropertyValue('--env-top');
+const safeBottom = getComputedStyle(root).getPropertyValue('--env-bottom');
+console.log('Safe area insets 2:', safeTop.trim(), safeBottom.trim());
