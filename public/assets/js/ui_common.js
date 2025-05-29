@@ -671,4 +671,6 @@ document.addEventListener("DOMContentLoaded", () => {
     accordion('.basic-type', 'basic');        
     accordion('.open-type', 'basic');   
     inputSearch('.cmp-input__item--search'); 
+    const $body = document.querySelector('body');
+    $body.setAttribute('data-option', '--safe-area-bottom')
 });
