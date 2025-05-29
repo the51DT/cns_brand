@@ -212,6 +212,9 @@
 }
 
 .modal--type-large:not(.modal--type-full-pc) {
+    @supports (-webkit-touch-callout: none) { 
+        height: -webkit-fill-available;
+    }
     .modal__dim {
         @supports (-webkit-touch-callout: none) { 
             height: -webkit-fill-available;
