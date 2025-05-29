@@ -672,6 +672,11 @@ document.addEventListener("DOMContentLoaded", () => {
     accordion('.open-type', 'basic');   
     inputSearch('.cmp-input__item--search'); 
     
-    const $body = document.querySelector('body');
-    $body.style.padding = "var(--safe-area-bottom)";
+    requestAnimationFrame(() => {
+    const root = document.documentElement;
+    const safeBottom = getComputedStyle(root).getPropertyValue('--safe-area-bottom').trim();
+
+    const body = document.querySelector('body');
+    body.style.padding = safeBottom;
+  });
 });
