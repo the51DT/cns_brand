@@ -327,8 +327,3 @@ moNavigationToggle('.mo-menu .btn-hamburger-menu');
 moNavigationAccordion('.mo-gnb-navy__wrap .mo-navy-list');
 mainNavigation('.navy-list > li');
 langTogglePC();
-
-const notchTop = getComputedStyle( document.documentElement,).getPropertyValue("--env-top");
-const notchbottom = getComputedStyle( document.documentElement,).getPropertyValue("--env-bottom");
-console.log('notchTop:', notchTop);
-console.log('notchbottom:', notchbottom);
