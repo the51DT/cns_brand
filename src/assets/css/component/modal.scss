@@ -219,8 +219,12 @@
     .modal__container {
         padding-top: 0;
         padding-bottom: 0;
+        height: 100vh;
         @supports (-webkit-touch-callout: none) { 
             height: -webkit-fill-available;
+        }
+        @media #{$min1280} {
+            height: auto;
         }
     }
     .modal__header {
