@@ -762,7 +762,7 @@ body {
             bottom: 0;
             right: 0;
             width: 100%;
-            height: calc(100vh - calc(64 + env(safe-area-inset-bottom) / 16 * 1rem));
+            height: calc(100vh - calc(64 + var(--env-bottom) / 16 * 1rem));
             height: calc(100vh - calc(64 + constant(safe-area-inset-bottom) / 16 * 1rem));
             // height: calc(100vh - calc(64 / 16 * 1rem));
             background: var(--header-2depth-bg);
