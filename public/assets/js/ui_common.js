@@ -194,10 +194,12 @@ const openModal = (event, type) => {
     if (target) {     
         setModal(modalId); // ID =`${modal-id}` 에 해당되는 모달 열기
     }
-    const notchTop = getComputedStyle( document.documentElement,).getPropertyValue("--env-top");
-    const notchbottom = getComputedStyle( document.documentElement,).getPropertyValue("--env-bottom");
+    const notchTop = getComputedStyle( document.documentElement).getPropertyValue("--env-top");
+    const notchbottom = getComputedStyle( document.documentElement).getPropertyValue("--env-bottom");
+    const insetBottom = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('padding-bottom')) || 0;
     console.log('notchTop:', notchTop);
     console.log('notchbottom:', notchbottom);
+    console.log('insetBottom:', insetBottom);
 };
 window.openModal = openModal;
 // 모달 외부 클릭 이벤트 핸들러
