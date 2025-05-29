@@ -1,7 +1,3 @@
-:root {
-  --env-bottom: env(safe-area-inset-bottom);
-  --env-top: env(safe-area-inset-top);
-}
 /* 모달 컴포넌트 */
 .cmp-modal {
     display: none;
@@ -18,9 +14,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(100vh - var(--env-bottom));
+    height: 100vh;
     z-index: 100;
-    box-sizing: border-box;
 }
 .modal .modal__wrapper {
     padding: 0 calc(20 / 16 * 1rem);
@@ -38,9 +33,8 @@
     width: 100vw;
     /* min-width: 100%; */
     max-width: 100%;
-    height: calc(100vh - var(--env-bottom));
-    // min-height: 100%;
-    // max-height: 100%;
+    min-height: 100%;
+    max-height: 100%;
     overflow: hidden;
     z-index: 1;
     box-sizing: border-box;
@@ -204,7 +198,7 @@
 }
 .modal--type-large .modal__container {
     /* padding-bottom: calc(24 / 16 * 1rem); */
-    height: calc(100vh - var(--env-bottom));
+    height: 100vh;
     border-radius: var(--radius-mode1-none);
     @media #{$min1280} {
         padding-bottom: calc(32 / 16 * 1rem);
