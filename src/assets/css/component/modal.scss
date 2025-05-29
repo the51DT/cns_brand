@@ -230,6 +230,14 @@
         @media #{$min1280} {
             height: auto;
         }
+        &:has(:not(.modal__header)) {
+            .modal__content {
+                padding-top: calc(76 / 16 * 1rem);
+                @media #{$min1280} {
+                    padding-top: calc(88 / 16 * 1rem);
+                }
+            }
+        }
     }
     .modal__header {
         padding-top: calc(32 / 16 * 1rem);
