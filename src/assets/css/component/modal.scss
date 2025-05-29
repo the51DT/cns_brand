@@ -198,7 +198,8 @@
 }
 .modal--type-large .modal__container {
     /* padding-bottom: calc(24 / 16 * 1rem); */
-    height: 100vh;
+    height: calc(100vh - env(safe-area-inset-bottom));;
+    height: calc(100vh - constant(safe-area-inset-bottom));;
     border-radius: var(--radius-mode1-none);
     @media #{$min1280} {
         padding-bottom: calc(32 / 16 * 1rem);
