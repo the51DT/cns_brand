@@ -214,11 +214,14 @@
 .modal--type-large:not(.modal--type-full-pc) {
     /* iOS only */
     @supports (-webkit-touch-callout: none) { 
-    height: -webkit-fill-available;
+        height: -webkit-fill-available;
     }
     .modal__container {
         padding-top: 0;
         padding-bottom: 0;
+        @supports (-webkit-touch-callout: none) { 
+            height: -webkit-fill-available;
+        }
     }
     .modal__header {
         padding-top: calc(32 / 16 * 1rem);
