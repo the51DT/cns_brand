@@ -97,7 +97,10 @@
             color: var(--text-text-default);
 
             .sub-text + h2 {
-                margin-top: calc(8 / 16 * 1rem);
+                margin-top: calc(2 / 16 * 1rem);
+                @media #{$min1280} {
+                    margin-top: calc(8 / 16 * 1rem);
+                }
             }
         }
     }
