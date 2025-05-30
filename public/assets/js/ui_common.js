@@ -427,8 +427,8 @@ const tabMenu = (el, type) => {
         }     
 
         tabList.forEach((list, index) => {
-            let contentPosition = tabContents[index].offsetTop;
             list.addEventListener('click', (event) => {
+                const contentPosition = tabContents[index].offsetTop;
                 event.preventDefault();
                 wrap.querySelector('.tab__menu li.is-active')?.classList.remove('is-active');
                 list.parentElement.classList.add('is-active');
@@ -469,6 +469,7 @@ const tabSubMenu = (el, type) => {
 
         tabList.forEach((list, index) => {
             list.addEventListener('click', (event) => {
+                const contentPosition = tabContents[index].offsetTop;
                 event.preventDefault();
 
                 wrap.querySelector('.tab__sub-menu li.is-active')?.classList.remove('is-active');
@@ -477,6 +478,10 @@ const tabSubMenu = (el, type) => {
                 if (type === 'tab') {
                     wrap.querySelector('.tab__sub-content.is-active')?.classList.remove('is-active');
                     tabContents[index]?.classList.add('is-active');
+                    window.scrollTo({
+                        top: contentPosition,
+                        behavior: 'smooth'
+                    });
                 } else {
                     sortingList();
                 }
