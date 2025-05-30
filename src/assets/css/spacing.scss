@@ -105,6 +105,9 @@
 }
 // margin 예외 케이스
 // margin-bottom
+.mb-exc-spacing-280-246 {
+    @include custom-margin-vertical('bottom', 280, 246);
+}
 .mb-exc-spacing-280-178 {
     @include custom-margin-vertical('bottom', 280, 178);
 }
