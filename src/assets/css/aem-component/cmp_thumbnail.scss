@@ -311,15 +311,21 @@
                 margin: 0;
                 z-index: 1;
                 width: fit-content;
-                padding: calc(3 / 16 * 1rem) calc(16 / 16 * 1rem);
-                border: calc(1 / 16 * 1rem) solid var(--colorGL-all-white30);
+                height: calc(28 / 16 * 1rem);
+                padding: calc(2 / 16 * 1rem) calc(15 / 16 * 1rem);
+                border: calc(1 / 16 * 1rem) solid rgba(255, 255, 255, 0.30);
                 border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
                 background-color: var(--colorGL-all-black100);
                 color: var(--colorCM-mode1-text-text-on-bg);
                 font-weight: 500;
+                box-sizing: border-box;
+                opacity: 0.8;
+                backdrop-filter: blur(10px);
                 @media #{$min1280} {
                     top: calc(72 / 16 * 1rem);
                     left: calc(24 / 16 * 1rem);
+                    padding: calc(3 / 16 * 1rem) calc(15 / 16 * 1rem);
+                    height: calc(32 / 16 * 1rem);
                 }
             }
             .title {

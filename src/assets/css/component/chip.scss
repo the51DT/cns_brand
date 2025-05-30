@@ -15,40 +15,49 @@
 .chip {
     display: flex;
     height: calc(var(--chip-height) / 16 * 1rem);
-    padding: calc(2 / 16 * 1rem) calc(16 / 16 * 1rem);
+    padding: calc(2 / 16 * 1rem) calc(15 / 16 * 1rem);
     justify-content: center;
     align-items: center;
     white-space: nowrap;
-    font-size: calc(var(--typo-mo-size-body-sm) / 16 * 1rem);
+    font-size: calc(14 / 16 * 1rem);
     line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
-    font-weight: 400;
-    border: calc(1 / 16 * 1rem) solid var(--colorGL-all-white25);
+    font-weight: 500;
+    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+    border: calc(1 / 16 * 1rem) solid rgba(255, 255, 255, 0.30);
     border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
     box-sizing: border-box;
+    opacity: 0.8;
+    backdrop-filter: blur(10px);
+    @media #{$min1280} {
+        padding: calc(3 / 16 * 1rem) calc(15 / 16 * 1rem);
+        font-size: calc(16 / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+    }
 }
 .chip__wrap--large .chip {
     height: calc(var(--chip-height-large) / 16 * 1rem);
-    padding: calc(4 / 16 * 1rem) calc(16 / 16 * 1rem);
+    padding: calc(4 / 16 * 1rem) calc(15 / 16 * 1rem);
+    font-size: calc(16 / 16 * 1rem);
+    line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+    @media #{$min1280} {
+        padding: calc(7 / 16 * 1rem) calc(15 / 16 * 1rem);
+        font-size: calc(18 / 16 * 1rem);
+        line-height: calc(var(--typo-mo-line-height-body-sm) / 16 * 1rem);
+    }
 }
 .chip.bg-basic {
     background: var(--colorGL-all-gray100);
     color: var(--colorGL-all-gray700);
 }
 .chip.bg-black {
-    background: var(--colorCM-mode1-background-background-default8);
+    background: var(--colorGL-all-black100);
     color: var(--colorCM-mode1-text-text-on-bg);
 }
 
 /* PC */
-@media screen and (min-width : 1280px) {
+@media #{$min1280} {
     :root {
         --chip-height: 32;
         --chip-height-large : 40;
-    }
-    .chip {
-        padding: calc(3 / 16 * 1rem) calc(16 / 16 * 1rem);
-    }
-    .chip__wrap--large .chip {
-        padding: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem);
     }
 }
