@@ -2,16 +2,14 @@
     width: 100%;
     height: 100%;
     background-image: var(--button-banner-mo-img);
-    background-size: cover;
+    background-size: auto 100%;
     background-repeat: no-repeat;
-    background-position: left top;
+    background-position: right top;
     background-color: var(--colorCM-mode1-fill-fill-default2);
     @media #{$min1280} {
         background-image: var(--button-banner-pc-img);
         background-position: center center;
-        background-size: contain;
     }
-
     .inner-wrap {
         padding: calc(72 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
         @media #{$min1280} {
@@ -37,14 +35,14 @@
         .cmp-buttonbanner-title {
             color: var(--colorCM-mode1-text-text-default);
             margin-bottom: calc(34 / 16 * 1rem);
-            width: 75%;
+            width: 83.4%;
             font-size: calc(20 / 16 * 1rem);
             line-height: calc(30 / 16 * 1rem);
             letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
             font-weight: 500;
             @media #{$min1280} {
                 margin-bottom: calc(72 / 16 * 1rem);
-                width: 100%;
+                width: 67.3%;
                 font-size: calc(40 / 16 * 1rem);
                 line-height: calc(52 / 16 * 1rem);
             }

@@ -595,6 +595,21 @@
             }
             &.last-sec {
                 padding-top: 0;
+                .cmp-buttonbanner {
+                    .inner-wrap {
+                        display: block;
+                        transform: none;
+                        align-items: unset;
+                    }
+                    .banner_content {
+                        .cmp-buttonbanner-title {
+                            width: 75%;
+                            @media #{$min1280} {
+                                width: 54.1%;
+                            }
+                        }
+                    }
+                }
             }
             .inner-wrap {
                 display: flex;
