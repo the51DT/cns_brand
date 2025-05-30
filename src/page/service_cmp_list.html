@@ -481,7 +481,8 @@
                             %> 
                             <%- include('src/component/cmp_imageltem.html', Object.assign({}, locals, {                             
                                 itemCount: 5,
-                                jsonData: imageItemData5
+                                jsonData: imageItemData5,
+                                marginVertical: 'mb-0'
                             })) %>
                             <!-- //ImageItem -->
                         </div>
@@ -491,7 +492,7 @@
                     </div>
                 </div>
             </div>
-            <div class="inner-wrap wide pt-spacing11 pb-spacing11 background-color-default1">
+            <div class="inner-wrap wide pt-spacing11 background-color-default1">
                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                     title: {
                             text: '인사관리의 DX 혁신을 이루는 LG CNS 솔루션',
@@ -500,7 +501,7 @@
                         },
                     marginVertical: 'mb-spacing08',
                 })) %>
-                <div class="cmp-wrap cmp-feature-grid mb-spacing05">
+                <div class="cmp-wrap cmp-feature-grid mb-0">
                     <div>
                         <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
                             title: {
@@ -519,157 +520,77 @@
                         </p>
                     </div>
                 </div>
-                <%
-                    const digitalTransData = [
-                        {
-                            id: 0,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: 'Barrier-less',
-                            content: [
-                                'PC/모바일 등 다양한 디바이스 접속 지원',
-                                '원하는 레거시 시스템 어디에나 Add 가능'
-                            ]
-                        },
-                        {
-                            id: 1,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: 'Fast & Easy',
-                            content: [
-                                '원하는 화상회의 솔루션 누구나 쉽게 이용',
-                                '음성만으로 약 100개 언어를 구별'
-                            ]
-                        },
-                        {
-                            id: 2,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: 'Advanced',
-                            content: [
-                                '업종 별/회사 별 맞춤 용어 사전을 적용',
-                                'AI 기반 자동 회의록 작성 가능'
-                            ]
-                        },
-                    ];
-                %>
-                <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
-                    jsonData: digitalTransData,
-                    itemCount: 3,
-                    iconSize: 'large',
-                })) %>
-
-                <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                    teaserTitle: 'i-KEP(포털)',
-                    teaserText1: 'i-Kep은 20년 이상 축적된 다양한 기업들의 업무환경에 대한 높은 이해도와 Best Practice를 반영한 임직원 경험 중심의 포털 서비스입니다. 기업내 다양한 업무시스템 및 정보들이 함께 연결되어 통합된 View에서 제공하고, 언제 어디서든 동일한 업무 환경을 제공하여 시공간을 뛰어 넘는 업무환경이 가능합니다. 직관적인 인터페이스를 통해 프로젝트 관리, 결재, 보고서 작성, 일정 관리 등을 빠르게 수행할 수 있으며, 실시간 알림으로 중요한업무를 놓치지 않습니다. i-Kep과 함께라면 사무실 밖에서도 업무의 연속성을 유지하며 효율적인 비즈니스 환경을 만들어 보세요. i-Kep, 스마트한 업무의 시작입니다',
-                })) %>
-                <%
-                    const iKepData = [
-                        {
-                            id: 0,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: '다양한 솔루션 Line-up 보유',
-                            content: '복잡한 기간계시스템 유연한 연계 가능'
-                        },
-                        {
-                            id: 1,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: '복잡한 기간계시스템 유연한 연계 가능',
-                            content: '글로벌 솔루션은 물론 ERP, HR시스템 등 기간계시스템과 유연한 연계 가능'
-                        },
-                    ];
-                %>
-                <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
-                    jsonData: iKepData,
-                    itemCount: 2,
-                    iconSize: 'large'
-                })) %>
-
-                <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                    teaserTitle: 'EMS(모바일오피스)',
-                    teaserText1: '모바일 서비스인 EMS는 언제 어디서나 모바일로 회사 내부 업무를 손쉽게 처리할 수 있는 스마트한 업무 관리 앱으로, 기업에서 필요로 하는 다양한 업무 서비스를 단일 앱으로 제공하고, 개인 별로 최적화된 모바일 서비스를 제공합니다. 직관적인 인터페이스와 모바일 환경에 맞춘 최적화된 UI/UX 설계로, 사용자 경험을 극대화 하여 최고의 효율성을 보장합니다. 또한, 모바일 오피스 내 일정, 메일 요약, 메일 초안 작성 등 업무에 유용한 AI 기능을 접목시켜 제공하고 있으며, 스마트한 비즈니스 파트너로서 더 빠르고 정확한 업무를 가능하게 합니다. 언제 어디서든 일의 한계를 초월하는 LG CNS의 모바일 오피스 서비스를 만나보세요!',
-                })) %>
-                <%
-                    const emsData = [
-                        {
-                            id: 0,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: '모든 업무를 한 손에!',
-                            content: '기업 맞춤형 구성으로 모바일 앱 서비스를 제공하여, 모든 업무를 효율적으로 처리'
-                        },
-                    ];
-                %>
-                <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
-                    jsonData: emsData,
-                    itemCount: 1,
-                    iconSize: 'large'
-                })) %>
-
-                <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                    teaserTitle: '오피스 통합 모바일 앱',
-                    teaserText1: 'LG CNS에서 제시하는 오피스 통합 모바일 앱은 <strong class="font-bold">스마트 오피스의 새로운 기준</strong>을 제시하며, 가장 현대적인 업무환경을 구현합니다. 임직원이 근무하는 공간을 디지털 기술로 연결하여 출근부터 퇴근하는 순간까지 임직원의 모든 오피스 라이프를 책임집니다. 임직원이 근무하는 오피스 공간을 보다 편리하고, 쾌적하게 이용할 수 있도록 오피스 통합 슈퍼 App을 제공하여 차별화된 업무환경을 지원합니다. 모바일 출입인증부터 좌석 및 회의실 예약과 같은 업무 지원 서비스와 <strong class="font-bold">주문, 예약, 결제 등</strong> 다양한 부대시설 이용까지 하나의 앱을 통해 업무 효율성과 편의성을 극대화합니다. 또한, AI 기반의 개인화 서비스로 자주 이용하는 서비스를 추천하며, 사옥 내 자원 활용을 최적화합니다',
-                    teaserText2: '<strong class="font-bold">LG CNS와 함께 기존 오피스를 디지털 기반으로 현대화한 혁신적인 스마트 오피스 환경을 경험해보세요!</strong>'
-                })) %>
-                <%
-                    const officeAppData = [
-                        {
-                            id: 0,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: '원스톱 스마트 오피스 경험',
-                            content: '출근부터 퇴근까지 임직원의 오피스라이프를 고려해 최적화된 스마트오피스 구현'
-                        },
-                        {
-                            id: 1,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: '오피스 내 모든 시설과 서비스 간편 이용',
-                            content: '오피스 내 카페, 식당 등 부대시설의 주문, 예약, 결제까지 하나의 앱으로 손쉽게 처리'
-                        },
-                        {
-                            id: 2,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: '오피스 운영관리 지원',
-                            content: '빌딩 운영 전반에 대하여 주요 의사 결정 시 필요한 모니터링 대시보드 제공'
-                        },
-                    ];
-                %>
-                <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
-                    jsonData: officeAppData,
-                    itemCount: 3,
-                    iconSize: 'large'
-                })) %>
-
-                <%- include('src/component/cmp_teaser_title.html', Object.assign({}, locals, { 
-                    teaserTitle: 'AI for MWP',
-                    teaserText1: 'AI for MWP는 임직원들이 수행하는 메일 작성, 회의실 예약, 문서 검색 등 임직원들이 수행하는 공통 업무에 AI를 활용하여 업무 생산성을 획기적으로 향상시킬 수 있는 다양한 시나리오를 발굴하고, 서비스화하여 고객들에게 일하는 방식의 새로운 차원을 제시합니다. 반복적이고, 귀찮은 작업은 자동화하고, 지능형 추천으로 필요한 정보를 정확히 제공하며, 협업 과정의 효율성을 극대화하여 중요한 일에 더욱 집중할 수 있는 환경을 만듭니다. LG CNS의 AI for MWP와 함께 업무의 경계를 넘어선 인텔리전스한 모던워크플레이스를 경험해보세요!',
-                })) %>
-                <%
-                    const mwpData = [
-                        {
-                            id: 0,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: '회의실 예약도 AI로 손쉽게!',
-                            content: 'AI가 참석자 일정 조회부터 빈 회의실 찾아 등록까지 복잡한 작업을 간편하게 자동화 하는 서비스입니다.'
-                        },
-                        {
-                            id: 1,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: '신속, 정확! Search with AI!',
-                            content: '사내 산재되어 있는 지식을 빠르고 정확하게 검색/활용할 수 있으며, 필요 시 사외 지식까지 확인할 수 있는 Gen AI 기반 지식 관리 서비스입니다.'
-                        },
-                        {
-                            id: 2,
-                            imageUrl: '/src/assets/image/temp/Icon_pp.png',
-                            title: 'AI로 완성하는 문서 작업의 혁신!',
-                            content: '다양한 문서 양식에서 보고서 초안을 작성하고, 필요한 도표 추천부터 문구 수정까지 지원하는 Document Assistant 서비스입니다.'
-                        },
-                    ];
-                %>
-                <%- include('src/component/cmp_Itemlist_3Columns.html', Object.assign({}, locals, {
-                    jsonData: mwpData,
-                    itemCount: 3,
-                    iconSize: 'large'
-                })) %>
-
+            </div>
+            <div class="inner-wrap wide pt-exc-spacing-40-32 pb-spacing11 background-color-default1">
+                <div class="cmp-swiper__wrap cmp-swiper__service mb-0">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide swiper-card">
+                                <div class="swiper-card__thumbnamil">
+                                    <img src="https://placehold.co/467x262" alt="" class="display-pc">
+                                    <img src="https://placehold.co/265x150" alt="" class="display-mo">
+                                </div>
+                                <div class="swiper-card__content-info">
+                                    <div class="swiper-card__container">
+                                        <span class="font-head-sm-mode font-semibold color-text-default swiper-card__title">
+                                            기업의 근태 . 급여 . 보상 등 정책 반영
+                                        </span>
+                                        <p class="font-body-sm color-text-secondary">
+                                            어떤 복잡한 제도와 정책이라도 <br class="display-pc">
+                                            시스템에 반영할 수 있도록 지원
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-card">
+                                <div class="swiper-card__thumbnamil">
+                                    <img src="https://placehold.co/467x262" alt="" class="display-pc">
+                                    <img src="https://placehold.co/265x150" alt="" class="display-mo">
+                                </div>
+                                <div class="swiper-card__content-info">
+                                    <div class="swiper-card__container">
+                                        <span class="font-head-sm-mode font-semibold color-text-default swiper-card__title">
+                                            기업의 근태 . 급여 . 보상 등 정책 반영
+                                        </span>
+                                        <p class="font-body-sm color-text-secondary">
+                                            어떤 복잡한 제도와 정책이라도 <br class="display-pc">
+                                            시스템에 반영할 수 있도록 지원
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-card">
+                                <div class="swiper-card__thumbnamil">
+                                    <img src="https://placehold.co/467x262" alt="" class="display-pc">
+                                    <img src="https://placehold.co/265x150" alt="" class="display-mo">
+                                </div>
+                                <div class="swiper-card__content-info">
+                                    <div class="swiper-card__container">
+                                        <span class="font-head-sm-mode font-semibold color-text-default swiper-card__title">
+                                            기업의 근태 . 급여 . 보상 등 정책 반영
+                                        </span>
+                                        <p class="font-body-sm color-text-secondary">
+                                            어떤 복잡한 제도와 정책이라도 <br class="display-pc">
+                                            시스템에 반영할 수 있도록 지원
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-wrap pt-spacing11">
+                <!-- Title -->
                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                    titleText: 'FAQ'
+                    title: {
+                            text: 'FAQ',
+                            size: 'lg',
+                            class: 'color-text-default font-medium',
+                        },
+                    marginVertical: 'mb-spacing05',
                 })) %>
+                <!-- // Title -->
                 <%
                     const faqData = [
                         {
@@ -693,12 +614,19 @@
                     typeClass: 'open-type',
                     openIndex: 0,
                     itemCount: 3,
-                    jsonData: faqData
+                    jsonData: faqData,
                 }) %>
-
+            
+                <!-- Title -->
                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                    titleText: '고객 사례'
+                    title: {
+                            text: '고객 사례',
+                            size: 'lg',
+                            class: 'color-text-default font-medium',
+                        },
+                    marginVertical: 'mb-spacing05',
                 })) %>
+                <!-- // Title -->
                 <%
                     const customerData = [
                         {
@@ -733,22 +661,45 @@
                             logoPC: 'https://placehold.co/108x28',
                             logoMO: 'https://placehold.co/95x48',
                         },
+                        {
+                            id: 4,
+                            category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
+                            name: 'SK하이닉스',
+                            content: '회사의 첫 인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’',
+                            logoPC: 'https://placehold.co/108x28',
+                            logoMO: 'https://placehold.co/95x48',
+                        },
+                        {
+                            id: 5,
+                            category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
+                            name: 'SK하이닉스',
+                            content: '회사의 첫 인상을 결정하는 ‘스마트 방문 카드 발급 솔루션’',
+                            logoPC: 'https://placehold.co/108x28',
+                            logoMO: 'https://placehold.co/95x48',
+                        },
                     ];
                 %>
                 <%- include('src/component/cmp_customer-case.html', Object.assign({}, locals, {
                     jsonData: customerData,
-                    itemCount: 4
+                    itemCount: 8
                 })) %>
                 <div class="button__wrap">
-                    <a href="#" class="btn btn-primary btn-medium">
-                        <span class="btn__text">고객 사례 더 보기</span>
-                        <i class="btn__icon ico icon-arrow-right-wt16"></i>
+                    <a href="#" class="btn btn-secondary btn-small">
+                        <span class="btn__text">더 보기</span>
                     </a>
                 </div>
-
+            </div>
+            <div class="inner-wrap pt-spacing11 pb-exc-spacing-282-152">
+                <!-- Title -->
                 <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
-                    titleText: '연관 자료실'
+                    title: {
+                            text: '연관 자료실',
+                            size: 'lg',
+                            class: 'color-text-default font-medium',
+                        },
+                    marginVertical: 'mb-spacing05',
                 })) %>
+                <!-- // Title -->
                 <%
                     const relatedData = [
                         {
@@ -798,15 +749,51 @@
                     itemCount: 3
                 })) %>
                 <div class="button__wrap">
-                    <a href="#" class="btn btn-primary btn-medium">
-                        <span class="btn__text">DX 자료실로 이동</span>
-                        <i class="btn__icon ico icon-arrow-right-wt16"></i>
+                    <a href="#" class="btn btn-secondary btn-small">
+                        <span class="btn__text">더 보기</span>
                     </a>
                 </div>
             </div>
+            <%- include('src/component/cmp_buttonBanner.html', Object.assign({}, locals, {
+                    pcImg: 'https://placehold.co/1920x540',
+                    moImg: 'https://placehold.co/360x390',
+                    subtitle: '상담신청',
+                    title: 'LG CNS의 전문 역량을 귀사의 비즈니스와 접목시켜 <br class="display-pc">혁신적인 시너지로 만들어 나가고 싶다면 지금 상담신청 하세요.',
+                    buttonText: '바로가기',
+                })) %>
         </div>
         <%- include('src/_inc/footer.html') %>
         <script>
+            let swiperInfo = new Swiper('.cmp-swiper__service .swiper', {
+                    loop: false,
+                    slidesPerView: 1.1,
+                    enabled: true,
+                    spaceBetween: 12,
+                    slidesOffsetBefore: 0,
+                    slidesOffsetAfter: 0,
+                    breakpoints: {
+                        1280: {
+                            enabled: false,
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        }
+                    }
+            })
+            let swiperDataList = new Swiper('.data-list-swiper.swiper', {
+                    loop: false,
+                    slidesPerView: 1.1,
+                    enabled: true,
+                    spaceBetween: 12,
+                    slidesOffsetBefore: 0,
+                    slidesOffsetAfter: 0,
+                    breakpoints: {
+                        720: {
+                            enabled: false,
+                            slidesPerView: 'auto', 
+                            spaceBetween: 0,
+                        }
+                    }
+                })
             tabMenu('.basic-type', 'tab');
             accordion('.open-type', 'basic');
         </script>

@@ -438,32 +438,6 @@
       ]
     },
     {
-      "id": 8,
-      "Level1": "Sub - 서비스",
-      "screenId": "",
-      "fileName": "",
-      "Level2": [
-        {
-          "name": "Service - SCM DX",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "service_scmDX.html"
-        },
-        {
-          "name": "Service - Enterprise S/W",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "service_enterpriseSW.html"
-        },
-        {
-          "name": "Service - 디지털AX",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "service_digitalAX.html"
-        }
-      ]
-    },
-    {
       "id": 9,
       "Level1": "Sub - MOA",
       "screenId": "",
