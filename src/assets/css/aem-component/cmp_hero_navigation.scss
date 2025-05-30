@@ -76,7 +76,7 @@
     .active-effect {
         overflow: hidden;
         &__item {
-            opacity: 0;
+            // opacity: 0;
             // transform: translateY(30px);
             animation: fadeInUp 1s ease forwards;
         }
@@ -85,11 +85,11 @@
                 animation: fadeInUp 1s ease forwards;
                 @keyframes fadeInUp {
                     0% {
-                        opacity: 0;
+                        // opacity: 0;
                         transform: translateY(200px);
                         }
                     100% {
-                        opacity: 1;
+                        // opacity: 1;
                         transform: translateY(0);
                     }
                 }

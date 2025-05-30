@@ -95,7 +95,6 @@ function applyStyleToSlide(index) {
     const duplicateSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-duplicate video');
     duplicateSlides.forEach(videoElement => {
         videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 랜덤 스타일에 맞는 비디오 경로 설정
-        // console.log('duplicateSlides:', videoElement.src);
         videoElement.load(); // 비디오 파일 로드
         // videoElement.play().catch(error => {
         //     console.error('비디오 재생 오류:', error);
@@ -106,7 +105,6 @@ function applyStyleToSlide(index) {
     const activeSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-active video');
     activeSlides.forEach(videoElement => {
         videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 랜덤 스타일에 맞는 비디오 경로 설정
-        // console.log('activeSlides:', videoElement.src);
         videoElement.load(); // 비디오 파일 로드
         videoElement.play().catch(error => {
             console.error('비디오 재생 오류:', error);
@@ -149,11 +147,11 @@ function onSlideChangeStart() {
     const activeIndex = swiperHero.activeIndex; // 현재 활성 슬라이드의 인덱스
     const activeSlideTextGroup = interactiveSlide[activeIndex].querySelector('.interactive-swiper__text-box'); // 현재 활성 슬라이드의 텍스트 영역
 
-    interactiveSlide.forEach((slide) => {
-        const slideTextGroup = slide.querySelector('.interactive-swiper__text-box');
-        slideTextGroup.classList.remove('fade-in');
-    })
-    activeSlideTextGroup.classList.add('fade-in');
+    // interactiveSlide.forEach((slide) => {
+    //     const slideTextGroup = slide.querySelector('.interactive-swiper__text-box');
+    //     slideTextGroup.classList.remove('fade-in');
+    // })
+    // activeSlideTextGroup.classList.add('fade-in');
 
     if (activeIndex < currentStyles.length) { // 스타일 그룹 범위 내에서만 적용
         applyStyleToSlide(activeIndex); // 스타일 적용
@@ -174,7 +172,6 @@ function handleActiveEffect(el) {
             if(effectType) {
                 activeItem.classList.add(effectType);
             }
-            // console.log('activeItem, effectType::', activeItem, effectType)
             if (effectDelayTime !== null) {
                 effectTarget.style.animationDelay = effectDelayTime;
             }
@@ -210,15 +207,15 @@ let swiperHero = new Swiper('.swiper-interactive-banner', {
         },
         slideChangeTransitionStart: function() {
             onSlideChangeStart();
-            if(isPc) { // 슬라이드 전환 종료 시 비디오 제어
-                heroNavigation.classList.remove('fade-in');
-            }
+            // if(isPc) { // 슬라이드 전환 종료 시 비디오 제어
+            //     heroNavigation.classList.remove('fade-in');
+            // }
         }, // 슬라이드 전환 시작 시 스타일 적용
         slideChangeTransitionEnd: function() {
             onSlideChange(); // 슬라이드 전환 종료 시 비디오 제어
-            if(isPc) { // PC 분기에서만 적용
-                heroNavigation.classList.add('fade-in');
-            }
+            // if(isPc) { // PC 분기에서만 적용
+            //     heroNavigation.classList.add('fade-in');
+            // }
         }
     },
 });
