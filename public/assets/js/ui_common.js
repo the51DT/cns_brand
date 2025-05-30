@@ -427,15 +427,19 @@ const tabMenu = (el, type) => {
         }     
 
         tabList.forEach((list, index) => {
+            let contentPosition = tabContents[index].offsetTop;
             list.addEventListener('click', (event) => {
                 event.preventDefault();
-
                 wrap.querySelector('.tab__menu li.is-active')?.classList.remove('is-active');
                 list.parentElement.classList.add('is-active');
 
                 if (type === 'tab') {
                     wrap.querySelector('.tab__content.is-active')?.classList.remove('is-active');
                     tabContents[index]?.classList.add('is-active');
+                    window.scrollTo({
+                        top: contentPosition,
+                        behavior: 'smooth'
+                    });
                 } else {
                     sortingList();
                 }
