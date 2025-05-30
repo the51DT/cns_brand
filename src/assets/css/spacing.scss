@@ -34,7 +34,7 @@
     @include custom-margin-vertical('top', var(--spacing-pc-spacing01), var(--spacing-mo-spacing01));
 }
 .mt-spacing02 {
-    @include custom-margin-vertical('top', var(--spacing-pc-spacing01), var(--spacing-mo-spacing01));
+    @include custom-margin-vertical('top', var(--spacing-pc-spacing02), var(--spacing-mo-spacing02));
 }
 .mt-spacing03 {
     @include custom-margin-vertical('top', var(--spacing-pc-spacing03), var(--spacing-mo-spacing03));
@@ -71,7 +71,7 @@
     @include custom-margin-vertical('bottom', var(--spacing-pc-spacing01), var(--spacing-mo-spacing01));
 }
 .mb-spacing02 {
-    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing01), var(--spacing-mo-spacing01));
+    @include custom-margin-vertical('bottom', var(--spacing-pc-spacing02), var(--spacing-mo-spacing02));
 }
 .mb-spacing03 {
     @include custom-margin-vertical('bottom', var(--spacing-pc-spacing03), var(--spacing-mo-spacing03));
