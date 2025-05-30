@@ -17,7 +17,12 @@
             <div class="flex justify-between lnb-type">
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
-                    <p class="guide-title-h3">ButtonBanner</p>                    
+                    <p class="guide-title-h3">ButtonBanner</p>
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>buttonSize : 80 / 48(default)</p>
+                        </li>
+                    </ul>
                     <div class="cmp-exsample__wrap mt-3">
                         <%- include('src/component/cmp_buttonBanner.html', Object.assign({}, locals, {
                             pcImg: '/src/assets/image/sub/bg_buttonbanner_pc.png',
