@@ -215,6 +215,9 @@ $fileType: "svg";
     &.icon-arrow-right-bl48{
         @include iconFile(48, 48, 'icon_arrow_right_bl48');
     }
+    &.icon-arrow-right-bl80{
+        @include iconFile(80, 80, 'icon_arrow_right_bl80');
+    }
     &.icon-arrow-right-wh24{
         @include iconFile(24, 24, 'icon_arrow_right_wh24');
     }

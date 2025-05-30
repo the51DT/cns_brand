@@ -125,17 +125,16 @@
 
             <div class="bizinfo-LG-way__section last-sec">
                 <%- include('src/component/cmp_buttonBanner.html', Object.assign({}, locals, {
-                    pcImg: 'https://placehold.co/1920x540',
-                    moImg: 'https://placehold.co/360x390',
+                    pcImg: '/src/assets/image/sub/bg_buttonbanner_pc.png',
+                    moImg: '/src/assets/image/sub/bg_buttonbanner_mo.png',
                     subtitle: '사이버 신문고',
                     title: 'LG임직원의 부당한 요구 또는 불공정 업무처리로 불편함을 겪고있다면, 사이버 신문고를 두드리세요!',
                     buttonText: '바로가기',
+                    buttonSize: '80',
                 })) %>
             </div>
         </div>
-        <%- include('src/_inc/footer.html', Object.assign({}, locals, {
-            type : 'transparent-color-bl',
-        }))%>
+        <%- include('src/_inc/footer.html') %>
     </div>
 
     <!-- [Start] modal-way01 : pc-size: large & full , mo-size: full -->

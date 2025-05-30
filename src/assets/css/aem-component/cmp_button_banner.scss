@@ -5,51 +5,70 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left top;
+    background-color: var(--colorCM-mode1-fill-fill-default2);
+    @media #{$min1280} {
+        background-image: var(--button-banner-pc-img);
+        background-position: center center;
+        background-size: contain;
+    }
 
     .inner-wrap {
         padding: calc(72 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
         @media #{$min1280} {
-            padding: calc(72 / 16 * 1rem) calc(100 / 16 * 1rem) calc(79 / 16 * 1rem) calc(20 / 16 * 1rem);
+            padding: calc(121 / 16 * 1rem) calc(20 / 16 * 1rem) calc(121 / 16 * 1rem);
         }
     }
 
     .banner_content {
         .cmp-buttonbanner-subtitle {
-            color: var(--colorGL-all-grey400);
+            color: var(--colorCM-mode1-text-text-secondary);
             margin-bottom: calc(12 / 16 * 1rem);
+            font-size: calc(20 / 16 * 1rem);
+            line-height: calc(32 / 16 * 1rem);
+            letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
+            font-weight: 400;
+            @media #{$min1280} {
+                margin-bottom: calc(17 / 16 * 1rem);
+                font-size: calc(18 / 16 * 1rem);
+                line-height: calc(26 / 16 * 1rem);
+            }
         }
 
         .cmp-buttonbanner-title {
-            color: var(--colorGL-all-grey550);
-            margin-bottom: calc(45 / 16 * 1rem);
+            color: var(--colorCM-mode1-text-text-default);
+            margin-bottom: calc(34 / 16 * 1rem);
             width: 75%;
+            font-size: calc(20 / 16 * 1rem);
+            line-height: calc(30 / 16 * 1rem);
+            letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
+            font-weight: 500;
             @media #{$min1280} {
+                margin-bottom: calc(72 / 16 * 1rem);
                 width: 100%;
+                font-size: calc(40 / 16 * 1rem);
+                line-height: calc(52 / 16 * 1rem);
             }
         }
+        .cmp-buttonbanner-btn {
+            a {
+                display: inline-block;
+            }
+            .btn__icon {
+                min-width: calc(48 / 16 * 1rem);
+                width: calc(48 / 16 * 1rem);
+                height: calc(48 / 16 * 1rem);
+                @media #{$min1280} {
+                    min-width: calc(80 / 16 * 1rem);
+                    width: calc(80 / 16 * 1rem);
+                    height: calc(80 / 16 * 1rem);
+                }
+            }
+        }
+        // top 버튼
         .button__wrap--btn-top {
             display: flex;
             @media #{$min1280} {
                 display: none;
-            }
-        }
-    }
-
-    @media #{$min1280} {
-        background-image: var(--button-banner-pc-img);
-        background-position: center center;
-
-        .inner-wrap {
-            padding: calc(120 / 16 * 1rem) calc(240 / 16 * 1rem);
-        }
-
-        .banner_content {
-            .cmp-buttonbanner-subtitle {
-                margin-bottom: calc(17 / 16 * 1rem);
-            }
-
-            .cmp-buttonbanner-title {
-                margin-bottom: calc(83 / 16 * 1rem);
             }
         }
     }
