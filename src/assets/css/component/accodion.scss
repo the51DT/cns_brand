@@ -6,9 +6,9 @@
     .accordion-list {
         display: flex;
         flex-direction: column;
-        border-top: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
+        border-top: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
         li {
-            border-bottom: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
+            border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
             &:last-child {
                 @media #{$min1280} {
                     border-bottom: none !important;
@@ -111,5 +111,16 @@
     .accordion-content {
         display: none;
         padding: 0 calc(var(--spacing-mode1-vertical5-x-l) / 16 * 1rem) calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem) 0;
+    }
+    &--last-item-style {
+        .accordion-list  {
+            li {
+                &:last-child {
+                    @media #{$min1280} {
+                        border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2) !important;
+                    }
+                }
+            }
+        }
     }
 }

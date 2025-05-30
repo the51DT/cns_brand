@@ -1,5 +1,5 @@
 <!-- 기본 아코디언 -->
-<div class="cmp-wrap cmp-accordion <%= typeof typeClass !== 'undefined' ? typeClass : 'basic-type' %> <%- typeof marginVertical !=='undefined' && marginVertical ? marginVertical : '' %>">
+<div class="cmp-wrap cmp-accordion <%= typeof typeClass !== 'undefined' ? typeClass : 'basic-type' %> <%- typeof marginVertical !=='undefined' && marginVertical ? marginVertical : '' %> <%- typeof lastItemBorder !== 'undefined' && lastItemBorder == true ? 'cmp-accordion--last-item-style' : '' %>">
     <ul class="accordion-list">
         <% 
             const data = (typeof jsonData !== 'undefined' ? jsonData : []); 

@@ -33,7 +33,7 @@ $column-gap: calc(70 / 16 * 1rem);
                 min-width: calc(240 / 16 * 1rem);
                 width: 75%;
                 height: calc(1 / 16 * 1rem);
-                background: var(--colorCM-mode1-stroke-stroke-default2);
+                background: var(--colorCM-mode1-background-background-default2);
                 @media #{$min1280} {
                     min-width: 100%;
                     width: 100%;
