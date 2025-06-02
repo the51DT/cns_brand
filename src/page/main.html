@@ -830,8 +830,7 @@
     <!-- <script src="/assets/js/initializeSwipers.js"></script> -->
     <script src="/assets/js/main_interactive_hero.js"></script>
     <script src="/assets/js/main_service.js"></script>
-    <script>
-
+    <script>        
         /* swiper-notice */
         let swiperNotice = new Swiper('.swiper-notice', {
             loop: false,
@@ -860,7 +859,15 @@
 
         /* search */
         const dynamicSearch = document.querySelector('.dynamic-search');
+        const collapsedBar = dynamicSearch.querySelector('.input-search__item');
         const targetPosition = dynamicSearch.offsetTop;
+        function searchPlaceholder(target) {
+            if (window.matchMedia('(min-width: 1280px)').matches) {
+                target.setAttribute('placeholder', '키워드만으로 원하는 정보를 찾아보세요');
+            } else {
+                target.setAttribute('placeholder', '키워드로 검색해보세요');
+            }
+        }
 
         if (dynamicSearch) {
             // 클릭 이벤트로 상태 전환
@@ -912,10 +919,15 @@
                 }
             }
         }
-        // 스크롤 이벤트 리스너 추가
+        
+        window.addEventListener('resize', function () {
+            searchPlaceholder(collapsedBar)
+        });
         window.addEventListener("scroll", () => {
             checkSearch(dynamicSearch);
         });
+        
+        searchPlaceholder(collapsedBar);
         checkSearch(dynamicSearch);
     </script>
 </body>
