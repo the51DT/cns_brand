@@ -216,7 +216,7 @@
             }
         }
         &__slide {
-            transition: all 3s;
+            transition: opacity 1s ease;
             // News Image Hero
             &--news {
                 .interactive-swiper__container {
