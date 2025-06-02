@@ -35,12 +35,13 @@
         flex-direction: column;
         width: 100%;
         padding: calc(27 / 16 * 1rem) calc(24 / 16 * 1rem);
-        border: 1px solid var(--colorCM-mode1-stroke-stroke-default2);
+        border: 1px solid var(--colorGL-all-grey100);
         border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
         min-width: 0;
         background-color: var(--colorCM-mode1-fill-fill-default0);
         @media #{$min720} {
             padding: calc(40 / 16 * 1rem) calc(48 / 16 * 1rem);
+            border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
         }
 
         * {

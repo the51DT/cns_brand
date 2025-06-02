@@ -633,6 +633,7 @@
                             id: 0,
                             category: [{name: '제조'}, {name: '경영관리'}, {name: 'DWP'}],
                             name: 'LG 이노텍',
+                            link: '#',
                             content: '임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축 임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축임직원을 찐팬으로 만드는 사용자 경험 기반 모바일 오피스 구축',
                             logoPC: 'https://placehold.co/95x28',
                             logoMO: 'https://placehold.co/95x48',
@@ -794,6 +795,44 @@
                         }
                     }
                 })
+
+            let customerSwiper = null;
+
+            function setupCustomerCaseSwiper() {
+                const swiperEl = document.querySelector('.customer-case-swiper');
+                const isMobile = window.innerWidth < 720;
+
+                if (!swiperEl) return;
+
+                if (isMobile && !customerSwiper) {
+                    customerSwiper = new Swiper(swiperEl, {
+                        slidesPerView: 'auto',
+                        spaceBetween: 12,
+                        slidesOffsetBefore: 20,
+                        slidesOffsetAfter: 20,
+                        breakpoints: {
+                            720: {
+                                spaceBetween: 20,
+                                slidesOffsetBefore: 0,
+                                slidesOffsetAfter: 0,
+                            }
+                        },
+                    });
+                } else if (!isMobile && customerSwiper) {
+                    customerSwiper.destroy(true, true);
+                    customerSwiper = null;
+                }
+            }
+
+            setupCustomerCaseSwiper();
+
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    setupCustomerCaseSwiper();
+                }, 200);
+            });
             tabMenu('.basic-type', 'tab');
             accordion('.open-type', 'basic');
         </script>
