@@ -90,7 +90,7 @@
         border-radius: calc(24 / 16 * 1rem);
         overflow: hidden;
         margin-bottom: calc(24 / 16 * 1rem);
-        transition-duration : 1s !important;
+        // transition-duration : 1s !important;
         @media #{$min1280} {
             padding-top: calc(88 / 16 * 1rem);
             // padding-bottom: calc(249 / 16 * 1rem);
@@ -105,7 +105,7 @@
                 margin-bottom: 0;
                 .swiper-slide {
                     opacity: 0;
-                    transition-duration : 1s !important;
+                    // transition-duration : 1s !important;
                     &.swiper-slide-active {
                         opacity: 1;
                     }
