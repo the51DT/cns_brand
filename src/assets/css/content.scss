@@ -279,12 +279,14 @@
         &__desc {
             @include ellipsis(2);
             color: var(--colorCM-mode1-text-text-secondary);
-            font-size: calc(20 / 16 * 1rem);
-            line-height: calc(34 / 16 * 1rem);
+            font-size: calc(var(--typo-mo-size-body-md-mode) / 16 * 1rem);
+            line-height: calc(var(--typo-mo-line-height-body-md-mode) / 16 * 1rem);
+            letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+            font-weight: 400;
             @media #{$min1280} {
                 @include ellipsis(3);
-                font-size: calc(16 / 16 * 1rem);
-                line-height: calc(24 / 16 * 1rem);
+                font-size: calc(var(--typo-pc-size-body-md-mode) / 16 * 1rem);
+                line-height: calc(var(--typo-pc-line-height-body-md-mode) / 16 * 1rem);
             }
         }
         &__util {
@@ -318,7 +320,10 @@
                 background-image: url('#{$basePath}image/icon/icon_data_list_link.svg');
                 background-repeat: no-repeat;
                 background-position: center;
-                background-size: calc(22.253 / 16 * 1rem) calc(26.585 / 16 * 1rem);
+                background-size: calc(18 / 16 * 1rem) calc(16 / 16 * 1rem);
+                @media #{$min1280} {
+                    background-size: calc(28 / 16 * 1rem) calc(24 / 16 * 1rem);
+                }
             }
         }
         .tag-box {
