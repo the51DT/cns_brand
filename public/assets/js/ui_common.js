@@ -674,12 +674,14 @@ const glideText = (() => {
 // .btn-top 버튼
 const winScrollTop = (() => {
     const btnTop = document.querySelector('.btn-top');
-    btnTop.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    })
+    if(btnTop) {
+        btnTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        })
+    }
 })
 // document.addEventListener("DOMContentLoaded", sidebarCmp);
 document.addEventListener("DOMContentLoaded", () => {
