@@ -671,6 +671,16 @@ const glideText = (() => {
     });
 })
 
+// .btn-top 버튼
+const btnTop = document.querySelector('.btn-top');
+btnTop.addEventListener("click", () => {
+    console.log('click top')
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // 부드러운 스크롤 동작
+    });
+})
+
 // document.addEventListener("DOMContentLoaded", sidebarCmp);
 document.addEventListener("DOMContentLoaded", () => {
     sidebarCmp;
@@ -680,4 +690,5 @@ document.addEventListener("DOMContentLoaded", () => {
     accordion('.basic-type', 'basic');        
     accordion('.open-type', 'basic');   
     inputSearch('.cmp-input__item--search'); 
+    btnTop();
 });
