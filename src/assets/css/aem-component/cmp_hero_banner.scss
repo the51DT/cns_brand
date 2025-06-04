@@ -24,13 +24,13 @@
         top: calc(50% - 40px);
         color: var(--colorGL-all-white100);
 
-        @media #{$min720} {
-            left: calc(32 / 16 * 1rem);
-        }
+        // @media #{$min720} {
+        //     left: calc(32 / 16 * 1rem);
+        // }
 
-        @media #{$min1280} {
-            left: calc(80 / 16 * 1rem);
-        }
+        // @media #{$min1280} {
+        //     left: calc(80 / 16 * 1rem);
+        // }
 
         p + h2 {
             margin-top: calc(12 / 16 * 1rem);
