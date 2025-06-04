@@ -319,7 +319,7 @@ function cardEventCtrl(e , type) {
   const targetItemStyle = e.target.dataset.style;
   const targetItemGroup = targetItem.dataset.group;
 
-  // ✅ 마우스오버 시 그룹 인덱스 기억
+  // 마우스오버 시 그룹 인덱스 기억
   if (chkPc && e.type === 'mouseover') {
     const hoveredGroupIdx = groupNames.indexOf(targetItemGroup);
     if (hoveredGroupIdx !== -1) {
