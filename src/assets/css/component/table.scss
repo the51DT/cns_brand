@@ -22,12 +22,6 @@
         }
         td {
             border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
-            &[rowspan] {
-                border-right: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
-                &:last-child {
-                    border-right: none;
-                }
-            }
             &.border-r-0 {
                 border-right: 0;
             }
