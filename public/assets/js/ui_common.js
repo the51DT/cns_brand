@@ -674,7 +674,6 @@ const glideText = (() => {
 // .btn-top 버튼
 const btnTop = document.querySelector('.btn-top');
 btnTop.addEventListener("click", () => {
-    console.log('click top')
     window.scrollTo({
         top: 0,
         behavior: 'smooth' // 부드러운 스크롤 동작
