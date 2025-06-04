@@ -677,7 +677,7 @@ const winScrollTop = (() => {
     btnTop.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth' // 부드러운 스크롤 동작
+            behavior: 'smooth'
         });
     })
 })
