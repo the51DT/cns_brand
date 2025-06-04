@@ -179,14 +179,17 @@
                 max-width: calc(1200 / 16 * 1rem);
                 display: flex;
                 justify-content: flex-end;
+                margin: 0 auto;
                 video {
                     margin-right: 0;
                     width: 100%;
                     @media (min-width: 1000px) {
                         max-width: calc(840 / 16 * 1rem);
+                        margin: 0 auto;
                     }
                     @media (min-width: 1400px) {
                         max-width: calc(960 / 16 * 1rem);
+                        margin: 0 auto;
                     }
                     @media (min-width: 1600px) {
                         width: 100%;

@@ -143,7 +143,7 @@
             gap: calc(8 / 16 * 1rem);
             padding: calc(10 / 16 * 1rem) calc(20 / 16 * 1rem);
             @media #{$min1840} {
-                padding: calc(25 / 16 * 1rem) calc(64 / 16 * 1rem);
+                padding: calc(25 / 16 * 1rem) 0 calc(25 / 16 * 1rem) calc(60 / 16 * 1rem);
             }
         }
         &.search-keyword {
@@ -156,7 +156,7 @@
             @media #{$min1840} {
                 justify-content: flex-end;
                 margin-top: 0;
-                padding: calc(25 / 16 * 1rem) calc(62 / 16 * 1rem);
+                padding: calc(25 / 16 * 1rem) calc(60 / 16 * 1rem) calc(25 / 16 * 1rem) calc(40 / 16 * 1rem);
             }
         }
     }
@@ -207,6 +207,8 @@
             justify-content: flex-end;
             flex-wrap: nowrap;
             gap: calc(16 / 16 * 1rem);
+            max-width: calc(1045 / 16 * 1rem);
+            overflow: hidden;
         }
     }
     .search-keyword__button {
