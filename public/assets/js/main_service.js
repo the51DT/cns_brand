@@ -105,10 +105,14 @@ function cardItemSetting() {
   cardItems.forEach((item, idx) => {
     const itemGroup = item.dataset.group;
     const oldInner = item.querySelector('.card-inner');
+    const newInner = oldInner.cloneNode(true); // 기존 요소를 클론해서 이벤트 초기화 (이벤트 제거용)
 
-    // 기존 요소를 클론해서 이벤트 초기화 (이벤트 제거용)
-    const newInner = oldInner.cloneNode(true);
+    // 서비스영역 카드 리스트 내 자세히보기 버튼(->) 분기처리용 변수 추가 생성
+    const oldInner2 = item.querySelector('.card-link-wrap a');
+    const newInner2 = oldInner2.cloneNode(true);
+
     oldInner.replaceWith(newInner);
+    oldInner2.replaceWith(newInner2);
 
     // 이미지 적용
     if (itemGroup === 'group1') {
@@ -127,16 +131,30 @@ function cardItemSetting() {
 
     // 이벤트 재등록
     if (chkPc) {
+      // 카드 mouseover/mouseleave 시 배경 이미지 제어 - S
       newInner.addEventListener('mouseover', (e) => {
         stopAutoGroupActive();
         cardEventCtrl(e);
       });
-
       newInner.addEventListener('mouseleave', (e) => {
         startAutoGroupActive();
         cardEventCtrl(e);
       });
+      // 카드 mouseover/mouseleave 시 배경 이미지 제어 - E
+
+      // 카드 내 자세히보기 버튼(->) mouseover/mouseleave 시 배경 이미지 제어 - S
+      newInner2.addEventListener('mouseover', (e) => {
+        stopAutoGroupActive();
+        cardEventCtrl(e, 'cardBtn');
+      });
+      newInner2.addEventListener('mouseleave', (e) => {
+        startAutoGroupActive();
+        cardEventCtrl(e, 'cardBtn');
+      });
+      // 카드 내 자세히보기 버튼(->) mouseover/mouseleave 시 배경 이미지 제어 - E
     } else {
+      // 모바일 터치 이벤트
+      // 카드 터치 이벤트
       newInner.addEventListener('touchstart', (e) => {
         carouselWrap.querySelectorAll('.card-context').forEach((card) => {
           card.classList.remove('on');
@@ -144,6 +162,17 @@ function cardItemSetting() {
           card.querySelector('.card-inner').style.border = '1px solid #565656';
         });
         cardEventCtrl(e);
+      });
+
+      // 모바일 터치 이벤트
+      // 카드 내 자세히보기 버튼(->) 터치 이벤트
+      newInner2.addEventListener('touchstart', (e) => {        
+        carouselWrap.querySelectorAll('.card-context').forEach((card) => {
+          card.classList.remove('on');
+          card.querySelector('.card-inner').style.backgroundImage = 'revert';
+          card.querySelector('.card-inner').style.border = '1px solid #565656';
+        });
+        cardEventCtrl(e, 'cardBtn');
       });
     }
   });
@@ -285,7 +314,7 @@ function carousel() {
   });
 }
 
-function cardEventCtrl(e) {
+function cardEventCtrl(e , type) {
   const targetItem = e.target.closest('.card-context');
   const targetItemStyle = e.target.dataset.style;
   const targetItemGroup = targetItem.dataset.group;
@@ -306,16 +335,41 @@ function cardEventCtrl(e) {
   }
 
   // [공통] on 클래스, 배경 이미지
-  if (targetItem.classList.contains('on')) {
-    targetItem.classList.remove('on');
-    e.target.style.backgroundImage = 'revert';
-    e.target.style.border = '1px solid #565656';
+  // 카드내 화살표 버튼 hover 시에도 on 클래스 적용 조건 추가 (250604 수정) - S
+  if (type == 'cardBtn') {
+    const cardContxt = e.target.closest('.card-link-wrap').parentNode;
+    const cardDataItemStyle = cardContxt.querySelector('.card-inner').dataset.style;
+    const cardDetailBtn = document.querySelector('.carousel-wrap').querySelectorAll('.card-link-wrap');
+
+    if (!e.target.closest('.card-link-wrap').classList.contains('on')) {
+      cardContxt.classList.add('on');
+      cardDetailBtn.forEach((btn) => btn.classList.remove('on'));
+      e.target.closest('.card-link-wrap').classList.add('on');
+      cardContxt.querySelector('.card-inner').style.backgroundImage = `${cardDataItemStyle}`;
+      cardContxt.querySelector('.card-inner').style.border = '1px solid #8e8e8e';
+    } else {
+      cardContxt.classList.remove('on');
+      e.target.closest('.card-link-wrap').classList.remove('on');
+      cardContxt.querySelector('.card-inner').style.backgroundImage = 'revert';
+      cardContxt.querySelector('.card-inner').style.border = '1px solidrgb(75, 56, 56)';
+    }
   } else {
-    document.querySelectorAll('.card-context').forEach((item) => item.classList.remove('on'));
-    targetItem.classList.add('on');
-    e.target.style.backgroundImage = `${targetItemStyle}`;
-    e.target.style.border = '1px solid #8e8e8e';
+    setTimeout(function () {
+      if (!targetItem.querySelector('.card-link-wrap').classList.contains('on')) {
+        if (targetItem.classList.contains('on')) {
+          targetItem.classList.remove('on');
+          e.target.style.backgroundImage = 'revert';
+          e.target.style.border = '1px solid #565656';
+        } else {
+          document.querySelectorAll('.card-context').forEach((item) => item.classList.remove('on'));
+          targetItem.classList.add('on');
+          e.target.style.backgroundImage = `${targetItemStyle}`;
+          e.target.style.border = '1px solid #8e8e8e';
+        }
+      }
+    }, 100);
   }
+  // 카드내 화살표 버튼 hover 시에도 on 클래스 적용 조건 추가 (250604 수정) - E
 }
 
 // 초기 실행
