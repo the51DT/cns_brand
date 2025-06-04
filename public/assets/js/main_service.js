@@ -354,20 +354,18 @@ function cardEventCtrl(e , type) {
       cardContxt.querySelector('.card-inner').style.border = '1px solidrgb(75, 56, 56)';
     }
   } else {
-    setTimeout(function () {
-      if (!targetItem.querySelector('.card-link-wrap').classList.contains('on')) {
-        if (targetItem.classList.contains('on')) {
-          targetItem.classList.remove('on');
-          e.target.style.backgroundImage = 'revert';
-          e.target.style.border = '1px solid #565656';
-        } else {
-          document.querySelectorAll('.card-context').forEach((item) => item.classList.remove('on'));
-          targetItem.classList.add('on');
-          e.target.style.backgroundImage = `${targetItemStyle}`;
-          e.target.style.border = '1px solid #8e8e8e';
-        }
+    if (!targetItem.querySelector('.card-link-wrap').classList.contains('on')) {
+      if (targetItem.classList.contains('on')) {
+        targetItem.classList.remove('on');
+        e.target.style.backgroundImage = 'revert';
+        e.target.style.border = '1px solid #565656';
+      } else {
+        document.querySelectorAll('.card-context').forEach((item) => item.classList.remove('on'));
+        targetItem.classList.add('on');
+        e.target.style.backgroundImage = `${targetItemStyle}`;
+        e.target.style.border = '1px solid #8e8e8e';
       }
-    }, 100);
+    }
   }
   // 카드내 화살표 버튼 hover 시에도 on 클래스 적용 조건 추가 (250604 수정) - E
 }
