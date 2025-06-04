@@ -92,9 +92,13 @@
         margin-bottom: calc(24 / 16 * 1rem);
         // transition-duration : 1s !important;
         @media #{$min1280} {
+            // padding-bottom: calc(223 / 16 * 1rem);
+            padding-bottom: calc(263 / 16 * 1rem);
+        }
+        @media #{$min1840} {
             padding-top: calc(88 / 16 * 1rem);
             // padding-bottom: calc(249 / 16 * 1rem);
-            padding-bottom: calc(223 / 16 * 1rem);
+            // padding-bottom: calc(223 / 16 * 1rem);
             border-radius: calc(var(--radius-mode1-x-l) / 16 * 1rem);
         }
         .cmp-swiper__wrap {
@@ -115,7 +119,7 @@
         &__container {
             display: flex;
             flex-direction: column-reverse;
-            @media #{$min1280} {
+            @media #{$min1840} {
                 flex-direction: row;
                 justify-content: flex-end;
                 margin-bottom: calc(26 / 16 * 1rem);
@@ -124,7 +128,7 @@
         &__text-box {
             text-align: center;
             padding: calc(40 / 16 * 1rem) calc(20 / 16 * 1rem) 0;
-            @media #{$min1280} {
+            @media #{$min1840} {
                 position: absolute;
                 top: calc(16 / 16 * 1rem);
                 left: calc(96 / 16 * 1rem);
@@ -136,7 +140,7 @@
             color: var(--banner-color-mode);
             .display-pc {
                 display: none;
-                @media (min-width: 1600px) {
+                @media #{$min1840} {
                     display: block;
                 }
             }
@@ -144,14 +148,14 @@
         &__desc {
             margin-top: calc(12 / 16 * 1rem);
             color: var(--banner-color-mode);
-            @media #{$min1280} {
+            @media #{$min1840} {
                 margin-top: calc(24 / 16 * 1rem);
             }
         }
         &__button {
             justify-content: center;
             margin-top: calc(18 / 16 * 1rem);
-            @media #{$min1280} {
+            @media #{$min1840} {
                 justify-content: flex-start;
                 margin-top: calc(32 / 16 * 1rem);
             }
@@ -198,7 +202,19 @@
                 // aspect-ratio: 270 / 150;
                 // aspect-ratio: 820 / 458;
                 // max-height: calc(458 / 16 * 1rem);
-                @media #{$min1280} {
+                @media (min-width: 1000px) {
+                    max-width: calc(840 / 16 * 1rem);
+                    margin: 0 auto;
+                }
+                @media (min-width: 1400px) {
+                    max-width: calc(960 / 16 * 1rem);
+                    margin: 0 auto;
+                }
+                @media (min-width: 1600px) {
+                    width: 100%;
+                    margin: 0 auto;
+                }
+                @media #{$min1840} {
                     max-width: calc(820 / 16 * 1rem);
                     min-width: calc(656 / 16 * 1rem);
                     margin: calc(5 / 16 * 1rem) 0 0;
@@ -220,7 +236,7 @@
             // News Image Hero
             &--news {
                 .interactive-swiper__container {
-                    @media #{$min1280} {
+                    @media #{$min1840} {
                         justify-content: space-between;
                         gap: calc(85 / 16 * 1rem);
                         padding: 0 calc(107 / 16 * 1rem) 0 calc(96 / 16 * 1rem);
@@ -230,7 +246,7 @@
                     position: relative;
                     top: initial;
                     left: initial;
-                    @media #{$min1280} {
+                    @media #{$min1840} {
                         max-width: calc(652 / 16 * 1rem);
                     }
                 }
