@@ -426,6 +426,8 @@
                     1. .dynamic-search.dynamic-search--collapsed : 닫힘 상태
                     2. .dynamic-search.dynamic-search--expanded : 펼침 상태
                     3. .dynamic-search.dynamic-search--expanded-important : 클릭 시 펼침 상태 - top/end 에 도달하면 해당 클래스 제거, 닫힘 상태로 변경
+                    4. .dynamic-search.dynamic-search--expanded.dynamic-search--result-empty 또는
+                        .dynamic-search.dynamic-search--expanded-important.dynamic-search--result-empty: 펼침 상태에서 검색 결과가 없을 경우 이중 클래스 적용 / 이중클래스 적용 시 .dynamic-search__result-empty 에 display:none; 적용
                 -->
                 <div class="main-content__inner dynamic-search dynamic-search--collapsed">
                     <div class="main-container">
@@ -473,6 +475,9 @@
                             <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
                                 jsonData: inputData,
                             })) %>
+                            <div class="dynamic-search__result-empty">
+                                <p class="font-head-md font-medium color-text-default text-center">검색된 결과가 없습니다.</p>
+                            </div>
                             <div class="dynamic-search__keyword-area">
                                 <div class="dynamic-search__keyword-area__scroll">
                                     <button type="button" class="dynamic-search__keyword-button">클라우드 알아보기</button>
@@ -904,10 +909,12 @@
                         // 스크롤 위치가 dynamicSearch의 하단을 넘어가면
                         target.classList.add('dynamic-search--collapsed');
                         target.classList.remove('dynamic-search--expanded');
+                        target.classList.remove('dynamic-search--result-empty');
                     } else if (Yoffset < target.getBoundingClientRect().top){
                         // 스크롤 위치가 dynamicSearch보다 위에 있다면
                         target.classList.add('dynamic-search--collapsed');
                         target.classList.remove('dynamic-search--expanded');
+                        target.classList.remove('dynamic-search--result-empty');
                     }
                 } else if (target.classList.contains('dynamic-search--expanded-important')) {
                     if (Yoffset == 0 || scrollPosition + windowHeight >= documentHeight) {
@@ -915,6 +922,7 @@
                         target.classList.add('dynamic-search--collapsed');
                         target.classList.remove('dynamic-search--expanded');
                         target.classList.remove('dynamic-search--expanded-important');
+                        target.classList.remove('dynamic-search--result-empty');
                     }
                 }
             }
