@@ -676,6 +676,7 @@ const winScrollTop = (() => {
     const btnTop = document.querySelector('.btn-top');
     if(btnTop) {
         btnTop.addEventListener("click", () => {
+            event.preventDefault();
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
