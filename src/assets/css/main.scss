@@ -543,11 +543,20 @@
                 }
             }
         }
+        &__title {
+            @include ellipsis(2);
+            height: calc(56 / 16 * 1rem);
+            @media #{$min1280} {
+                height: calc(68 / 16 * 1rem);
+            }
+        }
         &__desc {
             @include ellipsis(2);
             margin-top: calc(12 / 16 * 1rem);
+            height: calc(48 / 16 * 1rem);
             @media #{$min1280} {
                 margin-top: calc(8 / 16 * 1rem);
+                height: calc(52 / 16 * 1rem);
             }
         }
         &__category {
