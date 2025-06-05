@@ -7,7 +7,7 @@
         display: flex;
         flex-direction: column;
         border-top: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
-        li {
+        .accordion-item {
             border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
             &:last-child {
                 @media #{$min1280} {
@@ -114,7 +114,7 @@
     }
     &--last-item-style {
         .accordion-list  {
-            li {
+            .accordion-item {
                 &:last-child {
                     @media #{$min1280} {
                         border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2) !important;
