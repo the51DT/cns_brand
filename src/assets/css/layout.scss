@@ -87,17 +87,6 @@ body {
             display: flex;
             padding: 0 calc(40 / 16 * 1rem) 0 calc(60 / 16 * 1rem);
         }
-        // main 에서만 적용되는 header 스타일
-        .main {
-            .header {
-                .gnb-navy__wrap {
-                    padding: 0 calc(26 / 16 * 1rem) 0 calc(44.25 / 16 * 1rem);
-                }
-                .gnb-util {
-                    gap: calc(25 / 16 * 1rem);
-                }
-            }
-        }
     }
     &.gnb-mode--mo {
         .gnb-util {
@@ -144,126 +133,6 @@ body {
             }
             .mo-gnb-navy__wrap {
                 display: block;
-            }
-        }
-    }
-    // main 에서만 적용되는 header 스타일
-    .main {
-        .header {
-            border-bottom: 0;
-            &-inner {
-                max-width: calc(1920 / 16 * 1rem);
-                @media #{$min1280} {
-                    padding: 0 calc(40 / 16 * 1rem);
-                }
-            }
-            .logo {
-                img {
-                    display: none;
-                }
-                .logo_main {
-                    display: block;
-                    width: calc(90 / 16 * 1rem);
-                    @media #{$min1280} {
-                        width: calc(123.75 / 16 * 1rem);
-                    }
-                }
-            }
-            .navy-list {
-                & > li {
-                    & > a {
-                        font-size: calc(24 / 16 * 1rem);
-                        line-height: calc(30 / 16 * 1rem);
-                    }
-                    .gnb-sub__wrap {
-                        .gnb-sub-inner {
-                            max-width: calc(1840 / 16 * 1rem);
-                        }
-                    }
-                }
-                .sub-menu-list {
-                    li {
-                        .sub-menu-detail {
-                            padding: calc(40 / 16 * 1rem) calc(124 / 16 * 1rem) calc(40 / 16 * 1rem) calc(40 / 16 * 1rem); 
-                            width: calc(1412 /  16 * 1rem);
-                        }
-                        &.is-active {
-                            .sub-menu-detail {
-                                .sub-depth-menu-list {
-                                    grid-template-columns: repeat(4, 1fr);
-                                }
-                            }
-                        }
-                    }
-                }
-                .gnb-sub__wrap--drop {
-                    .gnb-sub-inner {
-                        padding: calc(36 / 16 * 1rem) calc(48 /16 * 1rem) calc(48 /16 * 1rem);
-                    }
-                    .sub-menu-tit {
-                        padding: calc(12 / 16 * 1rem);
-                        & + .sub-menu {
-                            margin-top: 0;
-                        }
-                    }
-                    .sub-menu {
-                        li {
-                            a {
-                                padding: calc(14 / 16 * 1rem) calc(12 / 16 * 1rem);
-                            }
-                        }
-                    }
-                    &--sub {
-                        .gnb-sub-inner {
-                            padding: calc(48 / 16 * 1rem) calc(48 / 16 * 1rem);
-                        }
-                        .sub-menu {
-                            li {
-                                a {
-                                    padding: calc(12 / 16 * 1rem) 0;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            .navy-right {
-                .navy-list {
-                    & > li {
-                        padding: 0 calc(19 / 16 * 1rem);
-                        &:first-child {
-                            padding-left: 0;
-                        }
-                        & > a {
-                            font-size: calc(20 / 16 * 1rem);
-                            line-height: calc(26 / 16 * 1rem);
-                        }
-                    }
-                }    
-            }
-            .gnb-util {
-                .btn-type {
-                    color: var(--colorCM-mode1-text-text-default);
-                    @media #{$min1280} {
-                        font-size: calc(18 / 16 * 1rem);
-                        line-height: calc(24 / 16 * 1rem);
-                        font-weight: 400;
-                    }
-                }
-                .lang-select {
-                    .btn-lang {
-                        @media #{$min1280} {
-                            width: calc(26 / 16 * 1rem);
-                            height: calc(26 / 16 * 1rem);
-                        }
-                    }
-                }
-                .btn-search {
-                    @media #{$min1280} {
-                        width: calc(26 / 16 * 1rem);
-                        height: calc(26 / 16 * 1rem);
-                    }
-                }
             }
         }
     }
@@ -911,10 +780,6 @@ body {
                 display: none;
             }
         }
-    }
-    // main 로고
-    .logo_main {
-        display: none;
     }
     // 로고
     .logo_wt {
