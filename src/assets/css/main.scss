@@ -504,7 +504,7 @@
     // News
     .news-swiper {
         .main-container {
-            padding: 0 calc(20 / 16 * 1rem);
+            padding: 0 0;
             @media #{$min1280} {
                 padding: 0 calc(40 / 16 * 1rem);
                 max-width: calc(1520 / 16 * 1rem);
@@ -535,9 +535,12 @@
             }
             img {
                 width: 100%;
-                aspect-ratio: 467 / 262;
+                aspect-ratio: 300 / 168;
                 object-fit: cover;
                 object-position: center;
+                @media #{$min1280} {
+                    aspect-ratio: 467 / 262;
+                }
             }
         }
         &__desc {

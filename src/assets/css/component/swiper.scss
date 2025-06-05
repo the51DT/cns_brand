@@ -101,9 +101,12 @@
 }
 .cmp-swiper__wrap.type-text-pagination .thumbnail-wrap img {
     width: 100%;
-    aspect-ratio: 724 / 408;
+    aspect-ratio: 320 / 179;
     object-fit: cover;
     object-position: center;
+    @media #{$min1280} {
+        aspect-ratio: 724 / 408;
+    }
 }
 .cmp-swiper__wrap.type-text-pagination .description {
     margin-bottom: calc(46 / 16 * 1rem);

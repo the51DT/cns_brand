@@ -232,6 +232,12 @@
             position: relative;
             img {
                 width: 100%;
+                aspect-ratio: 320 / 180;
+                object-fit: cover;
+                object-position: center;
+                @media #{$min1280} {
+                    aspect-ratio: 710 / 400;
+                }
             }
             .chip__wrap {
                 position: absolute;
