@@ -155,7 +155,7 @@
             &.on {
                 .txt {
                     &-desc {
-                        display: block;
+                        display: -webkit-box;
                     }
                 }                    
             }
@@ -183,7 +183,7 @@
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    word-break: break-word;
+                    // word-break: break-word;
                 }                
                 &-desc {
                     font-weight: 400;
@@ -191,12 +191,12 @@
                     line-height: calc(20 / 16 * 1rem);
                     letter-spacing: -0.2px;
                     margin-top: calc(8 / 16 * 1rem);;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 3;
+                    // display: -webkit-box;
+                    -webkit-line-clamp: 5;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    word-break: break-all;
+                    // word-break: break-all;
                     display: none;
 
                 }                
