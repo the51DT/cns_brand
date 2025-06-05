@@ -535,6 +535,9 @@
             }
             img {
                 width: 100%;
+                aspect-ratio: 467 / 262;
+                object-fit: cover;
+                object-position: center;
             }
         }
         &__desc {
