@@ -10,8 +10,8 @@
         }
         &:not(:has(.cmp-title__wrap)) {
             align-items: flex-end;
+            justify-content: flex-end;
             @media #{$min1280} {
-                justify-content: flex-end;
                 align-items: center;
             }
         }
