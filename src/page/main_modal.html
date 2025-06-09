@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title><%= data.title %></title>
+  <meta name="description" content="<%= data.description %>">
+  <link rel="stylesheet" href="/src/assets/css/index.css" />
+  <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap has-hero main">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+            pcImg: 'empty',
+            moImg: 'empty',
+            subText: 'Main > Service', 
+            pageTitle: 'modal' 
+        })) %>
+        <!-- //비주얼 영역 -->
+        <div class="sub-content__wrap">
+            <div class="inner-wrap">
+                <div style="height: 600px;">
+                    <div class="button__wrap mo-100">
+                        <a href="#" class="btn btn-primary btn-large" modal-id="modal-main01" onclick="openModal(event)">
+                            <span class="btn__text">메인 > 서비스 영역 modal</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+    <!-- [Start] modal : pc-size: large, mo-size: large -->
+    <div class="cmp-modal cmp-modal--main" id="modal-main01">
+        <div class="modal modal--type-large">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <!-- <div class="modal__header">
+                    </div> -->
+                    <div class="modal__content">
+                        <!-- [Start] 모달 컨텐츠 영역 -->
+                        <div class="modal__scroll">
+                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                                title: {
+                                    text: 'Modern IT Infra on Cloud',
+                                    subText: '클라우드가 열어갈 더 새롭고 편리해진 비즈니스 세상, 그 처음과 끝을 LG CNS가 함께합니다.',
+                                    size: 'md-mode',
+                                    class: 'font-semibold',
+                                },
+                            })) %>
+                            <div class="modal__content__area">
+                                <div class="list-container">
+                                    <ul class="list list--type-01">
+                                        <li class="list__item">
+                                            <div class="list__item--img"></div>
+                                            <div class="list__item--text">
+                                                <a href="#" class="list__item--text-link color-text-default">service</a>
+                                            </div>
+                                        </li>
+                                        <li class="list__item">
+                                            <div class="list__item--img"></div>
+                                            <div class="list__item--text">
+                                                <a href="#" class="list__item--text-link color-text-default">service</a>
+                                            </div>
+                                        </li>
+                                        <li class="list__item">
+                                            <div class="list__item--img"></div>
+                                            <div class="list__item--text">
+                                                <a href="#" class="list__item--text-link color-text-default">service</a>
+                                            </div>
+                                        </li>
+                                        <li class="list__item">
+                                            <div class="list__item--img"></div>
+                                            <div class="list__item--text">
+                                                <a href="#" class="list__item--text-link color-text-default">service</a>
+                                            </div>
+                                        </li>
+                                        <li class="list__item">
+                                            <div class="list__item--img"></div>
+                                            <div class="list__item--text">
+                                                <a href="#" class="list__item--text-link color-text-default">service</a>
+                                            </div>
+                                        </li>
+                                        <li class="list__item">
+                                            <div class="list__item--img"></div>
+                                            <div class="list__item--text">
+                                                <a href="#" class="list__item--text-link color-text-default">service</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- [End] 모달 컨텐츠 영역 -->
+                    </div>
+                    <!-- 하단 버튼 사용안함 : 필요시 사용 -->                    
+                    <!-- <div class="modal__footer">
+                        <div class="button__wrap mo-100">
+                            <button class="btn btn-primary btn-large">
+                                <span class="btn__text">등록</span>
+                            </button>
+                        </div>
+                    </div> -->
+                    <div class="modal__close">
+                        <div class="button__wrap">
+                            <button type="button" class="btn" onclick="closeModal(event)">
+                                <!-- <i class="ico icon-close-bl32"></i> -->
+                                <span class="ir-text">모달 닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal -->
+</body>
+</html>

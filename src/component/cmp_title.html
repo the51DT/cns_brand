@@ -7,5 +7,8 @@
         <% if (typeof title.subDesc !=='undefined' && title.subDesc) { %>
             <div class="font-body-sm title-sub-desc color-text-secondary"><%- title.subDesc %></div>
         <% } %>
+        <% if (typeof title.subText !=='undefined' && title.subText) { %>
+            <div class="font-body-sm title-sub-text color-text-default"><%- title.subText %></div>
+        <% } %>
     <% } %>
 </div>

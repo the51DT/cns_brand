@@ -350,7 +350,7 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_event_detail.html"
-        }
+        }        
       ]
     },
     {
@@ -406,6 +406,12 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "main.html"
+        },
+        {
+          "name": "Main - modal",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "main_modal.html"
         }
       ]
     },

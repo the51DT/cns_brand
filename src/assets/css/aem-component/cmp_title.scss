@@ -14,4 +14,10 @@
             margin-top: calc(12 / 16 * 1rem);
         }
     }
+    .title-sub-text {
+        margin-top: calc(12 / 16 * 1rem);
+        @media #{$min1280} {
+            margin-top: calc(24 / 16 * 1rem);
+        }
+    }
 }
