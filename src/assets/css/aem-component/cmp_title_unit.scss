@@ -5,11 +5,10 @@
         flex-wrap: wrap;
         align-items: center;
         gap: calc(12 / 16 * 1rem);
+        justify-content: space-between;
         @media #{$min1280} {
-            justify-content: space-between;
         }
         &:not(:has(.cmp-title__wrap)) {
-            align-items: flex-end;
             justify-content: flex-end;
             @media #{$min1280} {
                 align-items: center;
