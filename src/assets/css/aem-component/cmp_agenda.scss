@@ -44,7 +44,7 @@
         @media #{$min1280}{
             padding-left: 0;
             padding-right: calc(84 / 16 * 1rem);
-            width: auto;
+            width: calc(227 / 16 * 1rem);
             background-position: calc(100% - calc(24 / 16 * 1rem)) calc(10 / 16 * 1rem);
         }
         .time-text {
