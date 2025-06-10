@@ -487,9 +487,186 @@
                                 top: calc(24 / 16 * 1rem);
                                 left: calc(24 / 16 * 1rem);
                             }
+                        }                        
+                        .icon-service1 {
+                            background-image: url("#{$basePath}image/icon/icon-service1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-service1_pc.svg");
+                            }
                         }
-                        .icon-service-cloud {
-                            background-image: url("#{$basePath}image/icon/icon-service-cloud.svg");
+                        .icon-cloud1 {
+                            background-image: url("#{$basePath}image/icon/icon-cloud1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-cloud1_pc.svg");
+                            }
+                        }
+                        .icon-cloud2 {
+                            background-image: url("#{$basePath}image/icon/icon-cloud2_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-cloud2_pc.svg");
+                            }
+                        }
+                        .icon-cloud3 {
+                            background-image: url("#{$basePath}image/icon/icon-cloud3_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-cloud3_pc.svg");
+                            }
+                        }
+                        .icon-cloud4 {
+                            background-image: url("#{$basePath}image/icon/icon-cloud4_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-cloud4_pc.svg");
+                            }
+                        }
+                        .icon-ai1 {
+                            background-image: url("#{$basePath}image/icon/icon-ai1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-ai1_pc.svg");
+                            }
+                        }
+                        .icon-ai2 {
+                            background-image: url("#{$basePath}image/icon/icon-ai2_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-ai2_pc.svg");
+                            }
+                        }
+                        .icon-bigdata1 {
+                            background-image: url("#{$basePath}image/icon/icon-bigdata1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-bigdata1_pc.svg");
+                            }
+                        }
+                        .icon-BizProcess1 {
+                            background-image: url("#{$basePath}image/icon/icon-BizProcess1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-BizProcess1_pc.svg");
+                            }
+                        }
+                        .icon-BizProcess2 {
+                            background-image: url("#{$basePath}image/icon/icon-BizProcess2_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-BizProcess2_pc.svg");
+                            }
+                        }
+                        .icon-BizProcess3 {
+                            background-image: url("#{$basePath}image/icon/icon-BizProcess3_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-BizProcess3_pc.svg");
+                            }
+                        }
+                        .icon-BizProcess4 {
+                            background-image: url("#{$basePath}image/icon/icon-BizProcess4_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-BizProcess4_pc.svg");
+                            }
+                        }
+                        .icon-BizProcess5 {
+                            background-image: url("#{$basePath}image/icon/icon-BizProcess5_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-BizProcess5_pc.svg");
+                            }
+                        }
+                        .icon-BizProcess6 {
+                            background-image: url("#{$basePath}image/icon/icon-BizProcess6_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-BizProcess6_pc.svg");
+                            }
+                        }
+                        .icon-es1 {
+                            background-image: url("#{$basePath}image/icon/icon-es1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-es1_pc.svg");
+                            }
+                        }
+                        .icon-es2 {
+                            background-image: url("#{$basePath}image/icon/icon-es2_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-es2_pc.svg");
+                            }
+                        }
+                        .icon-ce1 {
+                            background-image: url("#{$basePath}image/icon/icon-ce1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-ce1_pc.svg");
+                            }
+                        }
+                        .icon-ce2 {
+                            background-image: url("#{$basePath}image/icon/icon-ce2_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-ce2_pc.svg");
+                            }
+                        }
+                        .icon-factory1 {
+                            background-image: url("#{$basePath}image/icon/icon-factory1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-factory1_pc.svg");
+                            }
+                        }
+                        .icon-factory2 {
+                            background-image: url("#{$basePath}image/icon/icon-factory2_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-factory2_pc.svg");
+                            }
+                        }
+                        .icon-factory3 {
+                            background-image: url("#{$basePath}image/icon/icon-factory3_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-factory3_pc.svg");
+                            }
+                        }
+                        .icon-factory4 {
+                            background-image: url("#{$basePath}image/icon/icon-factory4_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-factory4_pc.svg");
+                            }
+                        }
+                        .icon-logi1 {
+                            background-image: url("#{$basePath}image/icon/icon-logi1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-logi1_pc.svg");
+                            }
+                        }
+                        .icon-city1 {
+                            background-image: url("#{$basePath}image/icon/icon-city1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-city1_pc.svg");
+                            }
+                        }
+                        .icon-city2 {
+                            background-image: url("#{$basePath}image/icon/icon-city2_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-city2_pc.svg");
+                            }
+                        }
+                        .icon-consulting1 {
+                            background-image: url("#{$basePath}image/icon/icon-consulting1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-consulting1_pc.svg");
+                            }
+                        }                        
+                        .icon-industry1 {
+                            background-image: url("#{$basePath}image/icon/icon-industry1_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-industry1_pc.svg");
+                            }
+                        }
+                        .icon-industry2 {
+                            background-image: url("#{$basePath}image/icon/icon-industry2_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-industry2_pc.svg");
+                            }
+                        }
+                        .icon-industry3 {
+                            background-image: url("#{$basePath}image/icon/icon-industry3_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-industry3_pc.svg");
+                            }
+                        }
+                        .icon-industry4 {
+                            background-image: url("#{$basePath}image/icon/icon-industry4_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-industry4_pc.svg");
+                            }
                         }
                     }
                     &--link {                        
@@ -510,22 +687,31 @@
                         font-weight: 500;
                         line-height: calc(30 / 16 * 1rem);
                         color: #121212;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        padding-right: calc(24 / 16 * 1rem);
                         @media #{$min1280} {
                             font-size: calc(28 / 16 * 1rem);
                             line-height: calc(40 / 16 * 1rem);
                             bottom: calc(24 / 16 * 1rem);
                             left: calc(24 / 16 * 1rem);
                             width: calc(100% - calc(40 / 16 * 1rem));
+                            padding-right: calc(40 / 16 * 1rem);
                         }                        
                         &::after {
                             content: '';
                             display: inline-block;
                             position: absolute;
                             right: 0;
-                            top: 0;
-                            width: 100%;
-                            height: 100%;
-                            background: url("#{$basePath}image/icon/icon-main-navigation-right-bl40.svg") no-repeat right center / contain;
+                            bottom: 0;
+                            width: 30px;
+                            height: 30px;
+                            background: url("#{$basePath}image/icon/icon-main-navigation-right-bl40.svg") no-repeat right center / contain;                            
+                            @media #{$min1280} {
+                                width: 40px;
+                                height: 40px;                                
+                            }
                         }
                     }
                     &:hover {
@@ -534,8 +720,185 @@
                         background: #36369d;
                         .list__item {
                             &--img {
-                                .icon-service-cloud {
-                                    background-image: url("#{$basePath}image/icon/icon-service-cloud-hover.svg");
+                                .icon-service1 {
+                                    background-image: url("#{$basePath}image/icon/icon-service1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-service1-hover_pc.svg");
+                                    }
+                                }
+                                .icon-cloud1 {
+                                    background-image: url("#{$basePath}image/icon/icon-cloud1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-cloud1-hover_pc.svg");
+                                    }
+                                }
+                                .icon-cloud2 {
+                                    background-image: url("#{$basePath}image/icon/icon-cloud2-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-cloud2-hover_pc.svg");
+                                    }
+                                }
+                                .icon-cloud3 {
+                                    background-image: url("#{$basePath}image/icon/icon-cloud3-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-cloud3-hover_pc.svg");
+                                    }
+                                }
+                                .icon-cloud4 {
+                                    background-image: url("#{$basePath}image/icon/icon-cloud4-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-cloud4-hover_pc.svg");
+                                    }
+                                }
+                                .icon-ai1 {
+                                    background-image: url("#{$basePath}image/icon/icon-ai1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-ai1-hover_pc.svg");
+                                    }
+                                }
+                                .icon-ai2 {
+                                    background-image: url("#{$basePath}image/icon/icon-ai2-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-ai2-hover_pc.svg");
+                                    }
+                                }
+                                .icon-bigdata1 {
+                                    background-image: url("#{$basePath}image/icon/icon-bigdata1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-bigdata1-hover_pc.svg");
+                                    }
+                                }
+                                .icon-BizProcess1 {
+                                    background-image: url("#{$basePath}image/icon/icon-BizProcess1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-BizProcess1-hover_pc.svg");
+                                    }
+                                }
+                                .icon-BizProcess2 {
+                                    background-image: url("#{$basePath}image/icon/icon-BizProcess2-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-BizProcess2-hover_pc.svg");
+                                    }
+                                }
+                                .icon-BizProcess3 {
+                                    background-image: url("#{$basePath}image/icon/icon-BizProcess3-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-BizProcess3-hover_pc.svg");
+                                    }
+                                }
+                                .icon-BizProcess4 {
+                                    background-image: url("#{$basePath}image/icon/icon-BizProcess4-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-BizProcess4-hover_pc.svg");
+                                    }
+                                }
+                                .icon-BizProcess5 {
+                                    background-image: url("#{$basePath}image/icon/icon-BizProcess5-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-BizProcess5-hover_pc.svg");
+                                    }
+                                }
+                                .icon-BizProcess6 {
+                                    background-image: url("#{$basePath}image/icon/icon-BizProcess6-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-BizProcess6-hover_pc.svg");
+                                    }
+                                }
+                                .icon-es1 {
+                                    background-image: url("#{$basePath}image/icon/icon-es1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-es1-hover_pc.svg");
+                                    }
+                                }
+                                .icon-es2 {
+                                    background-image: url("#{$basePath}image/icon/icon-es2-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-es2-hover_pc.svg");
+                                    }
+                                }
+                                .icon-ce1 {
+                                    background-image: url("#{$basePath}image/icon/icon-ce1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-ce1-hover_pc.svg");
+                                    }
+                                }
+                                .icon-ce2 {
+                                    background-image: url("#{$basePath}image/icon/icon-ce2-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-ce2-hover_pc.svg");
+                                    }
+                                }
+                                .icon-factory1 {
+                                    background-image: url("#{$basePath}image/icon/icon-factory1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-factory1-hover_pc.svg");
+                                    }
+                                }
+                                .icon-factory2 {
+                                    background-image: url("#{$basePath}image/icon/icon-factory2-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-factory2-hover_pc.svg");
+                                    }
+                                }
+                                .icon-factory3 {
+                                    background-image: url("#{$basePath}image/icon/icon-factory3-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-factory3-hover_pc.svg");
+                                    }
+                                }
+                                .icon-factory4 {
+                                    background-image: url("#{$basePath}image/icon/icon-factory4-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-factory4-hover_pc.svg");
+                                    }
+                                }
+                                .icon-logi1 {
+                                    background-image: url("#{$basePath}image/icon/icon-logi1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-logi1-hover_pc.svg");
+                                    }
+                                }
+                                .icon-city1 {
+                                    background-image: url("#{$basePath}image/icon/icon-city1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-city1-hover_pc.svg");
+                                    }
+                                }
+                                .icon-city2 {
+                                    background-image: url("#{$basePath}image/icon/icon-city2-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-city2-hover_pc.svg");
+                                    }
+                                }
+                                .icon-consulting1 {
+                                    background-image: url("#{$basePath}image/icon/icon-consulting1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-consulting1-hover_pc.svg");
+                                    }
+                                }                                
+                                .icon-industry1 {
+                                    background-image: url("#{$basePath}image/icon/icon-industry1-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-industry1-hover_pc.svg");
+                                    }
+                                }
+                                .icon-industry2 {
+                                    background-image: url("#{$basePath}image/icon/icon-industry2-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-industry2-hover_pc.svg");
+                                    }
+                                }
+                                .icon-industry3 {
+                                    background-image: url("#{$basePath}image/icon/icon-industry3-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-industry3-hover_pc.svg");
+                                    }
+                                }
+                                .icon-industry4 {
+                                    background-image: url("#{$basePath}image/icon/icon-industry4-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-industry4-hover_pc.svg");
+                                    }
                                 }
                             }
                             &--text {
