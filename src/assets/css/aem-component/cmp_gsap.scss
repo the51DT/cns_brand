@@ -291,10 +291,14 @@
             .title {
                 color: #fff;
                 @media #{$pcMiddle}, #{$pcWide} {
-                    text-align: left;
+                    text-align: left;     
+                    max-width: calc(340 / 16 * 1rem);
+                    word-break: keep-all;
                 }
                 @media #{$tablet} {
                     text-align: center;
+                    max-width: calc(440 / 16 * 1rem);
+                    margin: 0 auto;
                     padding: calc(80 / 16 * 1rem) 0 calc(60 / 16 * 1rem);
                 }                             
                 @media #{$tabletMini} {
