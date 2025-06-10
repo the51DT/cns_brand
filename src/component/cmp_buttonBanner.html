@@ -1,4 +1,4 @@
-<div class="cmp-wrap cmp-buttonbanner" style="--button-banner-pc-img: url('<%= typeof pcImg !== 'undefined' ? pcImg : '등록된 이미지 없음' %>'); 
+<div class="cmp-wrap cmp-buttonbanner<%= typeof desc !== 'undefined' && desc ? ' cmp-buttonbanner__sub' : '' %>" style="--button-banner-pc-img: url('<%= typeof pcImg !== 'undefined' ? pcImg : '등록된 이미지 없음' %>'); 
 --button-banner-mo-img: url('<%= typeof moImg !== 'undefined' ? moImg : '등록된 이미지 없음' %>');">
     <div class="inner-wrap">
         <div class="banner_content">
@@ -8,6 +8,13 @@
             <div class="cmp-buttonbanner-title">
                 <%- typeof title !== 'undefined' ? `<p>${title}</p>` : `<p>타이틀 문구 길게 들어갈수 있음</p>` %>
             </div>
+            <% if(typeof desc !== 'undefined' && desc) { %>
+                <div class="cmp-buttonbanner-desc">
+                    <% desc.forEach((item)=> { %>
+                        <span class="cmp-buttonbanner-desc__text font-head-sm font-normal color-text-default"><%- item %></span>
+                    <% })%>
+                </div>
+            <% } %>
             <div class="cmp-buttonbanner-btn">
                 <a href="#">
                     <% if(typeof buttonText !== 'undefined' && buttonText) { %>

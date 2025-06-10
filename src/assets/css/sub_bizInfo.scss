@@ -1192,5 +1192,21 @@
                 }
             }
         }
+        .inner-wrap {
+            &.wide {
+                &:has(.button__wrap--btn-top) {
+                    padding-bottom: 0;
+                }
+                .cmp-buttonbanner {
+                    max-width: 100%;
+                    margin-bottom: 0;
+                    .inner-wrap {
+                        max-width: calc(1440 / 16 * 1rem);
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
     }
 }
