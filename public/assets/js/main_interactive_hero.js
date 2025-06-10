@@ -7,10 +7,60 @@
     6. 슬라이드가 active 되면 동작이 적용
     7. .interactive-swiper__frame__video 의 경우 슬라이드가 active 되면 video.play 처리 =  swiperHero
 */
-let isPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
+let isPc = window.matchMedia('only screen and (min-width: 1024px)').matches;
+let isTablet = window.matchMedia('only screen and (min-width: 535px)').matches;
+let videoGroup = [];
+const videoPaths = {
+    pc: [
+        '/src/assets/image/main/main_interactive_hero_mv_01.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_02.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_03.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_04.mp4'
+    ],
+    tablet: [
+        '/src/assets/image/main/main_interactive_hero_mv_01_tablet.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_02_tablet.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_03_tablet.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_04_tablet.mp4'
+    ],
+    mobile: [
+        '/src/assets/image/main/main_interactive_hero_mv_01_mo.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_02_mo.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_03_mo.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_04_mo.mp4'
+    ]
+};
+
+// 비디오 그룹 초기화 함수
+function initializeVideoGroup() {
+    if (isPc) {
+        videoGroup = videoPaths.pc;
+    } else if (isTablet) {
+        videoGroup = videoPaths.tablet;
+    } else {
+        videoGroup = videoPaths.mobile;
+    }
+    updateVideoSources()
+}
+
+// 비디오 경로 업데이트 함수
+function updateVideoSources() {
+    const activeSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide video');
+    activeSlides.forEach(videoElement => {
+        const slideIndex = Array.from(videoElement.closest('.swiper-slide').parentNode.children).indexOf(videoElement.closest('.swiper-slide'));
+        videoElement.src = videoGroup[slideIndex]; // 현재 슬라이드 인덱스에 맞는 비디오 경로 설정
+        videoElement.load(); // 비디오 파일 로드
+    });
+}
+
 window.addEventListener('resize', function () {
-    isPc = window.matchMedia('(min-width: 1280px)').matches;
-});
+    isPc = window.matchMedia('(min-width: 1024px)').matches;
+    isTablet = window.matchMedia('(min-width: 535px)').matches;
+    initializeVideoGroup();
+}); 
+
+// 초기 비디오 그룹 설정
+initializeVideoGroup();
 
 const interactiveHero = document.querySelector('.interactive-hero');
 const interactiveSwiper = interactiveHero.querySelector('.interactive-swiper');
@@ -18,16 +68,9 @@ const interactiveSlide = interactiveSwiper.querySelectorAll('.interactive-swiper
 const interactiveSlideNews = interactiveSwiper.querySelectorAll('.interactive-swiper__slide--news');
 const heroNavigation = document.querySelector('.cmp-hero-navigation');
 const noticeSwiper = document.querySelector('.notice-swiper');
-// console.log('interactiveHero:', interactiveHero);
 
 const styleGroup = ['hero-style-01', 'hero-style-02', 'hero-style-03', 'hero-style-04'];
 const colorMode = ['color-mode-white', 'color-mode-black', 'color-mode-white', 'color-mode-black']; // 스타일에 따른 색상 모드
-const videoGroup = [
-    '/src/assets/image/main/main_interactive_hero_mv_01.mp4',
-    '/src/assets/image/main/main_interactive_hero_mv_02.mp4',
-    '/src/assets/image/main/main_interactive_hero_mv_03.mp4',
-    '/src/assets/image/main/main_interactive_hero_mv_04.mp4'
-];
 const newsStyleGroup = ['#F0E5D3', '#DFE0E0', '#DDDAE2', '#EDE2F1', '#E7F4F7', '#EBF8F4', '#FFF0F1'];
 let currentStyles = []; // 현재 적용된 스타일을 저장할 배열
 
@@ -91,25 +134,7 @@ function applyStyleToSlide(index) {
         noticeSwiper.classList.add(colorMode[styleGroup.indexOf(styleToApply)]);
     }
 
-    // 중복 슬라이드의 비디오 요소 선택
-    const duplicateSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-duplicate video');
-    duplicateSlides.forEach(videoElement => {
-        videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 랜덤 스타일에 맞는 비디오 경로 설정
-        videoElement.load(); // 비디오 파일 로드
-        // videoElement.play().catch(error => {
-        //     console.error('비디오 재생 오류:', error);
-        // });
-    });
-
-    // 현재 활성 슬라이드의 비디오 요소 선택
-    const activeSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide.swiper-slide-active video');
-    activeSlides.forEach(videoElement => {
-        videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 랜덤 스타일에 맞는 비디오 경로 설정
-        videoElement.load(); // 비디오 파일 로드
-        videoElement.play().catch(error => {
-            console.error('비디오 재생 오류:', error);
-        });
-    });
+    updateVideoSources(); // 비디오 경로 업데이트
 
     // 슬라이드 인덱스가 4 이상일 경우 color-mode-black 추가
     if (index >= 4) {
@@ -145,7 +170,7 @@ function onSlideChange() {
 // 슬라이드 변경 시작 이벤트 핸들러
 function onSlideChangeStart() {
     const activeIndex = swiperHero.activeIndex; // 현재 활성 슬라이드의 인덱스
-    const activeSlideTextGroup = interactiveSlide[activeIndex].querySelector('.interactive-swiper__text-box'); // 현재 활성 슬라이드의 텍스트 영역
+    // const activeSlideTextGroup = interactiveSlide[activeIndex].querySelector('.interactive-swiper__text-box'); // 현재 활성 슬라이드의 텍스트 영역
 
     // interactiveSlide.forEach((slide) => {
     //     const slideTextGroup = slide.querySelector('.interactive-swiper__text-box');
@@ -230,7 +255,6 @@ const firstSlideTextbox = document.querySelector('.swiper-slide-active .interact
 const firstSlideVideo = document.querySelector('.swiper-slide-active video');
 if(firstSlide) {
     firstSlideTextbox.classList.add('fade-in'); 
-    // console.log('firstSlideTextbox:', firstSlideTextbox)
 }
 if (firstSlideVideo) {
     firstSlideVideo.play().catch(error => {
@@ -240,7 +264,6 @@ if (firstSlideVideo) {
 
 // .notice-swiper가 하위 자식인지 확인하고 .has-notice 클래스 추가
 const hasNoticeSwiper = interactiveHero.querySelector('.notice-swiper');
-// console.log(hasNoticeSwiper)
 if (hasNoticeSwiper) {
     interactiveHero.classList.add('has-notice');
 } else {
