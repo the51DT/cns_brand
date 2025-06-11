@@ -142,8 +142,17 @@
         }
         .thumbnail-wrap {
             width: 100%;
+            @media #{$min1280} {
+                flex-shrink: 0;
+                width: calc(466 / 16 * 1rem);
+                height: calc(263 / 16 * 1rem);
+            }
             img {
                 width: 100%;
+                @media #{$min1280} {
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
         }
         .content-info {
