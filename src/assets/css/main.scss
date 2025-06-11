@@ -19,12 +19,7 @@
     }
     &-container {
         position: relative;
-        // padding: 0 calc(20 / 16 * 1rem);
         margin: 0 auto;
-        // @media #{$min1280} {
-        //     padding: 0 calc(40 / 16 * 1rem);
-        //     max-width: calc(1920 / 16 * 1rem);
-        // }
         padding: 0 calc(20 / 16 * 1rem);
         @media #{$min1600} {
             padding: 0 calc(30 / 16 * 1rem);
@@ -102,20 +97,11 @@
     }
     .interactive-swiper {
         position: relative;
-        // padding-top: calc(51 / 16 * 1rem);
-        // padding-bottom: calc(56 / 16 * 1rem);
         border-radius: calc(24 / 16 * 1rem);
         overflow: hidden;
         margin-bottom: calc(24 / 16 * 1rem);
         // transition-duration : 1s !important;
-        // @media #{$min1280} {
-        //     // padding-bottom: calc(223 / 16 * 1rem);
-        //     padding-bottom: calc(263 / 16 * 1rem);
-        // }
         @media #{$min1840} {
-            // padding-top: calc(88 / 16 * 1rem);
-            // padding-bottom: calc(249 / 16 * 1rem);
-            // padding-bottom: calc(223 / 16 * 1rem);
             border-radius: calc(var(--radius-mode1-x-l) / 16 * 1rem);
         }
         .cmp-swiper__wrap {
@@ -145,10 +131,6 @@
             bottom: calc(40 / 16 * 1rem);
             text-align: center;
             box-sizing: border-box;
-            // @media only screen and (min-width: 535px) and (max-width: 683px) {
-            //     // 폴드 구간 대응
-            //     bottom: calc(20.81 / 16 * 1rem);
-            // }
             @media #{$min535} {
                 bottom: calc(20.81 / 16 * 1rem);
             }
@@ -299,7 +281,6 @@
                 width: 100%;
             }
             &__video {
-                // max-width: calc(1200 / 16 * 1rem);
                 display: flex;
                 justify-content: flex-end;
                 margin: 0 auto;
@@ -307,31 +288,11 @@
                 video {
                     width: 100%;
                 }
-                // video {
-                //     margin-right: 0;
-                //     width: 100%;
-                //     @media (min-width: 1000px) {
-                //         max-width: calc(840 / 16 * 1rem);
-                //         margin: 0 auto;
-                //     }
-                //     @media (min-width: 1400px) {
-                //         max-width: calc(960 / 16 * 1rem);
-                //         margin: 0 auto;
-                //     }
-                //     @media (min-width: 1600px) {
-                //         width: 100%;
-                //     }
-                // }
             }
             &__image {
-                // margin: 0 calc(22 / 16 * 1rem);
                 border: calc(3 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default0);
                 border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
                 overflow: hidden;
-                // box-sizing: border-box;
-                // aspect-ratio: 270 / 150;
-                // aspect-ratio: 820 / 458;
-                // max-height: calc(458 / 16 * 1rem);
                 max-width: 100%;
                 @media only screen and (min-width : 1280px) {
                     max-width: calc(549.4 / 16 * 1rem);
@@ -343,18 +304,11 @@
                 }
                 @media #{$min1920} {
                     max-width: calc(820 / 16 * 1rem);
-                    // min-width: calc(656 / 16 * 1rem);
-                    // margin: calc(5 / 16 * 1rem) 0 0;
-                    // margin: 0 0 calc(80 / 16 * 1rem);
-                    // max-width: calc(840 / 16 * 1rem);
-                    // height: calc(478 / 16 * 1rem);
                     border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
                     border: calc(10 / 16 * 1rem) solid rgba(255,255,255,0.60);
                 }
                 img {
                     width: 100%;
-                    // height: 100%;
-                    // object-fit: cover;
                 }
             }
         }
@@ -387,8 +341,6 @@
                     }
                 }
                 .interactive-swiper__text-box {
-                    // 디자인 수정으로 인한 display: none 처리;
-                    // display: none;
                     position: relative;
                     top: initial;
                     left: initial;
@@ -520,10 +472,10 @@
             }
         }
         &--collapsed {            
-            .dynamic-search__collapsed-area {
-                // max-height: 110px;
-                // transition: max-height 0.3s ease-out;
-            }
+            // .dynamic-search__collapsed-area {
+            //     // max-height: 110px;
+            //     // transition: max-height 0.3s ease-out;
+            // }
             .dynamic-search__expanded-area {
                 overflow: hidden;
                 max-height: 0;
@@ -568,9 +520,6 @@
                 padding: 0 0;
                 margin-top: calc(96 / 16 * 1rem);
                 margin-bottom: calc(96 / 16 * 1rem);
-                // @media #{$min1280} {
-                //     padding: 0 calc(40 / 16 * 1rem);
-                // }
                 @media #{$min1600} {
                     margin-top: calc(200 / 16 * 1rem);
                     margin-bottom: calc(199 / 16 * 1rem);
@@ -651,7 +600,6 @@
             }
             &__scroll {
                 display: flex;
-                // flex-wrap: nowrap;
                 gap: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem);
                 justify-content: flex-start;
                 flex-wrap: wrap;
@@ -659,9 +607,6 @@
                 padding: 0 calc(20 / 16 * 1rem);
                 width: calc(920 / 16 * 1rem);
                 margin: 0 auto;
-                // @media #{$min1280} {
-                //     justify-content: flex-start;
-                // }
                 @media #{$min1600} {
                     justify-content: center;
                     gap: calc(16 / 16 * 1rem);
@@ -704,11 +649,6 @@
     // News
     .news-swiper {
         .main-container {
-            // padding: 0 0;
-            // @media #{$min1280} {
-            //     padding: 0 calc(40 / 16 * 1rem);
-            //     max-width: calc(1520 / 16 * 1rem);
-            // }
             padding: 0 0;
             @media #{$min1024} {
                 padding: 0 calc(20 / 16 * 1rem);
@@ -798,14 +738,14 @@
         }
         &__title {
             @include ellipsis(2);
-            height: calc(56 / 16 * 1rem);
+            height: calc(36 / 16 * 1rem);
             font-size: calc(18 / 16 * 1rem);
             line-height: calc(28 / 16 * 1rem);
             letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
-            @media #{$min800} {
+            @media #{$min1024} {
+                height: calc(68 / 16 * 1rem);
                 font-size: calc(24 / 16 * 1rem);
                 line-height: calc(34 / 16 * 1rem);
-                height: calc(68 / 16 * 1rem);
             }
         }
         &__desc {
@@ -815,19 +755,22 @@
             letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
             font-size: calc(16 / 16 * 1rem);
             line-height: calc(26 / 16 * 1rem);
-            @media #{$min800} {
+            @media #{$min1024} {
                 @include ellipsis(2);
                 margin-top: calc(8 / 16 * 1rem);
                 height: calc(52 / 16 * 1rem);
                 font-size: calc(18 / 16 * 1rem);
-                line-height: calc(26 / 16 * 1rem);
             }
         }
         &__category {
             display: block;
             margin-top: calc(16 / 16 * 1rem);
-            @media #{$min1280} {
+            letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+            font-size: calc(16 / 16 * 1rem);
+            line-height: calc(26 / 16 * 1rem);
+            @media #{$min1024} {
                 margin-top: calc(12 / 16 * 1rem);
+                font-size: calc(18 / 16 * 1rem);
             }
         }
         &__navigation-wrap {
@@ -888,22 +831,37 @@
         background-color: #F5F7F9;
         .main-container {
             position: relative;
-            padding: calc(80 / 16 * 1rem) 0 calc(134 / 16 * 1rem);
-            background-image: url('#{$basePath}image/main/bg_main_button-banner_mo.png');
+            padding: calc(20 / 16 * 1rem) 0 calc(194 / 16 * 1rem);
+            background-image: url('#{$basePath}image/main/bg_main_button-banner_360.png');
             background-repeat: no-repeat;
-            background-position: 100% 0;
             background-size: contain;
-            @media #{$min1280} {
-                background-image: url('#{$basePath}image/main/bg_main_button-banner_pc.png');
+            background-position: 100% center;
+            @media #{$min535} {
+                padding: calc(64 / 16 * 1rem) 0 calc(150 / 16 * 1rem);
+                background-image: url('#{$basePath}image/main/bg_main_button-banner_535.png');
+            }
+            @media #{$min800} {
+                padding: calc(64 / 16 * 1rem) 0 calc(204 / 16 * 1rem);
+                background-image: url('#{$basePath}image/main/bg_main_button-banner_800.png');
+            }
+            @media #{$min1024} {
                 padding: calc(80 / 16 * 1rem) 0 calc(136 / 16 * 1rem);
+                background-image: url('#{$basePath}image/main/bg_main_button-banner_1024.png');
+            }
+            @media #{$min1600} {
+                background-image: url('#{$basePath}image/main/bg_main_button-banner_1600.png');
+            }
+            @media #{$min1920} {
+                background-image: url('#{$basePath}image/main/bg_main_button-banner_1920.png');
             }
         }
         &__box {
             padding: 0 calc(20 / 16 * 1rem);
-            margin: 0 auto;
-            @media #{$min1280} {
-                max-width: calc(1520 / 16 * 1rem);
+            @media #{$min535} {
                 padding: 0 calc(40 / 16 * 1rem);
+            }
+            @media #{$min1920} {
+                max-width: calc(862 / 16 * 1rem);
             }
         }
         &__text {
