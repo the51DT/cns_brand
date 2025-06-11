@@ -112,7 +112,7 @@
                 margin-bottom: 0;
                 .swiper-slide {
                     opacity: 0;
-                    // transition-duration : 1s !important;
+                    // transition: opacity 0.5s ease-in-out; /* 부드러운 전환 효과 */
                     &.swiper-slide-active {
                         opacity: 1;
                     }
@@ -286,7 +286,9 @@
                 margin: 0 auto;
                 width: 100%;
                 video {
+                    display: block;
                     width: 100%;
+                    height: auto;
                 }
             }
             &__image {

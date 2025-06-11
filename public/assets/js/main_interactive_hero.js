@@ -7,9 +7,12 @@
     6. 슬라이드가 active 되면 동작이 적용
     7. .interactive-swiper__frame__video 의 경우 슬라이드가 active 되면 video.play 처리 =  swiperHero
 */
+let isPcWide = window.matchMedia('only screen and (min-width: 1920px)').matches;
+let isPcMiddle = window.matchMedia('only screen and (min-width: 1600px)').matches;
 let isPc = window.matchMedia('only screen and (min-width: 1024px)').matches;
 let isTablet = window.matchMedia('only screen and (min-width: 535px)').matches;
 let videoGroup = [];
+let posterGroup = [];
 const videoPaths = {
     pc: [
         '/src/assets/image/main/main_interactive_hero_mv_01.mp4',
@@ -30,15 +33,58 @@ const videoPaths = {
         '/src/assets/image/main/main_interactive_hero_mv_04_mo.mp4'
     ]
 };
+const posterPaths = {
+    pc: [
+        '/src/assets/image/main/main_interactive_hero_poster_01.mp4',
+        '/src/assets/image/main/main_interactive_hero_poster_02.mp4',
+        '/src/assets/image/main/main_interactive_hero_poster_03.mp4',
+        '/src/assets/image/main/main_interactive_hero_poster_04.mp4'
+    ],
+    tablet: [
+        '/src/assets/image/main/main_interactive_hero_poster_01_tablet.mp4',
+        '/src/assets/image/main/main_interactive_hero_poster_02_tablet.mp4',
+        '/src/assets/image/main/main_interactive_hero_poster_03_tablet.mp4',
+        '/src/assets/image/main/main_interactive_hero_poster_04_tablet.mp4'
+    ],
+    mobile: [
+        '/src/assets/image/main/main_interactive_hero_poster_01_mo.mp4',
+        '/src/assets/image/main/main_interactive_hero_poster_02_mo.mp4',
+        '/src/assets/image/main/main_interactive_hero_poster_03_mo.mp4',
+        '/src/assets/image/main/main_interactive_hero_poster_04_mo.mp4'
+    ]
+}
+
+function adjustHeroNavigationPosition() {
+    const heroNavigation = document.querySelector('.cmp-hero-navigation');
+    // const videoElement = document.querySelector('.swiper-slide-active video');
+    
+    if (heroNavigation) {
+        let bottomValue;
+        if (isPcWide) {
+            bottomValue = '40px';
+            console.log('isPc')
+        } else if (isPcMiddle) {
+            bottomValue = '37px';
+            console.log('isPcMiddle')
+        } else {
+            bottomValue = '23px';
+            console.log('else')
+        }
+        heroNavigation.style.bottom = bottomValue; // 비디오 높이에 따라 네비게이션 위치 조정
+    }
+}
 
 // 비디오 그룹 초기화 함수
 function initializeVideoGroup() {
     if (isPc) {
         videoGroup = videoPaths.pc;
+        posterGroup = posterPaths.pc;
     } else if (isTablet) {
         videoGroup = videoPaths.tablet;
+        posterGroup = posterPaths.tablet;
     } else {
         videoGroup = videoPaths.mobile;
+        posterGroup = posterPaths.mobile;
     }
     updateVideoSources()
 }
@@ -49,18 +95,27 @@ function updateVideoSources() {
     activeSlides.forEach(videoElement => {
         const slideIndex = Array.from(videoElement.closest('.swiper-slide').parentNode.children).indexOf(videoElement.closest('.swiper-slide'));
         videoElement.src = videoGroup[slideIndex]; // 현재 슬라이드 인덱스에 맞는 비디오 경로 설정
+        videoElement.setAttribute('poster', posterGroup[slideIndex]);
         videoElement.load(); // 비디오 파일 로드
+        videoElement.onloadeddata = () => {
+            adjustHeroNavigationPosition(); // 비디오 로딩 완료 후 위치 조정
+        };
     });
+    adjustHeroNavigationPosition()
 }
 
 window.addEventListener('resize', function () {
+    isPcWide = window.matchMedia('only screen and (min-width: 1920px)').matches;
+    isPcMiddle = window.matchMedia('(min-width: 1600px)').matches; 
     isPc = window.matchMedia('(min-width: 1024px)').matches;
     isTablet = window.matchMedia('(min-width: 535px)').matches;
     initializeVideoGroup();
+    adjustHeroNavigationPosition();
 }); 
 
 // 초기 비디오 그룹 설정
 initializeVideoGroup();
+adjustHeroNavigationPosition();
 
 const interactiveHero = document.querySelector('.interactive-hero');
 const interactiveSwiper = interactiveHero.querySelector('.interactive-swiper');
