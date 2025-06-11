@@ -50,6 +50,7 @@ function updateVideoSources() {
         const slideIndex = Array.from(videoElement.closest('.swiper-slide').parentNode.children).indexOf(videoElement.closest('.swiper-slide'));
         videoElement.src = videoGroup[slideIndex]; // 현재 슬라이드 인덱스에 맞는 비디오 경로 설정
         videoElement.load(); // 비디오 파일 로드
+        console.log(`비디오 경로: ${videoElement.src}`); // 비디오 경로 로그
     });
 }
 
