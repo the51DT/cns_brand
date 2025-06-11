@@ -35,22 +35,22 @@ const videoPaths = {
 };
 const posterPaths = {
     pc: [
-        '/src/assets/image/main/main_interactive_hero_poster_01.mp4',
-        '/src/assets/image/main/main_interactive_hero_poster_02.mp4',
-        '/src/assets/image/main/main_interactive_hero_poster_03.mp4',
-        '/src/assets/image/main/main_interactive_hero_poster_04.mp4'
+        '/src/assets/image/main/main_interactive_hero_poster_01.png',
+        '/src/assets/image/main/main_interactive_hero_poster_02.png',
+        '/src/assets/image/main/main_interactive_hero_poster_03.png',
+        '/src/assets/image/main/main_interactive_hero_poster_04.png'
     ],
     tablet: [
-        '/src/assets/image/main/main_interactive_hero_poster_01_tablet.mp4',
-        '/src/assets/image/main/main_interactive_hero_poster_02_tablet.mp4',
-        '/src/assets/image/main/main_interactive_hero_poster_03_tablet.mp4',
-        '/src/assets/image/main/main_interactive_hero_poster_04_tablet.mp4'
+        '/src/assets/image/main/main_interactive_hero_poster_01_tablet.png',
+        '/src/assets/image/main/main_interactive_hero_poster_02_tablet.png',
+        '/src/assets/image/main/main_interactive_hero_poster_03_tablet.png',
+        '/src/assets/image/main/main_interactive_hero_poster_04_tablet.png'
     ],
     mobile: [
-        '/src/assets/image/main/main_interactive_hero_poster_01_mo.mp4',
-        '/src/assets/image/main/main_interactive_hero_poster_02_mo.mp4',
-        '/src/assets/image/main/main_interactive_hero_poster_03_mo.mp4',
-        '/src/assets/image/main/main_interactive_hero_poster_04_mo.mp4'
+        '/src/assets/image/main/main_interactive_hero_poster_01_mo.png',
+        '/src/assets/image/main/main_interactive_hero_poster_02_mo.png',
+        '/src/assets/image/main/main_interactive_hero_poster_03_mo.png',
+        '/src/assets/image/main/main_interactive_hero_poster_04_mo.png'
     ]
 }
 
