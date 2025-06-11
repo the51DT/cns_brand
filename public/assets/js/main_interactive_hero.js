@@ -62,13 +62,10 @@ function adjustHeroNavigationPosition() {
         let bottomValue;
         if (isPcWide) {
             bottomValue = '40px';
-            console.log('isPc')
         } else if (isPcMiddle) {
             bottomValue = '37px';
-            console.log('isPcMiddle')
         } else {
             bottomValue = '23px';
-            console.log('else')
         }
         heroNavigation.style.bottom = bottomValue; // 비디오 높이에 따라 네비게이션 위치 조정
     }
