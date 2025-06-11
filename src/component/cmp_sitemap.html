@@ -1,0 +1,43 @@
+<div class="cmp-wrap cmp-sitemap">
+    <% const data=(typeof jsonData !=='undefined' ? jsonData : []); %>
+        <% data.forEach((item)=> { %>
+            <div class="cmp-sitemap__container">
+                <div class="cmp-sitemap__container__left">
+                    <a href="#" class="cmp-sitemap__menu cmp-sitemap__menu__1depth font-head-md color-text-default">
+                        <%- item.menu1depth %>
+                    </a>
+                </div>
+                <div class="cmp-sitemap__container__right">
+                    <% if(item.menu2depth) { %>
+                        <% if (Array.isArray(item.menu2depth)) { %>
+                            <% item.menu2depth.forEach((menu2depth) => { %>
+                                <div class="cmp-sitemap__2depth-container">
+                                    <% if(menu2depth.categoryText) { %>
+                                        <span class="cmp-sitemap__category-text">
+                                            <%- menu2depth.categoryText %>
+                                        </span>
+                                    <% } %>
+                                    <% if(menu2depth.categoryLink) { %>
+                                        <a href="#" class="cmp-sitemap__category-link cmp-sitemap__menu cmp-sitemap__menu__2depth large" target="<%- menu2depth.categoryLinkTarget !== 'undefinde' && menu2depth.categoryLinkTarget ? menu2depth.categoryLinkTarget : '_self' %>">
+                                            <%- menu2depth.categoryLink %>
+                                        </a>
+                                        <% } %>
+                                    <% if(menu2depth.menu) { %>
+                                        <ul class="cmp-sitemap__list">
+                                            <% menu2depth.menu.forEach((el) => { %>
+                                                <li class="<%- el.size == 'large' ? 'cmp-sitemap__list__item cmp-sitemap__list__item--large' : 'cmp-sitemap__list__item' %>">
+                                                    <a href="#" class="cmp-sitemap__menu cmp-sitemap__menu__2depth <%- el.size !== 'undefinde' && el.size ? el.size : 'font-head-sm font-medium color-text-tertiary' %>" target="<%- el.target !== 'undefinde' && el.target ? el.target : '_self' %>">
+                                                        <%- el.title %>
+                                                    </a>
+                                                </li>
+                                            <% }) %>
+                                        </ul>
+                                    <% } %>
+                                </div>
+                            <% }) %>
+                        <% } %>
+                    <% } %>
+                </div>
+            </div>
+    <% }) %>
+</div>

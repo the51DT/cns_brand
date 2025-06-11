@@ -138,7 +138,7 @@
     }
     &__label-box {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
         &:has(.cmp-input__item--checkbox--small) {
             gap: calc(6 / 16 * 1rem);
@@ -260,6 +260,7 @@
             }
         }
         &--checkbox {
+            margin-top: calc(4 / 16 * 1rem);
             flex-shrink: 0;
             appearance: unset;
             width: calc(26 / 16 * 1rem);
@@ -307,6 +308,7 @@
             }
         }
         &--radio {
+            margin-top: calc(4 / 16 * 1rem);
             flex-shrink: 0;
             position: relative;
             appearance: unset;

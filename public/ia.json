@@ -350,7 +350,13 @@
           "screenId": "",
           "path": "/src/guide/",
           "fileName": "cmp_guide_event_detail.html"
-        }        
+        },
+        {
+          "name": "sitemap",
+          "screenId": "",
+          "path": "/src/guide/",
+          "fileName": "cmp_guide_sitemap.html"
+        }
       ]
     },
     {
@@ -644,6 +650,20 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "newsroom_detail.html"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "Level1": "sitemap - 사이트맵",
+      "screenId": "",
+      "fileName": "",
+      "Level2": [
+        {
+          "name": "sitemap",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "sitemap.html"
         }
       ]
     }

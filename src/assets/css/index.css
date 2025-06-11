@@ -66,6 +66,7 @@
 @import 'aem-component/cmp_table_list.scss';
 @import 'aem-component/cmp_event_detail.scss';
 @import 'aem-component/cmp_gsap.scss';
+@import 'aem-component/cmp_sitemap.scss';
 
 /* icon */
 @import 'icon.scss';

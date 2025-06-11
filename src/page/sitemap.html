@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>
+        <%= data.title %>
+    </title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+
+<body>
+    <div class="wrap bizinfo-soc-contrib">
+        <%- include('src/_inc/header.html') %>
+            <!-- //헤더 영역 -->
+            <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+                pcImg: 'empty' , 
+                moImg: 'empty' , 
+                pageTitle: '사이트맵' , 
+            })) %>
+            <!-- //비주얼 영역 -->
+            <div class="sub-content__wrap">
+                <div class="inner-wrap">
+                    <%
+                        const sitemapData = [
+                            {
+                                menu1depth: 'The Future',
+                                menu2depth: [
+                                    {
+                                        menu : [
+                                            {
+                                                title : 'AX(AI Transformation)',
+                                                target: '_self',
+                                                size : 'large',
+                                            },
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                menu1depth: '서비스',
+                                menu2depth: [
+                                    {
+                                        categoryText : 'Modern IT Infra on Cloud',
+                                        menu : [
+                                            {
+                                                title : 'Cloud',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '인프라',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '데이터센터',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '보안',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryText : 'AI',
+                                        menu : [
+                                            {
+                                                title : 'AICC',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'AX컨설팅',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'Virtual Factory',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryText : 'Biz Data',
+                                        menu : [
+                                            {
+                                                title : '빅데이터플랫폼',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryText : 'Biz Process Intelligence',
+                                        menu : [
+                                            {
+                                                title : 'ERP',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '디지털AX',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '영업/고객서비스 관리',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '경영관리',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'SCM',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'ESG',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryText : 'Enterprise Solution',
+                                        menu : [
+                                            {
+                                                title : 'SINGLEX',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'Enterprise SW',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryText : 'Customer Eperience',
+                                        menu : [
+                                            {
+                                                title : 'Design',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'Customer Data',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryText : '스마트팩토리',
+                                        menu : [
+                                            {
+                                                title : '생산실행관리',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '공정관리',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '생산물류관리',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '제품개발관리',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryText : '스마트물류',
+                                        menu : [
+                                            {
+                                                title : '유통물류',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryText : '도시 및 공간',
+                                        menu : [
+                                            {
+                                                title : '스마트 스페이스',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '스마트 교통',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryText : '컨설팅',
+                                        menu : [
+                                            {
+                                                title : 'Biz/IT Consulting',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryText : '산업특화',
+                                        menu : [
+                                            {
+                                                title : '금융',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '교육',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '유통',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '공공',
+                                                target : '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                ]
+                            },
+                            {
+                                menu1depth: 'MOA',
+                                menu2depth: [
+                                    {
+                                        menu : [
+                                            {
+                                                title : '인사이트',
+                                                target: '_self',
+                                                size : 'large',
+                                            },
+                                            {
+                                                title : '인사이트',
+                                                target: '_self',
+                                                size : 'large',
+                                            },
+                                            {
+                                                title : '행사',
+                                                target: '_self',
+                                                size : 'large',
+                                            },
+                                            {
+                                                title : '자료실',
+                                                target: '_self',
+                                                size : 'large',
+                                            },
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                menu1depth: '기업정보',
+                                menu2depth: [
+                                    {
+                                        categoryLink : '회사소개',
+                                        categoryLinkTarget : '_self',
+                                        menu : [
+                                            {
+                                                title : 'LG CNS',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'CEO',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'History',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'Vision',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'LG Way',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryLink : 'IR',
+                                        categoryLinkTarget : '_self',
+                                        menu : [
+                                            {
+                                                title : '경영정보',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '재무정보',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '주주현황/배당정보',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '공시정보',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'IR자료',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : 'IR활동',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        categoryLink : '지속가능경영',
+                                        categoryLinkTarget : '_self',
+                                        menu : [
+                                            {
+                                                title : '추진방향',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '환경경영',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '인권경영',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '사회공헌',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '동반성장/공정거래',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '정도경영',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '지속가능보고서',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                            {
+                                                title : '준법경영',
+                                                target: '_self',
+                                                size : 'small',
+                                            },
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                menu1depth: '뉴스룸',
+                                menu2depth: [
+                                    {
+                                        menu : [
+                                            {
+                                                title : '뉴스룸',
+                                                target: '_self',
+                                                size : 'large',
+                                            },
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                menu1depth: '인재채용',
+                                menu2depth: [
+                                    {
+                                        menu : [
+                                            {
+                                                title : 'Who We are',
+                                                target: '_self',
+                                                size : 'large',
+                                            },
+                                            {
+                                                title : 'Work Story',
+                                                target: '_self',
+                                                size : 'large',
+                                            },
+                                            {
+                                                title : '진행중인 채용',
+                                                target: '_self',
+                                                size : 'large',
+                                            },
+                                            {
+                                                title : 'CNS Life',
+                                                target: '_self',
+                                                size : 'large',
+                                            },
+                                        ]
+                                    }
+                                ]
+                            },
+                        ];
+                    %>
+                    <%- include('src/component/cmp_sitemap.html', Object.assign({}, locals, {
+                        jsonData: sitemapData
+                    })) %>
+                    <div class="button__wrap button__wrap--btn-top align-right">
+                        <button type="button" class="btn-icon btn-top">
+                            <i class="ico icon-navigation-up-w19"></i>
+                            <span class="ir-text">최상위로 이동</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <%- include('src/_inc/footer.html') %>
+    </div>
+</body>
+
+</html>

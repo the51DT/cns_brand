@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/src/assets/css/guide.scss" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="guide__wrap">
+        <%- include('src/guide/header.html') %>
+        <div class="page-location text-2xl font-bold">
+            <span id="pagesTitle"></span>
+        </div>
+        <div class="guide-content">
+            <div class="flex justify-between lnb-type">
+                <%- include('src/component/cmp_lnb.html') %>
+                <div class="page-cont flex-1">
+                    <p class="guide-title-h3">sitemap</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <%
+                            const sitemapData = [
+                                {
+                                    menu1depth: 'The Future',
+                                    menu2depth: [
+                                        {
+                                            menu : [
+                                                {
+                                                    title : 'AX(AI Transformation)',
+                                                    target: '_self',
+                                                    size : 'large',
+                                                },
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    menu1depth: 'MOA',
+                                    menu2depth: [
+                                        {
+                                            menu : [
+                                                {
+                                                    title : '인사이트',
+                                                    target: '_self',
+                                                    size : 'large',
+                                                },
+                                                {
+                                                    title : '고객 스토리',
+                                                    target: '_self',
+                                                    size : 'large',
+                                                },
+                                                {
+                                                    title : '행사',
+                                                    target: '_self',
+                                                    size : 'large',
+                                                },
+                                                {
+                                                    title : '자료실',
+                                                    target: '_self',
+                                                    size : 'large',
+                                                },
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    menu1depth: '서비스',
+                                    menu2depth: [
+                                        {
+                                            categoryText : 'Modern IT Infra on Cloud',
+                                            menu : [
+                                                {
+                                                    title : 'Cloud',
+                                                    target : '_self',
+                                                    size : 'small',
+                                                },
+                                                {
+                                                    title : '인프라',
+                                                    target : '_self',
+                                                    size : 'small',
+                                                },
+                                                {
+                                                    title : '데이터센터',
+                                                    target : '_self',
+                                                    size : 'small',
+                                                },
+                                                {
+                                                    title : '보안',
+                                                    target : '_self',
+                                                    size : 'small',
+                                                },
+                                            ]
+                                        },
+                                        {
+                                            categoryText : 'AI',
+                                            menu : [
+                                                {
+                                                    title : 'AICC',
+                                                    target : '_self',
+                                                    size : 'small',
+                                                },
+                                                {
+                                                    title : 'AX컨설팅',
+                                                    target : '_self',
+                                                    size : 'small',
+                                                },
+                                                {
+                                                    title : 'Virtual Factory',
+                                                    target : '_self',
+                                                    size : 'small',
+                                                },
+                                            ]
+                                        },
+                                    ]
+                                },
+                            ];
+                        %>
+                        <%- include('src/component/cmp_sitemap.html', Object.assign({}, locals, {
+                            jsonData: sitemapData
+                        })) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/assets/js/ui_common.js"></script>
+</body>
+</html>
