@@ -739,21 +739,23 @@
             }
         }
         &__text {
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: calc(12 / 16 * 1rem);
             height: calc(150 / 16 * 1rem);
             overflow: hidden;
             @media #{$min1024} {
+                gap: calc(16 / 16 * 1rem);
                 height: calc(170 / 16 * 1rem);
             }
         }
         &__title {
             @include ellipsis(2);
-            // max-height: calc(36 / 16 * 1rem);
             font-size: calc(18 / 16 * 1rem);
             line-height: calc(28 / 16 * 1rem);
             letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
             @media #{$min1024} {
-                // max-height: calc(68 / 16 * 1rem);
                 font-size: calc(24 / 16 * 1rem);
                 line-height: calc(34 / 16 * 1rem);
             }
@@ -773,16 +775,11 @@
             }
         }
         &__category {
-            position: absolute;
-            left: 0;
-            bottom: 0;
             display: block;
-            margin-top: calc(16 / 16 * 1rem);
             letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
             font-size: calc(16 / 16 * 1rem);
             line-height: calc(26 / 16 * 1rem);
             @media #{$min1024} {
-                margin-top: calc(12 / 16 * 1rem);
                 font-size: calc(18 / 16 * 1rem);
             }
         }
