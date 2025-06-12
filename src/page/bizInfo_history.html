@@ -179,9 +179,8 @@ function initScrollEvents() {
             item.removeAttribute("style");
         });
 
-        progressBarContainer.style.top = `${firstCircleTop - progressBarWrapTop}px`;
-        progressBarContainer.style.height = `${lastCircleBottom - firstCircleTop}px`;
-
+        progressBarContainer.style.top = `${firstCircleTop - progressBarWrapTop - 1}px`;
+        progressBarContainer.style.height = `${lastCircleBottom - firstCircleTop - 1}px`;
         circles.forEach(circle => {
             const circleTop = circle.getBoundingClientRect().top + scrollY;
             circle.classList.toggle('active', scrollPosition >= circleTop);
