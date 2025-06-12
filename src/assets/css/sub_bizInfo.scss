@@ -730,7 +730,7 @@
                 }
             }
             @media #{$phone} {
-                display: none;
+                display: none !important;
             }
         }
         .full-sec__img {

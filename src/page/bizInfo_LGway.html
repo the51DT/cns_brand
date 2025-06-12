@@ -374,6 +374,7 @@
             on: {
                 slideChange: function() {
                     setTimeout(function () {
+                        parallaxPagination.style.display = "flex";
                         waySwiper.params.touchReleaseOnEdges = false;  
                         waySwiper.params.mousewheel.releaseOnEdges = false;
                         
@@ -409,12 +410,14 @@
                     setTimeout(function () {
                         waySwiper.params.touchReleaseOnEdges = true;
                         waySwiper.params.mousewheel.releaseOnEdges = true;
+                        parallaxPagination.style.display = "none";
                     }, 800);
                 },
                 reachBeginning : function() {
                     setTimeout(function () {
                         waySwiper.params.touchReleaseOnEdges = true;
                         waySwiper.params.mousewheel.releaseOnEdges = true;
+                        parallaxPagination.style.display = "flex";
                     }, 800);
                 }
             }
