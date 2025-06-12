@@ -453,7 +453,7 @@
                 gap: calc(12 / 16 * 1rem);
                 @media #{$min1280} {
                     display: flex;
-                    justify-content: space-between;
+                    // justify-content: space-between;
                     flex-wrap: wrap;
                     gap: calc(20 / 16 * 1rem);
                 }
@@ -465,7 +465,7 @@
                     background: #fbfbfc;
                     position: relative;
                     @media #{$min1280} {
-                        width: calc(33.33% - 20 / 16 * 1rem);
+                        width: calc(33.33% - calc(calc(40 / 16 * 1rem) / 3));
                         min-height: calc(295 / 16 * 1rem);                        
                     }
                     &:nth-child(3n) {
@@ -528,6 +528,12 @@
                             background-image: url("#{$basePath}image/icon/icon-ai2_mo.svg");
                             @media #{$min1280} {
                                 background-image: url("#{$basePath}image/icon/icon-ai2_pc.svg");
+                            }
+                        }
+                        .icon-ai3 {
+                            background-image: url("#{$basePath}image/icon/icon-ai3_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-ai3_pc.svg");
                             }
                         }
                         .icon-bigdata1 {
@@ -687,16 +693,13 @@
                         font-weight: 500;
                         line-height: calc(30 / 16 * 1rem);
                         color: #121212;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        white-space: nowrap;
                         padding-right: calc(24 / 16 * 1rem);
                         @media #{$min1280} {
                             font-size: calc(28 / 16 * 1rem);
                             line-height: calc(40 / 16 * 1rem);
                             bottom: calc(24 / 16 * 1rem);
                             left: calc(24 / 16 * 1rem);
-                            width: calc(100% - calc(40 / 16 * 1rem));
+                            width: calc(100% - calc(48 / 16 * 1rem));
                             padding-right: calc(40 / 16 * 1rem);
                         }                        
                         &::after {
@@ -760,6 +763,12 @@
                                     background-image: url("#{$basePath}image/icon/icon-ai2-hover_mo.svg");
                                     @media #{$min1280} {
                                         background-image: url("#{$basePath}image/icon/icon-ai2-hover_pc.svg");
+                                    }
+                                }
+                                .icon-ai3 {
+                                    background-image: url("#{$basePath}image/icon/icon-ai3-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-ai3-hover_pc.svg");
                                     }
                                 }
                                 .icon-bigdata1 {
