@@ -108,7 +108,7 @@ function cardItemSetting() {
     const newInner = oldInner.cloneNode(true); // 기존 요소를 클론해서 이벤트 초기화 (이벤트 제거용)
 
     // 서비스영역 카드 리스트 내 자세히보기 버튼(->) 분기처리용 변수 추가 생성
-    const oldInner2 = item.querySelector('.card-link-wrap a');
+    const oldInner2 = item.querySelector('.card-link-wrap .card-link-btn');
     const newInner2 = oldInner2.cloneNode(true);
 
     oldInner.replaceWith(newInner);
