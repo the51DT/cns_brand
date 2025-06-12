@@ -18,11 +18,60 @@
                 <%- include('src/component/cmp_lnb.html') %>
                 <div class="page-cont flex-1">
                     <p class="guide-title-h3">sitemap</p>
-                    <div class="cmp-exsample__wrap mt-3">
+                    <ul class="guide-list type-dot mt-3">
+                        <li>
+                            <p>menu1depthText : 1depth 텍스트 타입</p>
+                        </li>
+                    </ul>
+                    <ul class="guide-list type-dot mt-5">
+                        <li>
+                            <p>menu1depth : 1depth 링크 타입</p>
+                        </li>
+                        <li>
+                            <p>menu1depthLinkTarget : 1depth 링크 타입의 target 속성</p>
+                        </li>
+                    </ul>
+                    <ul class="guide-list type-dot mt-5">
+                        <li>
+                            <p>menu2depth : 2depth 정의</p>
+                        </li>
+                        <li>
+                            <p>
+                                menu2depth > categoryText : 2depth 대메뉴 텍스트 타입
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                menu2depth > categoryLink : 2depth 대메뉴 링크 타입
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                menu2depth > categoryLinkTarget : 2depth 대메뉴 target 속성
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="guide-list type-dot mt-5">
+                        <li>
+                            <p>
+                                menu2depth > menu : 2depth 메뉴
+                            </p>
+                        </li>
+                        <li>
+                            <p>menu2depth > menu > title : 2depth 메뉴 텍스트</p>
+                        </li>
+                        <li>
+                            <p>menu2depth > menu > target : 2depth 메뉴 target 속성</p>
+                        </li>
+                        <li>
+                            <p>menu2depth > menu > size : 2depth 메뉴 size (small / large)</p>
+                        </li>
+                    </ul>
+                    <div class="cmp-exsample__wrap mt-20">
                         <%
                             const sitemapData = [
                                 {
-                                    menu1depth: 'The Future',
+                                    menu1depthText: 'The Future',
                                     menu2depth: [
                                         {
                                             menu : [
@@ -37,6 +86,7 @@
                                 },
                                 {
                                     menu1depth: 'MOA',
+                                    menu1depthLinkTarget : '_self',
                                     menu2depth: [
                                         {
                                             menu : [

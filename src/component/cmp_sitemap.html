@@ -3,9 +3,15 @@
         <% data.forEach((item)=> { %>
             <div class="cmp-sitemap__container">
                 <div class="cmp-sitemap__container__left">
-                    <a href="#" class="cmp-sitemap__menu cmp-sitemap__menu__1depth font-head-md color-text-default">
-                        <%- item.menu1depth %>
-                    </a>
+                    <% if(item.menu1depth) { %>
+                        <a href="#" class="cmp-sitemap__menu cmp-sitemap__menu__1depth font-head-md color-text-default" target="<%- item.menu1depthLinkTarget !=='undefined' && item.menu1depthLinkTarget ? item.menu1depthLinkTarget : '_self' %>">
+                            <%- item.menu1depth %>
+                        </a>
+                    <% } else if(item.menu1depthText) {%>
+                        <span class="cmp-sitemap__menu cmp-sitemap__menu__1depth font-head-md color-text-default">
+                            <%- item.menu1depthText %>
+                        </span>
+                    <% } %>
                 </div>
                 <div class="cmp-sitemap__container__right">
                     <% if(item.menu2depth) { %>
