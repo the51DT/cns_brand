@@ -485,6 +485,8 @@ body {
                     // padding: 0 calc(5 / 16 * 1rem);
                     transition: all 0.3s;
                     // transform-origin: center;
+                    --header-font-color: var(--text-text-default);
+                    font-weight: 600;
                     &::after {
                         // width: 100%;
                         width: calc(4 / 16 * 1rem);
