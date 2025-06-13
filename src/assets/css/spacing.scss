@@ -120,11 +120,20 @@
 .mb-exc-spacing-180-88 {
     @include custom-margin-vertical('bottom', 180, 88);
 }
+.mb-exc-spacing-138-91 {
+    @include custom-margin-vertical('bottom', 138, 91);
+}
 .mb-exc-spacing-120-64 {
     @include custom-margin-vertical('bottom', 120, 64);
 }
 .mb-exc-spacing-120-96 {
     @include custom-margin-vertical('bottom', 120, 96);
+}
+.mb-exc-spacing-84-51 {
+    @include custom-margin-vertical('bottom', 84, 51);
+}
+.mb-exc-spacing-66-47 {
+    @include custom-margin-vertical('bottom', 66, 47);
 }
 .mb-exc-spacing-64-48 {
     @include custom-margin-vertical('bottom', 64, 48);
