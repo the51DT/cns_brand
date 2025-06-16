@@ -3,6 +3,7 @@
 import { defineConfig } from 'vite';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 import fg from 'fast-glob';
 import path from 'path';
 import pretty from 'pretty';
@@ -22,6 +23,14 @@ export default defineConfig({
             jpeg: { quality: 80 },
             svg: { quality: 80 },
             webp: false,
+        }),
+        viteStaticCopy({
+        targets: [
+            {
+                src: 'src/assets/image/main/*.{mp4,mov,jpg,png}',
+                dest: 'assets/image/main'
+            }
+        ]
         }),
         {
             name: 'html-formatter',
