@@ -15,19 +15,19 @@ let videoGroup = [];
 let posterGroup = [];
 const videoPaths = {
     pc: [
-        '/src/assets/image/main/main_interactive_hero_mv_01.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_01.mov',
         '/src/assets/image/main/main_interactive_hero_mv_02.mp4',
         '/src/assets/image/main/main_interactive_hero_mv_03.mp4',
         '/src/assets/image/main/main_interactive_hero_mv_04.mp4'
     ],
     tablet: [
-        '/src/assets/image/main/main_interactive_hero_mv_01_tablet.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_01_tablet.mov',
         '/src/assets/image/main/main_interactive_hero_mv_02_tablet.mp4',
         '/src/assets/image/main/main_interactive_hero_mv_03_tablet.mp4',
         '/src/assets/image/main/main_interactive_hero_mv_04_tablet.mp4'
     ],
     mobile: [
-        '/src/assets/image/main/main_interactive_hero_mv_01_mo.mp4',
+        '/src/assets/image/main/main_interactive_hero_mv_01_mo.mov',
         '/src/assets/image/main/main_interactive_hero_mv_02_mo.mp4',
         '/src/assets/image/main/main_interactive_hero_mv_03_mo.mp4',
         '/src/assets/image/main/main_interactive_hero_mv_04_mo.mp4'
