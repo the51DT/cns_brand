@@ -338,6 +338,7 @@
                 .interactive-swiper__frame {
                     padding: 0 calc(22 / 16 * 1rem);
                     margin-top: calc(100 / 16 * 1rem);
+                    width: 100%;
                     @media #{$min535} {
                         margin-top: calc(64 / 16 * 1rem);
                     }
@@ -355,6 +356,7 @@
                 .interactive-swiper__frame__image {
                     margin: 0 auto;
                     max-width: 100%;
+                    width: 100%;
                     @media #{$min535} {
                         max-width: 70%;
                     }

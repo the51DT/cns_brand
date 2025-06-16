@@ -54,6 +54,32 @@ const posterPaths = {
     ]
 }
 
+const interactiveHero = document.querySelector('.interactive-hero');
+const interactiveSwiper = interactiveHero.querySelector('.interactive-swiper');
+const interactiveSlide = interactiveSwiper.querySelectorAll('.interactive-swiper__slide');
+const interactiveSlideNews = interactiveSwiper.querySelectorAll('.interactive-swiper__slide--news');
+const heroNavigation = document.querySelector('.cmp-hero-navigation');
+const noticeSwiper = document.querySelector('.notice-swiper');
+
+const styleGroup = ['hero-style-01', 'hero-style-02', 'hero-style-03', 'hero-style-04'];
+const colorMode = ['color-mode-white', 'color-mode-black', 'color-mode-white', 'color-mode-black']; // 스타일에 따른 색상 모드
+const newsStyleGroup = ['#F0E5D3', '#DFE0E0', '#DDDAE2', '#EDE2F1', '#E7F4F7', '#EBF8F4', '#FFF0F1'];
+let currentStyles = []; // 현재 적용된 스타일을 저장할 배열
+
+// 스타일 그룹을 랜덤하게 섞는 함수
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// 랜덤하게 스타일을 섞고 초기화
+function initializeStyles() {
+    currentStyles = [...styleGroup]; // 스타일 그룹 복사
+    shuffleArray(currentStyles); // 랜덤하게 섞음
+}
+
 function adjustHeroNavigationPosition() {
     const heroNavigation = document.querySelector('.cmp-hero-navigation');
     // const videoElement = document.querySelector('.swiper-slide-active video');
@@ -91,8 +117,10 @@ function updateVideoSources() {
     const activeSlides = document.querySelectorAll('.swiper-interactive-banner .swiper-slide video');
     activeSlides.forEach(videoElement => {
         const slideIndex = Array.from(videoElement.closest('.swiper-slide').parentNode.children).indexOf(videoElement.closest('.swiper-slide'));
-        videoElement.src = videoGroup[slideIndex]; // 현재 슬라이드 인덱스에 맞는 비디오 경로 설정
-        videoElement.setAttribute('poster', posterGroup[slideIndex]);
+        const styleToApply = currentStyles[slideIndex]; // 랜덤으로 섞인 스타일
+        
+        videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 현재 슬라이드 인덱스에 맞는 비디오 경로 설정
+        videoElement.setAttribute('poster', posterGroup[styleGroup.indexOf(styleToApply)]);
         videoElement.load(); // 비디오 파일 로드
         videoElement.onloadeddata = () => {
             adjustHeroNavigationPosition(); // 비디오 로딩 완료 후 위치 조정
@@ -113,32 +141,6 @@ window.addEventListener('resize', function () {
 // 초기 비디오 그룹 설정
 initializeVideoGroup();
 adjustHeroNavigationPosition();
-
-const interactiveHero = document.querySelector('.interactive-hero');
-const interactiveSwiper = interactiveHero.querySelector('.interactive-swiper');
-const interactiveSlide = interactiveSwiper.querySelectorAll('.interactive-swiper__slide');
-const interactiveSlideNews = interactiveSwiper.querySelectorAll('.interactive-swiper__slide--news');
-const heroNavigation = document.querySelector('.cmp-hero-navigation');
-const noticeSwiper = document.querySelector('.notice-swiper');
-
-const styleGroup = ['hero-style-01', 'hero-style-02', 'hero-style-03', 'hero-style-04'];
-const colorMode = ['color-mode-white', 'color-mode-black', 'color-mode-white', 'color-mode-black']; // 스타일에 따른 색상 모드
-const newsStyleGroup = ['#F0E5D3', '#DFE0E0', '#DDDAE2', '#EDE2F1', '#E7F4F7', '#EBF8F4', '#FFF0F1'];
-let currentStyles = []; // 현재 적용된 스타일을 저장할 배열
-
-// 스타일 그룹을 랜덤하게 섞는 함수
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-// 랜덤하게 스타일을 섞고 초기화
-function initializeStyles() {
-    currentStyles = [...styleGroup]; // 스타일 그룹 복사
-    shuffleArray(currentStyles); // 랜덤하게 섞음
-}
 
 // 슬라이드 인덱스에 맞는 스타일을 적용
 function applyStyleToSlide(index) {
@@ -307,11 +309,11 @@ const firstSlideTextbox = document.querySelector('.swiper-slide-active .interact
 const firstSlideVideo = document.querySelector('.swiper-slide-active video');
 if(firstSlide) {
     firstSlideTextbox.classList.add('fade-in'); 
-}
-if (firstSlideVideo) {
-    firstSlideVideo.play().catch(error => {
-        console.error('비디오 재생 오류:', error);
-    });
+    if (firstSlideVideo) {
+        firstSlideVideo.play().catch(error => {
+            console.error('비디오 재생 오류:', error);
+        });
+    }
 }
 
 // .notice-swiper가 하위 자식인지 확인하고 .has-notice 클래스 추가
