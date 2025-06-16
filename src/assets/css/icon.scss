@@ -35,6 +35,9 @@ $fileType: "svg";
     &.icon-search-bl40 {
         @include iconFile(40,40,'icon_search_bl40');
     }       
+    &.icon-search-wh40 {
+        @include iconFile(40,40,'ico_search_wh40');
+    }       
     &.icon-search-border-bl40 {
         @include iconFile(40,40,'icon_search_border_bl40');
     }
@@ -112,6 +115,9 @@ $fileType: "svg";
     }      
     &.icon-hamburger-menu {
         @include iconFile(24,24,'btn_hamburger_menu');
+    }   
+    &.icon-hamburger-menu_wh40 {
+        @include iconFile(40,40,'btn_hamburger_menu_wh40');
     }   
     &.icon-more-dot {
         @include iconFile(16,16,'ico-more');

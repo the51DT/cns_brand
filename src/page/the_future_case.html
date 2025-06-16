@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/src/assets/css/index.css" />
   <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
 </head>
-<body class="">
+<body class="dark-mode">
     <div class="wrap has-hero the-future-case">
         <%- include('src/_inc/header.html') %>
         <!-- //헤더 영역 -->
@@ -16,9 +16,9 @@
             <div class="full-type-content__wrap">
                 <div class="future-inner__wrap">
                     <div class="future-text">
-                        <div class="main-title font-head-xl font-semibold">AX(AI ransformation)</div>
-                        <div class="sub-title font-head-md">전략으로 실현하는 미래 경쟁력</div>
-                        <div class="description-text font-body-md mb-spacing05">
+                        <div class="main-title font-head-xl font-semibold color-text-on-bg">AX(AI ransformation)</div>
+                        <div class="sub-title font-head-md color-text-on-bg">전략으로 실현하는 미래 경쟁력</div>
+                        <div class="description-text font-body-md mb-spacing05 color-text-on-bg">
                             지금까지 수많은 기술 혁신이 기업 업무 환경을 변화시켜 왔으나, 현재의 인공지능(Artificial Intelligence, AI)만큼 변화를 이끈 혁신은 없었습니다. 기업 환경에서 AI는 단순한 기술 도입을 넘어
                             비즈니스의 근본적인 변화를 이끄는 핵심 동력으로 자리 잡고 있습니다. 액센츄어의 25년 리서치 리포트 “Reinventing enterprise models in the age of generative AI”에
                             따르면, 기업의 97%가 생성형 AI가 기업과 산업을 근본적으로 변화시킬 것이라 믿고 있으며, 93%는 생성형 AI 투자가 다른 전략적 영역보다 높은 성과를 내고 있다고 응답했습니다. 이러한 변화의 중심에
@@ -26,8 +26,8 @@
                         </div>
                         <div class="button__wrap align-left">
                             <a href="#" target="_self" class="btn btn-x-large btn-secondary">
-                                <span class="btn__text">AX  컨설팅 상세보기</span>
-                                <i class="ico icon-main-navigation-right-bl40 btn__icon"></i>
+                                <span class="btn__text color-text-on-bg">AX  컨설팅 상세보기</span>
+                                <i class="ico icon-main-navigation-right-wh40 btn__icon"></i>
                             </a>
                         </div>
                     </div>
@@ -71,7 +71,9 @@
                 </div>
             </div>
         </div>
-        <%- include('src/_inc/footer.html') %>
+        <!-- footer 제거 -->
+        <script src="/assets/js/navigation.js"></script>
+        <script src="/assets/js/ui_common.js"></script>
     </div>
 </body>
 <script>

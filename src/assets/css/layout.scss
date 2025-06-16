@@ -17,6 +17,7 @@
     --header-search-close-ico: url("#{$basePath}image/icon/icon-close-bl24.svg"); // 임시로 bl24, wh40 적용
     --header-lang-ico: url("#{$basePath}image/icon/icon_lang_bl40.svg"); // 임시로 bl24, wh40 적용
     --header-close-ico: url("#{$basePath}image/icon/icon-close-bl40.svg");
+    --header-mobile-hamburger-ico : url("#{$basePath}image/icon/icon-hamburger-menu_bl40.svg");
     --footer-bg: var(--colorCM-mode1-background-background-default10);
     --footer-font-color: #828282;
     --footer-font-color-primary: var(--colorCM-mode1-text-text-on-bg);
@@ -35,24 +36,38 @@ body {
     }
     &.dark-mode {
         // header.dark-mode 스타일 변수로 변경
-        --header-bg: transparent;
+        --header-bg: var(--colorCM-mode1-background-background-default10);
         // --header-border-color: rgba(255,255,255,0.20);
         --header-font-color: var(--colorCM-mode1-text-text-on-bg);
-        --header-active-underbar-bg: var(--colorCM-mode1-background-background-default0);
+        --header-active-underbar-bg: var(--colorCM-mode1-stroke-stroke-default8);
         --header-util-border-color: var(--colorCM-mode1-stroke-stroke-default0);
         --header-icon-bl-display: none;
         --header-icon-wh-display: inline-flex;
         --header-logo-bl-display: none;
         --header-logo-wh-display: block;
-        --header-search-ico: url("#{$basePath}image/icon/icon_search_wh40.svg");
+        --header-search-ico: url("#{$basePath}image/icon/ico_search_wh40.svg");
+        --header-lang-ico: url("#{$basePath}image/icon/ico_language.svg");
+        --header-mobile-hamburger-ico: url("#{$basePath}image/icon/btn_hamburger_menu_wh40.svg");
         @media #{$min1280} {
             --header-search-ico: url("#{$basePath}image/icon/ico_search.svg");
+            // --header-mobile-hamburger-ico: url("#{$basePath}image/icon/btn_hamburger_menu_wh40.svg");
         }
         .header {
             // gnb 펼쳐졌을 경우 스타일 변수 변경
             &.is-active {
                 --header-font-color: var(--text-text-default);
                 --header-active-underbar-bg: var(--colorCM-mode1-background-background-default10);
+                --header-util-border-color: var(--colorCM-mode1-stroke-stroke-default9);
+                --header-logo-bl-display: block;
+                --header-logo-wh-display: none;
+                --header-icon-bl-display: inline-flex;
+                --header-icon-wh-display: none;
+                --header-search-ico: url("#{$basePath}image/icon/icon_search_bl40.svg");
+                --header-lang-ico: url("#{$basePath}image/icon/icon_lang_bl40.svg");
+                @media #{$min1280} {
+                    --header-search-ico: url("#{$basePath}image/icon/icon_search_bl24.svg");
+                    --header-lang-ico: url("#{$basePath}image/icon/icon_lang_bl24.svg");
+                }
             }
         }
     }
@@ -612,7 +627,10 @@ body {
             .btn-hamburger-menu {
                 width: 100%;
                 height: 100%;
-                background: url("#{$basePath}image/icon/icon-hamburger-menu_bl40.svg") no-repeat center center / contain;
+                background: var(--header-mobile-hamburger-ico);
+                background-position: center center;
+                background-size: contain;
+                background-repeat: no-repeat;
             }
             .btn-menu-close {
                 width: 100%;
