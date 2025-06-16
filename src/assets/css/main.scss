@@ -29,6 +29,13 @@
             max-width: calc(1920 / 16 * 1rem);
         }
     }
+    .header {
+        border-bottom: 0;
+        &.is-fixed, 
+        &.is-active {
+            border-bottom: calc(1 / 16 * 1rem) solid var(--header-active-border-color);
+        }
+    }
     // 상단 interactive banner
     .interactive-hero {
         // &.hero-style-01 {
