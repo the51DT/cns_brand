@@ -3,7 +3,6 @@
 import { defineConfig } from 'vite';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
 import fg from 'fast-glob';
 import path from 'path';
 import pretty from 'pretty';
@@ -23,14 +22,6 @@ export default defineConfig({
             jpeg: { quality: 80 },
             svg: { quality: 80 },
             webp: false,
-        }),
-        viteStaticCopy({
-        targets: [
-            {
-                src: 'src/assets/image/main/*.{mp4,mov,jpg,png}',
-                dest: 'assets/image/main'
-            }
-        ]
         }),
         {
             name: 'html-formatter',
@@ -87,10 +78,7 @@ export default defineConfig({
                     if (assetInfo.name && assetInfo.name.endsWith('.css')) {
                         return 'assets/css/index.css'; // 모든 CSS를 assets/css/index.css로 통합
                     }
-                    if (/\.(mp4|webm|mov)$/i.test(assetInfo.name)) {
-                        return 'assets/images/[name][extname]'; // 영상
-                    }
-                    if (/\.(png|jpe?g|gif|svg|webp)$/i.test(assetInfo.name)) {
+                    if (/\.(png|jpe?g|gif|svg|webp|webm|mp4)$/i.test(assetInfo.name)) {
                         return 'assets/images/[name][extname]'; // 이미지를 assets/images/ 폴더로 저장
                     }
                     // if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name)) {
