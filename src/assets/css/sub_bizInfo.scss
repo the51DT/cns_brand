@@ -809,15 +809,12 @@
                         }
                         &--01 {
                             background-image: url(#{$basePath}image/sub/bg_lgway_sec02.png);
-                            background-position: right 15.97%; 
                         }
                         &--02 {
                             background-image: url(#{$basePath}image/sub/bg_lgway_sec03.png);
-                            background-position: right calc(68 / 16 * 1rem); 
                         }
                         &--03 {
                             background-image: url(#{$basePath}image/sub/bg_lgway_sec04.png);
-                            background-position: right calc(-429 / 16 * 1rem); 
                         }
                     }
                 }
