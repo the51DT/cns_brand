@@ -341,33 +341,28 @@
                     width: 100%;
                     @media #{$min535} {
                         margin-top: calc(64 / 16 * 1rem);
+                        max-width: 70%;
                     }
                     @media #{$min1024} {
                         padding: 0;
                         margin-top: calc(78 / 16 * 1rem);
+                        max-width: calc(549.4 / 16 * 1rem);
                     }
                     @media #{$min1600} {
                         margin-top: calc(140 / 16 * 1rem);
+                        max-width: calc(688.8 / 16 * 1rem);
                     }
                     @media #{$min1920} {
                         margin-top: calc(160 / 16 * 1rem);
+                        max-width: calc(840 / 16 * 1rem);
                     }
                 }
                 .interactive-swiper__frame__image {
                     margin: 0 auto;
                     max-width: 100%;
                     width: 100%;
-                    @media #{$min535} {
-                        max-width: 70%;
-                    }
-                    @media #{$min1024} {
-                        max-width: calc(549.4 / 16 * 1rem);
-                    }
-                    @media #{$min1600} {
-                        max-width: calc(688.8 / 16 * 1rem);
-                    }
-                    @media #{$min1920} {
-                        max-width: calc(820 / 16 * 1rem);
+                    img {
+                        width: 100%;
                     }
                 }
                 .interactive-swiper__text-box {
@@ -377,12 +372,14 @@
                     transform: translateX(0);
                     margin-top: calc(21 / 16 * 1rem);
                     // margin-top: calc(36 / 16 * 1rem);
+                    width: 100%;
                     @media #{$min800} {
                         margin-top: calc(16 / 16 * 1rem);
                     }
                     @media #{$min1024} {
                         // max-width: calc(652 / 16 * 1rem);
                         margin-top: calc(84 / 16 * 1rem);
+                        width: auto;
                     }
                     @media #{$min1600} {
                         margin-top: calc(148 / 16 * 1rem);
