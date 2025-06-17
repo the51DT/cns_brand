@@ -120,7 +120,7 @@
                 width: calc(1430 / 16 * 1rem);
                 position: absolute;
                 right: 0;
-                top: 50%;
+                top: calc(50% - calc(113 / 16 * 1rem));
                 transform: translateY(-50%);
                 z-index: -1;
                 @media #{$phone} {                    
@@ -165,7 +165,7 @@
 
         &__textarea {
             background-color: transparent;
-            height: 100vh;
+            height: calc(100vh - calc(300 / 16 * 1rem));
             letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
             gap: calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
 
@@ -809,12 +809,15 @@
                         }
                         &--01 {
                             background-image: url(#{$basePath}image/sub/bg_lgway_sec02.png);
+                            background-position: right 15.97%; 
                         }
                         &--02 {
                             background-image: url(#{$basePath}image/sub/bg_lgway_sec03.png);
+                            background-position: right calc(68 / 16 * 1rem); 
                         }
                         &--03 {
                             background-image: url(#{$basePath}image/sub/bg_lgway_sec04.png);
+                            background-position: right calc(-429 / 16 * 1rem); 
                         }
                     }
                 }
