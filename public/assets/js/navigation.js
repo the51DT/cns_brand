@@ -3,6 +3,7 @@ const bodyWrap = document.querySelector('body');
 // let subMenuHeight = 0
 let currentGnbMode = null; // 'mo' or 'pc'
 // let initialPositions = [];
+const theFuture = document.querySelector('.the-future-case');
 
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
@@ -214,16 +215,18 @@ let lastScrollTop = 0;
 const contentTab = document.querySelectorAll('.cmp-tab');
 const scrollEventManage = () => {
     const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
-    if(Yoffset == 0) {
-        onTopScroll();
-    } else {
-        if (Yoffset > lastScrollTop) {
-            onDownScroll();
-          } else {
-            onUpScroll();
-        }
+    if(!theFuture) {
+      if(Yoffset == 0) {
+          onTopScroll();
+      } else {
+          if (Yoffset > lastScrollTop) {
+              onDownScroll();
+            } else {
+              onUpScroll();
+          }
+      }
+      lastScrollTop = Yoffset <= 0 ? 0 : Yoffset;
     }
-    lastScrollTop = Yoffset <= 0 ? 0 : Yoffset;
 }
 
 const onDownScroll = () => {
