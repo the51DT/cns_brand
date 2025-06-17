@@ -73,22 +73,14 @@ $asset-paths: (
         .future-text {
             display: flex;
             width: 100%;
-            // max-width: calc(1440 / 16 * 1rem);
             height: calc(100vh - calc(100 / 16 * 1rem));
             align-items: flex-start;
             flex-direction: column;
             justify-content: flex-start;
-            //color: var(--colorCM-mode1-fill-fill-default0);
             position: sticky;
             top: calc(320 / 16 * 1rem);
-            // left: 50%;
-            // transform: translateX(-50%);
-            // padding-left: calc(36 / 16 * 1rem);
             padding-right: calc(48 / 16 * 1rem);
             box-sizing: border-box;
-            @media #{$pcMiddle} {
-                // padding-left : 0;
-            }
             @media #{$tabletMini} {
                 position: fixed;
                 top: 0;
@@ -114,10 +106,7 @@ $asset-paths: (
             }
         }
         .future-content {
-            // width: 100%;
-            //margin-top: calc(200 / 16 * 1rem);
             margin: rem(150) 0 rem(100);
-            // padding-left: calc(760 / 16 * 1rem);
             max-width: calc(470 / 16 * 1rem);
             width: 100%;
             @media #{$tabletMini} {
