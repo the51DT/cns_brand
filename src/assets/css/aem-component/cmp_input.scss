@@ -91,11 +91,13 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        gap: calc(12 / 16 * 1rem);
+        column-gap: calc(12 / 16 * 1rem);
+        row-gap: calc(12 / 16 * 1rem);
         width: 100%;
         @media #{$min1280} {
             flex-direction: row;
-            gap: calc(56 / 16 * 1rem);
+            column-gap: calc(56 / 16 * 1rem);
+            row-gap: calc(16 / 16 * 1rem);
         }
         .btn-remove {
             display: none;
