@@ -131,6 +131,19 @@
                 }
             }
         }
+        &--max {
+            gap: 0;
+            flex-direction: row;
+            column-gap: calc(48 / 16 * 1rem);
+            row-gap: calc(12 / 16 * 1rem);
+            @media #{$min1280} {
+                column-gap: 0;
+                row-gap: calc(16 / 16 * 1rem);
+            }
+            .cmp-input__label-box {
+                width: 100%;
+            }
+        }
     }
     &__multi-box {
         display: flex;
@@ -455,6 +468,71 @@
                 }
             }
         }
+        &--toggle-switch {
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            overflow: hidden;
+            &__track {
+                position: relative;
+                flex-shrink: 0;
+                display: block;
+                margin-top: calc(4 / 16 * 1rem);
+                padding: calc(3 / 16 * 1rem);
+                width: calc(40 / 16 * 1rem);
+                height: calc(24 / 16 * 1rem);
+                background: var(--colorCM-mode1-background-background-default4);
+                border-radius: calc(999 / 16 * 1rem);
+                box-sizing: border-box;
+                transition: background 0.3s;
+            }
+            &__handle {
+                position: absolute;
+                top: 50%;
+                left: calc(3 / 16 * 1rem);
+                transform: translateY(-50%);
+                display: block;
+                width: calc(18 / 16 * 1rem);
+                height: calc(18 / 16 * 1rem);
+                border-radius: 50%;
+                background: var(--colorCM-mode1-background-background-default0);
+                transition: left 0.3s;
+            }
+            // 체크된 상태에서의 스타일
+            &:checked {
+                & + .cmp-input__label-text .cmp-input__item--toggle-switch__track {
+                    background: var(--colorCM-mode1-primary-primary-enabled);
+                }
+                & + .cmp-input__label-text .cmp-input__item--toggle-switch__handle {
+                    left: calc(100% - (18 / 16 * 1rem) - calc(3 / 16 * 1rem));
+                }
+            }
+            &:disabled {
+                & + .cmp-input__label-text .cmp-input__item--toggle-switch__track {
+                    background: rgba(175, 175, 175, 0.5);
+                }
+                & + .cmp-input__label-text .cmp-input__item--toggle-switch__handle {
+                    background: var(--colorCM-mode1-fill-fill-disabled);
+                }
+                &:checked {
+                    & + .cmp-input__label-text .cmp-input__item--toggle-switch__track {
+                        background: rgba(255, 107, 152, 0.5);
+                    }
+                }
+            }
+            & + .cmp-input__label-text {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                column-gap: calc(12 / 16 * 1rem);
+                row-gap: calc(12 / 16 * 1rem);
+                @media #{$min1280} {
+                    row-gap: calc(16 / 16 * 1rem);
+                }
+            }
+        }
+
     }
     // radio, checkbox text
     &__label-text {

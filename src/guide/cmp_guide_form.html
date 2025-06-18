@@ -467,8 +467,42 @@
                                 },
                                 {
                                     inputData: [
-                                        {   
+                                        {
                                             id: 19,
+                                            title: "toggle switch button",
+                                            required: true,
+                                            type: "toggleSwitch",
+                                            name: "toggleSwitch-guide",
+                                            dataList: [
+                                                {
+                                                    value: "toggleSwitch-default",
+                                                    label: "toggleSwitch-default",
+                                                },
+                                                {
+                                                    value: "toggleSwitch-checked",
+                                                    label: "toggleSwitch-checked",
+                                                    checked: true,
+                                                },
+                                                {
+                                                    value: "toggleSwitch-disabled",
+                                                    label: "toggleSwitch-disabled",
+                                                    disabled: true,
+                                                },
+                                                {
+                                                    value: "toggleSwitch-checked-disabled",
+                                                    label: "toggleSwitch-checked-disabled",
+                                                    checked: true,
+                                                    disabled: true,
+                                                },
+                                            ],
+                                            dataListStyle: "max",
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {   
+                                            id: 20,
                                             title: "dropdown",
                                             required: true,
                                             type: "dropdown",
@@ -488,7 +522,7 @@
                                 {
                                     inputData: [
                                         {
-                                            id: 20,
+                                            id: 21,
                                             title: "dropdown",
                                             type: "dropdown",
                                             placeholder: "dropdown 가이드",

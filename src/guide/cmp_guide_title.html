@@ -26,7 +26,14 @@
                                 <li>subTitle : 타이틀 상단 텍스트</li>
                                 <li>subDesc : 타이틀 하단 텍스트(subTitle과 동일한 스타일)</li>
                                 <li>size : font-size (typograph.scss 참고)</li>
-                                <li>class : font-weight, color (스타일 가이드, tailwind-all.scss 참고)</li>
+                                <li>class : font-weight, color (스타일 가이드, tailwind-all.scss 참고)<br>
+                                    class : .color-gradient.color-gradient__type-01 의 경우 #B542FD 에서 #4D5CFD 으로 그라데이션 컬러 적용<br>
+                                    class : .color-gradientcolor-gradient__type-02 의 경우 #FF3D96 에서 #EF62FF 으로 그라데이션 컬러 적용<br>
+                                    <ul>
+                                        <li>상위 부모 태그에 display: block; 적용</li>
+                                        <li>부모 태그 display:block 적용으로 인하여 타이틀 단독 사용 권장</li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                         <li>
@@ -50,6 +57,20 @@
                                 text: 'size md 타이틀<br>colorcm-primary font-light 클래스',
                                 size: 'md',
                                 class: 'colorcm-primary font-light',
+                            },
+                        })) %>
+                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                            title: {
+                                text: 'size md 타이틀<br>colorcm-primary font-light color-gradient color-gradient__type-01',
+                                size: 'md',
+                                class: 'color-gradient color-gradient__type-01',
+                            },
+                        })) %>
+                        <%- include('src/component/cmp_title.html', Object.assign({}, locals, { 
+                            title: {
+                                text: 'size md 타이틀<br>colorcm-primary font-light color-gradient color-gradient__type-02',
+                                size: 'md',
+                                class: 'color-gradient color-gradient__type-02',
                             },
                         })) %>
                         <!-- //Title -->
