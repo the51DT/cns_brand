@@ -383,10 +383,15 @@
                     margin-bottom: calc(var(--spacing-mode1-vertical6-x-l-nudge) / 16 * 1rem);
 
                     .event-month {
-                        opacity: 0.4;
+                        // opacity: 0.4;
                         margin-bottom: 6px;
                         font-size: calc(var(--typo-pc-size-body-xs) / 16 * 1rem);
+                        font-weight: 500;
                         line-height: calc(var(--typo-pc-line-height-head-xs) / 16 * 1rem);
+                        @media #{$phone} {
+                            font-size: calc(var(--typo-mo-size-caption-sm) / 16 * 1rem);
+                            line-height: calc(var(--typo-mo-line-height-caption-sm) / 16 * 1rem);
+                        }
                     }
 
                     .event-desc-container {
@@ -405,11 +410,19 @@
                         font-weight: 600;
                         line-height: calc(var(--typo-pc-line-height-body-lg) / 16 * 1rem);
                         margin-bottom: calc(var(--spacing-mode1-vertical3-x-l) / 16 * 1rem);
+                        @media #{$phone} {
+                            font-size: calc(var(--typo-mo-size-body-lg) / 16 * 1rem);
+                            line-height: calc(var(--typo-mo-line-height-body-lg) / 16 * 1rem);
+                        }
                     }
                 }
 
                 .year-container {
                     position: relative;
+                    margin-bottom: calc(80 / 16 * 1rem);
+                    @media #{$phone} {
+                        margin-bottom: calc(40 / 16 * 1rem);
+                    }
                     span {
                         display: contents;
                         // color: #F729C1;
