@@ -767,31 +767,34 @@
         <script>
             let swiperInfo = new Swiper('.cmp-swiper__service .swiper', {
                     loop: false,
-                    slidesPerView: 1.1,
+                    slidesPerView: 'auto',
                     enabled: true,
                     spaceBetween: 12,
-                    slidesOffsetBefore: 0,
-                    slidesOffsetAfter: 0,
+                    slidesOffsetBefore: 20,
+                    slidesOffsetAfter: 20,
                     breakpoints: {
                         1280: {
                             enabled: false,
                             slidesPerView: 3,
                             spaceBetween: 20,
+                            slidesOffsetBefore: 0,
+                            slidesOffsetAfter: 0,
                         }
                     }
             })
             let swiperDataList = new Swiper('.data-list-swiper.swiper', {
                     loop: false,
-                    slidesPerView: 1.1,
+                    slidesPerView: 'auto',
                     enabled: true,
                     spaceBetween: 12,
-                    slidesOffsetBefore: 0,
-                    slidesOffsetAfter: 0,
+                    slidesOffsetBefore: 20,
+                    slidesOffsetAfter: 20,
                     breakpoints: {
                         720: {
                             enabled: false,
-                            slidesPerView: 'auto', 
                             spaceBetween: 0,
+                            slidesOffsetBefore: 0,
+                            slidesOffsetAfter: 0,
                         }
                     }
                 })
