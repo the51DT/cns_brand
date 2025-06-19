@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="/assets/other/favicon.DOGc-PPL.ico">
+    <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+  </head>
+  <body>
+    <div class="guide__wrap">
+      <header class="w-full flex justify-between items-center guide-header__wrap">
+        <h1 class="text-xl font-semibold Slate-50">
+          <a href="/src/guide/index.html" id="siteTitle"></a>
+        </h1>
+        <div class="navi">
+          <button></button>
+          <ul>
+            <li><a href="/src/guide/css_guide.html">스타일 가이드</a></li>
+            <li><a href="/src/guide/js_temple01.html">JS 가이드</a></li>
+            <li><a href="/src/guide/cmp_guide_form.html">컴포넌트</a></li>
+
+            <!-- <li><a href="/src/guide/cmp_list.html">Aem 가이드</a></li> -->
+            <li><a href="/src/guide/pub_list.html">퍼블리싱 목록</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="page-location text-2xl font-bold">
+        <span id="pagesTitle"></span>
+      </div>
+      <div class="guide-content">
+        <div class="flex justify-between lnb-type">
+          <div class="lnb-side__wrap">
+            <button type="button" class="lnb-trigger">아코디언</button>
+          </div>
+          <div class="page-cont flex-1">
+            <p class="guide-title-h3">ImageItem3Column : 기업정보 > 인권경영</p>
+            <ul class="guide-list type-dot mt-3">
+              <li>
+                <p>imageUrlPc : pc 이미지 url (모바일 분기 이미지가 없을 경우 해당 이미지만 노출)</p>
+              </li>
+              <li>
+                <p>imageUrlMo : mo 이미지 url</p>
+              </li>
+              <li>
+                <p>imageAlt : text</p>
+              </li>
+              <li>
+                <p>title : text</p>
+              </li>
+              <li>
+                <p>text : text</p>
+              </li>
+            </ul>
+            <div class="cmp-exsample__wrap mt-3">
+
+              <!-- cmp_Itemlist_3Columns_box -->
+              <div class="cmp-wrap cmp_image-item-3col-box ">
+                <ul class="image-item-3col ">
+                  <li>
+                    <div class="text-box">
+                      <span class="image-item-3col__title font-head-sm font-medium color-text-default">
+                                    일자리 <br>으뜸기업 선정
+                                </span>
+                      <p class="image-item-3col__text font-body-lg color-text-secondary">
+                        (2020, 2023)
+                      </p>
+                    </div>
+                    <div class="img-box">
+                      <img src="https://placehold.co/300x300" alt="일자리 으뜸기업 선정" class="img-box__only-pc">
+                      <img src="https://placehold.co/200x200" alt="일자리 으뜸기업 선정" class="img-box__only-mo">
+                    </div>
+                  </li>
+                  <li>
+                    <div class="text-box">
+                      <span class="image-item-3col__title font-head-sm font-medium color-text-default">
+                                    장애인 고용 촉진대회 <br>고용노동부 장관 표창 수상
+                                </span>
+                      <p class="image-item-3col__text font-body-lg color-text-secondary">
+                        (2018, 2022)
+                      </p>
+                    </div>
+                    <div class="img-box">
+                      <img src="https://placehold.co/300x300" alt="장애인 고용 촉진대회 고용노동부 장관 표창 수상" class="img-box__only-pc">
+                      <img src="https://placehold.co/200x200" alt="장애인 고용 촉진대회 고용노동부 장관 표창 수상" class="img-box__only-mo">
+                    </div>
+                  </li>
+                  <li>
+                    <div class="text-box">
+                      <span class="image-item-3col__title font-head-sm font-medium color-text-default">
+                                    장애인 고용 <br>우수사업주 선정
+                                </span>
+                      <p class="image-item-3col__text font-body-lg color-text-secondary">
+                        (2021)
+                      </p>
+                    </div>
+                    <div class="img-box">
+                      <img src="https://placehold.co/300x300" alt="장애인 고용 우수사업주 선정" class="img-box__only-pc">
+                      <img src="https://placehold.co/200x200" alt="장애인 고용 우수사업주 선정" class="img-box__only-mo">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/ui_common.js"></script>
+  </body>
+</html>
