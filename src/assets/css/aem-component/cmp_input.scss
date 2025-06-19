@@ -3,10 +3,10 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: calc(10 / 16 * 1rem);
+        gap: calc(32 / 16 * 1rem);
         @media #{$min1280} {
             flex-direction: row;
-            gap: calc(8 / 16 * 1rem);
+            gap: calc(20 / 16 * 1rem);
         }
         & + .cmp-input__wrap {
             margin-top:calc(32 / 16 * 1rem);
