@@ -474,11 +474,11 @@
             width: 0px;
             height: 0px;
             overflow: hidden;
+            opacity: 0;
             &__track {
                 position: relative;
                 flex-shrink: 0;
                 display: block;
-                margin-top: calc(4 / 16 * 1rem);
                 padding: calc(3 / 16 * 1rem);
                 width: calc(40 / 16 * 1rem);
                 height: calc(24 / 16 * 1rem);
