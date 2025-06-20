@@ -97,7 +97,7 @@
             clear: both; 
             @media #{$min1280} {
                 grid-template-columns: 1fr 1fr 1fr;
-                gap: calc(16 / 16 * 1rem);
+                gap: calc(20 / 16 * 1rem);
             }
             &__wrap {
                 padding: 0;
