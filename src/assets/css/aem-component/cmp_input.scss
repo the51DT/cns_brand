@@ -121,13 +121,14 @@
             column-gap: calc(48 / 16 * 1rem);
             row-gap: calc(12 / 16 * 1rem);
             @media #{$min1280} {
-                column-gap: 0;
+                justify-content: space-between;
+                column-gap: calc(56 / 16 * 1rem);
                 row-gap: calc(16 / 16 * 1rem);
             }
             .cmp-input__label-box {
                 width: auto;
                 @media #{$min1280} {
-                    width: 33.33%;
+                    width: calc(33.33% - calc(calc(112 / 16 * 1rem) / 3));
                 }
             }
         }
@@ -498,39 +499,59 @@
                 background: var(--colorCM-mode1-background-background-default0);
                 transition: left 0.3s;
             }
-            // 체크된 상태에서의 스타일
-            &:checked {
-                & + .cmp-input__label-text .cmp-input__item--toggle-switch__track {
-                    background: var(--colorCM-mode1-primary-primary-enabled);
-                }
-                & + .cmp-input__label-text .cmp-input__item--toggle-switch__handle {
-                    left: calc(100% - (18 / 16 * 1rem) - calc(3 / 16 * 1rem));
-                }
-            }
-            &:disabled {
-                & + .cmp-input__label-text .cmp-input__item--toggle-switch__track {
-                    background: rgba(175, 175, 175, 0.5);
-                }
-                & + .cmp-input__label-text .cmp-input__item--toggle-switch__handle {
-                    background: var(--colorCM-mode1-fill-fill-disabled);
-                }
-                &:checked {
-                    & + .cmp-input__label-text .cmp-input__item--toggle-switch__track {
-                        background: rgba(255, 107, 152, 0.5);
-                    }
-                }
-            }
             & + .cmp-input__label-text {
                 width: 100%;
                 display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
+                justify-content: flex-start;
+                align-items: center; 
                 column-gap: calc(12 / 16 * 1rem);
                 row-gap: calc(12 / 16 * 1rem);
-                @media #{$min1280} {
-                    row-gap: calc(16 / 16 * 1rem);
+                .cmp-input__label-text__state {
+                    &__on {
+                        display: none;
+                    }
+                    &__off {
+                        display: block;
+                    }
                 }
             }
+            // 체크된 상태에서의 스타일
+            &:checked {
+                & + .cmp-input__label-text {
+                    .cmp-input__item--toggle-switch__track {
+                        background: var(--colorCM-mode1-primary-primary-enabled);
+                    }
+                    .cmp-input__item--toggle-switch__handle {
+                        left: calc(100% - (18 / 16 * 1rem) - calc(3 / 16 * 1rem));
+                    }
+                    .cmp-input__label-text__state {
+                        &__on {
+                            display: block;
+                        }
+                        &__off {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &:disabled {
+                & + .cmp-input__label-text {
+                    .cmp-input__item--toggle-switch__track {
+                        background: rgba(175, 175, 175, 0.5);
+                    }
+                    .cmp-input__item--toggle-switch__handle {
+                        background: var(--colorCM-mode1-fill-fill-disabled);
+                    }
+                }
+                &:checked {
+                    & + .cmp-input__label-text {
+                        .cmp-input__item--toggle-switch__track {
+                            background: rgba(255, 107, 152, 0.5);
+                        }
+                    }
+                }
+            }
+            
         }
 
     }

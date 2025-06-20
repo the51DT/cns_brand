@@ -105,19 +105,18 @@
                                     </div>
                                     <!-- 아코디언처럼 펼쳐지는 타입 -->
                                 <% } else if(inputData.type === 'toggleSwitch') {%>
-                                    <% inputData.dataList.forEach((toggleSwitch)=> { %>
-                                        <div class="cmp-input__label-box">
-                                            <input class="cmp-input__item cmp-input__item--toggle-switch <%- toggleSwitch.disabled === 'disabled' && toggleSwitch.disabled ? 'cmp-input__item--disabled' : '' %>" id="<%- toggleSwitch.value %>" type="checkbox" name="<%- toggleSwitch.name %>" value="<%- toggleSwitch.value %>" <%- toggleSwitch.disabled === true ? 'disabled' : '' %> <%- toggleSwitch.checked === true ? 'checked' : '' %> <%- toggleSwitch.required === true ? 'required' : '' %>>
-                                            <label class="cmp-input__label-text" for="<%- toggleSwitch.value %>">
-                                                <span class="cmp-input__label-text__value">
-                                                    <%- toggleSwitch.label %>
-                                                </span>
-                                                <span class="cmp-input__item--toggle-switch__track">
-                                                    <i class="cmp-input__item--toggle-switch__handle"></i>
-                                                </span>
-                                            </label>
-                                        </div>
-                                    <% }) %>
+                                    <div class="cmp-input__label-box">
+                                        <input class="cmp-input__item cmp-input__item--toggle-switch <%- inputData.disabled === 'disabled' && inputData.disabled ? 'cmp-input__item--disabled' : '' %>" id="<%- inputData.value %>" type="checkbox" name="<%- inputData.name %>" value="<%- inputData.value %>" <%- inputData.disabled === true ? 'disabled' : '' %> <%- inputData.checked === true ? 'checked' : '' %> <%- inputData.required === true ? 'required' : '' %>>
+                                        <label class="cmp-input__label-text" for="<%- inputData.value %>">
+                                            <span class="cmp-input__item--toggle-switch__track">
+                                                <i class="cmp-input__item--toggle-switch__handle"></i>
+                                            </span>
+                                            <div class="cmp-input__label-text__state">
+                                                <span class="cmp-input__label-text__state__on">On</span>
+                                                <span class="cmp-input__label-text__state__off">Off</span>
+                                            </div>
+                                        </label>
+                                    </div>
                                 <% } else { %>
                                     <% if(!inputData.title) { %>
                                         <label class="ir-text" for="<%- inputData.id %>"><%- inputData.placeholder %></label>
