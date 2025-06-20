@@ -4,6 +4,7 @@ const bodyWrap = document.querySelector('body');
 let currentGnbMode = null; // 'mo' or 'pc'
 // let initialPositions = [];
 const theFuture = document.querySelector('.the-future-case');
+let isHoveringGnb = false;
 
 /*utils */
 const siblings = (el) => { return [...el.parentNode.children].filter((child) => child !== el) }
@@ -111,6 +112,7 @@ function mainNavigation(elements) {
 
     //마우스 엔터
     nav.addEventListener('mouseenter', () => {
+      isHoveringGnb = true;
       if (currentGnbMode === 'mo') return;
       const listLi = document.querySelectorAll('.navy-list > li')
 
@@ -140,6 +142,7 @@ function mainNavigation(elements) {
     //마우스 리브
     navyWrap.addEventListener('mouseleave', (e) => {
       if (!navyWrap.contains(e.relatedTarget)) {
+        isHoveringGnb = false;
         removeClass(bodyWrap, 'overflow')
         setStyle(nav.parentElement, 'position', '')
 
@@ -214,12 +217,13 @@ const moNavigationAccordion = (selector) => {
 let lastScrollTop = 0;
 const contentTab = document.querySelectorAll('.cmp-tab');
 const scrollEventManage = () => {
+    if (isHoveringGnb) return; // GNB에 hover 중일 때 스크롤 이벤트 무시
     const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
     if(!theFuture) {
       if(Yoffset == 0) {
           onTopScroll();
       } else {
-          if (Yoffset > lastScrollTop) {
+          if (Yoffset > lastScrollTop && Yoffset > 0) {
               onDownScroll();
             } else {
               onUpScroll();
