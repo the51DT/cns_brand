@@ -390,9 +390,12 @@
                 background-image: url("#{$basePath}image/icon/icon_arrow_down.svg");
                 background-repeat: no-repeat;
                 background-position: right center;
+                color: var(--colorCM-mode1-text-text-default);
+                font-weight: 600;
                 text-align: left;
                 &.no-select {
                     color: var(--colorCM-mode1-text-text-quaternary);
+                    font-weight: 400;
                 }
                 &.is-active {
                     background-image: url("#{$basePath}image/icon/icon_arrow_up.svg");
