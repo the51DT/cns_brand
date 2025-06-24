@@ -681,7 +681,9 @@
             max-width: calc(1360 / 16 * 1rem);
             @media #{$min1600} {
                 margin: calc(36 / 16 * 1rem) auto 0;
-                overflow: hidden;
+                overflow-x: hidden;
+                overflow-y: auto;
+                max-height: calc(296 / 16 * 1rem);
             }
             &__scroll {
                 display: flex;
