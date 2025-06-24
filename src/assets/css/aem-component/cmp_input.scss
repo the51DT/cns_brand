@@ -565,6 +565,22 @@
         letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
         font-weight: 400;
     }
+    
+    &__link {
+        display: inline-flex;
+        margin-left: calc(12 / 16 * 1rem);
+        .btn {
+            &.btn-text {
+                .btn__text {
+                    color: var(--colorCM-mode1-text-text-default);
+                    font-size: calc(16 / 16 * 1rem);
+                    line-height: calc(26 / 16 * 1rem);
+                    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+                    font-weight: 400;
+                }
+            }
+        }
+    }
     &__drop-content {
         display: none;
         margin-top: calc(calc(var(--spacing-mode1-vertical-s) / 16 * 1rem * -1));

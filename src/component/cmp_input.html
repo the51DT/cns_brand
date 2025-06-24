@@ -79,7 +79,20 @@
                                     <% inputData.dataList.forEach((check)=> { %>
                                         <div class="cmp-input__label-box">
                                             <input class="<%- inputData.size === 'small' && inputData.size ? 'cmp-input__item--checkbox--small' : 'cmp-input__item--checkbox' %> <%- check.disabeld === 'disabled' && check.disabeld ? 'cmp-input__item--disabled' : '' %>" id="<%- check.value %>" type="checkbox" name="<%- inputData.name %>" value="<%- check.value %>" <%- check.disabeld === true ? 'disabled' : '' %> <%- check.checked === true ? 'checked' : '' %> <%- check.required === true ? 'required' : '' %>>
-                                            <label class="<%- check.label ? '' : 'ir-text' %> cmp-input__label-text" for="<%- check.value %>"><%- check.label ? check.label : check.id %></label>
+                                            <% if(check.innerLink) { %>
+                                                <div class="cmp-input__label-box__container">
+                                                    <label class="<%- check.label ? '' : 'ir-text' %> cmp-input__label-text" for="<%- check.value %>"><%- check.label ? check.label : check.id %></label>
+                                                    <div class="button__wrap cmp-input__link">
+                                                        <a href="https://www.naver.com" target="" class="btn btn-medium btn-text">
+                                                            <span class="btn__text">
+                                                                <%- check.innerLink %>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            <% } else { %>    
+                                                <label class="<%- check.label ? '' : 'ir-text' %> cmp-input__label-text" for="<%- check.value %>"><%- check.label ? check.label : check.id %></label>
+                                            <% } %>
                                         </div>
                                     <% }) %>
                                 <% } else if(inputData.type === 'radio') { %>
