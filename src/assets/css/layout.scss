@@ -103,6 +103,16 @@ body {
             display: flex;
             padding: 0 calc(40 / 16 * 1rem) 0 calc(60 / 16 * 1rem);
         }
+        // BX 부서 피드백 #33 : 디자인 수급 대기
+        // main GNB
+        // .main {
+        //     .gnb-util {
+        //         gap: calc(25 / 16 * 1rem);
+        //     }
+        //     .gnb-navy__wrap {
+        //         padding: 0 calc(26 / 16 * 1rem) 0 calc(40 / 16 * 1rem);
+        //     }
+        // }
     }
     &.gnb-mode--mo {
         .gnb-util {
@@ -509,7 +519,6 @@ body {
                         height: calc(4 / 16 * 1rem);
                         transition: width 0.3s;
                     }
-
                 }
                 .gnb-sub__wrap--drop {
                     display: block;
@@ -531,6 +540,18 @@ body {
                     //    height: 100%;
                     //    border-right: calc(1 / 16 * 1rem) solid #EBEBEB;
                     //}
+                }
+            }
+            &.is-current {
+                --header-font-color: var(--text-text-default);
+                --header-active-underbar-bg: var(--colorCM-mode1-background-background-default10);
+                & > a {
+                    &::after {
+                        // width: 100%;
+                        width: calc(4 / 16 * 1rem);
+                        height: calc(4 / 16 * 1rem);
+                        transition: width 0.3s;
+                    }
                 }
             }
         }
@@ -789,6 +810,9 @@ body {
                             .gnb-sub__menu {
                                 color: var(--header-font-color);
                             }
+                        }
+                        &.is-current {
+                            --header-font-color: var(--text-text-default);
                         }
                     }
                 }
