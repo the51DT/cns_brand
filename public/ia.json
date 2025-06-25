@@ -492,18 +492,6 @@
           "fileName": "moa_insight_detail.html"
         },
         {
-          "name": "MOA - 뉴스레터",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "moa_newsletter.html"
-        },
-        {
-          "name": "MOA - 뉴스레터 상세",
-          "screenId": "",
-          "path": "/src/page/",
-          "fileName": "moa_newsletter_detail.html"
-        },
-        {
           "name": "MOA - 자료실",
           "screenId": "",
           "path": "/src/page/",

@@ -144,7 +144,7 @@
             width: 100%;
             @media #{$min1280} {
                 flex-shrink: 0;
-                width: calc(466 / 16 * 1rem);
+                width: 100%;
                 height: calc(263 / 16 * 1rem);
             }
             img {
