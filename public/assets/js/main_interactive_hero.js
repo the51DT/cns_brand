@@ -9,7 +9,7 @@
 */
 let isPcWide = window.matchMedia('only screen and (min-width: 1920px)').matches;
 let isPcMiddle = window.matchMedia('only screen and (min-width: 1600px)').matches;
-let isPc = window.matchMedia('only screen and (min-width: 1024px)').matches;
+let isPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
 let isTablet = window.matchMedia('only screen and (min-width: 535px)').matches;
 let videoGroup = [];
 let posterGroup = [];
@@ -132,7 +132,7 @@ function updateVideoSources() {
 window.addEventListener('resize', function () {
     isPcWide = window.matchMedia('only screen and (min-width: 1920px)').matches;
     isPcMiddle = window.matchMedia('(min-width: 1600px)').matches; 
-    isPc = window.matchMedia('(min-width: 1024px)').matches;
+    isPc = window.matchMedia('(min-width: 1280px)').matches;
     isTablet = window.matchMedia('(min-width: 535px)').matches;
     initializeVideoGroup();
     adjustHeroNavigationPosition();
@@ -268,9 +268,9 @@ function checkActiveSlide(swiper) {
 
 // Swiper 초기화
 let swiperHero = new Swiper('.swiper-interactive-banner', {
-    autoplay: {
-        delay: 6000,
-    },
+    // autoplay: {
+    //     delay: 6000,
+    // },
     allowTouchMove: false,
     touchRatio: 0,
     slidesPerView: 1,

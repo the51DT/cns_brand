@@ -43,13 +43,13 @@
                                                         AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
                                                         비즈니스의 빠른 성장을 이끌어갑니다.
                                                     </p>
-                                                    <div class="button__wrap interactive-swiper__button active-effect">
+                                                    <!-- <div class="button__wrap interactive-swiper__button active-effect">
                                                         <a href="#" target="_self" class="btn btn-x-large btn-secondary">
                                                             <span class="btn__text">생성형 AI 바로보기</span>
                                                             <i class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
                                                             <i class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
                                                         </a>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="interactive-swiper__frame">
                                                     <div class="interactive-swiper__frame__video">
@@ -71,13 +71,13 @@
                                                         AI가 자연스럽게 업무에 통합되어, 효율성을 극대화하고 <br class="display-pc">
                                                         비즈니스의 빠른 성장을 이끌어갑니다.
                                                     </p>
-                                                    <div class="button__wrap interactive-swiper__button">
+                                                    <!-- <div class="button__wrap interactive-swiper__button">
                                                         <a href="#" target="_self" class="btn btn-x-large btn-secondary">
                                                             <span class="btn__text">생성형 AI 바로보기</span>
                                                             <i class="ico icon-main-navigation-right-wh40 ico--color-white"></i>
                                                             <i class="ico icon-main-navigation-right-bl40 ico--color-black"></i>
                                                         </a>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="interactive-swiper__frame">
                                                     <div class="interactive-swiper__frame__video">
@@ -90,7 +90,7 @@
                                         </div>
                                         <div class="swiper-slide interactive-swiper__slide">
                                             <div class="interactive-swiper__container">
-                                                <div class="interactive-swiper__text-box">
+                                                <div class="interactive-swiper__text-box interactive-swiper__text-box--has-button">
                                                     <div class="font-head-x-xxl interactive-swiper__title">
                                                         Generative AI <br>
                                                         in your work
@@ -118,7 +118,7 @@
                                         </div>
                                         <div class="swiper-slide interactive-swiper__slide">
                                             <div class="interactive-swiper__container">
-                                                <div class="interactive-swiper__text-box">
+                                                <div class="interactive-swiper__text-box interactive-swiper__text-box--has-button">
                                                     <div class="font-head-x-xxl interactive-swiper__title">
                                                         Generative AI <br>
                                                         in your work
@@ -858,7 +858,7 @@
                 prevEl: '.news-swiper__navigation--prev',
             },
             breakpoints: {
-                1024: {
+                1280: {
                     slidesPerView: 3,
                     spaceBetween: 20,
                     slidesOffsetBefore: 0,
@@ -908,28 +908,29 @@
                         target.classList.add('dynamic-search--expanded');
                     }
                 }
+                // 확장 상태로 유지
                 // 펼침 상태일 때
-                else if (target.classList.contains('dynamic-search--expanded') && !target.classList.contains('dynamic-search--expanded-important')) {
-                    if (Yoffset >= dynamicSearchTop + dynamicSearchHeight) {
-                        // 스크롤 위치가 dynamicSearch의 하단을 넘어가면
-                        target.classList.add('dynamic-search--collapsed');
-                        target.classList.remove('dynamic-search--expanded');
-                        target.classList.remove('dynamic-search--result-empty');
-                    } else if (Yoffset < target.getBoundingClientRect().top){
-                        // 스크롤 위치가 dynamicSearch보다 위에 있다면
-                        target.classList.add('dynamic-search--collapsed');
-                        target.classList.remove('dynamic-search--expanded');
-                        target.classList.remove('dynamic-search--result-empty');
-                    }
-                } else if (target.classList.contains('dynamic-search--expanded-important')) {
-                    if (Yoffset == 0 || scrollPosition + windowHeight >= documentHeight) {
-                        // 클릭 시 스크롤 위치 0 또는 최하단일 때 닫힘
-                        target.classList.add('dynamic-search--collapsed');
-                        target.classList.remove('dynamic-search--expanded');
-                        target.classList.remove('dynamic-search--expanded-important');
-                        target.classList.remove('dynamic-search--result-empty');
-                    }
-                }
+                // else if (target.classList.contains('dynamic-search--expanded') && !target.classList.contains('dynamic-search--expanded-important')) {
+                //     if (Yoffset >= dynamicSearchTop + dynamicSearchHeight) {
+                //         // 스크롤 위치가 dynamicSearch의 하단을 넘어가면
+                //         target.classList.add('dynamic-search--collapsed');
+                //         target.classList.remove('dynamic-search--expanded');
+                //         target.classList.remove('dynamic-search--result-empty');
+                //     } else if (Yoffset < target.getBoundingClientRect().top){
+                //         // 스크롤 위치가 dynamicSearch보다 위에 있다면
+                //         target.classList.add('dynamic-search--collapsed');
+                //         target.classList.remove('dynamic-search--expanded');
+                //         target.classList.remove('dynamic-search--result-empty');
+                //     }
+                // } else if (target.classList.contains('dynamic-search--expanded-important')) {
+                //     if (Yoffset == 0 || scrollPosition + windowHeight >= documentHeight) {
+                //         // 클릭 시 스크롤 위치 0 또는 최하단일 때 닫힘
+                //         target.classList.add('dynamic-search--collapsed');
+                //         target.classList.remove('dynamic-search--expanded');
+                //         target.classList.remove('dynamic-search--expanded-important');
+                //         target.classList.remove('dynamic-search--result-empty');
+                //     }
+                // }
             }
         }
         
