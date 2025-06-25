@@ -13,7 +13,7 @@
     .inner-wrap {
         padding: calc(72 / 16 * 1rem) calc(20 / 16 * 1rem) calc(20 / 16 * 1rem);
         @media #{$min1280} {
-            padding: calc(121 / 16 * 1rem) calc(20 / 16 * 1rem) calc(121 / 16 * 1rem);
+            padding: calc(120 / 16 * 1rem) calc(20 / 16 * 1rem);
         }
     }
 
@@ -26,7 +26,7 @@
             letter-spacing: calc(var(--typo-pc-letter-spacing-default) / 16 * 1rem);
             font-weight: 400;
             @media #{$min1280} {
-                margin-bottom: calc(17 / 16 * 1rem);
+                margin-bottom: calc(16 / 16 * 1rem);
                 font-size: calc(18 / 16 * 1rem);
                 line-height: calc(26 / 16 * 1rem);
             }
@@ -55,7 +55,7 @@
             }
         }
         .cmp-buttonbanner-btn {
-            margin-top: calc(34 / 16 * 1rem);
+            margin-top: calc(40 / 16 * 1rem);
             @media #{$min1280} {
                 margin-top: calc(72 / 16 * 1rem);
             }
@@ -63,13 +63,13 @@
                 display: inline-block;
             }
             .btn__icon {
-                min-width: calc(40 / 16 * 1rem);
-                width: calc(40 / 16 * 1rem);
-                height: calc(40 / 16 * 1rem);
+                min-width: calc(48 / 16 * 1rem);
+                width: calc(48 / 16 * 1rem);
+                height: calc(48 / 16 * 1rem);
                 @media #{$min1280} {
-                    min-width: calc(68 / 16 * 1rem);
-                    width: calc(68 / 16 * 1rem);
-                    height: calc(68 / 16 * 1rem);
+                    min-width: calc(80 / 16 * 1rem);
+                    width: calc(80 / 16 * 1rem);
+                    height: calc(80 / 16 * 1rem);
                 }
             }
         }
