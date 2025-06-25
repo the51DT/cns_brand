@@ -223,7 +223,7 @@
             display: flex;
         }
         &__text-box {
-            padding: 0 calc(30 / 16 * 1rem);
+            padding: 0 calc(20 / 16 * 1rem);
             width: 100%;
             position: absolute;
             left: 50%;
@@ -239,15 +239,12 @@
             }
             @media #{$min1280} {
                 padding: 0;
-                top: calc(84 / 16 * 1rem);
+                top: calc(167 / 16 * 1rem);
                 bottom: initial;
-                left: calc(60 / 16 * 1rem);
+                left: calc(50 / 16 * 1rem);
                 transform: translateX(0);
                 text-align: left;
                 max-width: calc(100% - calc(120 / 16 * 1rem));
-            }
-            @media #{$min1280} {
-                top: calc(167 / 16 * 1rem);
             }
             @media #{$min1600} {
                 top: calc(181 / 16 * 1rem);
@@ -268,7 +265,7 @@
                     bottom: calc(60 / 16 * 1rem);
                 }
                 @media #{$min1280} {
-                    top: calc(129 / 16 * 1rem);
+                    top: calc(167 / 16 * 1rem);
                 }
                 @media #{$min1600} {
                     top: calc(148 / 16 * 1rem);
@@ -1057,7 +1054,7 @@
         background-color: #F5F7F9;
         .main-container {
             position: relative;
-            padding-top: calc(80 / 16 * 1rem);
+            padding: calc(80 / 16 * 1rem) calc(20 / 16 * 1rem);
             height: calc(390 / 16 * 1rem);
             background-image: url('#{$basePath}image/main/bg_main_button-banner_360.png');
             background-repeat: no-repeat;
@@ -1065,16 +1062,16 @@
             background-position: 100% center;
             box-sizing: border-box;
             @media #{$min535} {
-                padding-top: calc(64 / 16 * 1rem);
+                padding: calc(64 / 16 * 1rem) calc(40 / 16 * 1rem) calc(32 / 16 * 1rem);
                 height: calc(440 / 16 * 1rem);
                 background-image: url('#{$basePath}image/main/bg_main_button-banner_535.png');
             }
             @media #{$min800} {
-                padding-top: calc(64 / 16 * 1rem);
+                padding: calc(64 / 16 * 1rem) calc(40 / 16 * 1rem) calc(32 / 16 * 1rem);
                 background-image: url('#{$basePath}image/main/bg_main_button-banner_800.png');
             }
             @media #{$min1280} {
-                padding-top: calc(80 / 16 * 1rem);
+                padding: calc(80 / 16 * 1rem) calc(30 / 16 * 1rem);
                 background-image: url('#{$basePath}image/main/bg_main_button-banner_1024.png');
             }
             @media #{$min1600} {
@@ -1085,10 +1082,7 @@
             }
         }
         &__box {
-            padding: 0 calc(20 / 16 * 1rem);
-            @media #{$min535} {
-                padding: 0 calc(40 / 16 * 1rem);
-            }
+            // padding: 0 calc(20 / 16 * 1rem);
             @media #{$min1600} {
                 padding: 0;
                 margin: 0 auto;
