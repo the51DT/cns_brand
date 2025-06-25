@@ -268,9 +268,9 @@ function checkActiveSlide(swiper) {
 
 // Swiper 초기화
 let swiperHero = new Swiper('.swiper-interactive-banner', {
-    // autoplay: {
-    //     delay: 6000,
-    // },
+    autoplay: {
+        delay: 6000,
+    },
     allowTouchMove: false,
     touchRatio: 0,
     slidesPerView: 1,
