@@ -29,105 +29,54 @@
             max-width: calc(1920 / 16 * 1rem);
         }
     }
+    // main GNB
     .header {
         border-bottom: 0;
         &.is-fixed, 
         &.is-active {
             border-bottom: calc(1 / 16 * 1rem) solid var(--header-active-border-color);
         }
-        // BX 부서 피드백 #33 : 디자인 수급 대기
-        // &-inner {
-        //     @media #{$min1280} {
-        //         max-width: calc(1920 / 16 * 1rem);
-        //         padding: 0 calc(40 / 16 * 1rem);
-        //     }
-        // }
-        // .navy-list {
-        //     & > li {
-        //         & > a {
-        //             @media #{$min1280} {
-        //                 font-size: calc(var(--typo-pc-size-caption-lg) / 16 * 1rem);
-        //                 line-height: calc(var(--typo-pc-line-height-caption-lg) / 16 * 1rem);
-        //                 letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
-        //             }
-        //         }
-        //         .gnb-sub__wrap {
-        //             .gnb-sub-inner {
-        //                 @media #{$min1280} {
-        //                     max-width: calc(1920 / 16 * 1rem);
-        //                     padding: 0 calc(40 / 16 * 1rem);
-        //                 }
-        //             }
-        //         }
-        //         .sub-menu-list {
-        //             li {
-        //                 .sub-menu-detail {
-        //                     @media #{$min1280} {
-        //                         width: calc(calc(1840 / 16 * 1rem) - calc(calc(428 / 16 * 1rem) + calc(84 / 16 * 1rem)));
-        //                     }
-        //                     .sub-depth-menu-list {
-        //                         @media #{$min1280} {
-        //                             grid-template-columns: repeat(4, minmax(calc(25% - calc(12 / 16 * 1rem)), 300px));
-        //                         }
-        //                         .sub-depth-items {
-        //                             @media #{$min1280} {
-        //                                 max-width: calc(300 / 16 * 1rem);
-        //                             }
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-        // .navy-left {
-        //     .navy-list { 
-        //         & > li {
-        //             & > a {
-        //                 @media #{$min1280} {
-        //                     font-size: calc(24 / 16 * 1rem);
-        //                     line-height: calc(30 / 16 * 1rem);
-        //                     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-        // .navy-right {
-        //     .navy-list {
-        //         & > li {
-        //             @media #{$min1280} {
-        //                 padding: 0 calc(16 / 16 * 1rem);
-        //             }
-        //             &:first-child {
-        //                 @media #{$min1280} {
-        //                     padding-left: 0;
-        //                 }
-        //             }
-        //             &:last-child {
-        //                 @media #{$min1280} {
-        //                     padding-right: 0;
-        //                 }
-        //             }
-        //             & > a {
-        //                 @media #{$min1280} {
-        //                     font-size: calc(20 / 16 * 1rem);
-        //                     line-height: calc(26 / 16 * 1rem);
-        //                     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-        // .gnb-util {
-        //     .btn-search {
-        //         @media #{$min1280} {
-        //             width: calc(26 / 16 * 1rem);
-        //             min-width: calc(26 / 16 * 1rem);
-        //             height: calc(26 / 16 * 1rem);
-        //         }
-        //     }
-        // }
+        &-inner {
+            @media #{$min1280} {
+                max-width: calc(1920 / 16 * 1rem);
+                padding: 0 calc(40 / 16 * 1rem);
+            }
+        }
+        .navy-list {
+            & > li {
+                .gnb-sub__wrap {
+                    .gnb-sub-inner {
+                        @media #{$min1280} {
+                            max-width: calc(1920 / 16 * 1rem);
+                            padding: 0 calc(40 / 16 * 1rem);
+                        }
+                    }
+                }
+                .sub-menu-list {
+                    li {
+                        .sub-menu-detail {
+                            @media #{$min1280} {
+                                width: calc(calc(1840 / 16 * 1rem) - calc(428 / 16 * 1rem));
+                                max-width: calc(100vw - calc(508 / 16 * 1rem));
+                            }
+                            .sub-depth-menu-list {
+                                @media #{$min1280} {
+                                    grid-template-columns: repeat(4, minmax(calc(25% - calc(12 / 16 * 1rem)), 300px));
+                                }
+                                @media #{$min1840} {
+                                    padding-right: calc(84 / 16 * 1rem);
+                                }
+                                .sub-depth-items {
+                                    @media #{$min1280} {
+                                        max-width: calc(300 / 16 * 1rem);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     // 상단 interactive banner
     .interactive-hero {

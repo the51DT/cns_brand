@@ -5,10 +5,10 @@
     --header-2depth-bg: var(--colorCM-mode1-background-background-default0);
     --header-border-color: var(--colorCM-mode1-stroke-stroke-default2);
     --header-active-border-color: var(--colorCM-mode1-stroke-stroke-default2);
-    --header-font-color: var(--colorCM-mode1-text-text-secondary);
+    --header-font-color: var(--colorCM-mode1-text-text-default);
     --header-2depth-font-color : var(--colorCM-mode1-text-text-default);
     --header-active-underbar-bg: var(--colorCM-mode1-background-background-default10);
-    --header-util-border-color: var(--colorCM-mode1-stroke-stroke-default9);
+    --header-util-border-color: var(--colorCM-mode1-stroke-stroke-default10);
     --header-logo-bl-display: block;
     --header-logo-wh-display: none;
     --header-icon-bl-display: inline-flex;
@@ -85,7 +85,7 @@ body {
             }
         }
         .gnb-util {
-            gap: calc(40 / 16 * 1rem);
+            gap: calc(26 / 16 * 1rem);
             .gnb-util__container {
                 gap: calc(32 / 16 * 1rem);
             }
@@ -101,18 +101,8 @@ body {
         }
         .gnb-navy__wrap {
             display: flex;
-            padding: 0 calc(40 / 16 * 1rem) 0 calc(60 / 16 * 1rem);
+            padding: 0 calc(26 / 16 * 1rem) 0 calc(60 / 16 * 1rem);
         }
-        // BX 부서 피드백 #33 : 디자인 수급 대기
-        // main GNB
-        // .main {
-        //     .gnb-util {
-        //         gap: calc(25 / 16 * 1rem);
-        //     }
-        //     .gnb-navy__wrap {
-        //         padding: 0 calc(26 / 16 * 1rem) 0 calc(40 / 16 * 1rem);
-        //     }
-        // }
     }
     &.gnb-mode--mo {
         .gnb-util {
@@ -241,7 +231,24 @@ body {
         .navy-right {
             height: 100%;
             display: flex;
-            align-items: center;            
+            align-items: center;
+            .navy-list {
+                & > li {
+                    @media #{$min1280} {
+                        padding: 0 calc(19 / 16 * 1rem);
+                    }
+                    &:first-child {
+                        @media #{$min1280} {
+                            padding-left: 0;
+                        }
+                    }
+                    &:last-child {
+                        @media #{$min1280} {
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -421,6 +428,9 @@ body {
                                         color: var(--text-text-default);
                                         li {
                                             padding: 0;
+                                            font-size: calc(14 / 16 * 1rem);
+                                            line-height: calc(20 / 16 * 1rem);
+                                            letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
                                         }
                                     }
                                 }
@@ -508,13 +518,9 @@ body {
             }
             &.is-active {
                 & > a {
-                    // padding: 0 calc(5 / 16 * 1rem);
                     transition: all 0.3s;
-                    // transform-origin: center;
-                    --header-font-color: var(--text-text-default);
                     font-weight: 600;
                     &::after {
-                        // width: 100%;
                         width: calc(4 / 16 * 1rem);
                         height: calc(4 / 16 * 1rem);
                         transition: width 0.3s;
@@ -543,9 +549,9 @@ body {
                 }
             }
             &.is-current {
-                --header-font-color: var(--text-text-default);
                 --header-active-underbar-bg: var(--colorCM-mode1-background-background-default10);
                 & > a {
+                    font-weight: 600;
                     &::after {
                         // width: 100%;
                         width: calc(4 / 16 * 1rem);
@@ -561,7 +567,7 @@ body {
         align-items: center;
         gap: calc(4 / 16 * 1rem);
         @media #{$min1280} {
-            gap: calc(40 / 16 * 1rem);
+            gap: calc(26 / 16 * 1rem);
         }
         .gnb-util__container {
             display: flex;
@@ -578,6 +584,10 @@ body {
             justify-content: center;
             align-items: center;
             color: var(--header-font-color);
+            @media #{$min1280} {
+                font-size: calc(18 / 16 * 1rem);
+                line-height: calc(24 / 16 * 1rem);
+            }
         }
         // 언어 선택
         .lang-select {
@@ -589,8 +599,8 @@ body {
                 height: calc(40 / 16 * 1rem);
                 background: var(--header-lang-ico) no-repeat center center / contain;
                 @media #{$min1280} {
-                    width: calc(24 / 16 * 1rem);
-                    height: calc(24 / 16 * 1rem);
+                    width: calc(26 / 16 * 1rem);
+                    height: calc(26 / 16 * 1rem);
                 }
             }
             .dropdown_list {
@@ -619,6 +629,11 @@ body {
                     min-width: calc(24 / 16 * 1rem);
                     width: calc(24 / 16 * 1rem);
                     height: calc(24 / 16 * 1rem);
+                    @media #{$min1280} {
+                        min-width: calc(28 / 16 * 1rem);
+                        width: calc(28 / 16 * 1rem);
+                        height: calc(28 / 16 * 1rem);
+                    }
                     &--ko {
                         background: url("#{$basePath}image/icon/icon-lang-ko-bl24.svg") no-repeat center center / contain;
                     }
@@ -637,8 +652,8 @@ body {
             height: calc(40 / 16 * 1rem);
             background: var(--header-search-ico) no-repeat center center / contain;
             @media #{$min1280} {
-                width: calc(24 / 16 * 1rem);
-                height: calc(24 / 16 * 1rem);
+                width: calc(26 / 16 * 1rem);
+                height: calc(26 / 16 * 1rem);
                 background: var(--header-search-ico) no-repeat center center / contain;
             }
         }  
@@ -813,6 +828,9 @@ body {
                         }
                         &.is-current {
                             --header-font-color: var(--text-text-default);
+                            a {
+                                font-weight: 600;
+                            }
                         }
                     }
                 }
