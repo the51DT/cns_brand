@@ -143,7 +143,7 @@
         &__history {
             position: relative;
             .inner-wrap {
-                max-width: calc(1600 / 16 * 1rem);
+                max-width: calc(1480 / 16 * 1rem);
                 @media #{$phone} {
                     padding: 0;
                 }
@@ -324,7 +324,7 @@
 
         .right-section {
             position: relative;
-            width: 38%;
+            width: 40.83%;
 
             // width: 724px;
             // overflow: visible;
