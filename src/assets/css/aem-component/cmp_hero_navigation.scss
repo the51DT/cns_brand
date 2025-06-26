@@ -5,7 +5,7 @@
         width: 100%;
         border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
         background: var(--colorCM-mode1-fill-fill-default3);
-        @media #{$min1024} {
+        @media #{$min1280} {
             flex-direction: row;
             border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
             // background: rgba(0,0,0,0.5);
@@ -15,7 +15,7 @@
             position: relative;
             width: 100%;
             box-sizing: border-box;
-            @media #{$min1024} {
+            @media #{$min1280} {
                 width: 25%;
             }
             &::after {
@@ -27,7 +27,7 @@
                 width: calc(100% - calc(48 / 16 * 1rem));
                 height: calc(1 / 16 * 1rem);
                 background: var(--colorCM-mode1-background-background-default2);
-                @media #{$min1024} {
+                @media #{$min1280} {
                     top: calc(20 / 16 * 1rem);
                     bottom: initial;
                     left: initial;
@@ -58,7 +58,7 @@
         @media only screen and (min-width : 535px) {
             padding: calc(24 / 16 * 1rem) calc(24 / 16 * 1rem);
         }
-        @media #{$min1024} {
+        @media #{$min1280} {
             padding: calc(20 / 16 * 1rem) calc(40 / 16 * 1rem);
         }
         @media #{$min1600} {
@@ -71,7 +71,7 @@
         color: var(--colorCM-mode1-text-text-default);
         font-size: calc(18 / 16 * 1rem);
         line-height: calc(28 / 16 * 1rem);
-        @media #{$min1024} {
+        @media #{$min1280} {
             min-height: calc(56 / 16 * 1rem);
             color: var(--colorCM-mode1-text-text-on-bg);
         }
@@ -87,7 +87,7 @@
         opacity: 0.6;
         font-size: calc(16 / 16 * 1rem);
         line-height: calc(26 / 16 * 1rem);
-        @media #{$min1024} {
+        @media #{$min1280} {
             color: var(--colorCM-mode1-text-text-on-bg);
         }
         @media #{$min1600} {
@@ -121,48 +121,48 @@
     }
     &.color-mode-white {
         .cmp-hero-navigation__list {
-            @media #{$min1024} {
+            @media #{$min1280} {
                 background: rgba(0,0,0,0.5);
             }
             li {
                 &:after {
-                    @media #{$min1024} {
+                    @media #{$min1280} {
                         background: var(--colorCM-mode1-background-background-default0);
                     }
                 }
             }
         }
         .cmp-hero-navigation__title {
-            @media #{$min1024} {
+            @media #{$min1280} {
                 color: var(--colorCM-mode1-text-text-on-bg);
             }
         }
         .cmp-hero-navigation__tag {
-            @media #{$min1024} {
+            @media #{$min1280} {
                 color: var(--colorCM-mode1-text-text-on-bg);
             }
         }
         .ico--mode-color-white {
             display: none;
-            @media #{$min1024} {
+            @media #{$min1280} {
                 display: block;
             }
         }
         .ico--mode-color-black {
             display: block;
-            @media #{$min1024} {
+            @media #{$min1280} {
                 display: none;
             }
         }
     }
     &.color-mode-black {
         .cmp-hero-navigation__list {
-            @media #{$min1024} {
+            @media #{$min1280} {
                 background: rgba(255,255,255,0.5);
             }
             li {
                 &:after {
-                    @media #{$min1024} {
+                    @media #{$min1280} {
                         opacity: 0.12;
                         background: var(--colorCM-mode1-stroke-stroke-default10);
                     }
@@ -170,12 +170,12 @@
             }
         }
         .cmp-hero-navigation__title {
-            @media #{$min1024} {
+            @media #{$min1280} {
                 color: var(--colorCM-mode1-text-text-default);
             }
         }
         .cmp-hero-navigation__tag {
-            @media #{$min1024} {
+            @media #{$min1280} {
                 color: var(--colorCM-mode1-text-text-default);
             }
         }
