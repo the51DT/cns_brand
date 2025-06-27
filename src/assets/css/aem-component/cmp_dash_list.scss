@@ -10,11 +10,12 @@ $column-gap: calc(70 / 16 * 1rem);
         display: flex;
         row-gap: calc(70 / 16 * 1rem);
         column-gap: calc(40 / 16 * 1rem);
-        row-gap: calc(64 / 16 * 1rem);
+        row-gap: calc(40 / 16 * 1rem);
         flex-wrap: wrap;
         width: 100%;
         @media #{$min1280} {
             column-gap: $column-gap;
+            row-gap: calc(64 / 16 * 1rem);
         }
     }
     .dash-list__item {
@@ -57,9 +58,6 @@ $column-gap: calc(70 / 16 * 1rem);
                 @media #{$min1280} {
                     gap: calc(8 / 16 * 1rem);
                 }
-            }
-            .dash-list__big-text {
-                color: var(--colorGL-all-black100);
             }
         }
     } 

@@ -905,7 +905,7 @@
             flex-direction: column;
             justify-content: space-between;
             gap: calc(12 / 16 * 1rem);
-            height: calc(150 / 16 * 1rem);
+            height: calc(184 / 16 * 1rem);
             overflow: hidden;
             @media #{$min1280} {
                 gap: calc(16 / 16 * 1rem);
@@ -925,7 +925,7 @@
         &__desc {
             @include ellipsis(3);
             margin-top: calc(12 / 16 * 1rem);
-            height: calc(48 / 16 * 1rem);
+            height: calc(78 / 16 * 1rem);
             letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
             font-size: calc(16 / 16 * 1rem);
             line-height: calc(26 / 16 * 1rem);

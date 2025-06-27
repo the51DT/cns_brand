@@ -2,10 +2,13 @@
     .data-list {
         &-item {
             border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
-            border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+            border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
             background-color: var(--colorCM-mode1-background-background-default0);
             overflow: hidden;
             width: 100%;
+            @media #{$min720} {
+                border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
+            }
             &--disabled {
                 cursor: none;
                 pointer-events: none;

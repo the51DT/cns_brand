@@ -96,10 +96,10 @@
             display: flex;                
             align-items: flex-start;
             justify-content: space-between;
-            gap: calc(8 / 16 * 1rem);
+            gap: calc(24 / 16 * 1rem);
             @media #{$min1280} {
                 align-items: center;
-                gap: calc(var(--spacing-mode1-horizontal-m) / 16 * 1rem);    
+                gap: calc(64 / 16 * 1rem);    
             } 
         }
         .tit {
