@@ -22,74 +22,13 @@
         <!-- //비주얼 영역 -->
         <div class="sub-content__wrap">
             <div class="inner-wrap">
+                <p class="block mb-spacing06 font-head-sm color-text-default align-left">궁금한 사항을 남겨주시면 빠른 시일 내에 답변 드리겠습니다.</p>
                 <%
                     const inputData = [
                         {
                             inputData: [
                                 {
                                     id: 1,
-                                    title: "성",
-                                    required: true,
-                                    type: "text",
-                                    placeholder: "성을 입력해주세요.",
-                                },
-                                {
-                                    id: 2,
-                                    title: "이름",
-                                    required: true,
-                                    type: "text",
-                                    placeholder: "이름을 입력해주세요",
-                                },
-                            ],
-                        },
-                        {
-                            inputData: [
-                                {
-                                    id: 3,
-                                    title: "이메일",
-                                    required: true,
-                                    type: "text",
-                                    placeholder: "이메일을 입력해주세요.",
-                                },
-                            ]
-                        },
-                        {
-                            inputData: [
-                                {
-                                    id: 4,
-                                    title: "휴대전화",
-                                    required: true,
-                                    type: "text",
-                                    placeholder: "휴대전화 번호를 입력해주세요.",
-                                },
-                            ]
-                        },
-                        {
-                            inputData: [
-                                {
-                                    id: 5,
-                                    title: "회사(소속)",
-                                    required: true,
-                                    type: "search",
-                                    placeholder: "기업명 또는 사업자등록번호 입력",
-                                },
-                            ],
-                        },
-                        {
-                            inputData: [
-                                {
-                                    id: 6,
-                                    title: "직급",
-                                    required: true,
-                                    type: "text",
-                                    placeholder: "직급을 입력해주세요.",
-                                },
-                            ]
-                        },
-                        {
-                            inputData: [
-                                {
-                                    id: 7,
                                     title: "질문유형",
                                     required: true,
                                     type: "dropdown",
@@ -118,15 +57,108 @@
                         {
                             inputData: [
                                 {
-                                    id: 8,
+                                    id: 2,
+                                    title: "문의제목",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "문의 내용의 제목을 입력해주세요.",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 3,
                                     title: "문의내용",
                                     required: true,
                                     type: "textarea",
-                                    placeholder: "내용을 입력해주세요.",
-                                    countMax: "1,00",
-                                    info: "개인정보가 포함된 내용은 입력을 금합니다."
+                                    placeholder: "문의 세부 내용을 입력해주세요.",
+                                    countMax: "2,000",
                                 },
                             ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 4,
+                                    title: "성",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "성을 입력해주세요.",
+                                },
+                                {
+                                    id: 5,
+                                    title: "이름",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "이름을 입력해주세요",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 6,
+                                    title: "연락처",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "하이픈(-) 없이 입력해주세요.",
+                                },
+                                {
+                                    id: 7,
+                                    title: "이메일",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "이메일을 입력해주세요.",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 8,
+                                    title: "회사(소속)",
+                                    required: true,
+                                    type: "search",
+                                    placeholder: "클릭하여 검색하기",
+                                },
+                                {
+                                    id: 9,
+                                    title: "부서",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "부서를 입력해주세요.",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 10,
+                                    title: "직급",
+                                    required: true,
+                                    type: "dropdown",
+                                    placeholder: "직급을 선택해주세요.",
+                                    option: [
+                                        {
+                                            value: "Selected",
+                                        },
+                                        {
+                                            value: "Hover",
+                                        },
+                                        {
+                                            value: "Disabled",
+                                            disabled: true,
+                                        },
+                                        {
+                                            value: "Default",
+                                        },
+                                        {
+                                            value: "Default",
+                                        },
+                                    ],
+                                },
+                            ]
                         },
                     ]
                 %>
@@ -134,33 +166,35 @@
                     jsonData: inputData,
                 })) %>
                 <%
-                    const formGroupData = {
-                        box: {
-                            name: "전체동의 인풋 네임",
-                            value: "전체동의",
-                            label: "전체 동의합니다. (선택항목 포함)",
+                    const inputData2 = [
+                        {
+                            inputData: [
+                                {
+                                    id: 20,
+                                    required: true,
+                                    type: "checkbox",
+                                    name: "checkbox-guide",
+                                    dataList: [
+                                        {
+                                            value: "checkbox-default",
+                                            checked: true,
+                                            linkText: "개인정보 수집·이용 동의",
+                                        },
+                                    ],
+                                    desc : "문의하기를 위한 개인정보 수집·이용 안내를 확인하였으며, 내용에 동의합니다.",
+                                    dataListStyle: "max",
+                                },
+                            ],
                         },
-                        name: "약관들 인풋 네임",
-                        acco: [
-                            {
-                                value: "필수약관",
-                                label: "개인정보 수집·이용 동의 (필수)",
-                                text: "<strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br><strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br>",
-                            },
-                            {
-                                value: "선택약관",
-                                label: "개인정보 수집·이용 동의 (선택)",
-                                text: "<strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br><strong class='font-caption-xl font-semibold'>LG CNS 개인정보 처리(문의하기 관련)에 관한 동의 개인정보의 처리 및 이용 안내</strong><br><p class='font-caption-xl color-gl-gray700'>㈜엘지씨엔에스(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 회사의 개인정보 수집, 이용에 동의합니다.</p><br>",
-                            },
-                        ],
-                    }
+                    ]
                 %>
-                <%- include('src/component/cmp_form-group.html', Object.assign({}, locals, { 
-                    jsonData: formGroupData,
+                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                    jsonData: inputData2,
                 })) %>
+                
                 <div class="button__wrap">
                     <button type="button" class="btn btn-primary btn-medium">
-                        <span class="btn__text">문의하기</span>
+                        <span class="btn__text">제출</span>
                     </button>
                 </div>
             </div>

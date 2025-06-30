@@ -66,6 +66,12 @@
                 color: var(--colorCM-mode1-success-success-enabled);
             }
         }
+        &:has(.cmp-input__desc) {
+            gap: calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
+            @media #{$min1280} {
+                gap: calc(var(--spacing-mode1-vertical-l) / 16 * 1rem);
+            }
+        }
         // search 영역 - 열림 상태
         &:has(.cmp-input__drop-content.is-active) {
             .cmp-input__item--search {
@@ -276,7 +282,7 @@
             }
         }
         &--checkbox {
-            margin-top: calc(4 / 16 * 1rem);
+            margin-top: calc(4.5 / 16 * 1rem);
             flex-shrink: 0;
             appearance: unset;
             width: calc(26 / 16 * 1rem);
@@ -565,7 +571,6 @@
         letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
         font-weight: 400;
     }
-    
     &__link {
         display: inline-flex;
         margin-left: calc(12 / 16 * 1rem);
@@ -577,6 +582,37 @@
                     line-height: calc(26 / 16 * 1rem);
                     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
                     font-weight: 400;
+                }
+            }
+        }
+        &--hidden-label {
+            margin-left: 0;
+            gap: 0;
+            .btn {
+                &.btn-text {
+                    .btn__text {
+                        color: var(--colorCM-mode1-text-text-default);
+                        font-size: calc(16 / 16 * 1rem);
+                        line-height: calc(26 / 16 * 1rem);
+                        letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+                        font-weight: 400;
+                        border-color: var(--colorCM-mode1-stroke-stroke-default9);
+                        @media #{$min1280} {
+                            font-size: calc(20 / 16 * 1rem);
+                            line-height: calc(34 / 16 * 1rem);
+                        }
+                    }
+                }
+            }
+            &__required-text {
+                color: var(--colorCM-mode1-text-text-default);
+                font-size: calc(16 / 16 * 1rem);
+                line-height: calc(26 / 16 * 1rem);
+                letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+                font-weight: 400;
+                @media #{$min1280} {
+                    font-size: calc(20 / 16 * 1rem);
+                    line-height: calc(34 / 16 * 1rem);
                 }
             }
         }
@@ -734,5 +770,12 @@
         font-size: calc(14 / 16 * 1rem);
         line-height: calc(20 / 16 * 1rem);
         font-weight: 500;
+    }
+    &__desc {
+        padding-left: calc(38 / 16 * 1rem);
+        color: var(--colorCM-mode1-text-text-secondary);
+        font-size: calc(18 / 16 * 1rem);
+        line-height: calc(26 / 16 * 1rem);
+        font-weight: 400;
     }
 }

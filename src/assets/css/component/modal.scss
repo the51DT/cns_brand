@@ -70,6 +70,12 @@
     @media #{$min1280} {
         padding-top: calc(56 / 16 * 1rem);
     }
+    .text-center-left {
+        text-align: left;
+        @media #{$min1280} {
+            text-align: center;
+        }
+    }
 }
 .modal .modal__header + .modal__content {
     padding-top: calc(16 / 16 * 1rem);

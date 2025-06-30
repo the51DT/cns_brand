@@ -83,14 +83,28 @@
                                                 <div class="cmp-input__label-box__container">
                                                     <label class="<%- check.label ? '' : 'ir-text' %> cmp-input__label-text" for="<%- check.value %>"><%- check.label ? check.label : check.id %></label>
                                                     <div class="button__wrap cmp-input__link">
-                                                        <a href="https://www.naver.com" target="" class="btn btn-medium btn-text">
+                                                        <a href="#" target="" class="btn btn-medium btn-text">
                                                             <span class="btn__text">
                                                                 <%- check.innerLink %>
                                                             </span>
                                                         </a>
                                                     </div>
                                                 </div>
-                                            <% } else { %>    
+                                            <% } else if(check.linkText) { %>
+                                                <div class="cmp-input__label-box__container">
+                                                    <label class="ir-text cmp-input__label-text" for="<%- check.value %>"><%- check.linkText ? check.linkText : check.id %></label>
+                                                    <div class="button__wrap cmp-input__link cmp-input__link--hidden-label">
+                                                        <a href="#" target="" class="btn btn-medium btn-text">
+                                                            <span class="btn__text">
+                                                                <%- check.linkText ? check.linkText : check.id %>
+                                                            </span>
+                                                        </a>
+                                                        <% if(inputData.required) { %>
+                                                            <span class="cmp-input__link--hidden-label__required-text"> (필수)</span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                            <% } else { %>
                                                 <label class="<%- check.label ? '' : 'ir-text' %> cmp-input__label-text" for="<%- check.value %>"><%- check.label ? check.label : check.id %></label>
                                             <% } %>
                                         </div>
@@ -231,6 +245,9 @@
                             <% } %>
                             <% if(inputData.info) { %>
                                 <p class="cmp-input__info"><%- inputData.info %></p>
+                            <% } %>
+                            <% if(inputData.desc) { %>
+                                <p class="cmp-input__desc"><%- inputData.desc %></p>
                             <% } %>
                         </div>
                     <% } %>

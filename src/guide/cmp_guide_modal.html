@@ -102,6 +102,20 @@
                                         <span class="btn__text" style="word-break: break-all;white-space: normal;">default modal alert : 오늘 하루 보지 않기</span>
                                     </button>
                                 </div>
+                                <div class="button_wrap mt-5">
+                                    <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default10" onclick="openModal(event)">
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">
+                                            기업명을 두 글자 이상 입력해 주세요.
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="button_wrap mt-5">
+                                    <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default11" onclick="openModal(event)">
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">
+                                            제출이 완료되었습니다.
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                             <p class="guide-title-h3 mt-10">Popup Component : .modal--type-alert.modal--type-alert__size-medium (pc-size: medium, mo-size: medium) / header 없는 케이스</p>
                             <div class="cmp-exsample__wrap mt-10">
@@ -573,6 +587,7 @@
             <div class="modal__dim"></div>
         </div>
     </div>
+    <!-- [End] modal - alert / 오늘 하루 보지 않기 -->
     <!-- [Start] modal - medium / 구독 신청 : pc-size: medium, mo-size: medium -->
     <div class="cmp-modal cmp-modal--common-subscribe" id="modal-default09">
         <div class="modal modal--type-alert modal--type-alert__size-medium">
@@ -647,8 +662,56 @@
         </div>
     </div>
     <!-- [End] modal - medium -->
-
-    <!-- [End] modal - alert / 오늘 하루 보지 않기 -->
+    <!-- [Start] modal - alert : pc-size: samll, mo-size: small / 기업명 입력 -->
+    <div class="cmp-modal" id="modal-default10">
+        <div class="modal modal--type-alert">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <div class="modal__content">
+                        <!-- [Start] 모달 컨텐츠 영역 -->
+                        <p class="font-body-md text-center-left">
+                            기업명을 두 글자 이상 입력해 주세요.
+                        </p>
+                        <!-- [End] 모달 컨텐츠 영역 -->
+                    </div>
+                    <div class="modal__footer">
+                        <div class="button__wrap">
+                            <button class="btn btn-large btn-primary" onclick="closeModal(event)">
+                                <span class="btn__text">확인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal - alert -->
+    <!-- [Start] modal - alert : pc-size: samll, mo-size: small / 제출이 완료되었습니다. -->
+    <div class="cmp-modal" id="modal-default11">
+        <div class="modal modal--type-alert">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <div class="modal__content">
+                        <!-- [Start] 모달 컨텐츠 영역 -->
+                        <p class="font-body-md text-center-left">
+                            제출이 완료되었습니다.
+                        </p>
+                        <!-- [End] 모달 컨텐츠 영역 -->
+                    </div>
+                    <div class="modal__footer">
+                        <div class="button__wrap">
+                            <button class="btn btn-large btn-primary" onclick="closeModal(event)">
+                                <span class="btn__text">확인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal - alert -->
     <script type="module" src="/src/main.js"></script>
     <script src="/assets/js/ui_common.js"></script>
 </body>

@@ -179,6 +179,9 @@
 .pt-spacing11 {
     @include custom-padding-vertical('top', var(--spacing-pc-spacing11), var(--spacing-mo-spacing11));
 }
+.pt-spacing10 {
+    @include custom-padding-vertical('top', var(--spacing-pc-spacing10), var(--spacing-mo-spacing10));
+}
 // padding-bottom
 .pb-spacing11 {
     @include custom-padding-vertical('bottom', var(--spacing-pc-spacing11), var(--spacing-mo-spacing11));
