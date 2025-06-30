@@ -33,6 +33,9 @@ body {
     &.modal-open {
         overflow: hidden;
         height: 100%;
+        @media #{$min1280} {
+            overflow: initial;
+        }
     }
     &.dark-mode {
         // header.dark-mode 스타일 변수로 변경
@@ -105,6 +108,11 @@ body {
         }
     }
     &.gnb-mode--mo {
+        &.overflow,
+        &.modal-open {
+            overflow: hidden;
+            height: 100%;
+        }
         .gnb-util {
             .btn-type {
                 display: none;
