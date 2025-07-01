@@ -133,6 +133,13 @@ $asset-paths: (
     pointer-events: none;
 }
 
+/* .btn-secondary */
+.btn.btn-tertiary {
+    // background-color: var(--colorCM-mode1-fill-fill-default0);
+    color: var(--colorCM-mode1-text-text-on-bg);
+    border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default0);
+}
+
 /* button size */
 /* btn-ultra-small */
 .btn.btn-ultra-small {

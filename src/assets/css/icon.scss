@@ -173,6 +173,9 @@ $fileType: "svg";
     &.icon-navigation-right-wh16 {
         @include iconFile(24,24,'icon_navigation_right_wh16');
     }
+    &.icon-navigation-right-wh24 {
+        @include iconFile(24,24,'icon-navigation-right-wh24');
+    }
     &.icon-navigation-right-red16 {
         @include iconFile(24,24,'icon_navigation_right_red16');
     }

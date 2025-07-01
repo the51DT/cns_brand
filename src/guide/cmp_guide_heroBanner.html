@@ -81,6 +81,19 @@
                         
                         <!-- //HeroBanner -->
                     </div>
+                    <p class="guide-title-h3 mt-10">HeroBanner > 문의하기</p>
+                    <div class="cmp-exsample__wrap mt-3 border-2 border-dashed">
+                        <!-- HeroBanner -->
+                        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+                            pcImg: 'https://placehold.co/1920x480',
+                            moImg: 'https://placehold.co/360x284',
+                            subText: '문의하기', 
+                            pageTitle: '상담 및 문의하기',
+                            bannerSize: 'wide',
+                            linkButton : 'FAQ 바로가기'
+                        })) %> 
+                        <!-- //HeroBanner -->
+                    </div>
                 </div>
             </div>
         </div>

@@ -128,4 +128,19 @@
         //     }
         // }
     }
+    &.type-has-button {
+        .visual-text {
+            top: calc(50%);
+            transform: translateY(-50%);
+            .button__wrap {
+                margin-top: calc(12 / 16 * 1rem);
+                @media #{$min1280} {
+                    margin-top: calc(20 / 16 * 1rem);
+                }
+                .btn {
+                    width: fit-content;
+                }
+            }
+        }
+    }
 }

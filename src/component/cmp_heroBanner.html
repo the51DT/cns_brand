@@ -10,7 +10,8 @@ const isEmptyStyle = isEmptyVisual || (typeof lifted !== 'undefined' && lifted);
 <div class="sub-visual__wrap 
   <%= isEmptyVisual ? 'type-empty' : '' %> 
   <%= (typeof bannerSize !== 'undefined' && bannerSize === 'wide') ? 'type-wide' : '' %>
-  <%= (typeof lifted !== 'undefined' && lifted) ? 'type-lifted' : '' %>"
+  <%= (typeof lifted !== 'undefined' && lifted) ? 'type-lifted' : '' %>
+  <%= (typeof linkButton !=='undefined' && linkButton) ? 'type-has-button' : '' %>"
   style="--hero-sub-pc-img: url('<%= typeof pcImg !== 'undefined' && pcImg !== 'empty' ? pcImg : '' %>'); 
          --hero-sub-mo-img: url('<%= typeof moImg !== 'undefined' && moImg !== 'empty' ? moImg : '' %>');">
   
@@ -53,6 +54,17 @@ const isEmptyStyle = isEmptyVisual || (typeof lifted !== 'undefined' && lifted);
           <h2 class="font-head-xl">
             <%= typeof pageTitle !== 'undefined' ? pageTitle : '기본 타이틀 문구' %>
           </h2>
+        <% } %>
+
+        <% if(typeof linkButton !== 'undefined' && linkButton) { %>
+          <div class="button__wrap align-left">
+            <a href="#" class="btn btn-tertiary btn-medium">
+              <span class="btn__text">
+                <%= linkButton %>
+              </span>
+              <i class="ico btn__icon icon-navigation-right-wh24"></i>
+            </a>
+          </div>
         <% } %>
       </div>
     <% } %>
