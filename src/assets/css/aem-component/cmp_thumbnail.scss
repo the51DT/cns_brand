@@ -48,51 +48,51 @@
             }
         }
         // MOA > 고객스토리, 테크
-        &.type-moa-case1 {}
+        // &.type-moa-case1 {}
         // MOA > 뉴스레터
-        &.type-moa-case2 {
-            &.thumbnail-type {
-                .content-list__inner {
-                    .content-info {
-                        .chip__wrap {
-                            min-height: calc(28 / 16 * 1rem);
-                        }
-                    }
-                }
-            }
-        }
+        // &.type-moa-case2 {
+        //     &.thumbnail-type {
+        //         .content-list__inner {
+        //             .content-info {
+        //                 .chip__wrap {
+        //                     min-height: calc(28 / 16 * 1rem);
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
         // MOA > 행사/이벤트
-        &.type-moa-case3 {
-            &.thumbnail-type {
-                .content-list__inner {
-                    .content-info {
-                        .chip__wrap {
-                            min-height: calc(28 / 16 * 1rem);
-                        }
-                    }
-                }
-            }
-        }
+        // &.type-moa-case3 {
+        //     &.thumbnail-type {
+        //         .content-list__inner {
+        //             .content-info {
+        //                 .chip__wrap {
+        //                     min-height: calc(28 / 16 * 1rem);
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
         // MOa > 자료실
-        &.type-moa-case4 {
-            .content-info {
-                border-top: calc(1 / 16 * 1rem) solid var(--colorGL-all-gray250);
-            }
-        }
-        &.type-news {
-            &.thumbnail-type {
-                .content-list__inner {
-                    .content-info {
-                        @media #{$tabletMini} {
-                            padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);
-                        }
-                        .chip__wrap {
-                            min-height: calc(28 / 16 * 1rem);
-                        }
-                    }
-                }
-            }
-        }
+        // &.type-moa-case4 {
+        //     .content-info {
+        //         border-top: calc(1 / 16 * 1rem) solid var(--colorGL-all-gray250);
+        //     }
+        // }
+        // &.type-news {
+        //     &.thumbnail-type {
+        //         .content-list__inner {
+        //             .content-info {
+        //                 @media #{$tabletMini} {
+        //                     padding: calc(20 / 16 * 1rem) calc(24 / 16 * 1rem);
+        //                 }
+        //                 .chip__wrap {
+        //                     min-height: calc(28 / 16 * 1rem);
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
     &.card {
         .content-list__util {

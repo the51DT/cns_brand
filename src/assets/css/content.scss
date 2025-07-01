@@ -142,12 +142,12 @@
                 }
             }
         }        
-        &.type-box-line {
-            .content-info {
-                border: 1px solid var(--colorGL-all-gray250);
-                border-top: 0;
-            }
-        }
+        // &.type-box-line {
+        //     .content-info {
+        //         border: 1px solid var(--colorGL-all-gray250);
+        //         border-top: 0;
+        //     }
+        // }
         .content-list__inner {
             display: flex;
             flex-direction: column;
