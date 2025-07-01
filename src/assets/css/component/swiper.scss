@@ -96,7 +96,9 @@
 .cmp-swiper__wrap.type-text-pagination .thumbnail-wrap {
     width: 100%;
     min-height: auto;
+    border: calc(1 / 16 * 1rem) solid var(--colorGL-all-grey100);
     border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+    box-sizing: border-box;
     overflow: hidden;
 }
 .cmp-swiper__wrap.type-text-pagination .thumbnail-wrap img {
@@ -276,37 +278,28 @@
         // }
         &-card {
             width: 73.6111111111%;
+            border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+            border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
+            overflow: hidden;
+            box-sizing: border-box;
             @media #{$min1280} {
                 width: calc(33.33% - calc(13.33 / 16 * 1rem));
+                border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
             }
             &:last-child {
                 margin-right: 0 !important;
             }
             &__thumbnamil {
-                border-top-left-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
-                border-top-right-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
-                overflow: hidden;
-                @media #{$min1280} {
-                    border-top-left-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
-                    border-top-right-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
-                }
+                border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
                 img {
                     width: 100%;
                 }
             }
             &__content-info {
                 background: var(--colorCM-mode1-background-background-default0);
-                border-right: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
-                border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
-                border-left: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
-                border-bottom-left-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
-                border-bottom-right-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
-                overflow: hidden;
                 box-sizing: border-box;
                 min-height: calc(210 / 16 * 1rem);
                 @media #{$min1280} {
-                    border-bottom-left-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
-                    border-bottom-right-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
                     min-height: calc(278 / 16 * 1rem);
                 }
             }

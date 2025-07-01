@@ -221,8 +221,9 @@
     }
     .swiper-card {
         border-radius: calc(var(--radius-mode1-l) / 16 * 1rem);
-        overflow: hidden;
         box-sizing: border-box;
+        border: calc(1 / 16 * 1rem) solid var(--colorGL-all-grey50);
+        overflow: hidden;
         max-width: calc(100% - calc(40 / 16 * 1rem));
         @media #{$min1280} {
             width: calc(50% - calc(6 / 16 * 1rem));
@@ -230,6 +231,7 @@
         }
         &__thumbnamil {
             position: relative;
+            border-bottom: calc(1 / 16 * 1rem) solid var(--colorGL-all-grey50);
             img {
                 width: 100%;
                 aspect-ratio: 320 / 180;

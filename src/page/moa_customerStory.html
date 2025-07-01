@@ -188,7 +188,6 @@
         let moaSwiper; // Swiper 인스턴스를 전역 변수로 선언
         const initializeMoaSwipe = () => {
             const cmpSwipe = document.querySelector('.cmp-swiper__moa__top-swiper .swiper');
-
             if (window.innerWidth <= 1280) {
                 // 1280 이하에서 Swiper 초기화
                 moaSwiper = new Swiper(cmpSwipe, {
@@ -196,6 +195,14 @@
                     spaceBetween: 8,
                     slidesOffsetBefore: 20,
                     slidesOffsetAfter: 20,
+                    breakpoints: {
+                        1280: {
+                            enabled: false,
+                            spaceBetween: 0,
+                            slidesOffsetBefore: 0,
+                            slidesOffsetAfter: 0,
+                        }
+                    }
                 });
             } else if (moaSwiper) {
                 // 1280 초과일 때 Swiper 비활성화

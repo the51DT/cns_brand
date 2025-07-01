@@ -130,7 +130,7 @@
             justify-content: space-between;
             position: relative;
             height: 100%;
-            border: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+            border: calc(1 / 16 * 1rem) solid var(--colorGL-all-grey100);
             border-radius: calc(var(--radius-mode1-m) / 16 * 1rem);
             overflow: hidden;
             color: var(--colorCM-mode1-text-text-default);
@@ -142,6 +142,7 @@
         }
         .thumbnail-wrap {
             width: 100%;
+            border-bottom: calc(1 / 16 * 1rem) solid var(--colorGL-all-grey100);
             @media #{$min1280} {
                 flex-shrink: 0;
                 width: 100%;
@@ -273,6 +274,7 @@
         .thumbnail-wrap {
             width: 100%;
             border-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
+            border: calc(1 / 16 * 1rem) solid var(--colorGL-all-grey100);
             overflow: hidden;
             @media #{$min1280} {
                 flex-shrink: 0;

@@ -16,6 +16,7 @@
         }
         &-img {
             height: calc(150 / 16 * 1rem);
+            border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
             @media #{$min720} {
                 height: calc(262 / 16 * 1rem);
             }
