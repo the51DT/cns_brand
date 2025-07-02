@@ -569,6 +569,12 @@ body {
                 }
             }
         }
+        &__the-future {
+            // pc gnb hover시 흔들림으로 인한 스타일 적용
+            @media #{$min1280} {
+                min-width: calc(118 / 16 * 1rem);
+            }
+        }
     }
     .gnb-util {
         display: flex;

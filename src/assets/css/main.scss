@@ -31,7 +31,7 @@
     }
     // main GNB
     .header {
-        border-bottom: 0;
+        border-bottom: calc(1 / 16 * 1rem) solid transparent;
         &.is-fixed, 
         &.is-active {
             border-bottom: calc(1 / 16 * 1rem) solid var(--header-active-border-color);
