@@ -432,6 +432,30 @@
           "screenId": "",
           "path": "/src/page/",
           "fileName": "sub_contact_us.html"
+        },
+        {
+          "name": "구독 해지 페이지",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "sub_cancel_subscription.html"
+        },
+        {
+          "name": "설문폼 - sub01",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "survey_sub01.html"
+        },
+        {
+          "name": "설문폼 - sub02",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "survey_sub02.html"
+        },
+        {
+          "name": "설문폼 - sub03",
+          "screenId": "",
+          "path": "/src/page/",
+          "fileName": "survey_sub03.html"
         }
       ]
     },

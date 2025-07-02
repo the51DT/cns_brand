@@ -507,13 +507,76 @@
                                 {
                                     inputData: [
                                         {
+                                            title: "데모 진행 시 선호하시는 방식을 선택해 주세요",
+                                            required: true,
+                                            type: "radio",
+                                            name: "radio-guide",
+                                            dataList: [
+                                                {
+                                                    value: "radio-default01",
+                                                    label: "SAP S/4HANA로 컨버전 계획이 있습니다."
+                                                },
+                                                {
+                                                    value: "radio-default02",
+                                                    label: "SAP S/4HANA로 컨버전 중이며, 통합 테스트 단계를 앞두고 있습니다.",
+                                                },
+                                                {
+                                                    value: "radio-default03",
+                                                    label: "SAP S/4HANA 컨버전 완료했으나, ERP 테스트 자동화에 관심이 있습니다.",
+                                                },
+                                                {
+                                                    value: "radio-default04",
+                                                    label: "기타(숨김 처리)",
+                                                    checked: true,
+                                                    visibleTarget: "radio-etc",
+                                                },
+                                            ],
+                                            dataListStyle: "max",
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 15,
+                                            title: "선호하시는 데모 진행 방식을 기입해 주세요.",
+                                            type: "textarea",
+                                            placeholder: "내용을 입력해주세요.",
+                                            countMax: "100",
+                                            visibleValue: "radio-etc",
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 1,
+                                            title: "마케팅 정보 활용 동의",
+                                            type: "radio",
+                                            name: "radio-guide01",
+                                            containerFlexRow: true,
+                                            dataList: [
+                                                {
+                                                    value: "radio-default01",
+                                                    label: "동의"
+                                                },
+                                                {
+                                                    value: "radio-default02",
+                                                    label: "미동의",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
                                             id: 19,
                                             title: "toggle switch button - default",
                                             required: true,
                                             type: "toggleSwitch",
                                             name: "toggleSwitch-guide",
                                             value: "toggleSwitch-default",
-                                            label: "toggleSwitch-default", 
                                         },
                                     ],
                                 },
@@ -526,7 +589,6 @@
                                             type: "toggleSwitch",
                                             name: "toggleSwitch-guide",
                                             value: "toggleSwitch-checked",
-                                            label: "toggleSwitch-checked", 
                                             checked: true,
                                         },
                                     ],
@@ -540,7 +602,6 @@
                                             type: "toggleSwitch",
                                             name: "toggleSwitch-guide",
                                             value: "toggleSwitch-disabled",
-                                            label: "toggleSwitch-disabled", 
                                             disabled: true,
                                         },
                                     ],
@@ -554,9 +615,20 @@
                                             type: "toggleSwitch",
                                             name: "toggleSwitch-guide",
                                             value: "toggleSwitch-checked-disabled",
-                                            label: "toggleSwitch-checked-disabled", 
                                             checked: true,
                                             disabled: true,
+                                        },
+                                    ],
+                                },
+                                {
+                                    inputData: [
+                                        {
+                                            id: 30,
+                                            required: true,
+                                            type: "toggleSwitch",
+                                            name: "toggleSwitch-guide-form",
+                                            value: "toggleSwitch-form",
+                                            label: "LG CNS 행사 소식 및 뉴스레터", 
                                         },
                                     ],
                                 },
@@ -610,10 +682,73 @@
                             jsonData: inputData,
                         })) %>
                     </div>
-                    <p class="guide-title-h3 mt-20">cmp-form-group</p>
+                    <p class="guide-title-h3 mt-20">cmp-form-group (기본 타입)</p>
                     <div class="cmp-exsample__wrap mt-3">
                         <%
                             const formGroupData = {
+                                box: {
+                                    id: 34,
+                                    name: "전체동의 인풋 네임",
+                                    value: "전체동의",
+                                    label: "전체 동의합니다. (선택항목 포함)",
+                                    checked: true,
+                                },
+                                name: "약관들 인풋 네임",
+                                subCheck: [
+                                    {
+                                        id: 35,
+                                        required: true,
+                                        name: "checkbox-guide35",
+                                        dataList: [
+                                            {
+                                                value: "checkbox-default35",
+                                                checked: true,
+                                                linkText: "개인정보 수집·이용 동의",
+                                            },
+                                        ],
+                                        desc : "문의하기를 위한 개인정보 수집·이용 안내를 확인하였으며, 내용에 동의합니다.",
+                                        dataListStyle: "max",
+                                    },
+                                    {
+                                        id: 36,
+                                        required: true,
+                                        name: "checkbox-guide36",
+                                        dataList: [
+                                            {
+                                                value: "checkbox-default36",
+                                                checked: true,
+                                                linkText: "마케팅 정보 활용 동의",
+                                            },
+                                        ],
+                                        desc : "마케팅 정보 제공 관련 개인정보 수집·이용 안내를 확인하였으며, 내용에 동의합니다.",
+                                        dataListStyle: "max",
+                                    },
+                                    {
+                                        id: 37,
+                                        required: true,
+                                        name: "checkbox-guide37",
+                                        dataList: [
+                                            {
+                                                value: "checkbox-default37",
+                                                checked: true,
+                                                linkText: "마케팅 정보 수신 동의",
+                                            },
+                                        ],
+                                        desc : "마케팅 정보를 본인이 수집 동의한 이메일로 수신하는데 동의합니다.",
+                                        dataListStyle: "max",
+                                    },
+                                ],
+                            }
+                        %>
+                        <%- include('src/component/cmp_form-group.html', Object.assign({}, locals, { 
+                            jsonData: formGroupData,
+                            marginVertical: 'mb-0',
+                        })) %>
+                    </div>
+                    <p class="guide-title-h3 mt-20">cmp-form-group (아코디언 타입)</p>
+                    <div class="cmp-exsample__wrap mt-3">
+                        <%
+                            const formGroupData2 = {
                                 box: {
                                     name: "전체동의 인풋 네임",
                                     value: "전체동의",
@@ -638,7 +773,7 @@
                             }
                         %>
                         <%- include('src/component/cmp_form-group.html', Object.assign({}, locals, { 
-                            jsonData: formGroupData,
+                            jsonData: formGroupData2,
                         })) %>
                     </div>
                 </div>

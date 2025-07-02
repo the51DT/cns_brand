@@ -8,6 +8,9 @@
             flex-direction: row;
             gap: calc(20 / 16 * 1rem);
         }
+        &[data-visible-value] {
+            display: none;
+        }
         & + .cmp-input__wrap {
             margin-top:calc(32 / 16 * 1rem);
             @media #{$min1280} {
@@ -28,6 +31,35 @@
             gap: calc(21 / 16 * 1rem);
             @media #{$min1280} {
                 gap: calc(23 / 16 * 1rem);
+            }
+        }
+        &--row {
+            @media #{$min1280} {
+                flex-direction: row;
+                gap: calc(8 / 16 * 1rem);
+                justify-content: space-between;
+            }
+            &:has(input[type='checkbox']),
+            &:has(input[type='radio']) {
+                @media #{$min1280} {
+                    gap: calc(8 / 16 * 1rem);
+                }
+            }
+            .cmp-input__title {
+                width: calc(50% - calc(4 / 16 * 1rem));
+            }
+            .cmp-input__content {
+                @media #{$min1280} {
+                    width: calc(50% - calc(4 / 16 * 1rem));
+                }
+            }
+            .cmp-input__box {
+                flex-direction: row;
+                column-gap : calc(48 / 16 * 1rem);
+                @media #{$min1280} {
+                    justify-content: flex-end;
+                    column-gap : calc(56 / 16 * 1rem);
+                }
             }
         }
     }
@@ -164,6 +196,10 @@
         gap: calc(var(--spacing-mode1-vertical-m) / 16 * 1rem);
         &:has(.cmp-input__item--checkbox--small) {
             gap: calc(6 / 16 * 1rem);
+        }
+        &:has(.cmp-input__item--toggle-switch) {
+            width: 100%;
+            gap: 0;
         }
         label {
             color: var(--colorCM-mode1-text-text-default);
@@ -508,54 +544,89 @@
                 background: var(--colorCM-mode1-background-background-default0);
                 transition: left 0.3s;
             }
-            & + .cmp-input__label-text {
-                width: 100%;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center; 
-                column-gap: calc(12 / 16 * 1rem);
-                row-gap: calc(12 / 16 * 1rem);
-                .cmp-input__label-text__state {
-                    &__on {
-                        display: none;
+            & + .cmp-input__label-box__container {
+                .cmp-input__label-text {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center; 
+                    column-gap: calc(12 / 16 * 1rem);
+                    row-gap: calc(12 / 16 * 1rem);
+                    .cmp-input__label-text__state {
+                        width: calc(52 / 16 * 1rem);
+                        &__on {
+                            display: none;
+                        }
+                        &__off {
+                            display: block;
+                        }
                     }
-                    &__off {
-                        display: block;
+                }
+                &--row {
+                    display: flex;
+                    flex-direction: column;
+                    gap: calc(21 / 16 * 1rem);
+                    width: 100%;
+                    @media #{$min1280} {
+                        justify-content: space-between;
+                        gap: calc(8 / 16 * 1rem);
+                        flex-direction: row;
+                        align-items: flex-start;
+                    }
+                    .cmp-input__label-title {
+                        @media #{$min1280} {
+                            width: calc(50% - calc(4 / 16 * 1rem));
+                        }
+                    }
+                    .cmp-input__label-text {
+                        @media #{$min1280} {
+                            width: calc(50% - calc(4 / 16 * 1rem));
+                            justify-content: flex-end;
+                        }
                     }
                 }
             }
             // 체크된 상태에서의 스타일
             &:checked {
-                & + .cmp-input__label-text {
-                    .cmp-input__item--toggle-switch__track {
-                        background: var(--colorCM-mode1-primary-primary-enabled);
-                    }
-                    .cmp-input__item--toggle-switch__handle {
-                        left: calc(100% - (18 / 16 * 1rem) - calc(3 / 16 * 1rem));
-                    }
-                    .cmp-input__label-text__state {
-                        &__on {
-                            display: block;
+                & + .cmp-input__label-box__container {
+                    .cmp-input__label-text {
+                        .cmp-input__item--toggle-switch__track {
+                            background: var(--colorCM-mode1-primary-primary-enabled);
                         }
-                        &__off {
-                            display: none;
+                        .cmp-input__item--toggle-switch__handle {
+                            left: calc(100% - (18 / 16 * 1rem) - calc(3 / 16 * 1rem));
+                        }
+                        .cmp-input__label-text__state {
+                            &__on {
+                                display: block;
+                            }
+                            &__off {
+                                display: none;
+                            }
                         }
                     }
                 }
             }
             &:disabled {
-                & + .cmp-input__label-text {
-                    .cmp-input__item--toggle-switch__track {
-                        background: rgba(175, 175, 175, 0.5);
+                & + .cmp-input__label-box__container {
+                    .cmp-input__label-text {
+                        .cmp-input__item--toggle-switch__track {
+                            background: rgba(175, 175, 175, 0.5);
+                        }
+                        .cmp-input__item--toggle-switch__handle {
+                            background: var(--colorCM-mode1-fill-fill-disabled);
+                        }
                     }
-                    .cmp-input__item--toggle-switch__handle {
-                        background: var(--colorCM-mode1-fill-fill-disabled);
+                    .cmp-input__label-text__state {
+                        color: var(--colorCM-mode1-text-text-disabled);
                     }
                 }
                 &:checked {
-                    & + .cmp-input__label-text {
-                        .cmp-input__item--toggle-switch__track {
-                            background: rgba(255, 107, 152, 0.5);
+                    & + .cmp-input__label-box__container {
+                        .cmp-input__label-text {
+                            .cmp-input__item--toggle-switch__track {
+                                background: rgba(255, 107, 152, 0.5);
+                            }
                         }
                     }
                 }
@@ -605,6 +676,7 @@
                 }
             }
             &__required-text {
+                padding-left: calc(2 / 16 * 1rem);
                 color: var(--colorCM-mode1-text-text-default);
                 font-size: calc(16 / 16 * 1rem);
                 line-height: calc(26 / 16 * 1rem);

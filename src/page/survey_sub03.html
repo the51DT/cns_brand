@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title><%= data.title %></title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap survey-form">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+            pcImg: 'https://placehold.co/1920x480',
+            moImg: 'https://placehold.co/360x284',
+            subText: '썸네일', 
+            pageTitle: '이미지 영역',
+            bannerSize: 'wide',
+        })) %>  
+        <!-- //비주얼 영역 -->
+        <div class="sub-content__wrap">
+            <div class="inner-wrap">
+                <span class="block mb-spacing01 font-head-sm color-text-default align-left">
+                    이벤트에 당첨되신 것을 축하 드립니다. <br>
+                    배송 관련 정보를 입력해주신 분께 정성스럽게 준비한 선물을 보내드리겠습니다.
+                </span>
+                <p class="color-text-secondary survey-form__desc mb-spacing06">
+                    * 안심하세요. 입력하신 정보는 선물 배송용으로만 활용하며, 개인적/상업적 용도로는 활용되지 않습니다. <br>
+                    * 메일을 수신하신 분들께 드리는 선물입니다. 수신하신 이메일 주소는 edit me 입니다. 이메일 정보는 수정하실 수 없습니다.
+                </p>
+                <%
+                    const inputData = [
+                        {
+                            inputData: [
+                                {
+                                    id: 1,
+                                    title: "성",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "성을 입력해주세요.",
+                                },
+                                {
+                                    id: 2,
+                                    title: "이름",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "이름을 입력해주세요",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 3,
+                                    title: "연락처",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "하이픈(-) 없이 입력해주세요.",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 5,
+                                    title: "주소",
+                                    required: true,
+                                    type: "search",
+                                    placeholder: "클릭하여 검색하기",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 3,
+                                    title: "상세주소",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "상세 주소를 입력해주세요. (건물명, 동/호수 등)",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 11,
+                                    title: "비고",
+                                    type: "textarea",
+                                    placeholder: "배송 메모 및 요청사항을 남겨주세요.",
+                                    countMax: "2,000",
+                                },
+                            ],
+                        },
+                    ]
+                %>
+                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                    jsonData: inputData,
+                })) %>
+                <%
+                    const inputData2 = [
+                        {
+                            inputData: [
+                                {
+                                    id: 20,
+                                    required: true,
+                                    type: "checkbox",
+                                    name: "checkbox-guide",
+                                    dataList: [
+                                        {
+                                            value: "checkbox-default",
+                                            checked: true,
+                                            linkText: "개인정보 수집·이용 동의",
+                                        },
+                                    ],
+                                    desc : "문의하기를 위한 개인정보 수집·이용 안내를 확인하였으며, 내용에 동의합니다.",
+                                    dataListStyle: "max",
+                                },
+                            ],
+                        },
+                    ]
+                %>
+                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                    jsonData: inputData2,
+                })) %>
+                
+                <div class="button__wrap">
+                    <button type="button" class="btn btn-primary btn-medium">
+                        <span class="btn__text">제출</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+</body>
+</html>

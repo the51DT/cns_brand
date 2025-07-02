@@ -32,7 +32,7 @@
         </div>
         <%- include('src/_inc/footer.html') %>
     </div>
-    <!-- [Start] modal : pc-size: large, mo-size: large -->
+    <!-- [Start] modal : pc-size: large, mo-size: large  / 다운로드 modal -->
     <div class="cmp-modal cmp-modal--moa" id="modal-moa01">
         <div class="modal modal--type-large">
             <div class="modal__wrapper">
@@ -147,7 +147,7 @@
                                                 title: "회사(소속)",
                                                 required: true,
                                                 type: "search",
-                                                placeholder: "기업명 또는 사업자등록번호 입력",
+                                                placeholder: "클릭하여 검색하기",
                                             },
                                         ],
                                     },
@@ -172,18 +172,6 @@
                                                 type: "search",
                                                 placeholder: "기업명 또는 사업자등록번호 입력",
                                                 step: "result"
-                                            },
-                                        ],
-                                    },
-                                    {
-                                        inputData: [
-                                            {
-                                                id: 9,
-                                                title: "회사(소속)",
-                                                required: true,
-                                                type: "search",
-                                                placeholder: "기업명 또는 사업자등록번호 입력",
-                                                step: "result-empty"
                                             },
                                         ],
                                     },
@@ -290,9 +278,71 @@
                                 jsonData: inputData,
                             })) %>
                             <!-- // input -->
-                            <!-- cmp-form-group -->
+                            <!-- cmp-form-group (기본) -->
                             <%
                                 const formGroupData = {
+                                    box: {
+                                        id: 34,
+                                        name: "전체동의 인풋 네임",
+                                        value: "전체동의",
+                                        label: "전체 동의합니다. (선택항목 포함)",
+                                        checked: true,
+                                    },
+                                    name: "약관들 인풋 네임",
+                                    subCheck: [
+                                        {
+                                            id: 35,
+                                            required: true,
+                                            name: "checkbox-guide35",
+                                            dataList: [
+                                                {
+                                                    value: "checkbox-default35",
+                                                    checked: true,
+                                                    linkText: "개인정보 수집·이용 동의",
+                                                },
+                                            ],
+                                            desc : "문의하기를 위한 개인정보 수집·이용 안내를 확인하였으며, 내용에 동의합니다.",
+                                            dataListStyle: "max",
+                                        },
+                                        {
+                                            id: 36,
+                                            required: true,
+                                            name: "checkbox-guide36",
+                                            dataList: [
+                                                {
+                                                    value: "checkbox-default36",
+                                                    checked: true,
+                                                    linkText: "마케팅 정보 활용 동의",
+                                                },
+                                            ],
+                                            desc : "마케팅 정보 제공 관련 개인정보 수집·이용 안내를 확인하였으며, 내용에 동의합니다.",
+                                            dataListStyle: "max",
+                                        },
+                                        {
+                                            id: 37,
+                                            required: true,
+                                            name: "checkbox-guide37",
+                                            dataList: [
+                                                {
+                                                    value: "checkbox-default37",
+                                                    checked: true,
+                                                    linkText: "마케팅 정보 수신 동의",
+                                                },
+                                            ],
+                                            desc : "마케팅 정보를 본인이 수집 동의한 이메일로 수신하는데 동의합니다.",
+                                            dataListStyle: "max",
+                                        },
+                                    ],
+                                }
+                            %>
+                            <%- include('src/component/cmp_form-group.html', Object.assign({}, locals, { 
+                                jsonData: formGroupData,
+                                marginVertical: 'mb-0',
+                            })) %>
+                            <!-- // cmp-form-group -->
+                            <!-- cmp-form-group (아코디언) -->
+                            <%
+                                const formGroupData2 = {
                                     box: {
                                         name: "checkboxGroup",
                                         value: "전체동의",
@@ -315,9 +365,38 @@
                                 }
                             %>
                             <%- include('src/component/cmp_form-group.html', Object.assign({}, locals, { 
-                                jsonData: formGroupData,
+                                jsonData: formGroupData2,
+                                marginVertical: 'mb-0',
                             })) %>
                             <!-- // cmp-form-group -->
+                            <!-- cmp-input (checkbox) -->
+                            <%
+                                const inputData3 = [
+                                    {
+                                        inputData: [
+                                            {
+                                                id: 38,
+                                                required: true,
+                                                type: "checkbox",
+                                                name: "checkbox-guide38",
+                                                dataList: [
+                                                    {
+                                                        value: "checkbox-default38",
+                                                        checked: true,
+                                                        linkText: "개인정보 수집·이용 동의",
+                                                    },
+                                                ],
+                                                desc : "문의하기를 위한 개인정보 수집·이용 안내를 확인하였으며, 내용에 동의합니다.",
+                                                dataListStyle: "max",
+                                            },
+                                        ],
+                                    },
+                                ]
+                            %>
+                            <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                                jsonData: inputData3,
+                            })) %>
+                            <!-- // cmp-input (checkbox) -->
                         </div>
                         <!-- [End] 모달 컨텐츠 영역 -->
                     </div>
@@ -326,6 +405,9 @@
                             <button class="btn btn-primary btn-large">
                                 <span class="btn__text">등록</span>
                             </button>
+                            <!-- <button class="btn btn-primary btn-large">
+                                <span class="btn__text">신청</span>
+                            </button> -->
                         </div>
                     </div>
                     <div class="modal__close">

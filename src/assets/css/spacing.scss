@@ -169,7 +169,10 @@
     @include custom-margin-vertical('bottom', 24, 16);
 }
 .mb-exc-spacing-23-20 {
-    @include custom-margin-vertical('bottom', 24, 16);
+    @include custom-margin-vertical('bottom', 23, 20);
+}
+.mb-exc-spacing-20-12 {
+    @include custom-margin-vertical('bottom', 20, 12);
 }
 .mb-exc-spacing-16-12 {
     @include custom-margin-vertical('bottom', 24, 16);

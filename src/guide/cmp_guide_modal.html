@@ -116,6 +116,13 @@
                                         </span>
                                     </button>
                                 </div>
+                                <div class="button_wrap mt-5">
+                                    <button type="button" class="btn btn-large btn-secondary" modal-id="modal-default12" onclick="openModal(event)">
+                                        <span class="btn__text" style="word-break: break-all;white-space: normal;">
+                                            신청이 완료되었습니다.
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                             <p class="guide-title-h3 mt-10">Popup Component : .modal--type-alert.modal--type-alert__size-medium (pc-size: medium, mo-size: medium) / header 없는 케이스</p>
                             <div class="cmp-exsample__wrap mt-10">
@@ -669,7 +676,7 @@
                 <div class="modal__container">
                     <div class="modal__content">
                         <!-- [Start] 모달 컨텐츠 영역 -->
-                        <p class="font-body-md text-center-left">
+                        <p class="font-body-md font-semibold text-center-left">
                             기업명을 두 글자 이상 입력해 주세요.
                         </p>
                         <!-- [End] 모달 컨텐츠 영역 -->
@@ -694,8 +701,34 @@
                 <div class="modal__container">
                     <div class="modal__content">
                         <!-- [Start] 모달 컨텐츠 영역 -->
-                        <p class="font-body-md text-center-left">
+                        <p class="font-body-md font-semibold text-center-left">
                             제출이 완료되었습니다.
+                        </p>
+                        <!-- [End] 모달 컨텐츠 영역 -->
+                    </div>
+                    <div class="modal__footer">
+                        <div class="button__wrap">
+                            <button class="btn btn-large btn-primary" onclick="closeModal(event)">
+                                <span class="btn__text">확인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__dim"></div>
+        </div>
+    </div>
+    <!-- [End] modal - alert -->
+    <!-- [Start] modal - alert : pc-size: samll, mo-size: small / 신청이 완료되었습니다. -->
+    <div class="cmp-modal" id="modal-default12">
+        <div class="modal modal--type-alert">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <div class="modal__content">
+                        <!-- [Start] 모달 컨텐츠 영역 -->
+                        <p class="font-body-md font-semibold text-center">
+                            신청이 완료되었습니다. <br>
+                            잠시 후 수신된 메일을 확인해주세요.
                         </p>
                         <!-- [End] 모달 컨텐츠 영역 -->
                     </div>

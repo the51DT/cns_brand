@@ -1,76 +1,99 @@
 <!-- cmp-form-group -->
-<div class="cmp-form-group">
-  <% 
-    const data = (typeof jsonData !== 'undefined' ? jsonData : {}); 
-    const box = (typeof data.box !== 'undefined' ? data.box : {}); 
-    const acco = (typeof data.acco !== 'undefined' ? data.acco : []); 
-  %>
-  <div class="cmp-form-group__wrap">
-    <% if(typeof box !=='undefined' && box) { %>
-      <div class="cmp-form-group__box">
-        <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
-            jsonData: [
-              {
-                id: 0,
-                inputData: [
-                  {
-                    type: "checkbox",
-                    name: box.name,
-                    dataList: [
-                      {
-                        value: box.value,
-                        label: box.label,
-                        required: box.required,
-                        checked: box.checked,
-                        disabeld: box.disabeld,
-                      },
-                    ],
-                  },
-                ]
-              },
-            ],
-        })) %>
-      </div>
-    <% } %>
-    <% if(typeof acco !=='undefined' && acco) { %>
-      <div class="cmp-form-group__accordion <%= typeof typeClass !== 'undefined' ? typeClass : 'basic-type' %>">
-        <% acco.forEach((terms, i) => { %>
-          <div class="accordion-item">
-            <div class="accordion-title">
-              <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
-                  jsonData: [
-                    {
-                      id: i,
-                      inputData: [
-                        {
-                          type: "checkbox",
-                          name: data.name,
-                          dataList: [
-                            {
-                              value: terms.value,
-                              label: terms.label,
-                              required: terms.required,
-                              checked: terms.checked,
-                              disabeld: terms.disabeld,
-                            },
-                          ],
-                        },
-                      ]
-                    },
-                  ],
-              })) %>
-              <button class="accordion-button" type="button">
-                <span class="ir-text">컨텐츠 펼침</span>
-              </button>
-            </div>
-            <div class="accordion-content">
-              <div class="accordion-text">
-                <%- terms.text %>
-              </div>
-            </div>
-          </div>
-        <% }) %>
-      </div>
-    <% } %>
-  </div>
+<div class="cmp-wrap cmp-form-group <%- typeof marginVertical !== 'undefined' && marginVertical ? marginVertical : ''%>">
+	<% 
+		const data = (typeof jsonData !== 'undefined' ? jsonData : {}); 
+		const box = (typeof data.box !== 'undefined' ? data.box : {}); 
+		const acco = (typeof data.acco !== 'undefined' ? data.acco : []); 
+		const subCheck = (typeof data.subCheck !== 'undefined' ? data.subCheck : []); 
+	%>
+	<div class="cmp-form-group__wrap">
+		<% if(typeof box !=='undefined' && box) { %>
+			<div class="cmp-form-group__box">
+				<%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+					jsonData: [
+						{
+						id: 0,
+						inputData: [
+							{
+							type: "checkbox",
+							name: box.name,
+							dataList: [
+								{
+								value: box.value,
+								label: box.label,
+								required: box.required,
+								checked: box.checked,
+								disabeld: box.disabeld,
+								},
+							],
+							},
+						]
+						},
+					],
+				})) %>
+			</div>
+		<% } %>
+		<% if(typeof acco !== 'undefined' && acco.length > 0) { %>
+			<div class="cmp-form-group__accordion <%= typeof typeClass !== 'undefined' ? typeClass : 'basic-type' %>">
+				<% acco.forEach((terms, i) => { %>
+					<div class="accordion-item">
+						<div class="accordion-title">
+							<%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+								jsonData: [
+									{
+										id: i,
+										inputData: [
+										{
+											type: "checkbox",
+											name: data.name,
+											dataList: [
+											{
+												value: terms.value,
+												label: terms.label,
+												required: terms.required,
+												checked: terms.checked,
+												disabeld: terms.disabeld,
+											},
+											],
+										},
+										]
+									},
+								],
+							})) %>
+							<button class="accordion-button" type="button">
+								<span class="ir-text">컨텐츠 펼침</span>
+							</button>
+						</div>
+						<div class="accordion-content">
+							<div class="accordion-text">
+								<%- terms.text %>
+							</div>
+						</div>
+					</div>
+				<% }) %>
+			</div>
+		<% } %>
+		<% if (typeof subCheck !=='undefined' && subCheck.length > 0) { %>
+			<div class="cmp-form-group__sub-check">
+				<% const checkData = subCheck.map((check, index)=> ({
+						inputData: [
+							{
+								id: check.id,
+								type: "checkbox",
+								required: check.required,
+								name: check.name,
+								dataList: check.dataList.map(item => ({
+									value: item.value,
+									checked: item.checked,
+									linkText: item.linkText,
+								})),
+								desc: check.desc,
+								dataListStyle: "max",
+							},
+						]
+				}))%>
+				<%- include('src/component/cmp_input.html', Object.assign({}, locals, { jsonData: checkData })) %>
+			</div>
+		<% } %>
+	</div>
 </div>

@@ -4,13 +4,15 @@
         const data = (typeof jsonData !== 'undefined' ? jsonData : []); 
     %>
     <% data.forEach((item)=> { %>
-        <div class="cmp-input__wrap">
+        <% 
+            const visibleClasses = item.inputData.map(input => input.visibleValue ? input.visibleValue : '').filter(Boolean).join(' ');
+        %>
+        <div class="cmp-input__wrap" <%- visibleClasses ? 'data-visible-value="' + visibleClasses + '"' : '' %>>
             <% 
-                const title = (typeof item.title !== 'undefined' ? item.title : []);
                 const inputDataList = (typeof item.inputData !== 'undefined' ? item.inputData : []);
             %>
             <% inputDataList.forEach((inputData) => { %>
-                <div class="cmp-input__container">
+                <div class="cmp-input__container<%- inputData.containerFlexRow === true ? ' cmp-input__container--row' : '' %>">
                     <% if(typeof inputData.title !=='undefined' && inputData.title) { %>
                         <div class="cmp-input__title">
                             <% if(inputData.type === "checkbox" || inputData.type === "radio") { %>
@@ -112,7 +114,7 @@
                                 <% } else if(inputData.type === 'radio') { %>
                                     <% inputData.dataList.forEach((radio)=> { %>
                                         <div class="cmp-input__label-box">
-                                            <input class="cmp-input__item cmp-input__item--radio <%- radio.disabeld === 'disabled' && radio.disabeld ? 'cmp-input__item--disabled' : '' %>" id="<%- radio.value %>" type="radio" name="<%- inputData.name %>" value="<%- radio.value %>" <%- radio.disabeld === true ? 'disabled' : '' %> <%- radio.checked === true ? 'checked' : '' %> <%- radio.required === true ? 'required' : '' %>>
+                                            <input class="cmp-input__item cmp-input__item--radio <%- radio.disabeld === 'disabled' && radio.disabeld ? 'cmp-input__item--disabled' : '' %>" id="<%- radio.value %>" type="radio" name="<%- inputData.name %>" value="<%- radio.value %>" <%- radio.disabeld === true ? 'disabled' : '' %> <%- radio.checked === true ? 'checked' : '' %> <%- radio.required === true ? 'required' : '' %> <%- radio.visibleTarget ? 'data-visible-target="' + radio.visibleTarget + '"' : '' %>>
                                             <label class="<%- radio.label ? '' : 'ir-text' %> cmp-input__label-text" for="<%- radio.value %>"><%- radio.label ? radio.label : radio.value %></label>
                                         </div>
                                     <% }) %>
@@ -120,8 +122,8 @@
                                     <div class="dropdown-menu cmp-input__item--dropdown">
                                         <div class="cmp-input__item">
                                             <input class="dropdown_input" placeholder="<%- inputData.enterPlacehold %>">
-                                                <button class="btn-dropdown no-select"><%- inputData.placeholder %></button>
-                                            </div>
+                                            <button class="btn-dropdown no-select"><%- inputData.placeholder %></button>
+                                        </div>
                                         <ul class="dropdown_list">
                                             <% inputData.option.forEach((option)=> { %>
                                                 <li class="<%- option.disabled === true && option.disabled ? 'is-disabled' : '' %>">
@@ -133,16 +135,21 @@
                                     <!-- 아코디언처럼 펼쳐지는 타입 -->
                                 <% } else if(inputData.type === 'toggleSwitch') {%>
                                     <div class="cmp-input__label-box">
-                                        <input class="cmp-input__item cmp-input__item--toggle-switch <%- inputData.disabled === 'disabled' && inputData.disabled ? 'cmp-input__item--disabled' : '' %>" id="<%- inputData.value %>" type="checkbox" name="<%- inputData.name %>" value="<%- inputData.value %>" <%- inputData.disabled === true ? 'disabled' : '' %> <%- inputData.checked === true ? 'checked' : '' %> <%- inputData.required === true ? 'required' : '' %>>
-                                        <label class="cmp-input__label-text" for="<%- inputData.value %>">
-                                            <span class="cmp-input__item--toggle-switch__track">
-                                                <i class="cmp-input__item--toggle-switch__handle"></i>
-                                            </span>
-                                            <div class="cmp-input__label-text__state">
-                                                <span class="cmp-input__label-text__state__on">On</span>
-                                                <span class="cmp-input__label-text__state__off">Off</span>
-                                            </div>
-                                        </label>
+                                        <input class="cmp-input__item cmp-input__item--toggle-switch<%- inputData.disabled === 'disabled' && inputData.disabled ? ' cmp-input__item--disabled' : '' %>" id="<%- inputData.value %>" type="checkbox" name="<%- inputData.name %>" value="<%- inputData.value %>" <%- inputData.disabled === true ? 'disabled' : '' %> <%- inputData.checked === true ? 'checked' : '' %> <%- inputData.required === true ? 'required' : '' %>>
+                                        <div class="cmp-input__label-box__container<%- typeof inputData.label !== 'undefined' && inputData.label ? ' cmp-input__label-box__container--row' : '' %>">
+                                            <% if(inputData.label) { %>
+                                                <span class="block font-caption-md-ui color-text-tertiary cmp-input__label-title"><%- inputData.label %></span>
+                                            <% } %>
+                                            <label class="cmp-input__label-text" for="<%- inputData.value %>">
+                                                <span class="cmp-input__item--toggle-switch__track">
+                                                    <i class="cmp-input__item--toggle-switch__handle"></i>
+                                                </span>
+                                                <div class="cmp-input__label-text__state">
+                                                    <span class="cmp-input__label-text__state__on">수신</span>
+                                                    <span class="cmp-input__label-text__state__off">미수신</span>
+                                                </div>
+                                            </label>
+                                        </div>
                                     </div>
                                 <% } else { %>
                                     <% if(!inputData.title) { %>

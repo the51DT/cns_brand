@@ -671,6 +671,40 @@ const glideText = (() => {
     });
 })
 
+// input radio 값에 따른 노출/비노출 처리
+const radioInputToggle = () => {
+    const radioItems = document.querySelectorAll('.cmp-input__item--radio');
+    const toggleTargets = document.querySelectorAll('.cmp-input__wrap[data-visible-value]');
+
+    const updateVisibleTargets = () => {
+        // 각 라디오 버튼 그룹별(name)로 처리
+        const checkedGroups = {};
+
+        // 체크된 라디오 버튼 그룹 수집
+        radioItems.forEach((item) => {
+            const groupName = item.getAttribute('name');
+            if (item.checked) {
+                checkedGroups[groupName] = item.getAttribute('data-visible-target');
+            }
+        });
+
+        // 각 토글 대상 업데이트
+        toggleTargets.forEach((target) => {
+            const targetValue = target.getAttribute('data-visible-value');
+            const isVisible = Object.values(checkedGroups).includes(targetValue);
+            target.style.display = isVisible ? 'block' : 'none';
+        });
+    };
+
+    // 페이지 로드 시 초기 상태 체크
+    updateVisibleTargets();
+
+    // 각 라디오 버튼에 change 이벤트 리스너 추가
+    radioItems.forEach((item) => {
+        item.addEventListener('change', updateVisibleTargets);
+    });
+};
+
 // .btn-top 버튼
 const winScrollTop = (() => {
     const btnTop = document.querySelector('.btn-top');
@@ -689,6 +723,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebarCmp;
     checkInputFocus();
     checkCmpInputFocus();
+    radioInputToggle();
     dropdownMenu('.dropdown-menu');
     accordion('.basic-type', 'basic');        
     accordion('.open-type', 'basic');   

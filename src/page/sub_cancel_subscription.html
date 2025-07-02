@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title><%= data.title %></title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap sub-subscription">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+            pcImg: 'https://placehold.co/1920x480',
+            moImg: 'https://placehold.co/360x284',
+            subText: '썸네일', 
+            pageTitle: '이미지 영역',
+            bannerSize: 'wide',
+        })) %>  
+        <!-- //비주얼 영역 -->
+        <div class="sub-content__wrap">
+            <div class="inner-wrap">
+                <span class="block mb-exc-spacing-20-12 font-head-md font-medium color-text-default align-left">
+                    LG CNS 소식 구독 변경 및 해지
+                </span>
+                <p class="color-text-secondary sub-subscription__desc mb-spacing06">
+                    {이메일 표기 고객님}의 LG CNS 소식 구독 현황입니다.
+                </p>
+                <span class="block mb-8 font-head-sm color-text-default">마케팅 정보 활용 동의와 수신 동의를 모두 동의하시면 뉴스레터 수신이 가능합니다.</span>
+                <%
+                    const inputData = [
+                        {
+                            inputData: [
+                                {
+                                    id: 1,
+                                    title: "마케팅 정보 활용 동의",
+                                    type: "radio",
+                                    name: "radio-guide01",
+                                    containerFlexRow: true,
+                                    dataList: [
+                                        {
+                                            value: "radio-default01",
+                                            label: "동의"
+                                        },
+                                        {
+                                            value: "radio-default02",
+                                            label: "미동의",
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 2,
+                                    title: "마케팅 정보 수신 동의",
+                                    type: "radio",
+                                    name: "radio-guide02",
+                                    containerFlexRow: true,
+                                    dataList: [
+                                        {
+                                            value: "radio-default03",
+                                            label: "동의"
+                                        },
+                                        {
+                                            value: "radio-default04",
+                                            label: "미동의",
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                    ]
+                %>
+                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                    jsonData: inputData,
+                })) %>
+                <span class="block mb-8 font-head-sm color-text-default">아래와 같이 LG CNS 소식을 수신 받고 계십니다.</span>
+                <%
+                    const inputData2 = [
+                        {
+                            inputData: [
+                                {
+                                    id: 5,
+                                    required: true,
+                                    type: "toggleSwitch",
+                                    name: "toggleSwitch-guide-form5",
+                                    value: "toggleSwitch-form5",
+                                    label: "LG CNS 행사 소식 및 뉴스레터", 
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 6,
+                                    required: true,
+                                    type: "toggleSwitch",
+                                    name: "toggleSwitch-guide-form6",
+                                    value: "toggleSwitch-form6",
+                                    label: "ESG 행사 소식 및 뉴스레터",
+                                    checked: true,
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 7,
+                                    required: true,
+                                    type: "toggleSwitch",
+                                    name: "toggleSwitch-guide-form7",
+                                    value: "toggleSwitch-form7",
+                                    label: "SINGLEX 행사 소식 및 뉴스레터",
+                                },
+                            ],
+                        },
+                    ]
+                %>
+                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                    jsonData: inputData2,
+                })) %>
+                <div class="button__wrap">
+                    <button type="button" class="btn btn-primary btn-medium">
+                        <span class="btn__text">구독 변경하기</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+</body>
+</html>

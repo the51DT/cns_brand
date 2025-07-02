@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title><%= data.title %></title>
+    <meta name="description" content="<%= data.description %>">
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+    <link rel="shortcut icon" href="/src/assets/image/favicon.ico">
+</head>
+<body>
+    <div class="wrap survey-form">
+        <%- include('src/_inc/header.html') %>
+        <!-- //헤더 영역 -->
+        <%- include('src/component/cmp_heroBanner.html', Object.assign({}, locals, { 
+            pcImg: 'https://placehold.co/1920x480',
+            moImg: 'https://placehold.co/360x284',
+            subText: 'Gen AI 부스트', 
+            pageTitle: '테크 리드 그룹을 위한 <br>최신 사례 및 데모',
+            bannerSize: 'wide',
+        })) %>  
+        <!-- //비주얼 영역 -->
+        <div class="sub-content__wrap">
+            <div class="inner-wrap">
+                <span class="block mb-spacing06 font-head-sm color-text-default align-left">
+                    설문에 응답해주세요
+                </span>
+                <%
+                    const inputData = [
+                        {
+                            inputData: [
+                                {
+                                    id: 1,
+                                    title: "1. 금일 진행한 행사에 대한 만족도를 평가해주세요.",
+                                    required: true,
+                                    type: "radio",
+                                    name: "radio-guide01",
+                                    dataList: [
+                                        {
+                                            value: "radio-default01",
+                                            label: "매우 만족"
+                                        },
+                                        {
+                                            value: "radio-default02",
+                                            label: "만족",
+                                        },
+                                        {
+                                            value: "radio-default03",
+                                            label: "보통",
+                                        },
+                                        {
+                                            value: "radio-default04",
+                                            label: "불만족",
+                                        },
+                                        {
+                                            value: "radio-default04",
+                                            label: "매우 불만족",
+                                        },
+                                    ],
+                                    dataListStyle: "max",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 2,
+                                    title: "2. 행사의 난이도가 적정했습니까? ",
+                                    required: true,
+                                    type: "radio",
+                                    name: "radio-guide02",
+                                    dataList: [
+                                        {
+                                            value: "radio-default05",
+                                            label: "매우 만족"
+                                        },
+                                        {
+                                            value: "radio-default06",
+                                            label: "만족",
+                                        },
+                                        {
+                                            value: "radio-default07",
+                                            label: "보통",
+                                        },
+                                        {
+                                            value: "radio-default08",
+                                            label: "불만족",
+                                        },
+                                        {
+                                            value: "radio-default09",
+                                            label: "매우 불만족",
+                                        },
+                                    ],
+                                    dataListStyle: "max",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id:  10,
+                                    title: "3. 금일 진행한 내용 중 도움이 되었던 아젠다는 무엇인가요?(중복 선택 가능)",
+                                    required: true,
+                                    type: "checkbox",
+                                    name: "checkbox-guide10",
+                                    dataList: [
+                                        {
+                                            value: "checkbox-default11",
+                                            label: "딜로이트와 함께 분석한 글로벌 선진 기업들의 사례",
+                                        },
+                                        {
+                                            value: "checkbox-default12",
+                                            label: "제조기업의 생성형 AI를 활용한 업무혁신 사례",
+                                        },
+                                        {
+                                            value: "checkbox-default13",
+                                            label: "헬스케어 스타트업의 생성형 AI를 적용한 신규 서비스 개발 사례",
+                                        },
+                                        {
+                                            value: "checkbox-default14",
+                                            label: "Google Cloud의 생성형 AI 최신 서비스 update",
+                                        },
+                                        {
+                                            value: "checkbox-default15",
+                                            label: "Gemini at Works 구글의 생성형 AI가 가져다 주는 업무의 혁신 방향",
+                                        },
+                                    ],
+                                    dataListStyle: "max",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 16,
+                                    title: "3-1. 향후 세미나에서 추가로 듣고 싶은 아젠다가 있다면 작성해주세요",
+                                    required: true,
+                                    type: "textarea",
+                                    placeholder: "내용을 입력해주세요.",
+                                    countMax: "2,000",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 17,
+                                    title: "4. 귀사에서는 현재 퍼블릭 클라우드를 사용하고 계십니까?",
+                                    required: true,
+                                    type: "radio",
+                                    name: "radio-guide17",
+                                    dataList: [
+                                        {
+                                            value: "radio-default18",
+                                            label: "사용중"
+                                        },
+                                        {
+                                            value: "radio-default19",
+                                            label: "아직 사용하고 있지 않음",
+                                        },
+                                    ],
+                                    dataListStyle: "max",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 18,
+                                    title: "5. Gen AI를 도입했거나, 향후 도입계획이 있으십니까?",
+                                    required: true,
+                                    type: "radio",
+                                    name: "radio-guide18",
+                                    dataList: [
+                                        {
+                                            value: "radio-default19",
+                                            label: "도입 했음"
+                                        },
+                                        {
+                                            value: "radio-default20",
+                                            label: "6개월 이내 도입 예정",
+                                        },
+                                        {
+                                            value: "radio-default21",
+                                            label: "6개월 ~ 1년 도입 예정",
+                                        },
+                                        {
+                                            value: "radio-default22",
+                                            label: "1년 ~ 3년 도입 예정",
+                                        },
+                                        {
+                                            value: "radio-default23",
+                                            label: "계획 없음",
+                                        },
+                                    ],
+                                    dataListStyle: "max",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 24,
+                                    title: "6. Cloud, Application Modernization, Gen AI와 관련하여 LG CNS Google Cloud 전문가와의 상담을 요청하시겠습니까?",
+                                    required: true,
+                                    type: "radio",
+                                    name: "radio-guide24",
+                                    dataList: [
+                                        {
+                                            value: "radio-default25",
+                                            label: "예"
+                                        },
+                                        {
+                                            value: "radio-default26",
+                                            label: "아니오",
+                                        },
+                                    ],
+                                    dataListStyle: "max",
+                                },
+                            ],
+                        },
+                    ]
+                %>
+                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                    jsonData: inputData,
+                })) %>
+
+                <span class="block mb-spacing06 font-head-sm color-text-default align-left">
+                    응답자 정보
+                </span>
+                <%
+                    const inputData2 = [
+                        {
+                            inputData: [
+                                {
+                                    id: 27,
+                                    title: "성",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "성을 입력해주세요.",
+                                },
+                                {
+                                    id: 28,
+                                    title: "이름",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "이름을 입력해주세요",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 29,
+                                    title: "연락처",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "하이픈(-) 없이 입력해주세요.",
+                                },
+                                {
+                                    id: 30,
+                                    title: "이메일",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "이메일을 입력해주세요.",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 31,
+                                    title: "회사(소속)",
+                                    required: true,
+                                    type: "search",
+                                    placeholder: "클릭하여 검색하기",
+                                },
+                                {
+                                    id: 32,
+                                    title: "부서",
+                                    required: true,
+                                    type: "text",
+                                    placeholder: "부서를 입력해주세요.",
+                                },
+                            ],
+                        },
+                        {
+                            inputData: [
+                                {
+                                    id: 33,
+                                    title: "직급",
+                                    required: true,
+                                    type: "dropdown",
+                                    placeholder: "직급을 선택해주세요.",
+                                    option: [
+                                        {
+                                            value: "Selected",
+                                        },
+                                        {
+                                            value: "Hover",
+                                        },
+                                        {
+                                            value: "Disabled",
+                                            disabled: true,
+                                        },
+                                        {
+                                            value: "Default",
+                                        },
+                                        {
+                                            value: "Default",
+                                        },
+                                    ],
+                                },
+                            ]
+                        },
+                    ]
+                %>
+                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                    jsonData: inputData2,
+                })) %>
+                <%
+                    const inputData3 = [
+                        {
+                            inputData: [
+                                {
+                                    id: 20,
+                                    required: true,
+                                    type: "checkbox",
+                                    name: "checkbox-guide",
+                                    dataList: [
+                                        {
+                                            value: "checkbox-default",
+                                            checked: true,
+                                            linkText: "개인정보 수집·이용 동의",
+                                        },
+                                    ],
+                                    desc : "문의하기를 위한 개인정보 수집·이용 안내를 확인하였으며, 내용에 동의합니다.",
+                                    dataListStyle: "max",
+                                },
+                            ],
+                        },
+                    ]
+                %>
+                <%- include('src/component/cmp_input.html', Object.assign({}, locals, { 
+                    jsonData: inputData3,
+                })) %>
+                
+                <div class="button__wrap">
+                    <button type="button" class="btn btn-primary btn-medium">
+                        <span class="btn__text">제출</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <%- include('src/_inc/footer.html') %>
+    </div>
+</body>
+</html>
