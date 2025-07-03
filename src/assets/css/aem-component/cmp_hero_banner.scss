@@ -18,9 +18,12 @@
     .visual-text {
         position: absolute;
         left: calc(20 / 16 * 1rem);
-        top: calc(50% - 40px);
+        top: calc(50% - calc(4 / 16 * 1rem));
         color: var(--colorGL-all-white100);
-
+        transform: translateY(-50%);
+        @media #{$min1280} {
+            top: calc(50% - calc(40 / 16 * 1rem));
+        }
         // @media #{$min720} {
         //     left: calc(32 / 16 * 1rem);
         // }
@@ -92,6 +95,7 @@
             top: initial !important;
             left: initial !important;
             color: var(--text-text-default);
+            transform: translateY(0);
 
             .sub-text + h2 {
                 margin-top: calc(2 / 16 * 1rem);
@@ -131,7 +135,6 @@
     &.type-has-button {
         .visual-text {
             top: calc(50%);
-            transform: translateY(-50%);
             .button__wrap {
                 margin-top: calc(12 / 16 * 1rem);
                 @media #{$min1280} {
