@@ -4,9 +4,10 @@
         &__item {
             display: flex;
             align-items: center;
-            gap: calc(32 / 16 * 1rem);
-            padding: calc(25 / 16 * 1rem) calc(20 / 16 * 1rem);
+            gap: calc(20 / 16 * 1rem);
+            padding: calc(20 / 16 * 1rem) 0;
             @media #{$min1280}{
+                gap: calc(32 / 16 * 1rem);
                 padding: calc(24 / 16 * 1rem) calc(20 / 16 * 1rem);
             }
             & + .post-navigation__item {
@@ -20,10 +21,13 @@
         &__text {
             display: flex;
             align-items: center;
-            gap: calc(20 / 16 * 1rem);
+            gap: calc(12 / 16 * 1rem);
             color: var(--text-text-default);
             white-space: nowrap;
             font-weight: 600;
+            @media #{$min1280}{
+                gap: calc(20 / 16 * 1rem);
+            }
         }
         &__link {
             display: -webkit-box;

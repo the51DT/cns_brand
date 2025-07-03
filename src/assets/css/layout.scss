@@ -1430,6 +1430,11 @@ body {
             }
         }
     }
+    &.narrow {
+        @media #{$min1280} {
+            max-width: calc(956 / 16 * 1rem);
+        }
+    }
     &:last-child > .cmp-wrap:last-child {
         margin-bottom: calc(246 / 16 * 1rem);
         @media #{$min1280} {
