@@ -57,7 +57,6 @@
         .cmp-image-box {
             flex-shrink: 0;
             display: flex;
-            align-items: center;
             width: 100%;
             @media #{$min1280} {
                 max-width: calc(724 / 16 * 1rem);
