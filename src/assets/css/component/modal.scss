@@ -112,9 +112,9 @@
     padding-top: calc(24 / 16 * 1rem);
 }
 /* footer 에 버튼 하나만 있을 경우 w100% 적용 */
-.modal .modal__footer .btn:only-of-type {
-    width: 100%;
-}
+// .modal .modal__footer .btn:only-of-type {
+//     width: 100%;
+// }
 .modal .modal__footer .modal__checkbox-hidden {
     margin-top: calc(26 / 16 * 1rem);
     @media #{$min1280} {
@@ -307,9 +307,9 @@
                 @media #{$min1280} {
                     width: calc(50% - calc(10 / 16 * 1rem));
                 }
-                &:only-of-type {
-                    width: 100%;
-                }
+                // &:only-of-type {
+                //     width: 100%;
+                // }
             }
         }
     }
@@ -467,14 +467,14 @@
     .cmp-form-group .cmp-wrap.cmp-input {
         margin-bottom: 0;
     }
-    .modal__footer .button__wrap.mo-100 .btn:only-child {
-        width: 100%;
-        margin: 0 auto;
-        @media #{$min1280} {
-            width: fit-content;
-            margin: 0 auto;
-        }
-    }
+    // .modal__footer .button__wrap.mo-100 .btn:only-child {
+    //     width: 100%;
+    //     margin: 0 auto;
+    //     @media #{$min1280} {
+    //         width: fit-content;
+    //         margin: 0 auto;
+    //     }
+    // }
 }
 
 /* Main > modal */

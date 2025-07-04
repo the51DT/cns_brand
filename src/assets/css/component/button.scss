@@ -160,8 +160,11 @@ $asset-paths: (
     /* gap: calc(4 / 16 * 1rem); */
     padding: calc(12 / 16 * 1rem) calc(24 / 16 * 1rem);
     width: fit-content;
-    min-width: calc(140 / 16 * 1rem);
+    min-width: calc(120 / 16 * 1rem);
     height: calc(48 / 16 * 1rem);
+    @media #{$min1280} {
+        min-width: calc(140 / 16 * 1rem);
+    }
 }
 .btn.btn-small .btn__text {
     font-size: calc(16 / 16 * 1rem);
@@ -170,33 +173,38 @@ $asset-paths: (
     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
 }
 /* btn-medium */
-.btn.btn-medium {
+.btn.btn-medium, 
+.btn.btn-large {
     /* gap: calc(6 / 16 * 1rem); */
     padding: calc(15 / 16 * 1rem) calc(24 / 16 * 1rem);
     width: fit-content;
-    min-width: calc(160 / 16 * 1rem);
+    min-width: calc(140 / 16 * 1rem);
     height: calc(56 / 16 * 1rem);
+    @media #{$min1280} {
+        min-width: calc(160 / 16 * 1rem);
+    }
 }
-.btn.btn-medium .btn__text {
+.btn.btn-medium .btn__text,
+.btn.btn-large .btn__text {
     font-size: calc(18 / 16 * 1rem);
     line-height: calc(26 / 16 * 1rem);
     font-weight: 500;
     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
 }
 /* btn-large */
-.btn.btn-large {
-    /* gap: calc(8 / 16 * 1rem); */
-    padding: calc(14.5 / 16 * 1rem) calc(24 / 16 * 1rem);
-    width: fit-content;
-    min-width: calc(140 / 16 * 1rem);
-    height: calc(56 / 16 * 1rem);
-}
-.btn.btn-large .btn__text {
-    font-size: calc(18 / 16 * 1rem);
-    line-height: calc(27 / 16 * 1rem);
-    font-weight: 400;
-    letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
-}
+// .btn.btn-large {
+//     /* gap: calc(8 / 16 * 1rem); */
+//     padding: calc(14.5 / 16 * 1rem) calc(24 / 16 * 1rem);
+//     width: fit-content;
+//     min-width: calc(140 / 16 * 1rem);
+//     height: calc(56 / 16 * 1rem);
+// }
+// .btn.btn-large .btn__text {
+//     font-size: calc(18 / 16 * 1rem);
+//     line-height: calc(27 / 16 * 1rem);
+//     font-weight: 400;
+//     letter-spacing: calc(var(--typo-pc-letter-spacing-small) / 16 * 1rem);
+// }
 /* btn-x-large */
 .btn.btn-x-large {
     /* gap: calc(8 / 16 * 1rem); */
