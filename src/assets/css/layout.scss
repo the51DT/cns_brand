@@ -1432,7 +1432,7 @@ body {
     }
     &.narrow {
         @media #{$min1280} {
-            max-width: calc(956 / 16 * 1rem);
+            max-width: calc(996 / 16 * 1rem);
         }
     }
     &:last-child > .cmp-wrap:last-child {
