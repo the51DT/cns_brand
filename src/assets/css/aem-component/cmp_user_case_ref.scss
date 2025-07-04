@@ -30,15 +30,20 @@
         gap: calc(25 / 16 * 1rem);
         @media #{$min1280} {
             flex-direction: row;
+            justify-content: space-between;
             gap: calc(120 / 16 * 1rem);
         }
         .text-wrap {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            // justify-content: space-between;
             gap: calc(24 / 16 * 1rem);
             width: 100%;
             min-height: calc(325 / 16 * 1rem);
+            @media #{$min1280} {
+                width: auto;
+                gap: calc(79 / 16 * 1rem);
+            }
             .button__wrap {
                 justify-content: center;
                 @media #{$min1280} {
@@ -50,9 +55,13 @@
             margin-bottom: 0;
         }
         .cmp-image-box {
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             width: 100%;
+            @media #{$min1280} {
+                max-width: calc(724 / 16 * 1rem);
+            }
             .img-box {
                 width: 100%;
                 height: auto;
