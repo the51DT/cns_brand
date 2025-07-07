@@ -626,37 +626,36 @@ body {
                     // width: 100%;
                     // width: calc(200 / 16 * 1rem);
                     left:50%;
-                    top: calc(36 / 16 * 1rem);
+                    top: calc(40 / 16 * 1rem);
                     transform: translateX(-50%);
-                    padding: calc(16 / 16 * 1rem) calc(12 / 16 * 1rem);                        
+                    padding: calc(16 / 16 * 1rem);                        
                     background: var(--colorCM-mode1-background-background-default0);
-                    border-radius: calc(var(--radius-mode1-circular) / 16 * 1rem);
-                    z-index: 1000;                        
+                    border-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
+                    z-index: 1000;
+                    @media #{$min1280} {
+                        top: calc(36 / 16 * 1rem);
+                        padding: calc(20 / 16 * 1rem);
+                    }
                 }
                 li {
                     & + li {
-                        margin-top: calc(12 / 16 * 1rem);
+                        margin-top: calc(8 / 16 * 1rem);
+                        @media #{$min1280} {
+                            margin-top: calc(12 / 16 * 1rem);
+                        }
                     }
                 }
                 .lang-select__btn {
                     display: block;
-                    min-width: calc(24 / 16 * 1rem);
-                    width: calc(24 / 16 * 1rem);
-                    height: calc(24 / 16 * 1rem);
-                    @media #{$min1280} {
-                        min-width: calc(28 / 16 * 1rem);
-                        width: calc(28 / 16 * 1rem);
-                        height: calc(28 / 16 * 1rem);
-                    }
-                    &--ko {
-                        background: url("#{$basePath}image/icon/icon-lang-ko-bl24.svg") no-repeat center center / contain;
-                    }
-                    &--global {
-                        background: url("#{$basePath}image/icon/icon-lang-global-bl24.svg") no-repeat center center / contain;
-                    }
-                    &--jp {
-                        background: url("#{$basePath}image/icon/icon-lang-jp-bl24.svg") no-repeat center center / contain;
-                    }
+                    // &--ko {
+                    //     background: url("#{$basePath}image/icon/icon-lang-ko-bl24.svg") no-repeat center center / contain;
+                    // }
+                    // &--global {
+                    //     background: url("#{$basePath}image/icon/icon-lang-global-bl24.svg") no-repeat center center / contain;
+                    // }
+                    // &--jp {
+                    //     background: url("#{$basePath}image/icon/icon-lang-jp-bl24.svg") no-repeat center center / contain;
+                    // }
                 }
             }
         }
