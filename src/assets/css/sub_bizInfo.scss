@@ -543,10 +543,7 @@
                 .button__wrap {
                     justify-content: flex-start;
                     .btn {
-                        width: 100%;
-                        @media #{$min1280} {
-                            width: fit-content;
-                        }
+                        width: fit-content;
                     }
                 }
             }
