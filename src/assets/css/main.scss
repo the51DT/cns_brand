@@ -235,9 +235,9 @@
         }
         &__title {
             color: var(--banner-color-mode);
-            font-family: var(--typo-main-family);
-            font-size: calc(36 / 16 * 1rem);
+            font-family: 'Outfit';
             font-weight: 600;
+            font-size: calc(36 / 16 * 1rem);
             line-height: calc(40 / 16 * 1rem);
             letter-spacing: 0;
             @media #{$min800} {
