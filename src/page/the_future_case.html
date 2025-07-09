@@ -77,95 +77,131 @@
     </div>
 </body>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const futureText = document.querySelector('.future-text');
-        const futureContent = document.querySelector('.future-content');
+    //모바일화면에서의 패럴랙스 모션
+    function parallaxEffect() {
+        const futureContent = document.querySelector('.future-content')
+        const futureText = document.querySelector('.future-text')
 
-        if (!futureText || !futureContent) {
-            console.error('Scroll effect elements not found.');
-            return;
+        if (!futureContent || !futureText) return
+
+        function handleScroll() {
+            const isMobile = window.matchMedia('only screen and (max-width: 1023px)').matches;
+
+            if (isMobile) {
+                const rect = futureContent.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                const thresholdTop = windowHeight * 0.3;
+                const thresholdBottom = windowHeight * 0.8;
+
+                if (rect.top <= thresholdBottom && rect.top >= thresholdTop) {
+                    const ratio = (rect.top - thresholdTop) / (thresholdBottom - thresholdTop);
+                    futureText.style.opacity = ratio.toFixed(5);
+                    const translateY = 5 * (1 - ratio);
+                    futureText.style.transform = `translateY(${translateY}%)`;
+                } else if (rect.top > thresholdBottom) {
+                    futureText.style.opacity = 1;
+                    futureText.style.transform = 'translateY(0%)';
+                } else if (rect.top < thresholdTop) {
+                    futureText.style.opacity = 0;
+                    futureText.style.transform = 'translateY(5%)';
+                }
+            } else {
+                futureText.removeAttribute('style');
+            }
         }
 
-        const isMobile = () => window.matchMedia('only screen and (max-width: 1023px)').matches;
+        function init() {
+            handleScroll()
 
-        // Create a div to act as a scrollable space for text simulation
-        const scrollPadder = document.createElement('div');
-        scrollPadder.id = 'future-scroll-padder';
-        futureContent.parentNode.insertBefore(scrollPadder, futureContent);
+            // 스크롤 이벤트 리스너 등록
+            window.addEventListener('scroll', handleScroll)
+            window.addEventListener('resize', handleScroll)
+        }
 
-        // --- Main scroll handler for the new effect ---
-        const handleNewScroll = () => {
-            const scrollY = window.scrollY;
-            const textScrollableHeight = futureText.scrollHeight - futureText.clientHeight;
+        init()
+    }
 
-            // Phase 1: Text scroll simulation
-            if (textScrollableHeight > 0 && scrollY <= textScrollableHeight) {
-                futureText.scrollTop = scrollY;
-            } else if (textScrollableHeight > 0) {
-                futureText.scrollTop = textScrollableHeight;
-            }
 
-            // Always run the parallax logic
-            runParallaxEffect();
-        };
+    // 헤더 높이 측정 함수
+    const getElementHeight = (element) => {
+        return element ? element.offsetHeight : 100 // 기본값 100px
+    }
 
-        // --- Original parallax logic, slightly adapted ---
-        const runParallaxEffect = () => {
-            if (!isMobile()) {
-                futureText.removeAttribute('style');
-                return;
-            }
-            const rect = futureContent.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            const thresholdTop = windowHeight * 0.3;
-            const thresholdBottom = windowHeight * 0.8;
+    // header fixed 처리로 인하여 사용하지 않음
+    // function setHeaderStyle() {
+    //     const header = document.querySelector('.header')
+    //     const futureCaseContainer = document.querySelector('.the-future-case')
 
-            if (rect.top <= thresholdBottom && rect.top >= thresholdTop) {
-                const ratio = (rect.top - thresholdTop) / (thresholdBottom - thresholdTop);
-                futureText.style.opacity = ratio.toFixed(5);
-                const translateY = 5 * (1 - ratio);
-                futureText.style.transform = `translateY(${translateY}%)`;
-            } else if (rect.top > thresholdBottom) {
-                futureText.style.opacity = 1;
-                futureText.style.transform = 'translateY(0%)';
-            } else if (rect.top < thresholdTop) {
-                futureText.style.opacity = 0;
-                futureText.style.transform = 'translateY(5%)';
-            }
-        };
+    //     const headerHeight = getElementHeight(header)
+    //     let isHeaderHidden = false
+    //     let lastScrollY = window.scrollY
 
-        // --- Setup function that decides which logic to apply ---
-        const setupView = () => {
-            // Always remove existing listener to avoid duplicates
-            window.removeEventListener('scroll', handleNewScroll);
+    //     // 스타일 설정 함수
+    //     const setStyles = () => {
+    //         // header 스타일 적용 객체
+    //         const headerStyles = {
+    //             position: 'fixed',
+    //             top: '0',
+    //             left: '0',
+    //             transform: 'translateY(0)'
+    //         }
 
-            if (isMobile()) {
-                // Use timeout to wait for render and get correct scrollHeight
-                setTimeout(() => {
-                    const textScrollableHeight = futureText.scrollHeight - futureText.clientHeight + 120;
-                    
-                    if (textScrollableHeight > 0) {
-                        // If text is scrollable, create padding and use the new scroll handler
-                        scrollPadder.style.height = `${textScrollableHeight}px`;
-                        window.addEventListener('scroll', handleNewScroll);
-                        handleNewScroll(); // Run once on setup
-                    } else {
-                        // If not scrollable, just use the original parallax
-                        scrollPadder.style.height = '0px';
-                        window.addEventListener('scroll', runParallaxEffect);
-                        runParallaxEffect(); // Run once on setup
-                    }
-                }, 150);
-            } else {
-                // On desktop, reset everything
-                scrollPadder.style.height = '0px';
-                futureText.removeAttribute('style');
-                futureText.scrollTop = 0;
-            }
-        };
+    //         // 헤더와 컨테이너에 스타일 적용 (초기값)
+    //         if (header && futureCaseContainer) {
+    //             // 헤더에 스타일 적용
+    //             // header.classList.add('is-fixed')
+    //             Object.assign(header.style, headerStyles)
 
-        // --- Initial execution and resize handling ---
-        setupView();
-        window.addEventListener('resize', setupView);
-    });
+    //             // 컨테이너에 패딩 적용
+    //             futureCaseContainer.style.paddingTop = `${headerHeight}px`
+    //         }
+    //     }
+
+    //     // 스크롤에 따른 UI 업데이트 함수
+    //     const updateUI = () => {
+    //         const scrollPosition = window.scrollY
+    //         const isScrollingDown = scrollPosition > lastScrollY
+    //         const isBeyondHeader = scrollPosition >= headerHeight
+
+    //         if (isBeyondHeader) {
+    //             if (isScrollingDown && !isHeaderHidden) {
+    //                 header.style.transform = 'translateY(-6.25rem)'
+    //                 isHeaderHidden = true
+    //             } else if (!isScrollingDown && isHeaderHidden) {
+    //                 header.style.transform = 'translateY(0)'
+    //                 isHeaderHidden = false
+    //             }
+    //         } else {
+    //             if (isHeaderHidden) {
+    //                 header.style.transform = 'translateY(0)'
+    //                 isHeaderHidden = false
+    //             }
+    //         }
+    //         lastScrollY = scrollPosition
+    //     };
+
+    //     // 초기화 함수
+    //     const init = () => {
+    //         setStyles() // 초기 스타일 설정
+    //         updateUI() // 초기 UI 상태 업데이트
+
+    //         // 스크롤 이벤트 리스너 등록
+    //         window.addEventListener('scroll', updateUI)
+    //         // 리사이즈 이벤트 리스너 등록 (화면 크기 변경 시 재계산)
+    //         window.addEventListener('resize', () => {
+    //             // 스타일 재설정 및 UI 업데이트
+    //             setStyles()
+    //             updateUI()
+    //         })
+    //     }
+    //     init()
+    // }
+
+
+    /*실행*/
+    window.addEventListener('load', () => {
+        // setHeaderStyle()
+        parallaxEffect()
+    })
 </script>
