@@ -19,10 +19,12 @@
                         <div class="main-title font-head-xl font-semibold color-text-on-bg">AX(AI ransformation)</div>
                         <div class="sub-title font-head-md color-text-on-bg">전략으로 실현하는 미래 경쟁력</div>
                         <div class="description-text font-body-md mb-spacing05 color-text-on-bg">
-                            지금까지 수많은 기술 혁신이 기업 업무 환경을 변화시켜 왔으나, 현재의 인공지능(Artificial Intelligence, AI)만큼 변화를 이끈 혁신은 없었습니다. 기업 환경에서 AI는 단순한 기술 도입을 넘어
-                            비즈니스의 근본적인 변화를 이끄는 핵심 동력으로 자리 잡고 있습니다. 액센츄어의 25년 리서치 리포트 “Reinventing enterprise models in the age of generative AI”에
-                            따르면, 기업의 97%가 생성형 AI가 기업과 산업을 근본적으로 변화시킬 것이라 믿고 있으며, 93%는 생성형 AI 투자가 다른 전략적 영역보다 높은 성과를 내고 있다고 응답했습니다. 이러한 변화의 중심에
-                            'Agentic AI'라는 새로운 패러다임이 자리하고 있습니다.
+                            지금까지 수많은 기술 혁신이 기업 업무 환경을 변화시켜 왔으나, 현재의 인공지능(Artificial Intelligence, AI)만큼 변화를 이끈 혁신은 없었습니다. 기업 환경에서 AI는 단순한 기술 도입을 넘어
+                            비즈니스의 근본적인 변화를 이끄는 핵심 동력으로 자리 잡고 있습니다.
+                            <br><br class="display-pc">
+                            LG CNS는 고객의 성공적 AX 구현을 위해 전 여정에서 고객과 함께 실질적인 성과를 만들어 가는 AX Enabler입니다. AX 전략 수립부터 솔루션 구축, 운영 최적화까지 필요한 모든 서비스를 제공하며,
+                            에이전틱 AI를 통해 비즈니스 혁신을 지원하는 파트너입니다. 다양한 산업 고객의 디지털 전환을 선도하며 축적한 도메인 전문성과 레거시 시스템에 대한 이해를 바탕으로 고객 비즈니스 환경에 특화된 해법을 도축하며 AX
+                            여정을 함께 합니다.
                         </div>
                         <div class="button__wrap align-left">
                             <a href="#" target="_self" class="btn btn-x-large btn-secondary">
@@ -83,36 +85,29 @@
         if (!futureContent || !futureText) return
 
         function handleScroll() {
-            // 모바일 화면 여부 확인 ($tabletMini 기준)
-            const isMobile = window.matchMedia('only screen and (max-width: 1023px)').matches
+            const isMobile = window.matchMedia('only screen and (max-width: 1023px)').matches;
 
             if (isMobile) {
-                const rect = futureContent.getBoundingClientRect()
-                const windowHeight = window.innerHeight
+                const rect = futureContent.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
 
-                const thresholdTop = windowHeight * 0.3
-                const thresholdBottom = windowHeight * 0.8
+                const thresholdTop = windowHeight * 0.3;
+                const thresholdBottom = windowHeight * 0.8;
 
                 if (rect.top <= thresholdBottom && rect.top >= thresholdTop) {
-                    const ratio = (rect.top - thresholdTop) / (thresholdBottom - thresholdTop)
-
-                    futureText.style.opacity = ratio.toFixed(5)
-
-                    const translateY = 5 * (1 - ratio)
-                    futureText.style.transform = `translateY(${translateY}%)`
-
+                    const ratio = (rect.top - thresholdTop) / (thresholdBottom - thresholdTop);
+                    futureText.style.opacity = ratio.toFixed(5);
+                    const translateY = 5 * (1 - ratio);
+                    futureText.style.transform = `translateY(${translateY}%)`;
                 } else if (rect.top > thresholdBottom) {
-                    // 뷰포트 기준, 위에서 80% 지점보다 아래에 있으면 컨텐츠 보임
-                    futureText.style.opacity = 1
-                    futureText.style.transform = 'translateY(0%)'
+                    futureText.style.opacity = 1;
+                    futureText.style.transform = 'translateY(0%)';
                 } else if (rect.top < thresholdTop) {
-                    // 뷰포트 기준, 위에서 30% 지점보다 올라가면 완전히 숨기기
-                    futureText.style.opacity = 0
-                    futureText.style.transform = 'translateY(5%)'
+                    futureText.style.opacity = 0;
+                    futureText.style.transform = 'translateY(5%)';
                 }
             } else {
-                // 모바일이 아닌 경우 항상 보이게 설정
-                futureText.removeAttribute('style')
+                futureText.removeAttribute('style');
             }
         }
 
