@@ -78,7 +78,7 @@ $asset-paths: (
             flex-direction: column;
             justify-content: flex-start;
             position: sticky;
-            top: calc(320 / 16 * 1rem);
+            top: calc(251 / 16 * 1rem);
             padding-right: calc(48 / 16 * 1rem);
             box-sizing: border-box;
             @media #{$tabletMini} {
@@ -108,7 +108,7 @@ $asset-paths: (
             }
         }
         .future-content {
-            margin: rem(150) 0 rem(100);
+            margin: rem(80) 0 rem(100);
             max-width: calc(470 / 16 * 1rem);
             width: 100%;
             @media #{$tabletMini} {
