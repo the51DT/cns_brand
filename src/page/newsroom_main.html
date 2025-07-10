@@ -240,40 +240,9 @@
                 date: '보도자료 2024.12.11'
             }
         ]
-        // const swiperEl = document.querySelector('.swiper');
-        // const slides = swiperEl.querySelectorAll('.swiper-slide');
-
-        // const swiper = new Swiper('.swiper', {
-        // loop: true,
-        // slidesPerView: 1,
-        // autoplay: {
-        //     delay: 3000,
-        // },
-        // pagination: {
-        //     el: '.swiper-pagination',
-        //     clickable: true,
-        //     renderBullet: function (index, className) {
-        //         const data = swiperData[index] || {};
-        //         const title = data.title || '';
-        //         const date = data.date || '';
-        //         return `
-        //             <button type="button" class="${className}">
-        //                 <div class="bullet-title">${title}</div>
-        //                 <div class="bullet-date">${date}</div>
-        //             </button>
-        //         `;
-        //     },
-        // },
-        // });
-
-
         const swiperOptions = [
             {
-                // loop: true,
-                slidesPerView: 1,
-                // autoplay: {
-                //     delay: 3000,
-                // },
+                slidesPerView: 'auto',
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
@@ -289,6 +258,16 @@
                         `;
                     },
                 },
+                slidesOffsetBefore: 20,
+                slidesOffsetAfter: 20,
+                spaceBetween: 20,
+                breakpoints: {
+                    1280: {
+                        slidesOffsetBefore: 0,
+                        slidesOffsetAfter: 0,
+                        spaceBetween: 0,
+                    }
+                }
             },
         ];
         initializeSwipers(swiperOptions, ".type-text-pagination .swiper");

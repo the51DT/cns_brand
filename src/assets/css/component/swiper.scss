@@ -78,8 +78,16 @@
 /* rework style */
 .cmp-swiper__wrap.type-text-pagination {
     margin-bottom: calc(88 / 16 * 1rem);
+    padding: 0;
     @media #{$min1280} {
+        padding: 0 calc(20 / 16 * 1rem);
         margin-bottom: calc(180 / 16 * 1rem);
+    }
+}
+.cmp-swiper__wrap.type-text-pagination .swiper-slide {
+    max-width: calc(100% - calc(40 / 16 * 1rem));
+    @media #{$min1280} {
+        max-width: 100%;
     }
 }
 .cmp-swiper__wrap.type-text-pagination .swiper-thumbnail {
@@ -121,6 +129,10 @@
 .cmp-swiper__wrap.type-text-pagination .swiper-pagination {
     align-items: flex-start;
     column-gap: calc(8 / 16 * 1rem);
+    padding: 0 calc(20 / 16 * 1rem);
+    @media #{$min1280} {
+        padding: 0;
+    }
 }
 .cmp-swiper__wrap.type-text-pagination .swiper-pagination-bullet {
     height: calc(2 / 16 * 1rem);
