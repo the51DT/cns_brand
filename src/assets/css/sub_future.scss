@@ -40,7 +40,7 @@ $asset-paths: (
     background-attachment: fixed;
     @media #{$tabletMini} {
         background-size: 213%;
-        background-position: top rem(374) center;
+        background-position: top rem(251) center;
     }
 
     .future-inner__wrap {
@@ -82,14 +82,15 @@ $asset-paths: (
             padding-right: calc(48 / 16 * 1rem);
             box-sizing: border-box;
             @media #{$tabletMini} {
-                position: fixed;
-                top: 0;
-                left: 0;
+                position: relative;
+                // position: fixed;
+                top: initial;
+                // left: 0;
                 height: auto;
-                max-height: 100vh;
-                max-height: 100dvh;
+                // max-height: 100vh;
+                // max-height: 100dvh;
                 overflow-y: auto; /* 세로 스크롤 가능 */
-                padding: rem(120) rem(20) rem(20);
+                padding: rem(56) 0 rem(20);
                 margin:  0 auto;
                 justify-content: flex-start;
             }
@@ -115,7 +116,7 @@ $asset-paths: (
             @media #{$tabletMini} {
                 position: relative;
                 z-index: 1;
-                margin:rem(826) auto rem(140);
+                margin:rem(60) auto rem(140);
             }
         }
     }
