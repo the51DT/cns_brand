@@ -89,6 +89,13 @@
                     }
                 }
             }
+            .cmp-hero-navigation {
+                &__list {
+                    @media #{$min1280} {
+                        background: #8680D2;
+                    }
+                }
+            }
         }
         &.hero-style-02 {
             .interactive-swiper {
@@ -96,6 +103,13 @@
                 .cmp-swiper__wrap {
                     .swiper-slide {
                         background: var(--colorCM-mode1-hero-hero02);
+                    }
+                }
+            }
+            .cmp-hero-navigation {
+                &__list {
+                    @media #{$min1280} {
+                        background: #AED5DC;
                     }
                 }
             }
@@ -109,6 +123,13 @@
                     }
                 }
             }
+            .cmp-hero-navigation {
+                &__list {
+                    @media #{$min1280} {
+                        background: #737A83;
+                    }
+                }
+            }
         }
         &.hero-style-04 {
             .interactive-swiper {
@@ -116,6 +137,13 @@
                 .cmp-swiper__wrap {
                     .swiper-slide {
                         background: var(--colorCM-mode1-hero-hero04);
+                    }
+                }
+            }
+            .cmp-hero-navigation {
+                &__list {
+                    @media #{$min1280} {
+                        background: #FADED5;
                     }
                 }
             }
