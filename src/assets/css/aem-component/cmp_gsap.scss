@@ -273,7 +273,7 @@
             align-items: center;
             gap: calc(23 / 16 * 1rem);
         }
-        @media only screen and (max-width : 1600px) {
+        @media only screen and (max-width : 1680px) {
             display: block;
             width: 100%;
             padding: calc(40 / 16 * 1rem) 0 calc(128 / 16 * 1rem);
@@ -295,7 +295,7 @@
                     max-width: calc(340 / 16 * 1rem);
                     word-break: keep-all;
                 }
-                @media only screen and (max-width : 1600px) {
+                @media only screen and (max-width : 1680px) {
                     text-align: center;
                     max-width: calc(440 / 16 * 1rem);
                     margin: 0 auto;
@@ -322,7 +322,7 @@
                     margin-top: calc(159 / 16 * 1rem);
                     margin-bottom: 0;
                 }
-                @media only screen and (max-width : 1600px) {
+                @media only screen and (max-width : 1680px) {
                     margin: calc(30 / 16 * 1rem) 0;
                 }
                 @media #{$tabletMini} {
