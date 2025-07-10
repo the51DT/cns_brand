@@ -218,6 +218,8 @@
         color: var(--colorCM-mode1-text-text-default);
         font-size: calc(var(--typo-pc-size-caption-lg-ui) / 16 * 1rem);
         line-height: calc(var(--typo-pc-line-height-caption-lg-ui) / 16 * 1rem);
+        -webkit-appearance: none;
+        border-radius: 0;
         @media #{$min1280} {
             padding: calc(15 / 16 * 1rem) 0;
         }
