@@ -870,7 +870,9 @@
         /* search */
         const dynamicSearch = document.querySelector('.dynamic-search');
         const collapsedBar = dynamicSearch.querySelector('.input-search__item');
-        const targetPosition = dynamicSearch.offsetTop;
+        let targetPosition = dynamicSearch.offsetTop;
+        let preventAutoCollapse = false;
+
         function searchPlaceholder(target) {
             if (window.matchMedia('(min-width: 535px)').matches) {
                 target.setAttribute('placeholder', '키워드만으로 원하는 정보를 찾아보세요');
@@ -880,69 +882,67 @@
         }
 
         if (dynamicSearch) {
-            // 클릭 이벤트로 상태 전환
-            dynamicSearch.addEventListener("click", (target) => {
+            dynamicSearch.addEventListener("click", () => {
                 if (dynamicSearch.classList.contains('dynamic-search--collapsed')) {
                     dynamicSearch.classList.remove('dynamic-search--collapsed');
                     dynamicSearch.classList.add('dynamic-search--expanded');
-                    dynamicSearch.classList.add('dynamic-search--expanded-important');                                    
+                    dynamicSearch.classList.add('dynamic-search--expanded-important');
+
+                    // prevent scroll-triggered collapse for a short time
+                    preventAutoCollapse = true;
+                    setTimeout(() => {
+                        preventAutoCollapse = false;
+                    }, 600);
                 }
+
                 window.scrollTo({
                     top: targetPosition,
-                    behavior: 'smooth' // 부드러운 스크롤 동작
+                    behavior: 'smooth'
                 });
             });
         }
+
         function checkSearch(target) {
-            if (target) {
-                const documentHeight = document.documentElement.scrollHeight;
-                const windowHeight = window.innerHeight;
-                const scrollPosition = window.scrollY;
-                const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
-                const dynamicSearchTop = target.getBoundingClientRect().top + window.pageYOffset;
-                const dynamicSearchHeight = target.offsetHeight;
-                // 닫힘 상태일 때
-                if (target.classList.contains('dynamic-search--collapsed') && !target.classList.contains('dynamic-search--expanded-important')) {
-                    if (Yoffset >= dynamicSearchTop - 181 && Yoffset < dynamicSearchTop + dynamicSearchHeight) {
-                        target.classList.remove('dynamic-search--collapsed');
-                        target.classList.add('dynamic-search--expanded');
-                    }
+            if (!target || preventAutoCollapse) return; // 스크롤 위치로 인한 충돌 방지
+
+            const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
+            const dynamicSearchTop = target.getBoundingClientRect().top + window.pageYOffset;
+            const dynamicSearchHeight = target.offsetHeight;
+            // 스크롤 && dynamicSearchTop 위치로 도달 시 
+            if (target.classList.contains('dynamic-search--collapsed') && !target.classList.contains('dynamic-search--expanded-important')) {
+                if (Yoffset >= dynamicSearchTop - 181 && Yoffset < dynamicSearchTop + dynamicSearchHeight) {
+                    target.classList.remove('dynamic-search--collapsed');
+                    target.classList.add('dynamic-search--expanded');
                 }
-                // 확장 상태로 유지
-                // 펼침 상태일 때
-                // else if (target.classList.contains('dynamic-search--expanded') && !target.classList.contains('dynamic-search--expanded-important')) {
-                //     if (Yoffset >= dynamicSearchTop + dynamicSearchHeight) {
-                //         // 스크롤 위치가 dynamicSearch의 하단을 넘어가면
-                //         target.classList.add('dynamic-search--collapsed');
-                //         target.classList.remove('dynamic-search--expanded');
-                //         target.classList.remove('dynamic-search--result-empty');
-                //     } else if (Yoffset < target.getBoundingClientRect().top){
-                //         // 스크롤 위치가 dynamicSearch보다 위에 있다면
-                //         target.classList.add('dynamic-search--collapsed');
-                //         target.classList.remove('dynamic-search--expanded');
-                //         target.classList.remove('dynamic-search--result-empty');
-                //     }
-                // } else if (target.classList.contains('dynamic-search--expanded-important')) {
-                //     if (Yoffset == 0 || scrollPosition + windowHeight >= documentHeight) {
-                //         // 클릭 시 스크롤 위치 0 또는 최하단일 때 닫힘
-                //         target.classList.add('dynamic-search--collapsed');
-                //         target.classList.remove('dynamic-search--expanded');
-                //         target.classList.remove('dynamic-search--expanded-important');
-                //         target.classList.remove('dynamic-search--result-empty');
-                //     }
-                // }
+            // 스크롤 && dynamicSearchTop 보다 위
+            } else if (target.classList.contains('dynamic-search--expanded') && !target.classList.contains('dynamic-search--expanded-important')) {
+                if (Yoffset < target.getBoundingClientRect().top) {
+                    target.classList.add('dynamic-search--collapsed');
+                    target.classList.remove('dynamic-search--expanded');
+                    target.classList.remove('dynamic-search--result-empty');
+                }
+            // 클릭 && dynamicSearchTop 보다 위
+            } else if (target.classList.contains('dynamic-search--expanded') && target.classList.contains('dynamic-search--expanded-important')) {
+                if (Yoffset < target.getBoundingClientRect().top) {
+                    target.classList.add('dynamic-search--collapsed');
+                    target.classList.remove('dynamic-search--expanded');
+                    target.classList.remove('dynamic-search--result-empty');
+                }
             }
         }
-        
-        window.addEventListener('resize', function () {
-            searchPlaceholder(collapsedBar)
+
+        window.addEventListener('resize', () => {
+            searchPlaceholder(collapsedBar);
+            targetPosition = dynamicSearch.offsetTop;
+            checkSearch(dynamicSearch);
         });
         window.addEventListener("scroll", () => {
             checkSearch(dynamicSearch);
         });
-        
+
         searchPlaceholder(collapsedBar);
         checkSearch(dynamicSearch);
+
     </script>
 </body>
 
