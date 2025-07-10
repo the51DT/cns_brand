@@ -1421,12 +1421,12 @@ body {
                 }
             }
         }
-        .button__wrap--btn-top {
-            padding: 0 calc(20 / 16 * 1rem);
-            @media #{$min1280} {
-                padding: 0;
-            }
-        }
+        // .button__wrap--btn-top {
+        //     padding: 0 calc(20 / 16 * 1rem);
+        //     @media #{$min1280} {
+        //         padding: 0;
+        //     }
+        // }
     }
     &.narrow {
         @media #{$min1280} {

@@ -39,6 +39,17 @@ $asset-paths: (
     gap: calc(12 / 16 * 1rem);
     width: 100%;
     box-sizing: border-box;
+    &--btn-top {
+        display: none;
+        width: fit-content;
+        &.is-fixed {
+            display: flex;
+            position: fixed;
+            right: calc(20 / 16 * 1rem);
+            bottom: calc(20 / 16 * 1rem);
+            z-index: 1;
+        }
+    }
 }
 .button__wrap:has(.btn.btn-text) {
     width: fit-content;

@@ -705,7 +705,7 @@ const radioInputToggle = () => {
     });
 };
 
-// .btn-top 버튼
+// .btn-top 버튼 클릭 이벤트
 const winScrollTop = (() => {
     const btnTop = document.querySelector('.btn-top');
     if(btnTop) {
@@ -718,6 +718,30 @@ const winScrollTop = (() => {
         })
     }
 })
+
+// .btn-top 버튼 노출 처리
+const displayTopButton = (() => {
+    let scrollState = 0;
+    const btnTopWrap = document.querySelector('.button__wrap--btn-top');
+    window.addEventListener("scroll", () => {
+        if(btnTopWrap) {
+            const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
+            // console.log('Yoffset:', Yoffset)
+            if (Yoffset > scrollState || Yoffset == 0) {
+                // console.log('down');
+                btnTopWrap.classList.remove('is-fixed')
+            } else {
+                // console.log('up');
+                btnTopWrap.classList.add('is-fixed')
+            }
+            scrollState = Yoffset <= 0 ? 0 : Yoffset;
+        }
+    });
+});
+
+
+
+
 // document.addEventListener("DOMContentLoaded", sidebarCmp);
 document.addEventListener("DOMContentLoaded", () => {
     sidebarCmp;
@@ -729,4 +753,5 @@ document.addEventListener("DOMContentLoaded", () => {
     accordion('.open-type', 'basic');   
     inputSearch('.cmp-input__item--search'); 
     winScrollTop();
+    displayTopButton();
 });

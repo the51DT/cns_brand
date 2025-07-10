@@ -1116,11 +1116,15 @@
             }
         }
         .button__wrap--btn-top {
+            display: none;
             position: absolute;
             right: calc(20 / 16 * 1rem);
             bottom: calc(20 / 16 * 1rem);
-            @media #{$min1280} {
-                display: none;
+            width: fit-content;
+            &.is-fixed {
+                display: flex;
+                position: fixed;
+                z-index: 1;
             }
         }
     }
