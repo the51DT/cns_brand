@@ -29,9 +29,6 @@ $asset-paths: (
 }
 
 // future page
-body.dark-mode:has(.the-future-case) {
-    overscroll-behavior: none;
-}
 .the-future-case {
     background: var(--colorCM-mode1-background-background-default10);
     .footer__wrap {
