@@ -1099,8 +1099,7 @@ body {
 }
 //푸터
 .footer__wrap {
-    padding: calc(48 / 16 * 1rem) 0 calc(100 / 16 * 1rem);    
-    border-top: calc(1 / 16 * 1rem) solid var(--colorGL-all-gray200);
+    padding: calc(48 / 16 * 1rem) 0 calc(100 / 16 * 1rem);
     background: var(--footer-bg);
     @media #{$min1280} {
         padding: calc(40 / 16 * 1rem) 0 calc(295 / 16 * 1rem);    
