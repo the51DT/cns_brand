@@ -74,14 +74,14 @@
             }
         }
         // top 버튼
-        .button__wrap--btn-top {
-            display: flex;
-            margin-top: calc(4 / 16 * 1rem);
-            padding: 0;
-            @media #{$min1280} {
-                display: none;
-            }
-        }
+        // .button__wrap--btn-top {
+        //     display: flex;
+        //     margin-top: calc(4 / 16 * 1rem);
+        //     padding: 0;
+        //     @media #{$min1280} {
+        //         display: none;
+        //     }
+        // }
     }
     &__sub {
         .inner-wrap {

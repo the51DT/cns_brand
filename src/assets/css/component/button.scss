@@ -48,6 +48,9 @@ $asset-paths: (
             right: calc(20 / 16 * 1rem);
             bottom: calc(20 / 16 * 1rem);
             z-index: 1;
+            @media #{$min1280} {
+                display: none;
+            }
         }
     }
 }
