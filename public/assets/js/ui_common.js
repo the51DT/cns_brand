@@ -224,6 +224,12 @@ const closeModal = (event, openButton) => {
         setTimeout(() => {
             activeModal.style.display = 'none';
             if(hasMain) {
+                //250711 추가 : 모달창 닫을경우, 이전에 선택되었던 대상 카드의 클래스와 스타일 초기화 하기 위해,모바일 carousel 카드 전체의 스타일, 클래스 값 초기화
+                const carouselCard = document.querySelectorAll(".carousel-wrap .card-context");
+                carouselCard.forEach(card => {
+                    card.classList.remove("on");
+                    card.querySelector(".card-inner").removeAttribute("style");
+                })
                 initCarousel(); //250711 추가 : initCarousel(); 관련 함수 호출
             }
         }, 300);
