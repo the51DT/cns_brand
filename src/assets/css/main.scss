@@ -419,7 +419,7 @@
             }
         }
         &__slide {
-            transition: opacity 1s ease;
+            transition: opacity 1s ease-in-out;
             // News Image Hero
             &--news {
                 .interactive-swiper__container {
