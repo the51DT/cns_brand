@@ -215,14 +215,17 @@ document.addEventListener("click", function(e) {
 //모달창 닫기
 const closeModal = (event, openButton) => {
     const btn = event.currentTarget;    
-    const activeModal = btn.closest('.cmp-modal');    
+    const activeModal = btn.closest('.cmp-modal'); 
+    const hasMain = document.querySelector('.main');
     if (activeModal) {
         activeModal.classList.remove('is-active')        
         document.body.classList.remove('modal-open');
         
         setTimeout(() => {
-          activeModal.style.display = 'none';
-          initCarousel(); //250711 추가 : initCarousel(); 관련 함수 호출
+            activeModal.style.display = 'none';
+            if(hasMain) {
+                initCarousel(); //250711 추가 : initCarousel(); 관련 함수 호출
+            }
         }, 300);
     }
 };
