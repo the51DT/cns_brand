@@ -513,7 +513,7 @@
                                                     * card-context 클래스명 정의
                                                     1. active 클래스 : 동일한 그룹 활성화 영역, active시 하이라이트 컬러 노출 (첫번째 노출필요한 대상의 그룹에 active 클래스 추가 되어있어야함 - group1)
                                                     2. on 클래스 : 카드 영역 touch(mobile), hover(pc)시 on 클래스 활성화되며 상세내용과 배경이미지 노출됨 -->
-                                                    <a href="javascript:;" class="card-context active" data-group="group1" modal-id="modal-main01" onclick="openModal(event)"> <!-- active, on  / data-group : group 구분 data 속성 -->
+                                                    <a href="javascript:;" class="card-context active" data-group="group1" modal-id="" onclick="openModal(event)"> <!-- active, on  / data-group : group 구분 data 속성 -->
                                                         <div class="card-inner" data-style=""> <!-- data-style : bg-img style 값 저장 하기 위한 data 속성 -->
                                                             <div class="txt">
                                                                 <div class="txt-title">Business Data</div>
@@ -528,7 +528,7 @@
                                                             </div>
                                                         </div>
                                                     </a>
-                                                    <a href="javascript:;" class="card-context active" data-group="group1" modal-id="modal-main01" onclick="openModal(event)">
+                                                    <a href="javascript:;" class="card-context active" data-group="group1" modal-id="" onclick="openModal(event)">
                                                         <div class="card-inner" data-style="">
                                                             <div class="txt">
                                                                 <div class="txt-title">Modern IT Infra on Cloud</div>
@@ -542,7 +542,7 @@
                                                             </div>
                                                         </div>
                                                     </a>
-                                                    <a href="javascript:;" class="card-context active" data-group="group1" modal-id="modal-main01" onclick="openModal(event)">
+                                                    <a href="javascript:;" class="card-context active" data-group="group1" modal-id="" onclick="openModal(event)">
                                                         <div class="card-inner" data-style=""> 
                                                             <div class="txt">
                                                                 <div class="txt-title">AI for Business</div>
@@ -556,7 +556,7 @@
                                                             </div>
                                                         </div>
                                                     </a>
-                                                    <a href="javascript:;" class="card-context active" data-group="group1" modal-id="modal-main01" onclick="openModal(event)">
+                                                    <a href="javascript:;" class="card-context active" data-group="group1" modal-id="" onclick="openModal(event)">
                                                         <div class="card-inner" data-style="">
                                                             <div class="txt">
                                                                 <div class="txt-title">Consulting</div>
@@ -570,7 +570,7 @@
                                                             </div>
                                                         </div>
                                                     </a>
-                                                    <a href="javascript:;" class="card-context" data-group="group2" modal-id="modal-main01" onclick="openModal(event)">
+                                                    <a href="javascript:;" class="card-context" data-group="group2" modal-id="" onclick="openModal(event)">
                                                         <div class="card-inner" data-style="">
                                                             <div class="txt">
                                                                 <div class="txt-title">City and Space</div>
@@ -584,7 +584,7 @@
                                                             </div>
                                                         </div>
                                                     </a>
-                                                    <a href="javascript:;" class="card-context" data-group="group2" modal-id="modal-main01" onclick="openModal(event)">
+                                                    <a href="javascript:;" class="card-context" data-group="group2" modal-id="" onclick="openModal(event)">
                                                         <div class="card-inner" data-style="">
                                                             <div class="txt">
                                                                 <div class="txt-title">Logistics</div>
@@ -598,7 +598,7 @@
                                                             </div>
                                                         </div>
                                                     </a>
-                                                    <a href="javascript:;" class="card-context" data-group="group2" modal-id="modal-main01" onclick="openModal(event)">
+                                                    <a href="javascript:;" class="card-context" data-group="group2" modal-id="" onclick="openModal(event)">
                                                         <div class="card-inner" data-style="">
                                                             <div class="txt">
                                                                 <div class="txt-title">Smart Factory</div>
@@ -612,7 +612,7 @@
                                                             </div>
                                                         </div>
                                                     </a>
-                                                    <a href="javascript:;" class="card-context" data-group="group3" modal-id="modal-main01" onclick="openModal(event)">
+                                                    <a href="javascript:;" class="card-context" data-group="group3" modal-id="" onclick="openModal(event)">
                                                         <div class="card-inner" data-style="">
                                                             <div class="txt">
                                                                 <div class="txt-title">Enterprise Solution</div>
@@ -626,7 +626,7 @@
                                                             </div>
                                                         </div>
                                                     </a>                                        
-                                                    <a href="javascript:;" class="card-context" data-group="group3" modal-id="modal-main01" onclick="openModal(event)">
+                                                    <a href="javascript:;" class="card-context" data-group="group3" modal-id="" onclick="openModal(event)">
                                                         <div class="card-inner" data-style="">
                                                             <div class="txt">
                                                                 <div class="txt-title">Customer Experiences</div>
@@ -640,7 +640,7 @@
                                                             </div>
                                                         </div>
                                                     </a>
-                                                    <a href="javascript:;" class="card-context" data-group="group3" modal-id="modal-main01" onclick="openModal(event)">
+                                                    <a href="javascript:;" class="card-context" data-group="group3" modal-id="" onclick="openModal(event)">
                                                         <div class="card-inner" data-style="">
                                                             <div class="txt">
                                                                 <div class="txt-title">Biz Process Intelligence</div>
@@ -831,239 +831,6 @@
             </div>
             <%- include('src/_inc/footer.html') %>
     </div>
-    <!-- [Start] modal : pc-size: large, mo-size: large -->
-    <div class="cmp-modal cmp-modal--main" id="modal-main01">
-        <div class="modal modal--type-large">
-            <div class="modal__wrapper">
-                <div class="modal__container">
-                    <!-- <div class="modal__header">
-                        </div> -->
-                    <div class="modal__content">
-                        <!-- [Start] 모달 컨텐츠 영역 -->
-                        <div class="modal__scroll">
-                            <%- include('src/component/cmp_title.html', Object.assign({}, locals, { title: {
-                                text: 'Modern IT Infra on Cloud' ,
-                                subText: '클라우드가 열어갈 더 새롭고 편리해진 비즈니스 세상, 그 처음과 끝을 LG CNS가 함께합니다.' , size: 'md-mode' ,
-                                class: 'font-semibold' , }, })) %>
-                                <div class="modal__content__area">
-                                    <div class="list-container">
-                                        <ul class="list list--type-01">
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <!-- 각 icon별 이미지 -->
-                                                    <div class="list__item--img"><i class="ico icon-service1"></i></div>
-                                                    <div class="list__item--text">service</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-cloud1"></i></div>
-                                                    <div class="list__item--text">Cloud</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-cloud2"></i></div>
-                                                    <div class="list__item--text">인프라</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-cloud3"></i></div>
-                                                    <div class="list__item--text">데이터센터</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-cloud4"></i></div>
-                                                    <div class="list__item--text">보안</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-ai1"></i></div>
-                                                    <div class="list__item--text">AICC</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-ai2"></i></div>
-                                                    <div class="list__item--text">AX컨설팅</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-ai3"></i></div>
-                                                    <div class="list__item--text">Virtual Factory</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-bigdata1"></i></div>
-                                                    <div class="list__item--text">빅데이터플랫폼</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-BizProcess1"></i></div>
-                                                    <div class="list__item--text">디지털AX</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-BizProcess2"></i></div>
-                                                    <div class="list__item--text">영업/고객서비스 관리</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-BizProcess3"></i></div>
-                                                    <div class="list__item--text">경영관리</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-BizProcess4"></i></div>
-                                                    <div class="list__item--text">SCM</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-BizProcess5"></i></div>
-                                                    <div class="list__item--text">ESG</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-BizProcess6"></i></div>
-                                                    <div class="list__item--text">ERP</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-es1"></i></div>
-                                                    <div class="list__item--text">SINGLEX</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-es2"></i></div>
-                                                    <div class="list__item--text">Enterprise SW</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-ce1"></i></div>
-                                                    <div class="list__item--text">Design</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-ce2"></i></div>
-                                                    <div class="list__item--text">Customer<br />Data</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-factory1"></i></div>
-                                                    <div class="list__item--text">생산실행관리</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-factory2"></i></div>
-                                                    <div class="list__item--text">공정관리</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-factory3"></i></div>
-                                                    <div class="list__item--text">생산물류관리</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-factory4"></i></div>
-                                                    <div class="list__item--text">제품개발관리</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-logi1"></i></div>
-                                                    <div class="list__item--text">유통물류</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-city1"></i></div>
-                                                    <div class="list__item--text">스마트 스페이스</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-city2"></i></div>
-                                                    <div class="list__item--text">스마트 교통</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-consulting1"></i></div>
-                                                    <div class="list__item--text">Biz/IT Consulting</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-industry1"></i></div>
-                                                    <div class="list__item--text">금융</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-industry2"></i></div>
-                                                    <div class="list__item--text">교육</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-industry3"></i></div>
-                                                    <div class="list__item--text">유통</div>
-                                                </a>
-                                            </li>
-                                            <li class="list__item">
-                                                <a href="javascript:;" class="list__item--link color-text-default">
-                                                    <div class="list__item--img"><i class="ico icon-industry4"></i></div>
-                                                    <div class="list__item--text">공공</div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-    
-                        </div>
-                        <!-- [End] 모달 컨텐츠 영역 -->
-                    </div>
-                    <!-- 하단 버튼 사용안함 : 필요시 사용 -->
-                    <!-- <div class="modal__footer">
-                            <div class="button__wrap mo-100">
-                                <button class="btn btn-primary btn-large">
-                                    <span class="btn__text">등록</span>
-                                </button>
-                            </div>
-                        </div> -->
-                    <div class="modal__close">
-                        <div class="button__wrap">
-                            <button type="button" class="btn" onclick="closeModal(event)">
-                                <!-- <i class="ico icon-close-bl32"></i> -->
-                                <span class="ir-text">모달 닫기</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal__dim"></div>
-        </div>
-    </div>
-    <!-- [End] modal -->
     <!-- <script src="/assets/bundle/swiper-bundle.min.js"></script> -->
     <script src="/assets/bundle/gsap.min.js"></script>
     <!-- <script src="/assets/js/initializeSwipers.js"></script> -->
