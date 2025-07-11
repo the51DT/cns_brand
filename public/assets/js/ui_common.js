@@ -221,7 +221,8 @@ const closeModal = (event, openButton) => {
         document.body.classList.remove('modal-open');
         
         setTimeout(() => {
-            activeModal.style.display = 'none';
+          activeModal.style.display = 'none';
+          initCarousel(); //250711 추가 : initCarousel(); 관련 함수 호출
         }, 300);
     }
 };
@@ -401,6 +402,143 @@ function adjustToast() {
         toast.style.bottom = `${bottom}px`;        
         bottom += toast.offsetHeight + 10; // 각 토스트의 높이와 간격(10px)을 더함
     });
+}
+
+//250711 추가 : initCarousel(); 관련 함수 : closeModal() 할 경우, 해당 함수 재호출하기위해 가져옴
+function initCarousel() {
+  const intViewportWidth = window.innerWidth;
+  if (intViewportWidth < 1280) {
+    // mobile
+    gsap.set('.carousel-wrap', {
+      height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
+      onComplete: () => [carousel()],
+    });
+  }
+}
+//250711 추가 : carousel(); 관련 함수 : closeModal() 할 경우, 해당 함수 재호출하기위해 가져옴
+function carousel() {
+  gsap.to('.carousel-wrap', {
+    opacity: 1,
+    duration: 0.3,
+    ease: 'power1.inOut',
+    delay: 0.1,
+  }),
+    gsap.ticker.fps(60);
+  const e = document.querySelector('.carousel-wrap'),
+    t = document.querySelectorAll('.card-context');
+  let n = e.clientWidth,
+    o = t[0].clientWidth + 10,
+    r = t.length * o,
+    i = 0,
+    s = 1,
+    a = 10,
+    c = 10,
+    l = 10,
+    p = !0,
+    u = !1;
+  let d,
+    g = 0,
+    y = 0,
+    m = !1;
+  const w = () => {
+      (p = !1), clearTimeout(d);
+    },
+    S = (t) => {
+      (g = t.clientX || t.touches[0].clientX),
+        (m = !0),
+        e.classList.add('is-dragging'),
+        (p = !1),
+        w();
+    },
+    h = (e) => {
+      m && (u && (u = !1), (y = e.clientX || e.touches[0].clientX), (c += 1.5 * (y - g)), (g = y));
+    },
+    v = () => {
+      (m = !1), e.classList.remove('is-dragging');
+    };
+
+  e.addEventListener('touchstart', S, { passive: true }),
+    e.addEventListener('touchmove', h, { passive: true }),
+    e.addEventListener('touchend', v, { passive: true }),
+    e.addEventListener('mousedown', S),
+    e.addEventListener('mousemove', h),
+    e.addEventListener('mouseleave', v),
+    e.addEventListener('mouseup', v),
+    e.addEventListener('selectstart', () => !1);
+  const x = (e) => {
+    gsap.set(t, {
+      x: (t) => t * o + e,
+      y: (e) => {
+        const n = (e * o) / o,
+          r = gsap.utils.wrap(-1, t.length - 1, n);
+        return 25 * Math.sin(1 * r - i);
+      },
+      modifiers: {
+        x: (e, t) => `${gsap.utils.wrap(-o, r - o, parseInt(e))}px`,
+      },
+    });
+
+    // (mobile) 카드 그룹별 active 처리
+    const thumbsWrapRect = document
+      .querySelector('.carousel-wrap .thumbs-wrapper')
+      .getBoundingClientRect();
+    const thumbsWrapWidth = thumbsWrapRect.width;
+    const thumbsWrapHalf = thumbsWrapWidth / 2;
+    const thumbsWrapMin = thumbsWrapHalf / 2;
+
+    setTimeout(function () {
+      for (let i = 0; i < t.length; i++) {
+        const itemTransform = t[i].style.transform;
+        const itemTransformVal1 = itemTransform.replace('translate(', '');
+        const itemTransformVal2 = itemTransformVal1.replace(')', '');
+        const itemTransformVal = itemTransformVal2.split(',');
+        const itemTransformX = itemTransformVal[0];
+        const itemTransformY = itemTransformVal[1];
+
+        if (parseInt(itemTransformX) <= thumbsWrapMin) {
+          const targetGroup = t[i].dataset.group;
+
+          cardItems.forEach((item) => {
+            item.classList.remove('active');
+
+            const itemGroup = item.dataset.group;
+            if (itemGroup == targetGroup) {
+              item.classList.add('active');
+            }
+          });
+        }
+      }
+    }, 1000);
+  };
+  x(0);
+
+  tickerCallback = () => {
+    var e;
+    if (!u) {
+      if (p) c -= s;
+      l = l * (1 - (e = 0.1)) + c * e;
+      x(l);
+      if (!p) {
+        s = l - a;
+        a = l;
+      }
+      p ? (i += 0.05) : ((i = 0.0075 * a), (a = l));
+    }
+  };
+
+  gsap.ticker.add(tickerCallback);
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 1280) {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`),
+        gsap.set('.carousel-wrap', {
+          height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
+        }),
+        (n = e.clientWidth),
+        (o = t[0].clientWidth + 10),
+        (r = t.length * o);
+    }
+  });
 }
 
 // tabMenu 
