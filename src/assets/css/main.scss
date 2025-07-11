@@ -81,14 +81,14 @@
     // 상단 interactive banner
     .interactive-hero {
         &.hero-style-01 {
-            .interactive-swiper {
-                background: var(--colorCM-mode1-hero-hero01);
-                .cmp-swiper__wrap {
-                    .swiper-slide {
-                        background: var(--colorCM-mode1-hero-hero01);
-                    }
-                }
-            }
+            // .interactive-swiper {
+            //     background: var(--colorCM-mode1-hero-hero01);
+            //     .cmp-swiper__wrap {
+            //         .swiper-slide {
+            //             background: var(--colorCM-mode1-hero-hero01);
+            //         }
+            //     }
+            // }
             .cmp-hero-navigation {
                 &__list {
                     @media #{$min1280} {
@@ -98,14 +98,14 @@
             }
         }
         &.hero-style-02 {
-            .interactive-swiper {
-                background: var(--colorCM-mode1-hero-hero02);
-                .cmp-swiper__wrap {
-                    .swiper-slide {
-                        background: var(--colorCM-mode1-hero-hero02);
-                    }
-                }
-            }
+            // .interactive-swiper {
+            //     background: var(--colorCM-mode1-hero-hero02);
+            //     .cmp-swiper__wrap {
+            //         .swiper-slide {
+            //             background: var(--colorCM-mode1-hero-hero02);
+            //         }
+            //     }
+            // }
             .cmp-hero-navigation {
                 &__list {
                     @media #{$min1280} {
@@ -115,14 +115,14 @@
             }
         }
         &.hero-style-03 {
-            .interactive-swiper {
-                background: var(--colorCM-mode1-hero-hero03);
-                .cmp-swiper__wrap {
-                    .swiper-slide {
-                        background: var(--colorCM-mode1-hero-hero03);
-                    }
-                }
-            }
+            // .interactive-swiper {
+            //     background: var(--colorCM-mode1-hero-hero03);
+            //     .cmp-swiper__wrap {
+            //         .swiper-slide {
+            //             background: var(--colorCM-mode1-hero-hero03);
+            //         }
+            //     }
+            // }
             .cmp-hero-navigation {
                 &__list {
                     @media #{$min1280} {
@@ -132,14 +132,14 @@
             }
         }
         &.hero-style-04 {
-            .interactive-swiper {
-                background: var(--colorCM-mode1-hero-hero04);
-                .cmp-swiper__wrap {
-                    .swiper-slide {
-                        background: var(--colorCM-mode1-hero-hero04);
-                    }
-                }
-            }
+            // .interactive-swiper {
+            //     background: var(--colorCM-mode1-hero-hero04);
+            //     .cmp-swiper__wrap {
+            //         .swiper-slide {
+            //             background: var(--colorCM-mode1-hero-hero04);
+            //         }
+            //     }
+            // }
             .cmp-hero-navigation {
                 &__list {
                     @media #{$min1280} {
@@ -189,6 +189,8 @@
                 margin-bottom: 0;
                 .swiper-slide {
                     opacity: 0;
+                    background: transparent;
+                    background-color: transparent;
                     // transition: opacity 0.5s ease-in-out; /* 부드러운 전환 효과 */
                     &.swiper-slide-active {
                         opacity: 1;
