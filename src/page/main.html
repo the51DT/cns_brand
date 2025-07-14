@@ -841,6 +841,8 @@
         let swiperNotice = new Swiper('.swiper-notice', {
             loop: false,
             slidesPerView: 1,
+            preventClicks: false,
+            preventClicksPropagation: false, 
             navigation: {
                 nextEl: '.notice-swiper__navigation--next',
                 prevEl: '.notice-swiper__navigation--prev',
@@ -853,6 +855,8 @@
             spaceBetween: 12,
             slidesOffsetBefore: 20,
             slidesOffsetAfter: 20,
+            preventClicks: false,
+            preventClicksPropagation: false, 
             navigation: {
                 nextEl: '.news-swiper__navigation--next',
                 prevEl: '.news-swiper__navigation--prev',

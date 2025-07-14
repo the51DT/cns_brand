@@ -271,6 +271,8 @@ let swiperHero = new Swiper('.swiper-interactive-banner', {
     autoplay: {
         delay: 6000,
     },
+    preventClicks: false, 
+    preventClicksPropagation: false, 
     allowTouchMove: false,
     touchRatio: 0,
     slidesPerView: 1,

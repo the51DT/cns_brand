@@ -571,6 +571,8 @@
                 speed: 500, 
                 slidesPerView: 1,
                 autoplay: 'true',
+                preventClicks: false,
+                preventClicksPropagation: false, 
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
@@ -591,6 +593,8 @@
                 loop: false, 
                 slidesPerView: 'auto', 
                 enabled: true,
+                preventClicks: false,
+                preventClicksPropagation: false, 
                 breakpoints: {
                     720: {
                         enabled: false,
@@ -606,6 +610,8 @@
                 enabled: true,
                 // slidesOffsetBefore: 20,
                 spaceBetween: 12,
+                preventClicks: false,
+                preventClicksPropagation: false, 
                 breakpoints: {
                     720: {
                         enabled: false,
@@ -622,6 +628,8 @@
                 spaceBetween: 12,
                 slidesOffsetBefore: 0,
                 slidesOffsetAfter: 0,
+                preventClicks: false,
+                preventClicksPropagation: false, 
                 breakpoints: {
                     720: {
                         enabled: false,
@@ -644,6 +652,8 @@
         let swiperNotice = new Swiper('.swiper-notice', {
             loop: false,
             slidesPerView: 1,
+            preventClicks: false,
+            preventClicksPropagation: false, 
             navigation: {
                 nextEl: '.notice-swiper__navigation--next',
                 prevEl: '.notice-swiper__navigation--prev',
@@ -654,6 +664,8 @@
         let swiperNews = new Swiper('.swiper-news', {
             slidesPerView: 1.1,
             spaceBetween: 12,
+            preventClicks: false,
+            preventClicksPropagation: false, 
             navigation: {
                 nextEl: '.news-swiper__navigation--next',
                 prevEl: '.news-swiper__navigation--prev',
