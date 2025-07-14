@@ -1111,7 +1111,6 @@ body {
         justify-content: flex-start;
         gap: calc(48 / 16 * 1rem);
         @media #{$min1280} {
-            align-items: center;
             flex-direction: row;
             justify-content: space-between;
             gap: calc(8 / 16 * 1rem);
@@ -1123,8 +1122,9 @@ body {
             gap: calc(16 / 16 * 1rem);  
             @media #{$min1280} {
                 flex-direction: row;
-                align-items: center;
+                flex-wrap: wrap;
                 gap: calc(24 / 16 * 1rem);
+                padding: calc(11 / 16 * 1rem) 0;
                 // flex-wrap: wrap;
             }
             li {
@@ -1133,6 +1133,9 @@ body {
                     &.font-primary {
                         color: var(--footer-font-color-primary);
                         font-weight: 600;
+                    }
+                    @media #{$min1280} {
+                        white-space: nowrap;
                     }
                 }
                 
