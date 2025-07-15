@@ -276,14 +276,25 @@ const onTopScroll = () => {
 
 // PC 언어선택 토글
 const langTogglePC = () => {
-    const langToggleBtn = document.querySelector('.header .lang-select .btn-lang');
-    const lagnList = document.querySelector('.header .lang-select .dropdown_list');
-    if(langToggleBtn && lagnList) {
+    const lagnSelect = document.querySelector('.header .lang-select')
+    const langToggleBtn = lagnSelect.querySelector('.btn-lang');
+    const lagnList = lagnSelect.querySelector('.dropdown_list');
+    if(lagnSelect) {
         langToggleBtn.addEventListener('click', (e) => {
             e.stopPropagation(); 
             const isActive = langToggleBtn.classList.toggle('is-active');                       
             lagnList.classList.toggle('is-active', isActive); // 드롭다운 리스트의 활성화 상태 토글
         });
+
+        document.addEventListener("click", function(e) {
+          const trigger = lagnSelect.querySelector('.btn-dropdown');
+          const dropdownList = lagnSelect.querySelector('.dropdown_list');
+
+          if (!lagnSelect.contains(e.target) && !e.target.closest('.btn-dropdown')) {
+              trigger.classList.remove('is-active');
+              dropdownList.classList.remove('is-active'); // 드롭다운 리스트 닫기
+          }
+      });
     }
 }
 
