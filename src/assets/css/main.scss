@@ -860,6 +860,7 @@
             margin-bottom: calc(96 / 16 * 1rem);
             @media #{$min1280} {
                 margin-bottom: calc(120 / 16 * 1rem);
+                max-width: calc(1440 / 16 * 1rem);
             }
             @media #{$min1600} {
                 margin-bottom: calc(160 / 16 * 1rem);
