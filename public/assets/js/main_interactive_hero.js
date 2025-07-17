@@ -12,7 +12,7 @@ let isPcMiddle = window.matchMedia('only screen and (min-width: 1600px)').matche
 let isPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
 let isTablet = window.matchMedia('only screen and (min-width: 535px)').matches;
 let videoGroup = [];
-// let posterGroup = [];
+let posterGroup = [];
 const videoPaths = {
     pc: [
         '/src/assets/image/main/main_interactive_hero_mv_01.mp4',
@@ -33,26 +33,26 @@ const videoPaths = {
         '/src/assets/image/main/main_interactive_hero_mv_04_mo.mp4'
     ]
 };
-// const posterPaths = {
-//     pc: [
-//         '/src/assets/image/main/main_interactive_hero_poster_01.png',
-//         '/src/assets/image/main/main_interactive_hero_poster_02.png',
-//         '/src/assets/image/main/main_interactive_hero_poster_03.png',
-//         '/src/assets/image/main/main_interactive_hero_poster_04.png'
-//     ],
-//     tablet: [
-//         '/src/assets/image/main/main_interactive_hero_poster_01_tablet.png',
-//         '/src/assets/image/main/main_interactive_hero_poster_02_tablet.png',
-//         '/src/assets/image/main/main_interactive_hero_poster_03_tablet.png',
-//         '/src/assets/image/main/main_interactive_hero_poster_04_tablet.png'
-//     ],
-//     mobile: [
-//         '/src/assets/image/main/main_interactive_hero_poster_01_mo.png',
-//         '/src/assets/image/main/main_interactive_hero_poster_02_mo.png',
-//         '/src/assets/image/main/main_interactive_hero_poster_03_mo.png',
-//         '/src/assets/image/main/main_interactive_hero_poster_04_mo.png'
-//     ]
-// }
+const posterPaths = {
+    pc: [
+        '/src/assets/image/main/main_interactive_hero_poster_01.png',
+        '/src/assets/image/main/main_interactive_hero_poster_02.png',
+        '/src/assets/image/main/main_interactive_hero_poster_03.png',
+        '/src/assets/image/main/main_interactive_hero_poster_04.png'
+    ],
+    tablet: [
+        '/src/assets/image/main/main_interactive_hero_poster_01_tablet.png',
+        '/src/assets/image/main/main_interactive_hero_poster_02_tablet.png',
+        '/src/assets/image/main/main_interactive_hero_poster_03_tablet.png',
+        '/src/assets/image/main/main_interactive_hero_poster_04_tablet.png'
+    ],
+    mobile: [
+        '/src/assets/image/main/main_interactive_hero_poster_01_mo.png',
+        '/src/assets/image/main/main_interactive_hero_poster_02_mo.png',
+        '/src/assets/image/main/main_interactive_hero_poster_03_mo.png',
+        '/src/assets/image/main/main_interactive_hero_poster_04_mo.png'
+    ]
+}
 
 const interactiveHero = document.querySelector('.interactive-hero');
 const interactiveSwiper = interactiveHero.querySelector('.interactive-swiper');
@@ -101,13 +101,13 @@ function adjustHeroNavigationPosition() {
 function initializeVideoGroup() {
     if (isPc) {
         videoGroup = videoPaths.pc;
-        // posterGroup = posterPaths.pc;
+        posterGroup = posterPaths.pc;
     } else if (isTablet) {
         videoGroup = videoPaths.tablet;
-        // posterGroup = posterPaths.tablet;
+        posterGroup = posterPaths.tablet;
     } else {
         videoGroup = videoPaths.mobile;
-        // posterGroup = posterPaths.mobile;
+        posterGroup = posterPaths.mobile;
     }
     updateVideoSources()
 }
@@ -120,7 +120,7 @@ function updateVideoSources() {
         const styleToApply = currentStyles[slideIndex]; // 랜덤으로 섞인 스타일
         
         videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 현재 슬라이드 인덱스에 맞는 비디오 경로 설정
-        // videoElement.setAttribute('poster', posterGroup[styleGroup.indexOf(styleToApply)]);
+        videoElement.setAttribute('poster', posterGroup[styleGroup.indexOf(styleToApply)]);
         videoElement.load(); // 비디오 파일 로드
         videoElement.onloadeddata = () => {
             adjustHeroNavigationPosition(); // 비디오 로딩 완료 후 위치 조정
