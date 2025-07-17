@@ -297,16 +297,16 @@
                 }
                 @media only screen and (max-width : 1680px) {
                     text-align: center;
-                    max-width: calc(440 / 16 * 1rem);
+                    max-width: calc(520 / 16 * 1rem);
                     margin: 0 auto;
-                    padding: calc(80 / 16 * 1rem) 0 calc(60 / 16 * 1rem);
+                    padding: calc(80 / 16 * 1rem) calc(40 / 16 * 1rem) calc(60 / 16 * 1rem);
                 }                             
                 @media #{$tabletMini} {
                     padding-bottom: calc(46 / 16 * 1rem);
                 }
                 @media #{$phone} {
                     text-align: center;
-                    padding: 0;
+                    padding: 0 calc(40 / 16 * 1rem);
                 }
                 .display-mo {
                     display: none;
