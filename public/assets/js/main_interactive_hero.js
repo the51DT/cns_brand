@@ -129,12 +129,29 @@ function updateVideoSources() {
     adjustHeroNavigationPosition()
 }
 
+let lastDeviceType = '';
+
+function getDeviceType() {
+    if (window.matchMedia('(min-width: 1280px)').matches) {
+        return 'pc';
+    } else if (window.matchMedia('(min-width: 535px)').matches) {
+        return 'tablet';
+    } else {
+        return 'mobile';
+    }
+}
+lastDeviceType = getDeviceType();
+
 window.addEventListener('resize', function () {
-    isPcWide = window.matchMedia('only screen and (min-width: 1920px)').matches;
-    isPcMiddle = window.matchMedia('(min-width: 1600px)').matches; 
-    isPc = window.matchMedia('(min-width: 1280px)').matches;
-    isTablet = window.matchMedia('(min-width: 535px)').matches;
-    initializeVideoGroup();
+    const currentDeviceType = getDeviceType();
+    if (lastDeviceType !== currentDeviceType) {
+        lastDeviceType = currentDeviceType;
+        isPcWide = window.matchMedia('only screen and (min-width: 1920px)').matches;
+        isPcMiddle = window.matchMedia('(min-width: 1600px)').matches; 
+        isPc = window.matchMedia('(min-width: 1280px)').matches;
+        isTablet = window.matchMedia('(min-width: 535px)').matches;
+        initializeVideoGroup();
+    }
     adjustHeroNavigationPosition();
 }); 
 
