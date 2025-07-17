@@ -836,7 +836,8 @@
     <!-- <script src="/assets/js/initializeSwipers.js"></script> -->
     <script src="/assets/js/main_interactive_hero.js"></script>
     <script src="/assets/js/main_service.js"></script>
-    <script>        
+    <script>
+        let checkPc = window.matchMedia('only screen and (min-width: 1280px)').matches;    
         /* swiper-notice */
         let swiperNotice = new Swiper('.swiper-notice', {
             loop: false,
@@ -897,12 +898,13 @@
                     setTimeout(() => {
                         preventAutoCollapse = false;
                     }, 600);
+                    if(checkPc) {
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
             });
         }
 
@@ -936,6 +938,7 @@
         }
 
         window.addEventListener('resize', () => {
+            checkPc = window.matchMedia('only screen and (min-width: 1280px)').matches;
             searchPlaceholder(collapsedBar);
             targetPosition = dynamicSearch.offsetTop;
             checkSearch(dynamicSearch);
@@ -947,6 +950,7 @@
         searchPlaceholder(collapsedBar);
         checkSearch(dynamicSearch);
 
+        
     </script>
 </body>
 
