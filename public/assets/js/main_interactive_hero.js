@@ -323,8 +323,6 @@ let swiperHero = new Swiper('.swiper-interactive-banner', {
                     // 영상 강제 초기화
                     video.pause();
                     video.currentTime = 0;
-
-                    // iOS 등에서 재생 확실하게 하려면 아래 순서 중요
                     video.play().then(() => {
                         console.log('🎬 video restarted');
                     }).catch(err => {
@@ -334,7 +332,6 @@ let swiperHero = new Swiper('.swiper-interactive-banner', {
                     console.error('video 조작 에러', err);
                 }
             }
-            console.log(video.currentTime)
         }
     },
 });
