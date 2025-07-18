@@ -21,10 +21,7 @@
     &__header {
         border-bottom: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
         margin-bottom: calc(48 / 16 * 1rem);
-        overflow: hidden;
-        overflow-x: scroll;
-        -ms-overflow-style:none;
-        scrollbar-width:none;
+        overflow: auto;
         padding-right: calc(40 / 16 * 1rem);
         position: sticky;
         top: 0;
@@ -33,13 +30,13 @@
         z-index: 10;
         transition: top 0.5s linear;
         @media #{$min1280} {
-            overflow: unset;
-            overflow-x: unset;
             padding-right: 0;
             margin-bottom: calc(80 / 16 * 1rem);
         }
         &::-webkit-scrollbar {
-            display:none;
+            @media only screen and (max-width : 1279px) {
+                display:none;
+            }
         }
         // &.tab-move-position {
         //     top: calc(63 / 16 * 1rem);
