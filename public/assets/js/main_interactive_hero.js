@@ -118,11 +118,10 @@ function updateVideoSources() {
     activeSlides.forEach(videoElement => {
         const slideIndex = Array.from(videoElement.closest('.swiper-slide').parentNode.children).indexOf(videoElement.closest('.swiper-slide'));
         const styleToApply = currentStyles[slideIndex]; // 랜덤으로 섞인 스타일
-        if (!videoElement.src.includes(videoGroup[styleGroup.indexOf(styleToApply)])) {
-            videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 현재 슬라이드 인덱스에 맞는 비디오 경로 설정
-            videoElement.setAttribute('poster', posterGroup[styleGroup.indexOf(styleToApply)]);
-            // videoElement.load(); // 비디오 파일 로드
-        }
+
+        videoElement.src = videoGroup[styleGroup.indexOf(styleToApply)]; // 현재 슬라이드 인덱스에 맞는 비디오 경로 설정
+        videoElement.setAttribute('poster', posterGroup[styleGroup.indexOf(styleToApply)]);
+        videoElement.load(); // 비디오 파일 로드
         videoElement.onloadeddata = () => {
             adjustHeroNavigationPosition(); // 비디오 로딩 완료 후 위치 조정
         };
@@ -311,27 +310,10 @@ let swiperHero = new Swiper('.swiper-interactive-banner', {
             // }
         }, // 슬라이드 전환 시작 시 스타일 적용
         slideChangeTransitionEnd: function() {
-            // onSlideChange(); // 슬라이드 전환 종료 시 비디오 제어
+            onSlideChange(); // 슬라이드 전환 종료 시 비디오 제어
             // if(isPc) { // PC 분기에서만 적용
             //     heroNavigation.classList.add('fade-in');
             // }
-            const activeSlide = this.slides[this.activeIndex];
-            const video = activeSlide.querySelector('video');
-
-            if (video) {
-                try {
-                    // 영상 강제 초기화
-                    video.pause();
-                    video.currentTime = 0;
-                    video.play().then(() => {
-                        console.log('🎬 video restarted');
-                    }).catch(err => {
-                        console.warn('video play 실패', err);
-                    });
-                } catch (err) {
-                    console.error('video 조작 에러', err);
-                }
-            }
         }
     },
 });
