@@ -31,6 +31,34 @@ const getHeaderHeight = (el) => {
   return `${maxHeight}px`
 }
 
+const getHeaderDropHeight = (el) => {
+  const gnbDropList = el.querySelectorAll('.sub-menu-list--drop');
+  const gnbDropLeft = el.querySelector('.gnb-sub-left--drop');
+  const gnbDropRight = el.querySelector('.gnb-sub-right--drop');
+
+  let listMaxHeight = 0;
+  let maxHeight = 0;
+
+  gnbDropList.forEach(drop => {
+    const height = drop.offsetHeight + 96;
+    if (height > listMaxHeight) {
+        listMaxHeight = height;
+    }
+  })
+  
+  const detailHeight = el ? el.getBoundingClientRect().height : 0
+
+  if(gnbDropList.length > 0) {
+    maxHeight = Math.max(detailHeight, listMaxHeight)
+  } else if(gnbDropLeft) {
+    const dropLeftHeight = gnbDropLeft.getBoundingClientRect().height + 96
+    const dropRightHeight = gnbDropRight ? gnbDropRight.getBoundingClientRect().height + 96 : 0
+    
+    maxHeight = Math.max(detailHeight, Math.max(dropLeftHeight, dropRightHeight))
+  }
+  return `${maxHeight}px`
+}
+
 /* GNB 모드 설정 */
 const setGnbMode = (mode) => {
   const body = document.body;
@@ -39,10 +67,10 @@ const setGnbMode = (mode) => {
   if (mode === 'mo' || mode === 'pc') {
     body.classList.add(`gnb-mode--${mode}`);
     currentGnbMode = mode;
-    console.log('setGnbMode called:', `gnb-mode--${mode}`);
+    // console.log('setGnbMode called:', `gnb-mode--${mode}`);
   } else {
     currentGnbMode = null;
-    console.log('setGnbMode called: none');
+    // console.log('setGnbMode called: none');
   }
 };
 
@@ -61,6 +89,7 @@ function mainNavigation(elements) {
   const bodyWrap = document.querySelector('body')
   const header = bodyWrap.querySelector('.header')
   const navyWrap = header.querySelector('.gnb-navy__wrap')
+  const swiperContainer = header.querySelector('.gnb-sub-swiper');
 
   let subHeight = 0
 
@@ -70,7 +99,7 @@ function mainNavigation(elements) {
     const navyBtn = nav.querySelector('.type-full')
     const subMenu = nav.querySelector('.gnb-sub__wrap')
     const subMenuDrop = nav.querySelector('.gnb-sub__wrap--drop')
-
+    
     // 1depth 마우스 클릭
     nav.addEventListener('click', () => {
       if (currentGnbMode === 'mo') return;
@@ -81,6 +110,10 @@ function mainNavigation(elements) {
         removeClass(item, 'is-active')
         removeClass(header, 'is-active')
         setStyle(header, '--gnb-bg-height', '0px')
+        setStyle(subMenuDrop, '--gnb-drop-height', '0px')
+        setTimeout(() => {
+            swiperContainer.style.opacity = '0'; // Swiper 미노출
+        }, 200);
       })
 
       addClass(header, 'is-active')
@@ -96,6 +129,10 @@ function mainNavigation(elements) {
         setStyle(header, '--gnb-bg-height', '0px')
         addClass(nav, 'is-active')
         setStyle(nav, 'position', 'relative')
+        setStyle(subMenuDrop, '--gnb-drop-height', `${getHeaderDropHeight(subMenuDrop)}`)
+        setTimeout(() => {
+            swiperContainer.style.opacity = '1'; // Swiper 보이기
+        }, 200);
       }
     });
 
@@ -115,12 +152,16 @@ function mainNavigation(elements) {
       isHoveringGnb = true;
       if (currentGnbMode === 'mo') return;
       const listLi = document.querySelectorAll('.navy-list > li')
-
+      
       // 1. 전체 초기화
       navyLists.forEach(item => {
         removeClass(item, 'is-active')
         removeClass(header, 'is-active')
         setStyle(header, '--gnb-bg-height', '0px')
+        setStyle(subMenuDrop, '--gnb-drop-height', '0px')
+        setTimeout(() => {
+            swiperContainer.style.opacity = '0'; // Swiper 미노출
+        }, 200);
       })
 
       addClass(header, 'is-active')
@@ -136,6 +177,10 @@ function mainNavigation(elements) {
         setStyle(header, '--gnb-bg-height', '0px')
         addClass(nav, 'is-active')
         setStyle(nav, 'position', 'relative')
+        setStyle(subMenuDrop, '--gnb-drop-height', `${getHeaderDropHeight(subMenuDrop)}`)
+        setTimeout(() => {
+            swiperContainer.style.opacity = '1'; // Swiper 보이기
+        }, 200);
       }
     })
 
@@ -148,6 +193,10 @@ function mainNavigation(elements) {
 
         removeClass(header, 'is-active')
         setStyle(header, '--gnb-bg-height', '0px')
+        setStyle(subMenuDrop, '--gnb-drop-height', '0px')
+        setTimeout(() => {
+            swiperContainer.style.opacity = '0'; // Swiper 미노출
+        }, 200);
 
         const activeItem = nav.querySelector('.sub-menu-list > li.is-active')
         if (activeItem) {
@@ -158,6 +207,7 @@ function mainNavigation(elements) {
         if (activeNavyItem) {
           removeClass(activeNavyItem, 'is-active')
         }
+        
       }
     })
 

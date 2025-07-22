@@ -351,6 +351,7 @@ body {
             .gnb-sub__wrap--drop {
                 display: none;
                 z-index: 100;
+                height: var(--gnb-drop-height);
                 position: absolute;
                 top: calc(99 / 16 * 1rem);
                 left:50%;
@@ -360,6 +361,7 @@ body {
                 border-bottom-left-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
                 border-bottom-right-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
                 overflow: visible;
+                transition: height 0.2s linear;
                 &--sub {
                     // left:calc(50% - calc(270 / 16 * 1rem));
                     width: calc(540 / 16 * 1rem);
@@ -481,7 +483,19 @@ body {
             .gnb-sub-left--drop {
                 width: 100%;
                 max-width: calc(160 / 16 * 1rem);
-                border-right: calc(1 / 16 * 1rem) solid var(--colorCM-mode1-stroke-stroke-default2);
+                position: relative;
+                &::after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 1px;
+                    height: calc(var(--gnb-drop-height) - 96px);
+                    background: var(--colorCM-mode1-stroke-stroke-default2);
+                    transition: height .2s linear;
+                    transition-delay: .05s;
+                }
                 .sub-menu {
                     li {
                         a {
@@ -502,8 +516,10 @@ body {
                 padding-left: calc(34 / 16 * 1rem);
             }
             .gnb-sub-swiper {
+                opacity: 0;
                 padding: 0;
                 max-width: calc(248 / 16 * 1rem);
+                transition: opacity 0.2s ease-in;
                 .swiper-wrapper {
                     margin-bottom: 0;
                 }
@@ -536,6 +552,15 @@ body {
                 }
                 .gnb-sub__wrap--drop {
                     display: block;
+                    height: var(--gnb-drop-height);
+                }
+                .gnb-sub-left--drop {
+                    &::after {
+                        display: block;
+                        content: '';
+                        width: 1px;
+                        height: calc(var(--gnb-drop-height) - 96px);
+                    }
                 }
                 // 2depth menu
                 .gnb-sub__wrap {
@@ -944,6 +969,13 @@ body {
         }
     }
     // search
+    .cmp-modal:has(.modal--type-search) {
+        opacity: 0;
+        &.is-active {
+            opacity: 1;
+            transition: opacity .1s ease-in-out;
+        }
+    }
     .modal--type-search {
         .modal__wrapper {
             background: var(--colorCM-mode1-background-background-default0);
