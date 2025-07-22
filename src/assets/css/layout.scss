@@ -973,7 +973,7 @@ body {
         opacity: 0;
         &.is-active {
             opacity: 1;
-            transition: opacity .1s ease-in-out;
+            transition: opacity .1s ease-in;
         }
     }
     .modal--type-search {
