@@ -969,13 +969,6 @@ body {
         }
     }
     // search
-    .cmp-modal:has(.modal--type-search) {
-        opacity: 0;
-        &.is-active {
-            opacity: 1;
-            transition: opacity .1s ease-in-out;
-        }
-    }
     .modal--type-search {
         .modal__wrapper {
             background: var(--colorCM-mode1-background-background-default0);
