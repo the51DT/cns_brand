@@ -932,6 +932,7 @@
                 if (Yoffset < target.getBoundingClientRect().top) {
                     target.classList.add('dynamic-search--collapsed');
                     target.classList.remove('dynamic-search--expanded');
+                    target.classList.remove('dynamic-search--expanded-important');
                     target.classList.remove('dynamic-search--result-empty');
                 }
             }
