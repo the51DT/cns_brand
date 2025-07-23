@@ -99,6 +99,7 @@ function mainNavigation(elements) {
     const navyBtn = nav.querySelector('.type-full')
     const subMenu = nav.querySelector('.gnb-sub__wrap')
     const subMenuDrop = nav.querySelector('.gnb-sub__wrap--drop')
+    const subDropInner = nav.querySelector('.gnb-sub__wrap--drop .gnb-sub-inner')
     
     // 1depth 마우스 클릭
     nav.addEventListener('click', () => {
@@ -111,6 +112,7 @@ function mainNavigation(elements) {
         removeClass(header, 'is-active')
         setStyle(header, '--gnb-bg-height', '0px')
         setStyle(subMenuDrop, '--gnb-drop-height', '0px')
+        setStyle(subDropInner, 'opacity', '0')
         setTimeout(() => {
             swiperContainer.style.opacity = '0'; // Swiper 미노출
         }, 200);
@@ -130,6 +132,7 @@ function mainNavigation(elements) {
         addClass(nav, 'is-active')
         setStyle(nav, 'position', 'relative')
         setStyle(subMenuDrop, '--gnb-drop-height', `${getHeaderDropHeight(subMenuDrop)}`)
+        setStyle(subDropInner, 'opacity', '1')
         setTimeout(() => {
             swiperContainer.style.opacity = '1'; // Swiper 보이기
         }, 200);
@@ -159,6 +162,7 @@ function mainNavigation(elements) {
         removeClass(header, 'is-active')
         setStyle(header, '--gnb-bg-height', '0px')
         setStyle(subMenuDrop, '--gnb-drop-height', '0px')
+        setStyle(subDropInner, 'opacity', '0')
         setTimeout(() => {
             swiperContainer.style.opacity = '0'; // Swiper 미노출
         }, 200);
@@ -178,6 +182,7 @@ function mainNavigation(elements) {
         addClass(nav, 'is-active')
         setStyle(nav, 'position', 'relative')
         setStyle(subMenuDrop, '--gnb-drop-height', `${getHeaderDropHeight(subMenuDrop)}`)
+        setStyle(subDropInner, 'opacity', '1')
         setTimeout(() => {
             swiperContainer.style.opacity = '1'; // Swiper 보이기
         }, 200);
@@ -194,6 +199,7 @@ function mainNavigation(elements) {
         removeClass(header, 'is-active')
         setStyle(header, '--gnb-bg-height', '0px')
         setStyle(subMenuDrop, '--gnb-drop-height', '0px')
+        setStyle(subDropInner, 'opacity', '0')
         setTimeout(() => {
             swiperContainer.style.opacity = '0'; // Swiper 미노출
         }, 200);

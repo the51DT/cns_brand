@@ -367,9 +367,12 @@ body {
                     width: calc(540 / 16 * 1rem);
                 }
                 .gnb-sub-inner {
+                    opacity: 0;
                     display: flex;
                     justify-content: space-between;
                     padding: calc(48 / 16 * 1rem);
+                    transition: display 0.3s linear, opacity 0.3s linear;
+                    overflow: hidden;
                 }
             }
             // PC 2depth menu list (left)
@@ -553,6 +556,10 @@ body {
                 .gnb-sub__wrap--drop {
                     display: block;
                     height: var(--gnb-drop-height);
+                    .gnb-sub-inner {
+                        opacity: 1;
+                        overflow: visible;
+                    }
                 }
                 .gnb-sub-left--drop {
                     &::after {
