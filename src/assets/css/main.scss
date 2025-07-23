@@ -784,7 +784,7 @@
         &__keyword-area {
             margin: calc(32 / 16 * 1rem) auto 0;
             overflow: auto;
-            max-width: calc(1360 / 16 * 1rem);
+            max-height: calc(280 / 16 * 1rem);
             @media #{$min1600} {
                 margin: calc(36 / 16 * 1rem) auto 0;
                 overflow-x: hidden;
@@ -793,12 +793,11 @@
             }
             &__scroll {
                 display: flex;
-                gap: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem);
+                gap: calc(10 / 16 * 1rem);
                 justify-content: flex-start;
                 flex-wrap: wrap;
                 white-space: nowrap;
                 padding: 0 calc(20 / 16 * 1rem);
-                width: calc(920 / 16 * 1rem);
                 margin: 0 auto;
                 @media #{$min1600} {
                     justify-content: center;
