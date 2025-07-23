@@ -360,7 +360,7 @@ body {
                 border-top: calc(1 / 16 * 1rem) solid var(--header-border-color);
                 border-bottom-left-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
                 border-bottom-right-radius: calc(var(--radius-mode1-s) / 16 * 1rem);
-                overflow: visible;
+                overflow: hidden;
                 transition: height 0.2s linear;
                 &--sub {
                     // left:calc(50% - calc(270 / 16 * 1rem));
@@ -372,6 +372,7 @@ body {
                     justify-content: space-between;
                     padding: calc(48 / 16 * 1rem);
                     transition: display 0.3s linear, opacity 0.3s linear;
+                    transition-delay: 0.1s;
                     overflow: hidden;
                 }
             }
@@ -556,6 +557,7 @@ body {
                 .gnb-sub__wrap--drop {
                     display: block;
                     height: var(--gnb-drop-height);
+                    overflow: visible;
                     .gnb-sub-inner {
                         opacity: 1;
                         overflow: visible;
