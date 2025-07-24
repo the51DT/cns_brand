@@ -453,10 +453,12 @@ function carousel() {
       (p = !1), clearTimeout(d);
     },
     S = (t) => {
-      (g = t.clientX || t.touches[0].clientX),
-        (m = !0),
-        e.classList.add('is-dragging'),
-        (p = !1),
+        t.preventDefault();
+        g = (t.clientX !== undefined) ? t.clientX : t.touches[0].clientX;
+        m = true;
+        u = true;
+        p = false;
+        e.classList.add('is-dragging');
         w();
     },
     h = (e) => {
@@ -466,10 +468,10 @@ function carousel() {
       (m = !1), e.classList.remove('is-dragging');
     };
 
-  e.addEventListener('touchstart', S, { passive: true }),
+    e.addEventListener('touchstart', S, { passive: false }),
     e.addEventListener('touchmove', h, { passive: true }),
     e.addEventListener('touchend', v, { passive: true }),
-    e.addEventListener('mousedown', S, { passive: true }),
+    e.addEventListener('mousedown', S, { passive: false }),
     e.addEventListener('mousemove', h, { passive: true }),
     e.addEventListener('mouseleave', v, { passive: true }),
     e.addEventListener('mouseup', v, { passive: true }),

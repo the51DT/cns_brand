@@ -18,9 +18,23 @@
             overflow: visible;
             will-change: transform;
             opacity: 0;
+            user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
             @media #{$min1280} { 
                 opacity: 1;
             }
+            // & * {
+            //     user-select: none;
+            //     -webkit-user-drag: none;
+            //     -webkit-touch-callout: none;
+            //     -webkit-user-select: none;
+            //     -moz-user-select: none;
+            //     -ms-user-select: none;
+            // }
         }
         .thumbs-wrapper {
             display: flex;
