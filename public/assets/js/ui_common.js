@@ -453,7 +453,16 @@ function carousel() {
       (p = !1), clearTimeout(d);
     },
     S = (t) => {
-        t.preventDefault();
+        // t.target : .card-inner
+        const isTouch = t.type === 'touchstart';
+        const targetWithModal = t.target.closest('[modal-id]');
+        const isCardContext = t.target.closest('.card-context'); 
+        const isCardHasModal = !!targetWithModal;
+
+        if (!(isTouch && isCardContext && isCardHasModal)) {
+            // console.log('preventDefault');
+            t.preventDefault();
+        }
         g = (t.clientX !== undefined) ? t.clientX : t.touches[0].clientX;
         m = true;
         u = true;
@@ -469,12 +478,12 @@ function carousel() {
     };
 
     e.addEventListener('touchstart', S, { passive: false }),
-    e.addEventListener('touchmove', h, { passive: true }),
-    e.addEventListener('touchend', v, { passive: true }),
+    e.addEventListener('touchmove', h, { passive: false }),
+    e.addEventListener('touchend', v, { passive: false }),
     e.addEventListener('mousedown', S, { passive: false }),
-    e.addEventListener('mousemove', h, { passive: true }),
-    e.addEventListener('mouseleave', v, { passive: true }),
-    e.addEventListener('mouseup', v, { passive: true }),
+    e.addEventListener('mousemove', h, { passive: false }),
+    e.addEventListener('mouseleave', v, { passive: false }),
+    e.addEventListener('mouseup', v, { passive: false }),
     e.addEventListener('selectstart', () => !1);
   const x = (e) => {
     gsap.set(t, {
