@@ -163,6 +163,25 @@ function cardItemSetting() {
         });
         cardEventCtrl(e);
       });
+      // 카드 hover 이벤트 (mo 디자인 적용된 pc 브라우저 대상)
+      newInner.addEventListener('mouseover', (e) => {
+        carouselWrap.querySelectorAll('.card-context').forEach((card) => {
+          card.classList.remove('on');
+          card.querySelector('.card-inner').style.backgroundImage = 'revert';
+          card.querySelector('.card-inner').style.border = '1px solid #565656';
+        });
+        cardEventCtrl(e);
+      });
+      // 카드 leave 이벤트 (mo 디자인 적용된 pc 브라우저 대상)
+      newInner.addEventListener('mouseleave', (e) => {
+        const cardDataItemStyle1 = e.target.dataset.style;
+        carouselWrap.querySelectorAll('.card-context').forEach((card) => {
+          e.target.closest('.card-context').classList.add('on');
+          e.target.style.backgroundImage = `${cardDataItemStyle1}`;
+          e.target.style.border = '1px solid #8e8e8e';
+        });
+        cardEventCtrl(e);
+      });
 
       // 모바일 터치 이벤트
       // 카드 내 자세히보기 버튼(->) 터치 이벤트
@@ -171,6 +190,25 @@ function cardItemSetting() {
           card.classList.remove('on');
           card.querySelector('.card-inner').style.backgroundImage = 'revert';
           card.querySelector('.card-inner').style.border = '1px solid #565656';
+        });
+        cardEventCtrl(e, 'cardBtn');
+      });
+      // 카드 hover 이벤트 (mo 디자인 적용된 pc 브라우저 대상)
+      newInner2.addEventListener('mouseover', (e) => {
+        carouselWrap.querySelectorAll('.card-context').forEach((card) => {
+          card.classList.remove('on');
+          card.querySelector('.card-inner').style.backgroundImage = 'revert';
+          card.querySelector('.card-inner').style.border = '1px solid #565656';
+        });
+        cardEventCtrl(e, 'cardBtn');
+      });
+      // 카드 leave 이벤트 (mo 디자인 적용된 pc 브라우저 대상)
+      newInner2.addEventListener('mouseleave', (e) => {
+        const cardDataItemStyle2 = e.target.dataset.style;
+        carouselWrap.querySelectorAll('.card-context').forEach((card) => {
+          e.target.closest('.card-context').classList.add('on');
+          e.target.querySelector('.card-inner').style.backgroundImage = `${cardDataItemStyle2}`;
+          e.target.querySelector('.card-inner').style.border = '1px solid #8e8e8e';
         });
         cardEventCtrl(e, 'cardBtn');
       });
@@ -233,10 +271,10 @@ function carousel() {
   e.addEventListener('touchstart', S, { passive: true }),
     e.addEventListener('touchmove', h, { passive: true }),
     e.addEventListener('touchend', v, { passive: true }),
-    e.addEventListener('mousedown', S),
-    e.addEventListener('mousemove', h),
-    e.addEventListener('mouseleave', v),
-    e.addEventListener('mouseup', v),
+    e.addEventListener('mousedown', S, { passive: true }),
+    e.addEventListener('mousemove', h, { passive: true }),
+    e.addEventListener('mouseleave', v, { passive: true }),
+    e.addEventListener('mouseup', v, { passive: true }),
     e.addEventListener('selectstart', () => !1);
   const x = (e) => {
     gsap.set(t, {
@@ -258,7 +296,6 @@ function carousel() {
     const thumbsWrapWidth = thumbsWrapRect.width;
     const thumbsWrapHalf = thumbsWrapWidth / 2;
     const thumbsWrapMin = thumbsWrapHalf / 2;
-
     setTimeout(function () {
       for (let i = 0; i < t.length; i++) {
         const itemTransform = t[i].style.transform;
@@ -267,7 +304,6 @@ function carousel() {
         const itemTransformVal = itemTransformVal2.split(',');
         const itemTransformX = itemTransformVal[0];
         const itemTransformY = itemTransformVal[1];
-
         if (parseInt(itemTransformX) <= thumbsWrapMin) {
           const targetGroup = t[i].dataset.group;
 

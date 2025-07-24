@@ -469,10 +469,10 @@ function carousel() {
   e.addEventListener('touchstart', S, { passive: true }),
     e.addEventListener('touchmove', h, { passive: true }),
     e.addEventListener('touchend', v, { passive: true }),
-    e.addEventListener('mousedown', S),
-    e.addEventListener('mousemove', h),
-    e.addEventListener('mouseleave', v),
-    e.addEventListener('mouseup', v),
+    e.addEventListener('mousedown', S, { passive: true }),
+    e.addEventListener('mousemove', h, { passive: true }),
+    e.addEventListener('mouseleave', v, { passive: true }),
+    e.addEventListener('mouseup', v, { passive: true }),
     e.addEventListener('selectstart', () => !1);
   const x = (e) => {
     gsap.set(t, {
