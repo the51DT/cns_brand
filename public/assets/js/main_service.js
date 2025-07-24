@@ -207,8 +207,8 @@ function cardItemSetting() {
         const cardDataItemStyle2 = e.target.dataset.style;
         carouselWrap.querySelectorAll('.card-context').forEach((card) => {
           e.target.closest('.card-context').classList.add('on');
-          e.target.querySelector('.card-inner').style.backgroundImage = `${cardDataItemStyle2}`;
-          e.target.querySelector('.card-inner').style.border = '1px solid #8e8e8e';
+          e.target.style.backgroundImage = `${cardDataItemStyle2}`;
+          e.target.style.border = '1px solid #8e8e8e';
         });
         cardEventCtrl(e, 'cardBtn');
       });
