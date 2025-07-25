@@ -159,7 +159,7 @@ function cardItemSetting() {
         carouselWrap.querySelectorAll('.card-context').forEach((card) => {
           card.classList.remove('on');
           card.querySelector('.card-inner').style.backgroundImage = 'revert';
-          card.querySelector('.card-inner').style.border = '1px solid #565656';
+          // card.querySelector('.card-inner').style.border = '1px solid #565656';
         });
         cardEventCtrl(e);
       });
@@ -168,7 +168,7 @@ function cardItemSetting() {
         carouselWrap.querySelectorAll('.card-context').forEach((card) => {
           card.classList.remove('on');
           card.querySelector('.card-inner').style.backgroundImage = 'revert';
-          card.querySelector('.card-inner').style.border = '1px solid #565656';
+          // card.querySelector('.card-inner').style.border = '1px solid #565656';
         });
         cardEventCtrl(e);
       });
@@ -178,7 +178,7 @@ function cardItemSetting() {
         carouselWrap.querySelectorAll('.card-context').forEach((card) => {
           e.target.closest('.card-context').classList.add('on');
           e.target.style.backgroundImage = `${cardDataItemStyle1}`;
-          e.target.style.border = '1px solid #8e8e8e';
+          // e.target.style.border = '1px solid #8e8e8e';
         });
         cardEventCtrl(e);
       });
@@ -189,7 +189,7 @@ function cardItemSetting() {
         carouselWrap.querySelectorAll('.card-context').forEach((card) => {
           card.classList.remove('on');
           card.querySelector('.card-inner').style.backgroundImage = 'revert';
-          card.querySelector('.card-inner').style.border = '1px solid #565656';
+          // card.querySelector('.card-inner').style.border = '1px solid #565656';
         });
         cardEventCtrl(e, 'cardBtn');
       });
@@ -198,7 +198,7 @@ function cardItemSetting() {
         carouselWrap.querySelectorAll('.card-context').forEach((card) => {
           card.classList.remove('on');
           card.querySelector('.card-inner').style.backgroundImage = 'revert';
-          card.querySelector('.card-inner').style.border = '1px solid #565656';
+          // card.querySelector('.card-inner').style.border = '1px solid #565656';
         });
         cardEventCtrl(e, 'cardBtn');
       });
@@ -208,7 +208,7 @@ function cardItemSetting() {
         carouselWrap.querySelectorAll('.card-context').forEach((card) => {
           e.target.closest('.card-context').classList.add('on');
           e.target.style.backgroundImage = `${cardDataItemStyle2}`;
-          e.target.style.border = '1px solid #8e8e8e';
+          // e.target.style.border = '1px solid #8e8e8e';
         });
         cardEventCtrl(e, 'cardBtn');
       });
@@ -279,7 +279,7 @@ function carousel() {
       (m = !1), e.classList.remove('is-dragging');
     };
 
-  e.addEventListener('touchstart', S, { passive: false }),
+    e.addEventListener('touchstart', S, { passive: false }),
     e.addEventListener('touchmove', h, { passive: false }),
     e.addEventListener('touchend', v, { passive: false }),
     e.addEventListener('mousedown', S, { passive: false }),
@@ -393,24 +393,24 @@ function cardEventCtrl(e , type) {
       cardDetailBtn.forEach((btn) => btn.classList.remove('on'));
       e.target.closest('.card-link-wrap').classList.add('on');
       cardContxt.querySelector('.card-inner').style.backgroundImage = `${cardDataItemStyle}`;
-      cardContxt.querySelector('.card-inner').style.border = '1px solid #8e8e8e';
+      // cardContxt.querySelector('.card-inner').style.border = '1px solid #8e8e8e';
     } else {
       cardContxt.classList.remove('on');
       e.target.closest('.card-link-wrap').classList.remove('on');
       cardContxt.querySelector('.card-inner').style.backgroundImage = 'revert';
-      cardContxt.querySelector('.card-inner').style.border = '1px solidrgb(75, 56, 56)';
+      // cardContxt.querySelector('.card-inner').style.border = '1px solidrgb(75, 56, 56)';
     }
   } else {
     if (!targetItem.querySelector('.card-link-wrap').classList.contains('on')) {
       if (targetItem.classList.contains('on')) {
         targetItem.classList.remove('on');
         e.target.style.backgroundImage = 'revert';
-        e.target.style.border = '1px solid #565656';
+        // e.target.style.border = '1px solid #565656';
       } else {
         document.querySelectorAll('.card-context').forEach((item) => item.classList.remove('on'));
         targetItem.classList.add('on');
         e.target.style.backgroundImage = `${targetItemStyle}`;
-        e.target.style.border = '1px solid #8e8e8e';
+        // e.target.style.border = '1px solid #8e8e8e';
       }
     }
   }
