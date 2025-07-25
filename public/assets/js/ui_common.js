@@ -449,20 +449,34 @@ function carousel() {
     g = 0,
     y = 0,
     m = !1;
-  const w = () => {
-      (p = !1), clearTimeout(d);
+
+    // 드래그 체크
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let dragThreshold = 10;
+    let isDraggingTouch = false;
+
+    const w = () => {
+        (p = !1), clearTimeout(d);
     },
     S = (t) => {
-        // t.target : .card-inner
         const isTouch = t.type === 'touchstart';
         const targetWithModal = t.target.closest('[modal-id]');
-        const isCardContext = t.target.closest('.card-context'); 
+        const isCardContext = t.target.closest('.card-context');
         const isCardHasModal = !!targetWithModal;
 
+        // 터치 시작 좌표 저장
+        if (isTouch) {
+            dragStartX = t.touches[0].clientX;
+            dragStartY = t.touches[0].clientY;
+            isDraggingTouch = false;
+        }
+
+        // 클릭 가능한 경우는 preventDefault 하지 않음
         if (!(isTouch && isCardContext && isCardHasModal)) {
-            // console.log('preventDefault');
             t.preventDefault();
         }
+
         g = (t.clientX !== undefined) ? t.clientX : t.touches[0].clientX;
         m = true;
         u = true;
@@ -471,19 +485,48 @@ function carousel() {
         w();
     },
     h = (e) => {
-      m && (u && (u = !1), (y = e.clientX || e.touches[0].clientX), (c += 1.5 * (y - g)), (g = y));
+        if (m) {
+            if (u) u = false;
+
+            y = e.clientX || e.touches[0].clientX;
+            c += 1.5 * (y - g);
+            g = y;
+
+            // 드래그 여부 판단
+            if (e.type === 'touchmove') {
+                const deltaX = e.touches[0].clientX - dragStartX;
+                const deltaY = e.touches[0].clientY - dragStartY;
+                if (Math.abs(deltaX) > dragThreshold || Math.abs(deltaY) > dragThreshold) {
+                    isDraggingTouch = true;
+                }
+            }
+        }
     },
     v = () => {
-      (m = !1), e.classList.remove('is-dragging');
+        m = false;
+        e.classList?.remove?.('is-dragging');
     };
 
-    e.addEventListener('touchstart', S, { passive: false }),
-    e.addEventListener('touchmove', h, { passive: false }),
-    e.addEventListener('touchend', v, { passive: false }),
+    e.addEventListener('touchstart', S, { passive: false });
+    e.addEventListener('touchmove', h, { passive: false });
+    // 드래그 후 클릭 방지
+    e.addEventListener('touchend', (e) => {
+    if (isDraggingTouch) {
+        e.preventDefault(); // 클릭 방지
+    }
+    v(e);
+    }, { passive: true });
     e.addEventListener('mousedown', S, { passive: false }),
     e.addEventListener('mousemove', h, { passive: false }),
     e.addEventListener('mouseleave', v, { passive: false }),
-    e.addEventListener('mouseup', v, { passive: false }),
+    e.addEventListener('mouseup', (e) => {
+        const cardAnchor = e.target.closest('.card-context');
+        if (isDraggingTouch && cardAnchor) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+        }
+        v(e);
+    }, { passive: true });
     e.addEventListener('selectstart', () => !1);
   const x = (e) => {
     gsap.set(t, {
@@ -548,17 +591,30 @@ function carousel() {
 
   gsap.ticker.add(tickerCallback);
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth < 1280) {
-      document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`),
-        gsap.set('.carousel-wrap', {
-          height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
-        }),
-        (n = e.clientWidth),
-        (o = t[0].clientWidth + 10),
-        (r = t.length * o);
-    }
-  });
+    window.addEventListener('resize', () => {
+        if (window.innerWidth < 1280) {
+            document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`),
+            gsap.set('.carousel-wrap', {
+                height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
+            }),
+            (n = e.clientWidth),
+            (o = t[0].clientWidth + 10),
+            (r = t.length * o);
+        }
+    });
+    document.querySelectorAll('.card-context').forEach((el) => {
+        el.addEventListener('click', function (e) {
+            if (isDraggingTouch) {
+                e.preventDefault();
+                e.stopImmediatePropagation(); // onclick="openModal(...)" 막음
+                return;
+            }
+
+            openModal(e); // 드래그가 아니면 정상 실행
+            },
+            true // 캡처 단계에서 실행해야 inline onclick도 차단 가능
+        );
+    });
 }
 
 // tabMenu 
