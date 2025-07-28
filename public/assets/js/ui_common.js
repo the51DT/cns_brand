@@ -485,7 +485,7 @@ function carousel() {
         w();
     },
     h = (e) => {
-        console.log('touchmove or mousemove')
+        // console.log('touchmove or mousemove')
         if (m) {
             if (u) u = false;
 
@@ -497,7 +497,7 @@ function carousel() {
             if (e.type === 'touchmove') {
                 const deltaX = e.touches[0].clientX - dragStartX;
                 const deltaY = e.touches[0].clientY - dragStartY;
-                console.log('touchmove:', deltaX, deltaY)
+                // console.log('touchmove:', deltaX, deltaY)
                 if (Math.abs(deltaX) > dragThreshold || Math.abs(deltaY) > dragThreshold) {
                     isDraggingTouch = true;
                 }
