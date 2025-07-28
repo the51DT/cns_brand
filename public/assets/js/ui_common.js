@@ -651,13 +651,16 @@ const tabMenu = (el, type) => {
                     // tab head scroll
                     if(list.parentElement.classList.contains('is-active')) {
                         const targetScrollWidth = list.closest(".cmp-tab__header").scrollWidth;
-                        const targetOffsetWidth = list.offsetWidth;
+                        // const targetOffsetWidth = list.offsetWidth;
+                        const beforeTargeWidthArray = Array.from(tabList).slice(0, index).map(tab => tab.getBoundingClientRect().width);
+                        const totalWidthBeforeTab = beforeTargeWidthArray.reduce((acc, width) => acc + width, 0);
+                        console.log('beforeTargeWidths:', beforeTargeWidthArray)
                         if(index == 0) {
                             tabHead.scrollTo({left: 0 , behavior : "smooth"});    
                         } else if(index == (tabList.length - 1)) {
                             tabHead.scrollTo({left: targetScrollWidth , behavior : "smooth"});
                         } else {
-                            tabHead.scrollTo({left: targetOffsetWidth , behavior : "smooth"});
+                            tabHead.scrollTo({left: totalWidthBeforeTab , behavior : "smooth"});
                         }
                     }
 
