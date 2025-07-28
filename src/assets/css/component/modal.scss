@@ -577,6 +577,12 @@
                                 background-image: url("#{$basePath}image/icon/icon-cloud4_pc.svg");
                             }
                         }
+                        .icon-cloud5 {
+                            background-image: url("#{$basePath}image/icon/icon-cloud5_mo.svg");
+                            @media #{$min1280} {
+                                background-image: url("#{$basePath}image/icon/icon-cloud5_pc.svg");
+                            }
+                        }
                         .icon-ai1 {
                             background-image: url("#{$basePath}image/icon/icon-ai1_mo.svg");
                             @media #{$min1280} {
@@ -810,6 +816,12 @@
                                     background-image: url("#{$basePath}image/icon/icon-cloud4-hover_mo.svg");
                                     @media #{$min1280} {
                                         background-image: url("#{$basePath}image/icon/icon-cloud4-hover_pc.svg");
+                                    }
+                                }
+                                .icon-cloud5 {
+                                    background-image: url("#{$basePath}image/icon/icon-cloud5-hover_mo.svg");
+                                    @media #{$min1280} {
+                                        background-image: url("#{$basePath}image/icon/icon-cloud5-hover_pc.svg");
                                     }
                                 }
                                 .icon-ai1 {
