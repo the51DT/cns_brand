@@ -654,7 +654,6 @@ const tabMenu = (el, type) => {
                         // const targetOffsetWidth = list.offsetWidth;
                         const beforeTargeWidthArray = Array.from(tabList).slice(0, index).map(tab => tab.getBoundingClientRect().width);
                         const totalWidthBeforeTab = beforeTargeWidthArray.reduce((acc, width) => acc + width, 0);
-                        console.log('beforeTargeWidths:', beforeTargeWidthArray)
                         if(index == 0) {
                             tabHead.scrollTo({left: 0 , behavior : "smooth"});    
                         } else if(index == (tabList.length - 1)) {
