@@ -628,6 +628,7 @@ const tabMenu = (el, type) => {
     }
 
     document.querySelectorAll(el).forEach(wrap => {
+        const tabHead = wrap.querySelector('.cmp-tab__header');
         const tabList = wrap.querySelectorAll('.tab__menu li a');
         const tabContents = wrap.querySelectorAll('.tab__content');
 
@@ -646,8 +647,21 @@ const tabMenu = (el, type) => {
                 event.preventDefault();
                 wrap.querySelector('.tab__menu li.is-active')?.classList.remove('is-active');
                 list.parentElement.classList.add('is-active');
-
                 if (type === 'tab') {
+                    // tab head scroll
+                    if(list.parentElement.classList.contains('is-active')) {
+                        const targetScrollWidth = list.closest(".cmp-tab__header").scrollWidth;
+                        const targetOffsetWidth = list.offsetWidth;
+                        if(index == 0) {
+                            tabHead.scrollTo({left: 0 , behavior : "smooth"});    
+                        } else if(index == (tabList.length - 1)) {
+                            tabHead.scrollTo({left: targetScrollWidth , behavior : "smooth"});
+                        } else {
+                            tabHead.scrollTo({left: targetOffsetWidth , behavior : "smooth"});
+                        }
+                    }
+
+                    // tab content visible, scrollTo
                     wrap.querySelector('.tab__content.is-active')?.classList.remove('is-active');
                     tabContents[index]?.classList.add('is-active');
                     window.scrollTo({
