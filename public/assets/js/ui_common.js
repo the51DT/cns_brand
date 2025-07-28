@@ -515,7 +515,7 @@ function carousel() {
         e.preventDefault(); // 클릭 방지
     }
     v(e);
-    }, { passive: true });
+    }, { passive: false });
     e.addEventListener('mousedown', S, { passive: false }),
     e.addEventListener('mousemove', h, { passive: false }),
     e.addEventListener('mouseleave', v, { passive: false }),
@@ -526,7 +526,7 @@ function carousel() {
             e.stopImmediatePropagation();
         }
         v(e);
-    }, { passive: true });
+    }, { passive: false });
     e.addEventListener('selectstart', () => !1);
   const x = (e) => {
     gsap.set(t, {
