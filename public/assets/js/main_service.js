@@ -263,6 +263,7 @@ function carousel() {
     },
     S = (t) => {
       const isTouch = t.type === 'touchstart';
+      const ismMouseDown = t.type === 'mousedown';
       const targetWithModal = t.target.closest('[modal-id]');
       const isCardContext = t.target.closest('.card-context');
       const isCardHasModal = !!targetWithModal;
@@ -271,6 +272,10 @@ function carousel() {
       if (isTouch) {
         dragStartX = t.touches[0].clientX;
         dragStartY = t.touches[0].clientY;
+        isDraggingTouch = false;
+      } else if (ismMouseDown) {
+        dragStartX = t.clientX;
+        dragStartY = t.clientY;
         isDraggingTouch = false;
       }
 
@@ -303,6 +308,13 @@ function carousel() {
           if (Math.abs(deltaX) > dragThreshold || Math.abs(deltaY) > dragThreshold) {
             isDraggingTouch = true;
           }
+        } else if (e.type === 'mousemove') {
+          const deltaX2 = e.clientX - dragStartX;
+          const deltaY2 = e.clientY - dragStartY;
+          // console.log('touchmove:', deltaX, deltaY)
+          if (Math.abs(deltaX2) > dragThreshold || Math.abs(deltaY2) > dragThreshold) {
+            isDraggingTouch = true;
+          }
         }
       }
     },
@@ -328,7 +340,6 @@ function carousel() {
       const cardAnchor = e.target.closest('.card-context');
       if (isDraggingTouch && cardAnchor) {
         e.preventDefault();
-        e.stopImmediatePropagation();
       }
       v(e);
     }, { passive: false });

@@ -29,14 +29,14 @@
         background: var(--colorCM-mode1-background-background-default0);
         z-index: 10;
         transition: top 0.5s linear;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
         @media #{$min1280} {
             padding-right: 0;
             margin-bottom: calc(80 / 16 * 1rem);
         }
         &::-webkit-scrollbar {
-            @media only screen and (max-width : 1279px) {
-                display:none;
-            }
+            display:none;
         }
         // &.tab-move-position {
         //     top: calc(63 / 16 * 1rem);

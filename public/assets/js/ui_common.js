@@ -414,215 +414,216 @@ function adjustToast() {
 }
 
 //250711 추가 : initCarousel(); 관련 함수 : closeModal() 할 경우, 해당 함수 재호출하기위해 가져옴
-function initCarousel() {
-  const intViewportWidth = window.innerWidth;
-  if (intViewportWidth < 1280) {
-    // mobile
-    gsap.set('.carousel-wrap', {
-      height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
-      onComplete: () => [carousel()],
-    });
-  }
-}
-//250711 추가 : carousel(); 관련 함수 : closeModal() 할 경우, 해당 함수 재호출하기위해 가져옴
-function carousel() {
-  gsap.to('.carousel-wrap', {
-    opacity: 1,
-    duration: 0.3,
-    ease: 'power1.inOut',
-    delay: 0.1,
-  }),
-    gsap.ticker.fps(60);
-  const e = document.querySelector('.carousel-wrap'),
-    t = document.querySelectorAll('.card-context');
-  let n = e.clientWidth,
-    o = t[0].clientWidth + 10,
-    r = t.length * o,
-    i = 0,
-    s = 1,
-    a = 10,
-    c = 10,
-    l = 10,
-    p = !0,
-    u = !1;
-  let d,
-    g = 0,
-    y = 0,
-    m = !1;
+// function initCarousel() {
+//   const intViewportWidth = window.innerWidth;
+//   if (intViewportWidth < 1280) {
+//     // mobile
+//     gsap.set('.carousel-wrap', {
+//       height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
+//       onComplete: () => [carousel()],
+//     });
+//   }
+// }
+// //250711 추가 : carousel(); 관련 함수 : closeModal() 할 경우, 해당 함수 재호출하기위해 가져옴
+// function carousel() {
+//   gsap.to('.carousel-wrap', {
+//     opacity: 1,
+//     duration: 0.3,
+//     ease: 'power1.inOut',
+//     delay: 0.1,
+//   }),
+//     gsap.ticker.fps(60);
+//   const e = document.querySelector('.carousel-wrap'),
+//     t = document.querySelectorAll('.card-context');
+//   let n = e.clientWidth,
+//     o = t[0].clientWidth + 10,
+//     r = t.length * o,
+//     i = 0,
+//     s = 1,
+//     a = 10,
+//     c = 10,
+//     l = 10,
+//     p = !0,
+//     u = !1;
+//   let d,
+//     g = 0,
+//     y = 0,
+//     m = !1;
 
-    // 드래그 체크
-    let dragStartX = 0;
-    let dragStartY = 0;
-    let dragThreshold = 10;
-    let isDraggingTouch = false;
+//     // 드래그 체크
+//     let dragStartX = 0;
+//     let dragStartY = 0;
+//     let dragThreshold = 10;
+//     let isDraggingTouch = false;
 
-    const w = () => {
-        (p = !1), clearTimeout(d);
-    },
-    S = (t) => {
-        const isTouch = t.type === 'touchstart';
-        const targetWithModal = t.target.closest('[modal-id]');
-        const isCardContext = t.target.closest('.card-context');
-        const isCardHasModal = !!targetWithModal;
+//     const w = () => {
+//         (p = !1), clearTimeout(d);
+//     },
+//     S = (t) => {
+//         const isTouch = t.type === 'touchstart';
+//         const targetWithModal = t.target.closest('[modal-id]');
+//         const isCardContext = t.target.closest('.card-context');
+//         const isCardHasModal = !!targetWithModal;
 
-        // 터치 시작 좌표 저장
-        if (isTouch) {
-            dragStartX = t.touches[0].clientX;
-            dragStartY = t.touches[0].clientY;
-            isDraggingTouch = false;
-        }
+//         // 터치 시작 좌표 저장
+//         if (isTouch) {
+//             dragStartX = t.touches[0].clientX;
+//             dragStartY = t.touches[0].clientY;
+//             isDraggingTouch = false;
+//         }
 
-        // 클릭 가능한 경우는 preventDefault 하지 않음
-        if (!(isTouch && isCardContext && isCardHasModal)) {
-            t.preventDefault();
-        }
+//         // 클릭 가능한 경우는 preventDefault 하지 않음
+//         if (!(isTouch && isCardContext && isCardHasModal)) {
+//             t.preventDefault();
+//         }
 
-        g = (t.clientX !== undefined) ? t.clientX : t.touches[0].clientX;
-        m = true;
-        u = true;
-        p = false;
-        e.classList.add('is-dragging');
-        w();
-    },
-    h = (e) => {
-        // console.log('touchmove or mousemove')
-        if (m) {
-            if (u) u = false;
+//         g = (t.clientX !== undefined) ? t.clientX : t.touches[0].clientX;
+//         m = true;
+//         u = true;
+//         p = false;
+//         e.classList.add('is-dragging');
+//         w();
+//     },
+//     h = (e) => {
+//         // console.log('touchmove or mousemove')
+//         if (m) {
+//             if (u) u = false;
 
-            y = e.clientX || e.touches[0].clientX;
-            c += 1.5 * (y - g);
-            g = y;
+//             y = e.clientX || e.touches[0].clientX;
+//             c += 1.5 * (y - g);
+//             g = y;
 
-            // 드래그 여부 판단
-            if (e.type === 'touchmove') {
-                const deltaX = e.touches[0].clientX - dragStartX;
-                const deltaY = e.touches[0].clientY - dragStartY;
-                // console.log('touchmove:', deltaX, deltaY)
-                if (Math.abs(deltaX) > dragThreshold || Math.abs(deltaY) > dragThreshold) {
-                    isDraggingTouch = true;
-                }
-            }
-        }
-    },
-    v = () => {
-        m = false;
-        e.classList?.remove?.('is-dragging');
-    };
+//             // 드래그 여부 판단
+//             if (e.type === 'touchmove') {
+//                 const deltaX = e.touches[0].clientX - dragStartX;
+//                 const deltaY = e.touches[0].clientY - dragStartY;
+//                 // console.log('touchmove:', deltaX, deltaY)
+//                 if (Math.abs(deltaX) > dragThreshold || Math.abs(deltaY) > dragThreshold) {
+//                     isDraggingTouch = true;
+//                 }
+//             }
+//         }
+//     },
+//     v = () => {
+//         m = false;
+//         e.classList?.remove?.('is-dragging');
+//     };
 
-    e.addEventListener('touchstart', S, { passive: false });
-    e.addEventListener('touchmove', h, { passive: false });
-    // 드래그 후 클릭 방지
-    e.addEventListener('touchend', (e) => {
-    if (isDraggingTouch) {
-        e.preventDefault(); // 클릭 방지
-    }
-    v(e);
-    }, { passive: false });
-    e.addEventListener('mousedown', S, { passive: false }),
-    e.addEventListener('mousemove', h, { passive: false }),
-    e.addEventListener('mouseleave', v, { passive: false }),
-    e.addEventListener('mouseup', (e) => {
-        const cardAnchor = e.target.closest('.card-context');
-        if (isDraggingTouch && cardAnchor) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-        }
-        v(e);
-    }, { passive: false });
-    e.addEventListener('selectstart', () => !1);
-  const x = (e) => {
-    gsap.set(t, {
-      x: (t) => t * o + e,
-      y: (e) => {
-        const n = (e * o) / o,
-          r = gsap.utils.wrap(-1, t.length - 1, n);
-        return 25 * Math.sin(1 * r - i);
-      },
-      modifiers: {
-        x: (e, t) => `${gsap.utils.wrap(-o, r - o, parseInt(e))}px`,
-      },
-    });
+//     e.addEventListener('touchstart', S, { passive: false });
+//     e.addEventListener('touchmove', h, { passive: false });
+//     // 드래그 후 클릭 방지
+//     e.addEventListener('touchend', (e) => {
+//     if (isDraggingTouch) {
+//         e.preventDefault(); // 클릭 방지
+//     }
+//     v(e);
+//     }, { passive: false });
+//     e.addEventListener('mousedown', S, { passive: false }),
+//     e.addEventListener('mousemove', h, { passive: false }),
+//     e.addEventListener('mouseleave', v, { passive: false }),
+//     e.addEventListener('mouseup', (e) => {
+//         const cardAnchor = e.target.closest('.card-context');
+//         if (isDraggingTouch && cardAnchor) {
+//             e.preventDefault();
+//             e.stopImmediatePropagation();
+//         }
+//         v(e);
+//     }, { passive: false });
+//     e.addEventListener('selectstart', () => !1);
+//   const x = (e) => {
+//     gsap.set(t, {
+//       x: (t) => t * o + e,
+//       y: (e) => {
+//         const n = (e * o) / o,
+//           r = gsap.utils.wrap(-1, t.length - 1, n);
+//         return 25 * Math.sin(1 * r - i);
+//       },
+//       modifiers: {
+//         x: (e, t) => `${gsap.utils.wrap(-o, r - o, parseInt(e))}px`,
+//       },
+//     });
 
-    // (mobile) 카드 그룹별 active 처리
-    const thumbsWrapRect = document
-      .querySelector('.carousel-wrap .thumbs-wrapper')
-      .getBoundingClientRect();
-    const thumbsWrapWidth = thumbsWrapRect.width;
-    const thumbsWrapHalf = thumbsWrapWidth / 2;
-    const thumbsWrapMin = thumbsWrapHalf / 2;
+//     // (mobile) 카드 그룹별 active 처리
+//     const thumbsWrapRect = document
+//       .querySelector('.carousel-wrap .thumbs-wrapper')
+//       .getBoundingClientRect();
+//     const thumbsWrapWidth = thumbsWrapRect.width;
+//     const thumbsWrapHalf = thumbsWrapWidth / 2;
+//     const thumbsWrapMin = thumbsWrapHalf / 2;
 
-    setTimeout(function () {
-      for (let i = 0; i < t.length; i++) {
-        const itemTransform = t[i].style.transform;
-        const itemTransformVal1 = itemTransform.replace('translate(', '');
-        const itemTransformVal2 = itemTransformVal1.replace(')', '');
-        const itemTransformVal = itemTransformVal2.split(',');
-        const itemTransformX = itemTransformVal[0];
-        const itemTransformY = itemTransformVal[1];
+//     setTimeout(function () {
+//       for (let i = 0; i < t.length; i++) {
+//         const itemTransform = t[i].style.transform;
+//         const itemTransformVal1 = itemTransform.replace('translate(', '');
+//         const itemTransformVal2 = itemTransformVal1.replace(')', '');
+//         const itemTransformVal = itemTransformVal2.split(',');
+//         const itemTransformX = itemTransformVal[0];
+//         const itemTransformY = itemTransformVal[1];
 
-        if (parseInt(itemTransformX) <= thumbsWrapMin) {
-          const targetGroup = t[i].dataset.group;
+//         if (parseInt(itemTransformX) <= thumbsWrapMin) {
+//           const targetGroup = t[i].dataset.group;
 
-          cardItems.forEach((item) => {
-            item.classList.remove('active');
+//           cardItems.forEach((item) => {
+//             item.classList.remove('active');
 
-            const itemGroup = item.dataset.group;
-            if (itemGroup == targetGroup) {
-              item.classList.add('active');
-            }
-          });
-        }
-      }
-    }, 1000);
-  };
-  x(0);
+//             const itemGroup = item.dataset.group;
+//             if (itemGroup == targetGroup) {
+//               item.classList.add('active');
+//             }
+//           });
+//         }
+//       }
+//     }, 1000);
+//   };
+//   x(0);
 
-  tickerCallback = () => {
-    var e;
-    if (!u) {
-      if (p) c -= s;
-      l = l * (1 - (e = 0.1)) + c * e;
-      x(l);
-      if (!p) {
-        s = l - a;
-        a = l;
-      }
-      p ? (i += 0.05) : ((i = 0.0075 * a), (a = l));
-    }
-  };
+//   tickerCallback = () => {
+//     var e;
+//     if (!u) {
+//       if (p) c -= s;
+//       l = l * (1 - (e = 0.1)) + c * e;
+//       x(l);
+//       if (!p) {
+//         s = l - a;
+//         a = l;
+//       }
+//       p ? (i += 0.05) : ((i = 0.0075 * a), (a = l));
+//     }
+//   };
 
-  gsap.ticker.add(tickerCallback);
+//   gsap.ticker.add(tickerCallback);
 
-    window.addEventListener('resize', () => {
-        if (window.innerWidth < 1280) {
-            document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`),
-            gsap.set('.carousel-wrap', {
-                height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
-            }),
-            (n = e.clientWidth),
-            (o = t[0].clientWidth + 10),
-            (r = t.length * o);
-        }
-    });
-    document.querySelectorAll('.card-context').forEach((el) => {
-        el.addEventListener('click', function (e) {
-            if (isDraggingTouch) {
-                e.preventDefault();
-                e.stopImmediatePropagation(); // onclick="openModal(...)" 막음
-                return;
-            }
+//     window.addEventListener('resize', () => {
+//         if (window.innerWidth < 1280) {
+//             document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`),
+//             gsap.set('.carousel-wrap', {
+//                 height: `${document.querySelector('.card-context .card-inner').clientHeight}px`,
+//             }),
+//             (n = e.clientWidth),
+//             (o = t[0].clientWidth + 10),
+//             (r = t.length * o);
+//         }
+//     });
+//     document.querySelectorAll('.card-context').forEach((el) => {
+//         el.addEventListener('click', function (e) {
+//             if (isDraggingTouch) {
+//                 e.preventDefault();
+//                 e.stopImmediatePropagation(); // onclick="openModal(...)" 막음
+//                 return;
+//             }
 
-            openModal(e); // 드래그가 아니면 정상 실행
-            },
-            true // 캡처 단계에서 실행해야 inline onclick도 차단 가능
-        );
-    });
-}
+//             openModal(e); // 드래그가 아니면 정상 실행
+//             },
+//             true // 캡처 단계에서 실행해야 inline onclick도 차단 가능
+//         );
+//     });
+// }
 
 // tabMenu 
 // tabMenu('.tab__wrap', 'tab') 전환방식;
 // tabMenu('.tab__wrap', 'list') 정렬 방식;
 const tabMenu = (el, type) => {
+    console.log('tabMenu');
     if (!el || typeof el !== 'string') return;
 
     if (type !== 'tab') {
@@ -635,34 +636,93 @@ const tabMenu = (el, type) => {
         const tabContents = wrap.querySelectorAll('.tab__content');
 
         if (!tabList.length || (type === 'tab' && !tabContents.length)) return;
-
         if (type === 'tab' && tabList.length !== tabContents.length) return;
 
-        if(wrap.classList.contains('align-center')) {
+        if (wrap.classList.contains('align-center')) {
             let tabItemsCount = tabList.length; 
             wrap.style.setProperty('--tab-count', tabItemsCount);               
         }     
 
+        // tab head dragging
+        let isMouseDown = false;
+        let isDragging = false;
+        let startX;
+        let scrollLeft;
+
+        // mousedown 이벤트
+        tabHead.addEventListener("mousedown", (e) => {
+            console.log('mousedown');
+            isMouseDown = true;
+            startX = e.pageX - tabHead.offsetLeft;
+            scrollLeft = tabHead.scrollLeft;
+        });
+
+        // mouseup 이벤트
+        tabHead.addEventListener("mouseup", () => {
+            console.log('mouseup');
+            isMouseDown = false;
+            if (isDragging) {
+                setTimeout(() => {
+                    isDragging = false; // 드래그 종료
+                }, 1);
+            } else {
+                setTimeout(() => {
+                    isMouseDown = false; // 상태 초기화
+                }, 1);
+            }
+        });
+
+        // mouseleave 이벤트
+        tabHead.addEventListener("mouseleave", () => {
+            console.log('mouseleave');
+            isMouseDown = false;
+            isDragging = false;
+        });
+
+        // mousemove 이벤트
+        tabHead.addEventListener("mousemove", (e) => {
+            console.log('mousemove');
+            if (!isMouseDown) return;
+            e.preventDefault();
+
+            const x = e.pageX - tabHead.offsetLeft;
+            const walk = (x - startX) * 1.2; // 스크롤 속도 조절
+            tabHead.scrollLeft = scrollLeft - walk;
+            isDragging = true; // 드래그 상태로 설정
+        });
+
+        // tab head button
         tabList.forEach((list, index) => {
-            list.addEventListener('click', (event) => {
+            list.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+            });
+
+            list.addEventListener('click', (e) => {
+                if (isDragging) {
+                    e.preventDefault();
+                    return;
+                }
+
+                console.log('list:', list);
                 const contentPosition = tabContents[index].offsetTop;
                 event.preventDefault();
+
+                // 활성화된 탭 변경
                 wrap.querySelector('.tab__menu li.is-active')?.classList.remove('is-active');
                 list.parentElement.classList.add('is-active');
+
                 if (type === 'tab') {
                     // tab head scroll
-                    if(list.parentElement.classList.contains('is-active')) {
-                        const targetScrollWidth = list.closest(".cmp-tab__header").scrollWidth;
-                        // const targetOffsetWidth = list.offsetWidth;
-                        const beforeTargeWidthArray = Array.from(tabList).slice(0, index).map(tab => tab.getBoundingClientRect().width);
-                        const totalWidthBeforeTab = beforeTargeWidthArray.reduce((acc, width) => acc + width, 0);
-                        if(index == 0) {
-                            tabHead.scrollTo({left: 0 , behavior : "smooth"});    
-                        } else if(index == (tabList.length - 1)) {
-                            tabHead.scrollTo({left: targetScrollWidth , behavior : "smooth"});
-                        } else {
-                            tabHead.scrollTo({left: totalWidthBeforeTab , behavior : "smooth"});
-                        }
+                    const targetScrollWidth = list.closest(".cmp-tab__header").scrollWidth;
+                    const beforeTargeWidthArray = Array.from(tabList).slice(0, index).map(tab => tab.getBoundingClientRect().width);
+                    const totalWidthBeforeTab = beforeTargeWidthArray.reduce((acc, width) => acc + width, 0);
+
+                    if (index === 0) {
+                        tabHead.scrollTo({ left: 0, behavior: "smooth" });
+                    } else if (index === (tabList.length - 1)) {
+                        tabHead.scrollTo({ left: targetScrollWidth, behavior: "smooth" });
+                    } else {
+                        tabHead.scrollTo({ left: totalWidthBeforeTab, behavior: "smooth" });
                     }
 
                     // tab content visible, scrollTo
@@ -679,6 +739,8 @@ const tabMenu = (el, type) => {
         });
     });
 };
+
+
 const tabSubMenu = (el, type) => {
     if (!el || typeof el !== 'string') return;
 
