@@ -275,7 +275,7 @@ const contentTab = document.querySelectorAll('.cmp-tab');
 const scrollEventManage = () => {
     if (isHoveringGnb) return; // GNB에 hover 중일 때 스크롤 이벤트 무시
     const Yoffset = window.pageYOffset || document.documentElement.scrollTop;
-    if(!theFuture) {
+    if(!theFuture && !bodyWrap.classList.contains('gnb-open')) {
       if(Yoffset == 0) {
           onTopScroll();
       } else {
