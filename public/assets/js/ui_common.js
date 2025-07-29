@@ -623,7 +623,6 @@ function adjustToast() {
 // tabMenu('.tab__wrap', 'tab') 전환방식;
 // tabMenu('.tab__wrap', 'list') 정렬 방식;
 const tabMenu = (el, type) => {
-    console.log('tabMenu');
     if (!el || typeof el !== 'string') return;
 
     if (type !== 'tab') {
@@ -651,7 +650,7 @@ const tabMenu = (el, type) => {
 
         // mousedown 이벤트
         tabHead.addEventListener("mousedown", (e) => {
-            console.log('mousedown');
+            // console.log('mousedown');
             isMouseDown = true;
             startX = e.pageX - tabHead.offsetLeft;
             scrollLeft = tabHead.scrollLeft;
@@ -659,7 +658,7 @@ const tabMenu = (el, type) => {
 
         // mouseup 이벤트
         tabHead.addEventListener("mouseup", () => {
-            console.log('mouseup');
+            // console.log('mouseup');
             isMouseDown = false;
             if (isDragging) {
                 setTimeout(() => {
@@ -674,14 +673,14 @@ const tabMenu = (el, type) => {
 
         // mouseleave 이벤트
         tabHead.addEventListener("mouseleave", () => {
-            console.log('mouseleave');
+            // console.log('mouseleave');
             isMouseDown = false;
             isDragging = false;
         });
 
         // mousemove 이벤트
         tabHead.addEventListener("mousemove", (e) => {
-            console.log('mousemove');
+            // console.log('mousemove');
             if (!isMouseDown) return;
             e.preventDefault();
 
@@ -703,9 +702,8 @@ const tabMenu = (el, type) => {
                     return;
                 }
 
-                console.log('list:', list);
                 const contentPosition = tabContents[index].offsetTop;
-                event.preventDefault();
+                e.preventDefault();
 
                 // 활성화된 탭 변경
                 wrap.querySelector('.tab__menu li.is-active')?.classList.remove('is-active');
@@ -735,7 +733,7 @@ const tabMenu = (el, type) => {
                 } else {
                     sortingList();
                 }
-            }, { once: false });
+            });
         });
     });
 };
