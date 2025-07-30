@@ -1,0 +1,1008 @@
+{
+  "timelineData2020s": [
+    {
+      "year": "2025",
+      "events": [
+        {
+          "month": "현재",
+          "description": "클라우드, AI, 빅데이터 등 IT신기술을 바탕으로 4차 산업혁명 시대의 DX를 선도하고 있습니다."
+        }
+      ]
+    },
+    {
+      "year": "2024",
+      "events": [
+        {
+          "month": "10월",
+          "description": "아시아 최초 ‘구글 클라우드 생성형 AI 전문기업’ 인증 획득"
+        },
+        {
+          "month": "09월",
+          "description": "인도네시아 합작법인 ‘LG 시나르마스’ 공식 출범"
+        },
+        {
+          "month": "08월",
+          "description": "서울대학교와 ‘DX 인재’ 양성 위한 산학협력 협약 체결"
+        },
+        {
+          "month": "07월",
+          "description": "일본 교육업체 이온(AEON)과 에듀테크 사업 협약 체결"
+        },
+        {
+          "month": "06월",
+          "description": "‘AWS 생성형 AI 컴피턴시’ 인증 획득"
+        },
+        {
+          "month": "06월",
+          "description": "미국 ‘SAP 사파이어’ 행사서 ‘퍼펙트윈 ERP 에디션’ 첫 공개",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "05월",
+          "description": "생성형 AI 기반의 고객 혁신 지원하는 ‘Gen AI 스튜디오’ 오픈"
+        },
+        {
+          "month": "03월",
+          "description": "베트남 FPT그룹과 ‘DX 파트너십’ 체결"
+        },
+        {
+          "month": "01월",
+          "description": "기술연구, 사업발굴·수행 조직 통합한 ‘AI센터’ 출범",
+          "image": "https://placehold.co/72x72"
+        }
+      ]
+    },
+    {
+      "year": "2023",
+      "events": [
+        {
+          "month": "12월",
+          "description": "AI기반 마케팅 최적화 플랫폼 ‘MOP’로 대한민국 디지털 광고 대상 수상"
+        },
+        {
+          "month": "11월",
+          "description": "美뉴욕시·주한미국상공회의소와 DX 파트너십 체결"
+        },
+        {
+          "month": "10월",
+          "description": "생성형 AI 플랫폼 ‘DAP GenAI’ 출시"
+        },
+        {
+          "month": "08월",
+          "description": "구글 클라우드 파트너 어워즈 ‘판매’, ‘서비스’ 부문 수상",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "07월",
+          "description": "스마트 물류 ‘로봇 통합운영 플랫폼’ 출시"
+        },
+        {
+          "month": "06월",
+          "description": "스마트 물류 ‘로봇 통합운영 플랫폼’ 출시"
+        },
+        {
+          "month": "04월",
+          "description": "마이크로소프트와 AI, 클라우드 전략적 협업",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "03월",
+          "description": "SAP와 차세대 ERP 전략적 파트너십"
+        },
+        {
+          "month": "02월",
+          "description": "클라우드 고객경험 혁신 ‘AM 디스커버리’ 서비스 출시"
+        },
+        {
+          "month": "02월",
+          "description": "LG CNS ‘통합 IT서비스센터’ 개소"
+        }
+      ]
+    },
+    {
+      "year": "2022",
+      "events": [
+        {
+          "month": "12월",
+          "description": "블록체인 기술 적용한 모바일 사원증 서비스 ‘띠딧’ 출시"
+        },
+        {
+          "month": "09월",
+          "description": "구글 클라우드와 Digital Transformation Partnership 체결"
+        },
+        {
+          "month": "07월",
+          "description": "가명정보 결합전문기관 지정"
+        },
+        {
+          "month": "06월",
+          "description": "AWS Premier Tier Partner 자격 획득"
+        },
+        {
+          "month": "05월",
+          "description": "물류로봇 구독 서비스 ‘RaaS’ 출시",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "05월",
+          "description": "부산 스마트시티 국가시범도시 사업 수주"
+        },
+        {
+          "month": "03월",
+          "description": "SaaS 통합 플랫폼 ‘SINGLEX(싱글렉스)’ 출시"
+        },
+        {
+          "month": "03월",
+          "description": "마이데이터 앱 서비스 ‘하루조각’ 출시"
+        },
+        {
+          "month": "03월",
+          "description": "연매출 4조 돌파"
+        }
+      ]
+    },
+    {
+      "year": "2021",
+      "events": [
+        {
+          "month": "10월",
+          "description": "대한한공 클라우드 전환 완료",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "09월",
+          "description": "마이데이터 사업자 본허가 획득"
+        },
+        {
+          "month": "07월",
+          "description": "백신예약시스템 장애해결"
+        },
+        {
+          "month": "06월",
+          "description": "AI튜터 서울시 교육청 MOU"
+        },
+        {
+          "month": "04월",
+          "description": "클라우드엑스퍼 프로옵스 출시"
+        },
+        {
+          "month": "04월",
+          "description": "AI튜터 일본 수출"
+        },
+        {
+          "month": "04월",
+          "description": "안랩과 MOU, 클라우드 보안시장 공략"
+        },
+        {
+          "month": "03월",
+          "description": "데브온 NCD 무료공개"
+        }
+      ]
+    },
+    {
+      "year": "2020",
+      "events": [
+        {
+          "month": "12월",
+          "description": "인도네시아 국세 행정시스템 구축 사업자 선정"
+        },
+        {
+          "month": "10월",
+          "description": "AI서비스플랫폼 출시"
+        },
+        {
+          "month": "10월",
+          "description": "세종 스마트시티 구축사업 수주"
+        },
+        {
+          "month": "07월",
+          "description": "AI튜터 100만 사용자에 무상제공"
+        },
+        {
+          "month": "03월",
+          "description": "사내벤처 2호 햄프킹 분사",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "01월",
+          "description": "클라우드 기반의 한국형 인사관리 솔루션 ‘Next HR’ 출시"
+        }
+      ]
+    },
+    {
+      "year": "2019",
+      "events": [
+        {
+          "month": "12월",
+          "description": "세계 최초 병행검증솔루션 ‘퍼펙트윈(PerfecTwin)’ 출시"
+        },
+        {
+          "month": "06월",
+          "description": "MS와 전략적 파트너십 체결(디지털 트랜스포메이션전방위 협력)"
+        },
+        {
+          "month": "06월",
+          "description": "클라우드 통합관리 플랫폼 ‘클라우드엑스퍼’ (CloudXper) 출시"
+        },
+        {
+          "month": "05월",
+          "description": "AWS 아태지역 ‘올해의 컨설팅 파트너사’선정"
+        },
+        {
+          "month": "04월",
+          "description": "‘구글 클라우드 넥스트 2019’에서 제조 AI 혁신사례 발표"
+        },
+        {
+          "month": "02월",
+          "description": "AWS와 전략적 협력 계약 체결(클라우드 사업 가속화)",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "02월",
+          "description": "한국형 금융 클라우드 모델 AWS와 공동 개발"
+        },
+        {
+          "month": "01월",
+          "description": "국내 대기업 최초 글로벌 Top 3 블록체인 컨소시엄 협업체계 구축(EEA, 하이퍼레저, R3)"
+        }
+      ]
+    },
+    {
+      "year": "2018",
+      "events": [
+        {
+          "month": "10월",
+          "description": "구글프리미어 파트너 어워즈 수상(검색 혁신 부문)"
+        },
+        {
+          "month": "08월",
+          "description": "사내벤처 1호 단비 분사"
+        },
+        {
+          "month": "07월",
+          "description": "스마트시티 통합플랫폼 ‘시티허브’ 출시 및 대기업 최초 국가인증 획득"
+        },
+        {
+          "month": "06월",
+          "description": "한국조폐공사 블록체인 오픈 플랫폼 구축 사업 수주"
+        },
+        {
+          "month": "05월",
+          "description": "블록체인 플랫폼 ‘모나체인(Monachain)’ 출시"
+        },
+        {
+          "month": "04월",
+          "description": "통합 스마트팩토리 플랫폼 Factova출시",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "01월",
+          "description": "LG CNS 본사 신사옥 이전 (마곡 LG사이언스파크)",
+          "image": "https://placehold.co/72x72"
+        }
+      ]
+    },
+    {
+      "year": "2017",
+      "events": [
+        {
+          "month": "12월",
+          "description": "사회공헌 프로그램 ‘코딩 지니어스’, 제12회 대한민국 사회공헌대상 교육부장관상 수상"
+        },
+        {
+          "month": "11월",
+          "description": "전자정부 수출 2.5억 달러 돌파"
+        },
+        {
+          "month": "09월",
+          "description": "AI빅데이터 플랫폼 ‘DAP’ 출시"
+        },
+        {
+          "month": "07월",
+          "description": "국내 기업 최초 아마존웹서비스(AWS)와 전략적 파트너십 체결"
+        },
+        {
+          "month": "03월",
+          "description": "우리은행 빅데이터 구축사업 수주"
+        }
+      ]
+    },
+    {
+      "year": "2016",
+      "events": [
+        {
+          "month": "11월",
+          "description": "광주은행 차세대시스템 오픈 (MDD 적용)"
+        },
+        {
+          "month": "10월",
+          "description": "우즈베키스탄 국립도서관 도서관리시스템 구축 사업 수주"
+        },
+        {
+          "month": "06월",
+          "description": "CJ대한통운 메가 허브 터미널 물류 시스템 구축 사업 수주"
+        },
+        {
+          "month": "05월",
+          "description": "인터넷전문은행 ‘카카오뱅크’ IT시스템 구축 수주"
+        },
+        {
+          "month": "04월",
+          "description": "말레이시아 페낭市 버스정보시스템 구축 사업 수주"
+        }
+      ]
+    }
+  ],
+  "timelineData2010s": [
+    {
+      "year": "2015",
+      "events": [
+        {
+          "month": "12월",
+          "description": "인천/부산 데이터센터 그린데이터센터 인증 획득"
+        },
+        {
+          "month": "08월",
+          "description": "말레이시아 포스라쥬 물류센터 구축",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "05월",
+          "description": "바레인 온라인 법인등기시스템 ‘블리스’ (BLIS) 개통"
+        },
+        {
+          "month": "04월",
+          "description": "우즈베키스탄 합작법인 설립"
+        },
+        {
+          "month": "03월",
+          "description": "국내 최초 셋톱박스 기반 통합형 홈IoT 솔루션 개발"
+        }
+      ]
+    },
+    {
+      "year": "2014",
+      "events": [
+        {
+          "month": "12월",
+          "description": "부산 글로벌 클라우드 데이터센터, 그린데이터센터 인증 최고등급 A+++ 인증 획득"
+        },
+        {
+          "month": "08월",
+          "description": "말레이시아 우편집중처리센터 사업 수주"
+        },
+        {
+          "month": "05월",
+          "description": "국내 기업 최초 데이터센터 최고권위상 ‘브릴어워즈’ (Brill Awards)수상"
+        },
+        {
+          "month": "02월",
+          "description": "인천경제자유구역 U-City 운영센터 개소"
+        },
+        {
+          "month": "01월",
+          "description": "콜롬비아 ICT교육역량 강화사업 수주"
+        }
+      ]
+    },
+    {
+      "year": "2013",
+      "events": [
+        {
+          "month": "12월",
+          "description": "LG CNS 본사 이전(여의도 FKI타워)"
+        },
+        {
+          "month": "09월",
+          "description": "전북은행 차세대시스템 구축(국내 금융권 최초 MDD 적용)"
+        },
+        {
+          "month": "07월",
+          "description": "서울시 교통카드시스템 2기 구축사업 착수"
+        },
+        {
+          "month": "05월",
+          "description": "부산 글로벌 클라우드 데이터센터 개관",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "04월",
+          "description": "국내 최초 우편물류 정보관리 솔루션 ‘비바 포스트’ (VIVA POST) 말레이시아 수출"
+        },
+        {
+          "month": "03월",
+          "description": "국내 최초 HW/SW 일체형 빅데이터 분석 플랫폼 ‘SBP 어플라이언스’ 출시"
+        }
+      ]
+    },
+    {
+      "year": "2012",
+      "events": [
+        {
+          "month": "11월",
+          "description": "국내 최초 빅데이터 통합 솔루션 ‘스마트 빅데이터 플랫폼’ 출시"
+        },
+        {
+          "month": "10월",
+          "description": "말레이시아 MRT통신시스템 구축 사업 수주"
+        },
+        {
+          "month": "09월",
+          "description": "불가리아 태양광발전시스템 가동(유럽 태양광 시장 첫 진출)"
+        },
+        {
+          "month": "08월",
+          "description": "국내 최초 공장 구축 통합솔루션 ‘스마트팩토리 솔루션’ 출시"
+        },
+        {
+          "month": "07월",
+          "description": "세계 최초 통합솔루션 ‘스마트그린플랫폼’ 출시"
+        },
+        {
+          "month": "07월",
+          "description": "국내 최초 개인용 가상데스크톱환경 (VDI) 솔루션 ‘CLOUD PC’ 개발"
+        },
+        {
+          "month": "05월",
+          "description": "바레인 대법원 법인등기시스템 수출 계약 (국내 최초 중동 전자정부 시장 진출)",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "01월",
+          "description": "교보증권 차세대시스템 개통"
+        }
+      ]
+    },
+    {
+      "year": "2011",
+      "events": [
+        {
+          "month": "12월",
+          "description": "IBM과 스마트사업 협력 MOU(스마트 그린시티와 스마트교통 사업 분야)",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "10월",
+          "description": "세계 최초, 안드로이드 기반의 ‘스마트 셋톱박스’ 출시"
+        },
+        {
+          "month": "09월",
+          "description": "스마트셋톱박스 국내최초 상용화 성공"
+        },
+        {
+          "month": "07월",
+          "description": "콜롬비아 보고타 교통카드시스템 사업 수주",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "06월",
+          "description": "국내 최초 ‘모바일통합솔루션’ 출시"
+        },
+        {
+          "month": "02월",
+          "description": "가상 데이터 센터 및 데스크톱 클라우드 서비스 동시 출시"
+        }
+      ]
+    },
+    {
+      "year": "2010",
+      "events": [
+        {
+          "month": "12월",
+          "description": "국가 기록관리 분야 행정안전부 장관 표창 수상"
+        },
+        {
+          "month": "11월",
+          "description": "LG CNS-SAP, 클라우드컴퓨팅 비즈니스 협력 MOU 체결",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "10월",
+          "description": "환경경영시스템 ISO14001 인증 획득"
+        },
+        {
+          "month": "09월",
+          "description": "LG CNS-MS, 차세대 IT분야 협력을 위한 글로벌 파트너십 체결"
+        },
+        {
+          "month": "08월",
+          "description": "제3차 전자여권 e-cover 조달사업 수주"
+        },
+        {
+          "month": "04월",
+          "description": "청라 U-City 구축 사업 수주"
+        },
+        {
+          "month": "02월",
+          "description": "은평구 U-도시통합관제센터 개관"
+        },
+        {
+          "month": "01월",
+          "description": "외환은행 IFRS 시스템 구축 완료"
+        }
+      ]
+    },
+    {
+      "year": "2009",
+      "events": [
+        {
+          "month": "12월",
+          "description": "국민 건강 보험공단 4대 사회보험 징수통합 구축 사업 수주"
+        },
+        {
+          "month": "12월",
+          "description": "아시아 최초 SW테스트분야 국제공인 TMMi 레벨3 인증 획득"
+        },
+        {
+          "month": "06월",
+          "description": "중국법인 글로벌 개발센터 CMMI 레벨5 인증 획득"
+        },
+        {
+          "month": "05월",
+          "description": "LG 가산데이터센터 오픈"
+        },
+        {
+          "month": "02월",
+          "description": "인도네시아 재무부 국가 재정 정보 시스템 사업 계약 체결"
+        },
+        {
+          "month": "02월",
+          "description": "엔트루저널, 업계 최초 한국학술진흥재단 등재학술지 선정"
+        }
+      ]
+    },
+    {
+      "year": "2008",
+      "events": [
+        {
+          "month": "10월",
+          "description": "한국토지공사 ‘판교 U-City 구축’ 사업 수주"
+        },
+        {
+          "month": "08월",
+          "description": "한국외환은행 ‘국제회계기준(IFRS) 시스템 구축’ 수주(’10년 6월 완료)"
+        },
+        {
+          "month": "08월",
+          "description": "국내 최초 개방형 UC 미들웨어 플랫폼 개발"
+        },
+        {
+          "month": "07월",
+          "description": "사우디아라비아 교육부 ‘스마트 스쿨’ 사업 수주"
+        },
+        {
+          "month": "06월",
+          "description": "지방교육 행ㆍ재정 통합시스템(Edufine) 개통",
+          "image": "https://placehold.co/72x72"
+        }
+      ]
+    },
+    {
+      "year": "2007",
+      "events": [
+        {
+          "month": "12월",
+          "description": "국민건강보험공단 의료급여자격관리시스템 구축 완료"
+        },
+        {
+          "month": "12월",
+          "description": "금융보안연구원 OTP 통합인증센터 오픈"
+        },
+        {
+          "month": "09월",
+          "description": "LG엔시스 자회사 편입"
+        },
+        {
+          "month": "07월",
+          "description": "신(新)여권통합관리시스템 구축 사업 수주"
+        },
+        {
+          "month": "04월",
+          "description": "미(美) 버라이존과 사업협력 체결"
+        },
+        {
+          "month": "03월",
+          "description": "LG CNS 상암IT센터 개관",
+          "image": "https://placehold.co/72x72"
+        }
+      ]
+    },
+    {
+      "year": "2006",
+      "events": [
+        {
+          "month": "11월",
+          "description": "대법원 등기업무 시스템 CMMI레벨4 인증 획득)"
+        },
+        {
+          "month": "10월",
+          "description": "관세청 고객 관계 관리(CRM) 시스템 구축 완료",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "08월",
+          "description": "인도네시아 경찰청 범죄정보센터 구축 사업 수주"
+        },
+        {
+          "month": "04월",
+          "description": "남녀고용평등 우수기업 대통령상 수상"
+        },
+        {
+          "month": "02월",
+          "description": "LG CNS-한국오라클-SAP코리아 공동 비즈니스 솔루션 센터 오픈"
+        },
+        {
+          "month": "01월",
+          "description": "인도네시아/브라질법인 설립"
+        }
+      ]
+    },
+    {
+      "year": "2005",
+      "events": [
+        {
+          "month": "12월",
+          "description": "세계 최초 IT아웃소싱 품질 인증 eSCM레벨4 획득",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "10월",
+          "description": "국내 최초 네트워크 아웃소싱 BS15000 인증 획득 (데이터센터)"
+        },
+        {
+          "month": "08월",
+          "description": "국내 최초 네트워크 아웃소싱 BS15000 인증 획득 (네트워크 센터)"
+        },
+        {
+          "month": "03월",
+          "description": "특허청 차세대 특허넷 개통",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "02월",
+          "description": "현대카드/현대캐피탈 차세대 시스템 구축 완료"
+        },
+        {
+          "month": "01월",
+          "description": "국세청 현금영수증시스템 개통"
+        }
+      ]
+    },
+    {
+      "year": "2004",
+      "events": [
+        {
+          "month": "11월",
+          "description": "ERP 통합운영센터 CMMI Level 4 인증 획득"
+        },
+        {
+          "month": "07월",
+          "description": "서울시 신교통카드 시스템 개통"
+        },
+        {
+          "month": "04월",
+          "description": "EBS 인터넷 수능강의 시스템 개통"
+        },
+        {
+          "month": "04월",
+          "description": "고속철도 통합정보시스템 대통령상 수상",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "03월",
+          "description": "고속철도 통합정보시스템 대통령상 수상"
+        }
+      ]
+    },
+    {
+      "year": "2003",
+      "events": [
+        {
+          "month": "12월",
+          "description": "국내 최초 SAP사 CCC(Customer Competence Center)인증 획득"
+        },
+        {
+          "month": "09월",
+          "description": "세계 최초 eSCM 인증 획득"
+        },
+        {
+          "month": "08월",
+          "description": "건강보험심사평가원 국내 최대규모 DW(Data Warehouse) 개통"
+        },
+        {
+          "month": "08월",
+          "description": "시스코사의 골드 파트너 인증 획득"
+        },
+        {
+          "month": "06월",
+          "description": "공공분야 최초, 대법원 등기전산화 사업 CMM 레벨 5 획득",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "01월",
+          "description": "전자정부 구축 공로 대거 포상"
+        }
+      ]
+    },
+    {
+      "year": "2002",
+      "events": [
+        {
+          "month": "11월",
+          "description": "국가재정시스템 구축 완료"
+        },
+        {
+          "month": "07월",
+          "description": "대법원 프로젝트 CMM 레벨3 획득"
+        },
+        {
+          "month": "03월",
+          "description": "LG CNS 컨소시엄, 4대 사회보험 정보연계시스템 구축 사업 수주"
+        },
+        {
+          "month": "01월",
+          "description": "‘LG CNS’로 사명 변경",
+          "image": "https://placehold.co/72x72"
+        }
+      ]
+    }
+  ],
+  "timelineData2000s": [
+    {
+      "year": "2001",
+      "events": [
+        {
+          "month": "11월",
+          "description": "LG전자 전 계열사 ‘통합 ERP시스템’ 구축 완료"
+        },
+        {
+          "month": "11월",
+          "description": "LG전자 전 계열사 ‘통합 ERP시스템’ 구축 완료",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "10월",
+          "description": "전자세금계산서 시스템 구축"
+        },
+        {
+          "month": "09월",
+          "description": "국내 공공기관 최초 관세청 데이터웨어하우스 구축"
+        },
+        {
+          "month": "09월",
+          "description": "서울 회현동 프라임타워로 본사 이전"
+        },
+        {
+          "month": "06월",
+          "description": "대한통운 국내 최대 종합물류 시스템 수주"
+        },
+        {
+          "month": "06월",
+          "description": "시스코시스템즈(Cisco Systems)와 컨설팅 분야 전략적 제휴"
+        }
+      ]
+    },
+    {
+      "year": "2000",
+      "events": [
+        {
+          "month": "12월",
+          "description": "필리핀 등기부 전산화 사업 수주"
+        },
+        {
+          "month": "12월",
+          "description": "정통부 통합전파관리계획(BPR) 사업자 선정"
+        },
+        {
+          "month": "12월",
+          "description": "국내 최대 규모 학술연구 정보사이트 개설"
+        },
+        {
+          "month": "10월",
+          "description": "기업은행 재해복구시스템 사업 수주"
+        },
+        {
+          "month": "01월",
+          "description": "미국 STG그룹과 전략적 제휴",
+          "image": "https://placehold.co/72x72"
+        }
+      ]
+    },
+    {
+      "year": "1999",
+      "events": [
+        {
+          "month": "12월",
+          "description": "정보통신부 ERP프로젝트 시범사업 수주"
+        },
+        {
+          "month": "09월",
+          "description": "한국전자통신연구원(ETRI) CMS 구축사업자 선정"
+        },
+        {
+          "month": "07월",
+          "description": "미 정보기술연합회(ITAA) Y2K인증 획득"
+        },
+        {
+          "month": "05월",
+          "description": "노동부 고용정보 워크넷 개통"
+        },
+        {
+          "month": "05월",
+          "description": "투신협회 전자공시 시스템 오픈"
+        },
+        {
+          "month": "05월",
+          "description": "서울시 민원처리 온라인 공개시스템 오픈",
+          "image": "https://placehold.co/72x7"
+        }
+      ]
+    },
+    {
+      "year": "1998",
+      "events": [
+        {
+          "month": "10월",
+          "description": "부동산 등기 업무 대국민 전국서비스 개시",
+          "image": "https://placehold.co/72x7"
+        },
+        {
+          "month": "08월",
+          "description": "중소기업 유통센터 정보화시스템 구축 사업 수주"
+        },
+        {
+          "month": "08월",
+          "description": "법무부 출입국관리정보 시스템 구축 사업 수주"
+        },
+        {
+          "month": "07월",
+          "description": "노동부 고용정보시스템 프로젝트 수주"
+        },
+        {
+          "month": "02월",
+          "description": "법무부 형사사법기관간 범죄정보망 구축 사업 수주"
+        }
+      ]
+    },
+    {
+      "year": "1997",
+      "events": [
+        {
+          "month": "12월",
+          "description": "오라클(Oracle)社와 ERP 제휴"
+        },
+        {
+          "month": "12월",
+          "description": "LG통합 글로벌 네트웍(LGNET)개통"
+        },
+        {
+          "month": "12월",
+          "description": "국내 유일 CMM Level 2 인증 획득"
+        },
+        {
+          "month": "05월",
+          "description": "국내 SI기업 중 종합 1위 평가 (미시장조사기관 가트너 조사 발표), 독일 SAP社와 ERP 협력 체결"
+        },
+        {
+          "month": "01월",
+          "description": "국세청 ‘국세통합정보시스템(TIS)’ 개통"
+        }
+      ]
+    },
+    {
+      "year": "1996",
+      "events": [
+        {
+          "month": "12월",
+          "description": "행정전산망(국세통합시스템) 추진 공로 인정 대통령상 수상"
+        }
+      ]
+    },
+    {
+      "year": "1995",
+      "events": [
+        {
+          "month": "05월",
+          "description": "특허청 특허정보서비스시스템 프로젝트 수주"
+        },
+        {
+          "month": "04월",
+          "description": "‘LG-EDS시스템’ 으로 사명 변경"
+        }
+      ]
+    }
+  ],
+  "timelineData1900s": [
+    {
+      "year": "1994",
+      "events": [
+        {
+          "month": "07월",
+          "description": "국내 최초 전 사업분야 ISO 9001 품질인증 및 TickIT 획득"
+        },
+        {
+          "month": "05월",
+          "description": "업계 최초 사내 기술대학원 설립",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "04월",
+          "description": "대법원 부동산 등기 업무 전산화 프로젝트 수주"
+        },
+        {
+          "month": "01월",
+          "description": "국세청 국세통합전산망 프로젝트 수주"
+        }
+      ]
+    },
+    {
+      "year": "1993",
+      "events": [
+        {
+          "month": "07월",
+          "description": "태국 SGS사 통합 생산관리시스템 프로젝트 수주 (해외시장 최초 진출)"
+        }
+      ]
+    },
+    {
+      "year": "1992",
+      "events": [
+        {
+          "month": "09월",
+          "description": "국내 최초 정보기술센터(ITC :Information Technology Center) 준공",
+          "image": "https://placehold.co/72x72"
+        }
+      ]
+    },
+    {
+      "year": "1991",
+      "events": [
+        {
+          "month": "09월",
+          "description": "국내 최초 Application SW엔진 개발 성공"
+        },
+        {
+          "month": "08월",
+          "description": "국내 최초 국제 VAN사업자 승인"
+        },
+        {
+          "month": "02월",
+          "description": "국내 최초 CASE Tool을 활용한 시스템 개발"
+        }
+      ]
+    },
+    {
+      "year": "1989",
+      "events": [
+        {
+          "month": "10월",
+          "description": "업계 최초 기술연구소 설립"
+        }
+      ]
+    },
+    {
+      "year": "1988",
+      "events": [
+        {
+          "month": "08월",
+          "description": "국내 최초 Network Management System 설치 운영",
+          "image": "https://placehold.co/72x72"
+        },
+        {
+          "month": "01월",
+          "description": "국내 최초, SI전문가 양성 교육프로그램 ‘SED’ 개설"
+        }
+      ]
+    },
+    {
+      "year": "1987",
+      "events": [
+        {
+          "month": "01월",
+          "description": "미국 EDS社와 합작, STM(Systems Technology Management Corporation) 설립",
+          "image": "https://placehold.co/72x72"
+        }
+      ]
+    }
+  ]
+}
